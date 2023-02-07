@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.dwcj.samples</groupId>
+    <artifactId>control_samples</artifactId>
+    <version>1.000</version>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+
+        <!-- utilize this line or create dwcj-lib in your settings.xml profile -->
+        <!--
+        <dwcj-lib>/bbx/plugins/DWCJ/lib/dwcj-0.009.jar</dwcj-lib>
+        -->
+
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.dwcj</groupId>
+            <artifactId>dwcj-engine</artifactId>
+            <version>0.11.0</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>control_samples</finalName>
+        <plugins>
+            <!-- Set the jar output Directory -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <outputDirectory>target/lib/</outputDirectory>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
