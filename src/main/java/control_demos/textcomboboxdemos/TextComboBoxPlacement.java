@@ -20,7 +20,7 @@ public class TextComboBoxPlacement extends App{
         panel.setStyle("justify-content", "center");
         panel.setStyle("align-items", "center");
         panel.setStyle("padding", "10px");
-        panel.setStyle("gap", "50px");
+        panel.setStyle("gap", "30px");
         panel.setStyle("height", "100%");
 
 
@@ -36,7 +36,7 @@ public class TextComboBoxPlacement extends App{
         TextComboBox tcb3 = new TextComboBox().setAttribute("placement", "top").setAttribute("placeholder", "Top Menu Placement");
         TextComboBox tcb4 = new TextComboBox().setAttribute("placement", "bottom").setAttribute("placeholder", "Bottom Menu Placement");
 
-        panel.add(tcb1, tcb2, tcb3, tcb4);   
+        panel.add(tcb2, tcb1, tcb3, tcb4);   
         tcb1.setItems(data); 
         tcb2.setItems(data); 
         tcb3.setItems(data); 
