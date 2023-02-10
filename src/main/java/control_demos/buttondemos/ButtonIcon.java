@@ -1,22 +1,20 @@
 package control_demos.buttondemos;
 
 import org.dwcj.App;
+import org.dwcj.annotations.InlineStyleSheet;
 import org.dwcj.controls.button.Button;
 import org.dwcj.controls.panels.AppPanel;
 import org.dwcj.exceptions.DwcAppInitializeException;
 
+@InlineStyleSheet(value = "css/buttonstyles/icon_styles.css", local = true)
+
 public class ButtonIcon extends App {
     
-
-
     @Override
     public void run() throws DwcAppInitializeException { 
 
         AppPanel panel = new AppPanel();
-        panel.setStyle("display", "inline-grid");
-        panel.setStyle("grid-template-columns", "1fr 1fr 1fr");
-        panel.setStyle("padding", "10px");
-        panel.setStyle("gap", "50px");
+        panel.addClassName("appPanel");
         
         Button b1 = new Button ("<html><bbj-icon name=\"alien\"></bbj-icon> Icon Left</html>");
         panel.add(b1);

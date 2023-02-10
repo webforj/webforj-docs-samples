@@ -1,9 +1,12 @@
 package control_demos.checkboxdemos;
 
 import org.dwcj.App;
+import org.dwcj.annotations.InlineStyleSheet;
 import org.dwcj.controls.panels.AppPanel;
 import org.dwcj.controls.checkbox.CheckBox;
 import org.dwcj.exceptions.DwcAppInitializeException;
+
+@InlineStyleSheet(value = "css/checkboxstyles/text_styles.css", local = true)
 
 
 public class CheckboxHorizontalText extends App{
@@ -13,18 +16,10 @@ public class CheckboxHorizontalText extends App{
 
 
         AppPanel panel = new AppPanel();
-        panel.setStyle("display", "inline-grid");
-        panel.setStyle("grid-template-columns", "1fr");
-        panel.setStyle("padding", "10px");
-        panel.setStyle("gap", "50px");
+        panel.addClassName("appPanel");
 
-        CheckBox cb1 = new CheckBox();
-        CheckBox cb2 = new CheckBox();
-
-        cb2.setHorizontalTextPosition(CheckBox.HorizontalTextPosition.LEFT);
-
-        cb1.setText("Right aligned (default)");
-        cb2.setText("Left aligned");
+        CheckBox cb1 = new CheckBox().setText("Right aligned (default)");
+        CheckBox cb2 = new CheckBox().setText("Left aligned").setHorizontalTextPosition(CheckBox.HorizontalTextPosition.LEFT);
 
         panel.add(cb1,cb2);
 

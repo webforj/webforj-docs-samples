@@ -1,0 +1,8 @@
+.appPanel{
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    padding: 10px;
+    gap: 20px;
+    background: white;
+    align-items: center;
+}

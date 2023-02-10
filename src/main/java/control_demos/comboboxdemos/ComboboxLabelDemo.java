@@ -4,10 +4,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.dwcj.App;
+import org.dwcj.annotations.InlineStyleSheet;
 import org.dwcj.controls.panels.AppPanel;
 import org.dwcj.controls.combobox.ComboBox;
 import org.dwcj.exceptions.DwcAppInitializeException;
 
+@InlineStyleSheet(value = "css/comboboxstyles/label_styles.css", local = true)
 
 public class ComboboxLabelDemo extends App{
 
@@ -16,10 +18,7 @@ public class ComboboxLabelDemo extends App{
 
 
         AppPanel panel = new AppPanel();
-        panel.setStyle("display", "inline-grid");
-        panel.setStyle("grid-template-columns", "1fr");
-        panel.setStyle("padding", "10px");
-        panel.setStyle("gap", "50px");
+        panel.addClassName("appPanel");
 
         ComboBox cb1 = new ComboBox();
 
@@ -32,9 +31,7 @@ public class ComboboxLabelDemo extends App{
         
         panel.add(cb1);
         
-        cb1.setItems(data);
-        cb1.selectIndex(0);
-        cb1.setAttribute("label", "Example label");
+        cb1.setItems(data).selectIndex(0).setAttribute("label", "Example label");
 
     }
 

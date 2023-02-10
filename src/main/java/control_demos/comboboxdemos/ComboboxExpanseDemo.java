@@ -4,12 +4,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.dwcj.App;
-import org.dwcj.controls.panels.Div;
+import org.dwcj.annotations.InlineStyleSheet;
 import org.dwcj.controls.panels.AppPanel;
-import org.dwcj.controls.textbox.TextBox;
 import org.dwcj.controls.combobox.ComboBox;
 import org.dwcj.exceptions.DwcAppInitializeException;
 
+@InlineStyleSheet(value = "css/comboboxstyles/expanse_styles.css", local = true)
 
 public class ComboboxExpanseDemo extends App{
 
@@ -18,35 +18,19 @@ public class ComboboxExpanseDemo extends App{
 
 
         AppPanel panel = new AppPanel();
-        panel.setStyle("display", "inline-grid");
-        panel.setStyle("grid-template-columns", "1fr 1fr 1fr 1fr 1fr");
-        panel.setStyle("padding", "10px");
-        panel.setStyle("gap", "50px");
+        panel.addClassName("appPanel");
 
-        ComboBox cb1 = new ComboBox();
-        ComboBox cb2 = new ComboBox();
-        ComboBox cb3 = new ComboBox();
-        ComboBox cb4 = new ComboBox();
-        ComboBox cb5 = new ComboBox();
-
-        cb1.setExpanse(ComboBox.Expanse.XSMALL);
-        cb2.setExpanse(ComboBox.Expanse.SMALL);
-        cb3.setExpanse(ComboBox.Expanse.MEDIUM);
-        cb4.setExpanse(ComboBox.Expanse.LARGE);
-        cb5.setExpanse(ComboBox.Expanse.XLARGE);
+        ComboBox cb1 = new ComboBox().setExpanse(ComboBox.Expanse.XSMALL).setText("Extra Small").setStyle("grid-column", "1");
+        ComboBox cb2 = new ComboBox().setExpanse(ComboBox.Expanse.SMALL).setText("Small").setStyle("grid-column", "2");
+        ComboBox cb3 = new ComboBox().setExpanse(ComboBox.Expanse.MEDIUM).setText("Medium").setStyle("grid-column", "3");
+        ComboBox cb4 = new ComboBox().setExpanse(ComboBox.Expanse.LARGE).setText("Large").setStyle("grid-column", "4");
+        ComboBox cb5 = new ComboBox().setExpanse(ComboBox.Expanse.XLARGE).setText("Extra Large").setStyle("grid-column", "5");
 
         Map<Object, String> data = new HashMap<>();
         data.put("Random Data1", "Random Data");
         data.put("Random Data2", "Some Data");
         data.put("Random Data3", "More Data");
         data.put("Random Data4", "Test Data");
-
-        
-        cb1.setText("Extra Small").setStyle("grid-column", "1");
-        cb2.setText("Small").setStyle("grid-column", "2");
-        cb3.setText("Medium").setStyle("grid-column", "3");
-        cb4.setText("Large").setStyle("grid-column", "4");
-        cb5.setText("Extra Large").setStyle("grid-column", "5");
 
         panel.add(cb1, cb2, cb3, cb4, cb5);
 
