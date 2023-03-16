@@ -1,0 +1,13 @@
+.appPanel{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background: white;
+    justify-content: center;
+}
+
+.BBjTopLevelWindow{
+    background-color: white !important;
+}

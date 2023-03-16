@@ -6,7 +6,7 @@ import org.dwcj.controls.panels.AppPanel;
 import org.dwcj.controls.checkbox.CheckBox;
 import org.dwcj.exceptions.DwcAppInitializeException;
 
-@InlineStyleSheet(value = "css/checkboxstyles/text_styles.css", local = true)
+@InlineStyleSheet("context://css/checkboxstyles/text_styles.css")
 
 
 public class CheckboxHorizontalText extends App{

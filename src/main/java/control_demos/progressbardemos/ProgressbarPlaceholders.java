@@ -1,13 +1,13 @@
 package control_demos.progressbardemos;
 
 import org.dwcj.App;
+import org.dwcj.annotations.InlineStyleSheet;
 import org.dwcj.controls.panels.AppPanel;
 import org.dwcj.exceptions.DwcAppInitializeException;
 
-import java.lang.Math;
-
 import org.dwcj.controls.progressbar.ProgressBar;
 
+@InlineStyleSheet("context://css/progressbarstyles/placeholder_styles.css")
 public class ProgressbarPlaceholders extends App{
 
     ProgressBar pb;
@@ -16,20 +16,12 @@ public class ProgressbarPlaceholders extends App{
     public void run() throws DwcAppInitializeException { 
 
         AppPanel panel = new AppPanel();
-        panel.setStyle("display", "inline-grid");
-        panel.setStyle("grid-template-columns", "1fr");
-        panel.setStyle("padding", "10px");
-        panel.setStyle("gap", "50px");
-        
-
+        panel.addClassName("appPanel");
         pb = new ProgressBar();
-
         panel.add(pb);
-
-        pb.setStyle("width", "400px");
-        pb.setMaximum(200);
-
-        pb.setText("{{x}} , {{value}}");
+        pb.addClassName("progress__bar");
+        pb.setMaximum(100).setValue(75);
+        pb.setText("{{x}}%  ,  {{value}}/" + pb.getMaximum().toString());
         
 
         

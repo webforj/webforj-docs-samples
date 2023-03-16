@@ -1,0 +1,26 @@
+/* .appPanel{
+    display: inline-grid;
+    padding: 10px;
+    gap: 10px;
+    width: 100%;
+    justify-items: center;
+    background: white;
+} */
+
+.BBjTopLevelWindow{
+    background-color: white !important;
+}
+
+.appPanel{
+    display: flex;
+    margin-top: 20px;
+    gap: 50px;
+    background: white;
+    width: 100%;
+    justify-content: center;
+}
+
+
+bbj-slider{
+    width: 400px;
+}

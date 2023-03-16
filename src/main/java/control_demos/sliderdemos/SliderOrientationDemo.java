@@ -2,13 +2,14 @@ package control_demos.sliderdemos;
 
 import java.util.Map;
 import static java.util.Map.entry;
-
 import org.dwcj.App;
+import org.dwcj.annotations.InlineStyleSheet;
 import org.dwcj.controls.panels.AppPanel;
 import org.dwcj.exceptions.DwcAppInitializeException;
-
 import org.dwcj.controls.slider.Slider;
 import org.dwcj.controls.slider.Slider.Orientation;
+
+@InlineStyleSheet("context://css/sliderstyles/orientation_styles.css")
 
 public class SliderOrientationDemo extends App{
 
@@ -16,12 +17,7 @@ public class SliderOrientationDemo extends App{
     public void run() throws DwcAppInitializeException { 
 
         AppPanel panel = new AppPanel();
-        panel.setStyle("display", "inline-grid");
-        panel.setStyle("grid-template-columns", "1fr");
-        panel.setStyle("padding", "10px");
-        panel.setStyle("gap", "10px");
-        panel.setStyle("width", "100%");
-        panel.setStyle("justify-items", "center");
+        panel.addClassName("appPanel");
 
         Map<Integer, String> mapMatch = Map.ofEntries(
             entry(0, "0"),
@@ -35,9 +31,18 @@ public class SliderOrientationDemo extends App{
         
         panel.add(sl1,sl2);
         
-        sl1.setStyle("width", "400px").setPaintTicks(true).setMinorTickSpacing(10).setPaintLabels(true).setLabels(mapMatch);
+        sl1.setStyle("width", "400px")
+            .setPaintTicks(true)
+            .setMinorTickSpacing(10)
+            .setPaintLabels(true)
+            .setLabels(mapMatch);
         
-        sl2.setOrientation(Orientation.VERTICAL).setStyle("padding-left","40px").setPaintTicks(true).setMinorTickSpacing(10).setPaintLabels(true).setLabels(mapMatch);
+        sl2.setOrientation(Orientation.VERTICAL)
+            .setStyle("padding-left","40px")
+            .setPaintTicks(true)
+            .setMinorTickSpacing(10)
+            .setPaintLabels(true)
+            .setLabels(mapMatch);
     }
     
 }

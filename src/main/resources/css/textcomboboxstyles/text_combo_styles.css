@@ -1,0 +1,13 @@
+.BBjTopLevelWindow{
+    background-color: white !important;
+}
+
+.appPanel{
+    display: grid;
+    margin-top: 20px;
+    gap: 50px;
+    background: white;
+    width: 100%;
+    justify-content: center;
+    padding: 20px;
+}

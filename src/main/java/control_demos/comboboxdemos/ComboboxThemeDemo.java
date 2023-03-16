@@ -11,7 +11,7 @@ import org.dwcj.controls.combobox.ComboBox;
 import org.dwcj.exceptions.DwcAppInitializeException;
 import org.dwcj.annotations.InlineStyleSheet;
 
-@InlineStyleSheet(value = "css/comboboxstyles/theme_styles.css", local = true)
+@InlineStyleSheet("context://css/comboboxstyles/theme_styles.css")
 
 public class ComboboxThemeDemo extends App {
 

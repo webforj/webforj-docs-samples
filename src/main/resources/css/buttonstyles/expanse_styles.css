@@ -1,8 +1,18 @@
 .appPanel{
+    display: flex;
+    margin-top: 20px;
+    background: white;
+    width: 100%;
+    justify-content: center;
+}
+
+.container{
     display: inline-grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    padding: 10px;
     gap: 20px;
     background: white;
     align-items: center;
+}
+.BBjTopLevelWindow{
+    background-color: white !important;
 }

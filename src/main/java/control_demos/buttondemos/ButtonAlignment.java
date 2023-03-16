@@ -7,7 +7,7 @@ import org.dwcj.controls.button.Button;
 import org.dwcj.controls.button.Button.TextVerticalAlignment;
 import org.dwcj.exceptions.DwcAppInitializeException;
 
-@InlineStyleSheet(value = "css/buttonstyles/alignment_styles.css", local = true)
+@InlineStyleSheet("context://css/buttonstyles/alignment_styles.css")
 
 public class ButtonAlignment extends App{
     

@@ -1,11 +1,13 @@
 package control_demos.progressbardemos;
 
 import org.dwcj.App;
+import org.dwcj.annotations.InlineStyleSheet;
 import org.dwcj.controls.panels.AppPanel;
 import org.dwcj.exceptions.DwcAppInitializeException;
 
 import org.dwcj.controls.progressbar.ProgressBar;
 
+@InlineStyleSheet("context://css/progressbarstyles/demo_styles.css")
 public class ProgressbarDemo extends App{
 
     ProgressBar pb;
@@ -14,23 +16,12 @@ public class ProgressbarDemo extends App{
     public void run() throws DwcAppInitializeException { 
 
         AppPanel panel = new AppPanel();
-        panel.setStyle("display", "inline-grid");
-        panel.setStyle("grid-template-columns", "1fr");
-        panel.setStyle("padding", "10px");
-        panel.setStyle("gap", "50px");
-        
-
+        panel.addClassName("appPanel");
         pb = new ProgressBar();
-
         panel.add(pb);
-
-        pb.setStyle("width", "400px");
+        pb.addClassName("progress__bar");
         pb.setMaximum(100);
-
         pb.setAttribute("indeterminate", "true");
-
-        
-
     }
     
 }

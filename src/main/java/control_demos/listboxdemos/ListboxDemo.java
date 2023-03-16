@@ -4,22 +4,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.dwcj.App;
+import org.dwcj.annotations.InlineStyleSheet;
 import org.dwcj.controls.panels.AppPanel;
 import org.dwcj.controls.listbox.ListBox;
 import org.dwcj.exceptions.DwcAppInitializeException;
 
-
+@InlineStyleSheet("context://css/listboxstyles/listbox_demo.css")
 public class ListboxDemo extends App{
 
     @Override
     public void run() throws DwcAppInitializeException { 
 
-        AppPanel panel = new AppPanel();
-        panel.setStyle("display", "inline-grid");
-        panel.setStyle("grid-template-columns", "1fr");
-        panel.setStyle("padding", "10px");
-        panel.setStyle("gap", "50px");
-        
+        AppPanel panel = new AppPanel();        
+        panel.addClassName("appPanel");
         ListBox l1 = new ListBox();
 
         Map<Object, String> data = new HashMap<>();
@@ -32,9 +29,7 @@ public class ListboxDemo extends App{
 
         l1.setItems(data);
         l1.setAttribute("label", "This is a listbox:");
-        // l1.setMultipleSelection(true);
-        l1.setAttribute("multi-selection", "true");
-        // l1.setAttribute("multi-selection-by-click", "true");
+        l1.setAttribute("multi-selection", "'true'");
 
 
     }

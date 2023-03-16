@@ -1,29 +1,21 @@
 package control_demos.textboxdemos;
 
 import org.dwcj.App;
+import org.dwcj.annotations.InlineStyleSheet;
 import org.dwcj.controls.panels.AppPanel;
 import org.dwcj.controls.textbox.TextBox;
 import org.dwcj.exceptions.DwcAppInitializeException;
 
-
-
+@InlineStyleSheet("context://css/textboxstyles/text_box_styles.css")
 public class TextBoxSpellcheck extends App{
 
     @Override
     public void run() throws DwcAppInitializeException { 
 
         AppPanel panel = new AppPanel();
-        panel.setStyle("display", "inline-grid");
-        panel.setStyle("grid-template-columns", "1fr");
-        panel.setStyle("padding", "10px");
-        panel.setStyle("gap", "50px");
-        
-
+        panel.addClassName("appPanel");
         TextBox t1 = new TextBox().setAttribute("spellcheck", "true").setAttribute("placeholder", "Enter misspelled text");
-
         panel.add(t1);    
-
     }
-    
 }
     

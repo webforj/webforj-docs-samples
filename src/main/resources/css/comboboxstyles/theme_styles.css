@@ -1,7 +1,13 @@
 .appPanel{
     display: inline-grid;
-    grid-template-columns: 150px 150px 150px 150px 150px 150px 150px;
+    grid-template-columns: 125px 125px 125px 125px 125px 125px 125px;
     padding: 10px;
     gap: 20px;
     background: white;
+    width: 100%;
+    justify-content: center;
+}
+
+.BBjTopLevelWindow{
+    background-color: white !important;
 }

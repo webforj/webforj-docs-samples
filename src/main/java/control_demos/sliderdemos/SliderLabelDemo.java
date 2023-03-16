@@ -4,11 +4,14 @@ import java.util.Map;
 import static java.util.Map.entry;
 
 import org.dwcj.App;
+import org.dwcj.annotations.InlineStyleSheet;
 import org.dwcj.controls.label.Label;
 import org.dwcj.controls.panels.AppPanel;
 import org.dwcj.exceptions.DwcAppInitializeException;
 
 import org.dwcj.controls.slider.Slider;
+
+@InlineStyleSheet("context://css/sliderstyles/label_styles.css")
 
 public class SliderLabelDemo extends App{
 
@@ -16,20 +19,12 @@ public class SliderLabelDemo extends App{
     public void run() throws DwcAppInitializeException { 
 
         AppPanel panel = new AppPanel();
-        panel.setStyle("display", "inline-grid");
-        panel.setStyle("grid-template-columns", "1fr");
-        panel.setStyle("padding", "10px");
-        panel.setStyle("gap", "10px");
-        panel.setStyle("width", "100%");
-        panel.setStyle("justify-items", "center");
+        panel.addClassName("appPanel");
         
 
         Slider sl1 = new Slider().setMaximum(100).setMinimum(0);
-        sl1.setStyle("width", "500px");
         Slider sl2 = new Slider().setMaximum(100).setMinimum(0);
-        sl2.setStyle("width", "500px");
         Slider sl3 = new Slider().setMaximum(100).setMinimum(0);
-        sl3.setStyle("width", "500px");
 
         Map<Integer, String> mapMatch = Map.ofEntries(
             entry(0, "0"),
@@ -60,23 +55,23 @@ public class SliderLabelDemo extends App{
             new Label("<html><b>Labels applied to non-tick values</b></html>").setStyle("grid-column", "1").setStyle("margin", "5px 0 0 10px"), sl3
             );
         
-        sl1.setPaintLabels(true);
-        sl1.setLabels(mapMatch);
-        sl1.setSnapToTicks(true);
+        sl1.setPaintLabels(true)
+            .setLabels(mapMatch)
+            .setSnapToTicks(true);
 
-        sl2.setPaintTicks(true);
-        sl2.setMajorTickSpacing(50);
-        sl2.setMinorTickSpacing(10);
-        sl2.setPaintLabels(true);
-        sl2.setLabels(mapMatch);
-        sl2.setSnapToTicks(true);
+        sl2.setPaintTicks(true)
+            .setMajorTickSpacing(50)
+            .setMinorTickSpacing(10)
+            .setPaintLabels(true)
+            .setLabels(mapMatch)
+            .setSnapToTicks(true);
 
-        sl3.setPaintTicks(true);
-        sl3.setMajorTickSpacing(50);
-        sl3.setMinorTickSpacing(10);
-        sl3.setPaintLabels(true);
-        sl3.setLabels(mapNoMatch);
-        sl3.setSnapToTicks(true);
+        sl3.setPaintTicks(true)
+            .setMajorTickSpacing(50)
+            .setMinorTickSpacing(10)
+            .setPaintLabels(true)
+            .setLabels(mapNoMatch)
+            .setSnapToTicks(true);
         
 
 

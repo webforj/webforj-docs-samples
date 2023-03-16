@@ -8,7 +8,7 @@ import org.dwcj.controls.button.Button;
 
 import org.dwcj.exceptions.DwcAppInitializeException;
 
-@InlineStyleSheet(value = "css/buttonstyles/disable_styles.css", local = true)
+@InlineStyleSheet("context://css/buttonstyles/disable_styles.css")
 
 public class ButtonDisable extends App {
 

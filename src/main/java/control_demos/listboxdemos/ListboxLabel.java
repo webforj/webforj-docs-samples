@@ -4,22 +4,20 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.dwcj.App;
+import org.dwcj.annotations.InlineStyleSheet;
 import org.dwcj.controls.panels.AppPanel;
 import org.dwcj.controls.listbox.ListBox;
 import org.dwcj.exceptions.DwcAppInitializeException;
 import org.dwcj.interfaces.TextAlignable;
 
-
+@InlineStyleSheet("context://css/listboxstyles/label_styles.css")
 public class ListboxLabel extends App{
 
     @Override
     public void run() throws DwcAppInitializeException { 
 
         AppPanel panel = new AppPanel();
-        panel.setStyle("display", "inline-grid");
-        panel.setStyle("grid-template-columns", "1fr");
-        panel.setStyle("padding", "10px");
-        panel.setStyle("gap", "50px");
+        panel.addClassName("appPanel");
         
         ListBox l1 = new ListBox();
 
@@ -31,12 +29,7 @@ public class ListboxLabel extends App{
 
         panel.add(l1);
 
-        l1.setItems(data);
-        l1.setTextAlignment(TextAlignable.Alignment.RIGHT);
-        l1.setAttribute("label", "Built-in Label for a list box!");
-        // l1.setMultipleSelection(true);
-        // l1.setAttribute("multi-selection", "true");
-        // l1.setAttribute("multi-selection-by-click", "true");
+        l1.setItems(data).setTextAlignment(TextAlignable.Alignment.RIGHT).setAttribute("label", "Built-in Label for a list box!");
 
 
     }

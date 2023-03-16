@@ -1,11 +1,17 @@
-.appPanel{
-    display: inline-grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding: 10px;
-    gap: 20px;
-    background: white;
+.BBjTopLevelWindow{
+    background-color: white !important;
 }
 
 bbj-button{
+    width: 160px;
     height: 75px !important;
+}
+
+.appPanel{
+    display: flex;
+    margin-top: 20px;
+    gap: 50px;
+    background: white;
+    width: 100%;
+    justify-content: center;
 }

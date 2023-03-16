@@ -6,7 +6,7 @@ import org.dwcj.controls.panels.AppPanel;
 import org.dwcj.controls.checkbox.CheckBox;
 import org.dwcj.exceptions.DwcAppInitializeException;
 
-@InlineStyleSheet(value = "css/checkboxstyles/expanse_styles.css", local = true)
+@InlineStyleSheet("context://css/checkboxstyles/expanse_styles.css")
 
 public class CheckboxExpanseDemo extends App{
 

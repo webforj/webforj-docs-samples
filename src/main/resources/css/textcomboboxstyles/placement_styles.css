@@ -1,0 +1,19 @@
+.appPanel{
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 50px;
+    height: 62%;
+    width: 100%;
+    background: white;
+}
+
+bbj-list-edit{
+    width: 200px;
+}
+
+.BBjTopLevelWindow{
+    background-color: white !important;
+}

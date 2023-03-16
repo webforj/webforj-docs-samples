@@ -1,13 +1,18 @@
+.BBjTopLevelWindow{
+    background-color: white !important;
+}
+
 .appPanel{
-    display: block;
-    padding: 10px;
+    display: flex;
+    margin-top: 20px;
+    gap: 50px;
     background: white;
+    width: 100%;
+    justify-content: center;
 }
 
 .disabledButtons{
     display: inline-grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 20px;
-    padding: 10px;
-
 }

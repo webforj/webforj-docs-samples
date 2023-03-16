@@ -1,0 +1,17 @@
+.appPanel{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 20px;
+    background: white;
+    margin-top: 20px;
+}
+
+bbj-progressbar{
+    width: 400px;
+}
+
+.BBjTopLevelWindow{
+    background-color: white !important;
+}
