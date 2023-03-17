@@ -2,17 +2,6 @@
     background-color: white !important;
 }
 
-/* .appPanel{
-    display: inline-grid;
-    grid-template-columns: 1fr 2fr;
-    padding: 10px 10px 10px 50px;
-    gap: 50px;
-    background: white;
-    width: 100%;
-    justify-items: center;
-    justify-content: center;
-} */
-
 .appPanel{
     display: flex;
     margin-top: 20px;
