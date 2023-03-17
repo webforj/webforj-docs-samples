@@ -5,45 +5,40 @@ import static java.util.Map.entry;
 import org.dwcj.App;
 import org.dwcj.annotations.InlineStyleSheet;
 import org.dwcj.controls.panels.AppPanel;
-import org.dwcj.exceptions.DwcAppInitializeException;
+import org.dwcj.exceptions.DwcException;
 import org.dwcj.controls.slider.Slider;
 import org.dwcj.controls.slider.Slider.Orientation;
 
 @InlineStyleSheet("context://css/sliderstyles/orientation_styles.css")
+public class SliderOrientationDemo extends App {
+  @Override
+  public void run() throws DwcException {
+    AppPanel panel = new AppPanel();
+    panel.addClassName("appPanel");
 
-public class SliderOrientationDemo extends App{
+    Map<Integer, String> mapMatch = Map.ofEntries(
+      entry(0, "0"),
+      entry(50, "50"),
+      entry(100, "100"));
 
-    @Override
-    public void run() throws DwcAppInitializeException { 
+    Slider sl1 = new Slider().setMaximum(100)
+      .setMinimum(0);
+    Slider sl2 = new Slider().setMaximum(100)
+      .setMinimum(0);
 
-        AppPanel panel = new AppPanel();
-        panel.addClassName("appPanel");
+    panel.add(sl1, sl2);
 
-        Map<Integer, String> mapMatch = Map.ofEntries(
-            entry(0, "0"),
-            entry(50, "50"),
-            entry(100, "100")
-        );
-        
-        
-        Slider sl1 = new Slider().setMaximum(100).setMinimum(0);        
-        Slider sl2 = new Slider().setMaximum(100).setMinimum(0);
-        
-        panel.add(sl1,sl2);
-        
-        sl1.setStyle("width", "400px")
-            .setPaintTicks(true)
-            .setMinorTickSpacing(10)
-            .setPaintLabels(true)
-            .setLabels(mapMatch);
-        
-        sl2.setOrientation(Orientation.VERTICAL)
-            .setStyle("padding-left","40px")
-            .setPaintTicks(true)
-            .setMinorTickSpacing(10)
-            .setPaintLabels(true)
-            .setLabels(mapMatch);
-    }
-    
+    sl1.setStyle("width", "400px")
+      .setPaintTicks(true)
+      .setMinorTickSpacing(10)
+      .setPaintLabels(true)
+      .setLabels(mapMatch);
+
+    sl2.setOrientation(Orientation.VERTICAL)
+      .setStyle("padding-left", "40px")
+      .setPaintTicks(true)
+      .setMinorTickSpacing(10)
+      .setPaintLabels(true)
+      .setLabels(mapMatch);
+  }
 }
-    

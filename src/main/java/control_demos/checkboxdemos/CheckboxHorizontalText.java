@@ -4,25 +4,19 @@ import org.dwcj.App;
 import org.dwcj.annotations.InlineStyleSheet;
 import org.dwcj.controls.panels.AppPanel;
 import org.dwcj.controls.checkbox.CheckBox;
-import org.dwcj.exceptions.DwcAppInitializeException;
+import org.dwcj.exceptions.DwcException;
 
 @InlineStyleSheet("context://css/checkboxstyles/text_styles.css")
+public class CheckboxHorizontalText extends App {
+  @Override
+  public void run() throws DwcException {
+    AppPanel panel = new AppPanel();
+    panel.addClassName("appPanel");
 
+    CheckBox cb1 = new CheckBox().setText("Right aligned (default)");
+    CheckBox cb2 = new CheckBox().setText("Left aligned")
+        .setHorizontalTextPosition(CheckBox.HorizontalTextPosition.LEFT);
 
-public class CheckboxHorizontalText extends App{
-
-    @Override
-    public void run() throws DwcAppInitializeException {
-
-
-        AppPanel panel = new AppPanel();
-        panel.addClassName("appPanel");
-
-        CheckBox cb1 = new CheckBox().setText("Right aligned (default)");
-        CheckBox cb2 = new CheckBox().setText("Left aligned").setHorizontalTextPosition(CheckBox.HorizontalTextPosition.LEFT);
-
-        panel.add(cb1,cb2);
-
-    }
-
+    panel.add(cb1, cb2);
+  }
 }

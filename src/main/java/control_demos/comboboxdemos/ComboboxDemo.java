@@ -17,8 +17,6 @@ public class ComboboxDemo extends App{
 
     @Override
     public void run() throws DwcAppInitializeException {
-
-
         AppPanel panel = new AppPanel();
         panel.setStyle("display", "inline-grid");
         panel.setStyle("grid-template-columns", "1fr 1fr");

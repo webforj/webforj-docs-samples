@@ -5,29 +5,28 @@ import org.dwcj.annotations.InlineStyleSheet;
 import org.dwcj.controls.panels.AppPanel;
 import org.dwcj.controls.button.Button;
 import org.dwcj.controls.button.Button.TextVerticalAlignment;
-import org.dwcj.exceptions.DwcAppInitializeException;
+import org.dwcj.exceptions.DwcException;
 
 @InlineStyleSheet("context://css/buttonstyles/alignment_styles.css")
+public class ButtonAlignment extends App {
+  @Override
+  public void run() throws DwcException {
+    AppPanel panel = new AppPanel();
+    panel.addClassName("appPanel");
 
-public class ButtonAlignment extends App{
-    
-    @Override
-    public void run() throws DwcAppInitializeException {
+    Button buttonTop = new Button("TOP ALIGNMENT");
+    Button buttonCenter = new Button("CENTER ALIGNMENT");
+    Button buttonBottom = new Button("BOTTOM ALIGNMENT");
 
+    panel.add(buttonTop, buttonCenter, buttonBottom);
 
-        AppPanel panel = new AppPanel();
-        panel.addClassName("appPanel");
-        
-        Button buttonTop = new Button("TOP ALIGNMENT");
-        Button buttonCenter = new Button("CENTER ALIGNMENT");
-        Button buttonBottom = new Button("BOTTOM ALIGNMENT");
+    buttonTop.setTheme(Button.Theme.DEFAULT)
+      .setVerticalAlignment(TextVerticalAlignment.TOP);
 
-        panel.add(buttonTop,buttonCenter,buttonBottom);
+    buttonCenter.setTheme(Button.Theme.DEFAULT)
+      .setVerticalAlignment(TextVerticalAlignment.CENTER);
 
-        buttonTop.setTheme(Button.Theme.DEFAULT).setVerticalAlignment(TextVerticalAlignment.TOP);
-        buttonCenter.setTheme(Button.Theme.DEFAULT).setVerticalAlignment(TextVerticalAlignment.CENTER);
-        buttonBottom.setTheme(Button.Theme.DEFAULT).setVerticalAlignment(TextVerticalAlignment.BOTTOM);
-    } 
-
-
+    buttonBottom.setTheme(Button.Theme.DEFAULT)
+      .setVerticalAlignment(TextVerticalAlignment.BOTTOM);
+  }
 }

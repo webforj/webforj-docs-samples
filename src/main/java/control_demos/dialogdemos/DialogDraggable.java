@@ -7,18 +7,18 @@ import org.dwcj.controls.panels.AppPanel;
 import org.dwcj.exceptions.DwcException;
 
 public class DialogDraggable extends App {
-    @Override
-    public void run() throws DwcException{
-        AppPanel p = new AppPanel();
-        Dialog test = new Dialog();
-        p.add(test);
-        
-        test.getHeader().add(new Label("Header"));
-        test.getContent().add(new Label("Content"));
-        test.getFooter().add(new Label("Footer"));
-        test.show();
+  @Override
+  public void run() throws DwcException {
+    AppPanel p = new AppPanel();
+    Dialog dialog = new Dialog();
+    p.add(dialog);
 
-        test.setSnapToEdge(true);
-        test.setSnapThreshold(100);
-    }
+    dialog.getHeader().add(new Label("Header"));
+    dialog.getContent().add(new Label("This dialog will snap to the sides when dragged within 100px of the edge of the display"));
+    dialog.getFooter().add(new Label("Footer"));
+    dialog.show();
+
+    dialog.setSnapToEdge(true);
+    dialog.setSnapThreshold(100);
+  }
 }

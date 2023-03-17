@@ -8,17 +8,17 @@ import org.dwcj.controls.textbox.TextBox;
 import org.dwcj.exceptions.DwcException;
 
 public class DialogAutoFocus extends App {
-    @Override
-    public void run() throws DwcException{
-        AppPanel p = new AppPanel();
-        Dialog test = new Dialog();
-        p.add(test);
-        
-        test.getHeader().add(new Label("Header"));
-        test.getContent().add(new TextBox().setAttribute("label", "This Box is Auto Focused"));
-        test.getFooter().add(new Label("Footer"));
-        test.show();
+  @Override
+  public void run() throws DwcException {
+    AppPanel p = new AppPanel();
+    Dialog dialog = new Dialog();
+    p.add(dialog);
 
-        test.setAutoFocus(true);
-    }
+    dialog.getHeader().add(new Label("Header"));
+    dialog.getContent().add(new TextBox().setAttribute("label", "This Box is Auto Focused"));
+    dialog.getFooter().add(new Label("Footer"));
+    
+    dialog.show();
+    dialog.setAutoFocus(true);
+  }
 }
