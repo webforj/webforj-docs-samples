@@ -14,9 +14,8 @@ public class DialogAutoFocus extends App {
     Dialog dialog = new Dialog();
     p.add(dialog);
 
-    dialog.getHeader().add(new Label("Header"));
+    dialog.getHeader().add(new Label("Auto Focus"));
     dialog.getContent().add(new TextBox().setAttribute("label", "This Box is Auto Focused"));
-    dialog.getFooter().add(new Label("Footer"));
     
     dialog.show();
     dialog.setAutoFocus(true);

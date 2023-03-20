@@ -24,11 +24,10 @@ public class DialogAlignments extends App {
     alignMid = new Button("Align to Center").onClick(this::midAlign);
     alignBtm = new Button("Align to Bottom").onClick(this::btmAlign);
 
-    dialog.getHeader().add(new Label("Header"));
+    dialog.getHeader().add(new Label("Alignments"));
     dialog.getContent().add(alignTop, alignMid, alignBtm)
       .setStyle("display","flex")
       .setStyle("justify-content", "space-around");
-    dialog.getFooter().add(new Label("Footer"));
 
     dialog.show();
     dialog.setCloseable(false);
