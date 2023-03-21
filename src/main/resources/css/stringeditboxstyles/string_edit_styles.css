@@ -5,7 +5,7 @@
 .appPanel{
     display: flex;
     margin-top: 20px;
-    gap: 50px;
+    gap: 20px;
     background: white;
     width: 100%;
     justify-content: center;

@@ -18,23 +18,23 @@ public class TextAreaExpanse extends App {
 
     TextArea t1 = new TextArea().setExpanse(TextArea.Expanse.XSMALL)
       .setAttribute("placeholder", "XSMALL")
-      .setStyle("padding", "10px");
+      .setStyle("padding-right", "10px");
 
     TextArea t2 = new TextArea().setExpanse(TextArea.Expanse.SMALL)
       .setAttribute("placeholder", "SMALL")
-      .setStyle("padding", "10px");
+      .setStyle("padding-right", "10px");
 
     TextArea t3 = new TextArea().setExpanse(TextArea.Expanse.MEDIUM)
       .setAttribute("placeholder", "MEDIUM")
-      .setStyle("padding", "10px");
+      .setStyle("padding-right", "10px");
 
     TextArea t4 = new TextArea().setExpanse(TextArea.Expanse.LARGE)
       .setAttribute("placeholder", "LARGE")
-      .setStyle("padding", "10px");
+      .setStyle("padding-right", "10px");
       
     TextArea t5 = new TextArea().setExpanse(TextArea.Expanse.XLARGE)
       .setAttribute("placeholder", "XLARGE")
-      .setStyle("padding", "10px");
+      .setStyle("padding-right", "10px");
 
     panel.add(wrapper);
     wrapper.add(t1, t2, t3, t4, t5);

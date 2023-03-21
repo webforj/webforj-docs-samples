@@ -15,11 +15,12 @@
 
 .appPanel{
     display: flex;
+    flex-direction: column;
     margin-top: 20px;
-    gap: 50px;
+    gap: 10px;
     background: white;
     width: 100%;
-    justify-content: center;
+    align-items: center;
 }
 
 .progress__bar{
