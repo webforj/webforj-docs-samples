@@ -1,18 +1,18 @@
 package control_demos.sliderdemos;
 
 import org.dwcj.App;
-import org.dwcj.annotations.InlineStyleSheet;
-import org.dwcj.controls.label.Label;
-import org.dwcj.controls.panels.AppPanel;
-import org.dwcj.exceptions.DwcException;
-import org.dwcj.controls.slider.Slider;
+import org.dwcj.annotation.InlineStyleSheet;
+import org.dwcj.component.label.Label;
+import org.dwcj.component.window.Frame;
+import org.dwcj.exceptions.DwcjException;
+import org.dwcj.component.slider.Slider;
 
 @InlineStyleSheet("context://css/sliderstyles/theme_styles.css")
 public class SliderThemesDemo extends App {
   @Override
-  public void run() throws DwcException {
-    AppPanel panel = new AppPanel();
-    panel.addClassName("appPanel");
+  public void run() throws DwcjException {
+    Frame panel = new Frame();
+    panel.addClassName("Frame");
 
     Slider sl1 = new Slider().setMaximum(100)
       .setMinimum(0)

@@ -1,4 +1,4 @@
-.appPanel{
+.Frame{
     display: inline-grid;
     grid-template-columns: 125px 125px 125px 125px 125px 125px 125px;
     padding: 10px;

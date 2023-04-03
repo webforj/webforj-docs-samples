@@ -1,19 +1,19 @@
 package control_demos.textboxdemos;
 
 import org.dwcj.App;
-import org.dwcj.annotations.InlineStyleSheet;
-import org.dwcj.controls.panels.AppPanel;
-import org.dwcj.controls.textbox.TextBox;
-import org.dwcj.exceptions.DwcException;
+import org.dwcj.annotation.InlineStyleSheet;
+import org.dwcj.component.window.Frame;
+import org.dwcj.component.textfield.TextField;
+import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/textboxstyles/text_box_styles.css")
 public class TextBoxPlaceholder extends App {
   @Override
-  public void run() throws DwcException {
-    AppPanel panel = new AppPanel();
-    panel.addClassName("appPanel");
+  public void run() throws DwcjException {
+    Frame panel = new Frame();
+    panel.addClassName("Frame");
 
-    TextBox t1 = new TextBox().setAttribute("Placeholder", "Example Placeholder");
+    TextField t1 = new TextField().setAttribute("Placeholder", "Example Placeholder");
     panel.add(t1);
   }
 }

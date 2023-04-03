@@ -1,24 +1,24 @@
 package control_demos.stringeditdemos;
 
 import org.dwcj.App;
-import org.dwcj.annotations.InlineStyleSheet;
-import org.dwcj.controls.panels.AppPanel;
-import org.dwcj.exceptions.DwcAppInitializeException;
+import org.dwcj.annotation.InlineStyleSheet;
+import org.dwcj.component.textfield.TextField;
+import org.dwcj.component.window.Frame;
+import org.dwcj.exceptions.DwcjAppInitializeException;
 
-import org.dwcj.controls.stringeditbox.StringEditBox;
 
-@InlineStyleSheet("context://css/stringeditboxstyles/string_edit_styles.css")
+
+@InlineStyleSheet("context://css/TextFieldstyles/string_edit_styles.css")
 public class StringEditDemo extends App{
 
     @Override
-    public void run() throws DwcAppInitializeException { 
+    public void run() throws DwcjAppInitializeException {
 
-        AppPanel panel = new AppPanel();
-        panel.addClassName("appPanel");
+        Frame panel = new Frame();
+        panel.addClassName("Frame");
 
-        StringEditBox s1 = new StringEditBox();
-        panel.add(s1);    
+        TextField s1 = new TextField();
+        panel.add(s1);
     }
-    
+
 }
-    

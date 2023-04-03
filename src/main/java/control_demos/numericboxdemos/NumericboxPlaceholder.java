@@ -1,24 +1,24 @@
 package control_demos.numericboxdemos;
 
 import org.dwcj.App;
-import org.dwcj.annotations.InlineStyleSheet;
-import org.dwcj.controls.panels.AppPanel;
-import org.dwcj.exceptions.DwcException;
-import org.dwcj.controls.numericbox.NumericBox;
+import org.dwcj.annotation.InlineStyleSheet;
+import org.dwcj.component.window.Frame;
+import org.dwcj.exceptions.DwcjException;
+import org.dwcj.component.numberfield.NumberField;
 
 @InlineStyleSheet("context://css/numericboxstyles/placeholder_styles.css")
 public class NumericboxPlaceholder extends App {
 
-  NumericBox nb;
+  NumberField nb;
 
   @Override
-  public void run() throws DwcException {
-    AppPanel panel = new AppPanel();
-    panel.addClassName("appPanel");
+  public void run() throws DwcjException {
+    Frame panel = new Frame();
+    panel.addClassName("Frame");
 
-    nb = new NumericBox();
+    nb = new NumberField();
     panel.add(nb);
-    
+
     nb.setAttribute("placeholder", "Example placeholder");
   }
 }

@@ -3,17 +3,17 @@ package control_demos.textcomboboxdemos;
 import java.util.HashMap;
 import java.util.Map;
 import org.dwcj.App;
-import org.dwcj.annotations.InlineStyleSheet;
-import org.dwcj.controls.panels.AppPanel;
-import org.dwcj.controls.textcombobox.TextComboBox;
-import org.dwcj.exceptions.DwcException;
+import org.dwcj.annotation.InlineStyleSheet;
+import org.dwcj.component.window.Frame;
+import org.dwcj.component.combobox.ComboBox;
+import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/textcomboboxstyles/placement_styles.css")
 public class TextComboBoxPlacement extends App {
   @Override
-  public void run() throws DwcException {
-    AppPanel panel = new AppPanel();
-    panel.addClassName("appPanel");
+  public void run() throws DwcjException {
+    Frame panel = new Frame();
+    panel.addClassName("Frame");
 
     Map<Object, String> data = new HashMap<>();
     data.put("Random Data1", "Random Data");
@@ -21,21 +21,21 @@ public class TextComboBoxPlacement extends App {
     data.put("Random Data3", "More Data");
     data.put("Random Data4", "Test Data");
 
-    TextComboBox tcb1 = new TextComboBox().setAttribute("placement", "left")
+    ComboBox tcb1 = new ComboBox().setAttribute("placement", "left")
       .setAttribute("placeholder", "Left Menu Placement")
       .setStyle("grid-column", "1")
       .setStyle("justify-self", "end");
 
-    TextComboBox tcb2 = new TextComboBox().setAttribute("placement", "right")
+    ComboBox tcb2 = new ComboBox().setAttribute("placement", "right")
       .setAttribute("placeholder", "Right Menu Placement")
       .setStyle("grid-column", "2");
 
-    TextComboBox tcb3 = new TextComboBox().setAttribute("placement", "top")
+    ComboBox tcb3 = new ComboBox().setAttribute("placement", "top")
       .setAttribute("placeholder", "Top Menu Placement")
       .setStyle("grid-column", "1")
       .setStyle("justify-self", "end");
 
-    TextComboBox tcb4 = new TextComboBox().setAttribute("placement", "bottom")
+    ComboBox tcb4 = new ComboBox().setAttribute("placement", "bottom")
       .setAttribute("placeholder", "Bottom Menu Placement")
       .setStyle("grid-column", "2");
 

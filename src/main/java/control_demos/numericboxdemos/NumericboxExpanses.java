@@ -1,41 +1,41 @@
 package control_demos.numericboxdemos;
 
 import org.dwcj.App;
-import org.dwcj.annotations.InlineStyleSheet;
-import org.dwcj.controls.panels.AppPanel;
-import org.dwcj.controls.panels.Div;
-import org.dwcj.exceptions.DwcException;
-import org.dwcj.controls.numericbox.NumericBox;
+import org.dwcj.annotation.InlineStyleSheet;
+import org.dwcj.component.window.Frame;
+import org.dwcj.component.window.Panel;
+import org.dwcj.exceptions.DwcjException;
+import org.dwcj.component.numberfield.NumberField;
 
 @InlineStyleSheet("context://css/numericboxstyles/expanse_styles.css")
 public class NumericboxExpanses extends App {
   @Override
-  public void run() throws DwcException {
+  public void run() throws DwcjException {
 
-    AppPanel panel = new AppPanel();
-    Div container = new Div();
+    Frame panel = new Frame();
+    Panel container = new Panel();
 
     panel.add(container);
-    panel.addClassName("appPanel");
+    panel.addClassName("Frame");
     container.addClassName("container");
 
-    NumericBox nb1 = new NumericBox().setExpanse(NumericBox.Expanse.XSMALL)
+    NumberField nb1 = new NumberField().setExpanse(NumberField.Expanse.XSMALL)
       .setAttribute("label", "Extra Small")
       .setStyle("grid-column", "1");
 
-    NumericBox nb2 = new NumericBox().setExpanse(NumericBox.Expanse.SMALL)
+    NumberField nb2 = new NumberField().setExpanse(NumberField.Expanse.SMALL)
       .setAttribute("label", "Small")
       .setStyle("grid-column", "2");
 
-    NumericBox nb3 = new NumericBox().setExpanse(NumericBox.Expanse.MEDIUM)
+    NumberField nb3 = new NumberField().setExpanse(NumberField.Expanse.MEDIUM)
       .setAttribute("label", "Medium")
       .setStyle("grid-column", "3");
-      
-    NumericBox nb4 = new NumericBox().setExpanse(NumericBox.Expanse.LARGE)
+
+    NumberField nb4 = new NumberField().setExpanse(NumberField.Expanse.LARGE)
       .setAttribute("label", "Large")
       .setStyle("grid-column", "4");
 
-    NumericBox nb5 = new NumericBox().setExpanse(NumericBox.Expanse.XLARGE)
+    NumberField nb5 = new NumberField().setExpanse(NumberField.Expanse.XLARGE)
       .setAttribute("label", "Extra Large")
       .setStyle("grid-column", "5");
 

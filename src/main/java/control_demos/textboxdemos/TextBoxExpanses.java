@@ -1,31 +1,31 @@
 package control_demos.textboxdemos;
 
 import org.dwcj.App;
-import org.dwcj.annotations.InlineStyleSheet;
-import org.dwcj.controls.panels.AppPanel;
-import org.dwcj.controls.textbox.TextBox;
-import org.dwcj.exceptions.DwcException;
+import org.dwcj.annotation.InlineStyleSheet;
+import org.dwcj.component.window.Frame;
+import org.dwcj.component.textfield.TextField;
+import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/textboxstyles/text_box_styles.css")
 public class TextBoxExpanses extends App {
   @Override
-  public void run() throws DwcException {
-    AppPanel panel = new AppPanel();
-    panel.addClassName("appPanel");
+  public void run() throws DwcjException {
+    Frame panel = new Frame();
+    panel.addClassName("Frame");
 
-    TextBox t1 = new TextBox().setExpanse(TextBox.Expanse.XSMALL)
+    TextField t1 = new TextField().setExpanse(TextField.Expanse.XSMALL)
       .setAttribute("placeholder", "XSMALL");
 
-    TextBox t2 = new TextBox().setExpanse(TextBox.Expanse.SMALL)
+    TextField t2 = new TextField().setExpanse(TextField.Expanse.SMALL)
       .setAttribute("placeholder", "SMALL");
 
-    TextBox t3 = new TextBox().setExpanse(TextBox.Expanse.MEDIUM)
+    TextField t3 = new TextField().setExpanse(TextField.Expanse.MEDIUM)
       .setAttribute("placeholder", "MEDIUM");
 
-    TextBox t4 = new TextBox().setExpanse(TextBox.Expanse.LARGE)
+    TextField t4 = new TextField().setExpanse(TextField.Expanse.LARGE)
       .setAttribute("placeholder", "LARGE");
-      
-    TextBox t5 = new TextBox().setExpanse(TextBox.Expanse.XLARGE)
+
+    TextField t5 = new TextField().setExpanse(TextField.Expanse.XLARGE)
       .setAttribute("placeholder", "XLARGE");
 
     panel.add(t1, t2, t3, t4, t5);

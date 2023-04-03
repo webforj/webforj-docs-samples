@@ -1,16 +1,16 @@
 package control_demos.checkboxdemos;
 
 import org.dwcj.App;
-import org.dwcj.controls.panels.AppPanel;
-import org.dwcj.controls.checkbox.CheckBox;
-import org.dwcj.controls.checkbox.events.CheckBoxChangeEvent;
-import org.dwcj.exceptions.DwcException;
+import org.dwcj.component.window.Frame;
+import org.dwcj.component.checkbox.CheckBox;
+import org.dwcj.component.checkbox.event.CheckBoxChangeEvent;
+import org.dwcj.exceptions.DwcjException;
 
 public class CheckboxDemo extends App {
   @Override
-  public void run() throws DwcException {
+  public void run() throws DwcjException {
 
-    AppPanel panel = new AppPanel();
+    Frame panel = new Frame();
     panel.setStyle("display", "inline-grid");
     panel.setStyle("grid-template-columns", "1fr");
     panel.setStyle("padding", "10px");

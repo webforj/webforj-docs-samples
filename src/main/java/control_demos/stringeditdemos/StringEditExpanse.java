@@ -1,31 +1,31 @@
 package control_demos.stringeditdemos;
 
 import org.dwcj.App;
-import org.dwcj.annotations.InlineStyleSheet;
-import org.dwcj.controls.panels.AppPanel;
-import org.dwcj.exceptions.DwcException;
-import org.dwcj.controls.stringeditbox.StringEditBox;
+import org.dwcj.annotation.InlineStyleSheet;
+import org.dwcj.component.window.Frame;
+import org.dwcj.exceptions.DwcjException;
+import org.dwcj.component.textfield.TextField;
 
-@InlineStyleSheet("context://css/stringeditboxstyles/string_edit_styles.css")
+@InlineStyleSheet("context://css/TextFieldstyles/string_edit_styles.css")
 public class StringEditExpanse extends App {
   @Override
-  public void run() throws DwcException {
-    AppPanel panel = new AppPanel();
-    panel.addClassName("appPanel");
+  public void run() throws DwcjException {
+    Frame panel = new Frame();
+    panel.addClassName("Frame");
 
-    StringEditBox s1 = new StringEditBox().setExpanse(StringEditBox.Expanse.XSMALL)
+    TextField s1 = new TextField().setExpanse(TextField.Expanse.XSMALL)
       .setAttribute("placeholder", "XSMALL");
 
-    StringEditBox s2 = new StringEditBox().setExpanse(StringEditBox.Expanse.SMALL)
+    TextField s2 = new TextField().setExpanse(TextField.Expanse.SMALL)
       .setAttribute("placeholder", "SMALL");
 
-    StringEditBox s3 = new StringEditBox().setExpanse(StringEditBox.Expanse.MEDIUM)
+    TextField s3 = new TextField().setExpanse(TextField.Expanse.MEDIUM)
       .setAttribute("placeholder", "MEDIUM");
 
-    StringEditBox s4 = new StringEditBox().setExpanse(StringEditBox.Expanse.LARGE)
+    TextField s4 = new TextField().setExpanse(TextField.Expanse.LARGE)
       .setAttribute("placeholder", "LARGE");
 
-    StringEditBox s5 = new StringEditBox().setExpanse(StringEditBox.Expanse.XLARGE)
+    TextField s5 = new TextField().setExpanse(TextField.Expanse.XLARGE)
       .setAttribute("placeholder", "XLARGE");
 
     panel.add(s1, s2, s3, s4, s5);

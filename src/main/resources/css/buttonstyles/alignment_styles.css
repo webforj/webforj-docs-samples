@@ -7,7 +7,7 @@ bbj-button{
     height: 75px !important;
 }
 
-.appPanel{
+.Frame{
     display: flex;
     margin-top: 20px;
     gap: 50px;

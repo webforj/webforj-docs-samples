@@ -1,19 +1,19 @@
 package control_demos.buttondemos;
 
 import org.dwcj.App;
-import org.dwcj.annotations.InlineStyleSheet;
-import org.dwcj.controls.panels.AppPanel;
-import org.dwcj.controls.panels.Div;
-import org.dwcj.controls.button.Button;
-import org.dwcj.exceptions.DwcException;
+import org.dwcj.annotation.InlineStyleSheet;
+import org.dwcj.component.window.Frame;
+import org.dwcj.component.window.Panel;
+import org.dwcj.component.button.Button;
+import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/buttonstyles/expanse_styles.css")
 public class ButtonExpanses extends App {
   @Override
-  public void run() throws DwcException {
-    AppPanel panel = new AppPanel();
-    Div container = new Div().addClassName("container");
-    panel.addClassName("appPanel");
+  public void run() throws DwcjException {
+    Frame panel = new Frame();
+    Panel container = new Panel().addClassName("container");
+    panel.addClassName("Frame");
 
     Button be1 = new Button("XSMALL").setExpanse(Button.Expanse.XSMALL);
     Button be2 = new Button("SMALL").setExpanse(Button.Expanse.SMALL);

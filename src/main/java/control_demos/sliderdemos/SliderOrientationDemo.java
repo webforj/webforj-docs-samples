@@ -3,18 +3,18 @@ package control_demos.sliderdemos;
 import java.util.Map;
 import static java.util.Map.entry;
 import org.dwcj.App;
-import org.dwcj.annotations.InlineStyleSheet;
-import org.dwcj.controls.panels.AppPanel;
-import org.dwcj.exceptions.DwcException;
-import org.dwcj.controls.slider.Slider;
-import org.dwcj.controls.slider.Slider.Orientation;
+import org.dwcj.annotation.InlineStyleSheet;
+import org.dwcj.component.window.Frame;
+import org.dwcj.exceptions.DwcjException;
+import org.dwcj.component.slider.Slider;
+import org.dwcj.component.slider.Slider.Orientation;
 
 @InlineStyleSheet("context://css/sliderstyles/orientation_styles.css")
 public class SliderOrientationDemo extends App {
   @Override
-  public void run() throws DwcException {
-    AppPanel panel = new AppPanel();
-    panel.addClassName("appPanel");
+  public void run() throws DwcjException {
+    Frame panel = new Frame();
+    panel.addClassName("Frame");
 
     Map<Integer, String> mapMatch = Map.ofEntries(
       entry(0, "0"),

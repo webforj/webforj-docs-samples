@@ -1,15 +1,15 @@
 package control_demos.dialogdemos;
 
 import org.dwcj.App;
-import org.dwcj.controls.dialog.Dialog;
-import org.dwcj.controls.label.Label;
-import org.dwcj.controls.panels.AppPanel;
-import org.dwcj.exceptions.DwcException;
+import org.dwcj.component.dialog.Dialog;
+import org.dwcj.component.label.Label;
+import org.dwcj.component.window.Frame;
+import org.dwcj.exceptions.DwcjException;
 
 public class DialogSections extends App {
   @Override
-  public void run() throws DwcException {
-    AppPanel p = new AppPanel();
+  public void run() throws DwcjException {
+    Frame p = new Frame();
     Dialog dialog = new Dialog();
     p.add(dialog);
 
