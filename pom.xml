@@ -6,24 +6,18 @@
 
     <groupId>org.dwcj.samples</groupId>
     <artifactId>control_samples</artifactId>
-    <version>0.16.0-SNAPSHOT</version>
+    <version>0.16.0</version>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-
-        <!-- utilize this line or create dwcj-lib in your settings.xml profile -->
-        <!--
-        <dwcj-lib>/bbx/plugins/DWCJ/lib/dwcj-0.009.jar</dwcj-lib>
-        -->
-
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.dwcj</groupId>
             <artifactId>dwcj-engine</artifactId>
-            <version>0.16.0-SNAPSHOT</version>
+            <version>0.16.0</version>
         </dependency>
     </dependencies>
 
