@@ -1,17 +1,17 @@
 package control_demos.checkboxdemos;
 
 import org.dwcj.App;
-import org.dwcj.annotations.InlineStyleSheet;
-import org.dwcj.controls.panels.AppPanel;
-import org.dwcj.controls.checkbox.CheckBox;
-import org.dwcj.exceptions.DwcException;
+import org.dwcj.annotation.InlineStyleSheet;
+import org.dwcj.component.window.Frame;
+import org.dwcj.component.checkbox.CheckBox;
+import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/checkboxstyles/text_styles.css")
 public class CheckboxHorizontalText extends App {
   @Override
-  public void run() throws DwcException {
-    AppPanel panel = new AppPanel();
-    panel.addClassName("appPanel");
+  public void run() throws DwcjException {
+    Frame panel = new Frame();
+    panel.addClassName("Frame");
 
     CheckBox cb1 = new CheckBox().setText("Right aligned (default)");
     CheckBox cb2 = new CheckBox().setText("Left aligned")

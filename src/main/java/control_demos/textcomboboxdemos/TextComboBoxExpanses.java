@@ -3,17 +3,17 @@ package control_demos.textcomboboxdemos;
 import java.util.HashMap;
 import java.util.Map;
 import org.dwcj.App;
-import org.dwcj.annotations.InlineStyleSheet;
-import org.dwcj.controls.panels.AppPanel;
-import org.dwcj.controls.textcombobox.TextComboBox;
-import org.dwcj.exceptions.DwcException;
+import org.dwcj.annotation.InlineStyleSheet;
+import org.dwcj.component.window.Frame;
+import org.dwcj.component.combobox.ComboBox;
+import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/textcomboboxstyles/expanse_styles.css")
 public class TextComboBoxExpanses extends App {
   @Override
-  public void run() throws DwcException {
-    AppPanel panel = new AppPanel();
-    panel.addClassName("appPanel");
+  public void run() throws DwcjException {
+    Frame panel = new Frame();
+    panel.addClassName("Frame");
 
     Map<Object, String> data = new HashMap<>();
     data.put("Random Data1", "Random Data");
@@ -21,19 +21,19 @@ public class TextComboBoxExpanses extends App {
     data.put("Random Data3", "More Data");
     data.put("Random Data4", "Test Data");
 
-    TextComboBox tcb1 = new TextComboBox().setExpanse(TextComboBox.Expanse.XSMALL)
+    ComboBox tcb1 = new ComboBox().setExpanse(ComboBox.Expanse.XSMALL)
       .setAttribute("placeholder", "XSMALL");
 
-    TextComboBox tcb2 = new TextComboBox().setExpanse(TextComboBox.Expanse.SMALL)
+    ComboBox tcb2 = new ComboBox().setExpanse(ComboBox.Expanse.SMALL)
       .setAttribute("placeholder", "SMALL");
 
-    TextComboBox tcb3 = new TextComboBox().setExpanse(TextComboBox.Expanse.MEDIUM)
+    ComboBox tcb3 = new ComboBox().setExpanse(ComboBox.Expanse.MEDIUM)
       .setAttribute("placeholder", "MEDIUM");
 
-    TextComboBox tcb4 = new TextComboBox().setExpanse(TextComboBox.Expanse.LARGE)
+    ComboBox tcb4 = new ComboBox().setExpanse(ComboBox.Expanse.LARGE)
       .setAttribute("placeholder", "LARGE");
 
-    TextComboBox tcb5 = new TextComboBox().setExpanse(TextComboBox.Expanse.XLARGE)
+    ComboBox tcb5 = new ComboBox().setExpanse(ComboBox.Expanse.XLARGE)
       .setAttribute("placeholder", "XLARGE");
 
     panel.add(tcb1, tcb2, tcb3, tcb4, tcb5);

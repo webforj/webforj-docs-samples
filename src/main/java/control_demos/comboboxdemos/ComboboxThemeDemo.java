@@ -3,17 +3,17 @@ package control_demos.comboboxdemos;
 import java.util.HashMap;
 import java.util.Map;
 import org.dwcj.App;
-import org.dwcj.controls.panels.AppPanel;
-import org.dwcj.controls.combobox.ComboBox;
-import org.dwcj.exceptions.DwcException;
-import org.dwcj.annotations.InlineStyleSheet;
+import org.dwcj.component.window.Frame;
+import org.dwcj.component.combobox.ComboBox;
+import org.dwcj.exceptions.DwcjException;
+import org.dwcj.annotation.InlineStyleSheet;
 
 @InlineStyleSheet("context://css/comboboxstyles/theme_styles.css")
 public class ComboboxThemeDemo extends App {
   @Override
-  public void run() throws DwcException {
-    AppPanel panel = new AppPanel();
-    panel.addClassName("appPanel");
+  public void run() throws DwcjException {
+    Frame panel = new Frame();
+    panel.addClassName("Frame");
 
     Map<Object, String> data = new HashMap<>();
     data.put("Random Data1", "Random Data");

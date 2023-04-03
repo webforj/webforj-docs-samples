@@ -1,4 +1,4 @@
-/* .appPanel{
+/* .Frame{
 
     display: inline-grid;
     grid-template-columns: 1fr;
@@ -10,7 +10,7 @@
     background-color: white !important;
 }
 
-.appPanel{
+.Frame{
     display: flex;
     margin-top: 20px;
     background: white;

@@ -4,19 +4,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.dwcj.App;
-import org.dwcj.annotations.InlineStyleSheet;
-import org.dwcj.controls.panels.AppPanel;
-import org.dwcj.controls.listbox.ListBox;
-import org.dwcj.exceptions.DwcAppInitializeException;
+import org.dwcj.annotation.InlineStyleSheet;
+import org.dwcj.component.window.Frame;
+import org.dwcj.component.listbox.ListBox;
+import org.dwcj.exceptions.DwcjAppInitializeException;
 
 @InlineStyleSheet("context://css/listboxstyles/listbox_demo.css")
 public class ListboxDemo extends App{
 
     @Override
-    public void run() throws DwcAppInitializeException { 
+    public void run() throws DwcjAppInitializeException {
 
-        AppPanel panel = new AppPanel();        
-        panel.addClassName("appPanel");
+        Frame panel = new Frame();
+        panel.addClassName("Frame");
         ListBox l1 = new ListBox();
 
         Map<Object, String> data = new HashMap<>();
@@ -33,5 +33,5 @@ public class ListboxDemo extends App{
 
 
     }
-    
+
 }

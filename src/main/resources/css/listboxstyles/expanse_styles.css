@@ -3,7 +3,7 @@
 }
 
 
-.appPanel{
+.Frame{
     display: flex;
     /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr; */
     padding: 10px;

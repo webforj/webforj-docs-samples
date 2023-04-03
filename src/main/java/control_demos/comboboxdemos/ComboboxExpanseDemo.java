@@ -3,19 +3,19 @@ package control_demos.comboboxdemos;
 import java.util.HashMap;
 import java.util.Map;
 import org.dwcj.App;
-import org.dwcj.annotations.InlineStyleSheet;
-import org.dwcj.controls.panels.AppPanel;
-import org.dwcj.controls.panels.Div;
-import org.dwcj.controls.combobox.ComboBox;
-import org.dwcj.exceptions.DwcException;
+import org.dwcj.annotation.InlineStyleSheet;
+import org.dwcj.component.window.Frame;
+import org.dwcj.component.window.Panel;
+import org.dwcj.component.combobox.ComboBox;
+import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/comboboxstyles/expanse_styles.css")
 public class ComboboxExpanseDemo extends App {
   @Override
-  public void run() throws DwcException {
-    AppPanel panel = new AppPanel();
-    panel.addClassName("appPanel");
-    Div container = new Div().addClassName("container");
+  public void run() throws DwcjException {
+    Frame panel = new Frame();
+    panel.addClassName("Frame");
+    Panel container = new Panel().addClassName("container");
     panel.add(container);
 
     ComboBox cb1 = new ComboBox().setExpanse(ComboBox.Expanse.XSMALL)

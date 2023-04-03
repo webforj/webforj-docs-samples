@@ -3,17 +3,17 @@ package control_demos.listboxdemos;
 import java.util.HashMap;
 import java.util.Map;
 import org.dwcj.App;
-import org.dwcj.annotations.InlineStyleSheet;
-import org.dwcj.controls.panels.AppPanel;
-import org.dwcj.controls.listbox.ListBox;
-import org.dwcj.exceptions.DwcException;
+import org.dwcj.annotation.InlineStyleSheet;
+import org.dwcj.component.window.Frame;
+import org.dwcj.component.listbox.ListBox;
+import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/listboxstyles/expanse_styles.css")
 public class ListboxExpanses extends App {
   @Override
-  public void run() throws DwcException {
-    AppPanel panel = new AppPanel();
-    panel.addClassName("appPanel");
+  public void run() throws DwcjException {
+    Frame panel = new Frame();
+    panel.addClassName("Frame");
 
     ListBox l1 = new ListBox().setExpanse(ListBox.Expanse.XSMALL);
     ListBox l2 = new ListBox().setExpanse(ListBox.Expanse.SMALL);

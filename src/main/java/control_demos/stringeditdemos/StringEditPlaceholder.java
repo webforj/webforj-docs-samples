@@ -1,20 +1,20 @@
 package control_demos.stringeditdemos;
 
 import org.dwcj.App;
-import org.dwcj.annotations.InlineStyleSheet;
-import org.dwcj.controls.panels.AppPanel;
-import org.dwcj.exceptions.DwcException;
-import org.dwcj.controls.stringeditbox.StringEditBox;
+import org.dwcj.annotation.InlineStyleSheet;
+import org.dwcj.component.textfield.TextField;
+import org.dwcj.component.window.Frame;
+import org.dwcj.exceptions.DwcjException;
 
-@InlineStyleSheet("context://css/stringeditboxstyles/string_edit_styles.css")
+@InlineStyleSheet("context://css/TextFieldstyles/string_edit_styles.css")
 public class StringEditPlaceholder extends App {
   @Override
-  public void run() throws DwcException {
-    AppPanel panel = new AppPanel();
-    panel.addClassName("appPanel");
+  public void run() throws DwcjException {
+    Frame panel = new Frame();
+    panel.addClassName("Frame");
 
     panel.add(
-      new StringEditBox().setAttribute("placeholder", "Example Placeholder")
-        .setExpanse(StringEditBox.Expanse.LARGE));
+      new TextField().setAttribute("placeholder", "Example Placeholder")
+        .setExpanse(TextField.Expanse.LARGE));
   }
 }

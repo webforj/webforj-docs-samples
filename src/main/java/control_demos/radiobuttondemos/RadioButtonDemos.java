@@ -1,22 +1,22 @@
 package control_demos.radiobuttondemos;
 
 import org.dwcj.App;
-import org.dwcj.controls.panels.AppPanel;
-import org.dwcj.exceptions.DwcAppInitializeException;
+import org.dwcj.component.window.Frame;
+import org.dwcj.exceptions.DwcjAppInitializeException;
 
-import org.dwcj.controls.radiobutton.RadioButton;
+import org.dwcj.component.radiobutton.RadioButton;
 
 public class RadioButtonDemos extends App{
 
     @Override
-    public void run() throws DwcAppInitializeException { 
+    public void run() throws DwcjAppInitializeException {
 
-        AppPanel panel = new AppPanel();
+        Frame panel = new Frame();
         panel.setStyle("display", "inline-grid");
         panel.setStyle("grid-template-columns", "1fr");
         panel.setStyle("padding", "10px");
         panel.setStyle("gap", "50px");
-        
+
 
         RadioButton rb1 = new RadioButton();
         RadioButton rb2 = new RadioButton();
@@ -26,9 +26,8 @@ public class RadioButtonDemos extends App{
 
         panel.add(rb1,rb2,rb3,rb4,rb5);
 
-        
+
 
     }
-    
+
 }
-    

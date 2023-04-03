@@ -1,17 +1,17 @@
 package control_demos.progressbardemos;
 
 import org.dwcj.App;
-import org.dwcj.annotations.InlineStyleSheet;
-import org.dwcj.controls.panels.AppPanel;
-import org.dwcj.exceptions.DwcException;
-import org.dwcj.controls.progressbar.ProgressBar;
+import org.dwcj.annotation.InlineStyleSheet;
+import org.dwcj.component.window.Frame;
+import org.dwcj.exceptions.DwcjException;
+import org.dwcj.component.progressbar.ProgressBar;
 
 @InlineStyleSheet("context://css/progressbarstyles/theme_styles.css")
 public class ProgressbarThemes extends App {
   @Override
-  public void run() throws DwcException {
-    AppPanel panel = new AppPanel();
-    panel.addClassName("appPanel");
+  public void run() throws DwcjException {
+    Frame panel = new Frame();
+    panel.addClassName("Frame");
 
     ProgressBar pb1 = new ProgressBar();
     ProgressBar pb2 = new ProgressBar();

@@ -1,4 +1,4 @@
-/* .appPanel{
+/* .Frame{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,7 +13,7 @@
     background-color: white !important;
 }
 
-.appPanel{
+.Frame{
     display: flex;
     flex-direction: column;
     margin-top: 20px;

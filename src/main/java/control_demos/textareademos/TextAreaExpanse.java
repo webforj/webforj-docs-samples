@@ -1,20 +1,20 @@
 package control_demos.textareademos;
 
 import org.dwcj.App;
-import org.dwcj.annotations.InlineStyleSheet;
-import org.dwcj.controls.panels.AppPanel;
-import org.dwcj.exceptions.DwcException;
-import org.dwcj.controls.panels.Div;
-import org.dwcj.controls.textarea.TextArea;
+import org.dwcj.annotation.InlineStyleSheet;
+import org.dwcj.component.window.Frame;
+import org.dwcj.exceptions.DwcjException;
+import org.dwcj.component.window.Panel;
+import org.dwcj.component.textarea.TextArea;
 
 @InlineStyleSheet("context://css/textareastyles/text_area_styles.css")
 public class TextAreaExpanse extends App {
   @Override
-  public void run() throws DwcException {
-    AppPanel panel = new AppPanel();
-    panel.addClassName("appPanel");
+  public void run() throws DwcjException {
+    Frame panel = new Frame();
+    panel.addClassName("Frame");
 
-    Div wrapper = new Div();
+    Panel wrapper = new Panel();
 
     TextArea t1 = new TextArea().setExpanse(TextArea.Expanse.XSMALL)
       .setAttribute("placeholder", "XSMALL")
@@ -31,7 +31,7 @@ public class TextAreaExpanse extends App {
     TextArea t4 = new TextArea().setExpanse(TextArea.Expanse.LARGE)
       .setAttribute("placeholder", "LARGE")
       .setStyle("padding-right", "10px");
-      
+
     TextArea t5 = new TextArea().setExpanse(TextArea.Expanse.XLARGE)
       .setAttribute("placeholder", "XLARGE")
       .setStyle("padding-right", "10px");

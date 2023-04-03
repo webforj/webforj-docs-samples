@@ -4,20 +4,20 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.dwcj.App;
-import org.dwcj.controls.panels.AppPanel;
-import org.dwcj.controls.panels.Div;
-import org.dwcj.controls.combobox.ComboBox;
-import org.dwcj.controls.combobox.events.ComboBoxSelectEvent;
-import org.dwcj.exceptions.DwcAppInitializeException;
+import org.dwcj.component.window.Frame;
+import org.dwcj.component.window.Panel;
+import org.dwcj.component.combobox.ComboBox;
+import org.dwcj.component.combobox.event.ComboBoxSelectEvent;
+import org.dwcj.exceptions.DwcjAppInitializeException;
 
 public class ComboboxDemo extends App{
-    
+
     ComboBox cb1;
-    Div d1;
+    Panel d1;
 
     @Override
-    public void run() throws DwcAppInitializeException {
-        AppPanel panel = new AppPanel();
+    public void run() throws DwcjAppInitializeException {
+        Frame panel = new Frame();
         panel.setStyle("display", "inline-grid");
         panel.setStyle("grid-template-columns", "1fr 1fr");
         panel.setStyle("padding", "10px");
@@ -25,7 +25,7 @@ public class ComboboxDemo extends App{
         panel.setStyle("height", "100%");
 
         cb1 = new ComboBox();
-        d1 = new Div();
+        d1 = new Panel();
 
         d1.setStyle("height", "50px").setStyle("width", "50px").setStyle("grid-column", "2").setStyle("background", "blue");
         d1.setStyle("align-self", "center").setStyle("justify-self", "center");
@@ -42,7 +42,7 @@ public class ComboboxDemo extends App{
 
         cb1.setAttribute("label", "Choose a Color:").selectIndex(0).setStyle("grid-column", "1").setExpanse(ComboBox.Expanse.LARGE).setStyle("width", "250px");
         cb1.onSelect(this::cbSelect);
-        
+
 
     }
 

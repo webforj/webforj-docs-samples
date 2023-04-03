@@ -1,32 +1,31 @@
 package control_demos.dateeditboxdemos;
 
 import org.dwcj.App;
-import org.dwcj.controls.dateeditbox.DateEditBox;
-import org.dwcj.controls.panels.AppPanel;
-import org.dwcj.exceptions.DwcAppInitializeException;
+import org.dwcj.component.datefield.DateField;
+import org.dwcj.component.window.Frame;
+import org.dwcj.exceptions.DwcjAppInitializeException;
 
 
 public class DateEditBoxDemo extends App{
 
     @Override
-    public void run() throws DwcAppInitializeException { 
+    public void run() throws DwcjAppInitializeException {
 
-        AppPanel panel = new AppPanel();
+        Frame panel = new Frame();
         panel.setStyle("display", "inline-grid");
         panel.setStyle("grid-template-columns", "1fr");
         panel.setStyle("padding", "10px");
         panel.setStyle("gap", "50px");
-        
 
-        DateEditBox d1 = new DateEditBox();
+
+      DateField d1 = new DateField();
 
         panel.add(d1);
 
         d1.setAttribute("visible-calender-icon", "true");
 
-        
+
 
     }
-    
+
 }
-    

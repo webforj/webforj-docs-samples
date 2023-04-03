@@ -1,20 +1,20 @@
 package control_demos.buttondemos;
 
 import org.dwcj.App;
-import org.dwcj.annotations.InlineStyleSheet;
-import org.dwcj.controls.panels.Div;
-import org.dwcj.controls.panels.AppPanel;
-import org.dwcj.controls.button.Button;
-import org.dwcj.exceptions.DwcException;
+import org.dwcj.annotation.InlineStyleSheet;
+import org.dwcj.component.window.Panel;
+import org.dwcj.component.window.Frame;
+import org.dwcj.component.button.Button;
+import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/buttonstyles/disable_styles.css")
 public class ButtonDisable extends App {
   @Override
-  public void run() throws DwcException {
-    AppPanel panel = new AppPanel();
-    panel.addClassName("appPanel");
+  public void run() throws DwcjException {
+    Frame panel = new Frame();
+    panel.addClassName("Frame");
 
-    Div disabled = new Div();
+    Panel disabled = new Panel();
     disabled.addClassName("disabledButtons");
 
     panel.add(disabled);
@@ -29,12 +29,12 @@ public class ButtonDisable extends App {
     Button dangerButton2 = new Button("DANGER");
 
     disabled.add(defaultButton2,
-        primaryButton2, 
-        successButton2, 
-        dangerButton2, 
-        defaultButton, 
-        primaryButton, 
-        successButton, 
+        primaryButton2,
+        successButton2,
+        dangerButton2,
+        defaultButton,
+        primaryButton,
+        successButton,
         dangerButton);
 
     defaultButton.setTheme(Button.Theme.DEFAULT);
