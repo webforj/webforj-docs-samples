@@ -1,0 +1,4 @@
+ComboBox tcb1 = new ComboBox().setAttribute("placement", "left");
+ComboBox tcb2 = new ComboBox().setAttribute("placement", "right");
+ComboBox tcb3 = new ComboBox().setAttribute("placement", "top");
+ComboBox tcb4 = new ComboBox().setAttribute("placement", "bottom");

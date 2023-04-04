@@ -1,0 +1,5 @@
+NumberField nb1 = new NumberField().setExpanse(NumberField.Expanse.XSMALL);
+NumberField nb2 = new NumberField().setExpanse(NumberField.Expanse.SMALL);
+NumberField nb3 = new NumberField().setExpanse(NumberField.Expanse.MEDIUM);
+NumberField nb4 = new NumberField().setExpanse(NumberField.Expanse.LARGE);
+NumberField nb5 = new NumberField().setExpanse(NumberField.Expanse.XLARGE);

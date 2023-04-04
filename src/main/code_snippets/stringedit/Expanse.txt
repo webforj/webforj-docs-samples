@@ -1,0 +1,5 @@
+TextField s1 = new TextField().setExpanse(TextField.Expanse.XSMALL);
+TextField s2 = new TextField().setExpanse(TextField.Expanse.SMALL);
+TextField s3 = new TextField().setExpanse(TextField.Expanse.MEDIUM);
+TextField s4 = new TextField().setExpanse(TextField.Expanse.LARGE);
+TextField s5 = new TextField().setExpanse(TextField.Expanse.XLARGE);

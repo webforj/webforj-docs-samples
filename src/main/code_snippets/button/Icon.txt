@@ -1,5 +1,3 @@
     Button b1 = new Button("<html><bbj-icon name=\"alien\"></bbj-icon> Icon Left</html>");
-
     Button b2 = new Button("<html>Icon Right <bbj-icon name=\"alien\"></bbj-icon></html>");
-
     Button b3 = new Button("<html><bbj-icon name=\"alien\"></bbj-icon></html>");

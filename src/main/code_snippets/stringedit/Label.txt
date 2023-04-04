@@ -1,0 +1,1 @@
+panel.add(new TextField().setAttribute("label", "Example Label"));

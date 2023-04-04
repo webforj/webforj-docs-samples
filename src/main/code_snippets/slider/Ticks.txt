@@ -1,0 +1,3 @@
+sl1.setPaintTicks(true)
+    .setMajorTickSpacing(50)
+    .setMinorTickSpacing(10);

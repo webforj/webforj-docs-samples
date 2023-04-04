@@ -17,10 +17,10 @@ public class ProgressbarThemes extends App {
     ProgressBar pb2 = new ProgressBar();
     ProgressBar pb3 = new ProgressBar();
     ProgressBar pb4 = new ProgressBar();
+    ProgressBar pb5 = new ProgressBar();
     ProgressBar pb6 = new ProgressBar();
-    ProgressBar pb7 = new ProgressBar();
 
-    panel.add(pb1, pb2, pb3, pb4, pb6, pb7);
+    panel.add(pb1, pb2, pb3, pb4, pb5, pb6);
 
     pb1.setAttribute("theme", "default")
       .setMaximum(100)
@@ -42,12 +42,12 @@ public class ProgressbarThemes extends App {
       .setValue(50)
       .setText("INFO");
 
-    pb6.setAttribute("theme", "success")
+    pb5.setAttribute("theme", "success")
       .setMaximum(100)
       .setValue(30)
       .setText("SUCCESS");
 
-    pb7.setAttribute("theme", "warning")
+    pb6.setAttribute("theme", "warning")
       .setMaximum(100)
       .setValue(20)
       .setText("WARNING");

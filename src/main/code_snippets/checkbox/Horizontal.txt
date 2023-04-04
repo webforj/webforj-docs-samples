@@ -1,0 +1,2 @@
+CheckBox cb2 = new CheckBox().setText("Left aligned")
+    .setHorizontalTextPosition(CheckBox.HorizontalTextPosition.LEFT);

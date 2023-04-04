@@ -1,0 +1,1 @@
+TextArea t1 = new TextArea().setAttribute("placeholder", "Example Placeholder");
