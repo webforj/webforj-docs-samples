@@ -1,0 +1,1 @@
+panel.add(new Button(theme.name()).setTheme(theme));
