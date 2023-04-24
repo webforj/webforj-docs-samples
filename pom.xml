@@ -19,6 +19,17 @@
             <artifactId>dwcj-engine</artifactId>
             <version>0.16.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.dwcj</groupId>
+            <artifactId>dwcj-addons</artifactId>
+            <version>0.16.0</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>org.dwcj</groupId>
+            <artifactId>dwcj-code</artifactId>
+            <version>0.16.0</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -33,6 +44,26 @@
                     <outputDirectory>target/lib/</outputDirectory>
                 </configuration>
             </plugin>
+            <!-- <plugin>
+                <groupId>org.dwcj</groupId>
+                <artifactId>dwcj-install-maven-plugin</artifactId>
+                <version>0.1.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>install</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <deployurl>http://localhost:8888/dwcj-install</deployurl>
+                    <classname>layout_demos.container.ContainerDemo</classname>
+                    <username>admin</username>
+                    <password>admin123</password>
+                    <publishname>testApp</publishname>
+                    <debug>true</debug>
+                </configuration>
+            </plugin> -->
         </plugins>
     </build>
 </project>
