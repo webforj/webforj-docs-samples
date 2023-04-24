@@ -148,7 +148,7 @@ public class ContainerDemo extends App{
   }
   
   private void updateCode(){
-    javaCode = "FlexLayout boxLayout = FlexLayout.create(buttons) \n"+
+    javaCode = "FlexLayout boxLayout = FlexLayout.create() \n"+
     codeSnippetBuilder.get("FlexDirection") +
     codeSnippetBuilder.get("FlexJustifyContent") +
     codeSnippetBuilder.get("FlexAlignment") +
