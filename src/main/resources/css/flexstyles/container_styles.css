@@ -34,3 +34,7 @@ bbj-button{
 bbj-list-button{
   width: 250px;
 }
+
+bbj-inputn::part(input-wrapper){
+  height: unset;
+}

@@ -62,7 +62,7 @@ public class ContainerDemo extends App{
     
     spinner = new SpinnerNumberField();
     spinner.setAttribute("label", "Number of Boxes");
-    spinner.setStyle("width", "200px");
+    // spinner.setStyle("width", "200px");
     spinner.onEditModify(this::spinnerChange);
     spinner.setText("1");
     
@@ -194,13 +194,13 @@ public class ContainerDemo extends App{
   private void selectDirection(ChoiceBoxSelectEvent ev){
     boxLayout.setDirection(FlexDirection.fromValue(ev.getControl().getSelectedItem().getValue()));
     switch(ev.getControl().getSelectedItem().getKey().toString()){
-      case ".row-reverse()": codeSnippetBuilder.put("FlexDirection", ".horizontalReverse()");
+      case ".row-reverse()": codeSnippetBuilder.put("FlexDirection", ".horizontalReverse()\n");
       break;
-      case ".column()": codeSnippetBuilder.put("FlexDirection", ".vertical()");
+      case ".column()": codeSnippetBuilder.put("FlexDirection", ".vertical()\n");
       break;
-      case ".column-reverse()": codeSnippetBuilder.put("FlexDirection", ".verticalReverse()");
+      case ".column-reverse()": codeSnippetBuilder.put("FlexDirection", ".verticalReverse()\n");
       break;
-      default: codeSnippetBuilder.put("FlexDirection", ".horizontal()");
+      default: codeSnippetBuilder.put("FlexDirection", ".horizontal()\n");
                   break;
     }
     updateCode();
@@ -212,7 +212,7 @@ public class ContainerDemo extends App{
       codeSnippetBuilder.put("FlexJustifyContent", "");
     }
     else{
-      codeSnippetBuilder.put("FlexJustifyContent", ev.getControl().getSelectedItem().getKey().toString());
+      codeSnippetBuilder.put("FlexJustifyContent", ev.getControl().getSelectedItem().getKey().toString() + "\n");
     }
     updateCode();
   }
@@ -223,7 +223,7 @@ public class ContainerDemo extends App{
       codeSnippetBuilder.put("FlexAlignment", "");
     }
     else{
-      codeSnippetBuilder.put("FlexAlignment", ev.getControl().getSelectedItem().getKey().toString());
+      codeSnippetBuilder.put("FlexAlignment", ev.getControl().getSelectedItem().getKey().toString() + "\n");
     }
     updateCode();
   }
@@ -234,7 +234,7 @@ public class ContainerDemo extends App{
       codeSnippetBuilder.put("FlexContentAlignment", "");
     }
     else{
-      codeSnippetBuilder.put("FlexContentAlignment", ev.getControl().getSelectedItem().getKey().toString());
+      codeSnippetBuilder.put("FlexContentAlignment", ev.getControl().getSelectedItem().getKey().toString() + "\n");
     }
     updateCode();
   }
@@ -247,10 +247,11 @@ public class ContainerDemo extends App{
     }
     else if(ev.getControl().getSelectedItem().getKey().toString().equals(".wrap().reverse()")){
       boxLayout.setWrap(FlexWrap.WRAP_REVERSE);
-      codeSnippetBuilder.put("FlexWrap", ev.getControl().getSelectedItem().getKey().toString());
+      codeSnippetBuilder.put("FlexWrap", ev.getControl().getSelectedItem().getKey().toString() + "\n");
     }
     else{
-      codeSnippetBuilder.put("FlexWrap", ev.getControl().getSelectedItem().getKey().toString());
+      boxLayout.setWrap(FlexWrap.fromValue(ev.getControl().getSelectedItem().getValue()));
+      codeSnippetBuilder.put("FlexWrap", ev.getControl().getSelectedItem().getKey().toString() + "\n");
     }
     updateCode();
   }
