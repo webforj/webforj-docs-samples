@@ -158,7 +158,6 @@ public class ContainerDemo extends App{
   }
 
   private void spinnerChange(NumberFieldModifyEvent ev){
-    App.consoleLog(ev.getControl().getText());
     if(ev.getControl().getText().isEmpty() || Integer.valueOf(ev.getControl().getText()) < 1){
       ev.getControl().setText("1");
     }
@@ -240,7 +239,6 @@ public class ContainerDemo extends App{
   }
 
   private void selectWrap(ChoiceBoxSelectEvent ev){
-    App.consoleLog(ev.getControl().getSelectedItem().getKey().toString());
     if(ev.getControl().getSelectedItem().getKey().toString().equals(".wrap().nowrap()")){
       boxLayout.setWrap(FlexWrap.fromValue(ev.getControl().getSelectedItem().getValue()));
       codeSnippetBuilder.put("FlexWrap", "");
