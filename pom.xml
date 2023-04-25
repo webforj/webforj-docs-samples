@@ -5,14 +5,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.dwcj.samples</groupId>
-    <artifactId>control_samples</artifactId>
-    <version>0.16.0</version>
+    <artifactId>ControlSamples</artifactId>
+    <version>0.17.0-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-    </properties>
-
+        <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
+   </properties>
 
   <repositories>
     <repository>
@@ -31,49 +31,12 @@
         </dependency>
         <dependency>
             <groupId>org.dwcj</groupId>
-            <artifactId>dwcj-addons</artifactId>
-            <version>0.16.0</version>
-            <type>pom</type>
-        </dependency>
-        <dependency>
-            <groupId>org.dwcj</groupId>
             <artifactId>dwcj-code</artifactId>
-            <version>0.16.0</version>
+            <version>0.17.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
     <build>
         <finalName>control_samples</finalName>
-        <plugins>
-            <!-- Set the jar output Directory -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.3.0</version>
-                <configuration>
-                    <outputDirectory>target/lib/</outputDirectory>
-                </configuration>
-            </plugin>
-            <!-- <plugin>
-                <groupId>org.dwcj</groupId>
-                <artifactId>dwcj-install-maven-plugin</artifactId>
-                <version>0.1.0</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>install</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <deployurl>http://localhost:8888/dwcj-install</deployurl>
-                    <classname>layout_demos.container.ContainerDemo</classname>
-                    <username>admin</username>
-                    <password>admin123</password>
-                    <publishname>testApp</publishname>
-                    <debug>true</debug>
-                </configuration>
-            </plugin> -->
-        </plugins>
     </build>
 </project>
