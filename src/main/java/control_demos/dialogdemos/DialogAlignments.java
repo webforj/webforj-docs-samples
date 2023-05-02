@@ -9,7 +9,7 @@ import org.dwcj.component.label.Label;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 
-@InlineStyleSheet("context://css/dialogstyles/dialog_position_styles.css")
+@InlineStyleSheet("context://css/dialogstyles/dialog_styles.css")
 public class DialogAlignments extends App {
   Button alignTop;
   Button alignMid;
