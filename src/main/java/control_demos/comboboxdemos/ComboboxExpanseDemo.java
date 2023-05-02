@@ -32,11 +32,11 @@ public class ComboboxExpanseDemo extends App {
 
     ComboBox cb4 = new ComboBox().setExpanse(ComboBox.Expanse.LARGE)
         .setText("Large")
-        .setStyle("grid-column", "4");
+        .setStyle("grid-column", "1");
 
     ComboBox cb5 = new ComboBox().setExpanse(ComboBox.Expanse.XLARGE)
         .setText("Extra Large")
-        .setStyle("grid-column", "5");
+        .setStyle("grid-column", "3");
 
     Map<Object, String> data = new HashMap<>();
     data.put("Random Data1", "Random Data");

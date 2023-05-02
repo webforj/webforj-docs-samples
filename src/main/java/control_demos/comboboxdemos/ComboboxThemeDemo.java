@@ -10,6 +10,9 @@ import org.dwcj.annotation.InlineStyleSheet;
 
 @InlineStyleSheet("context://css/comboboxstyles/theme_styles.css")
 public class ComboboxThemeDemo extends App {
+
+  private static final String THEME = "theme";
+
   @Override
   public void run() throws DwcjException {
     Frame panel = new Frame();
@@ -22,31 +25,31 @@ public class ComboboxThemeDemo extends App {
     data.put("Random Data4", "Test Data");
 
     ComboBox b1 = new ComboBox().setItems(data);
-    ComboBox b2 = new ComboBox().setAttribute("theme", "danger")
+    ComboBox b2 = new ComboBox().setAttribute(THEME, "danger")
       .setItems(data);
-    ComboBox b3 = new ComboBox().setAttribute("theme", "gray")
+    ComboBox b3 = new ComboBox().setAttribute(THEME, "gray")
       .setItems(data);
-    ComboBox b4 = new ComboBox().setAttribute("theme", "info")
+    ComboBox b4 = new ComboBox().setAttribute(THEME, "info")
       .setItems(data);
-    ComboBox b5 = new ComboBox().setAttribute("theme", "primary")
+    ComboBox b5 = new ComboBox().setAttribute(THEME, "primary")
       .setItems(data);
-    ComboBox b6 = new ComboBox().setAttribute("theme", "success")
+    ComboBox b6 = new ComboBox().setAttribute(THEME, "success")
       .setItems(data);
-    ComboBox b7 = new ComboBox().setAttribute("theme", "warning")
+    ComboBox b7 = new ComboBox().setAttribute(THEME, "warning")
       .setItems(data);
-    ComboBox b8 = new ComboBox().setAttribute("theme", "outlined-default")
+    ComboBox b8 = new ComboBox().setAttribute(THEME, "outlined-default")
       .setItems(data);
-    ComboBox b9 = new ComboBox().setAttribute("theme", "outlined-danger")
+    ComboBox b9 = new ComboBox().setAttribute(THEME, "outlined-danger")
       .setItems(data);
-    ComboBox b10 = new ComboBox().setAttribute("theme", "outlined-gray")
+    ComboBox b10 = new ComboBox().setAttribute(THEME, "outlined-gray")
       .setItems(data);
-    ComboBox b11 = new ComboBox().setAttribute("theme", "outlined-info")
+    ComboBox b11 = new ComboBox().setAttribute(THEME, "outlined-info")
       .setItems(data);
-    ComboBox b12 = new ComboBox().setAttribute("theme", "outlined-primary")
+    ComboBox b12 = new ComboBox().setAttribute(THEME, "outlined-primary")
       .setItems(data);
-    ComboBox b13 = new ComboBox().setAttribute("theme", "outlined-success")
+    ComboBox b13 = new ComboBox().setAttribute(THEME, "outlined-success")
       .setItems(data);
-    ComboBox b14 = new ComboBox().setAttribute("theme", "outlined-warning")
+    ComboBox b14 = new ComboBox().setAttribute(THEME, "outlined-warning")
       .setItems(data);
 
     panel.add(b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14);

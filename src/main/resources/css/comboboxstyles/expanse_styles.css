@@ -4,13 +4,13 @@
     background: white;
     width: 100%;
     justify-content: center;
-    height: 100%;
 }
 
 .container{
-    display: flex;
+    display: grid;
     gap: 30px;
     background: white;
+    padding-bottom: 20px;
 }
 
 .BBjWindow{

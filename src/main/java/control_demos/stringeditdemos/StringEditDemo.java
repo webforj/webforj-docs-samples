@@ -8,7 +8,7 @@ import org.dwcj.exceptions.DwcjAppInitializeException;
 
 
 
-@InlineStyleSheet("context://css/TextFieldstyles/string_edit_styles.css")
+@InlineStyleSheet("context://css/stringeditboxstyles/string_edit_styles.css")
 public class StringEditDemo extends App{
 
     @Override

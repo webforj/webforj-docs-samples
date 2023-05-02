@@ -6,7 +6,7 @@ import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 import org.dwcj.component.textfield.TextField;
 
-@InlineStyleSheet("context://css/TextFieldstyles/string_edit_styles.css")
+@InlineStyleSheet("context://css/stringeditboxstyles/string_edit_styles.css")
 public class StringEditExpanse extends App {
   @Override
   public void run() throws DwcjException {
