@@ -8,5 +8,5 @@
     margin-top: 20px;
     gap: 50px;
     background: white;
-    height: 100%;
+    align-content: start;
 }

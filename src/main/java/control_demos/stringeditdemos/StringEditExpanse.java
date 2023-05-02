@@ -11,7 +11,8 @@ public class StringEditExpanse extends App {
   @Override
   public void run() throws DwcjException {
     Frame panel = new Frame();
-    panel.addClassName("Frame");
+    panel.addClassName("Frame")
+    .setStyle("display", "flex");
 
     TextField s1 = new TextField().setExpanse(TextField.Expanse.XSMALL)
       .setAttribute("placeholder", "XSMALL");
