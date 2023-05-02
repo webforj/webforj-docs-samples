@@ -1,6 +1,7 @@
 package control_demos.dialogdemos;
 
 import org.dwcj.App;
+import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.button.Button;
 import org.dwcj.component.button.event.ButtonClickEvent;
 import org.dwcj.component.dialog.Dialog;
@@ -8,6 +9,7 @@ import org.dwcj.component.label.Label;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 
+@InlineStyleSheet("context://css/dialogstyles/dialog_position_styles.css")
 public class DialogAlignments extends App {
   Button alignTop;
   Button alignMid;
