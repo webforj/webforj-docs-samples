@@ -30,7 +30,7 @@ public class Direction extends App{
     .build()
     .addClassName("button__container--single-row");
     
-    for(int i = 1; i <= 5; i++){
+    for(int i = 1; i <= 4; i++){
       String hue = String.valueOf((360/10) * i);
       Box newBox = new Box(i);
       newBox.setStyle("background", "hsla(" + String.valueOf(hue) + ", 50%, 75%, 0.25)");

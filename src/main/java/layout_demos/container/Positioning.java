@@ -32,7 +32,7 @@ public class Positioning extends App{
     .addClassName("button__container--single-row")
     .setStyle("height", "200px");
     
-    for(int i = 1; i <= 5; i++){
+    for(int i = 1; i <= 4; i++){
       String hue = String.valueOf((360/10) * i);
       Box newBox = new Box(i);
       newBox.setStyle("background", "hsla(" + String.valueOf(hue) + ", 50%, 75%, 0.25)");
