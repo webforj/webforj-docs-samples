@@ -1,11 +1,13 @@
 package control_demos.dialogdemos;
 
 import org.dwcj.App;
+import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.dialog.Dialog;
 import org.dwcj.component.label.Label;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 
+@InlineStyleSheet("context://css/dialogstyles/dialog_styles.css")
 public class DialogDraggable extends App {
   @Override
   public void run() throws DwcjException {
@@ -13,9 +15,8 @@ public class DialogDraggable extends App {
     Dialog dialog = new Dialog();
     p.add(dialog);
 
-    dialog.getHeader().add(new Label("Header"));
-    dialog.getContent().add(new Label("This dialog will snap to the sides when dragged within 100px of the edge of the display"));
-    dialog.getFooter().add(new Label("Footer"));
+    dialog.getHeader().add(new Label("Snapping"));
+    dialog.getContent().add(new Label("This dialog will snap when dragged within 100px of the edge of the display."));
     dialog.show();
 
     dialog.setSnapToEdge(true);

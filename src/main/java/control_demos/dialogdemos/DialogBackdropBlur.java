@@ -17,6 +17,8 @@ import org.dwcj.exceptions.DwcjException;
     "   background-size: 100% 100%;" +
     "   background-repeat: no-repeat;" +
     "}")
+
+@InlineStyleSheet("context://css/dialogstyles/dialog_styles.css")
 public class DialogBackdropBlur extends App {
   Dialog dialog;
 
@@ -27,12 +29,11 @@ public class DialogBackdropBlur extends App {
     p.add(dialog);
     dialog.addClassName("loginForm");
 
-    dialog.getHeader().add(new Label("Header"));
+    dialog.getHeader().add(new Label("Background Blur"));
     dialog.getContent().add(new Button("Toggle Background Blur")
       .onClick(this::buttonClick))
       .setStyle("display","flex")
       .setStyle("justify-content", "center");
-    dialog.getFooter().add(new Label("Footer"));
 
     dialog.setCloseable(false);
     dialog.show();

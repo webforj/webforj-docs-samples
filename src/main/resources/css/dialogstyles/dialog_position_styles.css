@@ -1,4 +1,8 @@
 #simple-14{
   overflow: hidden !important;
   box-shadow: none !important;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }

@@ -1,14 +1,17 @@
 package control_demos.dialogdemos;
 
 import org.dwcj.App;
+import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.button.Button;
 import org.dwcj.component.button.event.ButtonClickEvent;
 import org.dwcj.component.dialog.Dialog;
+import org.dwcj.component.flexlayout.FlexLayout;
 import org.dwcj.component.label.Label;
 import org.dwcj.component.numberfield.NumberField;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 
+@InlineStyleSheet("context://css/dialogstyles/dialog_position_styles.css")
 public class DialogPositioning extends App {
 
   NumberField xPos, yPos;
@@ -22,11 +25,17 @@ public class DialogPositioning extends App {
     yPos = new NumberField();
     p.add(dialog);
 
-    dialog.getHeader().add(new Label("Header"));
+    FlexLayout xLayout = FlexLayout.create(new Label("X Pixels: "), xPos)
+    .horizontal()
+    .build();
+
+    FlexLayout yLayout = FlexLayout.create(new Label("Y Pixels :"), yPos)
+    .horizontal()
+    .build();
+
+    dialog.getHeader().add(new Label("Positioning"));
     dialog.getContent()
-        .add(new Label("X Pixels:"), xPos, new Label("Y Pixels:"), yPos, new Button("Set Dialog Position").onClick(this::setPosition))
-        .setStyle("display", "flex")
-        .setStyle("justify-content", "space-around");
+      .add(xLayout, yLayout, new Button("Set Dialog Position").onClick(this::setPosition));
 
     dialog.setAutoFocus(true);
     dialog.show();

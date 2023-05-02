@@ -33,11 +33,11 @@ public class NumericboxExpanses extends App {
 
     NumberField nb4 = new NumberField().setExpanse(NumberField.Expanse.LARGE)
       .setAttribute("label", "Large")
-      .setStyle("grid-column", "4");
+      .setStyle("grid-column", "1");
 
     NumberField nb5 = new NumberField().setExpanse(NumberField.Expanse.XLARGE)
       .setAttribute("label", "Extra Large")
-      .setStyle("grid-column", "5");
+      .setStyle("grid-column", "3");
 
     container.add(nb1, nb2, nb3, nb4, nb5);
   }
