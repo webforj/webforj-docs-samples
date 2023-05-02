@@ -13,9 +13,9 @@
 }
 
 .container{
-    display: inline-grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    display: grid;
     padding: 10px;
+    justify-content: center;
     gap: 20px;
     overflow: auto;
     background: white;
