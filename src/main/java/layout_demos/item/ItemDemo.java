@@ -1,4 +1,4 @@
-package layout_demos.container;
+package layout_demos.item;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,7 +22,7 @@ import org.dwcj.exceptions.DwcjException;
 import layout_demos.helper.Box;
 
 @InlineStyleSheet("context://css/flexstyles/container_styles.css")
-public class ContainerDemo extends App{
+public class ItemDemo extends App{
 
   SpinnerNumberField spinner;
   
@@ -58,21 +58,24 @@ public class ContainerDemo extends App{
     spinner = new SpinnerNumberField();
     spinner.setAttribute("label", "Number of Boxes");
     spinner.onEditModify(this::spinnerChange);
+    spinner.setText("5");
     
     boxes = new ArrayList<>();
     numBoxes = 0;
-    addBox(1);
+    for(int i = 1; i <= 5; i++){
+      addBox(i);
+    }
     
     flexContainerOptions.add(spinner);
     
     mainLayout.add(flexContainerOptions, boxLayout);
     page.add(mainLayout);
 
-    ChoiceBox directions = new ChoiceBox().onSelect(this::selectDirection);
-    directions.setAttribute("label", "Direction Options");
+    ChoiceBox order = new ChoiceBox().onSelect(this::selectDirection);
+    order.setAttribute("label", "Order");
     for(FlexDirection justify : FlexDirection.values()){
       String label = justify.getValue();
-      directions.addItem(
+      order.addItem(
         "." + justify.toString()
           .toLowerCase() + "()", 
         label.substring(0, 1)
@@ -80,46 +83,41 @@ public class ContainerDemo extends App{
           .substring(1)
           );
       }
-    directions.selectIndex(0);
+    order.selectIndex(0);
 
-    ChoiceBox justifications = new ChoiceBox().onSelect(this::selectJustification);
-    justifications.setAttribute("label", "Justification Options");
-    for(FlexJustifyContent justify : FlexJustifyContent.values()){
-      String label = justify.getValue()
-        .replaceAll("^(.+?)-", "");
-      justifications.addItem(".justify()." + justify.toString().toLowerCase().replaceAll("^(.+?)-", "") + "()",
-      label.substring(0, 1).toUpperCase() + label.substring(1));
-    }
-    justifications.selectIndex(0);
-
-    ChoiceBox alignments = new ChoiceBox().onSelect(this::selectAlignment);
-    alignments.setAttribute("label", "Alignment Options");
+    ChoiceBox alignment = new ChoiceBox().onSelect(this::selectJustification);
+    alignment.setAttribute("label", "Align Self");
     for(FlexAlignment justify : FlexAlignment.values()){
       String label = justify.getValue().replaceAll("^(.+?)-", "");
-      alignments.addItem(".align()." + justify.toString().toLowerCase().replaceAll("^(.+?)-", "") + "()",
-      label.substring(0, 1).toUpperCase() + label.substring(1));
+      alignment.addItem(".justify()." + justify.toString().toLowerCase().replaceAll("^(.+?)-", "") + "()", label.substring(0, 1).toUpperCase() + label.substring(1));
     }
-    alignments.selectIndex(0);
+    alignment.selectIndex(0);
 
-    ChoiceBox contentAlignments = new ChoiceBox().onSelect(this::selectAlignContent);
-    contentAlignments.setAttribute("label", "Content-Alignment Options");
+    ChoiceBox basis = new ChoiceBox().onSelect(this::selectAlignment);
+    basis.setAttribute("label", "Flex Basis");
+    for(FlexAlignment justify : FlexAlignment.values()){
+      String label = justify.getValue().replaceAll("^(.+?)-", "");
+      basis.addItem(".align()." + justify.toString().toLowerCase().replaceAll("^(.+?)-", "") + "()", label.substring(0, 1).toUpperCase() + label.substring(1));
+    }
+    basis.selectIndex(0);
+
+    ChoiceBox grow = new ChoiceBox().onSelect(this::selectAlignContent);
+    grow.setAttribute("label", "Flex Grow");
     for(FlexContentAlignment justify : FlexContentAlignment.values()){
       String label = justify.getValue().replaceAll("^(.+?)-", "");
-      contentAlignments.addItem(".contentAlign()." + justify.toString().toLowerCase().replaceAll("^(.+?)-", "") + "()", 
-      label.substring(0, 1).toUpperCase() + label.substring(1));
+      grow.addItem(".contentAlign()." + justify.toString().toLowerCase().replaceAll("^(.+?)-", "") + "()", label.substring(0, 1).toUpperCase() + label.substring(1));
     }
-    contentAlignments.selectIndex(0);
+    grow.selectIndex(0);
 
-    ChoiceBox wraps = new ChoiceBox().onSelect(this::selectWrap);
-    wraps.setAttribute("label", "Wrap Options");
+    ChoiceBox shrink = new ChoiceBox().onSelect(this::selectWrap);
+    shrink.setAttribute("label", "Flex Shrink");
     for(FlexWrap justify : FlexWrap.values()){
       String label = justify.getValue().replaceAll("^(.+?)-", "");
-      wraps.addItem(".wrap()." + justify.toString().toLowerCase().replaceAll("^(.+?)-", "") + "()", 
-      label.substring(0, 1).toUpperCase() + label.substring(1));
+      shrink.addItem(".wrap()." + justify.toString().toLowerCase().replaceAll("^(.+?)-", "") + "()", label.substring(0, 1).toUpperCase() + label.substring(1));
     }
-    wraps.selectIndex(0);
+    shrink.selectIndex(0);
  
-    flexContainerOptions.add(directions, justifications, alignments, contentAlignments, wraps);
+    flexContainerOptions.add(order, alignment, basis, grow, shrink);
     
     codeWindow = new Code();
     page.add(codeWindow);

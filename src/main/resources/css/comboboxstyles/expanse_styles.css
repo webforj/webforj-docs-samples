@@ -4,6 +4,7 @@
     background: white;
     width: 100%;
     justify-content: center;
+    height: 100%;
 }
 
 .container{
@@ -12,6 +13,6 @@
     background: white;
 }
 
-.BBjTopLevelWindow{
+.BBjWindow{
     background-color: white !important;
 }

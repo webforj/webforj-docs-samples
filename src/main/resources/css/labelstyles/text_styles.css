@@ -1,4 +1,4 @@
-.BBjTopLevelWindow{
+.BBjWindow{
     background-color: white !important;
 }
 
@@ -10,5 +10,7 @@
     background: white;
     width: 100%;
     align-items: center;
+    height: 100%;
+
 }
 

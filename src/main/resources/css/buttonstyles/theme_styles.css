@@ -4,8 +4,10 @@
     margin-top: 20px;
     gap: 20px;
     background: white;
+    height: 100%;
+
 }
 
-.BBjTopLevelWindow{
+.BBjWindow{
     background-color: white !important;
 }

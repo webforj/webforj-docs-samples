@@ -5,12 +5,13 @@
     width: 100%;
     justify-items: center;
     background: white;
+    height: 100%;
 }
 
 bbj-slider{
     width: 500px;
 }
 
-.BBjTopLevelWindow{
+.BBjWindow{
     background-color: white !important;
 }

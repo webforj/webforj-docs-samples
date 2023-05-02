@@ -6,8 +6,9 @@
     width: 100%;
     align-items: center;
     background: white;
+    height: 100%;
 }
 
-.BBjTopLevelWindow{
+.BBjWindow{
     background-color: white !important;
 }

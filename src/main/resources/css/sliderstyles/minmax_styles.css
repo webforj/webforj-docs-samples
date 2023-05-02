@@ -6,6 +6,7 @@
     width: 100%;
     align-items: center;
     background: white;
+    height: 100%;
 }
 
 .BBjStaticText{
@@ -16,6 +17,6 @@ bbj-slider{
     width: 500px;
 }
 
-.BBjTopLevelWindow{
+.BBjWindow{
     background-color: white !important;
 }

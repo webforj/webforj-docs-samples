@@ -1,12 +1,6 @@
-/* .Frame{
 
-    display: inline-grid;
-    grid-template-columns: 1fr;
-    padding: 10px;
 
-} */
-
-.BBjTopLevelWindow{
+.BBjWindow{
     background-color: white !important;
 }
 
@@ -16,6 +10,7 @@
     background: white;
     width: 100%;
     justify-content: center;
+    height: 100%;
 }
 
 .container{
