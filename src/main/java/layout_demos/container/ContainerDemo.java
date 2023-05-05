@@ -56,7 +56,9 @@ public class ContainerDemo extends App{
     
     
     spinner = new SpinnerNumberField();
-    spinner.setAttribute("label", "Number of Boxes");
+    spinner.setAttribute("label", "Number of Boxes")
+      .setProperty("min", 1)
+      .setText("1");
     spinner.onEditModify(this::spinnerChange);
     
     boxes = new ArrayList<>();
@@ -150,9 +152,9 @@ public class ContainerDemo extends App{
   }
 
   private void spinnerChange(NumberFieldModifyEvent ev){
-    if(ev.getControl().getText().isEmpty() || Integer.valueOf(ev.getControl().getText()) < 1){
-      ev.getControl().setText("1");
-    }
+    // if(ev.getControl().getText().isEmpty() || Integer.valueOf(ev.getControl().getText()) < 1){
+    //   ev.getControl().setText("1");
+    // }
     if(Integer.valueOf(ev.getControl().getText()) > numBoxes){
       addBox(Integer.valueOf(ev.getControl().getText()));
     }
