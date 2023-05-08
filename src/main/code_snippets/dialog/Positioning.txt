@@ -1,0 +1,12 @@
+dialog = new Dialog();
+xPos = new NumberField();
+yPos = new NumberField();
+dialog.getContent()
+  .add(xLayout, yLayout, new Button("Set Dialog Position")
+  .onClick(this::setPosition));
+dialog.show();
+
+private void setPosition(ButtonClickEvent ev) {
+  dialog.setPosx(xPos.getValue().toString() + "px");
+  dialog.setPosy(yPos.getValue().toString() + "px");
+}

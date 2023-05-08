@@ -1,0 +1,6 @@
+dialog = new Dialog();
+dialog.getContent().add(new Button("Toggle Background Blur"));
+
+private void buttonClick(ButtonClickEvent ev) {
+    dialog.setBlurred(!dialog.isBlurred());
+}
