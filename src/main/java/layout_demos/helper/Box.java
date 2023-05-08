@@ -9,16 +9,18 @@ import org.dwcj.component.AbstractDwcComponent;
 import org.dwcj.component.flexlayout.FlexLayout;
 import org.dwcj.component.label.Label;
 import org.dwcj.component.window.AbstractWindow;
+import org.dwcj.component.HasStyle;
 
 @InlineStyleSheet("context://css/flexstyles/box_styles.css")
-public class Box extends AbstractDwcComponent{
+public class Box extends FlexLayout{
   
   FlexLayout box;
   int num;
+  String title = "";
   boolean vis = true;
+  Label display = new Label();
 
-  private final Map<String, String> styles = new HashMap<>();
-
+  private Map<String, String> styles;
 
   @Override
   public void create(AbstractWindow p){
@@ -29,9 +31,11 @@ public class Box extends AbstractDwcComponent{
     .build();
     p.add(box);
 
-    box.add(new Label("Box " + this.num)).addClassName("demo__box");
-    box.setStyle("background", "light-red");
-    box.setStyle("border", "red 2px solid");
+    if(title.isEmpty()){
+      title = "Box " + this.num;
+    }
+    display.setText(title);
+    box.add(display).addClassName("demo__box");
     
     for (Map.Entry<String, String> entry : styles.entrySet()) {
       box.setStyle(entry.getKey(), entry.getValue());
@@ -39,14 +43,28 @@ public class Box extends AbstractDwcComponent{
     if(!vis){
       box.setVisible(false);
     }
+
+  }
+  @Override
+  public FlexLayout setItemOrder(int order, HasStyle control) {
+    App.consoleLog(String.valueOf(order) + " " + control.toString());
+    super.setItemOrder(order, control);
+    return this;
   }
 
   public Box(int num){
     this.num = num;
   }
 
+  public Box(String title){
+    this.title = title;
+  }
+
   @Override
   public Box setStyle(String property, String value){
+    if(styles == null){
+      styles = new HashMap<>();
+    }
     styles.put(property, value);
     return this;
   }
@@ -62,6 +80,9 @@ public class Box extends AbstractDwcComponent{
     return this;
   }
 
+  public void setDisplay(String text){
+    this.title = text;
+  }
   @Override
   public void destroy(){
     box.destroy();
