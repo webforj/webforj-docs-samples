@@ -49,11 +49,13 @@ public class Order extends App{
       .onClick( e -> {
       boxLayout.setItemOrder(Integer.parseInt(order.getText()), orderButton);
       orderButton.setText("Order: " + order.getText());
-      } );
+      })
+      .setStyle("height", "34px");
 
       FlexLayout optionLayout = FlexLayout.create(order, submit)
       .horizontal()
       .justify().between()
+      .align().end()
       .build()
       .addClassName("flex__options");
 

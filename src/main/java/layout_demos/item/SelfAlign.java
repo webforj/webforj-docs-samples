@@ -6,22 +6,15 @@ import org.dwcj.component.button.Button;
 import org.dwcj.component.choicebox.ChoiceBox;
 import org.dwcj.component.choicebox.event.ChoiceBoxSelectEvent;
 import org.dwcj.component.flexlayout.FlexAlignment;
-import org.dwcj.component.flexlayout.FlexContentAlignment;
-import org.dwcj.component.flexlayout.FlexDirection;
-import org.dwcj.component.flexlayout.FlexJustifyContent;
 import org.dwcj.component.flexlayout.FlexLayout;
-import org.dwcj.component.label.Label;
-import org.dwcj.component.numberfield.NumberField;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
-
-import layout_demos.helper.Box;
 
 @InlineStyleSheet("context://css/flexstyles/container_styles.css")
 public class SelfAlign extends App{
 
   FlexLayout boxLayout;
-  Box alignBox;
+  Button alignButton;
 
   @Override
   public void run() throws DwcjException{
@@ -38,20 +31,19 @@ public class SelfAlign extends App{
     .addClassName("button__container");
     
     for(int i = 1; i <= 5; i++){
-      String hue = String.valueOf((360/10) * i);
-      Box newBox = new Box("Order: " + i);
-      newBox.setStyle("background", "hsla(" + String.valueOf(hue) + ", 50%, 75%, 0.25)");
-      newBox.setStyle("border", "2px solid " + "hsl(" + String.valueOf(hue) + ", 50%, 35%)");
-      newBox.setStyle("color", "hsl(" + String.valueOf(hue) + ", 50%, 25%)");
-      boxLayout.add(newBox);
-      if(i == 5){
-        alignBox = newBox;
-      }
+      Button newButton = new Button("Button " + i);
+      boxLayout.add(newButton.setTheme(Button.Theme.PRIMARY));
+      boxLayout.setItemOrder(i, newButton);
+      alignButton = newButton;
     }
+    alignButton.setTheme(Button.Theme.DANGER).setText("Align Me!");
 
     ChoiceBox alignment = new ChoiceBox()
-    .onSelect(this::selectAlignment)
+    .onSelect( e -> {
+      boxLayout.setItemAlignment(FlexAlignment.fromValue(e.getControl().getSelectedItem().getValue()), alignButton);
+    })
     .addClassName("flex__options");
+    
     alignment.setAttribute("label", "Self Alignment Options");
     for(FlexAlignment align : FlexAlignment.values()){
       String label = align.getValue();
@@ -65,15 +57,8 @@ public class SelfAlign extends App{
         }
     alignment.selectIndex(0);
     
-    alignBox.setDisplay("Set Alignment");
-    boxLayout.setItemAlignment(FlexAlignment.START, alignBox);
+    boxLayout.setItemAlignment(FlexAlignment.START, alignButton);
     page.add(mainLayout);
     mainLayout.add(alignment, boxLayout);    
   }
-
-  private void selectAlignment(ChoiceBoxSelectEvent ev){
-    App.consoleError("FECK");
-    alignBox.setItemAlignment(FlexAlignment.fromValue(ev.getControl().getSelectedItem().getValue()), alignBox);
-  }
-  
 }
