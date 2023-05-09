@@ -1,0 +1,12 @@
+/*
+Will need to put some styles in here for the thing
+*/
+
+.main__layout{
+  width: 50%;
+  margin: 25px 25% 10px 25%
+}
+
+bbj-button{
+  width: 75px
+}
