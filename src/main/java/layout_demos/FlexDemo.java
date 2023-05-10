@@ -5,6 +5,7 @@ import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.button.Button;
 import org.dwcj.component.choicebox.ChoiceBox;
 import org.dwcj.component.field.Field;
+import org.dwcj.component.flexlayout.FlexDirection;
 import org.dwcj.component.flexlayout.FlexLayout;
 import org.dwcj.component.numberfield.NumberField;
 import org.dwcj.component.window.Frame;
