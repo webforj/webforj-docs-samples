@@ -2,9 +2,9 @@ package control_demos.labeldemos;
 
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.TextAlignable;
 import org.dwcj.component.window.Frame;
 import org.dwcj.component.label.Label;
+import org.dwcj.component.HorizontalAlignment;
 import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/labelstyles/alignment_styles.css")
@@ -40,8 +40,8 @@ public class LabelAlignment extends App {
 
     panel.add(l1, l2, l3);
 
-    l1.setTextAlignment(TextAlignable.Alignment.LEFT);
-    l2.setTextAlignment(TextAlignable.Alignment.MIDDLE);
-    l3.setTextAlignment(TextAlignable.Alignment.RIGHT);
+    l1.setHorizontalAlignment(HorizontalAlignment.Alignment.LEFT);
+    l2.setHorizontalAlignment(HorizontalAlignment.Alignment.MIDDLE);
+    l3.setHorizontalAlignment(HorizontalAlignment.Alignment.RIGHT);
   }
 }
