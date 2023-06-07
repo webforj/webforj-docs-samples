@@ -1,12 +1,12 @@
 package control_demos.drawerdemos;
 
 import org.dwcj.App;
+import org.dwcj.component.checkbox.CheckBox;
 import org.dwcj.component.drawer.Drawer;
-import org.dwcj.component.label.Label;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 
-public class DrawerDemo extends App{
+public class DrawerAutoFocus extends App{
  
   @Override
   public void run() throws DwcjException {
@@ -16,11 +16,12 @@ public class DrawerDemo extends App{
     app.add(drawer);
     drawer.open();
     drawer.getContent()
-      .add(new Label("<html><h3>This is a Drawer component!</h3></html>"))
+    .add(new CheckBox().setText("Checkbox auto-focused"))
       .setStyle("height", "100%")
       .setStyle("display", "flex")
       .setStyle("flex-wrap", "wrap")
       .setStyle("align-content", "center")
       .setStyle("justify-content", "center");
+      drawer.setAutoFocus(true);
   }
 }
