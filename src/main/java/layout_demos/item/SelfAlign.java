@@ -4,7 +4,6 @@ import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.button.Button;
 import org.dwcj.component.choicebox.ChoiceBox;
-import org.dwcj.component.choicebox.event.ChoiceBoxSelectEvent;
 import org.dwcj.component.flexlayout.FlexAlignment;
 import org.dwcj.component.flexlayout.FlexLayout;
 import org.dwcj.component.window.Frame;

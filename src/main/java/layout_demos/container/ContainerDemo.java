@@ -152,9 +152,6 @@ public class ContainerDemo extends App{
   }
 
   private void spinnerChange(NumberFieldModifyEvent ev){
-    // if(ev.getControl().getText().isEmpty() || Integer.valueOf(ev.getControl().getText()) < 1){
-    //   ev.getControl().setText("1");
-    // }
     if(Integer.valueOf(ev.getControl().getText()) > numBoxes){
       addBox(Integer.valueOf(ev.getControl().getText()));
     }
@@ -168,9 +165,9 @@ public class ContainerDemo extends App{
       numBoxes++;
       String hue = String.valueOf((360/10) * (int)numBoxes);
       Box newBox = new Box((int) numBoxes);
-      newBox.setStyle("background", "hsla(" + String.valueOf(hue) + ", 50%, 75%, 0.25)");
-      newBox.setStyle("border", "2px solid " + "hsl(" + String.valueOf(hue) + ", 50%, 35%)");
-      newBox.setStyle("color", "hsl(" + String.valueOf(hue) + ", 50%, 25%)");
+      newBox.setStyle("background", "hsla(" + hue + ", 50%, 75%, 0.25)");
+      newBox.setStyle("border", "2px solid " + "hsl(" + hue + ", 50%, 35%)");
+      newBox.setStyle("color", "hsl(" + hue + ", 50%, 25%)");
       boxes.add(newBox);
       boxLayout.add(newBox);
     }

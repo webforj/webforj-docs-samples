@@ -5,7 +5,6 @@ import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.button.Button;
 import org.dwcj.component.choicebox.ChoiceBox;
 import org.dwcj.component.field.Field;
-import org.dwcj.component.flexlayout.FlexDirection;
 import org.dwcj.component.flexlayout.FlexLayout;
 import org.dwcj.component.numberfield.NumberField;
 import org.dwcj.component.window.Frame;
@@ -29,14 +28,14 @@ public class FlexDemo extends App{
   public void run() throws DwcjException{
 
     Frame page = new Frame();
-    email = new Field().setAttribute("placeholder", "Email");
-    password = new Field().setAttribute("placeholder", "Password")
+    email = new Field().setAttribute("label", "Email");
+    password = new Field().setAttribute("label", "Password")
       .setAttribute("type", "password");
-    firstName = new Field().setAttribute("placeholder", "First Name");
-    lastName = new Field().setAttribute("placeholder", "Last Name");
-    address = new Field().setAttribute("placeholder", "Address");
-    city = new Field().setAttribute("placeholder", "City");
-    zip = new NumberField().setAttribute("placeholder", "Zip");
+    firstName = new Field().setAttribute("label", "First Name");
+    lastName = new Field().setAttribute("label", "Last Name");
+    address = new Field().setAttribute("label", "Address");
+    city = new Field().setAttribute("label", "City");
+    zip = new NumberField().setAttribute("label", "Zip");
     populateStates();
     submit = new Button("Submit").setTheme(Button.Theme.PRIMARY);
     cancel = new Button("Cancel").setTheme(Button.Theme.DEFAULT);
@@ -73,7 +72,7 @@ public class FlexDemo extends App{
   }
 
   private void populateStates(){
-    states = new ChoiceBox().selectIndex(0);
+    states = new ChoiceBox().selectIndex(0).setAttribute("label", "State").setAttribute("max-row-count", "7");
       states.addItem("AL", "Alabama");
       states.addItem("AK", "Alaska");
       states.addItem("AZ", "Arizona");

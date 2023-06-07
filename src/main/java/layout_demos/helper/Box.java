@@ -5,7 +5,6 @@ import java.util.Map;
 
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.AbstractDwcComponent;
 import org.dwcj.component.flexlayout.FlexLayout;
 import org.dwcj.component.label.Label;
 import org.dwcj.component.window.AbstractWindow;

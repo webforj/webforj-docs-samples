@@ -3,16 +3,10 @@ package layout_demos.item;
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.button.Button;
-import org.dwcj.component.choicebox.ChoiceBox;
-import org.dwcj.component.choicebox.event.ChoiceBoxSelectEvent;
-import org.dwcj.component.flexlayout.FlexDirection;
 import org.dwcj.component.flexlayout.FlexLayout;
-import org.dwcj.component.label.Label;
 import org.dwcj.component.numberfield.NumberField;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
-
-import layout_demos.helper.Box;
 
 @InlineStyleSheet("context://css/flexstyles/container_styles.css")
 public class Order extends App{
