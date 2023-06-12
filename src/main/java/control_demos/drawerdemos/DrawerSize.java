@@ -1,13 +1,15 @@
 package control_demos.drawerdemos;
 
 import org.dwcj.App;
+import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.button.Button;
 import org.dwcj.component.drawer.Drawer;
-import org.dwcj.component.label.Label;
 import org.dwcj.component.numberfield.NumberField;
 import org.dwcj.component.window.Frame;
+import org.dwcj.component.window.Panel;
 import org.dwcj.exceptions.DwcjException;
 
+@InlineStyleSheet("context://css/drawerstyles/drawer_size.css")
 public class DrawerSize extends App{
  
   NumberField size;
@@ -21,9 +23,11 @@ public class DrawerSize extends App{
   
     Frame app = new Frame();
     Drawer drawer = new Drawer();
+    app.add(drawer);
 
     size = new NumberField("0").setAttribute("label", "Size:");
     maxSize = new NumberField("0").setAttribute("label", "Max Size:");
+    
     submit = new Button("Submit")
       .onClick( e -> {
         if(!maxSize.getText().equals("0")){
@@ -32,20 +36,26 @@ public class DrawerSize extends App{
         if(!size.getText().equals("0")){
           drawer.setSize(size.getText() + "px");
         }
-      });
+      })
+      .setStyle("margin", "10px");
 
     reset = new Button("Reset")
       .onClick( e -> {
         drawer.setSize("16em").setMaxSize("100%");
-      });
-    app.add(drawer);
+      })
+      .setStyle("margin", "10px");
+
+    Panel inputs = new Panel();
+    Panel buttons = new Panel();
+    
+    inputs.add(size, maxSize)
+      .addClassName("inputs");
+    buttons.add(submit, reset)
+      .addClassName("buttons");
+
     drawer.open();
     drawer.getContent()
-      .add(size, maxSize, submit, reset)
-      .setStyle("height", "100%")
-      .setStyle("display", "flex")
-      .setStyle("flex-wrap", "wrap")
-      .setStyle("align-content", "center")
-      .setStyle("justify-content", "center");
+      .add(inputs, buttons)
+      .addClassName("drawer");
   }
 }
