@@ -4,7 +4,10 @@ body,html {
 
 *{
   background-color: white;
+}
 
+:root {   
+  --bbj-app-layout-header-collapse-height: 45px;
 }
 
 .drawer__logo{
@@ -43,4 +46,12 @@ body,html {
 .layout__second__header{
   flex-basis: 100%;
   margin: calc(-1 * var(--bbj-space-m)) 0 0 calc(-1 * var(--bbj-space-m));
+}
+
+.card{
+  padding: var(--bbj-space-m);
+  margin: var(--bbj-space-m) 0;
+  border: thin solid var(--bbj-color-default);
+  border-radius: var(--bbj-border-radius-m);
+  background-color: var(--bbj-surface-3);
 }

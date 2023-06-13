@@ -1,0 +1,31 @@
+body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.bbj-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bbj-logo img {
+  max-width: 24px;
+}
+
+.bbj-toolbar {
+  display: flex;
+  align-items: center;
+  gap: var(--bbj-space-m);
+  padding: 0 var(--bbj-space-m);
+  background-color: var(--bbj-color-primary);
+  color: var(--bbj-color-on-primary-text);
+  height: 54.21875px;
+}
+
+@media (max-width: 600px) {
+  bbj-tab span {
+    display: none;
+  }
+}
