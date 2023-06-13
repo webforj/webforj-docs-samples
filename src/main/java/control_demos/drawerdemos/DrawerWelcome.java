@@ -89,8 +89,6 @@ public class DrawerWelcome extends App{
               welcomeDrawer.open();
             })
         );
-      
-      
   }
     
 }
