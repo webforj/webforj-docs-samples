@@ -29,7 +29,7 @@ public class AppLayoutMobileDrawer extends App{
           .add(new Label("<html><div class=\"bbj-logo\"><img src=\"https://i.ibb.co/1n4n1Nh/logo.png\" alt=\"logo\" /></div></html>"))
           .add(new Label("<html><b>DWCJ Application</b></html>")
         )
-        .addClassName("bbj-toolbar");
+        .addClassName("bbj__toolbar-drawer");
 
       demo.setHeaderReveal(true);
 

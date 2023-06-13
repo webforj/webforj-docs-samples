@@ -19,8 +19,18 @@ body {
   align-items: center;
   gap: var(--bbj-space-m);
   padding: 0 var(--bbj-space-m);
-  /* background-color: var(--bbj-color-primary); */
-  /* color: var(--bbj-color-on-primary-text); */
+  background-color: var(--bbj-color-primary);
+  color: var(--bbj-color-on-primary-text);
+  height: 54.21875px;
+}
+
+.bbj__toolbar-drawer {
+  display: flex;
+  align-items: center;
+  gap: var(--bbj-space-m);
+  padding: 0 var(--bbj-space-m);
+  background-color: var(--bbj-color-primary);
+  color: var(--bbj-color-on-primary-text);
   height: 54.21875px;
 }
 
