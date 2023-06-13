@@ -25,7 +25,7 @@ public class AppLayoutMobile extends App{
 
       //Header 
       demo.getHeader().add(new Label("<html><div class=\"bbj-logo\"><img src=\"https://i.ibb.co/1n4n1Nh/logo.png\" alt=\"logo\" /></div></html>"))
-          .add(new Label("DWCJ Application")
+          .add(new Label("<html><b>DWCJ Application</b></html>")
         )
         .addClassName("bbj-toolbar");
 
