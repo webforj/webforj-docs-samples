@@ -6,7 +6,7 @@ import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.window.Frame;
 import org.dwcj.component.window.Panel;
-import org.dwcj.component.combobox.ComboBox;
+import org.dwcj.component.choicebox.ChoiceBox;
 import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/comboboxstyles/expanse_styles.css")
@@ -18,23 +18,23 @@ public class ComboboxExpanseDemo extends App {
     Panel container = new Panel().addClassName("container");
     panel.add(container);
 
-    ComboBox cb1 = new ComboBox().setExpanse(ComboBox.Expanse.XSMALL)
+    ChoiceBox cb1 = new ChoiceBox().setExpanse(ChoiceBox.Expanse.XSMALL)
         .setText("Extra Small")
         .setStyle("grid-column", "1");
 
-    ComboBox cb2 = new ComboBox().setExpanse(ComboBox.Expanse.SMALL)
+    ChoiceBox cb2 = new ChoiceBox().setExpanse(ChoiceBox.Expanse.SMALL)
         .setText("Small")
         .setStyle("grid-column", "2");
 
-    ComboBox cb3 = new ComboBox().setExpanse(ComboBox.Expanse.MEDIUM)
+    ChoiceBox cb3 = new ChoiceBox().setExpanse(ChoiceBox.Expanse.MEDIUM)
         .setText("Medium")
         .setStyle("grid-column", "3");
 
-    ComboBox cb4 = new ComboBox().setExpanse(ComboBox.Expanse.LARGE)
+    ChoiceBox cb4 = new ChoiceBox().setExpanse(ChoiceBox.Expanse.LARGE)
         .setText("Large")
         .setStyle("grid-column", "1");
 
-    ComboBox cb5 = new ComboBox().setExpanse(ComboBox.Expanse.XLARGE)
+    ChoiceBox cb5 = new ChoiceBox().setExpanse(ChoiceBox.Expanse.XLARGE)
         .setText("Extra Large")
         .setStyle("grid-column", "3");
 
