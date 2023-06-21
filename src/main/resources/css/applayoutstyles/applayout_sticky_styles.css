@@ -2,10 +2,6 @@ body,html {
   overflow: hidden;
 }
 
-*{
-  background-color: white;
-}
-
 :root {   
   --bbj-app-layout-header-collapse-height: 45px;
 }

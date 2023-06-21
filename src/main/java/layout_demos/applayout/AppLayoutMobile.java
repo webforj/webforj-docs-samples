@@ -2,14 +2,11 @@ package layout_demos.applayout;
 
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.annotation.StyleSheet;
 import org.dwcj.component.applayout.AppLayout;
 import org.dwcj.component.applayout.AppLayout.DrawerPlacement;
 import org.dwcj.component.label.Label;
 import org.dwcj.component.tabbedpane.TabbedPane;
-import org.dwcj.component.tabbedpane.event.TabSelectEvent;
 import org.dwcj.component.window.Frame;
-import org.dwcj.component.window.Panel;
 import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/applayoutstyles/applayout_mobile.css")

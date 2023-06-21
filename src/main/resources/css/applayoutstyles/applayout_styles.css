@@ -2,11 +2,6 @@ body,html {
   overflow: hidden;
 }
 
-*{
-  background-color: white;
-
-}
-
 .drawer__logo{
     display: flex;
     align-items: center;
