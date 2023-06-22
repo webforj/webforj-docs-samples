@@ -27,12 +27,12 @@
         <dependency>
             <groupId>org.dwcj</groupId>
             <artifactId>dwcj-engine</artifactId>
-            <version>23.00-SNAPSHOT</version>
+            <version>23.01-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.dwcj</groupId>
             <artifactId>dwcj-code</artifactId>
-            <version>23.00-SNAPSHOT</version>
+            <version>23.01-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
