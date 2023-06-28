@@ -16,7 +16,8 @@ public class CheckboxEventDemo extends App {
 
     Frame panel = new Frame()
       .addClassName("Frame");
-    checkbox = new CheckBox();
+    checkbox = new CheckBox()
+      .setText("Check Me!");
     panel.add(checkbox);
 
     checkbox.onCheck( e -> checkbox.setText("Checkbox is Checked!") );
