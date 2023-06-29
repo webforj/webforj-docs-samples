@@ -5,27 +5,23 @@ import org.dwcj.component.datefield.DateField;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjAppInitializeException;
 
+public class DateEditBoxDemo extends App {
 
-public class DateEditBoxDemo extends App{
+  @Override
+  public void run() throws DwcjAppInitializeException {
 
-    @Override
-    public void run() throws DwcjAppInitializeException {
+    Frame panel = new Frame();
+    panel.setStyle("display", "inline-grid");
+    panel.setStyle("grid-template-columns", "1fr");
+    panel.setStyle("padding", "10px");
+    panel.setStyle("gap", "50px");
 
-        Frame panel = new Frame();
-        panel.setStyle("display", "inline-grid");
-        panel.setStyle("grid-template-columns", "1fr");
-        panel.setStyle("padding", "10px");
-        panel.setStyle("gap", "50px");
+    DateField d1 = new DateField();
 
+    panel.add(d1);
 
-      DateField d1 = new DateField();
+    d1.setAttribute("visible-calender-icon", "true");
 
-        panel.add(d1);
-
-        d1.setAttribute("visible-calender-icon", "true");
-
-
-
-    }
+  }
 
 }

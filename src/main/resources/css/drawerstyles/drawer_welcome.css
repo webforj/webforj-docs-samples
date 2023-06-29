@@ -22,7 +22,7 @@ body {
   height: 54.21875px;
 }
 
-.drawer__logo{
+.drawer__logo {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,7 +42,7 @@ body {
   }
 }
 
-.welcome__drawer::part(control){
+.welcome__drawer::part(control) {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,21 +50,20 @@ body {
   height: 35em;
 }
 
-.welcome__drawer-content{
+.welcome__drawer-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-#text-30 p{
+#text-30 p {
   text-align: center;
 }
 
-img{
+img {
   max-height: 300px;
   width: 100%;
   max-width: 225px;
   background-color: white;
 }
-

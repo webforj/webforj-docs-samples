@@ -14,7 +14,7 @@ public class TextBoxSpellcheck extends App {
     panel.addClassName("Frame");
 
     TextField t1 = new TextField().setAttribute("spellcheck", "true")
-      .setAttribute("placeholder", "Enter misspelled text");
+        .setAttribute("placeholder", "Enter misspelled text");
 
     panel.add(t1);
   }

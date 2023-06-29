@@ -35,8 +35,8 @@ public class ListboxMultipleSelection extends App {
     panel.add(b1);
     b1.onClick(this::buttonMethod);
     b1.setStyle("grid-column", "2")
-      .setStyle("align-self", "center")
-      .setTheme(Button.Theme.PRIMARY);
+        .setStyle("align-self", "center")
+        .setTheme(Button.Theme.PRIMARY);
   }
 
   void buttonMethod(ButtonClickEvent ev) {

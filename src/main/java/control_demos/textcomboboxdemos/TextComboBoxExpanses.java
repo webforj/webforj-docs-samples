@@ -22,19 +22,19 @@ public class TextComboBoxExpanses extends App {
     data.put("Random Data4", "Test Data");
 
     ComboBox tcb1 = new ComboBox().setExpanse(ComboBox.Expanse.XSMALL)
-      .setAttribute("placeholder", "XSMALL");
+        .setAttribute("placeholder", "XSMALL");
 
     ComboBox tcb2 = new ComboBox().setExpanse(ComboBox.Expanse.SMALL)
-      .setAttribute("placeholder", "SMALL");
+        .setAttribute("placeholder", "SMALL");
 
     ComboBox tcb3 = new ComboBox().setExpanse(ComboBox.Expanse.MEDIUM)
-      .setAttribute("placeholder", "MEDIUM");
+        .setAttribute("placeholder", "MEDIUM");
 
     ComboBox tcb4 = new ComboBox().setExpanse(ComboBox.Expanse.LARGE)
-      .setAttribute("placeholder", "LARGE");
+        .setAttribute("placeholder", "LARGE");
 
     ComboBox tcb5 = new ComboBox().setExpanse(ComboBox.Expanse.XLARGE)
-      .setAttribute("placeholder", "XLARGE");
+        .setAttribute("placeholder", "XLARGE");
 
     panel.add(tcb1, tcb2, tcb3, tcb4, tcb5);
 

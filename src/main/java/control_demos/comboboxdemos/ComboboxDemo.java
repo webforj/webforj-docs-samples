@@ -10,7 +10,7 @@ import org.dwcj.component.choicebox.ChoiceBox;
 import org.dwcj.component.choicebox.event.ChoiceBoxSelectEvent;
 import org.dwcj.exceptions.DwcjAppInitializeException;
 
-public class ComboboxDemo extends App{
+public class ComboboxDemo extends App {
 
     ChoiceBox cb1;
     Panel d1;
@@ -27,7 +27,8 @@ public class ComboboxDemo extends App{
         cb1 = new ChoiceBox();
         d1 = new Panel();
 
-        d1.setStyle("height", "50px").setStyle("width", "50px").setStyle("grid-column", "2").setStyle("background", "blue");
+        d1.setStyle("height", "50px").setStyle("width", "50px").setStyle("grid-column", "2").setStyle("background",
+                "blue");
         d1.setStyle("align-self", "center").setStyle("justify-self", "center");
 
         Map<Object, String> data = new HashMap<>();
@@ -40,13 +41,13 @@ public class ComboboxDemo extends App{
 
         panel.add(cb1, d1);
 
-        cb1.setAttribute("label", "Choose a Color:").selectIndex(0).setStyle("grid-column", "1").setExpanse(ChoiceBox.Expanse.LARGE).setStyle("width", "250px");
+        cb1.setAttribute("label", "Choose a Color:").selectIndex(0).setStyle("grid-column", "1")
+                .setExpanse(ChoiceBox.Expanse.LARGE).setStyle("width", "250px");
         cb1.onSelect(this::cbSelect);
-
 
     }
 
-    private void cbSelect(ChoiceBoxSelectEvent ev){
+    private void cbSelect(ChoiceBoxSelectEvent ev) {
         d1.setStyle("background", ev.getControl().getItemAt(ev.getControl().getSelectedIndex()).toLowerCase());
     }
 

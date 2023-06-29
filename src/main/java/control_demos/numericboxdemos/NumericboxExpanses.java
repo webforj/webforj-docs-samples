@@ -20,24 +20,24 @@ public class NumericboxExpanses extends App {
     container.addClassName("container");
 
     NumberField nb1 = new NumberField().setExpanse(NumberField.Expanse.XSMALL)
-      .setAttribute("label", "Extra Small")
-      .setStyle("grid-column", "1");
+        .setAttribute("label", "Extra Small")
+        .setStyle("grid-column", "1");
 
     NumberField nb2 = new NumberField().setExpanse(NumberField.Expanse.SMALL)
-      .setAttribute("label", "Small")
-      .setStyle("grid-column", "2");
+        .setAttribute("label", "Small")
+        .setStyle("grid-column", "2");
 
     NumberField nb3 = new NumberField().setExpanse(NumberField.Expanse.MEDIUM)
-      .setAttribute("label", "Medium")
-      .setStyle("grid-column", "3");
+        .setAttribute("label", "Medium")
+        .setStyle("grid-column", "3");
 
     NumberField nb4 = new NumberField().setExpanse(NumberField.Expanse.LARGE)
-      .setAttribute("label", "Large")
-      .setStyle("grid-column", "1");
+        .setAttribute("label", "Large")
+        .setStyle("grid-column", "1");
 
     NumberField nb5 = new NumberField().setExpanse(NumberField.Expanse.XLARGE)
-      .setAttribute("label", "Extra Large")
-      .setStyle("grid-column", "3");
+        .setAttribute("label", "Extra Large")
+        .setStyle("grid-column", "3");
 
     container.add(nb1, nb2, nb3, nb4, nb5);
   }

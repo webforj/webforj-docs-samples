@@ -24,10 +24,10 @@ public class ProgressbarOrientation extends App {
     panel.add(pb2, pb);
 
     pb.setAttribute("orientation", "vertical")
-      .setValue(75)
-      .setMaximum(100);
+        .setValue(75)
+        .setMaximum(100);
 
     pb2.setValue(75)
-      .setMaximum(100);
+        .setMaximum(100);
   }
 }

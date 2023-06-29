@@ -21,12 +21,12 @@ public class ButtonAlignment extends App {
     panel.add(buttonTop, buttonCenter, buttonBottom);
 
     buttonTop.setTheme(Button.Theme.DEFAULT)
-      .setVerticalAlignment(TextVerticalAlignment.TOP);
+        .setVerticalAlignment(TextVerticalAlignment.TOP);
 
     buttonCenter.setTheme(Button.Theme.DEFAULT)
-      .setVerticalAlignment(TextVerticalAlignment.CENTER);
+        .setVerticalAlignment(TextVerticalAlignment.CENTER);
 
     buttonBottom.setTheme(Button.Theme.DEFAULT)
-      .setVerticalAlignment(TextVerticalAlignment.BOTTOM);
+        .setVerticalAlignment(TextVerticalAlignment.BOTTOM);
   }
 }

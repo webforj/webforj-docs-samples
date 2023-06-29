@@ -30,14 +30,14 @@ public class ListboxExpanses extends App {
     panel.add(l1, l2, l3, l4, l5);
 
     l1.setItems(data)
-      .setAttribute("label", "Extra Small:");
+        .setAttribute("label", "Extra Small:");
     l2.setItems(data)
-      .setAttribute("label", "Small:");
+        .setAttribute("label", "Small:");
     l3.setItems(data)
-      .setAttribute("label", "Medium:");
+        .setAttribute("label", "Medium:");
     l4.setItems(data)
-      .setAttribute("label", "Large");
+        .setAttribute("label", "Large");
     l5.setItems(data)
-      .setAttribute("label", "Extra Large:");
+        .setAttribute("label", "Extra Large:");
   }
 }

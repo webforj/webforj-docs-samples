@@ -19,10 +19,10 @@ public class DialogClose extends App {
     Frame p = new Frame();
     dialog = new Dialog();
     p.add(dialog,
-      new Button("Show Dialog")
-        .onClick(this::openDialog)
-        .setStyle("margin-left", "48vw")
-        .setStyle("margin-top", "20px"));
+        new Button("Show Dialog")
+            .onClick(this::openDialog)
+            .setStyle("margin-left", "48vw")
+            .setStyle("margin-top", "20px"));
 
     dialog.getHeader().add(new Label("Closing the Dialog"));
     dialog.getContent().add(new Button("Close Dialog").onClick(this::closeDialog));

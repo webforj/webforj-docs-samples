@@ -26,31 +26,31 @@ public class ComboboxThemeDemo extends App {
 
     ChoiceBox b1 = new ChoiceBox().setItems(data);
     ChoiceBox b2 = new ChoiceBox().setAttribute(THEME, "danger")
-      .setItems(data);
+        .setItems(data);
     ChoiceBox b3 = new ChoiceBox().setAttribute(THEME, "gray")
-      .setItems(data);
+        .setItems(data);
     ChoiceBox b4 = new ChoiceBox().setAttribute(THEME, "info")
-      .setItems(data);
+        .setItems(data);
     ChoiceBox b5 = new ChoiceBox().setAttribute(THEME, "primary")
-      .setItems(data);
+        .setItems(data);
     ChoiceBox b6 = new ChoiceBox().setAttribute(THEME, "success")
-      .setItems(data);
+        .setItems(data);
     ChoiceBox b7 = new ChoiceBox().setAttribute(THEME, "warning")
-      .setItems(data);
+        .setItems(data);
     ChoiceBox b8 = new ChoiceBox().setAttribute(THEME, "outlined-default")
-      .setItems(data);
+        .setItems(data);
     ChoiceBox b9 = new ChoiceBox().setAttribute(THEME, "outlined-danger")
-      .setItems(data);
+        .setItems(data);
     ChoiceBox b10 = new ChoiceBox().setAttribute(THEME, "outlined-gray")
-      .setItems(data);
+        .setItems(data);
     ChoiceBox b11 = new ChoiceBox().setAttribute(THEME, "outlined-info")
-      .setItems(data);
+        .setItems(data);
     ChoiceBox b12 = new ChoiceBox().setAttribute(THEME, "outlined-primary")
-      .setItems(data);
+        .setItems(data);
     ChoiceBox b13 = new ChoiceBox().setAttribute(THEME, "outlined-success")
-      .setItems(data);
+        .setItems(data);
     ChoiceBox b14 = new ChoiceBox().setAttribute(THEME, "outlined-warning")
-      .setItems(data);
+        .setItems(data);
 
     panel.add(b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14);
 

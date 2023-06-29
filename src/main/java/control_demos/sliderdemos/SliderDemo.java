@@ -8,7 +8,7 @@ import org.dwcj.exceptions.DwcjAppInitializeException;
 import org.dwcj.component.slider.Slider;
 
 @InlineStyleSheet("context://css/sliderstyles/demo_styles.css")
-public class SliderDemo extends App{
+public class SliderDemo extends App {
 
     @Override
     public void run() throws DwcjAppInitializeException {

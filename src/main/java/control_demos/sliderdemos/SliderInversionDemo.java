@@ -23,22 +23,22 @@ public class SliderInversionDemo extends App {
         entry(100, "100"));
 
     Slider sl1 = new Slider().setMaximum(100)
-      .setMinimum(0);
+        .setMinimum(0);
     Slider sl2 = new Slider().setMaximum(100)
-      .setMinimum(0);
+        .setMinimum(0);
 
     panel.add(new Label("<html><b>Original:</b></html>"), sl1,
-      new Label("<html><b>Inverted:</b></html>"), sl2);
+        new Label("<html><b>Inverted:</b></html>"), sl2);
 
     sl1.setPaintTicks(true)
-      .setMinorTickSpacing(10)
-      .setPaintLabels(true)
-      .setLabels(mapMatch);
+        .setMinorTickSpacing(10)
+        .setPaintLabels(true)
+        .setLabels(mapMatch);
 
     sl2.setPaintTicks(true)
-      .setMinorTickSpacing(10)
-      .setPaintLabels(true)
-      .setLabels(mapMatch)
-      .setAttribute("inverted","true");
+        .setMinorTickSpacing(10)
+        .setPaintLabels(true)
+        .setLabels(mapMatch)
+        .setAttribute("inverted", "true");
   }
 }

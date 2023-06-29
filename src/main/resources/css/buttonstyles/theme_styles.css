@@ -1,11 +1,11 @@
-.Frame{
-    display: inline-grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    margin-top: 20px;
-    gap: 20px;
-    background: white;
+.Frame {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  margin-top: 20px;
+  gap: 20px;
+  background: white;
 }
 
-.BBjWindow{
-    background-color: white !important;
+.BBjWindow {
+  background-color: white !important;
 }

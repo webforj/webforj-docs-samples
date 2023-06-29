@@ -22,24 +22,24 @@ public class DialogPositioning extends App {
     Frame p = new Frame();
     dialog = new Dialog();
     xPos = new NumberField()
-      .setStyle("max-width", "25%");
+        .setStyle("max-width", "25%");
     yPos = new NumberField()
-      .setStyle("max-width", "25%");
+        .setStyle("max-width", "25%");
     p.add(dialog);
 
     FlexLayout xLayout = FlexLayout.create(new Label("X Pixels: "), xPos)
-    .horizontal()
-    .build();
+        .horizontal()
+        .build();
 
     FlexLayout yLayout = FlexLayout.create(new Label("Y Pixels :"), yPos)
-    .horizontal()
-    .build();
+        .horizontal()
+        .build();
 
     dialog.getHeader().add(new Label("Positioning"));
-    dialog.getContent().add(xLayout, yLayout); 
+    dialog.getContent().add(xLayout, yLayout);
     dialog.getFooter().add(new Button("Set Dialog Position")
-                            .onClick(this::setPosition)
-                            .setStyle("width", "150px"));
+        .onClick(this::setPosition)
+        .setStyle("width", "150px"));
 
     dialog.setAutoFocus(true);
     dialog.show();

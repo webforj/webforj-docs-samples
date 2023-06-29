@@ -31,9 +31,9 @@ public class DialogBackdropBlur extends App {
 
     dialog.getHeader().add(new Label("Background Blur"));
     dialog.getContent().add(new Button("Toggle Background Blur")
-      .onClick(this::buttonClick))
-      .setStyle("display","flex")
-      .setStyle("justify-content", "center");
+        .onClick(this::buttonClick))
+        .setStyle("display", "flex")
+        .setStyle("justify-content", "center");
 
     dialog.setCloseable(false);
     dialog.show();

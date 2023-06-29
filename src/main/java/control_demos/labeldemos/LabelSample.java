@@ -7,7 +7,6 @@ import org.dwcj.component.label.Label;
 import org.dwcj.exceptions.DwcjException;
 import org.dwcj.component.HorizontalAlignment;
 
-
 @InlineStyleSheet("context://css/labelstyles/text_styles.css")
 public class LabelSample extends App {
   @Override
@@ -17,12 +16,12 @@ public class LabelSample extends App {
 
     Label myLabel = new Label("Hover over me!");
     myLabel.setHorizontalAlignment(HorizontalAlignment.Alignment.MIDDLE);
-    
-    myLabel.addMouseEnterListener( e -> {
+
+    myLabel.addMouseEnterListener(e -> {
       myLabel.setText("Mouse Entered at X coordinate: " + e.getScreenX() + " and Y coordinate: " + e.getScreenY());
     });
 
-    myLabel.addMouseExitListener( e -> {
+    myLabel.addMouseExitListener(e -> {
       myLabel.setText("Hover over me!");
     });
 

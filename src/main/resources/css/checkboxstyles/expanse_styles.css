@@ -1,12 +1,12 @@
-.Frame{
-    display: flex;
-    margin-top: 20px;
-    gap: 50px;
-    background: white;
-    width: 100%;
-    justify-content: center;
+.Frame {
+  display: flex;
+  margin-top: 20px;
+  gap: 50px;
+  background: white;
+  width: 100%;
+  justify-content: center;
 }
 
-.BBjWindow{
-    background-color: white !important;
+.BBjWindow {
+  background-color: white !important;
 }

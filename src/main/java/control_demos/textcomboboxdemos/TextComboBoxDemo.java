@@ -10,7 +10,7 @@ import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjAppInitializeException;
 
 @InlineStyleSheet("context://css/textcomboboxstyles/text_combo_styles.css")
-public class TextComboBoxDemo extends App{
+public class TextComboBoxDemo extends App {
 
     @Override
     public void run() throws DwcjAppInitializeException {

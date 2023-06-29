@@ -21,7 +21,7 @@ public class ProgressbarPlaceholders extends App {
     panel.add(pb);
 
     pb.addClassName("progress__bar")
-      .setMaximum(100).setValue(75)
-      .setText("{{x}}%  ,  {{value}}/" + pb.getMaximum().toString());
+        .setMaximum(100).setValue(75)
+        .setText("{{x}}%  ,  {{value}}/" + pb.getMaximum().toString());
   }
 }

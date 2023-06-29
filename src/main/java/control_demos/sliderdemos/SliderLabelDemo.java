@@ -18,11 +18,11 @@ public class SliderLabelDemo extends App {
     panel.addClassName("Frame");
 
     Slider sl1 = new Slider().setMaximum(100)
-      .setMinimum(0);
+        .setMinimum(0);
     Slider sl2 = new Slider().setMaximum(100)
-      .setMinimum(0);
+        .setMinimum(0);
     Slider sl3 = new Slider().setMaximum(100)
-      .setMinimum(0);
+        .setMinimum(0);
 
     Map<Integer, String> mapMatch = Map.ofEntries(
         entry(0, "0"),
@@ -47,34 +47,34 @@ public class SliderLabelDemo extends App {
 
     panel.add(
         new Label("<html><b>Labels applied with ticks disabled</b></html>")
-          .setStyle("grid-column", "1")
-          .setStyle("margin", "5px 0 0 10px"),
+            .setStyle("grid-column", "1")
+            .setStyle("margin", "5px 0 0 10px"),
         sl1,
         new Label("<html><b>Labels applied to tick values</b></html>")
-          .setStyle("grid-column", "1")
-          .setStyle("margin", "5px 0 0 10px"),
+            .setStyle("grid-column", "1")
+            .setStyle("margin", "5px 0 0 10px"),
         sl2,
         new Label("<html><b>Labels applied to non-tick values</b></html>")
-          .setStyle("grid-column", "1")
-          .setStyle("margin", "5px 0 0 10px"),
+            .setStyle("grid-column", "1")
+            .setStyle("margin", "5px 0 0 10px"),
         sl3);
 
     sl1.setPaintLabels(true)
-      .setLabels(mapMatch)
-      .setSnapToTicks(true);
+        .setLabels(mapMatch)
+        .setSnapToTicks(true);
 
     sl2.setPaintTicks(true)
-      .setMajorTickSpacing(50)
-      .setMinorTickSpacing(10)
-      .setPaintLabels(true)
-      .setLabels(mapMatch)
-      .setSnapToTicks(true);
+        .setMajorTickSpacing(50)
+        .setMinorTickSpacing(10)
+        .setPaintLabels(true)
+        .setLabels(mapMatch)
+        .setSnapToTicks(true);
 
     sl3.setPaintTicks(true)
-      .setMajorTickSpacing(50)
-      .setMinorTickSpacing(10)
-      .setPaintLabels(true)
-      .setLabels(mapNoMatch)
-      .setSnapToTicks(true);
+        .setMajorTickSpacing(50)
+        .setMinorTickSpacing(10)
+        .setPaintLabels(true)
+        .setLabels(mapNoMatch)
+        .setSnapToTicks(true);
   }
 }

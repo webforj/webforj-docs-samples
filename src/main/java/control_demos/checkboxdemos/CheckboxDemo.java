@@ -7,30 +7,30 @@
 // import org.dwcj.exceptions.DwcjException;
 
 // public class CheckboxDemo extends App {
-//   @Override
-//   public void run() throws DwcjException {
+// @Override
+// public void run() throws DwcjException {
 
-//     Frame panel = new Frame();
-//     panel.setStyle("display", "inline-grid");
-//     panel.setStyle("grid-template-columns", "1fr");
-//     panel.setStyle("padding", "10px");
-//     panel.setStyle("gap", "50px");
+// Frame panel = new Frame();
+// panel.setStyle("display", "inline-grid");
+// panel.setStyle("grid-template-columns", "1fr");
+// panel.setStyle("padding", "10px");
+// panel.setStyle("gap", "50px");
 
-//     CheckBox cb1 = new CheckBox();
-//     cb1.setText("Checkbox 1").onChange(this::checkboxDisplay);
-//     CheckBox cb2 = new CheckBox();
-//     cb2.setText("Checkbox 2").onChange(this::checkboxDisplay);
-//     CheckBox cb3 = new CheckBox();
-//     cb3.setText("Checkbox 3").onChange(this::checkboxDisplay);
+// CheckBox cb1 = new CheckBox();
+// cb1.setText("Checkbox 1").onChange(this::checkboxDisplay);
+// CheckBox cb2 = new CheckBox();
+// cb2.setText("Checkbox 2").onChange(this::checkboxDisplay);
+// CheckBox cb3 = new CheckBox();
+// cb3.setText("Checkbox 3").onChange(this::checkboxDisplay);
 
-//     panel.add(cb1, cb2, cb3);
+// panel.add(cb1, cb2, cb3);
 
-//   }
+// }
 
-//   void checkboxDisplay(CheckBoxChangeEvent ev) {
-//     String name = ev.getControl().getText();
-//     String isChecked = ev.getControl().isChecked() ? "on" : "off";
-//     App.msgbox(name + " has been checked " + isChecked);
-//   }
+// void checkboxDisplay(CheckBoxChangeEvent ev) {
+// String name = ev.getControl().getText();
+// String isChecked = ev.getControl().isChecked() ? "on" : "off";
+// App.msgbox(name + " has been checked " + isChecked);
+// }
 
 // }

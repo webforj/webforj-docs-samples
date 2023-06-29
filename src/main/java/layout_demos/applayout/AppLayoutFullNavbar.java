@@ -11,63 +11,60 @@ import org.dwcj.component.window.Panel;
 import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/applayoutstyles/applayout_styles.css")
-public class AppLayoutFullNavbar extends App{
-  
-  Label contentLabel; 
-  
-  @Override
-    public void run() throws DwcjException{
-      Frame panel = new Frame();
-      AppLayout demo = new AppLayout();
-      panel.add(demo);
+public class AppLayoutFullNavbar extends App {
 
-      //Header 
-      demo.getHeader().addClassName("layout__header")
-          .add(new Label("<html><bbj-icon-button name='menu-2' data-drawer-toggle><bbj-icon-button></html>"),
-          new Label("DWCJ Application")
-              .addClassName("layout__header--title")
-      );
-      demo.setHeaderOffscreen(false);
+    Label contentLabel;
 
-      //Drawer
-      Panel drawer = demo.getDrawer();
-      drawer.addClassName("app-layout-drawer");
+    @Override
+    public void run() throws DwcjException {
+        Frame panel = new Frame();
+        AppLayout demo = new AppLayout();
+        panel.add(demo);
 
-      //Drawer's logo container and logo
-      drawer.add(new Panel().addClassName("drawer__logo").add(
-          new Label("<html><img src='" + "https://i.ibb.co/1n4n1Nh/logo.png" + "'</img></html>")
-      ));
+        // Header
+        demo.getHeader().addClassName("layout__header")
+                .add(new Label("<html><bbj-icon-button name='menu-2' data-drawer-toggle><bbj-icon-button></html>"),
+                        new Label("DWCJ Application")
+                                .addClassName("layout__header--title"));
+        demo.setHeaderOffscreen(false);
 
-      //Drawer's Menu
-      TabbedPane drawerMenu = new TabbedPane();
-      drawer.add(drawerMenu);
-      
-      //Setting drawer menu's attributes
-      drawerMenu.setAttribute("nobody","true");
-      drawerMenu.setAttribute("borderless","true");
-      drawerMenu.setAttribute("placement","left");
+        // Drawer
+        Panel drawer = demo.getDrawer();
+        drawer.addClassName("app-layout-drawer");
 
-      //Adding tabs to drawer menu
-      drawerMenu.add("<bbj-icon name='dashboard'></bbj-icon>      Dashboard")
-          .add("<bbj-icon name='shopping-cart'></bbj-icon>  Orders"   )
-          .add("<bbj-icon name='users'></bbj-icon>          Customers")
-          .add("<bbj-icon name='box'></bbj-icon>            Products" )
-          .add("<bbj-icon name='files'></bbj-icon>          Documents")
-          .add("<bbj-icon name='checklist'></bbj-icon>      Tasks"    )
-          .add("<bbj-icon name='chart-dots-2'></bbj-icon>   Analytics");
-      
-      drawerMenu.onSelect(this::onTabChange);
+        // Drawer's logo container and logo
+        drawer.add(new Panel().addClassName("drawer__logo").add(
+                new Label("<html><img src='" + "https://i.ibb.co/1n4n1Nh/logo.png" + "'</img></html>")));
 
-      //Content
-      this.contentLabel = new Label();
-      demo.getContent().add(
-          new Label("<html><h1>Application Title</h1></html>"),
-          this.contentLabel
-      );
-  }
-  
-  private void onTabChange(TabSelectEvent ev){
-      String value = ev.getTitle().replaceAll("<[^>]*>","").trim();
-      contentLabel.setText("<html><p>Content for " + value + " goes here</p></html>");
-  }
+        // Drawer's Menu
+        TabbedPane drawerMenu = new TabbedPane();
+        drawer.add(drawerMenu);
+
+        // Setting drawer menu's attributes
+        drawerMenu.setAttribute("nobody", "true");
+        drawerMenu.setAttribute("borderless", "true");
+        drawerMenu.setAttribute("placement", "left");
+
+        // Adding tabs to drawer menu
+        drawerMenu.add("<bbj-icon name='dashboard'></bbj-icon>      Dashboard")
+                .add("<bbj-icon name='shopping-cart'></bbj-icon>  Orders")
+                .add("<bbj-icon name='users'></bbj-icon>          Customers")
+                .add("<bbj-icon name='box'></bbj-icon>            Products")
+                .add("<bbj-icon name='files'></bbj-icon>          Documents")
+                .add("<bbj-icon name='checklist'></bbj-icon>      Tasks")
+                .add("<bbj-icon name='chart-dots-2'></bbj-icon>   Analytics");
+
+        drawerMenu.onSelect(this::onTabChange);
+
+        // Content
+        this.contentLabel = new Label();
+        demo.getContent().add(
+                new Label("<html><h1>Application Title</h1></html>"),
+                this.contentLabel);
+    }
+
+    private void onTabChange(TabSelectEvent ev) {
+        String value = ev.getTitle().replaceAll("<[^>]*>", "").trim();
+        contentLabel.setText("<html><p>Content for " + value + " goes here</p></html>");
+    }
 }

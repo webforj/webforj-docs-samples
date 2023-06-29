@@ -14,7 +14,7 @@ public class StringEditPlaceholder extends App {
     panel.addClassName("Frame");
 
     panel.add(
-      new TextField().setAttribute("placeholder", "Example Placeholder")
-        .setExpanse(TextField.Expanse.LARGE));
+        new TextField().setAttribute("placeholder", "Example Placeholder")
+            .setExpanse(TextField.Expanse.LARGE));
   }
 }

@@ -12,26 +12,26 @@ import org.dwcj.exceptions.DwcjException;
 import layout_demos.helper.Box;
 
 @InlineStyleSheet("context://css/flexstyles/container_styles.css")
-public class Direction extends App{
+public class Direction extends App {
 
   FlexLayout boxLayout;
 
   @Override
-  public void run() throws DwcjException{
-    
+  public void run() throws DwcjException {
+
     Frame page = new Frame();
-    
+
     FlexLayout mainLayout = FlexLayout.create()
-    .horizontal()
-    .build();
-    
+        .horizontal()
+        .build();
+
     this.boxLayout = FlexLayout.create()
-    .horizontal()
-    .build()
-    .addClassName("button__container--single-row");
-    
-    for(int i = 1; i <= 4; i++){
-      String hue = String.valueOf((360/10) * i);
+        .horizontal()
+        .build()
+        .addClassName("button__container--single-row");
+
+    for (int i = 1; i <= 4; i++) {
+      String hue = String.valueOf((360 / 10) * i);
       Box newBox = new Box(i);
       newBox.setStyle("background", "hsla(" + String.valueOf(hue) + ", 50%, 75%, 0.25)");
       newBox.setStyle("border", "2px solid " + "hsl(" + String.valueOf(hue) + ", 50%, 35%)");
@@ -40,24 +40,24 @@ public class Direction extends App{
     }
 
     ChoiceBox directions = new ChoiceBox().onSelect(this::selectDirection)
-    .addClassName("flex__options");
+        .addClassName("flex__options");
     directions.setAttribute("label", "Direction Options");
-    for(FlexDirection justify : FlexDirection.values()){
+    for (FlexDirection justify : FlexDirection.values()) {
       String label = justify.getValue();
       directions.addItem(
-        "." + justify.toString()
-          .toLowerCase() + "()", 
-        label.substring(0, 1)
-          .toUpperCase() + label
-          .substring(1)
-          );
-      }
+          "." + justify.toString()
+              .toLowerCase() + "()",
+          label.substring(0, 1)
+              .toUpperCase()
+              + label
+                  .substring(1));
+    }
     directions.selectIndex(0);
     page.add(mainLayout);
-    mainLayout.add(directions, boxLayout);    
+    mainLayout.add(directions, boxLayout);
   }
 
-  private void selectDirection(ChoiceBoxSelectEvent ev){
+  private void selectDirection(ChoiceBoxSelectEvent ev) {
     boxLayout.setDirection(FlexDirection.fromValue(ev.getControl().getSelectedItem().getValue()));
   }
 }

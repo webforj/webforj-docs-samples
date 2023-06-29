@@ -1,22 +1,20 @@
-
-
-.BBjWindow{
-    background-color: white !important;
+.BBjWindow {
+  background-color: white !important;
 }
 
-.Frame{
-    display: flex;
-    margin-top: 20px;
-    background: white;
-    width: 100%;
-    justify-content: center;
+.Frame {
+  display: flex;
+  margin-top: 20px;
+  background: white;
+  width: 100%;
+  justify-content: center;
 }
 
-.container{
-    display: grid;
-    padding: 10px;
-    justify-content: center;
-    gap: 20px;
-    overflow: auto;
-    background: white;
+.container {
+  display: grid;
+  padding: 10px;
+  justify-content: center;
+  gap: 20px;
+  overflow: auto;
+  background: white;
 }

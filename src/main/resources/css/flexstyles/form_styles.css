@@ -2,19 +2,19 @@
 Will need to put some styles in here for the thing
 */
 
-.main__layout{
+.main__layout {
   width: 50%;
-  margin: 25px 20% 10px 20%
+  margin: 25px 20% 10px 20%;
 }
 
-.main__layout *{
+.main__layout * {
   padding: 1px 2px 2px 2px;
 }
 
-bbj-button{
-  width: 75px
+bbj-button {
+  width: 75px;
 }
 
-#simple-11 bbj-editbox{
+#simple-11 bbj-editbox {
   flex: 1;
 }

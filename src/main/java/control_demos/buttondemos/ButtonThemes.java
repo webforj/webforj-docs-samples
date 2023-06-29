@@ -13,7 +13,7 @@ public class ButtonThemes extends App {
     Frame panel = new Frame();
     panel.addClassName("Frame");
 
-    for(Button.Theme theme : Button.Theme.values()){
+    for (Button.Theme theme : Button.Theme.values()) {
       panel.add(new Button(theme.name()).setTheme(theme));
     }
   }

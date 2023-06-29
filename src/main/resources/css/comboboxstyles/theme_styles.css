@@ -1,13 +1,13 @@
-.Frame{
-    display: inline-grid;
-    grid-template-columns: 125px 125px 125px 125px 125px 125px 125px;
-    padding: 10px;
-    gap: 20px;
-    background: white;
-    width: 100%;
-    justify-content: center;
+.Frame {
+  display: inline-grid;
+  grid-template-columns: 125px 125px 125px 125px 125px 125px 125px;
+  padding: 10px;
+  gap: 20px;
+  background: white;
+  width: 100%;
+  justify-content: center;
 }
 
-.BBjWindow{
-    background-color: white !important;
+.BBjWindow {
+  background-color: white !important;
 }

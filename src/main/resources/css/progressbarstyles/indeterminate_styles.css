@@ -1,17 +1,17 @@
-.BBjWindow{
-    background-color: white !important;
+.BBjWindow {
+  background-color: white !important;
 }
 
-.Frame{
-    display: flex;
-    margin-top: 20px;
-    gap: 50px;
-    background: white;
-    width: 100%;
-    justify-content: center;
-    height: 100%;
+.Frame {
+  display: flex;
+  margin-top: 20px;
+  gap: 50px;
+  background: white;
+  width: 100%;
+  justify-content: center;
+  height: 100%;
 }
 
-.progress__bar{
-    width: 400px;
+.progress__bar {
+  width: 400px;
 }

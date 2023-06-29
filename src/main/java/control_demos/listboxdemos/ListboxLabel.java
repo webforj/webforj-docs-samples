@@ -28,7 +28,7 @@ public class ListboxLabel extends App {
     panel.add(l1);
 
     l1.setItems(data)
-    .setHorizontalAlignment(HorizontalAlignment.Alignment.RIGHT)
-    .setAttribute("label","Built-in Label for a list box!");
+        .setHorizontalAlignment(HorizontalAlignment.Alignment.RIGHT)
+        .setAttribute("label", "Built-in Label for a list box!");
   }
 }

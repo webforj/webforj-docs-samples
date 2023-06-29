@@ -7,7 +7,7 @@ import org.dwcj.component.textarea.TextArea;
 import org.dwcj.exceptions.DwcjAppInitializeException;
 
 @InlineStyleSheet("context://css/textareastyles/text_area_styles.css")
-public class TextAreaDemo extends App{
+public class TextAreaDemo extends App {
 
     @Override
     public void run() throws DwcjAppInitializeException {

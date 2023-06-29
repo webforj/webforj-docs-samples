@@ -17,28 +17,28 @@ public class SliderOrientationDemo extends App {
     panel.addClassName("Frame");
 
     Map<Integer, String> mapMatch = Map.ofEntries(
-      entry(0, "0"),
-      entry(50, "50"),
-      entry(100, "100"));
+        entry(0, "0"),
+        entry(50, "50"),
+        entry(100, "100"));
 
     Slider sl1 = new Slider().setMaximum(100)
-      .setMinimum(0);
+        .setMinimum(0);
     Slider sl2 = new Slider().setMaximum(100)
-      .setMinimum(0);
+        .setMinimum(0);
 
     panel.add(sl1, sl2);
 
     sl1.setStyle("width", "400px")
-      .setPaintTicks(true)
-      .setMinorTickSpacing(10)
-      .setPaintLabels(true)
-      .setLabels(mapMatch);
+        .setPaintTicks(true)
+        .setMinorTickSpacing(10)
+        .setPaintLabels(true)
+        .setLabels(mapMatch);
 
     sl2.setOrientation(Orientation.VERTICAL)
-      .setStyle("padding-left", "40px")
-      .setPaintTicks(true)
-      .setMinorTickSpacing(10)
-      .setPaintLabels(true)
-      .setLabels(mapMatch);
+        .setStyle("padding-left", "40px")
+        .setPaintTicks(true)
+        .setMinorTickSpacing(10)
+        .setPaintLabels(true)
+        .setLabels(mapMatch);
   }
 }

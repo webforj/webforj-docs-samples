@@ -1,14 +1,14 @@
-.Frame{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
-    background: white;
-    justify-content: center;
-    height: 100%;
+.Frame {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  background: white;
+  justify-content: center;
+  height: 100%;
 }
 
-.BBjWindow{
-    background-color: white !important;
+.BBjWindow {
+  background-color: white !important;
 }

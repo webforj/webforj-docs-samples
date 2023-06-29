@@ -1,8 +1,6 @@
-.demo__box{
+.demo__box {
   height: 45px;
   width: 90px;
   font-weight: bold;
   border-radius: var(--bbj-border-radius);
 }
-
-

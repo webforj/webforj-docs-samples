@@ -22,9 +22,9 @@ public class ProgressbarMinMax extends App {
     panel.add(lb, pb);
 
     pb.setText("100/200")
-      .setMinimum(50)
-      .setMaximum(200)
-      .setValue(100)
-      .addClassName("progress__bar");
-}
+        .setMinimum(50)
+        .setMaximum(200)
+        .setValue(100)
+        .addClassName("progress__bar");
+  }
 }

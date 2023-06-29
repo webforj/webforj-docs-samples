@@ -18,16 +18,16 @@ public class SliderTickDemo extends App {
     Slider sl2 = new Slider().setMaximum(100).setMinimum(0);
 
     panel.add(
-      new Label("<html><b>No Tick Snapping</b></html>"), sl1,
-      new Label("<html><b>Tick Snapping</b></html>"), sl2);
+        new Label("<html><b>No Tick Snapping</b></html>"), sl1,
+        new Label("<html><b>Tick Snapping</b></html>"), sl2);
 
     sl1.setPaintTicks(true)
-      .setMajorTickSpacing(50)
-      .setMinorTickSpacing(10);
+        .setMajorTickSpacing(50)
+        .setMinorTickSpacing(10);
 
     sl2.setPaintTicks(true)
-      .setMajorTickSpacing(50)
-      .setMinorTickSpacing(10)
-      .setSnapToTicks(true);
+        .setMajorTickSpacing(50)
+        .setMinorTickSpacing(10)
+        .setSnapToTicks(true);
   }
 }

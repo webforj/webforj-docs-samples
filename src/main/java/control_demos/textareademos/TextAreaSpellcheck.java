@@ -14,7 +14,7 @@ public class TextAreaSpellcheck extends App {
     panel.addClassName("Frame");
 
     TextArea t1 = new TextArea().setAttribute("spellcheck", "true")
-      .setAttribute("placeholder","Enter misspelled text");
+        .setAttribute("placeholder", "Enter misspelled text");
 
     panel.add(t1);
   }

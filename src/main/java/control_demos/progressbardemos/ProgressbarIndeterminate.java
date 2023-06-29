@@ -19,7 +19,7 @@ public class ProgressbarIndeterminate extends App {
     panel.addClassName("Frame").add(pb);
 
     pb.setIndeterminate(true)
-      .addClassName("progress__bar")
-      .setText("Syncing Files");
+        .addClassName("progress__bar")
+        .setText("Syncing Files");
   }
 }

@@ -1,14 +1,13 @@
-.Frame{
-    display: flex;
-    flex-direction: row;
-    margin-top: 20px;
-    background: white;
-    width: 100%;
-    justify-content: center;
-    height: 100%;
-
+.Frame {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  background: white;
+  width: 100%;
+  justify-content: center;
+  height: 100%;
 }
 
-.BBjWindow{
-    background-color: white !important;
+.BBjWindow {
+  background-color: white !important;
 }

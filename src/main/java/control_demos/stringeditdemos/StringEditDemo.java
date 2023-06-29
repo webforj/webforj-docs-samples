@@ -6,10 +6,8 @@ import org.dwcj.component.textfield.TextField;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjAppInitializeException;
 
-
-
 @InlineStyleSheet("context://css/stringeditboxstyles/string_edit_styles.css")
-public class StringEditDemo extends App{
+public class StringEditDemo extends App {
 
     @Override
     public void run() throws DwcjAppInitializeException {

@@ -7,14 +7,14 @@ import org.dwcj.component.window.Frame;
 import org.dwcj.component.window.Panel;
 import org.dwcj.exceptions.DwcjException;
 
-public class Wrapping extends App{
+public class Wrapping extends App {
   @Override
-  public void run() throws DwcjException{
-    
+  public void run() throws DwcjException {
+
     Frame page = new Frame();
     Panel container = new Panel()
-      .setStyle("width", "200px")
-      .setStyle("border", "1px black dotted");
+        .setStyle("width", "200px")
+        .setStyle("border", "1px black dotted");
     page.add(container);
 
     Button[] buttons = new Button[3];
@@ -29,7 +29,7 @@ public class Wrapping extends App{
         .horizontal()
         .wrap()
         .build();
-    
+
     container.add(buttonsLayout);
   }
 }

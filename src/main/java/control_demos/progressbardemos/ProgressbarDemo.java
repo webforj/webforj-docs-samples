@@ -8,7 +8,7 @@ import org.dwcj.exceptions.DwcjAppInitializeException;
 import org.dwcj.component.progressbar.ProgressBar;
 
 @InlineStyleSheet("context://css/progressbarstyles/demo_styles.css")
-public class ProgressbarDemo extends App{
+public class ProgressbarDemo extends App {
 
     ProgressBar pb;
 

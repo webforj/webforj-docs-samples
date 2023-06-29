@@ -26,6 +26,8 @@ public class RadioButtonDemos extends App{
 
         panel.add(rb1,rb2,rb3,rb4,rb5);
 
+        rb1.setText("TEST");
+
 
 
     }

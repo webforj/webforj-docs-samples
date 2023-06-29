@@ -1,18 +1,18 @@
-.Frame{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-    gap: 20px;
-    background: white;
-    margin-top: 20px;
-    height: 100%;
+.Frame {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  gap: 20px;
+  background: white;
+  margin-top: 20px;
+  height: 100%;
 }
 
-bbj-progressbar{
-    width: 400px;
+bbj-progressbar {
+  width: 400px;
 }
 
-.BBjWindow{
-    background-color: white !important;
+.BBjWindow {
+  background-color: white !important;
 }
