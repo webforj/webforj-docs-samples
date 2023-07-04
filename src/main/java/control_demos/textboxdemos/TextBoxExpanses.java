@@ -3,7 +3,7 @@ package control_demos.textboxdemos;
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.window.Frame;
-import org.dwcj.component.textfield.TextField;
+import org.dwcj.component.field.Field;
 import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/textboxstyles/text_box_styles.css")
@@ -14,23 +14,23 @@ public class TextBoxExpanses extends App {
     panel.addClassName("Frame")
         .setStyle("display", "grid");
 
-    TextField t1 = new TextField().setExpanse(TextField.Expanse.XSMALL)
+    Field t1 = new Field().setExpanse(Field.Expanse.XSMALL)
         .setAttribute("placeholder", "XSMALL")
         .setStyle("grid-column", "1");
 
-    TextField t2 = new TextField().setExpanse(TextField.Expanse.SMALL)
+    Field t2 = new Field().setExpanse(Field.Expanse.SMALL)
         .setAttribute("placeholder", "SMALL")
         .setStyle("grid-column", "2");
 
-    TextField t3 = new TextField().setExpanse(TextField.Expanse.MEDIUM)
+    Field t3 = new Field().setExpanse(Field.Expanse.MEDIUM)
         .setAttribute("placeholder", "MEDIUM")
         .setStyle("grid-column", "3");
 
-    TextField t4 = new TextField().setExpanse(TextField.Expanse.LARGE)
+    Field t4 = new Field().setExpanse(Field.Expanse.LARGE)
         .setAttribute("placeholder", "LARGE")
         .setStyle("grid-column", "1");
 
-    TextField t5 = new TextField().setExpanse(TextField.Expanse.XLARGE)
+    Field t5 = new Field().setExpanse(Field.Expanse.XLARGE)
         .setAttribute("placeholder", "XLARGE")
         .setStyle("grid-column", "3");
 
