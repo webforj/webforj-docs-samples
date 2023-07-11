@@ -1,5 +1,5 @@
-NumberField nb1 = new NumberField().setExpanse(NumberField.Expanse.XSMALL);
-NumberField nb2 = new NumberField().setExpanse(NumberField.Expanse.SMALL);
-NumberField nb3 = new NumberField().setExpanse(NumberField.Expanse.MEDIUM);
-NumberField nb4 = new NumberField().setExpanse(NumberField.Expanse.LARGE);
-NumberField nb5 = new NumberField().setExpanse(NumberField.Expanse.XLARGE);
+MaskedNumberField nb1 = new MaskedNumberField().setExpanse(MaskedNumberField.Expanse.XSMALL);
+MaskedNumberField nb2 = new MaskedNumberField().setExpanse(MaskedNumberField.Expanse.SMALL);
+MaskedNumberField nb3 = new MaskedNumberField().setExpanse(MaskedNumberField.Expanse.MEDIUM);
+MaskedNumberField nb4 = new MaskedNumberField().setExpanse(MaskedNumberField.Expanse.LARGE);
+MaskedNumberField nb5 = new MaskedNumberField().setExpanse(MaskedNumberField.Expanse.XLARGE);

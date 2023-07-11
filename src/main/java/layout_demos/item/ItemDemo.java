@@ -15,7 +15,7 @@ import org.dwcj.component.flexlayout.FlexDirection;
 import org.dwcj.component.flexlayout.FlexJustifyContent;
 import org.dwcj.component.flexlayout.FlexLayout;
 import org.dwcj.component.flexlayout.FlexWrap;
-import org.dwcj.component.numberfield.event.NumberFieldModifyEvent;
+import org.dwcj.component.maskednumberfield.event.MaskedNumberFieldModifyEvent;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 
@@ -147,7 +147,7 @@ public class ItemDemo extends App{
     codeWindow.setText(javaCode);
   }
 
-  private void spinnerChange(NumberFieldModifyEvent ev){
+  private void spinnerChange(MaskedNumberFieldModifyEvent ev){
     if(ev.getControl().getText().isEmpty() || Integer.valueOf(ev.getControl().getText()) < 1){
       ev.getControl().setText("1");
     }

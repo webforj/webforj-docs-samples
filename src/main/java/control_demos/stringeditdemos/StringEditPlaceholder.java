@@ -2,7 +2,7 @@ package control_demos.stringeditdemos;
 
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.textfield.TextField;
+import org.dwcj.component.maskedtextfield.MaskedTextField;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 
@@ -14,7 +14,7 @@ public class StringEditPlaceholder extends App {
     panel.addClassName("Frame");
 
     panel.add(
-        new TextField().setAttribute("placeholder", "Example Placeholder")
-            .setExpanse(TextField.Expanse.LARGE));
+        new MaskedTextField().setAttribute("placeholder", "Example Placeholder")
+            .setExpanse(MaskedTextField.Expanse.LARGE));
   }
 }

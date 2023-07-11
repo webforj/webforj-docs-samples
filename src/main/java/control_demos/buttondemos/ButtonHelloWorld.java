@@ -3,7 +3,7 @@ package control_demos.buttondemos;
 import org.dwcj.App;
 import org.dwcj.component.window.Frame;
 import org.dwcj.component.label.Label;
-import org.dwcj.component.textfield.TextField;
+import org.dwcj.component.maskedtextfield.MaskedTextField;
 import org.dwcj.component.button.Button;
 import org.dwcj.component.button.event.ButtonClickEvent;
 
@@ -11,8 +11,8 @@ import org.dwcj.exceptions.DwcjAppInitializeException;
 
 public class ButtonHelloWorld extends App {
 
-    private TextField edFirstname;
-    private TextField edLastname;
+    private MaskedTextField edFirstname;
+    private MaskedTextField edLastname;
 
     @Override
     public void run() throws DwcjAppInitializeException {
@@ -28,14 +28,14 @@ public class ButtonHelloWorld extends App {
         panel.setStyle("border", "1px dotted");
         panel.setStyle("padding", "10px");
 
-        // Adding some labels and TextField controls to use in the demonstration
+        // Adding some labels and MaskedTextField controls to use in the demonstration
 
         panel.add(new Label("Firstname:"));
-        edFirstname = new TextField();
+        edFirstname = new MaskedTextField();
         panel.add(edFirstname);
 
         panel.add(new Label("Lastname:"));
-        edLastname = new TextField("");
+        edLastname = new MaskedTextField("");
         panel.add(edLastname);
 
         // Creating the button and using the parameterized constructor for initial text

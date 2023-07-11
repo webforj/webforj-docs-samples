@@ -4,7 +4,7 @@ import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
-import org.dwcj.component.textfield.TextField;
+import org.dwcj.component.maskedtextfield.MaskedTextField;
 
 @InlineStyleSheet("context://css/stringeditboxstyles/string_edit_styles.css")
 public class StringEditExpanse extends App {
@@ -14,19 +14,19 @@ public class StringEditExpanse extends App {
     panel.addClassName("Frame")
         .setStyle("display", "flex");
 
-    TextField s1 = new TextField().setExpanse(TextField.Expanse.XSMALL)
+    MaskedTextField s1 = new MaskedTextField().setExpanse(MaskedTextField.Expanse.XSMALL)
         .setAttribute("placeholder", "XSMALL");
 
-    TextField s2 = new TextField().setExpanse(TextField.Expanse.SMALL)
+    MaskedTextField s2 = new MaskedTextField().setExpanse(MaskedTextField.Expanse.SMALL)
         .setAttribute("placeholder", "SMALL");
 
-    TextField s3 = new TextField().setExpanse(TextField.Expanse.MEDIUM)
+    MaskedTextField s3 = new MaskedTextField().setExpanse(MaskedTextField.Expanse.MEDIUM)
         .setAttribute("placeholder", "MEDIUM");
 
-    TextField s4 = new TextField().setExpanse(TextField.Expanse.LARGE)
+    MaskedTextField s4 = new MaskedTextField().setExpanse(MaskedTextField.Expanse.LARGE)
         .setAttribute("placeholder", "LARGE");
 
-    TextField s5 = new TextField().setExpanse(TextField.Expanse.XLARGE)
+    MaskedTextField s5 = new MaskedTextField().setExpanse(MaskedTextField.Expanse.XLARGE)
         .setAttribute("placeholder", "XLARGE");
 
     panel.add(s1, s2, s3, s4, s5);

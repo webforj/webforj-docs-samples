@@ -1,7 +1,7 @@
 package control_demos.dateeditboxdemos;
 
 import org.dwcj.App;
-import org.dwcj.component.datefield.DateField;
+import org.dwcj.component.maskeddatefield.MaskedDateField;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjAppInitializeException;
 
@@ -16,7 +16,7 @@ public class DateEditBoxDemo extends App {
     panel.setStyle("padding", "10px");
     panel.setStyle("gap", "50px");
 
-    DateField d1 = new DateField();
+    MaskedDateField d1 = new MaskedDateField();
 
     panel.add(d1);
 

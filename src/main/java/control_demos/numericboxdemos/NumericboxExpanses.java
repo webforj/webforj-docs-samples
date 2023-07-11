@@ -5,7 +5,7 @@ import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.window.Frame;
 import org.dwcj.component.window.Panel;
 import org.dwcj.exceptions.DwcjException;
-import org.dwcj.component.numberfield.NumberField;
+import org.dwcj.component.maskednumberfield.MaskedNumberField;
 
 @InlineStyleSheet("context://css/numericboxstyles/expanse_styles.css")
 public class NumericboxExpanses extends App {
@@ -19,23 +19,23 @@ public class NumericboxExpanses extends App {
     panel.addClassName("Frame");
     container.addClassName("container");
 
-    NumberField nb1 = new NumberField().setExpanse(NumberField.Expanse.XSMALL)
+    MaskedNumberField nb1 = new MaskedNumberField().setExpanse(MaskedNumberField.Expanse.XSMALL)
         .setAttribute("label", "Extra Small")
         .setStyle("grid-column", "1");
 
-    NumberField nb2 = new NumberField().setExpanse(NumberField.Expanse.SMALL)
+    MaskedNumberField nb2 = new MaskedNumberField().setExpanse(MaskedNumberField.Expanse.SMALL)
         .setAttribute("label", "Small")
         .setStyle("grid-column", "2");
 
-    NumberField nb3 = new NumberField().setExpanse(NumberField.Expanse.MEDIUM)
+    MaskedNumberField nb3 = new MaskedNumberField().setExpanse(MaskedNumberField.Expanse.MEDIUM)
         .setAttribute("label", "Medium")
         .setStyle("grid-column", "3");
 
-    NumberField nb4 = new NumberField().setExpanse(NumberField.Expanse.LARGE)
+    MaskedNumberField nb4 = new MaskedNumberField().setExpanse(MaskedNumberField.Expanse.LARGE)
         .setAttribute("label", "Large")
         .setStyle("grid-column", "1");
 
-    NumberField nb5 = new NumberField().setExpanse(NumberField.Expanse.XLARGE)
+    MaskedNumberField nb5 = new MaskedNumberField().setExpanse(MaskedNumberField.Expanse.XLARGE)
         .setAttribute("label", "Extra Large")
         .setStyle("grid-column", "3");
 

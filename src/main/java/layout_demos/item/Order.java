@@ -4,7 +4,7 @@ import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.button.Button;
 import org.dwcj.component.flexlayout.FlexLayout;
-import org.dwcj.component.numberfield.NumberField;
+import org.dwcj.component.maskednumberfield.MaskedNumberField;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 
@@ -36,7 +36,7 @@ public class Order extends App{
     }
     orderButton.setTheme(Button.Theme.DANGER);
 
-    NumberField order = new NumberField("5")
+    MaskedNumberField order = new MaskedNumberField("5")
     .setAttribute("Label", "Order:")
     .setStyle("width", "200px");
     Button submit = new Button("Set Order")

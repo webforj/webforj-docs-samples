@@ -28,12 +28,19 @@
             <groupId>org.dwcj</groupId>
             <artifactId>dwcj-engine</artifactId>
             <version>23.02-SNAPSHOT</version>
+            <!-- <scope>system</scope>
+            <systemPath>C:\DWCJ_Files\engine\dwcj-engine\target\dwcj-engine-23.02-SNAPSHOT.jar</systemPath> -->
         </dependency>
         <dependency>
             <groupId>org.dwcj</groupId>
             <artifactId>dwcj-code</artifactId>
             <version>23.02-SNAPSHOT</version>
         </dependency>
+        <!-- <dependency>
+            <groupId>org.dwcj</groupId>
+            <artifactId>dwcj-code</artifactId>
+            <version>23.02-SNAPSHOT</version>
+        </dependency> -->
     </dependencies>
 
     <build>

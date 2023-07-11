@@ -4,7 +4,7 @@ import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.button.Button;
 import org.dwcj.component.drawer.Drawer;
-import org.dwcj.component.numberfield.NumberField;
+import org.dwcj.component.maskednumberfield.MaskedNumberField;
 import org.dwcj.component.window.Frame;
 import org.dwcj.component.window.Panel;
 import org.dwcj.exceptions.DwcjException;
@@ -12,8 +12,8 @@ import org.dwcj.exceptions.DwcjException;
 @InlineStyleSheet("context://css/drawerstyles/drawer_size.css")
 public class DrawerSize extends App {
 
-  NumberField size;
-  NumberField maxSize;
+  MaskedNumberField size;
+  MaskedNumberField maxSize;
 
   Button submit;
   Button reset;
@@ -25,8 +25,8 @@ public class DrawerSize extends App {
     Drawer drawer = new Drawer();
     app.add(drawer);
 
-    size = new NumberField("0").setAttribute("label", "Size:");
-    maxSize = new NumberField("0").setAttribute("label", "Max Size:");
+    size = new MaskedNumberField("0").setAttribute("label", "Size:");
+    maxSize = new MaskedNumberField("0").setAttribute("label", "Max Size:");
 
     submit = new Button("Submit")
         .onClick(e -> {

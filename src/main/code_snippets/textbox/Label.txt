@@ -1,1 +1,1 @@
-TextField t1 = new TextField().setAttribute("label", "Example Label");
+MaskedTextField t1 = new MaskedTextField().setAttribute("label", "Example Label");

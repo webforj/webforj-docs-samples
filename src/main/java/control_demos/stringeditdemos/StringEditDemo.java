@@ -2,7 +2,7 @@ package control_demos.stringeditdemos;
 
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.textfield.TextField;
+import org.dwcj.component.maskedtextfield.MaskedTextField;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjAppInitializeException;
 
@@ -15,7 +15,7 @@ public class StringEditDemo extends App {
         Frame panel = new Frame();
         panel.addClassName("Frame");
 
-        TextField s1 = new TextField();
+        MaskedTextField s1 = new MaskedTextField();
         panel.add(s1);
     }
 

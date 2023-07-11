@@ -1,1 +1,1 @@
-TextField t1 = new TextField().setAttribute("spellcheck", "true");
+MaskedTextField t1 = new MaskedTextField().setAttribute("spellcheck", "true");

@@ -7,23 +7,23 @@ import org.dwcj.component.button.event.ButtonClickEvent;
 import org.dwcj.component.dialog.Dialog;
 import org.dwcj.component.flexlayout.FlexLayout;
 import org.dwcj.component.label.Label;
-import org.dwcj.component.numberfield.NumberField;
+import org.dwcj.component.maskednumberfield.MaskedNumberField;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/dialogstyles/dialog_position_styles.css")
 public class DialogPositioning extends App {
 
-  NumberField xPos, yPos;
+  MaskedNumberField xPos, yPos;
   Dialog dialog;
 
   @Override
   public void run() throws DwcjException {
     Frame p = new Frame();
     dialog = new Dialog();
-    xPos = new NumberField()
+    xPos = new MaskedNumberField()
         .setStyle("max-width", "25%");
-    yPos = new NumberField()
+    yPos = new MaskedNumberField()
         .setStyle("max-width", "25%");
     p.add(dialog);
 

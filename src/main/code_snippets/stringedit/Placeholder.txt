@@ -1,1 +1,1 @@
-new TextField().setAttribute("placeholder", "Example Placeholder")
+new MaskedTextField().setAttribute("placeholder", "Example Placeholder")

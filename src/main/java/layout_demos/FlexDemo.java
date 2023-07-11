@@ -4,23 +4,23 @@ import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.button.Button;
 import org.dwcj.component.choicebox.ChoiceBox;
-import org.dwcj.component.field.Field;
+import org.dwcj.component.field.TextField;
 import org.dwcj.component.flexlayout.FlexLayout;
-import org.dwcj.component.numberfield.NumberField;
+import org.dwcj.component.maskednumberfield.MaskedNumberField;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/flexstyles/form_styles.css")
 public class FlexDemo extends App {
 
-  Field email;
-  Field password;
-  Field firstName;
-  Field lastName;
-  Field address;
-  Field city;
+  TextField email;
+  TextField password;
+  TextField firstName;
+  TextField lastName;
+  TextField address;
+  TextField city;
   ChoiceBox states;
-  NumberField zip;
+  MaskedNumberField zip;
   Button submit;
   Button cancel;
 
@@ -28,14 +28,14 @@ public class FlexDemo extends App {
   public void run() throws DwcjException {
 
     Frame page = new Frame();
-    email = new Field().setAttribute("label", "Email");
-    password = new Field().setAttribute("label", "Password")
+    email = new TextField().setAttribute("label", "Email");
+    password = new TextField().setAttribute("label", "Password")
         .setAttribute("type", "password");
-    firstName = new Field().setAttribute("label", "First Name");
-    lastName = new Field().setAttribute("label", "Last Name");
-    address = new Field().setAttribute("label", "Address");
-    city = new Field().setAttribute("label", "City");
-    zip = new NumberField().setAttribute("label", "Zip");
+    firstName = new TextField().setAttribute("label", "First Name");
+    lastName = new TextField().setAttribute("label", "Last Name");
+    address = new TextField().setAttribute("label", "Address");
+    city = new TextField().setAttribute("label", "City");
+    zip = new MaskedNumberField().setAttribute("label", "Zip");
     populateStates();
     submit = new Button("Submit").setTheme(Button.Theme.PRIMARY);
     cancel = new Button("Cancel").setTheme(Button.Theme.DEFAULT);
