@@ -3,7 +3,7 @@ package control_demos.radiobuttondemos;
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.TextPosition.Position;
-import org.dwcj.component.radiobutton.RadioButton;
+import org.dwcj.component.optioninput.RadioButton;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 

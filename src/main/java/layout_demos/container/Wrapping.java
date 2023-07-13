@@ -2,7 +2,8 @@ package layout_demos.container;
 
 import org.dwcj.App;
 import org.dwcj.component.button.Button;
-import org.dwcj.component.flexlayout.FlexLayout;
+import org.dwcj.component.button.ButtonTheme;
+import org.dwcj.component.layout.flexlayout.FlexLayout;
 import org.dwcj.component.window.Frame;
 import org.dwcj.component.window.Panel;
 import org.dwcj.exceptions.DwcjException;
@@ -21,7 +22,7 @@ public class Wrapping extends App {
     for (int i = 0; i < buttons.length; i++) {
       buttons[i] = new Button("Button " + (i + 1));
       if (i == 0) {
-        buttons[i].setTheme(Button.Theme.PRIMARY);
+        buttons[i].setTheme(ButtonTheme.PRIMARY);
       }
     }
 

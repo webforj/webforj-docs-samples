@@ -2,9 +2,11 @@ package control_demos.buttondemos;
 
 import org.dwcj.App;
 import org.dwcj.component.window.Frame;
-import org.dwcj.component.label.Label;
 import org.dwcj.component.maskedtextfield.MaskedTextField;
+import org.dwcj.component.texts.Label;
+import org.dwcj.component.Expanse;
 import org.dwcj.component.button.Button;
+import org.dwcj.component.button.ButtonTheme;
 import org.dwcj.component.button.event.ButtonClickEvent;
 
 import org.dwcj.exceptions.DwcjAppInitializeException;
@@ -45,9 +47,8 @@ public class ButtonHelloWorld extends App {
         panel.add(helloBtn);
 
         // Setting the theme, expanse and text alignment using the Button's enum values
-        helloBtn.setTheme(Button.Theme.PRIMARY);
-        helloBtn.setExpanse(Button.Expanse.LARGE);
-        helloBtn.setVerticalAlignment(Button.TextVerticalAlignment.CENTER);
+        helloBtn.setTheme(ButtonTheme.PRIMARY);
+        helloBtn.setExpanse(Expanse.LARGE);
 
         // Setting a click event for the first button
         helloBtn.onClick(this::onHelloButtonPush);
@@ -55,9 +56,8 @@ public class ButtonHelloWorld extends App {
         // Repeating the above functionality for the second button
         Button deleteBtn = new Button("Clear Text");
         panel.add(deleteBtn);
-        deleteBtn.setTheme(Button.Theme.DANGER);
-        deleteBtn.setExpanse(Button.Expanse.LARGE);
-        deleteBtn.setVerticalAlignment(Button.TextVerticalAlignment.CENTER);
+        deleteBtn.setTheme(ButtonTheme.DANGER);
+        deleteBtn.setExpanse(Expanse.LARGE);
         deleteBtn.onClick(this::onDeleteButtonPush);
 
         // Styling for both buttons

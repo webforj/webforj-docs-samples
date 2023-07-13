@@ -3,9 +3,10 @@ package layout_demos;
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.button.Button;
+import org.dwcj.component.button.ButtonTheme;
 import org.dwcj.component.choicebox.ChoiceBox;
 import org.dwcj.component.field.TextField;
-import org.dwcj.component.flexlayout.FlexLayout;
+import org.dwcj.component.layout.flexlayout.FlexLayout;
 import org.dwcj.component.maskednumberfield.MaskedNumberField;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
@@ -37,8 +38,8 @@ public class FlexDemo extends App {
     city = new TextField().setAttribute("label", "City");
     zip = new MaskedNumberField().setAttribute("label", "Zip");
     populateStates();
-    submit = new Button("Submit").setTheme(Button.Theme.PRIMARY);
-    cancel = new Button("Cancel").setTheme(Button.Theme.DEFAULT);
+    submit = new Button("Submit").setTheme(ButtonTheme.PRIMARY);
+    cancel = new Button("Cancel").setTheme(ButtonTheme.DEFAULT);
 
     FlexLayout mainLayout = FlexLayout.create()
         .vertical()

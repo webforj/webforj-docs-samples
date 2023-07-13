@@ -1,8 +1,9 @@
 package control_demos.drawerdemos;
 
 import org.dwcj.App;
-import org.dwcj.component.checkbox.CheckBox;
+
 import org.dwcj.component.drawer.Drawer;
+import org.dwcj.component.optioninput.CheckBox;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 

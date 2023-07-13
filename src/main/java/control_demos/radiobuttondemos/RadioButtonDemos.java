@@ -4,7 +4,7 @@ import org.dwcj.App;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjAppInitializeException;
 
-import org.dwcj.component.radiobutton.RadioButton;
+import org.dwcj.component.optioninput.RadioButton;
 
 public class RadioButtonDemos extends App{
 

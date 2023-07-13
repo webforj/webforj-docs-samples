@@ -5,6 +5,7 @@ import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.window.Panel;
 import org.dwcj.component.window.Frame;
 import org.dwcj.component.button.Button;
+import org.dwcj.component.button.ButtonTheme;
 import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/buttonstyles/disable_styles.css")
@@ -37,14 +38,14 @@ public class ButtonDisable extends App {
         successButton,
         dangerButton);
 
-    defaultButton.setTheme(Button.Theme.DEFAULT);
-    defaultButton2.setTheme(Button.Theme.DEFAULT);
-    primaryButton.setTheme(Button.Theme.PRIMARY);
-    primaryButton2.setTheme(Button.Theme.PRIMARY);
-    successButton.setTheme(Button.Theme.SUCCESS);
-    successButton2.setTheme(Button.Theme.SUCCESS);
-    dangerButton.setTheme(Button.Theme.DANGER);
-    dangerButton2.setTheme(Button.Theme.DANGER);
+    defaultButton.setTheme(ButtonTheme.DEFAULT);
+    defaultButton2.setTheme(ButtonTheme.DEFAULT);
+    primaryButton.setTheme(ButtonTheme.PRIMARY);
+    primaryButton2.setTheme(ButtonTheme.PRIMARY);
+    successButton.setTheme(ButtonTheme.SUCCESS);
+    successButton2.setTheme(ButtonTheme.SUCCESS);
+    dangerButton.setTheme(ButtonTheme.DANGER);
+    dangerButton2.setTheme(ButtonTheme.DANGER);
 
     defaultButton.setEnabled(false);
     primaryButton.setEnabled(false);

@@ -2,7 +2,7 @@ package control_demos.sliderdemos;
 
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.label.Label;
+import org.dwcj.component.texts.Label;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 import org.dwcj.component.slider.Slider;

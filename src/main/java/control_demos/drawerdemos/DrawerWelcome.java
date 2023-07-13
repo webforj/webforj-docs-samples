@@ -2,12 +2,14 @@ package control_demos.drawerdemos;
 
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.applayout.AppLayout;
-import org.dwcj.component.applayout.AppLayout.DrawerPlacement;
+import org.dwcj.component.Expanse;
 import org.dwcj.component.button.Button;
+import org.dwcj.component.button.ButtonTheme;
 import org.dwcj.component.drawer.Drawer;
 import org.dwcj.component.drawer.Drawer.Placement;
-import org.dwcj.component.label.Label;
+import org.dwcj.component.layout.applayout.AppLayout;
+import org.dwcj.component.layout.applayout.AppLayout.DrawerPlacement;
+import org.dwcj.component.texts.Label;
 import org.dwcj.component.tabbedpane.TabbedPane;
 import org.dwcj.component.window.Frame;
 import org.dwcj.component.window.Panel;
@@ -75,8 +77,8 @@ public class DrawerWelcome extends App {
         .add(
             new Label("<html><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p></html>"))
         .add(new Button("Get Started")
-            .setTheme(Button.Theme.PRIMARY)
-            .setExpanse(Button.Expanse.LARGE))
+            .setTheme(ButtonTheme.PRIMARY)
+            .setExpanse(Expanse.LARGE))
         .addClassName("welcome__drawer-content");
 
     // Content

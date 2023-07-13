@@ -3,9 +3,10 @@ package layout_demos.item;
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.button.Button;
+import org.dwcj.component.button.ButtonTheme;
 import org.dwcj.component.choicebox.ChoiceBox;
-import org.dwcj.component.flexlayout.FlexAlignment;
-import org.dwcj.component.flexlayout.FlexLayout;
+import org.dwcj.component.layout.flexlayout.FlexAlignment;
+import org.dwcj.component.layout.flexlayout.FlexLayout;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 
@@ -31,11 +32,11 @@ public class SelfAlign extends App{
     
     for(int i = 1; i <= 5; i++){
       Button newButton = new Button("Button " + i);
-      boxLayout.add(newButton.setTheme(Button.Theme.PRIMARY));
+      boxLayout.add(newButton.setTheme(ButtonTheme.PRIMARY));
       boxLayout.setItemOrder(i, newButton);
       alignButton = newButton;
     }
-    alignButton.setTheme(Button.Theme.DANGER).setText("Align Me!");
+    alignButton.setTheme(ButtonTheme.DANGER).setText("Align Me!");
 
     ChoiceBox alignment = new ChoiceBox()
     .onSelect( e -> {

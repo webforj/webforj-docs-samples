@@ -6,6 +6,7 @@ import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.window.Frame;
 import org.dwcj.component.button.Button;
+import org.dwcj.component.button.ButtonTheme;
 import org.dwcj.component.button.event.ButtonClickEvent;
 import org.dwcj.component.listbox.ListBox;
 import org.dwcj.exceptions.DwcjException;
@@ -36,7 +37,7 @@ public class ListboxMultipleSelection extends App {
     b1.onClick(this::buttonMethod);
     b1.setStyle("grid-column", "2")
         .setStyle("align-self", "center")
-        .setTheme(Button.Theme.PRIMARY);
+        .setTheme(ButtonTheme.PRIMARY);
   }
 
   void buttonMethod(ButtonClickEvent ev) {

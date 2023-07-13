@@ -3,7 +3,8 @@ package layout_demos.item;
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.button.Button;
-import org.dwcj.component.flexlayout.FlexLayout;
+import org.dwcj.component.button.ButtonTheme;
+import org.dwcj.component.layout.flexlayout.FlexLayout;
 import org.dwcj.component.maskednumberfield.MaskedNumberField;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
@@ -30,11 +31,11 @@ public class Order extends App{
     
     for(int i = 1; i <= 5; i++){
       Button newButton = new Button("Order: " + i);
-      boxLayout.add(newButton.setTheme(Button.Theme.PRIMARY));
+      boxLayout.add(newButton.setTheme(ButtonTheme.PRIMARY));
       boxLayout.setItemOrder(i, newButton);
       orderButton = newButton;
     }
-    orderButton.setTheme(Button.Theme.DANGER);
+    orderButton.setTheme(ButtonTheme.DANGER);
 
     MaskedNumberField order = new MaskedNumberField("5")
     .setAttribute("Label", "Order:")

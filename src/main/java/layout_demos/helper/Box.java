@@ -5,8 +5,8 @@ import java.util.Map;
 
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.flexlayout.FlexLayout;
-import org.dwcj.component.label.Label;
+import org.dwcj.component.layout.flexlayout.FlexLayout;
+import org.dwcj.component.texts.Label;
 import org.dwcj.component.window.AbstractWindow;
 import org.dwcj.component.HasStyle;
 

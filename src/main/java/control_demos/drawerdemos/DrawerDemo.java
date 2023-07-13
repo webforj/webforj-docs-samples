@@ -2,7 +2,7 @@ package control_demos.drawerdemos;
 
 import org.dwcj.App;
 import org.dwcj.component.drawer.Drawer;
-import org.dwcj.component.label.Label;
+import org.dwcj.component.texts.Label;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 

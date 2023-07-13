@@ -2,7 +2,8 @@
 
 // import org.dwcj.App;
 // import org.dwcj.component.window.Frame;
-// import org.dwcj.component.checkbox.CheckBox;
+// import org.dwcj.component.optioninput.CheckBox;
+
 // import org.dwcj.component.checkbox.event.CheckBoxChangeEvent;
 // import org.dwcj.exceptions.DwcjException;
 

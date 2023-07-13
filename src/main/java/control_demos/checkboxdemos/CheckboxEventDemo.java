@@ -2,7 +2,7 @@ package control_demos.checkboxdemos;
 
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.checkbox.CheckBox;
+import org.dwcj.component.optioninput.CheckBox;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 
