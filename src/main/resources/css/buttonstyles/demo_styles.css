@@ -11,17 +11,17 @@
   display: flex;
   gap: 50px;
   justify-content: center;
-  width: 70%;
+  width: 80%;
 }
 .row--2{
   display: flex;
   gap: 20px;
   justify-content: center;
-  width: 70%;
+  width: 80%;
 }
 .row--3{
   display: flex;
   gap: 20px;
   justify-content: flex-start;
-  width: 70%;
+  width: 80%;
 }
