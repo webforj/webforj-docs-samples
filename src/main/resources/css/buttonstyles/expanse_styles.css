@@ -1,7 +1,6 @@
 .Frame {
   display: flex;
   margin-top: 20px;
-  background: white;
   width: 100%;
   justify-content: center;
 }
@@ -10,9 +9,5 @@
   display: inline-grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   gap: 20px;
-  background: white;
   align-items: center;
-}
-.BBjWindow {
-  background-color: white !important;
 }
