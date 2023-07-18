@@ -1,0 +1,3 @@
+button.addClickListener(e -> {
+  text.setText("Current Counter: " + (++counter));
+});

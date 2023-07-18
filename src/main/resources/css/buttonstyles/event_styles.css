@@ -1,0 +1,8 @@
+.window{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  width: 100%;
+  justify-content: center;
+}
