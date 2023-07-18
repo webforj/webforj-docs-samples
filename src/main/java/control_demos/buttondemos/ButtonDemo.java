@@ -30,9 +30,9 @@ public class ButtonDemo extends App {
       App.msgbox("Welcome to the Application!");
     }).setTheme(ButtonTheme.PRIMARY);
 
-    firstName = new TextField("First Name", "");
-    lastName = new TextField("Last Name", "");
-    email = new TextField("E-mail:", "");
+    firstName = new TextField("First Name", "Jason");
+    lastName = new TextField("Last Name", "Turner");
+    email = new TextField("E-mail:", "turner.jason@email.com");
 
     Panel firstRow = new Panel().add(
       firstName, lastName
@@ -43,7 +43,7 @@ public class ButtonDemo extends App {
     ).addClassName("row--2");
 
     Panel thirdRow = new Panel().add(
-      clear, submit
+      submit, clear
     ).addClassName("row--3");
 
     window.add(firstRow, secondRow, thirdRow)
