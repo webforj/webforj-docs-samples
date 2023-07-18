@@ -1,3 +1,4 @@
 button.addClickListener(e -> {
-  text.setText("Current Counter: " + (++counter));
+  text.setText("<html><b>Current Counter:</b></html> " + (++counter));
+  payload.setText("<html><b>Event payload:</b></html> " + e.getData().toString());
 });

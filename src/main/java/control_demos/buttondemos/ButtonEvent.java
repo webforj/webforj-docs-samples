@@ -12,20 +12,24 @@ public class ButtonEvent extends App{
   
   Integer counter;
   Label text;
+  Label payload;
 
   @Override
   public void run() throws DwcjException {
     Frame window = new Frame()
       .addClassName("window");
-    
-    Button button = new Button("Click Me!");
-    text = new Label("Current Counter: 0");
+
+    Button button = new Button("Click Me!")
+      .setStyle("width", "150px");
+    text = new Label("<html><b>Current Counter:</b></html> 0");
+    payload = new Label("<html><b>Event payload:</b></html> ");
     counter = 0;
 
     button.addClickListener(e -> {
-      text.setText("Current Counter: " + (++counter));
+      text.setText("<html><b>Current Counter:</b></html> " + (++counter));
+      payload.setText("<html><b>Event payload:</b></html> " + e.getData().toString());
     });
     
-    window.add(button, text);
+    window.add(button, text, payload);
   }
 }
