@@ -12,17 +12,13 @@ import org.dwcj.exceptions.DwcjException;
 public class ButtonExpanses extends App {
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
+    Frame window = new Frame();
     Panel container = new Panel().addClassName("container");
-    panel.addClassName("Frame");
+    window.addClassName("Frame");
 
-    Button be1 = new Button("XSMALL").setExpanse(Expanse.XSMALL);
-    Button be2 = new Button("SMALL").setExpanse(Expanse.SMALL);
-    Button be3 = new Button("MEDIUM").setExpanse(Expanse.MEDIUM);
-    Button be4 = new Button("LARGE").setExpanse(Expanse.LARGE);
-    Button be5 = new Button("XLARGE").setExpanse(Expanse.XLARGE);
-
-    panel.add(container);
-    container.add(be1, be2, be3, be4, be5);
+    for(int i = Expanse.values().length - 1; i >= 0; i--){
+      container.add(new Button(Expanse.values()[i].name()).setExpanse(Expanse.values()[i]));
+    }
+    window.add(container);
   }
 }

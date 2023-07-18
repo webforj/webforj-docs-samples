@@ -12,13 +12,13 @@ import org.dwcj.exceptions.DwcjException;
 public class ButtonDisable extends App {
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
-    panel.addClassName("Frame");
+    Frame window = new Frame();
+    window.addClassName("Frame");
 
     Panel disabled = new Panel();
     disabled.addClassName("disabledButtons");
 
-    panel.add(disabled);
+    window.add(disabled);
 
     Button defaultButton = new Button("DEFAULT DISABLED");
     Button primaryButton = new Button("PRIMARY DISABLED");

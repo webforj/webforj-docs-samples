@@ -15,7 +15,15 @@ public class ButtonThemes extends App {
     panel.addClassName("Frame");
 
     for (ButtonTheme theme : ButtonTheme.values()) {
-      panel.add(new Button(theme.name()).setTheme(theme));
+      if(!theme.name().contains("OUTLINE")){
+        panel.add(new Button(theme.name()).setTheme(theme));
+      }
+    }
+    
+    for (ButtonTheme theme : ButtonTheme.values()) {
+      if(theme.name().contains("OUTLINE")){
+        panel.add(new Button(theme.name()).setTheme(theme));
+      }
     }
   }
 }

@@ -10,13 +10,11 @@ import org.dwcj.exceptions.DwcjException;
 public class ButtonIcon extends App {
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
-    panel.addClassName("Frame");
+    Frame window = new Frame();
+    window.addClassName("window");
     Button b1 = new Button("<html><bbj-icon name=\"alien\"></bbj-icon> Icon Left</html>");
-    panel.add(b1);
     Button b2 = new Button("<html>Icon Right <bbj-icon name=\"alien\"></bbj-icon></html>");
-    panel.add(b2);
     Button b3 = new Button("<html><bbj-icon name=\"alien\"></bbj-icon></html>");
-    panel.add(b3);
+    window.add(b1, b2, b3);
   }
 }
