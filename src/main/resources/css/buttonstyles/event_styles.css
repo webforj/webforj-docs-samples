@@ -1,9 +1,14 @@
 .window{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   /* align-items: center; */
   gap: 15px;
   padding: 20px;
   width: 100%;
   /* justify-content: center; */
+}
+
+.text--display{
+  display: flex;
+  flex-direction: column;
 }
