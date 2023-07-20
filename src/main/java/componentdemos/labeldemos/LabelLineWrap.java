@@ -11,7 +11,7 @@ import org.dwcj.exceptions.DwcjException;
 public class LabelLineWrap extends App {
   @Override
   public void run() throws DwcjException {
-    Frame window = new Frame();
+    Frame panel = new Frame();
     panel.addClassName("Frame");
 
     Label l1 = new Label(

@@ -10,7 +10,7 @@ import org.dwcj.component.maskedtextfield.MaskedTextField;
 public class StringEditExpanse extends App {
   @Override
   public void run() throws DwcjException {
-    Frame window = new Frame();
+    Frame panel = new Frame();
     panel.addClassName("Frame")
         .setStyle("display", "flex");
 

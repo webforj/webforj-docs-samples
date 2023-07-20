@@ -13,7 +13,7 @@ import org.dwcj.component.slider.Slider.Orientation;
 public class SliderOrientationDemo extends App {
   @Override
   public void run() throws DwcjException {
-    Frame window = new Frame();
+    Frame panel = new Frame();
     panel.addClassName("Frame");
 
     Map<Integer, String> mapMatch = Map.ofEntries(

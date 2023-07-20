@@ -13,7 +13,7 @@ import org.dwcj.exceptions.DwcjException;
 public class ComboboxExpanseDemo extends App {
     @Override
     public void run() throws DwcjException {
-        Frame window = new Frame();
+        Frame panel = new Frame();
         panel.addClassName("Frame");
         Panel container = new Panel().addClassName("container");
         panel.add(container);

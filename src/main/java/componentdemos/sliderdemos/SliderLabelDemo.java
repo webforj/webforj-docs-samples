@@ -14,7 +14,7 @@ public class SliderLabelDemo extends App {
   @Override
   public void run() throws DwcjException {
 
-    Frame window = new Frame();
+    Frame panel = new Frame();
     panel.addClassName("Frame");
 
     Slider sl1 = new Slider().setMaximum(100)

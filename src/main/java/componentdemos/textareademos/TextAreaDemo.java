@@ -12,7 +12,7 @@ public class TextAreaDemo extends App {
     @Override
     public void run() throws DwcjAppInitializeException {
 
-        Frame window = new Frame();
+        Frame panel = new Frame();
         panel.addClassName("Frame");
         TextArea t1 = new TextArea();
         panel.add(t1);

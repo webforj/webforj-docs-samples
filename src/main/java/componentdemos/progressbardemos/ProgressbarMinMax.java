@@ -14,7 +14,7 @@ public class ProgressbarMinMax extends App {
 
   @Override
   public void run() throws DwcjException {
-    Frame window = new Frame();
+    Frame panel = new Frame();
     panel.addClassName("Frame");
 
     pb = new ProgressBar();

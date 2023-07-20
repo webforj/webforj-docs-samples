@@ -10,7 +10,7 @@ import org.dwcj.exceptions.DwcjException;
 public class LabelDemo extends App {
   @Override
   public void run() throws DwcjException {
-    Frame window = new Frame();
+    Frame panel = new Frame();
     panel.addClassName("Frame");
 
     Label l1 = new Label("This is a Label component, which renders as static text on a webpage");

@@ -10,7 +10,7 @@ import org.dwcj.exceptions.DwcjException;
 public class TextAreaLabel extends App {
   @Override
   public void run() throws DwcjException {
-    Frame window = new Frame();
+    Frame panel = new Frame();
     panel.addClassName("Frame");
     panel.add(new TextArea().setAttribute("label", "Example Label"));
   }

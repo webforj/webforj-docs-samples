@@ -22,7 +22,7 @@ public class DrawerWelcome extends App {
 
   @Override
   public void run() throws DwcjException {
-    Frame window = new Frame();
+    Frame panel = new Frame();
     AppLayout demo = new AppLayout();
     panel.add(demo);
 

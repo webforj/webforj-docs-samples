@@ -15,7 +15,7 @@ public class TextComboBoxDemo extends App {
     @Override
     public void run() throws DwcjAppInitializeException {
 
-        Frame window = new Frame();
+        Frame panel = new Frame();
         panel.addClassName("Frame");
 
         Map<Object, String> data = new HashMap<>();
