@@ -11,7 +11,7 @@ import org.dwcj.component.slider.Slider;
 public class SliderThemesDemo extends App {
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
+    Frame window = new Frame();
     panel.addClassName("Frame");
 
     Slider sl1 = new Slider().setMaximum(100)

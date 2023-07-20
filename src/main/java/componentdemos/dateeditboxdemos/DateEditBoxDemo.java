@@ -10,7 +10,7 @@ public class DateEditBoxDemo extends App {
   @Override
   public void run() throws DwcjAppInitializeException {
 
-    Frame panel = new Frame();
+    Frame window = new Frame();
     panel.setStyle("display", "inline-grid");
     panel.setStyle("grid-template-columns", "1fr");
     panel.setStyle("padding", "10px");

@@ -15,7 +15,7 @@ public class ListboxDemo extends App {
     @Override
     public void run() throws DwcjAppInitializeException {
 
-        Frame panel = new Frame();
+        Frame window = new Frame();
         panel.addClassName("Frame");
         ListBox l1 = new ListBox();
 

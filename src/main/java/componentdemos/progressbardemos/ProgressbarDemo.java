@@ -15,7 +15,7 @@ public class ProgressbarDemo extends App {
     @Override
     public void run() throws DwcjAppInitializeException {
 
-        Frame panel = new Frame();
+        Frame window = new Frame();
         panel.addClassName("Frame");
         pb = new ProgressBar();
         panel.add(pb);

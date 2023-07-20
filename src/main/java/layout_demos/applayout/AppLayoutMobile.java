@@ -16,7 +16,7 @@ public class AppLayoutMobile extends App {
 
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
+    Frame window = new Frame();
     AppLayout demo = new AppLayout();
     panel.add(demo);
 

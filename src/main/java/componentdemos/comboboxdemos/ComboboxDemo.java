@@ -17,7 +17,7 @@ public class ComboboxDemo extends App {
 
     @Override
     public void run() throws DwcjAppInitializeException {
-        Frame panel = new Frame();
+        Frame window = new Frame();
         panel.setStyle("display", "inline-grid");
         panel.setStyle("grid-template-columns", "1fr 1fr");
         panel.setStyle("padding", "10px");

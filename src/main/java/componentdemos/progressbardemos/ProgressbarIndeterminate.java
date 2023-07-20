@@ -13,7 +13,7 @@ public class ProgressbarIndeterminate extends App {
 
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
+    Frame window = new Frame();
     pb = new ProgressBar();
 
     panel.addClassName("Frame").add(pb);

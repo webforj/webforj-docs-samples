@@ -15,7 +15,7 @@ public class ComboboxThemeDemo extends App {
 
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
+    Frame window = new Frame();
     panel.addClassName("Frame");
 
     Map<Object, String> data = new HashMap<>();

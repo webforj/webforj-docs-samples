@@ -12,7 +12,7 @@ import org.dwcj.exceptions.DwcjException;
 public class ListboxExpanses extends App {
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
+    Frame window = new Frame();
     panel.addClassName("Frame");
 
     ListBox l1 = new ListBox().setExpanse(ListBox.Expanse.XSMALL);

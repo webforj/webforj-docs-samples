@@ -12,7 +12,7 @@ public class NumericboxExpanses extends App {
   @Override
   public void run() throws DwcjException {
 
-    Frame panel = new Frame();
+    Frame window = new Frame();
     Panel container = new Panel();
 
     panel.add(container);

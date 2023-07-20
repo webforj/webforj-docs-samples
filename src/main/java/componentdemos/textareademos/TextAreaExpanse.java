@@ -11,7 +11,7 @@ import org.dwcj.component.textarea.TextArea;
 public class TextAreaExpanse extends App {
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
+    Frame window = new Frame();
     panel.addClassName("Frame")
         .setStyle("display", "flex");
 

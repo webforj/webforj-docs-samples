@@ -10,7 +10,7 @@ import org.dwcj.component.progressbar.ProgressBar;
 public class ProgressbarThemes extends App {
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
+    Frame window = new Frame();
     panel.addClassName("Frame");
 
     ProgressBar pb1 = new ProgressBar();
