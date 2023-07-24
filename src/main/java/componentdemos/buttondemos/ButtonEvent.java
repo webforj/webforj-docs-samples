@@ -3,37 +3,43 @@ package componentdemos.buttondemos;
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.button.Button;
+import org.dwcj.component.layout.flexlayout.FlexLayout;
+import org.dwcj.component.layout.flexlayout.FlexLayoutBuilder;
 import org.dwcj.component.texts.Label;
 import org.dwcj.component.window.Frame;
-import org.dwcj.component.window.Panel;
 import org.dwcj.exceptions.DwcjException;
 
+/**
+ * Demonstration for Button events.
+ */
 @InlineStyleSheet("context://css/buttonstyles/event_styles.css")
-public class ButtonEvent extends App{
-  
+public class ButtonEvent extends App {
+
   Integer counter;
   Label text;
   Label payload;
 
   @Override
   public void run() throws DwcjException {
-    Frame window = new Frame()
-      .addClassName("window");
+    final Frame window = new Frame();
+    window.addClassName("window");
 
-    Button button = new Button("Click Me!")
-      .setStyle("width", "150px");
-    text = new Label("<html><b>Current Counter:</b></html> 0");
-    payload = new Label("<html><b>Event payload:</b></html> ");
-    Panel textDisplay = new Panel()
-      .add(text, payload)
-      .addClassName("text--display");
+    Button button = new Button("Click Me!");
+    button.setStyle("width", "150px");
+    text = new Label("Current Counter: 0");
+    payload = new Label("Event payload: null");
+
+    FlexLayout textDisplay = new FlexLayoutBuilder(text, payload)
+        .vertical()
+        .build()
+        .setSpacing("0px");
+
     counter = 0;
-
     button.addClickListener(e -> {
-      text.setText("<html><b>Current Counter:</b></html> " + (++counter));
-      payload.setText("<html><b>Event payload:</b></html> " + e.getData().toString());
+      text.setText("Current Counter: " + (++counter));
+      payload.setText("Event payload: " + e.getData().toString());
     });
-    
+
     window.add(button, textDisplay);
   }
 }

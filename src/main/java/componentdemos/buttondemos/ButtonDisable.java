@@ -2,12 +2,15 @@ package componentdemos.buttondemos;
 
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.window.Panel;
-import org.dwcj.component.window.Frame;
 import org.dwcj.component.button.Button;
 import org.dwcj.component.button.ButtonTheme;
+import org.dwcj.component.window.Frame;
+import org.dwcj.component.window.Panel;
 import org.dwcj.exceptions.DwcjException;
 
+/**
+ * Application to show the disabled functionality of a button.
+ */
 @InlineStyleSheet("context://css/buttonstyles/disable_styles.css")
 public class ButtonDisable extends App {
   @Override
@@ -20,36 +23,36 @@ public class ButtonDisable extends App {
 
     window.add(disabled);
 
-    Button defaultButton = new Button("DEFAULT DISABLED");
-    Button primaryButton = new Button("PRIMARY DISABLED");
-    Button successButton = new Button("SUCCESS DISABLED");
-    Button dangerButton = new Button("DANGER DISABLED");
-    Button defaultButton2 = new Button("DEFAULT");
-    Button primaryButton2 = new Button("PRIMARY");
-    Button successButton2 = new Button("SUCCESS");
-    Button dangerButton2 = new Button("DANGER");
+    Button defaultButtonDisabled = new Button("DEFAULT DISABLED");
+    Button primaryButtonDisabled = new Button("PRIMARY DISABLED");
+    Button successButtonDisabled = new Button("SUCCESS DISABLED");
+    Button dangerButtonDisabled = new Button("DANGER DISABLED");
+    Button defaultButton = new Button("DEFAULT");
+    Button primaryButton = new Button("PRIMARY");
+    Button successButton = new Button("SUCCESS");
+    Button dangerButton = new Button("DANGER");
 
-    disabled.add(defaultButton2,
-        primaryButton2,
-        successButton2,
-        dangerButton2,
-        defaultButton,
+    disabled.add(defaultButton,
         primaryButton,
         successButton,
-        dangerButton);
+        dangerButton,
+        defaultButtonDisabled,
+        primaryButtonDisabled,
+        successButtonDisabled,
+        dangerButtonDisabled);
 
+    defaultButtonDisabled.setTheme(ButtonTheme.DEFAULT);
     defaultButton.setTheme(ButtonTheme.DEFAULT);
-    defaultButton2.setTheme(ButtonTheme.DEFAULT);
+    primaryButtonDisabled.setTheme(ButtonTheme.PRIMARY);
     primaryButton.setTheme(ButtonTheme.PRIMARY);
-    primaryButton2.setTheme(ButtonTheme.PRIMARY);
+    successButtonDisabled.setTheme(ButtonTheme.SUCCESS);
     successButton.setTheme(ButtonTheme.SUCCESS);
-    successButton2.setTheme(ButtonTheme.SUCCESS);
+    dangerButtonDisabled.setTheme(ButtonTheme.DANGER);
     dangerButton.setTheme(ButtonTheme.DANGER);
-    dangerButton2.setTheme(ButtonTheme.DANGER);
 
-    defaultButton.setEnabled(false);
-    primaryButton.setEnabled(false);
-    successButton.setEnabled(false);
-    dangerButton.setEnabled(false);
+    defaultButtonDisabled.setEnabled(false);
+    primaryButtonDisabled.setEnabled(false);
+    successButtonDisabled.setEnabled(false);
+    dangerButtonDisabled.setEnabled(false);
   }
 }
