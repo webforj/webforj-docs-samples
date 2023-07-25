@@ -7,10 +7,5 @@
 }
 
 .row {
-  max-width: 50%;
-  min-width: 35%;
-
-  /* @media only screen and (max-width: 992px) {
-    min-width: 50%;
-  } */
+    width: 40%;
 }
