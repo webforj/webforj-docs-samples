@@ -5,6 +5,7 @@ import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.button.Button;
 import org.dwcj.component.button.ButtonTheme;
 import org.dwcj.component.choicebox.ChoiceBox;
+import org.dwcj.component.field.PasswordField;
 import org.dwcj.component.field.TextField;
 import org.dwcj.component.layout.flexlayout.FlexLayout;
 import org.dwcj.component.maskednumberfield.MaskedNumberField;
@@ -15,7 +16,7 @@ import org.dwcj.exceptions.DwcjException;
 public class FlexDemo extends App {
 
   TextField email;
-  TextField password;
+  PasswordField password;
   TextField firstName;
   TextField lastName;
   TextField address;
@@ -29,14 +30,15 @@ public class FlexDemo extends App {
   public void run() throws DwcjException {
 
     Frame page = new Frame();
-    email = new TextField().setAttribute("label", "Email");
-    password = new TextField().setAttribute("label", "Password")
-        .setAttribute("type", "password");
-    firstName = new TextField().setAttribute("label", "First Name");
-    lastName = new TextField().setAttribute("label", "Last Name");
-    address = new TextField().setAttribute("label", "Address");
-    city = new TextField().setAttribute("label", "City");
+
+    email = new TextField().setLabel("Email");
+    password = new PasswordField().setLabel("Password");
+    firstName = new TextField().setLabel("First Name");
+    lastName = new TextField().setLabel("Last Name");
+    address = new TextField().setLabel("Address");
+    city = new TextField().setLabel("City");
     zip = new MaskedNumberField().setAttribute("label", "Zip");
+
     populateStates();
     submit = new Button("Submit").setTheme(ButtonTheme.PRIMARY);
     cancel = new Button("Cancel").setTheme(ButtonTheme.DEFAULT);
