@@ -1,3 +1,4 @@
-    Button b1 = new Button("<html><bbj-icon name=\"alien\"></bbj-icon> Icon Left</html>");
-    Button b2 = new Button("<html>Icon Right <bbj-icon name=\"alien\"></bbj-icon></html>");
-    Button b3 = new Button("<html><bbj-icon name=\"alien\"></bbj-icon></html>");
+Button notifications = new Button("<html><bbj-icon name=\"bell\" slot=\"prefix\"></bbj-icon> Notifications</html>");
+Button settings = new Button("<html>Settings<bbj-icon name=\"settings\" slot=\"suffix\"></bbj-icon></html>");
+Button search = new Button("<html><bbj-icon name=\"search\"></bbj-icon>Search</html>");
+Button home = new Button("<html><bbj-icon name=\"home\"></bbj-icon></html>");
