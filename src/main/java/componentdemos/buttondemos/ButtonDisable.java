@@ -16,43 +16,23 @@ public class ButtonDisable extends App {
   @Override
   public void run() throws DwcjException {
     Frame window = new Frame();
-    window.addClassName("Frame");
-
     Panel disabled = new Panel();
-    disabled.addClassName("disabledButtons");
-
+    final int THEME_NUM = 4;
+    ButtonTheme[] themes = {ButtonTheme.DEFAULT, ButtonTheme.PRIMARY, ButtonTheme.SUCCESS, ButtonTheme.DANGER};
+    
+    window.addClassName("Frame");
     window.add(disabled);
-
-    Button defaultButtonDisabled = new Button("DEFAULT DISABLED");
-    Button primaryButtonDisabled = new Button("PRIMARY DISABLED");
-    Button successButtonDisabled = new Button("SUCCESS DISABLED");
-    Button dangerButtonDisabled = new Button("DANGER DISABLED");
-    Button defaultButton = new Button("DEFAULT");
-    Button primaryButton = new Button("PRIMARY");
-    Button successButton = new Button("SUCCESS");
-    Button dangerButton = new Button("DANGER");
-
-    disabled.add(defaultButton,
-        primaryButton,
-        successButton,
-        dangerButton,
-        defaultButtonDisabled,
-        primaryButtonDisabled,
-        successButtonDisabled,
-        dangerButtonDisabled);
-
-    defaultButtonDisabled.setTheme(ButtonTheme.DEFAULT);
-    defaultButton.setTheme(ButtonTheme.DEFAULT);
-    primaryButtonDisabled.setTheme(ButtonTheme.PRIMARY);
-    primaryButton.setTheme(ButtonTheme.PRIMARY);
-    successButtonDisabled.setTheme(ButtonTheme.SUCCESS);
-    successButton.setTheme(ButtonTheme.SUCCESS);
-    dangerButtonDisabled.setTheme(ButtonTheme.DANGER);
-    dangerButton.setTheme(ButtonTheme.DANGER);
-
-    defaultButtonDisabled.setEnabled(false);
-    primaryButtonDisabled.setEnabled(false);
-    successButtonDisabled.setEnabled(false);
-    dangerButtonDisabled.setEnabled(false);
+    disabled.addClassName("disabledButtons");
+    
+    for (int i = 0; i < 8; i++) {
+      int index = i % THEME_NUM;
+      Button button = new Button(themes[index].getValue().toUpperCase());
+      disabled.add(button);
+      button.setTheme(themes[index]);
+      if (i >= THEME_NUM) {
+        button.setEnabled(false);
+        button.setText(themes[index].getValue().toUpperCase() + " DISABLED");
+      }
+    }
   }
 }
