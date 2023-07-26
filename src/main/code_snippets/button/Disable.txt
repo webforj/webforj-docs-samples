@@ -1,4 +1,1 @@
-defaultButton.setEnabled(false);
-primaryButton.setEnabled(false);
-successButton.setEnabled(false);
-dangerButton.setEnabled(false);
+button.setEnabled(false);
