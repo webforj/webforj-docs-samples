@@ -1,7 +1,5 @@
 package componentdemos.buttondemos;
 
-import static org.dwcj.component.field.TextField.Autocomplete;
-
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.button.Button;
@@ -46,10 +44,6 @@ public class ButtonDemo extends App {
     firstName = new TextField(Type.TEXT, "First Name", "Jason");
     lastName = new TextField(Type.TEXT, "Last Name", "Turner");
     email = new TextField(Type.EMAIL, "E-mail:", "turner.jason@email.com");
-
-    firstName.setAutoComplete(Autocomplete.NAME);
-    lastName.setAutoComplete(Autocomplete.FAMILY_NAME);
-    email.setAutoComplete(Autocomplete.EMAIL);
 
     FlexLayout firstRow = FlexLayout.create(firstName, lastName)
         .justify().center()
