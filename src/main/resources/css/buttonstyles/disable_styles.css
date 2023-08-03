@@ -6,6 +6,10 @@
   justify-content: center;
 }
 
+.BBjWindow{
+  overflow-x: scroll;
+}
+
 .disabledButtons {
   display: inline-grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
