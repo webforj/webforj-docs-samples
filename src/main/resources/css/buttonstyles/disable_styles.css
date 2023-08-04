@@ -4,10 +4,15 @@
   gap: 50px;
   width: 100%;
   justify-content: center;
+  overflow-x: scroll;
+}
+
+.BBjPanel{
 }
 
 .disabledButtons {
   display: inline-grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 20px;
+  width: 100%;
 }
