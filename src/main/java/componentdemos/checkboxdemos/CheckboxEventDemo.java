@@ -17,12 +17,12 @@ public class CheckboxEventDemo extends App {
     Frame panel = new Frame()
         .addClassName("Frame");
     checkbox = new CheckBox()
-        .setText("Check Me!");
+        .setText("Please check to accept Terms and Conditions");
     panel.add(checkbox);
 
-    checkbox.onCheck(e -> checkbox.setText("Checkbox is Checked!"));
+    checkbox.onCheck(e -> checkbox.setText("You have accepted the Terms and Conditions"));
 
-    checkbox.onUncheck(e -> checkbox.setText("Checkbox is Unchecked!"));
+    checkbox.onUncheck(e -> checkbox.setText("Please check to accept the Terms and Conditions"));
 
   }
 

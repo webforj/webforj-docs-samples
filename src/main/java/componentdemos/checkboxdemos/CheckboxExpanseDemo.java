@@ -11,29 +11,13 @@ import org.dwcj.exceptions.DwcjException;
 public class CheckboxExpanseDemo extends App {
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
-    panel.addClassName("Frame");
+    Frame window = new Frame();
+    window.addClassName("Frame");
 
-    CheckBox cb1 = new CheckBox()
-        .setExpanse(Expanse.XSMALL)
-        .setText("Extra Small");
+    for (int i = Expanse.values().length - 1; i >= 0; i--) {
+      CheckBox expanseCheckBox = new CheckBox(Expanse.values()[i].name());
+      window.add(expanseCheckBox.setExpanse(Expanse.values()[i]));
+    }
 
-    CheckBox cb2 = new CheckBox()
-        .setExpanse(Expanse.SMALL)
-        .setText("Small");
-
-    CheckBox cb3 = new CheckBox()
-        .setExpanse(Expanse.MEDIUM)
-        .setText("Medium");
-
-    CheckBox cb4 = new CheckBox()
-        .setExpanse(Expanse.LARGE)
-        .setText("Large");
-
-    CheckBox cb5 = new CheckBox()
-        .setExpanse(Expanse.XLARGE)
-        .setText("Extra Large");
-
-    panel.add(cb1, cb2, cb3, cb4, cb5);
   }
 }
