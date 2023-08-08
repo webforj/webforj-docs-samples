@@ -5,10 +5,12 @@ import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.event.ModifyEvent;
 import org.dwcj.component.field.ColorField;
 import org.dwcj.component.layout.flexlayout.FlexLayout;
+import org.dwcj.component.texts.Label;
 import org.dwcj.component.window.Frame;
 import org.dwcj.component.window.Panel;
 import org.dwcj.exceptions.DwcjAppInitializeException;
 import java.awt.Color;
+
 
 
 @InlineStyleSheet("context://css/fieldstyles/color_field_styles.css")
@@ -43,7 +45,9 @@ public class ColorFieldDemo extends App {
         .addClassName("display__panel");
     colorDisplay.setSpacing("20px");
 
-    window.add(colorField, colorDisplay);
+    Label title = new Label("Tetradic compliment colors:");
+
+    window.add(colorField, title, colorDisplay);
   }
 
   private void tetradicColor(ModifyEvent e){
