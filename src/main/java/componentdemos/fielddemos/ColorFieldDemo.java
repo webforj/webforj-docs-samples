@@ -25,8 +25,9 @@ public class ColorFieldDemo extends App {
     window.addClassName("main__window");
     
     colorField = new ColorField();
-    colorField.addClassName("color__field");
-    colorField.onModify(this::tetradicColor);
+    colorField.addClassName("color__field")
+        .setLabel("Choose a color:")
+        .onModify(this::tetradicColor);
     
     colors = new Panel[4];
     for (int i = 0; i <= 3; i++){
