@@ -1,0 +1,24 @@
+.main__window{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin: 20px;
+}
+
+.color__field{
+  width: 200px;
+}
+
+.display__panel{
+  height: fit-content;
+  width: fit-content;
+  padding: 5px;
+  border: 1px solid black !important;
+}
+
+.color__panel{
+  background-color: none;
+  height: 100px;
+  width: 100px;
+  padding: 3px;
+}

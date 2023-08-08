@@ -1,4 +1,4 @@
-package componentdemos.field_demos;
+package componentdemos.fielddemos;
 
 public class NumberFieldDemo {
   

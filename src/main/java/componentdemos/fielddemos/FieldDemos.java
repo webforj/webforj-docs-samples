@@ -1,4 +1,4 @@
-package componentdemos.field_demos;
+package componentdemos.fielddemos;
 
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
