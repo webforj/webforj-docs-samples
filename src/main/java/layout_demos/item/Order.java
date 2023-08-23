@@ -22,12 +22,12 @@ public class Order extends App{
     
     FlexLayout mainLayout = FlexLayout.create()
     .horizontal()
+    .align().start()
     .build();
     
     this.boxLayout = FlexLayout.create()
     .horizontal()
     .wrap().wrap()
-    .align().start()
     .build()
     .addClassName("button__container--single-row");
     
