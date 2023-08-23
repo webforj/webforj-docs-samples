@@ -26,6 +26,8 @@ public class Order extends App{
     
     this.boxLayout = FlexLayout.create()
     .horizontal()
+    .wrap().wrap()
+    .align().start()
     .build()
     .addClassName("button__container--single-row");
     
