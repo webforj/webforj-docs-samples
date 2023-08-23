@@ -10,6 +10,7 @@
   height: 300px;
   background-position: -0.5px 0px;
   padding: var(--bbj-space);
+  overflow: hidden !important;
 }
 
 .button__container--single-row {
