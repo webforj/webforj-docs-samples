@@ -27,6 +27,7 @@ public class SelfAlign extends App{
     
     this.boxLayout = FlexLayout.create()
     .horizontal()
+    .wrap().wrap()
     .build()
     .addClassName("button__container");
     
