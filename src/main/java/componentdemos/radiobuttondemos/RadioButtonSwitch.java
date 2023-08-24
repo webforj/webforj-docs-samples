@@ -17,7 +17,7 @@ public class RadioButtonSwitch extends App{
       RadioButton normalButton = new RadioButton("Normal RadioButton")
         .setExpanse(Expanse.XLARGE);
       RadioButton switchButton = new RadioButton("Switch RadioButton")
-        .setAttribute("switch", "true")
+        .setSwitch(true)
         .setExpanse(Expanse.XLARGE);
 
       panel.add(normalButton,switchButton);
