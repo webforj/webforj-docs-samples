@@ -8,7 +8,7 @@ import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.layout.flexlayout.FlexLayout;
 import org.dwcj.component.texts.Label;
 import org.dwcj.component.window.AbstractWindow;
-import org.dwcj.component.HasStyle;
+import org.dwcj.concern.HasStyle;
 
 @InlineStyleSheet("context://css/flexstyles/box_styles.css")
 public class Box extends FlexLayout {

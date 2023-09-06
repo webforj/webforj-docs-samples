@@ -73,7 +73,7 @@ public class DrawerWelcome extends App {
     welcomeDrawer.getContent()
         .add(new Label(
             "<html><img src='https://thumb9.shutterstock.com/mosaic_250/177370774/1312166426/stock-vector-handshake-heart-icon-stroke-outline-style-line-vector-isolate-on-white-background-1312166426.jpg'></img></html>"))
-        .add(new Label("<html><h2>Welcome to DWC</h2></html>"))
+        .add(new Label("<html><h2>Welcome to DWCJ</h2></html>"))
         .add(
             new Label("<html><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p></html>"))
         .add(new Button("Get Started")

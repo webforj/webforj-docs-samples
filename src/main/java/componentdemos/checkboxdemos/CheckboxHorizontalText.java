@@ -3,7 +3,7 @@ package componentdemos.checkboxdemos;
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.window.Frame;
-import org.dwcj.component.TextPosition.Position;
+import org.dwcj.concern.HasTextPosition.Position;
 import org.dwcj.component.layout.flexlayout.FlexLayout;
 import org.dwcj.component.optioninput.CheckBox;
 import org.dwcj.exceptions.DwcjException;

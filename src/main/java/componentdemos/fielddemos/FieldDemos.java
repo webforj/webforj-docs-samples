@@ -2,7 +2,7 @@ package componentdemos.fielddemos;
 
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.HighlightableOnFocus;
+// import org.dwcj.component.HighlightableOnFocus;
 import org.dwcj.component.field.ColorField;
 import org.dwcj.component.field.DateField;
 import org.dwcj.component.field.DateTimeField;
@@ -24,7 +24,7 @@ public class FieldDemos extends App {
       NumberField field = new NumberField();
       // field.setValue(0d);
       field.setText("0");
-      field.setHighlightOnFocus(HighlightableOnFocus.Behavior.MOUSE);
+      // field.setHighlightOnFocus(HighlightableOnFocus.Behavior.MOUSE);
 
       window.add(
         new ColorField(),

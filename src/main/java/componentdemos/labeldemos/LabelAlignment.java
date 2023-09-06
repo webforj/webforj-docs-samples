@@ -4,7 +4,7 @@ import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.window.Frame;
 import org.dwcj.component.texts.Label;
-import org.dwcj.component.HorizontalAlignment;
+import org.dwcj.concern.HasHorizontalAlignment;
 import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/labelstyles/alignment_styles.css")
@@ -40,8 +40,8 @@ public class LabelAlignment extends App {
 
     panel.add(l1, l2, l3);
 
-    l1.setHorizontalAlignment(HorizontalAlignment.Alignment.LEFT);
-    l2.setHorizontalAlignment(HorizontalAlignment.Alignment.MIDDLE);
-    l3.setHorizontalAlignment(HorizontalAlignment.Alignment.RIGHT);
+    l1.setHorizontalAlignment(HasHorizontalAlignment.Alignment.LEFT);
+    l2.setHorizontalAlignment(HasHorizontalAlignment.Alignment.MIDDLE);
+    l3.setHorizontalAlignment(HasHorizontalAlignment.Alignment.RIGHT);
   }
 }

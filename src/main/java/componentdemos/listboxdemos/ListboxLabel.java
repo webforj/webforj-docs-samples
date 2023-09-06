@@ -5,7 +5,7 @@ import java.util.Map;
 
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.HorizontalAlignment;
+import org.dwcj.concern.HasHorizontalAlignment;
 import org.dwcj.component.window.Frame;
 import org.dwcj.component.listbox.ListBox;
 import org.dwcj.exceptions.DwcjException;
@@ -28,7 +28,7 @@ public class ListboxLabel extends App {
     panel.add(l1);
 
     l1.setItems(data)
-        .setHorizontalAlignment(HorizontalAlignment.Alignment.RIGHT)
+        .setHorizontalAlignment(HasHorizontalAlignment.Alignment.RIGHT)
         .setAttribute("label", "Built-in Label for a list box!");
   }
 }

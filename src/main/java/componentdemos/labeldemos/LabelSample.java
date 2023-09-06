@@ -5,7 +5,7 @@ import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.window.Frame;
 import org.dwcj.component.texts.Label;
 import org.dwcj.exceptions.DwcjException;
-import org.dwcj.component.HorizontalAlignment;
+import org.dwcj.concern.HasHorizontalAlignment;
 
 @InlineStyleSheet("context://css/labelstyles/text_styles.css")
 public class LabelSample extends App {
@@ -15,7 +15,7 @@ public class LabelSample extends App {
     app.addClassName("Frame");
 
     Label myLabel = new Label("Hover over me!");
-    myLabel.setHorizontalAlignment(HorizontalAlignment.Alignment.MIDDLE);
+    myLabel.setHorizontalAlignment(HasHorizontalAlignment.Alignment.MIDDLE);
 
     myLabel.addMouseEnterListener(e -> {
       myLabel.setText("Mouse Entered at X coordinate: " + e.getScreenX() + " and Y coordinate: " + e.getScreenY());
