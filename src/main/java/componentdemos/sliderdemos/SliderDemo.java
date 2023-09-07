@@ -13,11 +13,11 @@ public class SliderDemo extends App {
     @Override
     public void run() throws DwcjAppInitializeException {
 
-        Frame panel = new Frame();
-        panel.addClassName("Frame");
+        Frame window = new Frame();
+        window.addClassName("Frame");
 
         Slider sl1 = new Slider().setMaximum(100).setMinimum(0);
-        panel.add(sl1);
+        window.add(sl1);
     }
 
 }

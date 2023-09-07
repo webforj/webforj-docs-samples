@@ -10,9 +10,9 @@ import org.dwcj.exceptions.DwcjException;
 public class StringEditLabelDemo extends App {
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
-    panel.addClassName("Frame");
+    Frame window = new Frame();
+    window.addClassName("Frame");
 
-    panel.add(new MaskedTextField().setAttribute("label", "Example Label"));
+    window.add(new MaskedTextField().setAttribute("label", "Example Label"));
   }
 }

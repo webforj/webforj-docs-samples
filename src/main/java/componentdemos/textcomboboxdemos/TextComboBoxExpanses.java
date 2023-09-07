@@ -12,8 +12,8 @@ import org.dwcj.exceptions.DwcjException;
 public class TextComboBoxExpanses extends App {
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
-    panel.addClassName("Frame");
+    Frame window = new Frame();
+    window.addClassName("Frame");
 
     Map<Object, String> data = new HashMap<>();
     data.put("Random Data1", "Random Data");
@@ -36,7 +36,7 @@ public class TextComboBoxExpanses extends App {
     ComboBox tcb5 = new ComboBox().setExpanse(ComboBox.Expanse.XLARGE)
         .setAttribute("placeholder", "XLARGE");
 
-    panel.add(tcb1, tcb2, tcb3, tcb4, tcb5);
+    window.add(tcb1, tcb2, tcb3, tcb4, tcb5);
 
     tcb1.setItems(data);
     tcb2.setItems(data);

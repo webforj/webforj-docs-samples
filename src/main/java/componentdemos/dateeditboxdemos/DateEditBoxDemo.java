@@ -10,15 +10,15 @@ public class DateEditBoxDemo extends App {
   @Override
   public void run() throws DwcjAppInitializeException {
 
-    Frame panel = new Frame();
-    panel.setStyle("display", "inline-grid");
-    panel.setStyle("grid-template-columns", "1fr");
-    panel.setStyle("padding", "10px");
-    panel.setStyle("gap", "50px");
+    Frame window = new Frame();
+    window.setStyle("display", "inline-grid");
+    window.setStyle("grid-template-columns", "1fr");
+    window.setStyle("padding", "10px");
+    window.setStyle("gap", "50px");
 
     MaskedDateField d1 = new MaskedDateField();
 
-    panel.add(d1);
+    window.add(d1);
 
     d1.setAttribute("visible-calender-icon", "true");
 

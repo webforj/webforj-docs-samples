@@ -11,8 +11,8 @@ import org.dwcj.exceptions.DwcjException;
 public class LabelLineWrap extends App {
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
-    panel.addClassName("Frame");
+    Frame window = new Frame();
+    window.addClassName("Frame");
 
     Label l1 = new Label(
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit," +
@@ -28,6 +28,6 @@ public class LabelLineWrap extends App {
       .onClick(e -> {
         l1.setWrap(!l1.isWrap());
       });
-    panel.add(l1,wrap);
+    window.add(l1,wrap);
   }
 }

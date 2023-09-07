@@ -10,12 +10,12 @@ import org.dwcj.exceptions.DwcjException;
 public class TextBoxSpellcheck extends App {
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
-    panel.addClassName("Frame");
+    Frame window = new Frame();
+    window.addClassName("Frame");
 
     TextField t1 = new TextField().setAttribute("spellcheck", "true")
         .setAttribute("placeholder", "Enter misspelled text");
 
-    panel.add(t1);
+    window.add(t1);
   }
 }

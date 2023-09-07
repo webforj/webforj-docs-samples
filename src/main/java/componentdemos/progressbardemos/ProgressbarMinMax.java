@@ -14,12 +14,12 @@ public class ProgressbarMinMax extends App {
 
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
-    panel.addClassName("Frame");
+    Frame window = new Frame();
+    window.addClassName("Frame");
 
     pb = new ProgressBar();
     Label lb = new Label("Min 50, Max 200");
-    panel.add(lb, pb);
+    window.add(lb, pb);
 
     pb.setText("100/200")
         .setMinimum(50)

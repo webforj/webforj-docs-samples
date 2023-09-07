@@ -13,9 +13,9 @@ public class NumericboxDemo extends App {
 
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
-    panel.addClassName("Frame");
+    Frame window = new Frame();
+    window.addClassName("Frame");
     nb = new MaskedNumberField();
-    panel.add(nb);
+    window.add(nb);
   }
 }

@@ -10,8 +10,8 @@ import org.dwcj.component.progressbar.ProgressBar;
 public class ProgressbarThemes extends App {
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
-    panel.addClassName("Frame");
+    Frame window = new Frame();
+    window.addClassName("Frame");
 
     ProgressBar pb1 = new ProgressBar();
     ProgressBar pb2 = new ProgressBar();
@@ -20,7 +20,7 @@ public class ProgressbarThemes extends App {
     ProgressBar pb5 = new ProgressBar();
     ProgressBar pb6 = new ProgressBar();
 
-    panel.add(pb1, pb2, pb3, pb4, pb5, pb6);
+    window.add(pb1, pb2, pb3, pb4, pb5, pb6);
 
     pb1.setAttribute("theme", "default")
         .setMaximum(100)

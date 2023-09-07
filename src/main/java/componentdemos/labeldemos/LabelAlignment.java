@@ -11,8 +11,8 @@ import org.dwcj.exceptions.DwcjException;
 public class LabelAlignment extends App {
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
-    panel.addClassName("Frame");
+    Frame window = new Frame();
+    window.addClassName("Frame");
 
     Label l1 = new Label(
         "<html><b>LEFT-ALIGNED TEXT</b><br></br> Lorem ipsum dolor sit amet, consectetur adipiscing elit," +
@@ -38,7 +38,7 @@ public class LabelAlignment extends App {
             +
             "esse cillum dolore eu fugiat nulla pariatur. </html>");
 
-    panel.add(l1, l2, l3);
+    window.add(l1, l2, l3);
 
     l1.setHorizontalAlignment(HasHorizontalAlignment.Alignment.LEFT);
     l2.setHorizontalAlignment(HasHorizontalAlignment.Alignment.MIDDLE);

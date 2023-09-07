@@ -11,8 +11,8 @@ import org.dwcj.component.textarea.TextArea;
 public class TextAreaExpanse extends App {
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
-    panel.addClassName("Frame")
+    Frame window = new Frame();
+    window.addClassName("Frame")
         .setStyle("display", "flex");
 
     Panel wrapper = new Panel();
@@ -32,7 +32,7 @@ public class TextAreaExpanse extends App {
     TextArea t5 = new TextArea().setExpanse(TextArea.Expanse.XLARGE)
         .setAttribute("placeholder", "XLARGE");
 
-    panel.add(wrapper);
+    window.add(wrapper);
     wrapper.add(t1, t2, t3, t4, t5);
   }
 }

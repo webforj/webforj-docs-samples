@@ -22,9 +22,9 @@ public class DrawerWelcome extends App {
 
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
+    Frame window = new Frame();
     AppLayout demo = new AppLayout();
-    panel.add(demo);
+    window.add(demo);
 
     // Header
     demo.getHeader()
@@ -65,7 +65,7 @@ public class DrawerWelcome extends App {
     // Welcome Drawer
 
     welcomeDrawer = new Drawer();
-    panel.add(welcomeDrawer);
+    window.add(welcomeDrawer);
     welcomeDrawer
         .setPlacement(Placement.BOTTOM)
         .addClassName("welcome__drawer")

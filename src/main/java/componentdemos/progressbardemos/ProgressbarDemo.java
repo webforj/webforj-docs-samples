@@ -15,10 +15,10 @@ public class ProgressbarDemo extends App {
     @Override
     public void run() throws DwcjAppInitializeException {
 
-        Frame panel = new Frame();
-        panel.addClassName("Frame");
+        Frame window = new Frame();
+        window.addClassName("Frame");
         pb = new ProgressBar();
-        panel.add(pb);
+        window.add(pb);
         pb.addClassName("progress__bar");
         pb.setMaximum(100);
         pb.setAttribute("indeterminate", "true");

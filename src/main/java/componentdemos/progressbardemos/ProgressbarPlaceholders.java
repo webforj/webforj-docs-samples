@@ -14,11 +14,11 @@ public class ProgressbarPlaceholders extends App {
 
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
-    panel.addClassName("Frame");
+    Frame window = new Frame();
+    window.addClassName("Frame");
 
     pb = new ProgressBar();
-    panel.add(pb);
+    window.add(pb);
 
     pb.addClassName("progress__bar")
         .setMaximum(100).setValue(75)

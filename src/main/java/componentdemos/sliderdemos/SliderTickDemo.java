@@ -11,13 +11,13 @@ import org.dwcj.component.slider.Slider;
 public class SliderTickDemo extends App {
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
-    panel.addClassName("Frame");
+    Frame window = new Frame();
+    window.addClassName("Frame");
 
     Slider sl1 = new Slider().setMaximum(100).setMinimum(0);
     Slider sl2 = new Slider().setMaximum(100).setMinimum(0);
 
-    panel.add(
+    window.add(
         new Label("<html><b>No Tick Snapping</b></html>"), sl1,
         new Label("<html><b>Tick Snapping</b></html>"), sl2);
 

@@ -12,11 +12,11 @@ package componentdemos.checkboxdemos;
 // @Override
 // public void run() throws DwcjException {
 
-// Frame panel = new Frame();
-// panel.setStyle("display", "inline-grid");
-// panel.setStyle("grid-template-columns", "1fr");
-// panel.setStyle("padding", "10px");
-// panel.setStyle("gap", "50px");
+// Frame window = new Frame();
+// window.setStyle("display", "inline-grid");
+// window.setStyle("grid-template-columns", "1fr");
+// window.setStyle("padding", "10px");
+// window.setStyle("gap", "50px");
 
 // CheckBox cb1 = new CheckBox();
 // cb1.setText("Checkbox 1").onChange(this::checkboxDisplay);
@@ -25,7 +25,7 @@ package componentdemos.checkboxdemos;
 // CheckBox cb3 = new CheckBox();
 // cb3.setText("Checkbox 3").onChange(this::checkboxDisplay);
 
-// panel.add(cb1, cb2, cb3);
+// window.add(cb1, cb2, cb3);
 
 // }
 

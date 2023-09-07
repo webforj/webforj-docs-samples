@@ -19,8 +19,8 @@ public class ListboxMultipleSelection extends App {
 
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
-    panel.addClassName("Frame");
+    Frame window = new Frame();
+    window.addClassName("Frame");
 
     Map<Object, String> data = new HashMap<>();
     data.put("Random Data1", "Random Data");
@@ -29,11 +29,11 @@ public class ListboxMultipleSelection extends App {
     data.put("Random Data4", "Test Data");
 
     l1 = new ListBox();
-    panel.add(l1);
+    window.add(l1);
     l1.setItems(data);
 
     Button b1 = new Button("Toggle Multiple Selection");
-    panel.add(b1);
+    window.add(b1);
     b1.onClick(this::buttonMethod);
     b1.setStyle("grid-column", "2")
         .setStyle("align-self", "center")

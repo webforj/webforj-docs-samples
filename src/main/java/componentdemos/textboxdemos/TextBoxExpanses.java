@@ -11,8 +11,8 @@ import org.dwcj.exceptions.DwcjException;
 public class TextBoxExpanses extends App {
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
-    panel.addClassName("Frame")
+    Frame window = new Frame();
+    window.addClassName("Frame")
         .setStyle("display", "grid");
 
     TextField t1 = new TextField().setExpanse(Expanse.XSMALL)
@@ -35,6 +35,6 @@ public class TextBoxExpanses extends App {
         .setAttribute("placeholder", "XLARGE")
         .setStyle("grid-column", "3");
 
-    panel.add(t1, t2, t3, t4, t5);
+    window.add(t1, t2, t3, t4, t5);
   }
 }

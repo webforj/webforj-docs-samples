@@ -10,10 +10,10 @@ import org.dwcj.exceptions.DwcjAppInitializeException;
 public class TextAreaPlaceholder extends App {
   @Override
   public void run() throws DwcjAppInitializeException {
-    Frame panel = new Frame();
-    panel.addClassName("Frame");
+    Frame window = new Frame();
+    window.addClassName("Frame");
 
     TextArea t1 = new TextArea().setAttribute("placeholder", "Example Placeholder");
-    panel.add(t1);
+    window.add(t1);
   }
 }

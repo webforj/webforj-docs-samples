@@ -12,11 +12,11 @@ public class StringEditDemo extends App {
     @Override
     public void run() throws DwcjAppInitializeException {
 
-        Frame panel = new Frame();
-        panel.addClassName("Frame");
+        Frame window = new Frame();
+        window.addClassName("Frame");
 
         MaskedTextField s1 = new MaskedTextField();
-        panel.add(s1);
+        window.add(s1);
     }
 
 }

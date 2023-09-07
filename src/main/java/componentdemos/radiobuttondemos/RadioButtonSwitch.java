@@ -11,14 +11,14 @@ import org.dwcj.exceptions.DwcjException;
 public class RadioButtonSwitch extends App{
   @Override
   public void run() throws DwcjException {
-      Frame panel = new Frame();
-      panel.addClassName("Frame");
+      Frame window = new Frame();
+      window.addClassName("Frame");
       
       RadioButton normalButton = new RadioButton("Normal RadioButton")
         .setExpanse(Expanse.XLARGE);
       RadioButton switchButton = RadioButton.Switch("Switch RadioButton")
         .setExpanse(Expanse.XLARGE);
 
-      panel.add(normalButton,switchButton);
+      window.add(normalButton,switchButton);
   }
 }

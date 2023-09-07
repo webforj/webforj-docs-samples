@@ -15,8 +15,8 @@ public class ListboxDemo extends App {
     @Override
     public void run() throws DwcjAppInitializeException {
 
-        Frame panel = new Frame();
-        panel.addClassName("Frame");
+        Frame window = new Frame();
+        window.addClassName("Frame");
         ListBox l1 = new ListBox();
 
         Map<Object, String> data = new HashMap<>();
@@ -25,7 +25,7 @@ public class ListboxDemo extends App {
         data.put("Random Data3", "More Data");
         data.put("Random Data4", "Test Data");
 
-        panel.add(l1);
+        window.add(l1);
 
         l1.setItems(data);
         l1.setAttribute("label", "This is a listbox:");

@@ -11,8 +11,8 @@ import org.dwcj.component.slider.Slider;
 public class SliderThemesDemo extends App {
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
-    panel.addClassName("Frame");
+    Frame window = new Frame();
+    window.addClassName("Frame");
 
     Slider sl1 = new Slider().setMaximum(100)
         .setMinimum(0)
@@ -44,7 +44,7 @@ public class SliderThemesDemo extends App {
         .setValue(50)
         .setTheme(Slider.Theme.WARNING);
 
-    panel.add(
+    window.add(
         new Label("<html><b>DEFAULT</b></html>"), sl1,
         new Label("<html><b>DANGER</b></html>"), sl2,
         new Label("<html><b>GRAY</b></html>"), sl3,

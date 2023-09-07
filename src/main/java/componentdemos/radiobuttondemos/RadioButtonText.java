@@ -11,11 +11,11 @@ import org.dwcj.exceptions.DwcjException;
 public class RadioButtonText extends App{
   @Override
   public void run() throws DwcjException {
-      Frame panel = new Frame();
-      panel.addClassName("Frame");
+      Frame window = new Frame();
+      window.addClassName("Frame");
       RadioButton buttonRight = new RadioButton("Right aligned (default)");
       RadioButton buttonLeft = new RadioButton("Left aligned")
       .setTextPosition(Position.LEFT);
-      panel.add(buttonRight, buttonLeft);
+      window.add(buttonRight, buttonLeft);
   }
 }

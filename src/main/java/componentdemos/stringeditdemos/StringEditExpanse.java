@@ -10,8 +10,8 @@ import org.dwcj.component.maskedtextfield.MaskedTextField;
 public class StringEditExpanse extends App {
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
-    panel.addClassName("Frame")
+    Frame window = new Frame();
+    window.addClassName("Frame")
         .setStyle("display", "flex");
 
     MaskedTextField s1 = new MaskedTextField().setExpanse(MaskedTextField.Expanse.XSMALL)
@@ -29,6 +29,6 @@ public class StringEditExpanse extends App {
     MaskedTextField s5 = new MaskedTextField().setExpanse(MaskedTextField.Expanse.XLARGE)
         .setAttribute("placeholder", "XLARGE");
 
-    panel.add(s1, s2, s3, s4, s5);
+    window.add(s1, s2, s3, s4, s5);
   }
 }

@@ -11,8 +11,8 @@ import org.dwcj.component.slider.Slider;
 public class SliderMaxMinDemo extends App {
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
-    panel.addClassName("Frame");
+    Frame window = new Frame();
+    window.addClassName("Frame");
 
     Slider sl1 = new Slider().setMaximum(10)
         .setMinimum(0)
@@ -25,7 +25,7 @@ public class SliderMaxMinDemo extends App {
     sl1.setStyle("width", "500px");
     sl2.setStyle("width", "500px");
 
-    panel.add(
+    window.add(
         new Label("<html><b>Min 0, Max 10</b></html>"), sl1,
         new Label("<html><b>Min 0, Max 100</b></html>"), sl2);
   }

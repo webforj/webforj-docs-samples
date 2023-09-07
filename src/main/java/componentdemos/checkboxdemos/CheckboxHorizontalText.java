@@ -13,8 +13,8 @@ public class CheckboxHorizontalText extends App {
   
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
-    panel.addClassName("Frame");
+    Frame window = new Frame();
+    window.addClassName("Frame");
 
     FlexLayout rightAligned = FlexLayout.create()
     .vertical()
@@ -43,6 +43,6 @@ public class CheckboxHorizontalText extends App {
       new CheckBox("Annually").setTextPosition(Position.LEFT)
     );
 
-    panel.add(rightAligned, leftAligned);
+    window.add(rightAligned, leftAligned);
   }
 }

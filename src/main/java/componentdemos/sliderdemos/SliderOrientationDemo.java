@@ -13,8 +13,8 @@ import org.dwcj.component.slider.Slider.Orientation;
 public class SliderOrientationDemo extends App {
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
-    panel.addClassName("Frame");
+    Frame window = new Frame();
+    window.addClassName("Frame");
 
     Map<Integer, String> mapMatch = Map.ofEntries(
         entry(0, "0"),
@@ -26,7 +26,7 @@ public class SliderOrientationDemo extends App {
     Slider sl2 = new Slider().setMaximum(100)
         .setMinimum(0);
 
-    panel.add(sl1, sl2);
+    window.add(sl1, sl2);
 
     sl1.setStyle("width", "400px")
         .setPaintTicks(true)

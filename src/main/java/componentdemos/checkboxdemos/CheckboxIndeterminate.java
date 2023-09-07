@@ -16,8 +16,8 @@ public class CheckboxIndeterminate extends App {
   
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
-    panel.addClassName("Frame");
+    Frame window = new Frame();
+    window.addClassName("Frame");
 
     indeterminate = new CheckBox().setText("Parent").setIndeterminate(true);
     child1 = new CheckBox();
@@ -32,7 +32,7 @@ public class CheckboxIndeterminate extends App {
         .addToggleListener(this::onCheck)
         .addClassName("child-box");
 
-    panel.add(indeterminate, child1, child2);
+    window.add(indeterminate, child1, child2);
   }
 
   private void onCheck(ToggleEvent e) {

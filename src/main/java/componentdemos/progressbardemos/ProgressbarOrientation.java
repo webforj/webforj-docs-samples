@@ -15,13 +15,13 @@ public class ProgressbarOrientation extends App {
 
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
-    panel.addClassName("Frame");
+    Frame window = new Frame();
+    window.addClassName("Frame");
 
     pb = new ProgressBar().addClassName("barVt");
     pb2 = new ProgressBar().addClassName("barHz");
 
-    panel.add(pb2, pb);
+    window.add(pb2, pb);
 
     pb.setAttribute("orientation", "vertical")
         .setValue(75)

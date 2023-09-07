@@ -14,8 +14,8 @@ public class SliderLabelDemo extends App {
   @Override
   public void run() throws DwcjException {
 
-    Frame panel = new Frame();
-    panel.addClassName("Frame");
+    Frame window = new Frame();
+    window.addClassName("Frame");
 
     Slider sl1 = new Slider().setMaximum(100)
         .setMinimum(0);
@@ -45,7 +45,7 @@ public class SliderLabelDemo extends App {
         entry(65, "65"),
         entry(85, "85"));
 
-    panel.add(
+    window.add(
         new Label("<html><b>Labels applied with ticks disabled</b></html>")
             .setStyle("grid-column", "1")
             .setStyle("margin", "5px 0 0 10px"),

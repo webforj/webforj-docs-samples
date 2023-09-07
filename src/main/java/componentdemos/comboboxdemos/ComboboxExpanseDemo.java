@@ -13,10 +13,10 @@ import org.dwcj.exceptions.DwcjException;
 public class ComboboxExpanseDemo extends App {
     @Override
     public void run() throws DwcjException {
-        Frame panel = new Frame();
-        panel.addClassName("Frame");
+        Frame window = new Frame();
+        window.addClassName("Frame");
         Panel container = new Panel().addClassName("container");
-        panel.add(container);
+        window.add(container);
 
         ChoiceBox cb1 = new ChoiceBox().setExpanse(ChoiceBox.Expanse.XSMALL)
                 .setText("Extra Small")

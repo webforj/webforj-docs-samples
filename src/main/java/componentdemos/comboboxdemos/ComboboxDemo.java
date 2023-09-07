@@ -17,12 +17,12 @@ public class ComboboxDemo extends App {
 
     @Override
     public void run() throws DwcjAppInitializeException {
-        Frame panel = new Frame();
-        panel.setStyle("display", "inline-grid");
-        panel.setStyle("grid-template-columns", "1fr 1fr");
-        panel.setStyle("padding", "10px");
-        panel.setStyle("gap", "50px");
-        panel.setStyle("height", "100%");
+        Frame window = new Frame();
+        window.setStyle("display", "inline-grid");
+        window.setStyle("grid-template-columns", "1fr 1fr");
+        window.setStyle("padding", "10px");
+        window.setStyle("gap", "50px");
+        window.setStyle("height", "100%");
 
         cb1 = new ChoiceBox();
         d1 = new Panel();
@@ -39,7 +39,7 @@ public class ComboboxDemo extends App {
 
         cb1.setItems(data);
 
-        panel.add(cb1, d1);
+        window.add(cb1, d1);
 
         cb1.setAttribute("label", "Choose a Color:").selectIndex(0).setStyle("grid-column", "1")
                 .setExpanse(ChoiceBox.Expanse.LARGE).setStyle("width", "250px");

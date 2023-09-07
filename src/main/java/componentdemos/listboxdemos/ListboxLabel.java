@@ -14,8 +14,8 @@ import org.dwcj.exceptions.DwcjException;
 public class ListboxLabel extends App {
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
-    panel.addClassName("Frame");
+    Frame window = new Frame();
+    window.addClassName("Frame");
 
     ListBox l1 = new ListBox();
 
@@ -25,7 +25,7 @@ public class ListboxLabel extends App {
     data.put("Random Data3", "More Data");
     data.put("Random Data4", "Test Data");
 
-    panel.add(l1);
+    window.add(l1);
 
     l1.setItems(data)
         .setHorizontalAlignment(HasHorizontalAlignment.Alignment.RIGHT)

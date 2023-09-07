@@ -14,20 +14,20 @@ import org.dwcj.exceptions.DwcjException;
 public class ButtonThemes extends App {
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
-    panel.addClassName("Frame");
+    Frame window = new Frame();
+    window.addClassName("Frame");
 
     for (ButtonTheme theme : ButtonTheme.values()) {
       if (!theme.name().contains("OUTLINE")) {
         Button themeButton = new Button(theme.name());
-        panel.add(themeButton.setTheme(theme));
+        window.add(themeButton.setTheme(theme));
       }
     }
 
     for (ButtonTheme theme : ButtonTheme.values()) {
       if (theme.name().contains("OUTLINE")) {
         Button themeButton = new Button(theme.name());
-        panel.add(themeButton.setTheme(theme));
+        window.add(themeButton.setTheme(theme));
       }
     }
   }

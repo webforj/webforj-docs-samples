@@ -14,8 +14,8 @@ public class SliderInversionDemo extends App {
 
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
-    panel.addClassName("Frame");
+    Frame window = new Frame();
+    window.addClassName("Frame");
 
     Map<Integer, String> mapMatch = Map.ofEntries(
         entry(0, "0"),
@@ -27,7 +27,7 @@ public class SliderInversionDemo extends App {
     Slider sl2 = new Slider().setMaximum(100)
         .setMinimum(0);
 
-    panel.add(new Label("<html><b>Original:</b></html>"), sl1,
+    window.add(new Label("<html><b>Original:</b></html>"), sl1,
         new Label("<html><b>Inverted:</b></html>"), sl2);
 
     sl1.setPaintTicks(true)

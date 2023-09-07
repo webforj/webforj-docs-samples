@@ -13,12 +13,12 @@ import org.dwcj.exceptions.DwcjException;
 public class ComboboxLabelDemo extends App {
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
-    panel.addClassName("Frame");
+    Frame window = new Frame();
+    window.addClassName("Frame");
 
     ChoiceBox cb1 = new ChoiceBox();
     Panel container = new Panel().addClassName("container");
-    panel.add(container);
+    window.add(container);
 
     Map<Object, String> data = new HashMap<>();
     data.put("Random Data1", "Random Data");

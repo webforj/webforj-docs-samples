@@ -1,1 +1,1 @@
-panel.add(new MaskedTextField().setAttribute("label", "Example Label"));
+window.add(new MaskedTextField().setAttribute("label", "Example Label"));

@@ -12,8 +12,8 @@ import org.dwcj.exceptions.DwcjException;
 public class TextComboBoxPlacement extends App {
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
-    panel.addClassName("Frame");
+    Frame window = new Frame();
+    window.addClassName("Frame");
 
     Map<Object, String> data = new HashMap<>();
     data.put("Random Data1", "Random Data");
@@ -39,7 +39,7 @@ public class TextComboBoxPlacement extends App {
         .setAttribute("placeholder", "Bottom Menu Placement")
         .setStyle("grid-column", "2");
 
-    panel.add(tcb1, tcb2, tcb3, tcb4);
+    window.add(tcb1, tcb2, tcb3, tcb4);
 
     tcb1.setItems(data)
         .openList();

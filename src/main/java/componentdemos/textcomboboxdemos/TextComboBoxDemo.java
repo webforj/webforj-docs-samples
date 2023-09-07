@@ -15,8 +15,8 @@ public class TextComboBoxDemo extends App {
     @Override
     public void run() throws DwcjAppInitializeException {
 
-        Frame panel = new Frame();
-        panel.addClassName("Frame");
+        Frame window = new Frame();
+        window.addClassName("Frame");
 
         Map<Object, String> data = new HashMap<>();
         data.put("Random Data1", "Random Data");
@@ -26,7 +26,7 @@ public class TextComboBoxDemo extends App {
 
         ComboBox tcb1 = new ComboBox();
 
-        panel.add(tcb1);
+        window.add(tcb1);
         tcb1.setItems(data);
     }
 }

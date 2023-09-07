@@ -10,10 +10,10 @@ import org.dwcj.exceptions.DwcjException;
 public class TextBoxPlaceholder extends App {
   @Override
   public void run() throws DwcjException {
-    Frame panel = new Frame();
-    panel.addClassName("Frame");
+    Frame window = new Frame();
+    window.addClassName("Frame");
 
     TextField t1 = new TextField().setAttribute("Placeholder", "Example Placeholder");
-    panel.add(t1);
+    window.add(t1);
   }
 }

@@ -12,11 +12,11 @@ public class NumericboxExpanses extends App {
   @Override
   public void run() throws DwcjException {
 
-    Frame panel = new Frame();
+    Frame window = new Frame();
     Panel container = new Panel();
 
-    panel.add(container);
-    panel.addClassName("Frame");
+    window.add(container);
+    window.addClassName("Frame");
     container.addClassName("container");
 
     MaskedNumberField nb1 = new MaskedNumberField().setExpanse(MaskedNumberField.Expanse.XSMALL)
