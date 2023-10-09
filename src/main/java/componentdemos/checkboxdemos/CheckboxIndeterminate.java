@@ -20,6 +20,8 @@ public class CheckboxIndeterminate extends App {
     window.addClassName("Frame");
 
     indeterminate = new CheckBox().setText("Parent").setIndeterminate(true);
+    indeterminate.addToggleListener(this::indeterminateToggle);
+
     child1 = new CheckBox();
     child1.setText("Child 1")
         .setChecked(false)
@@ -50,5 +52,15 @@ public class CheckboxIndeterminate extends App {
       }
     }
   }
-
+  
+  private void indeterminateToggle(ToggleEvent e) {
+    if(e.isToggled()){
+      child1.setChecked(true);
+      child2.setChecked(true);
+    }
+    else{
+      child1.setChecked(false);
+      child2.setChecked(false);
+    }
+  }
 }

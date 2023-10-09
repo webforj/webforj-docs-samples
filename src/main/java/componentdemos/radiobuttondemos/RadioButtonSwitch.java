@@ -7,7 +7,7 @@ import org.dwcj.component.optioninput.RadioButton;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 
-@InlineStyleSheet("context://css/checkboxstyles/text_styles.css")
+@InlineStyleSheet("context://css/radiobuttonstyles/radiobutton_styles.css")
 public class RadioButtonSwitch extends App{
   @Override
   public void run() throws DwcjException {
