@@ -1,7 +1,7 @@
 .Frame {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 1em;
   margin: 20px 0 0 10px;
 }
 
