@@ -19,7 +19,9 @@ public class CheckboxIndeterminate extends App {
     Frame window = new Frame();
     window.addClassName("Frame");
 
-    indeterminate = new CheckBox().setText("Parent").setIndeterminate(true);
+    indeterminate = new CheckBox();
+    indeterminate.setText("Parent")
+        .setIndeterminate(true);
     indeterminate.addToggleListener(this::indeterminateToggle);
 
     child1 = new CheckBox();

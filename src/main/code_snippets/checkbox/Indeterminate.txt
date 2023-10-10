@@ -1,1 +1,2 @@
-indeterminate = new CheckBox().setText("Parent").setIndeterminate(true);
+CheckBox indeterminate = new CheckBox();
+indeterminate.setIndeterminate(true);
