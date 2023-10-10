@@ -13,7 +13,6 @@ public class CheckboxEventDemo extends App {
 
   @Override
   public void run() throws DwcjException {
-
     Frame window = new Frame()
         .addClassName("Frame");
     checkbox = new CheckBox()
