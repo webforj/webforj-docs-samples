@@ -4,7 +4,7 @@ import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.layout.applayout.AppLayout;
 import org.dwcj.component.layout.applayout.AppLayout.DrawerPlacement;
-import org.dwcj.component.texts.Label;
+import org.dwcj.component.text.Label;
 import org.dwcj.component.tabbedpane.TabbedPane;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;

@@ -28,7 +28,8 @@ public class DrawerSize extends App {
     size = new MaskedNumberField("0").setAttribute("label", "Size:");
     maxSize = new MaskedNumberField("0").setAttribute("label", "Max Size:");
 
-    submit = new Button("Submit")
+    submit = new Button("Submit");
+    submit.setStyle("margin", "10px")
         .onClick(e -> {
           if (!maxSize.getText().equals("0")) {
             drawer.setMaxSize(maxSize.getText() + "px");
@@ -36,14 +37,13 @@ public class DrawerSize extends App {
           if (!size.getText().equals("0")) {
             drawer.setSize(size.getText() + "px");
           }
-        })
-        .setStyle("margin", "10px");
+        });
 
-    reset = new Button("Reset")
+    reset = new Button("Reset");
+    reset.setStyle("margin", "10px")
         .onClick(e -> {
           drawer.setSize("16em").setMaxSize("100%");
-        })
-        .setStyle("margin", "10px");
+        });
 
     Panel inputs = new Panel();
     Panel buttons = new Panel();

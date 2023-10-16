@@ -4,7 +4,7 @@ import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.window.Frame;
 import org.dwcj.component.button.Button;
-import org.dwcj.component.texts.Label;
+import org.dwcj.component.text.Label;
 import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/labelstyles/wrap_styles.css")
@@ -24,8 +24,8 @@ public class LabelLineWrap extends App {
     l1.setStyle("width", "50vw");
     l1.setStyle("border", "1px solid black");
     l1.setWrap(true);
-    Button wrap = new Button("Toggle Line Wrapping")
-      .onClick(e -> {
+    Button wrap = new Button("Toggle Line Wrapping");
+    wrap.onClick(e -> {
         l1.setWrap(!l1.isWrap());
       });
     window.add(l1,wrap);

@@ -6,7 +6,7 @@ import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.event.ModifyEvent;
 import org.dwcj.component.field.ColorField;
 import org.dwcj.component.layout.flexlayout.FlexLayout;
-import org.dwcj.component.texts.Label;
+import org.dwcj.component.text.Label;
 import org.dwcj.component.window.Frame;
 import org.dwcj.component.window.Panel;
 import org.dwcj.exceptions.DwcjAppInitializeException;

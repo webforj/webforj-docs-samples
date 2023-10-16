@@ -9,7 +9,7 @@ import org.dwcj.component.drawer.Drawer;
 import org.dwcj.component.drawer.Drawer.Placement;
 import org.dwcj.component.layout.applayout.AppLayout;
 import org.dwcj.component.layout.applayout.AppLayout.DrawerPlacement;
-import org.dwcj.component.texts.Label;
+import org.dwcj.component.text.Label;
 import org.dwcj.component.tabbedpane.TabbedPane;
 import org.dwcj.component.window.Frame;
 import org.dwcj.component.window.Panel;
@@ -82,13 +82,16 @@ public class DrawerWelcome extends App {
         .addClassName("welcome__drawer-content");
 
     // Content
+    Button openWelcome = new Button("Open Welcome Page");
+    openWelcome.onClick(e -> {
+        welcomeDrawer.open();
+    });
+    
     demo.getContent().add(
         new Label("<html><h1>Application Title</h1></html>"),
         new Label("<html><h4>Application Content</h4></html>"),
-        new Button("Open Welcome Page")
-            .onClick(e -> {
-              welcomeDrawer.open();
-            }));
+        openWelcome
+        );
   }
 
 }

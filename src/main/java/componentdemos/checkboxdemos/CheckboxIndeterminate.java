@@ -27,14 +27,14 @@ public class CheckboxIndeterminate extends App {
     child1 = new CheckBox();
     child1.setText("Child 1")
         .setChecked(false)
-        .addToggleListener(this::onCheck)
         .addClassName("child-box");
+    child1.addToggleListener(this::onCheck);
 
     child2 = new CheckBox();
     child2.setText("Child 2")
         .setChecked(true)
-        .addToggleListener(this::onCheck)
         .addClassName("child-box");
+    child2.addToggleListener(this::onCheck);
 
     window.add(indeterminate, child1, child2);
   }

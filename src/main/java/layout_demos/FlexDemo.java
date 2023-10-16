@@ -127,5 +127,4 @@ public class FlexDemo extends App {
     states.addItem("WI", "Wisconsin");
     states.addItem("WY", "Wyoming");
   }
-
 }

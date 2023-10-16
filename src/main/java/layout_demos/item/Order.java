@@ -42,12 +42,13 @@ public class Order extends App{
     MaskedNumberField order = new MaskedNumberField("5")
     .setAttribute("Label", "Order:")
     .setStyle("width", "200px");
-    Button submit = new Button("Set Order")
+    Button submit = new Button("Set Order");
+    submit.setStyle("height", "34px")
       .onClick( e -> {
       boxLayout.setItemOrder(Integer.parseInt(order.getText()), orderButton);
       orderButton.setText("Order: " + order.getText());
-      })
-      .setStyle("height", "34px");
+      });
+      
 
       FlexLayout optionLayout = FlexLayout.create(order, submit)
       .horizontal()

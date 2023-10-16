@@ -16,8 +16,17 @@ public class ButtonIcon extends App {
   public void run() throws DwcjException {
     Frame window = new Frame();
     window.addClassName("window");
+
+    String script = """
+            (window.BBj ??= {}).IconsPools ??= [];
+            window.BBj.IconsPools.push({
+                name: 'material',
+                resolver: name => `https://cdn.jsdelivr.net/npm/@material-design-icons/svg@latest/${name}.svg`
+            });
+            """;
+    App.getPage().executeJs(script);
     
-    Button notifications = new Button("<html><bbj-icon name='bell' slot='prefix'></bbj-icon> Notifications</html>");
+    Button notifications = new Button("<html><bbj-icon pool='material' name='filled/home' slot='prefix'></bbj-icon> Notifications</html>");
     Button settings = new Button("<html>Settings<bbj-icon name='settings' slot='suffix'></bbj-icon></html>");
     Button search = new Button("<html><bbj-icon name='search'></bbj-icon>Search</html>");
     Button home = new Button("<html><bbj-icon name='home'></bbj-icon></html>");

@@ -18,7 +18,7 @@ public class PasswordFieldDemo extends App {
     PasswordField passwordField = new PasswordField();
     passwordField.addClassName("date__input");
     passwordField.setLabel("Enter your Password:");
-    // passwordField.setPlaceholder("Password");
+    passwordField.setPlaceholder("Password");
 
     window.add(passwordField);
 

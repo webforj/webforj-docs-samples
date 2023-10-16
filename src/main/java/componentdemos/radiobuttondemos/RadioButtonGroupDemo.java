@@ -24,8 +24,6 @@ public class RadioButtonGroupDemo extends App{
 
         RadioButtonGroup group = new RadioButtonGroup(sDisagree, disagree, neutral, agree, sAgree);
 
-        group.setAttribute("label", "Choose an Option");
-
         FlexLayout layout = FlexLayout.create(group)
         .vertical()
         .wrap().wrap()

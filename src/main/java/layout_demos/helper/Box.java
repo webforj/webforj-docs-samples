@@ -6,9 +6,10 @@ import java.util.Map;
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.layout.flexlayout.FlexLayout;
-import org.dwcj.component.texts.Label;
-import org.dwcj.component.window.AbstractWindow;
+import org.dwcj.component.text.Label;
+import org.dwcj.component.window.Window;
 import org.dwcj.concern.HasStyle;
+import org.dwcj.concern.legacy.LegacyHasStyle;
 
 @InlineStyleSheet("context://css/flexstyles/box_styles.css")
 public class Box extends FlexLayout {
@@ -22,7 +23,7 @@ public class Box extends FlexLayout {
   private Map<String, String> styles;
 
   @Override
-  public void create(AbstractWindow p) {
+  public void onCreate(Window p) {
     box = FlexLayout.create()
         .horizontal()
         .align().center()
@@ -46,7 +47,7 @@ public class Box extends FlexLayout {
   }
 
   @Override
-  public FlexLayout setItemOrder(int order, HasStyle control) {
+  public FlexLayout setItemOrder(int order, LegacyHasStyle control) {
     App.consoleLog(String.valueOf(order) + " " + control.toString());
     super.setItemOrder(order, control);
     return this;
@@ -71,8 +72,7 @@ public class Box extends FlexLayout {
 
   @Override
   public Box setVisible(Boolean visible) {
-    if (Boolean.TRUE.equals(this.getCaughtUp())) {
-      App.consoleLog("TEST");
+    if (Boolean.TRUE.equals(this.isAttached())) {
     } else {
       box.setVisible(visible);
       this.vis = visible;
@@ -84,8 +84,7 @@ public class Box extends FlexLayout {
     this.title = text;
   }
 
-  @Override
-  public void destroy() {
+  public void boxDestroy() {
     box.destroy();
   }
 }

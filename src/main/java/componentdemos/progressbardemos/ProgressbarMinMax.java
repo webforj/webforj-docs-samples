@@ -2,7 +2,7 @@ package componentdemos.progressbardemos;
 
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.texts.Label;
+import org.dwcj.component.text.Label;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 import org.dwcj.component.progressbar.ProgressBar;

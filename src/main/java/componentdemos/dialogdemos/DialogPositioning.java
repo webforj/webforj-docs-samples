@@ -6,7 +6,7 @@ import org.dwcj.component.button.Button;
 import org.dwcj.component.button.event.ButtonClickEvent;
 import org.dwcj.component.dialog.Dialog;
 import org.dwcj.component.layout.flexlayout.FlexLayout;
-import org.dwcj.component.texts.Label;
+import org.dwcj.component.text.Label;
 import org.dwcj.component.maskednumberfield.MaskedNumberField;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
@@ -37,9 +37,11 @@ public class DialogPositioning extends App {
 
     dialog.getHeader().add(new Label("Positioning"));
     dialog.getContent().add(xLayout, yLayout);
-    dialog.getFooter().add(new Button("Set Dialog Position")
-        .onClick(this::setPosition)
-        .setStyle("width", "150px"));
+
+    Button setPosition = new Button("Set Dialog Position");
+    setPosition.setStyle("width", "150px")
+        .onClick(this::setPosition);
+    dialog.getFooter().add(setPosition);
 
     dialog.setAutoFocus(true);
     dialog.show();

@@ -174,7 +174,7 @@ public class ItemDemo extends App{
 
   private void removeBox(int newNum){
     while(newNum < numBoxes){
-      boxes.get((int)numBoxes-1).destroy();
+      boxes.get((int)numBoxes-1).boxDestroy();
       boxes.remove((int)numBoxes-1);
       numBoxes--;
     }

@@ -5,7 +5,7 @@ import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.button.Button;
 import org.dwcj.component.button.event.ButtonClickEvent;
 import org.dwcj.component.dialog.Dialog;
-import org.dwcj.component.texts.Label;
+import org.dwcj.component.text.Label;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 
@@ -30,11 +30,13 @@ public class DialogBackdropBlur extends App {
     dialog.addClassName("loginForm");
 
     dialog.getHeader().add(new Label("Background Blur"));
-    dialog.getContent().add(new Button("Toggle Background Blur")
-        .onClick(this::buttonClick))
-        .setStyle("display", "flex")
-        .setStyle("justify-content", "center");
 
+    Button backgroundBlur = new Button("Toggle Background Blur");
+    backgroundBlur.setStyle("display", "flex")
+      .setStyle("justify-content", "center")
+      .onClick(this::buttonClick);
+    dialog.getContent().add(backgroundBlur);
+    
     dialog.setCloseable(false);
     dialog.show();
   }

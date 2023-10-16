@@ -27,23 +27,37 @@
         <dependency>
             <groupId>org.dwcj</groupId>
             <artifactId>dwcj-engine</artifactId>
-            <version>23.03-SNAPSHOT</version>
-            <!-- <scope>system</scope>
-            <systemPath>c:\DWCJ_Files\engine\dwcj-engine\target\dwcj-engine-23.03-SNAPSHOT.jar</systemPath> -->
+            <version>23.05-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.dwcj</groupId>
             <artifactId>dwcj-code</artifactId>
-            <version>23.03-SNAPSHOT</version>
+            <version>23.05-SNAPSHOT</version>
         </dependency>
-        <!-- <dependency>
-            <groupId>org.dwcj</groupId>
-            <artifactId>dwcj-code</artifactId>
-            <version>23.02-SNAPSHOT</version>
-        </dependency> -->
     </dependencies>
 
     <build>
-        <finalName>control_samples</finalName>
+        <finalName>ComponentDemos</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.dwcj</groupId>
+                <artifactId>dwcj-install-maven-plugin</artifactId>
+                <version>0.2.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>install</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!-- see https://github.com/DwcJava/dwcj-install-maven-plugin for options -->
+                    <deployurl>http://localhost:8888/dwcj-install</deployurl>
+                    <!-- <classname>samples.HelloWorldJava</classname> -->
+                    <publishname>component_demos</publishname>
+                    <debug>true</debug>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 </project>

@@ -5,7 +5,7 @@ import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.button.Button;
 import org.dwcj.component.button.event.ButtonClickEvent;
 import org.dwcj.component.dialog.Dialog;
-import org.dwcj.component.texts.Label;
+import org.dwcj.component.text.Label;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 
@@ -18,14 +18,18 @@ public class DialogClose extends App {
   public void run() throws DwcjException {
     Frame p = new Frame();
     dialog = new Dialog();
-    p.add(dialog,
-        new Button("Show Dialog")
-            .onClick(this::openDialog)
-            .setStyle("margin-left", "48vw")
-            .setStyle("margin-top", "20px"));
+    Button showDialog = new Button("Show Dialog");
+    showDialog.setStyle("margin-left", "48vw")
+      .setStyle("margin-top", "20px")
+      .onClick(this::openDialog);
+    p.add(dialog, showDialog);
 
     dialog.getHeader().add(new Label("Closing the Dialog"));
-    dialog.getContent().add(new Button("Close Dialog").onClick(this::closeDialog));
+
+    Button closeDialog = new Button("Close Dialog");
+    closeDialog.onClick(this::closeDialog);
+    dialog.getContent().add(closeDialog);
+    
     dialog.setCancelOnEscKey(true);
     dialog.show();
   }
