@@ -37,7 +37,7 @@
     </dependencies>
 
     <build>
-        <finalName>ComponentDemos</finalName>
+        <finalName>control_samples</finalName>
         <plugins>
             <plugin>
                 <groupId>org.dwcj</groupId>
@@ -54,7 +54,7 @@
                     <!-- see https://github.com/DwcJava/dwcj-install-maven-plugin for options -->
                     <deployurl>http://localhost:8888/dwcj-install</deployurl>
                     <!-- <classname>samples.HelloWorldJava</classname> -->
-                    <publishname>component_demos</publishname>
+                    <publishname>controlsamples</publishname>
                     <debug>true</debug>
                 </configuration>
             </plugin>
