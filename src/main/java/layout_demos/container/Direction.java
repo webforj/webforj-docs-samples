@@ -2,8 +2,8 @@ package layout_demos.container;
 
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.choicebox.ChoiceBox;
-import org.dwcj.component.choicebox.event.ChoiceBoxSelectEvent;
+import org.dwcj.component.list.ChoiceBox;
+import org.dwcj.component.list.event.ListSelectEvent;
 import org.dwcj.component.layout.flexlayout.FlexDirection;
 import org.dwcj.component.layout.flexlayout.FlexLayout;
 import org.dwcj.component.window.Frame;
@@ -39,12 +39,13 @@ public class Direction extends App {
       boxLayout.add(newBox);
     }
 
-    ChoiceBox directions = new ChoiceBox().onSelect(this::selectDirection)
-        .addClassName("flex__options");
-    directions.setAttribute("label", "Direction Options");
+    ChoiceBox directions = new ChoiceBox();
+    directions.onSelect(this::selectDirection);
+    directions.addClassName("flex__options");
+    directions.setLabel("Direction Options");
     for (FlexDirection justify : FlexDirection.values()) {
       String label = justify.getValue();
-      directions.addItem(
+      directions.add(
           "." + justify.toString()
               .toLowerCase() + "()",
           label.substring(0, 1)
@@ -57,7 +58,7 @@ public class Direction extends App {
     mainLayout.add(directions, boxLayout);
   }
 
-  private void selectDirection(ChoiceBoxSelectEvent ev) {
-    boxLayout.setDirection(FlexDirection.fromValue(ev.getControl().getSelectedItem().getValue()));
+  private void selectDirection(ListSelectEvent ev) {
+    boxLayout.setDirection(FlexDirection.fromValue(ev.getSelectedItem().getText()));
   }
 }

@@ -2,8 +2,8 @@ package layout_demos.container;
 
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.choicebox.ChoiceBox;
-import org.dwcj.component.choicebox.event.ChoiceBoxSelectEvent;
+import org.dwcj.component.list.ChoiceBox;
+import org.dwcj.component.list.event.ListSelectEvent;
 import org.dwcj.component.layout.flexlayout.FlexAlignment;
 import org.dwcj.component.layout.flexlayout.FlexJustifyContent;
 import org.dwcj.component.layout.flexlayout.FlexLayout;
@@ -41,12 +41,13 @@ public class Positioning extends App {
       boxLayout.add(newBox);
     }
 
-    ChoiceBox horizontal = new ChoiceBox().onSelect(this::selectJustify)
-        .addClassName("flex__options");
-    horizontal.setAttribute("label", "Position Options");
+    ChoiceBox horizontal = new ChoiceBox();
+    horizontal.onSelect(this::selectJustify);
+    horizontal.addClassName("flex__options");
+    horizontal.setLabel("Position Options");
     for (FlexJustifyContent justify : FlexJustifyContent.values()) {
       String label = justify.getValue();
-      horizontal.addItem(
+      horizontal.add(
           "." + justify.toString()
               .toLowerCase() + "()",
           label.substring(0, 1)
@@ -56,12 +57,13 @@ public class Positioning extends App {
     }
     horizontal.selectIndex(0);
 
-    ChoiceBox vertical = new ChoiceBox().onSelect(this::selectAlignment)
-        .addClassName("flex__options");
-    vertical.setAttribute("label", "Position Options");
+    ChoiceBox vertical = new ChoiceBox();
+    vertical.onSelect(this::selectAlignment);
+    vertical.addClassName("flex__options");
+    vertical.setLabel("Position Options");
     for (FlexAlignment justify : FlexAlignment.values()) {
       String label = justify.getValue();
-      vertical.addItem(
+      vertical.add(
           "." + justify.toString()
               .toLowerCase() + "()",
           label.substring(0, 1)
@@ -79,12 +81,12 @@ public class Positioning extends App {
     mainLayout.add(choices, boxLayout);
   }
 
-  private void selectJustify(ChoiceBoxSelectEvent ev) {
-    boxLayout.setJustifyContent(FlexJustifyContent.fromValue(ev.getControl().getSelectedItem().getValue()));
+  private void selectJustify(ListSelectEvent ev) {
+    boxLayout.setJustifyContent(FlexJustifyContent.fromValue(ev.getSelectedItem().getText()));
   }
 
-  private void selectAlignment(ChoiceBoxSelectEvent ev) {
-    boxLayout.setAlignment(FlexAlignment.fromValue(ev.getControl().getSelectedItem().getValue()));
+  private void selectAlignment(ListSelectEvent ev) {
+    boxLayout.setAlignment(FlexAlignment.fromValue(ev.getSelectedItem().getText()));
   }
 
 }

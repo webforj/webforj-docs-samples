@@ -8,29 +8,29 @@ import org.dwcj.component.window.Frame;
 import org.dwcj.component.button.Button;
 import org.dwcj.component.button.ButtonTheme;
 import org.dwcj.component.button.event.ButtonClickEvent;
-import org.dwcj.component.listbox.ListBox;
+import org.dwcj.component.list.ListBox;
+import org.dwcj.component.list.MultipleSelectableList.SelectionMode;
 import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/listboxstyles/multiple_selection.css")
 public class ListboxMultipleSelection extends App {
 
   ListBox l1;
-  Boolean toggle = false;
+  SelectionMode selection = SelectionMode.SINGLE;
 
   @Override
   public void run() throws DwcjException {
     Frame window = new Frame();
     window.addClassName("Frame");
 
-    Map<Object, String> data = new HashMap<>();
-    data.put("Random Data1", "Random Data");
-    data.put("Random Data2", "Some Data");
-    data.put("Random Data3", "More Data");
-    data.put("Random Data4", "Test Data");
-
+    
     l1 = new ListBox();
     window.add(l1);
-    l1.setItems(data);
+
+    l1.add("Random Data1", "Random Data");
+    l1.add("Random Data2", "Some Data");
+    l1.add("Random Data3", "More Data");
+    l1.add("Random Data4", "Test Data");
 
     Button b1 = new Button("Toggle Multiple Selection");
     window.add(b1);
@@ -41,8 +41,11 @@ public class ListboxMultipleSelection extends App {
   }
 
   void buttonMethod(ButtonClickEvent ev) {
-    this.toggle = !toggle;
-    l1.setMultipleSelection(toggle);
+    if(this.selection.equals(SelectionMode.SINGLE)){
+      l1.setSelectionMode(SelectionMode.MULTIPLE);
+    }
+    else{
+      l1.setSelectionMode(SelectionMode.SINGLE);
+    }
   }
-
 }

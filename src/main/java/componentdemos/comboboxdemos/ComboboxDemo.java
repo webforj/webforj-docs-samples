@@ -6,8 +6,9 @@ import java.util.Map;
 import org.dwcj.App;
 import org.dwcj.component.window.Frame;
 import org.dwcj.component.window.Panel;
-import org.dwcj.component.choicebox.ChoiceBox;
-import org.dwcj.component.choicebox.event.ChoiceBoxSelectEvent;
+import org.dwcj.component.Expanse;
+import org.dwcj.component.list.ChoiceBox;
+import org.dwcj.component.list.event.ListSelectEvent;
 import org.dwcj.exceptions.DwcjAppInitializeException;
 
 public class ComboboxDemo extends App {
@@ -31,24 +32,22 @@ public class ComboboxDemo extends App {
                 "blue");
         d1.setStyle("align-self", "center").setStyle("justify-self", "center");
 
-        Map<Object, String> data = new HashMap<>();
-        data.put("Random Data1", "Green");
-        data.put("Random Data2", "Blue");
-        data.put("Random Data3", "Red");
-        data.put("Random Data4", "Yellow");
-
-        cb1.setItems(data);
+        cb1.add("Random Data1", "Green");
+        cb1.add("Random Data2", "Blue");
+        cb1.add("Random Data3", "Red");
+        cb1.add("Random Data4", "Yellow");
 
         window.add(cb1, d1);
 
-        cb1.setAttribute("label", "Choose a Color:").selectIndex(0).setStyle("grid-column", "1")
-                .setExpanse(ChoiceBox.Expanse.LARGE).setStyle("width", "250px");
+        cb1.setLabel("Choose a Color:").selectIndex(0).setStyle("grid-column", "1")
+                .setExpanse(Expanse.LARGE).setStyle("width", "250px");
         cb1.onSelect(this::cbSelect);
 
     }
 
-    private void cbSelect(ChoiceBoxSelectEvent ev) {
-        d1.setStyle("background", ev.getControl().getItemAt(ev.getControl().getSelectedIndex()).toLowerCase());
+    private void cbSelect(ListSelectEvent ev) {
+        d1.setStyle("background", ev.getSelectedItem().getText());
+        // d1.setStyle("background", ev.getComponent().getItemAt( ((ChoiceBox) ev.getComponent()).getSelectedIndex()).toLowerCase());
     }
 
 }

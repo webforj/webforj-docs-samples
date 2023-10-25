@@ -6,8 +6,8 @@ import java.util.HashMap;
 import org.dwcj.App;
 import org.dwcj.addons.code.Code;
 import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.choicebox.ChoiceBox;
-import org.dwcj.component.choicebox.event.ChoiceBoxSelectEvent;
+import org.dwcj.component.list.ChoiceBox;
+import org.dwcj.component.list.event.ListSelectEvent;
 import org.dwcj.component.spinnernumberfield.SpinnerNumberField;
 import org.dwcj.component.layout.flexlayout.FlexAlignment;
 import org.dwcj.component.layout.flexlayout.FlexContentAlignment;
@@ -71,11 +71,12 @@ public class ItemDemo extends App{
     mainLayout.add(flexContainerOptions, boxLayout);
     page.add(mainLayout);
 
-    ChoiceBox order = new ChoiceBox().onSelect(this::selectDirection);
-    order.setAttribute("label", "Order");
+    ChoiceBox order = new ChoiceBox();
+    order.onSelect(this::selectDirection);
+    order.setLabel("Order");
     for(FlexDirection justify : FlexDirection.values()){
       String label = justify.getValue();
-      order.addItem(
+      order.add(
         "." + justify.toString()
           .toLowerCase() + "()", 
         label.substring(0, 1)
@@ -85,35 +86,39 @@ public class ItemDemo extends App{
       }
     order.selectIndex(0);
 
-    ChoiceBox alignment = new ChoiceBox().onSelect(this::selectJustification);
-    alignment.setAttribute("label", "Align Self");
+    ChoiceBox alignment = new ChoiceBox();
+    alignment.onSelect(this::selectJustification);
+    alignment.setLabel("Align Self");
     for(FlexAlignment justify : FlexAlignment.values()){
       String label = justify.getValue().replaceAll("^(.+?)-", "");
-      alignment.addItem(".justify()." + justify.toString().toLowerCase().replaceAll("^(.+?)-", "") + "()", label.substring(0, 1).toUpperCase() + label.substring(1));
+      alignment.add(".justify()." + justify.toString().toLowerCase().replaceAll("^(.+?)-", "") + "()", label.substring(0, 1).toUpperCase() + label.substring(1));
     }
     alignment.selectIndex(0);
 
-    ChoiceBox basis = new ChoiceBox().onSelect(this::selectAlignment);
-    basis.setAttribute("label", "Flex Basis");
+    ChoiceBox basis = new ChoiceBox();
+    basis.onSelect(this::selectAlignment);
+    basis.setLabel("Flex Basis");
     for(FlexAlignment justify : FlexAlignment.values()){
       String label = justify.getValue().replaceAll("^(.+?)-", "");
-      basis.addItem(".align()." + justify.toString().toLowerCase().replaceAll("^(.+?)-", "") + "()", label.substring(0, 1).toUpperCase() + label.substring(1));
+      basis.add(".align()." + justify.toString().toLowerCase().replaceAll("^(.+?)-", "") + "()", label.substring(0, 1).toUpperCase() + label.substring(1));
     }
     basis.selectIndex(0);
 
-    ChoiceBox grow = new ChoiceBox().onSelect(this::selectAlignContent);
-    grow.setAttribute("label", "Flex Grow");
+    ChoiceBox grow = new ChoiceBox();
+    grow.onSelect(this::selectAlignContent);
+    grow.setLabel("Flex Grow");
     for(FlexContentAlignment justify : FlexContentAlignment.values()){
       String label = justify.getValue().replaceAll("^(.+?)-", "");
-      grow.addItem(".contentAlign()." + justify.toString().toLowerCase().replaceAll("^(.+?)-", "") + "()", label.substring(0, 1).toUpperCase() + label.substring(1));
+      grow.add(".contentAlign()." + justify.toString().toLowerCase().replaceAll("^(.+?)-", "") + "()", label.substring(0, 1).toUpperCase() + label.substring(1));
     }
     grow.selectIndex(0);
 
-    ChoiceBox shrink = new ChoiceBox().onSelect(this::selectWrap);
-    shrink.setAttribute("label", "Flex Shrink");
+    ChoiceBox shrink = new ChoiceBox();
+    shrink.onSelect(this::selectWrap);
+    shrink.setLabel("Flex Shrink");
     for(FlexWrap justify : FlexWrap.values()){
       String label = justify.getValue().replaceAll("^(.+?)-", "");
-      shrink.addItem(".wrap()." + justify.toString().toLowerCase().replaceAll("^(.+?)-", "") + "()", label.substring(0, 1).toUpperCase() + label.substring(1));
+      shrink.add(".wrap()." + justify.toString().toLowerCase().replaceAll("^(.+?)-", "") + "()", label.substring(0, 1).toUpperCase() + label.substring(1));
     }
     shrink.selectIndex(0);
  
@@ -180,9 +185,9 @@ public class ItemDemo extends App{
     }
   }
 
-  private void selectDirection(ChoiceBoxSelectEvent ev){
-    boxLayout.setDirection(FlexDirection.fromValue(ev.getControl().getSelectedItem().getValue()));
-    switch(ev.getControl().getSelectedItem().getKey().toString()){
+  private void selectDirection(ListSelectEvent ev){
+    boxLayout.setDirection(FlexDirection.fromValue(ev.getSelectedItem().getText()));
+    switch(ev.getSelectedItem().getKey().toString()){
       case ".row-reverse()": codeSnippetBuilder.put("FlexDirection", ".horizontalReverse()\n");
       break;
       case ".column()": codeSnippetBuilder.put("FlexDirection", ".vertical()\n");
@@ -195,51 +200,51 @@ public class ItemDemo extends App{
     updateCode();
   }
   
-  private void selectJustification(ChoiceBoxSelectEvent ev){
-    boxLayout.setJustifyContent(FlexJustifyContent.fromValue(ev.getControl().getSelectedItem().getValue()));
-    if(ev.getControl().getSelectedItem().getKey().toString().equals(".justify().start()")){
+  private void selectJustification(ListSelectEvent ev){
+    boxLayout.setJustifyContent(FlexJustifyContent.fromValue(ev.getSelectedItem().getText()));
+    if(ev.getSelectedItem().getKey().toString().equals(".justify().start()")){
       codeSnippetBuilder.put("FlexJustifyContent", "");
     }
     else{
-      codeSnippetBuilder.put("FlexJustifyContent", ev.getControl().getSelectedItem().getKey().toString() + "\n");
+      codeSnippetBuilder.put("FlexJustifyContent", ev.getSelectedItem().getKey().toString() + "\n");
     }
     updateCode();
   }
 
-  private void selectAlignment(ChoiceBoxSelectEvent ev){
-    boxLayout.setAlignment(FlexAlignment.fromValue(ev.getControl().getSelectedItem().getValue()));
-    if(ev.getControl().getSelectedItem().getKey().toString().equals(".align().stretch()")){
+  private void selectAlignment(ListSelectEvent ev){
+    boxLayout.setAlignment(FlexAlignment.fromValue(ev.getSelectedItem().getText()));
+    if(ev.getSelectedItem().getKey().toString().equals(".align().stretch()")){
       codeSnippetBuilder.put("FlexAlignment", "");
     }
     else{
-      codeSnippetBuilder.put("FlexAlignment", ev.getControl().getSelectedItem().getKey().toString() + "\n");
+      codeSnippetBuilder.put("FlexAlignment", ev.getSelectedItem().getKey().toString() + "\n");
     }
     updateCode();
   }
 
-  private void selectAlignContent(ChoiceBoxSelectEvent ev){
-    boxLayout.setAlignContent(FlexContentAlignment.fromValue(ev.getControl().getSelectedItem().getValue()));
-    if(ev.getControl().getSelectedItem().getKey().toString().equals(".contentAlign().normal()")){
+  private void selectAlignContent(ListSelectEvent ev){
+    boxLayout.setAlignContent(FlexContentAlignment.fromValue(ev.getSelectedItem().getText()));
+    if(ev.getSelectedItem().getKey().toString().equals(".contentAlign().normal()")){
       codeSnippetBuilder.put("FlexContentAlignment", "");
     }
     else{
-      codeSnippetBuilder.put("FlexContentAlignment", ev.getControl().getSelectedItem().getKey().toString() + "\n");
+      codeSnippetBuilder.put("FlexContentAlignment", ev.getSelectedItem().getKey().toString() + "\n");
     }
     updateCode();
   }
 
-  private void selectWrap(ChoiceBoxSelectEvent ev){
-    if(ev.getControl().getSelectedItem().getKey().toString().equals(".wrap().nowrap()")){
-      boxLayout.setWrap(FlexWrap.fromValue(ev.getControl().getSelectedItem().getValue()));
+  private void selectWrap(ListSelectEvent ev){
+    if(ev.getSelectedItem().getKey().toString().equals(".wrap().nowrap()")){
+      boxLayout.setWrap(FlexWrap.fromValue(ev.getSelectedItem().getText()));
       codeSnippetBuilder.put("FlexWrap", "");
     }
-    else if(ev.getControl().getSelectedItem().getKey().toString().equals(".wrap().reverse()")){
+    else if(ev.getSelectedItem().getKey().toString().equals(".wrap().reverse()")){
       boxLayout.setWrap(FlexWrap.WRAP_REVERSE);
-      codeSnippetBuilder.put("FlexWrap", ev.getControl().getSelectedItem().getKey().toString() + "\n");
+      codeSnippetBuilder.put("FlexWrap", ev.getSelectedItem().getKey().toString() + "\n");
     }
     else{
-      boxLayout.setWrap(FlexWrap.fromValue(ev.getControl().getSelectedItem().getValue()));
-      codeSnippetBuilder.put("FlexWrap", ev.getControl().getSelectedItem().getKey().toString() + "\n");
+      boxLayout.setWrap(FlexWrap.fromValue(ev.getSelectedItem().getText()));
+      codeSnippetBuilder.put("FlexWrap", ev.getSelectedItem().getKey().toString() + "\n");
     }
     updateCode();
   }

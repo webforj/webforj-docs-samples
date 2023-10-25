@@ -2,7 +2,7 @@ package componentdemos.dialogdemos;
 
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.choicebox.ChoiceBox;
+import org.dwcj.component.list.ChoiceBox;
 import org.dwcj.component.dialog.Dialog;
 import org.dwcj.component.text.Label;
 import org.dwcj.component.window.Frame;
@@ -21,13 +21,13 @@ public class DialogThemes extends App {
     options = new ChoiceBox();
     
     for (Dialog.Theme theme : Dialog.Theme.values()) {
-      options.addItem(theme, Character.toUpperCase(theme.getValue().charAt(0)) + theme.getValue().substring(1));
+      options.add(theme, Character.toUpperCase(theme.getValue().charAt(0)) + theme.getValue().substring(1));
     }
     options.setAttribute("label", "Select Theme")
         .setStyle("width", "100px")
         .selectIndex(1)
         .onSelect(e -> {
-          dialog.setTheme(((Dialog.Theme) e.getKey()));
+          dialog.setTheme(((Dialog.Theme) e.getSelectedItem().getKey()));
         });
 
     dialog.getHeader().add(new Label("Themes"));

@@ -1,10 +1,12 @@
 package componentdemos.comboboxdemos;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 import org.dwcj.App;
 import org.dwcj.component.window.Frame;
-import org.dwcj.component.choicebox.ChoiceBox;
+import org.dwcj.component.button.ButtonTheme;
+import org.dwcj.component.list.ChoiceBox;
+import org.dwcj.component.list.ListItem;
 import org.dwcj.exceptions.DwcjException;
 import org.dwcj.annotation.InlineStyleSheet;
 
@@ -18,39 +20,39 @@ public class ComboboxThemeDemo extends App {
     Frame window = new Frame();
     window.addClassName("Frame");
 
-    Map<Object, String> data = new HashMap<>();
-    data.put("Random Data1", "Random Data");
-    data.put("Random Data2", "Some Data");
-    data.put("Random Data3", "More Data");
-    data.put("Random Data4", "Test Data");
+    List<ListItem> data = new ArrayList<>();
+    data.add(new ListItem("Random Data1", "Random Data"));
+    data.add(new ListItem("Random Data2", "Some Data"));
+    data.add(new ListItem("Random Data3", "More Data"));
+    data.add(new ListItem("Random Data4", "Test Data"));
 
-    ChoiceBox b1 = new ChoiceBox().setItems(data);
-    ChoiceBox b2 = new ChoiceBox().setAttribute(THEME, "danger")
-        .setItems(data);
-    ChoiceBox b3 = new ChoiceBox().setAttribute(THEME, "gray")
-        .setItems(data);
-    ChoiceBox b4 = new ChoiceBox().setAttribute(THEME, "info")
-        .setItems(data);
-    ChoiceBox b5 = new ChoiceBox().setAttribute(THEME, "primary")
-        .setItems(data);
-    ChoiceBox b6 = new ChoiceBox().setAttribute(THEME, "success")
-        .setItems(data);
-    ChoiceBox b7 = new ChoiceBox().setAttribute(THEME, "warning")
-        .setItems(data);
-    ChoiceBox b8 = new ChoiceBox().setAttribute(THEME, "outlined-default")
-        .setItems(data);
-    ChoiceBox b9 = new ChoiceBox().setAttribute(THEME, "outlined-danger")
-        .setItems(data);
-    ChoiceBox b10 = new ChoiceBox().setAttribute(THEME, "outlined-gray")
-        .setItems(data);
-    ChoiceBox b11 = new ChoiceBox().setAttribute(THEME, "outlined-info")
-        .setItems(data);
-    ChoiceBox b12 = new ChoiceBox().setAttribute(THEME, "outlined-primary")
-        .setItems(data);
-    ChoiceBox b13 = new ChoiceBox().setAttribute(THEME, "outlined-success")
-        .setItems(data);
-    ChoiceBox b14 = new ChoiceBox().setAttribute(THEME, "outlined-warning")
-        .setItems(data);
+    ChoiceBox b1 = new ChoiceBox().insert(data);
+    ChoiceBox b2 = new ChoiceBox().setTheme(ButtonTheme.DANGER)
+        .insert(data);
+    ChoiceBox b3 = new ChoiceBox().setTheme(ButtonTheme.GRAY)
+        .insert(data);
+    ChoiceBox b4 = new ChoiceBox().setTheme(ButtonTheme.INFO)
+        .insert(data);
+    ChoiceBox b5 = new ChoiceBox().setTheme(ButtonTheme.PRIMARY)
+        .insert(data);
+    ChoiceBox b6 = new ChoiceBox().setTheme(ButtonTheme.SUCCESS)
+        .insert(data);
+    ChoiceBox b7 = new ChoiceBox().setTheme(ButtonTheme.WARNING)
+        .insert(data);
+    ChoiceBox b8 = new ChoiceBox().setTheme(ButtonTheme.OUTLINED_DEFAULT)
+        .insert(data);
+    ChoiceBox b9 = new ChoiceBox().setTheme(ButtonTheme.OUTLINED_DANGER)
+        .insert(data);
+    ChoiceBox b10 = new ChoiceBox().setTheme(ButtonTheme.OUTLINED_GRAY)
+        .insert(data);
+    ChoiceBox b11 = new ChoiceBox().setTheme(ButtonTheme.OUTLINED_INFO)
+        .insert(data);
+    ChoiceBox b12 = new ChoiceBox().setTheme(ButtonTheme.OUTLINED_PRIMARY)
+        .insert(data);
+    ChoiceBox b13 = new ChoiceBox().setTheme(ButtonTheme.OUTLINED_SUCCESS)
+        .insert(data);
+    ChoiceBox b14 = new ChoiceBox().setTheme(ButtonTheme.OUTLINED_WARNING)
+        .insert(data);
 
     window.add(b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14);
 

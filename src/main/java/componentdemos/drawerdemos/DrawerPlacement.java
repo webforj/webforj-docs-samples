@@ -2,8 +2,8 @@ package componentdemos.drawerdemos;
 
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.choicebox.ChoiceBox;
-import org.dwcj.component.combobox.ComboBox;
+import org.dwcj.component.list.ChoiceBox;
+import org.dwcj.component.list.ComboBox;
 import org.dwcj.component.drawer.Drawer;
 import org.dwcj.component.drawer.Drawer.Placement;
 import org.dwcj.component.window.Frame;
@@ -28,7 +28,7 @@ public class DrawerPlacement extends App {
         .addClassName("drawer");
 
     for (Placement placement : Drawer.Placement.values()) {
-      placements.addItem(placement,
+      placements.add(placement,
           placement.toString().substring(0, 1).toUpperCase() + placement.toString().substring(1).toLowerCase());
     }
 

@@ -2,7 +2,7 @@ package componentdemos.dialogdemos;
 
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.choicebox.ChoiceBox;
+import org.dwcj.component.list.ChoiceBox;
 import org.dwcj.component.dialog.Dialog;
 import org.dwcj.component.text.Label;
 import org.dwcj.component.window.Frame;
@@ -18,14 +18,14 @@ public class DialogAlignments extends App {
     Frame p = new Frame();
     dialog = new Dialog();
     p.add(dialog);
-    options = new ChoiceBox()
-        .addItem(Dialog.Alignment.TOP, "Top")
-        .addItem(Dialog.Alignment.CENTER, "Center")
-        .addItem(Dialog.Alignment.BOTTOM, "Bottom")
-        .setAttribute("label", "Select Alignment")
-        .selectIndex(1)
-        .onSelect(e -> {
-          dialog.setAlignment((Dialog.Alignment) e.getKey());
+    options = new ChoiceBox();
+        options.add(Dialog.Alignment.TOP, "Top");
+        options.add(Dialog.Alignment.CENTER, "Center");
+        options.add(Dialog.Alignment.BOTTOM, "Bottom");
+        options.setAttribute("label", "Select Alignment");
+        options.selectIndex(1);
+        options.onSelect(e -> {
+          dialog.setAlignment((Dialog.Alignment) e.getSelectedItem().getKey());
         });
 
     dialog.getHeader().add(new Label("Alignments"));

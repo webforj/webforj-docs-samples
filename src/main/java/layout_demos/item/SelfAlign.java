@@ -4,7 +4,7 @@ import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.button.Button;
 import org.dwcj.component.button.ButtonTheme;
-import org.dwcj.component.choicebox.ChoiceBox;
+import org.dwcj.component.list.ChoiceBox;
 import org.dwcj.component.layout.flexlayout.FlexAlignment;
 import org.dwcj.component.layout.flexlayout.FlexLayout;
 import org.dwcj.component.window.Frame;
@@ -39,16 +39,16 @@ public class SelfAlign extends App{
     }
     alignButton.setTheme(ButtonTheme.DANGER).setText("Align Me!");
 
-    ChoiceBox alignment = new ChoiceBox()
-    .onSelect( e -> {
-      boxLayout.setItemAlignment(FlexAlignment.fromValue(e.getControl().getSelectedItem().getValue()), alignButton);
-    })
-    .addClassName("flex__options");
+    ChoiceBox alignment = new ChoiceBox();
+    alignment.onSelect( e -> {
+      boxLayout.setItemAlignment(FlexAlignment.fromValue(e.getSelectedItem().getText()), alignButton);
+    });
+    alignment.addClassName("flex__options");
     
     alignment.setAttribute("label", "Self Alignment Options");
     for(FlexAlignment align : FlexAlignment.values()){
       String label = align.getValue();
-      alignment.addItem(
+      alignment.add(
         "." + align.toString()
           .toLowerCase() + "()", 
         label.substring(0, 1)

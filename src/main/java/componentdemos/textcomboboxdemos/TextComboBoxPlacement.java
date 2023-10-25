@@ -1,11 +1,12 @@
 package componentdemos.textcomboboxdemos;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.window.Frame;
-import org.dwcj.component.combobox.ComboBox;
+import org.dwcj.component.list.ComboBox;
+import org.dwcj.component.list.ListItem;
 import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/textcomboboxstyles/placement_styles.css")
@@ -15,11 +16,11 @@ public class TextComboBoxPlacement extends App {
     Frame window = new Frame();
     window.addClassName("Frame");
 
-    Map<Object, String> data = new HashMap<>();
-    data.put("Random Data1", "Random Data");
-    data.put("Random Data2", "Some Data");
-    data.put("Random Data3", "More Data");
-    data.put("Random Data4", "Test Data");
+    List<ListItem> data = new ArrayList<>();
+    data.add(new ListItem("Random Data1", "Random Data"));
+    data.add(new ListItem("Random Data2", "Some Data"));
+    data.add(new ListItem("Random Data3", "More Data"));
+    data.add(new ListItem("Random Data4", "Test Data"));
 
     ComboBox tcb1 = new ComboBox().setAttribute("placement", "left")
         .setAttribute("placeholder", "Left Menu Placement")
@@ -41,16 +42,16 @@ public class TextComboBoxPlacement extends App {
 
     window.add(tcb1, tcb2, tcb3, tcb4);
 
-    tcb1.setItems(data)
-        .openList();
+    tcb1.insert(data)
+        .open();
 
-    tcb2.setItems(data)
-        .openList();
+    tcb2.insert(data)
+        .open();
 
-    tcb3.setItems(data)
-        .openList();
+    tcb3.insert(data)
+        .open();
 
-    tcb4.setItems(data)
-        .openList();
+    tcb4.insert(data)
+        .open();
   }
 }

@@ -2,8 +2,8 @@ package layout_demos.container;
 
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.choicebox.ChoiceBox;
-import org.dwcj.component.choicebox.event.ChoiceBoxSelectEvent;
+import org.dwcj.component.list.ChoiceBox;
+import org.dwcj.component.list.event.ListSelectEvent;
 import org.dwcj.component.layout.flexlayout.FlexJustifyContent;
 import org.dwcj.component.layout.flexlayout.FlexLayout;
 import org.dwcj.component.window.Frame;
@@ -39,12 +39,13 @@ public class Justification extends App {
       boxLayout.add(newBox);
     }
 
-    ChoiceBox justifications = new ChoiceBox().onSelect(this::selectJustification);
-    justifications.setAttribute("label", "Justification Options");
+    ChoiceBox justifications = new ChoiceBox();
+    justifications.onSelect(this::selectJustification);
+    justifications.setLabel("Justification Options");
     for (FlexJustifyContent justify : FlexJustifyContent.values()) {
       String label = justify.getValue()
           .replaceAll("^(.+?)-", "");
-      justifications.addItem(".justify()." + justify.toString().toLowerCase().replaceAll("^(.+?)-", "") + "()",
+      justifications.add(".justify()." + justify.toString().toLowerCase().replaceAll("^(.+?)-", "") + "()",
           label.substring(0, 1).toUpperCase() + label.substring(1));
     }
     justifications.selectIndex(0);
@@ -52,8 +53,8 @@ public class Justification extends App {
     mainLayout.add(justifications, boxLayout);
   }
 
-  private void selectJustification(ChoiceBoxSelectEvent ev) {
-    boxLayout.setJustifyContent(FlexJustifyContent.fromValue(ev.getControl().getSelectedItem().getValue()));
+  private void selectJustification(ListSelectEvent ev) {
+    boxLayout.setJustifyContent(FlexJustifyContent.fromValue(ev.getSelectedItem().getText()));
   }
 
 }
