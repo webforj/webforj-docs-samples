@@ -1,7 +1,5 @@
 package componentdemos.comboboxdemos;
 
-import java.util.HashMap;
-import java.util.Map;
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.window.Frame;

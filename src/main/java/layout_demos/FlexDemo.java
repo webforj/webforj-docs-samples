@@ -75,7 +75,7 @@ public class FlexDemo extends App {
   }
 
   private void populateStates() {
-    states = new ChoiceBox().selectIndex(0).setAttribute("label", "State").setAttribute("max-row-count", "7");
+    states = new ChoiceBox().selectIndex(0).setLabel("State").setMaxRowCount(7);
     states.add("AL", "Alabama");
     states.add("AK", "Alaska");
     states.add("AZ", "Arizona");

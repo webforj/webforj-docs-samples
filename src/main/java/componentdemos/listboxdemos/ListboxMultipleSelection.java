@@ -43,9 +43,11 @@ public class ListboxMultipleSelection extends App {
   void buttonMethod(ButtonClickEvent ev) {
     if(this.selection.equals(SelectionMode.SINGLE)){
       l1.setSelectionMode(SelectionMode.MULTIPLE);
+      this.selection = SelectionMode.MULTIPLE;
     }
     else{
       l1.setSelectionMode(SelectionMode.SINGLE);
+      this.selection = SelectionMode.SINGLE;
     }
   }
 }
