@@ -1,0 +1,16 @@
+.frame {
+  display: flex;
+  flex-direction: row;
+  margin: 20px 0 0 20px;
+  gap: 20px;
+  align-items: flex-end;
+}
+
+.text{
+  font-size: large;
+  font-weight: bold;
+}
+
+bbj-list-button{
+  width: 150px;
+}

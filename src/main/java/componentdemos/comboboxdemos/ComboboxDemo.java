@@ -42,7 +42,6 @@ public class ComboboxDemo extends App {
         cb1.setLabel("Choose a Color:").selectIndex(0).setStyle("grid-column", "1")
                 .setExpanse(Expanse.LARGE).setStyle("width", "250px");
         cb1.onSelect(this::cbSelect);
-
     }
 
     private void cbSelect(ListSelectEvent ev) {
