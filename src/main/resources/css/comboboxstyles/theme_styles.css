@@ -3,8 +3,7 @@
   grid-template-columns: 150px 150px 150px 150px 150px 150px 150px;
   padding: 10px;
   gap: 20px;
-  background: white;
-  width: 100%;
+  width: 100 vw;
   justify-content: center;
 }
 
