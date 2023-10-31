@@ -6,6 +6,11 @@
   align-items: flex-end;
 }
 
+.frame > bbj-editbox{
+  /* flex: 1 1 content; */
+  flex: 0 1 
+}
+
 .text{
   font-size: large;
   font-weight: bold;
