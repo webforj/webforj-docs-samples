@@ -7,12 +7,12 @@ import org.dwcj.component.list.ComboBox;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 
-// @InlineStyleSheet("context://css/textcomboboxstyles/text_combo_styles.css")
+@InlineStyleSheet("context://css/textcomboboxstyles/demo_styles.css")
 public class ComboBoxCustomValue extends App {
   @Override
   public void run() throws DwcjException {
     Frame window = new Frame();
-    window.addClassName("Frame");
+    window.addClassName("frame");
 
     ComboBox customValue = new ComboBox();
     Button toggle = new Button("Toggle Custom Value");
