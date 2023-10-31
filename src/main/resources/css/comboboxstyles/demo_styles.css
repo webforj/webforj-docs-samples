@@ -7,8 +7,7 @@
 }
 
 .frame > bbj-editbox{
-  /* flex: 1 1 content; */
-  flex: 0 1 
+  flex: 0 1;
 }
 
 .text{
