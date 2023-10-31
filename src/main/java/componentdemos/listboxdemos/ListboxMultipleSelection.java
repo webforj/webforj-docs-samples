@@ -1,7 +1,5 @@
 package componentdemos.listboxdemos;
 
-import java.util.HashMap;
-import java.util.Map;
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.window.Frame;
@@ -15,38 +13,37 @@ import org.dwcj.exceptions.DwcjException;
 @InlineStyleSheet("context://css/listboxstyles/multiple_selection.css")
 public class ListboxMultipleSelection extends App {
 
-  ListBox l1;
+  ListBox listBox;
   SelectionMode selection = SelectionMode.SINGLE;
 
   @Override
   public void run() throws DwcjException {
     Frame window = new Frame();
-    window.addClassName("Frame");
+    window.addClassName("frame");
 
     
-    l1 = new ListBox();
-    window.add(l1);
+    listBox = new ListBox();
+    window.add(listBox);
 
-    l1.add("Random Data1", "Random Data");
-    l1.add("Random Data2", "Some Data");
-    l1.add("Random Data3", "More Data");
-    l1.add("Random Data4", "Test Data");
+    listBox.add("Random Data1", "Marketing and Sales");
+    listBox.add("Random Data2", "IT Support");
+    listBox.add("Random Data3", "Management and Admin");
+    listBox.add("Random Data4", "Finance and HR");
+    listBox.setLabel("Select Department(s)");
 
-    Button b1 = new Button("Toggle Multiple Selection");
-    window.add(b1);
-    b1.onClick(this::buttonMethod);
-    b1.setStyle("grid-column", "2")
-        .setStyle("align-self", "center")
-        .setTheme(ButtonTheme.PRIMARY);
+    Button toggle = new Button("Toggle Multiple Selection");
+    window.add(toggle);
+    toggle.onClick(this::buttonMethod);
+    toggle.setTheme(ButtonTheme.PRIMARY);
   }
 
   void buttonMethod(ButtonClickEvent ev) {
     if(this.selection.equals(SelectionMode.SINGLE)){
-      l1.setSelectionMode(SelectionMode.MULTIPLE);
+      listBox.setSelectionMode(SelectionMode.MULTIPLE);
       this.selection = SelectionMode.MULTIPLE;
     }
     else{
-      l1.setSelectionMode(SelectionMode.SINGLE);
+      listBox.setSelectionMode(SelectionMode.SINGLE);
       this.selection = SelectionMode.SINGLE;
     }
   }

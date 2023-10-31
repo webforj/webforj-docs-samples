@@ -1,12 +1,7 @@
-.BBjWindow {
-  background-color: white !important;
-}
-
-.Frame {
-  display: grid;
-  margin-top: 20px;
-  gap: 50px;
-  background: white;
-  justify-content: center;
-  width: 100%;
+.frame {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 20px 0 0 20px;
+  gap: 20px;
 }

@@ -3,7 +3,9 @@ package componentdemos.comboboxdemos;
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.window.Frame;
+import org.dwcj.component.event.ComponentEventListener;
 import org.dwcj.component.list.ChoiceBox;
+import org.dwcj.component.list.event.ListOpenEvent;
 import org.dwcj.component.text.Label;
 import org.dwcj.exceptions.DwcjAppInitializeException;
 
@@ -28,8 +30,8 @@ public class ChoiceBoxDemo extends App {
         languageSelection.add("Hola, Mundo!", "Spanish");
         languageSelection.add("Salut le Monde!", "French");
         languageSelection.add("Hallo, Wereld!", "Dutch"); 
-        languageSelection.add("Dia dhaoibh, a dhomhain!", "Irish"); 
-
+        languageSelection.add("Dia dhaoibh, a dhomhain!", "Irish");
+        
         languageSelection.onSelect(e -> {
           text.setText(e.getSelectedItem().getKey().toString());
         });

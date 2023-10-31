@@ -21,11 +21,6 @@ public class TextComboBoxPlaceholder extends App {
     tcb1.add("Random Data3", "More Data");
     tcb1.add("Random Data4", "Test Data");
 
-    // ListenerRegistration<ListClickEvent> test = tcb1.addClickListener(e -> {
-    //   App.consoleLog("TEST");
-    // });
-    // tcb1.removeClickListener(test.getListener());
-
     window.add(tcb1);
   }
 }
