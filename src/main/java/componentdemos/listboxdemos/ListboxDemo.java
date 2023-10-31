@@ -16,6 +16,7 @@ public class ListboxDemo extends App {
         Frame window = new Frame();
         window.addClassName("frame");
         ListBox listBox = new ListBox();
+        window.add(listBox);
 
         listBox.add("Financial Reports", "Financial Reports");
         listBox.add("Sales and Marketing Reports", "Sales and Marketing Reports");
@@ -23,11 +24,7 @@ public class ListboxDemo extends App {
         listBox.add("Human Resources Reports", "Human Resources Reports");
         listBox.add("Compliance Reports", "Compliance Reports");
 
-        window.add(listBox);
-
         listBox.setLabel("Select Desired Report Type(s)");
         listBox.setSelectionMode(SelectionMode.MULTIPLE);
-
     }
-
 }
