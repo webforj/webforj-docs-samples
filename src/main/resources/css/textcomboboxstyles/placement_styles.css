@@ -7,7 +7,6 @@
   gap: 50px;
   height: 62%;
   width: 100%;
-  background: white;
   height: 100%;
 }
 
@@ -15,6 +14,3 @@ bbj-list-edit {
   width: 200px;
 }
 
-.BBjWindow {
-  background-color: white !important;
-}
