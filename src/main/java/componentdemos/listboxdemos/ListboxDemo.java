@@ -2,7 +2,6 @@ package componentdemos.listboxdemos;
 
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.event.ComponentEventListener;
 import org.dwcj.component.list.ListBox;
 import org.dwcj.component.list.MultipleSelectableList.SelectionMode;
 import org.dwcj.component.window.Frame;
@@ -15,18 +14,19 @@ public class ListboxDemo extends App {
     public void run() throws DwcjAppInitializeException {
 
         Frame window = new Frame();
-        window.addClassName("Frame");
-        ListBox l1 = new ListBox();
+        window.addClassName("frame");
+        ListBox listBox = new ListBox();
 
-        l1.add("Random Data1", "Random Data");
-        l1.add("Random Data2", "Some Data");
-        l1.add("Random Data3", "More Data");
-        l1.add("Random Data4", "Test Data");
+        listBox.add("Financial Reports", "Financial Reports");
+        listBox.add("Sales and Marketing Reports", "Sales and Marketing Reports");
+        listBox.add("Operational Reports", "Operational Reports");
+        listBox.add("Human Resources Reports", "Human Resources Reports");
+        listBox.add("Compliance Reports", "Compliance Reports");
 
-        window.add(l1);
+        window.add(listBox);
 
-        l1.setLabel("This is a listbox:");
-        l1.setSelectionMode(SelectionMode.MULTIPLE);
+        listBox.setLabel("Select Desired Report Type(s)");
+        listBox.setSelectionMode(SelectionMode.MULTIPLE);
 
     }
 
