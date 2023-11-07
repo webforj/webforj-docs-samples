@@ -23,16 +23,18 @@ public class ChoiceBoxMaxRowDemo extends App {
 
     demoBox = new ChoiceBox();
     numberField = new NumberField();
-    select = new Button("Submit");
+    select = new Button("Apply");
 
     window.add(demoBox, numberField, select);
 
     demoBox.setLabel("States");
+    numberField.setLabel("Number of Rows");
 
     select.onClick( e -> {
       demoBox.setMaxRowCount(Integer.valueOf(numberField.getText()));
     });
 
+    // UPDATE TO CREATE A LIST OF STRINGS AND USE INSERT METHOD INSTEAD
 
     demoBox.add(new ListItem("AL", "Alabama"));
     demoBox.add(new ListItem("AK", "Alaska"));
