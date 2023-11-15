@@ -4,6 +4,7 @@ import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.window.Frame;
 import org.dwcj.component.button.Button;
+import org.dwcj.component.event.ListenerRegistration;
 import org.dwcj.component.field.NumberField;
 import org.dwcj.component.list.ComboBox;
 import org.dwcj.component.list.ListItem;
@@ -23,16 +24,20 @@ public class ComboBoxMaxRowDemo extends App {
 
     demoBox = new ComboBox();
     numberField = new NumberField();
-    select = new Button("Submit");
+    select = new Button("Apply");
 
     window.add(demoBox, numberField, select);
 
     demoBox.setLabel("States");
+    numberField.setLabel("Number of Rows");
 
     select.onClick( e -> {
       demoBox.setMaxRowCount(Integer.valueOf(numberField.getText()));
     });
 
+
+
+    // UPDATE TO CREATE A LIST OF STRINGS AND USE INSERT METHOD INSTEAD
 
     demoBox.add("AL", "Alabama");
     demoBox.add("AK", "Alaska");
