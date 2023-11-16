@@ -6,7 +6,7 @@ import org.dwcj.component.window.Frame;
 import org.dwcj.component.list.ComboBox;
 import org.dwcj.exceptions.DwcjAppInitializeException;
 
-@InlineStyleSheet("context://css/comboboxstyles/dropdown_styles.css")
+@InlineStyleSheet("context://css/textcomboboxstyles/dropdown_styles.css")
 public class ComboBoxDropdownType extends App {
 
     @Override
