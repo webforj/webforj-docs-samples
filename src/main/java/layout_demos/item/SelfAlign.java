@@ -45,7 +45,7 @@ public class SelfAlign extends App{
     });
     alignment.addClassName("flex__options");
     
-    alignment.setAttribute("label", "Self Alignment Options");
+    alignment.setLabel( "Self Alignment Options");
     for(FlexAlignment align : FlexAlignment.values()){
       String label = align.getValue();
       alignment.add(

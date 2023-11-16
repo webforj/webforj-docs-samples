@@ -1,5 +1,7 @@
 package componentdemos.textcomboboxdemos;
 
+import java.util.ArrayList;
+
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.window.Frame;
@@ -34,60 +36,60 @@ public class ComboBoxMaxRowDemo extends App {
     select.onClick( e -> {
       demoBox.setMaxRowCount(Integer.valueOf(numberField.getText()));
     });
+    
+    ArrayList<ListItem> states = new ArrayList<>();
 
+    states.add(new ListItem("AL", "Alabama"));
+    states.add(new ListItem("AK", "Alaska"));
+    states.add(new ListItem("AZ", "Arizona"));
+    states.add(new ListItem("AR", "Arkansas"));
+    states.add(new ListItem("CA", "California"));
+    states.add(new ListItem("CO", "Colorado"));
+    states.add(new ListItem("CT", "Connecticut"));
+    states.add(new ListItem("DE", "Delaware"));
+    states.add(new ListItem("FL", "Florida"));
+    states.add(new ListItem("GA", "Georgia"));
+    states.add(new ListItem("HI", "Hawaii"));
+    states.add(new ListItem("ID", "Idaho"));
+    states.add(new ListItem("IL", "Illinois"));
+    states.add(new ListItem("IN", "Indiana"));
+    states.add(new ListItem("IA", "Iowa"));
+    states.add(new ListItem("KS", "Kansas"));
+    states.add(new ListItem("KY", "Kentucky"));
+    states.add(new ListItem("LA", "Louisiana"));
+    states.add(new ListItem("ME", "Maine"));
+    states.add(new ListItem("MD", "Maryland"));
+    states.add(new ListItem("MA", "Massachusetts"));
+    states.add(new ListItem("MI", "Michigan"));
+    states.add(new ListItem("MN", "Minnesota"));
+    states.add(new ListItem("MS", "Mississippi"));
+    states.add(new ListItem("MO", "Missouri"));
+    states.add(new ListItem("MT", "Montana"));
+    states.add(new ListItem("NE", "Nebraska"));
+    states.add(new ListItem("NV", "Nevada"));
+    states.add(new ListItem("NH", "New Hampshire"));
+    states.add(new ListItem("NJ", "New Jersey"));
+    states.add(new ListItem("NM", "New Mexico"));
+    states.add(new ListItem("NY", "New York"));
+    states.add(new ListItem("NC", "North Carolina"));
+    states.add(new ListItem("ND", "North Dakota"));
+    states.add(new ListItem("OH", "Ohio"));
+    states.add(new ListItem("OK", "Oklahoma"));
+    states.add(new ListItem("OR", "Oregon"));
+    states.add(new ListItem("PA", "Pennsylvania"));
+    states.add(new ListItem("RI", "Rhode Island"));
+    states.add(new ListItem("SC", "South Carolina"));
+    states.add(new ListItem("SD", "South Dakota"));
+    states.add(new ListItem("TN", "Tennessee"));
+    states.add(new ListItem("TX", "Texas"));
+    states.add(new ListItem("UT", "Utah"));
+    states.add(new ListItem("VT", "Vermont"));
+    states.add(new ListItem("VA", "Virginia"));
+    states.add(new ListItem("WA", "Washington"));
+    states.add(new ListItem("WV", "West Virginia"));
+    states.add(new ListItem("WI", "Wisconsin"));
+    states.add(new ListItem("WY", "Wyoming"));
 
-
-    // UPDATE TO CREATE A LIST OF STRINGS AND USE INSERT METHOD INSTEAD
-
-    demoBox.add("AL", "Alabama");
-    demoBox.add("AK", "Alaska");
-    demoBox.add("AZ", "Arizona");
-    demoBox.add("AR", "Arkansas");
-    demoBox.add("CA", "California");
-    demoBox.add("CO", "Colorado");
-    demoBox.add("CT", "Connecticut");
-    demoBox.add("DE", "Delaware");
-    demoBox.add("FL", "Florida");
-    demoBox.add("GA", "Georgia");
-    demoBox.add("HI", "Hawaii");
-    demoBox.add("ID", "Idaho");
-    demoBox.add("IL", "Illinois");
-    demoBox.add("IN", "Indiana");
-    demoBox.add("IA", "Iowa");
-    demoBox.add("KS", "Kansas");
-    demoBox.add("KY", "Kentucky");
-    demoBox.add("LA", "Louisiana");
-    demoBox.add("ME", "Maine");
-    demoBox.add("MD", "Maryland");
-    demoBox.add("MA", "Massachusetts");
-    demoBox.add("MI", "Michigan");
-    demoBox.add("MN", "Minnesota");
-    demoBox.add("MS", "Mississippi");
-    demoBox.add("MO", "Missouri");
-    demoBox.add("MT", "Montana");
-    demoBox.add("NE", "Nebraska");
-    demoBox.add("NV", "Nevada");
-    demoBox.add("NH", "New Hampshire");
-    demoBox.add("NJ", "New Jersey");
-    demoBox.add("NM", "New Mexico");
-    demoBox.add("NY", "New York");
-    demoBox.add("NC", "North Carolina");
-    demoBox.add("ND", "North Dakota");
-    demoBox.add("OH", "Ohio");
-    demoBox.add("OK", "Oklahoma");
-    demoBox.add("OR", "Oregon");
-    demoBox.add("PA", "Pennsylvania");
-    demoBox.add("RI", "Rhode Island");
-    demoBox.add("SC", "South Carolina");
-    demoBox.add("SD", "South Dakota");
-    demoBox.add("TN", "Tennessee");
-    demoBox.add("TX", "Texas");
-    demoBox.add("UT", "Utah");
-    demoBox.add("VT", "Vermont");
-    demoBox.add("VA", "Virginia");
-    demoBox.add("WA", "Washington");
-    demoBox.add("WV", "West Virginia");
-    demoBox.add("WI", "Wisconsin");
-    demoBox.add("WY", "Wyoming");
+    demoBox.insert(states);
   }
 }
