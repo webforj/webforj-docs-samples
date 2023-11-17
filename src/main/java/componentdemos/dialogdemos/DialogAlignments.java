@@ -22,7 +22,7 @@ public class DialogAlignments extends App {
         options.add(Dialog.Alignment.TOP, "Top");
         options.add(Dialog.Alignment.CENTER, "Center");
         options.add(Dialog.Alignment.BOTTOM, "Bottom");
-        options.setAttribute("label", "Select Alignment");
+        options.setLabel("Select Alignment");
         options.selectIndex(1);
         options.onSelect(e -> {
           dialog.setAlignment((Dialog.Alignment) e.getSelectedItem().getKey());

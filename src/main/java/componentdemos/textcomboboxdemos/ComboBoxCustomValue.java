@@ -2,8 +2,8 @@ package componentdemos.textcomboboxdemos;
 
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.button.Button;
 import org.dwcj.component.list.ComboBox;
+import org.dwcj.component.optioninput.RadioButton;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 
@@ -15,12 +15,12 @@ public class ComboBoxCustomValue extends App {
     window.addClassName("frame");
 
     ComboBox customValue = new ComboBox();
-    Button toggle = new Button("Toggle Custom Value");
+    RadioButton toggle = RadioButton.Switch("Toggle Custom Value");
 
     window.add(customValue, toggle);
     customValue.setAllowCustomValue(false);
 
-    toggle.onClick( e -> {
+    toggle.onToggle( e -> {
       customValue.setAllowCustomValue(!customValue.isAllowCustomValue());
       consoleLog(customValue.isAllowCustomValue()+"");
     });

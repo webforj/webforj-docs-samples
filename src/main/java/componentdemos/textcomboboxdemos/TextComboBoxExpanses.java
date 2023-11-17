@@ -24,19 +24,15 @@ public class TextComboBoxExpanses extends App {
     data.add(new ListItem("Random Data4", "Test Data"));
 
     ComboBox tcb1 = new ComboBox().setExpanse(Expanse.XSMALL)
-        .setAttribute("placeholder", "XSMALL");
-
+        .setPlaceholder("XSMALL");
     ComboBox tcb2 = new ComboBox().setExpanse(Expanse.SMALL)
-        .setAttribute("placeholder", "SMALL");
-
+        .setPlaceholder("SMALL");
     ComboBox tcb3 = new ComboBox().setExpanse(Expanse.MEDIUM)
-        .setAttribute("placeholder", "MEDIUM");
-
+        .setPlaceholder("MEDIUM");
     ComboBox tcb4 = new ComboBox().setExpanse(Expanse.LARGE)
-        .setAttribute("placeholder", "LARGE");
-
+        .setPlaceholder("LARGE");
     ComboBox tcb5 = new ComboBox().setExpanse(Expanse.XLARGE)
-        .setAttribute("placeholder", "XLARGE");
+        .setPlaceholder("XLARGE");
 
     window.add(tcb1, tcb2, tcb3, tcb4, tcb5);
 
@@ -46,5 +42,4 @@ public class TextComboBoxExpanses extends App {
     tcb4.insert(data);
     tcb5.insert(data);
   }
-
 }
