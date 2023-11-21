@@ -3,12 +3,12 @@ package componentdemos.dateeditboxdemos;
 import org.dwcj.App;
 import org.dwcj.component.maskeddatefield.MaskedDateField;
 import org.dwcj.component.window.Frame;
-import org.dwcj.exceptions.DwcjAppInitializeException;
+import org.dwcj.exceptions.DwcjException;
 
 public class DateEditBoxDemo extends App {
 
   @Override
-  public void run() throws DwcjAppInitializeException {
+  public void run() throws DwcjException {
 
     Frame window = new Frame();
     window.setStyle("display", "inline-grid");

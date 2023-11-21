@@ -9,7 +9,7 @@ import org.dwcj.component.layout.flexlayout.FlexLayout;
 import org.dwcj.component.text.Label;
 import org.dwcj.component.window.Frame;
 import org.dwcj.component.window.Panel;
-import org.dwcj.exceptions.DwcjAppInitializeException;
+import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/fieldstyles/color_field_styles.css")
 public class ColorFieldDemo extends App {
@@ -19,7 +19,7 @@ public class ColorFieldDemo extends App {
   Panel[] colors;
 
   @Override
-  public void run() throws DwcjAppInitializeException {
+  public void run() throws DwcjException {
 
     Frame window = new Frame();
     window.addClassName("main__window");

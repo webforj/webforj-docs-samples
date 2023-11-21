@@ -5,13 +5,13 @@ import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.list.ListBox;
 import org.dwcj.component.list.MultipleSelectableList.SelectionMode;
 import org.dwcj.component.window.Frame;
-import org.dwcj.exceptions.DwcjAppInitializeException;
+import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/listboxstyles/listbox_demo.css")
 public class ListboxDemo extends App {
 
     @Override
-    public void run() throws DwcjAppInitializeException {
+    public void run() throws DwcjException {
 
         Frame window = new Frame();
         window.addClassName("frame");

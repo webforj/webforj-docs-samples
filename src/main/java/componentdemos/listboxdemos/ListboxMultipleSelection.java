@@ -31,7 +31,7 @@ public class ListboxMultipleSelection extends App {
     listBox.add("Random Data4", "Finance and HR");
     listBox.setLabel("Select Department(s)");
 
-    RadioButton toggle = RadioButton.Switch("Switch RadioButton");
+    RadioButton toggle = RadioButton.Switch("Multiple Selection");
     window.add(toggle);
     toggle.onToggle(e -> {
       if (this.selection.equals(SelectionMode.SINGLE)) {

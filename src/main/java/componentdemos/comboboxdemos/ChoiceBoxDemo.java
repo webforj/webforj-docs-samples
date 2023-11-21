@@ -5,7 +5,7 @@ import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.window.Frame;
 import org.dwcj.component.list.ChoiceBox;
 import org.dwcj.component.text.Label;
-import org.dwcj.exceptions.DwcjAppInitializeException;
+import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/comboboxstyles/demo_styles.css")
 public class ChoiceBoxDemo extends App {
@@ -14,7 +14,7 @@ public class ChoiceBoxDemo extends App {
     Label text = new Label("Hello, World!");
 
     @Override
-    public void run() throws DwcjAppInitializeException {
+    public void run() throws DwcjException {
         Frame window = new Frame();
         window.addClassName("frame");
 

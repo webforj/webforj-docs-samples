@@ -4,12 +4,12 @@ import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.window.Frame;
 import org.dwcj.component.textarea.TextArea;
-import org.dwcj.exceptions.DwcjAppInitializeException;
+import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/textareastyles/text_area_styles.css")
 public class TextAreaPlaceholder extends App {
   @Override
-  public void run() throws DwcjAppInitializeException {
+  public void run() throws DwcjException {
     Frame window = new Frame();
     window.addClassName("Frame");
 

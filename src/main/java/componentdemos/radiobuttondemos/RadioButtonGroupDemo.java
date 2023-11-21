@@ -3,7 +3,7 @@ package componentdemos.radiobuttondemos;
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.window.Frame;
-import org.dwcj.exceptions.DwcjAppInitializeException;
+import org.dwcj.exceptions.DwcjException;
 import org.dwcj.component.layout.flexlayout.FlexLayout;
 import org.dwcj.component.optioninput.RadioButton;
 import org.dwcj.component.optioninput.RadioButtonGroup;
@@ -12,7 +12,7 @@ import org.dwcj.component.optioninput.RadioButtonGroup;
 public class RadioButtonGroupDemo extends App{
 
     @Override
-    public void run() throws DwcjAppInitializeException {
+    public void run() throws DwcjException {
 
         Frame window = new Frame();
 

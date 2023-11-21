@@ -9,7 +9,7 @@ import org.dwcj.component.window.Panel;
 import org.dwcj.component.Expanse;
 import org.dwcj.component.list.ChoiceBox;
 import org.dwcj.component.list.event.ListSelectEvent;
-import org.dwcj.exceptions.DwcjAppInitializeException;
+import org.dwcj.exceptions.DwcjException;
 
 public class ComboboxDemo extends App {
 
@@ -17,7 +17,7 @@ public class ComboboxDemo extends App {
     Panel d1;
 
     @Override
-    public void run() throws DwcjAppInitializeException {
+    public void run() throws DwcjException {
         Frame window = new Frame();
         window.setStyle("display", "inline-grid");
         window.setStyle("grid-template-columns", "1fr 1fr");
