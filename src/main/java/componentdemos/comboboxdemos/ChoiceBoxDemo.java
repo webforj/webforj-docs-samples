@@ -10,8 +10,8 @@ import org.dwcj.exceptions.DwcjAppInitializeException;
 @InlineStyleSheet("context://css/comboboxstyles/demo_styles.css")
 public class ChoiceBoxDemo extends App {
 
-    ChoiceBox languageSelection;
-    Label text;
+    ChoiceBox languageSelection = new ChoiceBox("Language");
+    Label text = new Label("Hello, World!");
 
     @Override
     public void run() throws DwcjAppInitializeException {
@@ -20,21 +20,20 @@ public class ChoiceBoxDemo extends App {
 
         text = new Label("Hello, World!");
         text.addClassName("text");
-        languageSelection = new ChoiceBox();
         window.add(languageSelection, text);
 
-        languageSelection.add("Hello, World!", "English");
-        languageSelection.add("Hallo, Welt!", "German");
-        languageSelection.add("Hola, Mundo!", "Spanish");
-        languageSelection.add("Salut le Monde!", "French");
-        languageSelection.add("Hallo, Wereld!", "Dutch"); 
-        languageSelection.add("Dia dhaoibh, a dhomhain!", "Irish");
+        String[] hellos = {"Hello, World!", "Hallo, Welt!", "Hola, Mundo!", "Salut le Monde!", "Hallo, Wereld!", "Dia dhaoibh, a dhomhain!"};
+
+        languageSelection.add("English", "English");
+        languageSelection.add("German", "German");
+        languageSelection.add("Spanish", "Spanish");
+        languageSelection.add("French", "French");
+        languageSelection.add("Dutch", "Dutch"); 
+        languageSelection.add("Irish", "Irish");
+        languageSelection.selectIndex(0);
         
         languageSelection.onSelect(e -> {
-          text.setText(e.getSelectedItem().getKey().toString());
+          text.setText(hellos[e.getSelectedIndex()]);
         });
-
-        languageSelection.setLabel("Language")
-          .selectIndex(0);
     }
 }
