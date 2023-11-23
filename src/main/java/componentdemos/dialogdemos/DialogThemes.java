@@ -23,7 +23,7 @@ public class DialogThemes extends App {
     for (Dialog.Theme theme : Dialog.Theme.values()) {
       options.add(theme, Character.toUpperCase(theme.getValue().charAt(0)) + theme.getValue().substring(1));
     }
-    options.setAttribute("label", "Select Theme")
+    options.setLabel("Select Theme")
         .setStyle("width", "100px")
         .selectIndex(1)
         .onSelect(e -> {
