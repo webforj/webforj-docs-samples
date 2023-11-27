@@ -32,14 +32,13 @@ public class ChoiceBoxMaxRowDemo extends App {
     window.addClassName("frame");
     window.add(demoBox, numberField, select);
 
-    demoBox.selectIndex(0);
     
     select.onClick(e -> {
       demoBox.setMaxRowCount(Integer.valueOf(numberField.getText()));
     });
 
     ArrayList<ListItem> states = new ArrayList<>();
-
+    
     states.add(new ListItem("AL", "Alabama"));
     states.add(new ListItem("AK", "Alaska"));
     states.add(new ListItem("AZ", "Arizona"));
@@ -90,7 +89,8 @@ public class ChoiceBoxMaxRowDemo extends App {
     states.add(new ListItem("WV", "West Virginia"));
     states.add(new ListItem("WI", "Wisconsin"));
     states.add(new ListItem("WY", "Wyoming"));
-
+    
     demoBox.insert(states);
+    demoBox.selectIndex(0);
   }
 }
