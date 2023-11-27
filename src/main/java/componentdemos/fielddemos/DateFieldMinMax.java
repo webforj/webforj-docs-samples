@@ -27,12 +27,9 @@ public class DateFieldMinMax extends App {
 
     window.add(departure, returnField);
 
-
     departure.onModify(e -> {
       returnField.setValue(DateField.fromDate(e.getText()).plusDays(1));
       returnField.setMin(DateField.fromDate(e.getText()));
-      App.consoleLog(DateField.fromDate(e.getText()) + "");
     });
   }
 }
-

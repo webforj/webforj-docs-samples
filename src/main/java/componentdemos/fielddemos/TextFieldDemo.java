@@ -17,18 +17,16 @@ public class TextFieldDemo extends App {
     window.addClassName("main__window");
 
     TextField emailField = new TextField()
-      .setType(Type.EMAIL);
+        .setType(Type.EMAIL);
     TextField searchField = new TextField()
-      .setType(Type.SEARCH);
+        .setType(Type.SEARCH);
     TextField telField = new TextField()
-      .setType(Type.TEL);
+        .setType(Type.TEL);
     TextField textField = new TextField()
-      .setType(Type.TEXT);
+        .setType(Type.TEXT);
     TextField urlField = new TextField()
-      .setType(Type.URL);
-    
+        .setType(Type.URL);
 
     window.add(emailField, searchField, telField, textField, urlField);
-
   }
 }

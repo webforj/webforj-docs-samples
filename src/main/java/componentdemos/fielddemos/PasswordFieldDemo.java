@@ -21,7 +21,5 @@ public class PasswordFieldDemo extends App {
     passwordField.setPlaceholder("Password");
 
     window.add(passwordField);
-
   }
 }
-

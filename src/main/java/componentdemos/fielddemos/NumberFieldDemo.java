@@ -18,10 +18,7 @@ public class NumberFieldDemo extends App {
     NumberField numField = new NumberField();
     numField.addClassName("date__input");
     numField.setLabel("Quantity:");
-    
 
     window.add(numField);
-
   }
 }
-

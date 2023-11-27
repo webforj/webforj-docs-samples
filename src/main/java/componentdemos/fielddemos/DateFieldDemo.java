@@ -24,4 +24,3 @@ public class DateFieldDemo extends App {
 
   }
 }
-
