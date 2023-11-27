@@ -15,7 +15,7 @@ import org.dwcj.exceptions.DwcjException;
 @InlineStyleSheet("context://css/buttonstyles/event_styles.css")
 public class ButtonEvent extends App {
 
-  Integer counter;
+  int counter = 0;
   Label text;
   Label payload;
 
@@ -34,7 +34,6 @@ public class ButtonEvent extends App {
         .build()
         .setSpacing("0px");
 
-    counter = 0;
     button.addClickListener(e -> {
       text.setText("Current Counter: " + (++counter));
       payload.setText("Event payload: " + e.getData().toString());

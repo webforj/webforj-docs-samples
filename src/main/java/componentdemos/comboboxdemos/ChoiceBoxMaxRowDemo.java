@@ -11,28 +11,30 @@ import org.dwcj.component.list.ChoiceBox;
 import org.dwcj.component.list.ListItem;
 import org.dwcj.exceptions.DwcjException;
 
-@InlineStyleSheet("context://css/comboboxstyles/demo_styles.css")
+@InlineStyleSheet(/* css */"""
+.frame {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0 0 20px;
+  gap: 20px;
+  width: 200px;
+}
+""")
 public class ChoiceBoxMaxRowDemo extends App {
   
-  ChoiceBox demoBox;
-  NumberField numberField;
-  Button select;
+  ChoiceBox demoBox = new ChoiceBox("States");
+  NumberField numberField = new NumberField("Number of Rows");
+  Button select = new Button("Apply");
   
   @Override
   public void run() throws DwcjException {
     Frame window = new Frame();
     window.addClassName("frame");
-
-    demoBox = new ChoiceBox();
-    numberField = new NumberField();
-    select = new Button("Apply");
-
     window.add(demoBox, numberField, select);
 
-    demoBox.setLabel("States");
-    numberField.setLabel("Number of Rows");
-
-    select.onClick( e -> {
+    demoBox.selectIndex(0);
+    
+    select.onClick(e -> {
       demoBox.setMaxRowCount(Integer.valueOf(numberField.getText()));
     });
 

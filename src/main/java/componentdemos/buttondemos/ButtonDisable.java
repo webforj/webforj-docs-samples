@@ -18,7 +18,11 @@ public class ButtonDisable extends App {
     Frame window = new Frame();
     Panel disabled = new Panel();
     final int THEME_NUM = 4;
-    ButtonTheme[] themes = {ButtonTheme.DEFAULT, ButtonTheme.PRIMARY, ButtonTheme.SUCCESS, ButtonTheme.DANGER};
+    ButtonTheme[] themes = {
+      ButtonTheme.DEFAULT, 
+      ButtonTheme.PRIMARY, 
+      ButtonTheme.SUCCESS, 
+      ButtonTheme.DANGER};
     
     window.addClassName("Frame");
     window.add(disabled);

@@ -6,7 +6,7 @@
 
     <groupId>org.dwcj.samples</groupId>
     <artifactId>ControlSamples</artifactId>
-    <version>23.03-SNAPSHOT</version>
+    <version>23.05</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -14,25 +14,27 @@
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
    </properties>
 
-  <repositories>
+  <!-- <repositories>
     <repository>
       <id>snapshots-repo</id>
       <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
       <releases><enabled>false</enabled></releases>
       <snapshots><enabled>true</enabled></snapshots>
     </repository>
-  </repositories>
+  </repositories> -->
 
     <dependencies>
         <dependency>
             <groupId>org.dwcj</groupId>
             <artifactId>dwcj-engine</artifactId>
-            <version>23.05-SNAPSHOT</version>
+            <version>23.06-SNAPSHOT</version>
+            <!-- <scope>system</scope>
+            <systemPath>C:\DWCJ_Files\engine\dwcj-engine\target\dwcj-engine-23.06-SNAPSHOT.jar</systemPath> -->
         </dependency>
         <dependency>
             <groupId>org.dwcj</groupId>
             <artifactId>dwcj-code</artifactId>
-            <version>23.05-SNAPSHOT</version>
+            <version>23.05</version>
         </dependency>
     </dependencies>
 
@@ -54,7 +56,7 @@
                     <!-- see https://github.com/DwcJava/dwcj-install-maven-plugin for options -->
                     <deployurl>http://localhost:8888/dwcj-install</deployurl>
                     <!-- <classname>samples.HelloWorldJava</classname> -->
-                    <publishname>controlsamples</publishname>
+                    <publishname>component_samples</publishname>
                     <debug>true</debug>
                 </configuration>
             </plugin>

@@ -6,7 +6,6 @@ import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.window.Frame;
 import org.dwcj.component.button.Button;
-import org.dwcj.component.event.ListenerRegistration;
 import org.dwcj.component.field.NumberField;
 import org.dwcj.component.list.ComboBox;
 import org.dwcj.component.list.ListItem;

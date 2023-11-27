@@ -11,7 +11,6 @@ import org.dwcj.component.layout.flexlayout.FlexLayout;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 
-
 /**
  * Simple demo application to display button functionality.
  */
