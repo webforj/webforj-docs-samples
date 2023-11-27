@@ -27,7 +27,7 @@
         <dependency>
             <groupId>org.dwcj</groupId>
             <artifactId>dwcj-engine</artifactId>
-            <version>23.05</version>
+            <version>23.06-SNAPSHOT</version>
             <!-- <scope>system</scope>
             <systemPath>C:\DWCJ_Files\engine\dwcj-engine\target\dwcj-engine-23.06-SNAPSHOT.jar</systemPath> -->
         </dependency>
