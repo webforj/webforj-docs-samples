@@ -78,7 +78,7 @@ public class ChoiceBoxDemo extends App {
     drawer.add(new Panel().addClassName("drawer__logo").add(
         new Label(/* html */"""
             <html>
-              <img src='" + "https://i.ibb.co/1n4n1Nh/logo.png" + "'</img>
+              <img src='https://i.ibb.co/1n4n1Nh/logo.png'></img>
             </html>
             """)));
 
