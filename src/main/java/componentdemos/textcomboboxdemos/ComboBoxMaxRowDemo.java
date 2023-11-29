@@ -11,22 +11,23 @@ import org.dwcj.component.list.ComboBox;
 import org.dwcj.component.list.ListItem;
 import org.dwcj.exceptions.DwcjException;
 
-@InlineStyleSheet("context://css/comboboxstyles/demo_styles.css")
+@InlineStyleSheet(/*css*/"""
+  .frame{
+    display: flex;
+    margin: 20px 0 0 20px;
+    gap: 20px;
+  }
+""")
 public class ComboBoxMaxRowDemo extends App {
   
-  ComboBox demoBox;
-  NumberField numberField;
-  Button select;
+  ComboBox demoBox = new ComboBox();
+  NumberField numberField = new NumberField();
+  Button select = new Button("Apply");
   
   @Override
   public void run() throws DwcjException {
     Frame window = new Frame();
     window.addClassName("frame");
-
-    demoBox = new ComboBox();
-    numberField = new NumberField();
-    select = new Button("Apply");
-
     window.add(demoBox, numberField, select);
 
     demoBox.setLabel("States");
