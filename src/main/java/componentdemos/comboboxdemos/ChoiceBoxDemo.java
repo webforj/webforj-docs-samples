@@ -147,7 +147,7 @@ public class ChoiceBoxDemo extends App {
   private void populateExpaneses() {
     ArrayList<ListItem> expanses = new ArrayList<>();
     for (Expanse expanse : Expanse.values()) {
-      expanses.add(new ListItem(expanse, expanse.getValue()));
+      expanses.add(new ListItem(expanse, expanse.toString().toLowerCase()));
     }
     this.expanses.insert(expanses)
         .selectKey(Expanse.NONE)

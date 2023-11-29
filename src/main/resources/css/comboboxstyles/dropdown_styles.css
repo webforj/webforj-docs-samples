@@ -1,5 +1,4 @@
 :root{
-  /*Overriding list item color to make hover more noticeable*/
   --bbj-list-item-color: #393D48;
 }
 
@@ -10,7 +9,7 @@
 }
 
 [data-dropdown-for="demo-dropdown-type"]::part(list){
-  transition: transform 0.3s ease; /* Smooth transition for the transform effect */
+  transition: transform 0.3s ease; 
   overflow: hidden;
 }
 
@@ -18,9 +17,8 @@
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-[data-dropdown-for="demo-dropdown-type"]:not(.control__item--selected)::part(item):hover{
-  transition: transform 0.3s ease; /* Smooth transition for the transform effect */
-  transform: scale(1.2) translateX(10px); /* Scale up the list item on hover */
-  color: var(--bbj-color-primary-text);
-  cursor: pointer; /* Change cursor to indicate interactivity */
+[data-dropdown-for="demo-dropdown-type"]::part(item):hover{
+  transition: transform 0.3s ease; 
+  transform: scale(1.2) translateX(10px);
+  cursor: pointer;
 }
