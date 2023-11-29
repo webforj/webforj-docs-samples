@@ -3,15 +3,20 @@ package componentdemos.listboxdemos;
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.window.Frame;
-import org.dwcj.component.button.Button;
-import org.dwcj.component.button.ButtonTheme;
-import org.dwcj.component.button.event.ButtonClickEvent;
 import org.dwcj.component.list.ListBox;
 import org.dwcj.component.list.MultipleSelectableList.SelectionMode;
 import org.dwcj.component.optioninput.RadioButton;
 import org.dwcj.exceptions.DwcjException;
 
-@InlineStyleSheet("context://css/listboxstyles/multiple_selection.css")
+@InlineStyleSheet(/*css*/"""
+  .frame {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 20px 0 0 20px;
+    gap: 20px;
+  }  
+""")
 public class ListboxMultipleSelection extends App {
 
   ListBox listBox;
