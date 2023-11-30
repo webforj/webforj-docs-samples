@@ -1,4 +1,4 @@
-package componentdemos.comboboxdemos;
+package componentdemos.choicebox;
 
 import java.util.ArrayList;
 
@@ -32,13 +32,11 @@ public class ChoiceBoxMaxRowDemo extends App {
     window.addClassName("frame");
     window.add(demoBox, numberField, select);
 
-    
     select.onClick(e -> {
       demoBox.setMaxRowCount(Integer.valueOf(numberField.getText()));
     });
 
     ArrayList<ListItem> states = new ArrayList<>();
-    
     states.add(new ListItem("AL", "Alabama"));
     states.add(new ListItem("AK", "Alaska"));
     states.add(new ListItem("AZ", "Arizona"));

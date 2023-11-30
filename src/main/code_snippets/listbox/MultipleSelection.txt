@@ -1,1 +1,1 @@
-l1.setMultipleSelection(toggle);
+listBox.setMultipleSelection(toggle);

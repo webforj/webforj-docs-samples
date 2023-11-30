@@ -1,2 +1,0 @@
-cb1.setItems(data)
-    .setAttribute("label", "Example label");

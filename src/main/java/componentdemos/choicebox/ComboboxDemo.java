@@ -1,4 +1,4 @@
-package componentdemos.comboboxdemos;
+package componentdemos.choicebox;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package componentdemos.comboboxdemos;
+package componentdemos.choicebox;
 
 import java.util.ArrayList;
 
@@ -10,8 +10,8 @@ import org.dwcj.component.list.ListItem;
 import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/comboboxstyles/dropdown_styles.css")
+public class ChoiceBoxDropdownType extends App {
 
-public class ChoiceBoxDropdownType extends App {  
   ChoiceBox demoBox = new ChoiceBox("Department");
 
   @Override
