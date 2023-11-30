@@ -1,4 +1,4 @@
-package componentdemos.choicebox;
+package componentdemos.choiceboxdemos;
 
 import java.util.ArrayList;
 import java.util.List;

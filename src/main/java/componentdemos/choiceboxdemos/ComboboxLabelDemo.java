@@ -1,4 +1,4 @@
-package componentdemos.choicebox;
+package componentdemos.choiceboxdemos;
 
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
