@@ -1,4 +1,4 @@
-package componentdemos.textcomboboxdemos;
+package componentdemos.comboboxdemos;
 
 import java.util.ArrayList;
 
@@ -22,8 +22,8 @@ import org.dwcj.exceptions.DwcjException;
 """)
 public class ComboBoxMaxRowDemo extends App {
   
-  ComboBox demoBox = new ComboBox();
-  NumberField numberField = new NumberField();
+  ComboBox demoBox = new ComboBox("States");
+  NumberField numberField = new NumberField("Number of Rows");
   Button select = new Button("Apply");
   
   @Override
@@ -31,9 +31,6 @@ public class ComboBoxMaxRowDemo extends App {
     Frame window = new Frame();
     window.addClassName("frame");
     window.add(demoBox, numberField, select);
-
-    demoBox.setLabel("States");
-    numberField.setLabel("Number of Rows");
 
     select.onClick( e -> {
       demoBox.setMaxRowCount(Integer.valueOf(numberField.getText()));

@@ -1,4 +1,4 @@
-package componentdemos.textcomboboxdemos;
+package componentdemos.comboboxdemos;
 
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;

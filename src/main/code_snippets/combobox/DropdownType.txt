@@ -1,0 +1,1 @@
+comboBox.setDropdownType("demo-dropdown-type");

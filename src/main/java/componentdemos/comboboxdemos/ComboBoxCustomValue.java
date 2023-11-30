@@ -1,4 +1,4 @@
-package componentdemos.textcomboboxdemos;
+package componentdemos.comboboxdemos;
 
 import java.util.ArrayList;
 
@@ -45,7 +45,6 @@ public class ComboBoxCustomValue extends App {
 
     toggle.onToggle( e -> {
       customValue.setAllowCustomValue(!customValue.isAllowCustomValue());
-      consoleLog(customValue.isAllowCustomValue()+"");
     });
 
   }

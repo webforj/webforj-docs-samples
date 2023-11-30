@@ -1,0 +1,1 @@
+customValue.setAllowCustomValue(!customValue.isAllowCustomValue());

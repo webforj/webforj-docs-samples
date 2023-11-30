@@ -1,4 +1,4 @@
-package componentdemos.textcomboboxdemos;
+package componentdemos.comboboxdemos;
 
 import java.util.ArrayList;
 
@@ -9,16 +9,21 @@ import org.dwcj.component.list.ComboBox;
 import org.dwcj.component.list.ListItem;
 import org.dwcj.exceptions.DwcjException;
 
-@InlineStyleSheet("context://css/comboboxstyles/dropdown_styles.css")
-public class ComboBoxDropdownType extends App {
+@InlineStyleSheet(/* css */"""
+  .frame{
+    display: flex;
+    margin: 20px 0 0 20px;
+    gap: 20px;
+  }
+""")
+public class ComboBoxPlaceholder extends App {
 
-  ComboBox demoBox = new ComboBox("Department");
+  ComboBox comboBox = new ComboBox();
 
   @Override
   public void run() throws DwcjException {
     Frame window = new Frame();
     window.addClassName("frame");
-    window.add(demoBox);
 
     ArrayList<ListItem> categories = new ArrayList<>();
     categories.add(new ListItem("Electronics", "Electronics"));
@@ -29,8 +34,8 @@ public class ComboBoxDropdownType extends App {
     categories.add(new ListItem("Pet Supplies", "Pet Supplies"));
     categories.add(new ListItem("Toys and Games", "Toys and Games"));
 
-    demoBox.setDropdownType("demo-dropdown-type");
-    demoBox.insert(categories)
-        .selectIndex(0);
+    comboBox.setPlaceholder("Example Placeholder");
+    comboBox.insert(categories);
+    window.add(comboBox);
   }
 }
