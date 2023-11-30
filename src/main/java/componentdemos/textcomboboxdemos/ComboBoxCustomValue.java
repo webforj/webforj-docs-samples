@@ -13,8 +13,10 @@ import org.dwcj.exceptions.DwcjException;
 @InlineStyleSheet(/*css*/"""
   .frame{
     display: flex;
+    flex-direction: column;
     margin: 20px 0 0 20px;
     gap: 20px;
+    width: 200px;
   }
 """)
 public class ComboBoxCustomValue extends App {

@@ -1,5 +1,7 @@
 :root{
   --bbj-list-item-color: #393D48;
+  /* --bbj-list-button-label-hover-color: var(--bbj-color-primary-text) */
+  --bbj-list-selected-color: white !important;
 }
 
 .frame {
@@ -12,7 +14,6 @@
   transition: transform 0.3s ease; 
   overflow: hidden;
 }
-
 [data-dropdown-for="demo-dropdown-type"]::part(item) {
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
@@ -20,5 +21,6 @@
 [data-dropdown-for="demo-dropdown-type"]::part(item):hover{
   transition: transform 0.3s ease; 
   transform: scale(1.2) translateX(10px);
+  color: var(--bbj-color-primary-text);
   cursor: pointer;
 }

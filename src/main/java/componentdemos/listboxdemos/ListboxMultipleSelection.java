@@ -11,8 +11,8 @@ import org.dwcj.exceptions.DwcjException;
 @InlineStyleSheet(/*css*/"""
   .frame {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    width: 200px;
     margin: 20px 0 0 20px;
     gap: 20px;
   }  
