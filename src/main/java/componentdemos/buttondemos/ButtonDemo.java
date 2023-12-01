@@ -67,7 +67,5 @@ public class ButtonDemo extends App {
         .addClassName("row");
 
     window.add(firstRow, secondRow, thirdRow);
-
-    App.setTheme(Request.getQueryParam("theme"));
   }
 }
