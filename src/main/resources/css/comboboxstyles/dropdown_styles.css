@@ -10,17 +10,24 @@
   width: 200px;
 }
 
-[data-dropdown-for="demo-dropdown-type"]::part(list){
-  transition: transform 0.3s ease; 
+[data-dropdown-for="demo-dropdown-type"]::part(list) {
+  transition: transform 250ms ease-in-out;
   overflow: hidden;
 }
+
 [data-dropdown-for="demo-dropdown-type"]::part(item) {
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  transition: transform 250ms ease-in-out, background-color 250ms ease-in-out;
+  border: 1px solid transparent;
+  margin: 1.5px 0;
 }
 
-[data-dropdown-for="demo-dropdown-type"]::part(item):hover{
-  transition: transform 0.3s ease; 
-  transform: scale(1.2) translateX(10px);
+[data-dropdown-for="demo-dropdown-type"]::part(item):hover {
+  transform: scale3d(1.2, 1.2, 1) translateX(10px);
   color: var(--bbj-color-primary-text);
   cursor: pointer;
 }
+
+[data-dropdown-for="demo-dropdown-type"]::part(item--selected):hover {
+  color: var(--bbj-color-white);
+}
+
