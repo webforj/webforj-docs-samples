@@ -17,81 +17,85 @@ import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/drawerstyles/drawer_welcome.css")
 public class DrawerWelcome extends App {
+	
+	Drawer welcomeDrawer;
+	AppLayout demo = new AppLayout();
 
-  Drawer welcomeDrawer;
+	Panel header = new Panel();
+	Panel drawer = new Panel();
 
-  @Override
-  public void run() throws DwcjException {
-    Frame window = new Frame();
-    AppLayout demo = new AppLayout();
-    window.add(demo);
+	@Override
+	public void run() throws DwcjException {
+		Frame window = new Frame();
+		window.add(demo);
 
-    // Header
-    demo.getHeader()
-        .add(new Label("<html><bbj-icon-button name='menu-2' data-drawer-toggle><bbj-icon-button></html>"))
-        .add(new Label(
-            "<html><div class=\"bbj-logo\"><img src=\"https://i.ibb.co/1n4n1Nh/logo.png\" alt=\"logo\" /></div></html>"))
-        .add(new Label("<html><b>DWCJ Application</b></html>"))
-        .addClassName("bbj__toolbar-drawer");
+		// Header
+		header.add(new Label("<html><bbj-icon-button name='menu-2' data-drawer-toggle><bbj-icon-button></html>"))
+				.add(new Label(
+						"<html><div class=\"bbj-logo\"><img src=\"https://i.ibb.co/1n4n1Nh/logo.png\" alt=\"logo\" /></div></html>"))
+				.add(new Label("<html><b>DWCJ Application</b></html>"))
+				.addClassName("bbj__toolbar-drawer");
 
-    demo.setHeaderReveal(true);
+		demo.addToHeader(header);
+		demo.setHeaderReveal(true);
 
-    demo.setDrawerPlacement(DrawerPlacement.LEFT);
-    Panel drawer = demo.getDrawer();
-    drawer.addClassName("app-layout-drawer");
+		demo.addToDrawer(drawer);
+		drawer.addClassName("app-layout-drawer");
+		demo.setDrawerPlacement(DrawerPlacement.LEFT);
+		
+		// Drawer's logo container and logo
+		drawer.add(new Panel().addClassName("drawer__logo").add(
+			new Label("<html><img src='" + "https://i.ibb.co/1n4n1Nh/logo.png" + "'</img></html>")));
+			
+		// Drawer's Menu
+		TabbedPane drawerMenu = new TabbedPane();
+		drawer.add(drawerMenu);
 
-    // Drawer's logo container and logo
-    drawer.add(new Panel().addClassName("drawer__logo").add(
-        new Label("<html><img src='" + "https://i.ibb.co/1n4n1Nh/logo.png" + "'</img></html>")));
+		// Setting drawer menu's attributes
+		drawerMenu.setAttribute("nobody", "true");
+		drawerMenu.setAttribute("borderless", "true");
+		drawerMenu.setAttribute("placement", "left");
 
-    // Drawer's Menu
-    TabbedPane drawerMenu = new TabbedPane();
-    drawer.add(drawerMenu);
+		// Adding tabs to drawer menu
+		drawerMenu.add("<bbj-icon name='dashboard'></bbj-icon>      Dashboard")
+				.add("<bbj-icon name='shopping-cart'></bbj-icon>  Orders")
+				.add("<bbj-icon name='users'></bbj-icon>          Customers")
+				.add("<bbj-icon name='box'></bbj-icon>            Products")
+				.add("<bbj-icon name='files'></bbj-icon>          Documents")
+				.add("<bbj-icon name='checklist'></bbj-icon>      Tasks")
+				.add("<bbj-icon name='chart-dots-2'></bbj-icon>   Analytics");
 
-    // Setting drawer menu's attributes
-    drawerMenu.setAttribute("nobody", "true");
-    drawerMenu.setAttribute("borderless", "true");
-    drawerMenu.setAttribute("placement", "left");
+		// Welcome Drawer
 
-    // Adding tabs to drawer menu
-    drawerMenu.add("<bbj-icon name='dashboard'></bbj-icon>      Dashboard")
-        .add("<bbj-icon name='shopping-cart'></bbj-icon>  Orders")
-        .add("<bbj-icon name='users'></bbj-icon>          Customers")
-        .add("<bbj-icon name='box'></bbj-icon>            Products")
-        .add("<bbj-icon name='files'></bbj-icon>          Documents")
-        .add("<bbj-icon name='checklist'></bbj-icon>      Tasks")
-        .add("<bbj-icon name='chart-dots-2'></bbj-icon>   Analytics");
+		welcomeDrawer = new Drawer();
+		window.add(welcomeDrawer);
+		welcomeDrawer
+				.setPlacement(Placement.BOTTOM)
+				.addClassName("welcome__drawer")
+				.open();
+		welcomeDrawer.add(new Label(/* html */ """
+				<html>
+				<img src='https://thumb9.shutterstock.com/mosaic_
+				250/177370774/1312166426/stock-vector-handshake-heart-icon-stroke-outline-style
+				-line-vector-isolate-on-white-background-1312166426.jpg'></img>
+				</html>
+				"""));
+		welcomeDrawer.add(new Label("<html><h2>Welcome to DWCJ</h2></html>"));
+		welcomeDrawer.add(new Label(
+				"<html><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p></html>"));
+		welcomeDrawer.add(new Button("Get Started")
+				.addClassName("welcome__drawer-content")
+				.setTheme(ButtonTheme.PRIMARY)
+				.setExpanse(Expanse.LARGE));
 
-    // Welcome Drawer
+		// Content
+		Button openWelcome = new Button("Open Welcome Page");
+		openWelcome.onClick( e -> welcomeDrawer.open());
 
-    welcomeDrawer = new Drawer();
-    window.add(welcomeDrawer);
-    welcomeDrawer
-        .setPlacement(Placement.BOTTOM)
-        .addClassName("welcome__drawer")
-        .open();
-    welcomeDrawer.getContent()
-        .add(new Label(
-            "<html><img src='https://thumb9.shutterstock.com/mosaic_250/177370774/1312166426/stock-vector-handshake-heart-icon-stroke-outline-style-line-vector-isolate-on-white-background-1312166426.jpg'></img></html>"))
-        .add(new Label("<html><h2>Welcome to DWCJ</h2></html>"))
-        .add(
-            new Label("<html><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p></html>"))
-        .add(new Button("Get Started")
-            .setTheme(ButtonTheme.PRIMARY)
-            .setExpanse(Expanse.LARGE))
-        .addClassName("welcome__drawer-content");
-
-    // Content
-    Button openWelcome = new Button("Open Welcome Page");
-    openWelcome.onClick(e -> {
-        welcomeDrawer.open();
-    });
-    
-    demo.getContent().add(
-        new Label("<html><h1>Application Title</h1></html>"),
-        new Label("<html><h4>Application Content</h4></html>"),
-        openWelcome
-        );
-  }
+		demo.addToContent(
+				new Label("<html><h1>Application Title</h1></html>"),
+				new Label("<html><h4>Application Content</h4></html>"),
+				openWelcome);
+	}
 
 }

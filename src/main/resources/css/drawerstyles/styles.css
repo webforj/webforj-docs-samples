@@ -1,4 +1,4 @@
-.drawer {
+.drawer::part(control){
   height: 100%;
   padding: 10px;
   display: flex;

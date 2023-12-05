@@ -30,12 +30,12 @@ public class ButtonDisable extends App {
     
     for (int i = 0; i < 8; i++) {
       int index = i % THEME_NUM;
-      Button button = new Button(themes[index].getValue().toUpperCase());
+      Button button = new Button(themes[index].name().toUpperCase());
       disabled.add(button);
       button.setTheme(themes[index]);
       if (i >= THEME_NUM) {
         button.setEnabled(false);
-        button.setText(themes[index].getValue().toUpperCase() + " DISABLED");
+        button.setText(themes[index].name().toUpperCase() + " DISABLED");
       }
     }
   }

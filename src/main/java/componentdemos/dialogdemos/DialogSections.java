@@ -9,17 +9,17 @@ import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/dialogstyles/dialog_styles.css")
 public class DialogSections extends App {
+
+  private Dialog dialog = new Dialog();
+
   @Override
   public void run() throws DwcjException {
     Frame p = new Frame();
-    Dialog dialog = new Dialog();
     p.add(dialog);
-
-    dialog.getHeader().add(new Label("Header"));
-    dialog.getContent().add(new Label("Content"));
-    dialog.getFooter().add(new Label("Footer"));
-
+    dialog.addToHeader().add(new Label("Header"));
+    dialog.addToContent().add(new Label("Content"));
+    dialog.addToFooter().add(new Label("Footer"));
     dialog.setCloseable(false);
-    dialog.show();
+    dialog.open();
   }
 }
