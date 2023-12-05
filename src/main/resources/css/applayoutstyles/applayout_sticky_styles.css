@@ -41,7 +41,7 @@ html {
 
 .layout__second__header {
   flex-basis: 100%;
-  margin: calc(-1 * var(--bbj-space-m)) 0 0 calc(-1 * var(--bbj-space-m));
+  margin: calc(-1 * var(--bbj-space-m) 0 0 0);
 }
 
 .card {

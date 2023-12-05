@@ -3,28 +3,25 @@ package componentdemos.dialogdemos;
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.button.Button;
-import org.dwcj.component.button.event.ButtonClickEvent;
 import org.dwcj.component.dialog.Dialog;
+import org.dwcj.component.field.NumberField;
 import org.dwcj.component.layout.flexlayout.FlexLayout;
 import org.dwcj.component.text.Label;
-import org.dwcj.component.maskednumberfield.MaskedNumberField;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/dialogstyles/dialog_position_styles.css")
 public class DialogPositioning extends App {
 
-  MaskedNumberField xPos, yPos;
-  Dialog dialog;
+  private NumberField xPos = new NumberField();
+  private NumberField yPos = new NumberField();
+  private Dialog dialog = new Dialog();
 
   @Override
   public void run() throws DwcjException {
     Frame p = new Frame();
-    dialog = new Dialog();
-    xPos = new MaskedNumberField()
-        .setStyle("max-width", "25%");
-    yPos = new MaskedNumberField()
-        .setStyle("max-width", "25%");
+    xPos.setStyle("max-width", "25%");
+    yPos.setStyle("max-width", "25%");
     p.add(dialog);
 
     FlexLayout xLayout = FlexLayout.create(new Label("X Pixels: "), xPos)
@@ -35,21 +32,18 @@ public class DialogPositioning extends App {
         .horizontal()
         .build();
 
-    dialog.getHeader().add(new Label("Positioning"));
-    dialog.getContent().add(xLayout, yLayout);
-
     Button setPosition = new Button("Set Dialog Position");
     setPosition.setStyle("width", "150px")
-        .onClick(this::setPosition);
-    dialog.getFooter().add(setPosition);
+        .onClick(e -> {
+          dialog.setPosx(xPos.getValue().toString() + "px");
+          dialog.setPosy(yPos.getValue().toString() + "px");
+        });
 
-    dialog.setAutoFocus(true);
-    dialog.show();
+    dialog.addToHeader(new Label("Positioning"));
+    dialog.addToContent(xLayout, yLayout);
+    dialog.addToFooter(setPosition);
+    dialog.setAutofocus(true);
+    dialog.open();
     dialog.setCloseable(false);
-  }
-
-  private void setPosition(ButtonClickEvent ev) {
-    dialog.setPosx(xPos.getValue().toString() + "px");
-    dialog.setPosy(yPos.getValue().toString() + "px");
   }
 }

@@ -7,36 +7,38 @@ import org.dwcj.component.layout.applayout.AppLayout.DrawerPlacement;
 import org.dwcj.component.text.Label;
 import org.dwcj.component.tabbedpane.TabbedPane;
 import org.dwcj.component.window.Frame;
+import org.dwcj.component.window.Panel;
 import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/applayoutstyles/applayout_mobile.css")
 public class AppLayoutMobile extends App {
 
-  Label contentLabel;
+  AppLayout demo = new AppLayout();
+  Label contentLabel = new Label();
+
+  Panel header = new Panel();
 
   @Override
   public void run() throws DwcjException {
     Frame window = new Frame();
-    AppLayout demo = new AppLayout();
     window.add(demo);
 
     // Header
-    demo.getHeader().add(new Label(
+    header.add(new Label(
         "<html><div class=\"bbj-logo\"><img src=\"https://i.ibb.co/1n4n1Nh/logo.png\" alt=\"logo\" /></div></html>"))
         .add(new Label("<html><b>DWCJ Application</b></html>"))
         .addClassName("bbj-toolbar");
 
+    demo.addToHeader(header);
     demo.setHeaderReveal(true);
-
     demo.setDrawerPlacement(DrawerPlacement.HIDDEN);
 
     // Content
-    this.contentLabel = new Label();
-    demo.getContent().add(
+    demo.addToContent(
         new Label("<html><h1>Application Title</h1></html>"),
         this.contentLabel);
     for (int i = 0; i < 5; i++) {
-      demo.getContent().add(
+      demo.addToContent().add(
           new Label("<html>" +
               "<div class=\"card\">" +
               "<h2>What is Lorem Ipsum " + i + "?</h2>" +
@@ -56,7 +58,7 @@ public class AppLayoutMobile extends App {
     }
 
     TabbedPane footerMenu = new TabbedPane();
-    demo.getFooter().add(footerMenu);
+    demo.addToFooter(footerMenu);
     demo.setFooterReveal(true);
 
     // Setting drawer menu's attributes
