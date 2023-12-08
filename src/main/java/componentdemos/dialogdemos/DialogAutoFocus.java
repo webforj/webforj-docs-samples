@@ -3,8 +3,8 @@ package componentdemos.dialogdemos;
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.dialog.Dialog;
+import org.dwcj.component.field.TextField;
 import org.dwcj.component.window.Frame;
-import org.dwcj.component.maskedtextfield.MaskedTextField;
 import org.dwcj.component.text.Label;
 import org.dwcj.exceptions.DwcjException;
 
@@ -19,7 +19,7 @@ public class DialogAutoFocus extends App {
     p.add(dialog);
 
     dialog.addToContent(new Label("Auto Focus"));
-    dialog.addToContent(new MaskedTextField().setAttribute("label", "This Box is Auto Focused"));
+    dialog.addToContent(new TextField().setLabel("This Box is Auto Focused"));
 
     dialog.open();
     dialog.setAutofocus(true);

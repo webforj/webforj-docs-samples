@@ -28,13 +28,12 @@ public class DialogPositioning extends App {
         .horizontal()
         .build();
 
-    FlexLayout yLayout = FlexLayout.create(new Label("Y Pixels :"), yPos)
+    FlexLayout yLayout = FlexLayout.create(new Label("Y Pixels : "), yPos)
         .horizontal()
         .build();
 
     Button setPosition = new Button("Set Dialog Position");
-    setPosition.setStyle("width", "150px")
-        .onClick(e -> {
+    setPosition.onClick(e -> {
           dialog.setPosx(xPos.getValue().toString() + "px");
           dialog.setPosy(yPos.getValue().toString() + "px");
         });

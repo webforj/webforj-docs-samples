@@ -35,6 +35,7 @@ public class ButtonDemo extends App {
       email.setText("");
     });
     clear.setTheme(ButtonTheme.DEFAULT);
+    clear.whenAttached().thenAccept( e -> App.msgbox("I'm attached!"));
 
     submit = new Button("Submit", e -> {
       App.msgbox("Welcome to the application " + firstName.getText() + " " + lastName.getText() + "!");

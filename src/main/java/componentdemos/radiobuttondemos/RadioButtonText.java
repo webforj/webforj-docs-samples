@@ -3,6 +3,7 @@ package componentdemos.radiobuttondemos;
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.concern.HasTextPosition.Position;
+import org.dwcj.component.optioninput.CheckBox;
 import org.dwcj.component.optioninput.RadioButton;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
@@ -16,6 +17,6 @@ public class RadioButtonText extends App{
       RadioButton buttonRight = new RadioButton("Right aligned (default)");
       RadioButton buttonLeft = new RadioButton("Left aligned")
       .setTextPosition(Position.LEFT);
-      window.add(buttonRight, buttonLeft);
+      window.add(buttonRight, buttonLeft, new CheckBox("CheckBox"));
   }
 }
