@@ -8,7 +8,7 @@
 }
 
 .todo--display{
-  width: 30%;
+  min-width: 50%;
   box-shadow: var(--bbj-shadow-l);
   background-color: var(--bbj-surface-3);
   padding: var(--bbj-space-m);
