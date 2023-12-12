@@ -14,7 +14,7 @@ import org.dwcj.component.optioninput.RadioButton;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 
-// @InlineStyleSheet("context://css/compositestyles/styles.css")
+@InlineStyleSheet("context://css/compositestyles/styles.css")
 public class CompositeDemo extends App {
 
   TextField text = new TextField();
@@ -24,17 +24,18 @@ public class CompositeDemo extends App {
   @Override
   public void run() throws DwcjException {
     Frame window = new Frame();
-    window.addClassName("frame")
-        .add(title, todoDisplay);
+    window.addClassName("frame");
 
+    text.setExpanse(Expanse.XLARGE);
     todoDisplay = FlexLayout.create(text)
-        .vertical()
-        .build()
-        .setSpacing("5px")
-        .addClassName("todo--display");
+    .vertical()
+    .build()
+    .setSpacing("5px")
+    .addClassName("todo--display");
+    window.add(title, todoDisplay);
+
 
     text.setPlaceholder("Add Todo item. Press Enter to save.")
-        .setExpanse(Expanse.XLARGE)
         .onKeypress(e -> {
           if (e.getKeyCode().equals(KeypressEvent.Key.ENTER) && !text.getText().isEmpty()) {
             todoDisplay.add(new TodoItem(text.getText()));
