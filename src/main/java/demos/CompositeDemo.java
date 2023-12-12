@@ -14,7 +14,7 @@ import org.dwcj.component.optioninput.RadioButton;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 
-@InlineStyleSheet("context://css/compositestyles/styles.css")
+// @InlineStyleSheet("context://css/compositestyles/styles.css")
 public class CompositeDemo extends App {
 
   TextField text = new TextField();
