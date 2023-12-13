@@ -37,7 +37,8 @@ public class ContainerDemo extends App {
   @Override
   public void run() throws DwcjException {
 
-    Frame page = new Frame().addClassName("app__frame");
+    Frame page = new Frame();
+    page.addClassName("app__frame");
 
     FlexLayout mainLayout = FlexLayout.create()
         .horizontal()

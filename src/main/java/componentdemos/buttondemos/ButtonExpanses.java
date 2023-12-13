@@ -16,7 +16,8 @@ public class ButtonExpanses extends App {
   @Override
   public void run() throws DwcjException {
     Frame window = new Frame();
-    Panel container = new Panel().addClassName("container");
+    Panel container = new Panel();
+    container.addClassName("container");
     window.addClassName("Frame");
 
     for (int i = Expanse.values().length - 1; i >= 0; i--) {

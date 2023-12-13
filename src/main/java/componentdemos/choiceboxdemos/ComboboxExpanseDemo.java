@@ -17,7 +17,8 @@ public class ComboboxExpanseDemo extends App {
   public void run() throws DwcjException {
     Frame window = new Frame();
     window.addClassName("Frame");
-    Panel container = new Panel().addClassName("container");
+    Panel container = new Panel();
+    container.addClassName("container");
     window.add(container);
 
     List<ListItem> data = new ArrayList<>();

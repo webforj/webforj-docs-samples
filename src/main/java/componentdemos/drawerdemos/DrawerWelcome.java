@@ -30,11 +30,12 @@ public class DrawerWelcome extends App {
 		window.add(demo);
 
 		// Header
-		header.add(new Label("<html><bbj-icon-button name='menu-2' data-drawer-toggle><bbj-icon-button></html>"))
-				.add(new Label(
-						"<html><div class=\"bbj-logo\"><img src=\"https://i.ibb.co/1n4n1Nh/logo.png\" alt=\"logo\" /></div></html>"))
-				.add(new Label("<html><b>DWCJ Application</b></html>"))
-				.addClassName("bbj__toolbar-drawer");
+		Label iconButton = new Label("<html><bbj-icon-button name='menu-2' data-drawer-toggle><bbj-icon-button></html>");
+		Label logo = new Label(
+						"<html><div class=\"bbj-logo\"><img src=\"https://i.ibb.co/1n4n1Nh/logo.png\" alt=\"logo\" /></div></html>");
+		Label title = new Label("<html><b>DWCJ Application</b></html>");
+		header.add(iconButton, logo, title);
+		header.addClassName("bbj__toolbar-drawer");
 
 		demo.addToHeader(header);
 		demo.setHeaderReveal(true);
@@ -44,8 +45,11 @@ public class DrawerWelcome extends App {
 		demo.setDrawerPlacement(DrawerPlacement.LEFT);
 		
 		// Drawer's logo container and logo
-		drawer.add(new Panel().addClassName("drawer__logo").add(
-			new Label("<html><img src='" + "https://i.ibb.co/1n4n1Nh/logo.png" + "'</img></html>")));
+		Panel drawerLogo = new Panel();
+		drawerLogo.addClassName("drawer__logo")
+			.add(
+			new Label("<html><img src='" + "https://i.ibb.co/1n4n1Nh/logo.png" + "'</img></html>"));
+		drawer.add(drawerLogo);
 			
 		// Drawer's Menu
 		TabbedPane drawerMenu = new TabbedPane();

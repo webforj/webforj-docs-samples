@@ -24,10 +24,11 @@ public class AppLayoutMobile extends App {
     window.add(demo);
 
     // Header
-    header.add(new Label(
-        "<html><div class=\"bbj-logo\"><img src=\"https://i.ibb.co/1n4n1Nh/logo.png\" alt=\"logo\" /></div></html>"))
-        .add(new Label("<html><b>DWCJ Application</b></html>"))
-        .addClassName("bbj-toolbar");
+    Label logo = new Label(
+        "<html><div class=\"bbj-logo\"><img src=\"https://i.ibb.co/1n4n1Nh/logo.png\" alt=\"logo\" /></div></html>");
+    Label title = new Label("<html><b>DWCJ Application</b></html>");
+    header.add(logo, title);
+    header.addClassName("bbj-toolbar");
 
     demo.addToHeader(header);
     demo.setHeaderReveal(true);

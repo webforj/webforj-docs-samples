@@ -13,8 +13,8 @@ public class CheckboxEventDemo extends App {
 
   @Override
   public void run() throws DwcjException {
-    Frame window = new Frame()
-        .addClassName("Frame");
+    Frame window = new Frame();
+    window.addClassName("Frame");
     checkbox = new CheckBox()
         .setText("Please check to accept Terms and Conditions");
     window.add(checkbox);

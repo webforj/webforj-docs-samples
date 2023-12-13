@@ -13,8 +13,8 @@ public class Spacing extends App {
   public void run() throws DwcjException {
 
     Frame page = new Frame();
-    Panel container = new Panel()
-        .setStyle("width", "200px")
+    Panel container = new Panel();
+    container.setStyle("width", "200px")
         .setStyle("border", "1px black dotted");
     page.add(container);
 

@@ -15,7 +15,8 @@ public class ComboboxLabelDemo extends App {
     window.addClassName("Frame");
 
     ChoiceBox cb1 = new ChoiceBox();
-    Panel container = new Panel().addClassName("container");
+    Panel container = new Panel();
+    container.addClassName("container");
     window.add(container);
 
     cb1.add("Random Data1", "Random Data");

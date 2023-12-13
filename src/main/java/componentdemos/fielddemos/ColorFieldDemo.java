@@ -31,8 +31,8 @@ public class ColorFieldDemo extends App {
 
     colors = new Panel[4];
     for (int i = 0; i <= 3; i++) {
-      colors[i] = new Panel()
-          .addClassName("color__panel");
+      colors[i] = new Panel();
+          colors[i].addClassName("color__panel");
     }
 
     FlexLayout colorDisplay = FlexLayout.create(colors)

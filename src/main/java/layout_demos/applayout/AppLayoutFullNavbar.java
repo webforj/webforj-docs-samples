@@ -37,8 +37,10 @@ public class AppLayoutFullNavbar extends App {
 		drawer.addClassName("app-layout-drawer");
 		
 		// Drawer's logo container and logo
-		drawer.add(new Panel().addClassName("drawer__logo").add(
-				new Label("<html><img src='" + "https://i.ibb.co/1n4n1Nh/logo.png" + "'</img></html>")));
+		Panel drawerLogo = new Panel();
+		drawerLogo.addClassName("drawer__logo").add(
+				new Label("<html><img src='" + "https://i.ibb.co/1n4n1Nh/logo.png" + "'</img></html>"));
+		drawer.add(drawerLogo);
 
 				// Drawer's Menu
 				TabbedPane drawerMenu = new TabbedPane();

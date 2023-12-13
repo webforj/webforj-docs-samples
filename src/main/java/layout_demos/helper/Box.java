@@ -4,77 +4,61 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.dwcj.App;
-import org.dwcj.annotation.InlineStyleSheet;
+import org.dwcj.component.Composite;
+import org.dwcj.component.layout.flexlayout.FlexAlignment;
+import org.dwcj.component.layout.flexlayout.FlexContentAlignment;
+import org.dwcj.component.layout.flexlayout.FlexJustifyContent;
 import org.dwcj.component.layout.flexlayout.FlexLayout;
 import org.dwcj.component.text.Label;
-import org.dwcj.component.window.Window;
 import org.dwcj.concern.HasStyle;
-import org.dwcj.concern.legacy.LegacyHasStyle;
 
-@InlineStyleSheet("context://css/flexstyles/box_styles.css")
-public class Box extends FlexLayout {
+public class Box extends Composite<FlexLayout> implements HasStyle<Box> {
 
-  FlexLayout box;
   int num;
   String title = "";
   boolean vis = true;
   Label display = new Label();
 
-  private Map<String, String> styles;
+  private Map<String, String> styles = new HashMap<>();
 
-  @Override
-  public void onCreate(Window p) {
-    box = FlexLayout.create()
-        .horizontal()
-        .align().center()
-        .justify().center()
-        .build();
-    p.add(box);
+  Box(){
+    getBoundComponent()
+    .setAlignContent(FlexContentAlignment.CENTER)
+      .setAlignment(FlexAlignment.CENTER)
+      .setJustifyContent(FlexJustifyContent.CENTER);
 
     if (title.isEmpty()) {
       title = "Box " + this.num;
     }
     display.setText(title);
-    box.add(display).addClassName("demo__box");
+    getBoundComponent().add(display);
+    getBoundComponent().addClassName("demo__box");
 
     for (Map.Entry<String, String> entry : styles.entrySet()) {
-      box.setStyle(entry.getKey(), entry.getValue());
+      App.consoleLog("TEST");
+      getBoundComponent().setStyle(entry.getKey(), entry.getValue());
     }
     if (!vis) {
-      box.setVisible(false);
+      getBoundComponent().setVisible(false);
     }
 
-  }
-
-  @Override
-  public FlexLayout setItemOrder(int order, LegacyHasStyle control) {
-    App.consoleLog(String.valueOf(order) + " " + control.toString());
-    super.setItemOrder(order, control);
-    return this;
   }
 
   public Box(int num) {
+    this();
     this.num = num;
   }
 
   public Box(String title) {
+    this();
     this.title = title;
   }
 
-  @Override
-  public Box setStyle(String property, String value) {
-    if (styles == null) {
-      styles = new HashMap<>();
-    }
-    styles.put(property, value);
-    return this;
-  }
-
-  @Override
+  
   public Box setVisible(Boolean visible) {
     if (Boolean.TRUE.equals(this.isAttached())) {
     } else {
-      box.setVisible(visible);
+      getBoundComponent().setVisible(visible);
       this.vis = visible;
     }
     return this;
@@ -85,6 +69,28 @@ public class Box extends FlexLayout {
   }
 
   public void boxDestroy() {
-    box.destroy();
+    getBoundComponent().destroy();
+  }
+
+  @Override
+  public String getStyle(String property) {
+    return getBoundComponent().getStyle(property);
+  }
+
+  @Override
+  public String getComputedStyle(String property) {
+    return getBoundComponent().getComputedStyle(property);
+  }
+
+  @Override
+  public Box setStyle(String property, String value) {
+    getBoundComponent().setStyle(property, value);
+    return this;
+  }
+
+  @Override
+  public Box removeStyle(String property) {
+    getBoundComponent().removeStyle(property);
+    return this;
   }
 }
