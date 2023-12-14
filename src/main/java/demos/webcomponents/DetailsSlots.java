@@ -14,8 +14,16 @@ public class DetailsSlots extends App {
     Element details = new Element("details");
     window.add(details);
 
-    Element summary = new Element("summary", "Details Title");
-    details.setHtml("Something small enough to escape casual notice."); // Sets the text to be displayed when expanded
-    details.add(summary); // Sets the title of the details element
+    Element summary = new Element("summary", "First Details Title");
+    details.setText("Expanded text for the first summary."); // Sets the content inside the details element
+    details.add(summary); // Adds a summary element to the text already present inside the details element
+
+    Element secondDetails = new Element("details");
+    window.add(secondDetails);
+
+    secondDetails.setHtml("""
+      <summary>Second Details Title</summary>
+      Expanded text for the second summary.
+    """);
   }
 }
