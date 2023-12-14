@@ -15,4 +15,5 @@ public class DetailsEvent extends App {
     details.addEventListener("toggle", e -> msgbox("Details Toggled!"));
     window.add(details);
   }
+  
 }

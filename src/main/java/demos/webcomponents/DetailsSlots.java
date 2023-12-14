@@ -16,6 +16,5 @@ public class DetailsSlots extends App {
 
     Element summary = new Element("summary", "This is a Summary");
     details.add(summary);
-
   }
 }
