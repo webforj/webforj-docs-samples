@@ -9,6 +9,7 @@ public class DetailsSlots extends App {
   
   Element details = new Element("details");
   Element secondDetails = new Element("details");
+  Element summary = new Element("summary", "First Details Title");
 
   @Override
   public void run() throws DwcjException {
@@ -17,7 +18,6 @@ public class DetailsSlots extends App {
     window.add(details, secondDetails);
 
     /* Method 1: Setting text using setText() and add()*/
-    Element summary = new Element("summary", "First Details Title");
     details.setText("Expanded text for the first summary."); // Sets the content inside the details element
     details.add(summary); // Adds a summary element to the text already present inside the details element
 
