@@ -4,14 +4,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.dwcj.App;
+import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.Composite;
 import org.dwcj.component.layout.flexlayout.FlexAlignment;
-import org.dwcj.component.layout.flexlayout.FlexContentAlignment;
 import org.dwcj.component.layout.flexlayout.FlexJustifyContent;
 import org.dwcj.component.layout.flexlayout.FlexLayout;
 import org.dwcj.component.text.Label;
+import org.dwcj.component.window.Window;
 import org.dwcj.concern.HasStyle;
+import org.dwcj.concern.legacy.LegacyHasStyle;
 
+@InlineStyleSheet("context://css/flexstyles/box_styles.css")
 public class Box extends Composite<FlexLayout> implements HasStyle<Box> {
 
   int num;
@@ -19,12 +22,10 @@ public class Box extends Composite<FlexLayout> implements HasStyle<Box> {
   boolean vis = true;
   Label display = new Label();
 
-  private Map<String, String> styles = new HashMap<>();
+  private Map<String, String> styles;
 
   Box(){
-    getBoundComponent()
-    .setAlignContent(FlexContentAlignment.CENTER)
-      .setAlignment(FlexAlignment.CENTER)
+    getBoundComponent().setAlignment(FlexAlignment.CENTER)
       .setJustifyContent(FlexJustifyContent.CENTER);
 
     if (title.isEmpty()) {
@@ -35,7 +36,6 @@ public class Box extends Composite<FlexLayout> implements HasStyle<Box> {
     getBoundComponent().addClassName("demo__box");
 
     for (Map.Entry<String, String> entry : styles.entrySet()) {
-      App.consoleLog("TEST");
       getBoundComponent().setStyle(entry.getKey(), entry.getValue());
     }
     if (!vis) {
@@ -45,12 +45,10 @@ public class Box extends Composite<FlexLayout> implements HasStyle<Box> {
   }
 
   public Box(int num) {
-    this();
     this.num = num;
   }
 
   public Box(String title) {
-    this();
     this.title = title;
   }
 
