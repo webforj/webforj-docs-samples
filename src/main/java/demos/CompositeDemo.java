@@ -34,7 +34,6 @@ public class CompositeDemo extends App {
     .addClassName("todo--display");
     window.add(title, todoDisplay);
 
-
     text.setPlaceholder("Add Todo item. Press Enter to save.")
         .onKeypress(e -> {
           if (e.getKeyCode().equals(KeypressEvent.Key.ENTER) && !text.getText().isEmpty()) {
