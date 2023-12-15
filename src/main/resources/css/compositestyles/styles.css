@@ -8,17 +8,21 @@
 }
 
 .todo--display{
-  min-width: 50%;
+  min-width: 30%;
   box-shadow: var(--bbj-shadow-l);
   background-color: var(--bbj-surface-3);
   padding: var(--bbj-space-m);
   border: thin solid var(--bbj-color-default);
   border-radius: var(--bbj-border-radius);
   padding-bottom: 0px;
-
-  .item__todo--display:last-child{
-    border-bottom: none !important;
+  
+  @media only screen and (max-width: 1200px) {
+    min-width: 50%;
   }
+}
+
+.item__todo--display:last-child{
+  border-bottom: none !important;
 }
 
 .item__todo--display{
