@@ -11,5 +11,8 @@
   
   @media only screen and (max-width: 1200px) {
     width: 70%;
-  }
+  } 
+}
+bbj-editbox {
+  flex: 1;
 }
