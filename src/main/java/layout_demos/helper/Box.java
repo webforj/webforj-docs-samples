@@ -1,47 +1,29 @@
 package layout_demos.helper;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.Composite;
-import org.dwcj.component.layout.flexlayout.FlexAlignment;
-import org.dwcj.component.layout.flexlayout.FlexJustifyContent;
-import org.dwcj.component.layout.flexlayout.FlexLayout;
-import org.dwcj.component.text.Label;
-import org.dwcj.component.window.Window;
+import org.dwcj.component.html.elements.Div;
 import org.dwcj.concern.HasStyle;
-import org.dwcj.concern.legacy.LegacyHasStyle;
+import org.dwcj.concern.HasVisibility;
 
 @InlineStyleSheet("context://css/flexstyles/box_styles.css")
-public class Box extends Composite<FlexLayout> implements HasStyle<Box> {
+public class Box extends Composite<Div> implements HasStyle, HasVisibility{
 
   int num;
   String title = "";
   boolean vis = true;
-  Label display = new Label();
+  Div display = new Div();
 
-  private Map<String, String> styles;
-
-  Box(){
-    getBoundComponent().setAlignment(FlexAlignment.CENTER)
-      .setJustifyContent(FlexJustifyContent.CENTER);
-
+  @Override
+  protected void onDidCreate(Div container) {
+    super.onDidCreate(container);
+    
     if (title.isEmpty()) {
       title = "Box " + this.num;
     }
     display.setText(title);
-    getBoundComponent().add(display);
-    getBoundComponent().addClassName("demo__box");
-
-    for (Map.Entry<String, String> entry : styles.entrySet()) {
-      getBoundComponent().setStyle(entry.getKey(), entry.getValue());
-    }
-    if (!vis) {
-      getBoundComponent().setVisible(false);
-    }
-
+    container.add(display);
+    container.addClassName("demo__box");
   }
 
   public Box(int num) {
@@ -52,18 +34,14 @@ public class Box extends Composite<FlexLayout> implements HasStyle<Box> {
     this.title = title;
   }
 
-  
-  public Box setVisible(Boolean visible) {
-    if (Boolean.TRUE.equals(this.isAttached())) {
-    } else {
-      getBoundComponent().setVisible(visible);
-      this.vis = visible;
-    }
-    return this;
-  }
-
   public void setDisplay(String text) {
     this.title = text;
+  }
+
+  @Override
+  public Box setStyle(String property, String value) {
+    getBoundComponent().setStyle(property, value);
+    return this;
   }
 
   public void boxDestroy() {
@@ -81,14 +59,19 @@ public class Box extends Composite<FlexLayout> implements HasStyle<Box> {
   }
 
   @Override
-  public Box setStyle(String property, String value) {
-    getBoundComponent().setStyle(property, value);
+  public Box removeStyle(String property) {
+    getBoundComponent().removeStyle(property);
     return this;
   }
 
   @Override
-  public Box removeStyle(String property) {
-    getBoundComponent().removeStyle(property);
+  public boolean isVisible() {
+    return getBoundComponent().isVisible();
+  }
+
+  @Override
+  public Box setVisible(boolean visible) {
+    getBoundComponent().setVisible(visible);
     return this;
   }
 }
