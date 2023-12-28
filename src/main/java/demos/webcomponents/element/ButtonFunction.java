@@ -1,4 +1,4 @@
-package demos.webcomponents;
+package demos.webcomponents.element;
 
 import org.dwcj.App;
 import org.dwcj.PendingResult;

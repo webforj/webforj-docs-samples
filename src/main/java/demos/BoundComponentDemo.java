@@ -17,7 +17,7 @@ import org.dwcj.exceptions.DwcjException;
         margin: 20px;
         width: 50%;
       }
-    """)
+""")
 public class BoundComponentDemo extends App {
 
   TextField text = new TextField("Todo Item");

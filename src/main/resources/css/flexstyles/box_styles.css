@@ -1,4 +1,7 @@
 .demo__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 45px;
   width: 90px;
   font-weight: bold;

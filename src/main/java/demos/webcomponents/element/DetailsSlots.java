@@ -1,4 +1,4 @@
-package demos.webcomponents;
+package demos.webcomponents.element;
 
 import org.dwcj.App;
 import org.dwcj.component.element.Element;
@@ -18,8 +18,8 @@ public class DetailsSlots extends App {
     window.add(details, secondDetails);
 
     /* Method 1: Setting text using setText() and add()*/
-    details.setText("Expanded text for the first summary."); // Sets the content inside the details element
     details.add(summary); // Adds a summary element to the text already present inside the details element
+    details.setText("Expanded text for the first summary."); // Sets the content inside the details element
 
     /* Method 2: Injecting pure HTML into the element*/
     secondDetails.setHtml("""
