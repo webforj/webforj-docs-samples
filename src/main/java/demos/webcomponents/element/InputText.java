@@ -34,6 +34,6 @@ public class InputText extends App {
     window.add(input);
 
     input.addClassName("element--input");
-    input.setText("TEST");
+    input.setText("Here is the set text");
   }
 }

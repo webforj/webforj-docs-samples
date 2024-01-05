@@ -13,6 +13,7 @@ import org.dwcj.component.element.annotation.EventName;
 import org.dwcj.component.element.annotation.EventOptions;
 import org.dwcj.component.element.annotation.NodeName;
 import org.dwcj.component.event.ComponentEvent;
+import org.dwcj.component.html.elements.Div;
 import org.dwcj.component.window.Frame;
 import org.dwcj.dispatcher.EventListener;
 import org.dwcj.dispatcher.ListenerRegistration;
@@ -20,17 +21,23 @@ import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet(/* css */"""
   .frame{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     margin: 20px
   }
   """)
 public class QREvent extends App {
+  
+  Div label = new Div("Click Me!");
+  QRCode qrCode = new QRCode("www.dwcj.org");
+
   @Override
   public void run() throws DwcjException {
     Frame window = new Frame();
     window.addClassName("frame");
 
-    QRCode qrCode = new QRCode("www.dwcj.org");
-    window.add(qrCode);
+    window.add(label, qrCode);
     qrCode.setSize(200);
     qrCode.setColor("#0059B8");
 

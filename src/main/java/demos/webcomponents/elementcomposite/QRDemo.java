@@ -15,12 +15,14 @@ import org.dwcj.exceptions.DwcjException;
   }
   """)
 public class QRDemo extends App {
+
+  QRCode qrCode = new QRCode();
+  
   @Override
   public void run() throws DwcjException {
     Frame window = new Frame();
     window.addClassName("frame");
 
-    QRCode qrCode = new QRCode();
 
     window.add(qrCode);
   }

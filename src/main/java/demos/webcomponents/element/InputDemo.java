@@ -34,5 +34,6 @@ public class InputDemo extends App {
     window.add(input);
 
     input.addClassName("element--input");
+    input.setAttribute("placeholder", "Enter some text");
   }
 }

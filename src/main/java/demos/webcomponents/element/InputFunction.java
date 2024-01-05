@@ -35,7 +35,7 @@ public class InputFunction extends App {
     window.add(input);
 
     input.addClassName("element--input");
-    input.addEventListener("click", e -> msgbox("Input clicked"));
+    input.addEventListener("click", e -> msgbox("Input click fired"));
     
     /* Clicks the input, and stores the result in a Pending result. This then displays a
     message box when it resolves. */

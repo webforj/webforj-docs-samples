@@ -18,12 +18,14 @@ import org.dwcj.exceptions.DwcjException;
   }
   """)
 public class QRProperties extends App {
+  
+  QRCode qrCode = new QRCode("www.dwcj.org");
+
   @Override
   public void run() throws DwcjException {
     Frame window = new Frame();
     window.addClassName("frame");
 
-    QRCode qrCode = new QRCode("www.dwcj.org");
     window.add(qrCode);
 
     /* Setting the properties */

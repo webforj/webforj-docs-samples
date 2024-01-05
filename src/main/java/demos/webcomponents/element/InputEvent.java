@@ -4,10 +4,25 @@ import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.element.Element;
 import org.dwcj.component.element.event.ElementEventOptions;
+import org.dwcj.component.html.elements.Div;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet(/* css */"""
+  .frame{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+  }
+
+  .element--label{
+    display: block;
+    font:
+      1.5em 'Fira Sans',
+      sans-serif;
+    padding-bottom: 10px;
+  }
+
   .element--input{
     display: block;
     margin: 0;
@@ -26,14 +41,17 @@ import org.dwcj.exceptions.DwcjException;
 """)
 public class InputEvent extends App {
   
+  Div label = new Div("Enter Text and Press Enter");
   Element input = new Element("input");
 
   @Override
   public void run() throws DwcjException {
     Frame window = new Frame();
     window.setStyle("margin", "20px");
-    window.add(input);
-
+    window.addClassName("frame");
+    window.add(label, input);
+    
+    label.addClassName("element--label");
     input.addClassName("element--input");
 
     ElementEventOptions options = new ElementEventOptions();
