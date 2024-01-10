@@ -21,6 +21,6 @@ public class DrawerAutoFocus extends App {
     drawer.open();
     drawer.add(checkbox);
     drawer.addClassName("drawer");
-    drawer.setAutoFocus(true);
+    drawer.setAutofocus(true);
   }
 }
