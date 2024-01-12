@@ -8,13 +8,21 @@ import org.dwcj.component.layout.flexlayout.FlexLayout;
 import org.dwcj.component.optioninput.CheckBox;
 import org.dwcj.exceptions.DwcjException;
 
-@InlineStyleSheet("context://css/checkboxstyles/text_styles.css")
+@InlineStyleSheet(/*css */"""
+  .frame {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin: 10px;
+  }  
+""")
 public class CheckboxHorizontalText extends App {
   
   @Override
   public void run() throws DwcjException {
     Frame window = new Frame();
-    window.addClassName("Frame");
+    window.addClassName("frame");
 
     FlexLayout rightAligned = FlexLayout.create()
     .vertical()

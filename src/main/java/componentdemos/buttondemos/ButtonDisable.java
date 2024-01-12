@@ -4,39 +4,44 @@ import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.button.Button;
 import org.dwcj.component.button.ButtonTheme;
+import org.dwcj.component.field.TextField;
+import org.dwcj.component.field.TextField.Type;
 import org.dwcj.component.window.Frame;
-import org.dwcj.component.window.Panel;
 import org.dwcj.exceptions.DwcjException;
 
-/**
- * Application to show the disabled functionality of a button.
- */
-@InlineStyleSheet("context://css/buttonstyles/disable_styles.css")
+@InlineStyleSheet(/*css */"""
+  .window {
+    display: flex;
+    align-items: flex-end;
+    margin: 20px;
+    gap: 50px;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+""")
 public class ButtonDisable extends App {
+
+  TextField email = new TextField();
+  Button submit = new Button("Submit");
+
   @Override
   public void run() throws DwcjException {
     Frame window = new Frame();
-    Panel disabled = new Panel();
-    final int THEME_NUM = 4;
-    ButtonTheme[] themes = {
-      ButtonTheme.DEFAULT, 
-      ButtonTheme.PRIMARY, 
-      ButtonTheme.SUCCESS, 
-      ButtonTheme.DANGER};
-    
-    window.addClassName("Frame");
-    window.add(disabled);
-    disabled.addClassName("disabledButtons");
-    
-    for (int i = 0; i < 8; i++) {
-      int index = i % THEME_NUM;
-      Button button = new Button(themes[index].name().toUpperCase());
-      disabled.add(button);
-      button.setTheme(themes[index]);
-      if (i >= THEME_NUM) {
-        button.setEnabled(false);
-        button.setText(themes[index].name().toUpperCase() + " DISABLED");
-      }
-    }
+    window.addClassName("window");
+    window.add(email, submit);
+
+    email.setType(Type.EMAIL)
+        .setLabel("Enter an email")
+        .onModify(e -> {
+          if(e.getText().contains("@")){
+            submit.setEnabled(true);
+          }
+          else{
+            submit.setEnabled(false);
+          }
+        });
+
+    submit.setTheme(ButtonTheme.PRIMARY)
+        .setEnabled(false);
   }
 }

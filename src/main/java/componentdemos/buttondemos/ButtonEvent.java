@@ -3,21 +3,29 @@ package componentdemos.buttondemos;
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.button.Button;
+import org.dwcj.component.html.elements.Div;
 import org.dwcj.component.layout.flexlayout.FlexLayout;
 import org.dwcj.component.layout.flexlayout.FlexLayoutBuilder;
-import org.dwcj.component.text.Label;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 
 /**
  * Demonstration for Button events.
  */
-@InlineStyleSheet("context://css/buttonstyles/event_styles.css")
+@InlineStyleSheet(/*css */ """
+  .window{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    padding: 20px;
+    width: 100%;
+  }
+""")
 public class ButtonEvent extends App {
 
   int counter = 0;
-  Label text;
-  Label payload;
+  Div text = new Div("Current Counter: 0");
+  Div payload = new Div("Event Payload: null");
 
   @Override
   public void run() throws DwcjException {
@@ -26,8 +34,6 @@ public class ButtonEvent extends App {
 
     Button button = new Button("Click Me!");
     button.setStyle("width", "150px");
-    text = new Label("Current Counter: 0");
-    payload = new Label("Event payload: null");
 
     FlexLayout textDisplay = new FlexLayoutBuilder(text, payload)
         .vertical()

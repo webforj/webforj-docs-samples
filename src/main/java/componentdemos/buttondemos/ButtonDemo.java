@@ -1,7 +1,6 @@
 package componentdemos.buttondemos;
 
 import org.dwcj.App;
-import org.dwcj.Request;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.button.Button;
 import org.dwcj.component.button.ButtonTheme;

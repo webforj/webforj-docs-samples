@@ -2,6 +2,12 @@ package layout_demos.applayout;
 
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
+import org.dwcj.component.element.Element;
+import org.dwcj.component.html.elements.Div;
+import org.dwcj.component.html.elements.H1;
+import org.dwcj.component.html.elements.H3;
+import org.dwcj.component.html.elements.Img;
+import org.dwcj.component.html.elements.Paragraph;
 import org.dwcj.component.layout.applayout.AppLayout;
 import org.dwcj.component.text.Label;
 import org.dwcj.component.tabbedpane.TabbedPane;
@@ -14,74 +20,80 @@ import org.dwcj.exceptions.DwcjException;
 public class AppLayoutMultipleHeaders extends App {
 
 	AppLayout demo = new AppLayout();
-	Label contentLabel = new Label();
+  Paragraph contentLabel = new Paragraph();
 
-	Panel header = new Panel();
-	Panel drawer = new Panel();
+	Div header = new Div();
+	Div drawer = new Div();
 
 	@Override
 	public void run() throws DwcjException {
 		Frame window = new Frame();
 		window.add(demo);
 
+		demo.setDrawerHeaderVisible(true);
+    demo.setDrawerFooterVisible(true);
+
+    demo.addToDrawerTitle(new Div("Menu"));
+    demo.addToDrawerHeaderActions(new Element("bbj-icon-button")
+        .setAttribute("name", "pin"));
+    demo.addToDrawerFooter(new Paragraph("All rights reserved"));
+
 		// Header
-		header.addClassName("layout__header")
-				.add(new Label("<html><bbj-icon-button name='menu-2' data-drawer-toggle><bbj-icon-button></html>"),
-						new Label("DWCJ Application")
-								.addClassName("layout__header--title"));
-		demo.addToHeader(header);
+    header.addClassName("layout__header").add(
+        new Div().setHtml("<bbj-icon-button name='menu-2' data-drawer-toggle><bbj-icon-button>"),
+        new H3("DWCJ Application"));
+    demo.addToHeader(header);
 
 		// Drawer
 		drawer.addClassName("app-layout-drawer");
 		demo.addToDrawer(drawer);
 
-		// Drawer's logo container and logo
-		Panel drawerLogo = new Panel();
-		drawerLogo.addClassName("drawer__logo").add(
-				new Label("<html><img src='" + "https://i.ibb.co/1n4n1Nh/logo.png" + "'</img></html>"));
+    // Drawer's logo container and logo
+    Div drawerLogo = new Div();
+		drawerLogo.addClassName("drawer__logo")
+			.add(new Img("https://i.ibb.co/1n4n1Nh/logo.png", "logo"));
 		drawer.add(drawerLogo);
 
-		// Drawer's Menu
-		TabbedPane drawerMenu = new TabbedPane();
-		drawer.add(drawerMenu);
+    // Drawer's Menu
+    TabbedPane drawerMenu = new TabbedPane();
+    drawer.add(drawerMenu);
 
 		// Setting drawer menu's attributes
-		drawerMenu.setAttribute("nobody", "true");
-		drawerMenu.setAttribute("borderless", "true");
-		drawerMenu.setAttribute("placement", "left");
+    drawerMenu.hideBody(true);
+		drawerMenu.setBorderless(true);
+		drawerMenu.setPlacement(TabbedPane.Placement.LEFT);
 
 		// Adding tabs to drawer menu
-		drawerMenu.add("<bbj-icon name='dashboard'></bbj-icon>      Dashboard")
-				.add("<bbj-icon name='shopping-cart'></bbj-icon>  Orders")
-				.add("<bbj-icon name='users'></bbj-icon>          Customers")
-				.add("<bbj-icon name='box'></bbj-icon>            Products")
-				.add("<bbj-icon name='files'></bbj-icon>          Documents")
-				.add("<bbj-icon name='checklist'></bbj-icon>      Tasks")
-				.add("<bbj-icon name='chart-dots-2'></bbj-icon>   Analytics");
+		drawerMenu.addTab("<bbj-icon name='dashboard'></bbj-icon>      Dashboard");
+		drawerMenu.addTab("<bbj-icon name='shopping-cart'></bbj-icon>  Orders");
+		drawerMenu.addTab("<bbj-icon name='users'></bbj-icon>          Customers");
+		drawerMenu.addTab("<bbj-icon name='box'></bbj-icon>            Products");
+		drawerMenu.addTab("<bbj-icon name='files'></bbj-icon>          Documents");
+		drawerMenu.addTab("<bbj-icon name='checklist'></bbj-icon>      Tasks");
+		drawerMenu.addTab("<bbj-icon name='chart-dots-2'></bbj-icon>   Analytics");
 
 		drawerMenu.onSelect(this::onTabChange);
 		// Content
-		this.contentLabel = new Label();
-		demo.addToContent(
-				new Label("<html><h1>Application Title</h1></html>"),
-				this.contentLabel);
+    demo.addToContent(new H1("Application Title"), this.contentLabel);
+
 
 		// Adding the additional toolbar with menu items
-		Panel secondToolbar = new Panel();
+		Div secondToolbar = new Div();
 		secondToolbar.addClassName("layout__second__header");
 		demo.addToHeader(secondToolbar);
 		TabbedPane secondMenu = new TabbedPane();
 		secondToolbar.add(secondMenu);
-		secondMenu.setAttribute("nobody", "true")
-				.setAttribute("borderless", "true")
-				.add("<bbj-icon name='report-money'></bbj-icon> Sales")
-				.add("<bbj-icon name='building'></bbj-icon> Enterprise")
-				.add("<bbj-icon name='credit-card'></bbj-icon> Payments")
-				.add("<bbj-icon name='history'></bbj-icon> History");
+		secondMenu.hideBody(true);
+		secondMenu.setBorderless(true);
+
+		secondMenu.addTab("<bbj-icon name='report-money'></bbj-icon> Sales");
+		secondMenu.addTab("<bbj-icon name='building'></bbj-icon> Enterprise");
+		secondMenu.addTab("<bbj-icon name='credit-card'></bbj-icon> Payments");
+		secondMenu.addTab("<bbj-icon name='history'></bbj-icon> History");
 	}
 
-	private void onTabChange(TabSelectEvent ev) {
-		String value = ev.getTitle().replaceAll("<[^>]*>", "").trim();
-		contentLabel.setText("<html><p>Content for " + value + " goes here</p></html>");
-	}
+  private void onTabChange(TabSelectEvent ev) {
+    String value = ev.getTab().getText().replaceAll("<[^>]*>", "").trim();
+    contentLabel.setText("Content for " + value + " goes here");
+  }
 }
