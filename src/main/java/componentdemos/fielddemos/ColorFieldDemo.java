@@ -43,7 +43,7 @@ public class ColorFieldDemo extends App {
         .addClassName("display__panel");
     colorDisplay.setSpacing("20px");
 
-    Label title = new Label("Tetradic compliment colors:");
+    Label title = new Label("Tetradic complementary colors:");
 
     colorField.setValue(Color.RED);
     tetradicColor(null);
