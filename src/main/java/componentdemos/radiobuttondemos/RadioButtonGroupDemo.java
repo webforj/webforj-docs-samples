@@ -15,6 +15,7 @@ public class RadioButtonGroupDemo extends App{
     public void run() throws DwcjException {
 
         Frame window = new Frame();
+        window.addClassName("frame");
 
         RadioButton sAgree = new RadioButton("Strongly Agree");
         RadioButton agree = new RadioButton("Agree");
