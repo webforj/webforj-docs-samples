@@ -5,6 +5,7 @@ import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.list.ChoiceBox;
 import org.dwcj.component.tabbedpane.TabbedPane;
 import org.dwcj.component.tabbedpane.TabbedPane.Placement;
+
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 
@@ -13,7 +14,6 @@ import org.dwcj.exceptions.DwcjException;
     display: flex;
     flex-direction: column;
     gap: 50px;
-    width: 100%;
     margin: 20px;
   }
 """)
@@ -33,6 +33,7 @@ public class TabbedPaneSwipe extends App {
     pane.addTab("<bbj-icon name='box'></bbj-icon>            Products");
     pane.addTab("<bbj-icon name='files'></bbj-icon>          Documents");
 
+    pane.setSwipeable(true);
     pane.setSwipeWithMouse(true);
   
   }

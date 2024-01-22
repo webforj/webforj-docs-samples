@@ -16,7 +16,6 @@ import org.dwcj.exceptions.DwcjException;
     display: flex;
     flex-direction: column;
     gap: 50px;
-    width: 100%;
     margin: 20px;
   }
 """)
