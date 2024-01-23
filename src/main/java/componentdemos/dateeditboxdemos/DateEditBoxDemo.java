@@ -6,6 +6,8 @@ import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 
 public class DateEditBoxDemo extends App {
+	
+	MaskedDateField d1 = new MaskedDateField();
 
   @Override
   public void run() throws DwcjException {
@@ -15,8 +17,6 @@ public class DateEditBoxDemo extends App {
     window.setStyle("grid-template-columns", "1fr");
     window.setStyle("padding", "10px");
     window.setStyle("gap", "50px");
-
-    MaskedDateField d1 = new MaskedDateField();
 
     window.add(d1);
 
