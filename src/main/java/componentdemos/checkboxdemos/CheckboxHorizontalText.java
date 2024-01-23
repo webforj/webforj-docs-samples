@@ -18,11 +18,7 @@ import org.dwcj.exceptions.DwcjException;
   }  
 """)
 public class CheckboxHorizontalText extends App {
-  
-  @Override
-  public void run() throws DwcjException {
-    Frame window = new Frame();
-    window.addClassName("frame");
+	
 
     FlexLayout rightAligned = FlexLayout.create()
     .vertical()
@@ -34,6 +30,11 @@ public class CheckboxHorizontalText extends App {
     .align().end()
     .build()
     .setStyle("width", "100px");
+  
+  @Override
+  public void run() throws DwcjException {
+    Frame window = new Frame();
+    window.addClassName("frame");
 
     rightAligned.add(
       new CheckBox("Daily", true),
