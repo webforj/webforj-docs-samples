@@ -5,7 +5,7 @@ import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.Expanse;
 import org.dwcj.component.button.Button;
 import org.dwcj.component.window.Frame;
-import org.dwcj.component.window.Panel;
+import org.dwcj.component.html.elements.Div;
 import org.dwcj.exceptions.DwcjException;
 
 /**
@@ -13,10 +13,12 @@ import org.dwcj.exceptions.DwcjException;
  */
 @InlineStyleSheet("context://css/buttonstyles/expanse_styles.css")
 public class ButtonExpanses extends App {
+	
+	Div container = new Div();
+	
   @Override
   public void run() throws DwcjException {
     Frame window = new Frame();
-    Panel container = new Panel();
     container.addClassName("container");
     window.addClassName("Frame");
 
