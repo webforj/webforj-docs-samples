@@ -6,7 +6,7 @@ import org.dwcj.component.button.Button;
 import org.dwcj.component.dialog.Dialog;
 import org.dwcj.component.field.NumberField;
 import org.dwcj.component.layout.flexlayout.FlexLayout;
-import org.dwcj.component.text.Label;
+import org.dwcj.component.html.elements.Div;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 
@@ -16,6 +16,7 @@ public class DialogPositioning extends App {
   private NumberField xPos = new NumberField();
   private NumberField yPos = new NumberField();
   private Dialog dialog = new Dialog();
+  private Button setPosition = new Button("Set Dialog Position");
 
   @Override
   public void run() throws DwcjException {
@@ -24,21 +25,20 @@ public class DialogPositioning extends App {
     yPos.setStyle("max-width", "25%");
     p.add(dialog);
 
-    FlexLayout xLayout = FlexLayout.create(new Label("X Pixels: "), xPos)
+    FlexLayout xLayout = FlexLayout.create(new Div("X Pixels: "), xPos)
         .horizontal()
         .build();
 
-    FlexLayout yLayout = FlexLayout.create(new Label("Y Pixels : "), yPos)
+    FlexLayout yLayout = FlexLayout.create(new Div("Y Pixels : "), yPos)
         .horizontal()
         .build();
 
-    Button setPosition = new Button("Set Dialog Position");
     setPosition.onClick(e -> {
           dialog.setPosx(xPos.getValue().toString() + "px");
           dialog.setPosy(yPos.getValue().toString() + "px");
         });
 
-    dialog.addToHeader(new Label("Positioning"));
+    dialog.addToHeader(new Div("Positioning"));
     dialog.addToContent(xLayout, yLayout);
     dialog.addToFooter(setPosition);
     dialog.setAutofocus(true);
