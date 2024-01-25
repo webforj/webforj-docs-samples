@@ -8,6 +8,8 @@ import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/textcomboboxstyles/demo_styles.css")
 public class ComboBoxDemo extends App {
+	
+	ComboBox categories = new ComboBox();
 
     @Override
     public void run() throws DwcjException {
@@ -15,7 +17,6 @@ public class ComboBoxDemo extends App {
         Frame window = new Frame();
         window.addClassName("frame");
 
-        ComboBox categories = new ComboBox();
         window.add(categories);
 
         categories.add("Electronics","Electronics");

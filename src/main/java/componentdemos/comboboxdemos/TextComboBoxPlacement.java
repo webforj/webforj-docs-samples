@@ -11,6 +11,12 @@ import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/textcomboboxstyles/placement_styles.css")
 public class TextComboBoxPlacement extends App {
+	
+	 ComboBox tcb1 = new ComboBox();
+	 ComboBox tcb2 = new ComboBox();
+	 ComboBox tcb3 = new ComboBox();
+	 ComboBox tcb4 = new ComboBox();
+	 
   @Override
   public void run() throws DwcjException {
     Frame window = new Frame();
@@ -22,21 +28,21 @@ public class TextComboBoxPlacement extends App {
     data.add(new ListItem("Random Data3", "More Data"));
     data.add(new ListItem("Random Data4", "Test Data"));
 
-    ComboBox tcb1 = new ComboBox().setAttribute("placement", "left")
+    tcb1.setAttribute("placement", "left")
         .setAttribute("placeholder", "Left Menu Placement")
         .setStyle("grid-column", "1")
         .setStyle("justify-self", "end");
 
-    ComboBox tcb2 = new ComboBox().setAttribute("placement", "right")
+    tcb2.setAttribute("placement", "right")
         .setAttribute("placeholder", "Right Menu Placement")
         .setStyle("grid-column", "2");
 
-    ComboBox tcb3 = new ComboBox().setAttribute("placement", "top")
+    tcb3.setAttribute("placement", "top")
         .setAttribute("placeholder", "Top Menu Placement")
         .setStyle("grid-column", "1")
         .setStyle("justify-self", "end");
 
-    ComboBox tcb4 = new ComboBox().setAttribute("placement", "bottom")
+    tcb4.setAttribute("placement", "bottom")
         .setAttribute("placeholder", "Bottom Menu Placement")
         .setStyle("grid-column", "2");
 
