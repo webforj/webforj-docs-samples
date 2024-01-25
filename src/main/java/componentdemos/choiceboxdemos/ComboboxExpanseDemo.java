@@ -15,13 +15,11 @@ import org.dwcj.exceptions.DwcjException;
 public class ComboboxExpanseDemo extends App {
 	
 	Div container = new Div();
-	
 	ChoiceBox cb1 = new ChoiceBox();
 	ChoiceBox cb2 = new ChoiceBox();
 	ChoiceBox cb3 = new ChoiceBox();
 	ChoiceBox cb4 = new ChoiceBox();
 	ChoiceBox cb5 = new ChoiceBox();
-	
 	
   @Override
   public void run() throws DwcjException {
@@ -35,7 +33,6 @@ public class ComboboxExpanseDemo extends App {
     data.add(new ListItem("Random Data2", "Some Data"));
     data.add(new ListItem("Random Data3", "More Data"));
     data.add(new ListItem("Random Data4", "Test Data"));
-    
     
     cb1.setExpanse(Expanse.XSMALL)
         .insert("Extra Small")
