@@ -4,7 +4,7 @@ import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.button.Button;
 import org.dwcj.component.dialog.Dialog;
-import org.dwcj.component.text.Label;
+import org.dwcj.component.html.elements.Div;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 
@@ -27,7 +27,7 @@ public class DialogBackdropBlur extends App {
     Frame p = new Frame();
     p.add(dialog);
     dialog.addClassName("loginForm");
-    dialog.addToHeader(new Label("Background Blur"));
+    dialog.addToHeader(new Div("Background Blur"));
     dialog.addToContent(backgroundBlur);
     dialog.setCloseable(false);
     dialog.open();

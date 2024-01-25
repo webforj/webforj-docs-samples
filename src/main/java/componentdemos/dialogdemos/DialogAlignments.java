@@ -4,7 +4,7 @@ import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.list.ChoiceBox;
 import org.dwcj.component.dialog.Dialog;
-import org.dwcj.component.text.Label;
+import org.dwcj.component.html.elements.Div;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 
@@ -25,7 +25,7 @@ public class DialogAlignments extends App {
     options.selectIndex(1);
     options.onSelect(e -> dialog.setAlignment((Dialog.Alignment) e.getSelectedItem().getKey()));
 
-    dialog.addToHeader(new Label("Alignments"));
+    dialog.addToHeader(new Div("Alignments"));
     dialog.addToContent(options)
         .setStyle("display", "flex")
         .setStyle("justify-content", "center");
