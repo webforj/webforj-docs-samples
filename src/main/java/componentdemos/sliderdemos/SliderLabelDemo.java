@@ -4,25 +4,27 @@ import java.util.Map;
 import static java.util.Map.entry;
 import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.text.Label;
+import org.dwcj.component.element.Element;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 import org.dwcj.component.slider.Slider;
 
 @InlineStyleSheet("context://css/sliderstyles/label_styles.css")
 public class SliderLabelDemo extends App {
+	
+	Slider sl1 = new Slider();
+	Slider sl2 = new Slider();
+	Slider sl3 = new Slider();
+	
   @Override
   public void run() throws DwcjException {
 
     Frame window = new Frame();
     window.addClassName("Frame");
 
-    Slider sl1 = new Slider().setMaximum(100)
-        .setMinimum(0);
-    Slider sl2 = new Slider().setMaximum(100)
-        .setMinimum(0);
-    Slider sl3 = new Slider().setMaximum(100)
-        .setMinimum(0);
+    sl1.setMaximum(100).setMinimum(0);
+    sl2.setMaximum(100).setMinimum(0);
+    sl3.setMaximum(100).setMinimum(0);
 
     Map<Integer, String> mapMatch = Map.ofEntries(
         entry(0, "0"),
@@ -46,15 +48,15 @@ public class SliderLabelDemo extends App {
         entry(85, "85"));
 
     window.add(
-        new Label("<html><b>Labels applied with ticks disabled</b></html>")
+        new Element("<html><b>Labels applied with ticks disabled</b></html>")
             .setStyle("grid-column", "1")
             .setStyle("margin", "5px 0 0 10px"),
         sl1,
-        new Label("<html><b>Labels applied to tick values</b></html>")
+        new Element("<html><b>Labels applied to tick values</b></html>")
             .setStyle("grid-column", "1")
             .setStyle("margin", "5px 0 0 10px"),
         sl2,
-        new Label("<html><b>Labels applied to non-tick values</b></html>")
+        new Element("<html><b>Labels applied to non-tick values</b></html>")
             .setStyle("grid-column", "1")
             .setStyle("margin", "5px 0 0 10px"),
         sl3);

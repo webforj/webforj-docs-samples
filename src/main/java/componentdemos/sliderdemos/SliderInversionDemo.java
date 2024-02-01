@@ -11,6 +11,9 @@ import org.dwcj.component.slider.Slider;
 
 @InlineStyleSheet("context://css/sliderstyles/inversion_styles.css")
 public class SliderInversionDemo extends App {
+	
+	Slider sl1 = new Slider();
+	Slider sl2 = new Slider();
 
   @Override
   public void run() throws DwcjException {
@@ -22,10 +25,8 @@ public class SliderInversionDemo extends App {
         entry(50, "50"),
         entry(100, "100"));
 
-    Slider sl1 = new Slider().setMaximum(100)
-        .setMinimum(0);
-    Slider sl2 = new Slider().setMaximum(100)
-        .setMinimum(0);
+    sl1.setMaximum(100).setMinimum(0);
+    sl2.setMaximum(100).setMinimum(0);
 
     window.add(new Label("<html><b>Original:</b></html>"), sl1,
         new Label("<html><b>Inverted:</b></html>"), sl2);
