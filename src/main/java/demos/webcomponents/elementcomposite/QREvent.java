@@ -47,8 +47,6 @@ public class QREvent extends App {
 
     /**
      * QRCode Generator using Shoelace QRCode component.
-     *
-     * @author Hyyan Abo Fakher
      */
     @JavaScript(
         value = "https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.87/dist/shoelace.js",
