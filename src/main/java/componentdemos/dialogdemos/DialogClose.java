@@ -4,7 +4,7 @@ import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.button.Button;
 import org.dwcj.component.dialog.Dialog;
-import org.dwcj.component.text.Label;
+import org.dwcj.component.html.elements.Div;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 
@@ -23,7 +23,7 @@ public class DialogClose extends App {
         .setStyle("margin-top", "20px")
         .onClick(e -> dialog.open());
 
-    dialog.addToHeader(new Label("Closing the Dialog"));
+    dialog.addToHeader(new Div("Closing the Dialog"));
     dialog.addToContent(closeDialog);
     closeDialog.onClick(e -> dialog.close());
     dialog.setCancelOnEscKey(true);
