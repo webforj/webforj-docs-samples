@@ -12,6 +12,13 @@ import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/textcomboboxstyles/expanse_styles.css")
 public class TextComboBoxExpanses extends App {
+	
+	 ComboBox tcb1 = new ComboBox();
+	 ComboBox tcb2 = new ComboBox();
+	 ComboBox tcb3 = new ComboBox();
+	 ComboBox tcb4 = new ComboBox();
+	 ComboBox tcb5 = new ComboBox();
+			 
   @Override
   public void run() throws DwcjException {
     Frame window = new Frame();
@@ -23,15 +30,15 @@ public class TextComboBoxExpanses extends App {
     data.add(new ListItem("Random Data3", "More Data"));
     data.add(new ListItem("Random Data4", "Test Data"));
 
-    ComboBox tcb1 = new ComboBox().setExpanse(Expanse.XSMALL)
+    tcb1.setExpanse(Expanse.XSMALL)
         .setPlaceholder("XSMALL");
-    ComboBox tcb2 = new ComboBox().setExpanse(Expanse.SMALL)
+    tcb2.setExpanse(Expanse.SMALL)
         .setPlaceholder("SMALL");
-    ComboBox tcb3 = new ComboBox().setExpanse(Expanse.MEDIUM)
+    tcb3.setExpanse(Expanse.MEDIUM)
         .setPlaceholder("MEDIUM");
-    ComboBox tcb4 = new ComboBox().setExpanse(Expanse.LARGE)
+    tcb4.setExpanse(Expanse.LARGE)
         .setPlaceholder("LARGE");
-    ComboBox tcb5 = new ComboBox().setExpanse(Expanse.XLARGE)
+    tcb5.setExpanse(Expanse.XLARGE)
         .setPlaceholder("XLARGE");
 
     window.add(tcb1, tcb2, tcb3, tcb4, tcb5);
