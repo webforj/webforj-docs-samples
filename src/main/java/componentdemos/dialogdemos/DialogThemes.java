@@ -4,7 +4,6 @@ import org.dwcj.App;
 import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.list.ChoiceBox;
 import org.dwcj.component.dialog.Dialog;
-import org.dwcj.component.Theme;
 import org.dwcj.component.html.elements.Div;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
@@ -25,7 +24,7 @@ public class DialogThemes extends App {
     }
 
     options.setLabel("Select Theme")
-        .setStyle("width", "100px")
+        .setStyle("flex", "1")
         .selectIndex(1)
         .onSelect(e -> dialog.setTheme(((org.dwcj.component.Theme) e.getSelectedItem().getKey())));
 

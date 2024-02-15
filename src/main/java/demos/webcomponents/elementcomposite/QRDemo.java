@@ -6,6 +6,7 @@ import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.annotation.JavaScript;
 import org.dwcj.component.element.ElementComposite;
 import org.dwcj.component.element.annotation.NodeName;
+import org.dwcj.component.html.elements.Div;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 
@@ -22,9 +23,11 @@ public class QRDemo extends App {
   public void run() throws DwcjException {
     Frame window = new Frame();
     window.addClassName("frame");
+    Div test = new Div();
+    test.add(qrCode);
 
 
-    window.add(qrCode);
+    window.add(test);
   }
 
   /**

@@ -3,13 +3,17 @@ html {
   overflow: hidden;
 }
 
+/* :root{
+  --dwc-app-layout-drawer-width: 300px;
+} */
+
 .drawer__logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--bbj-space-m) 0;
-  margin-bottom: var(--bbj-space-m);
-  border-bottom: thin solid var(--bbj-color-default) !important;
+  padding: var(--dwc-space-m) 0;
+  margin-bottom: var(--dwc-space-m);
+  border-bottom: thin solid var(--dwc-color-default) !important;
 }
 
 .drawer__logo img {
@@ -20,8 +24,8 @@ html {
 .layout__header {
   display: flex;
   align-items: center;
-  gap: var(--bbj-space-m);
-  padding: 0 var(--bbj-space-m);
+  gap: var(--dwc-space-m);
+  padding: 0 var(--dwc-space-m);
   flex-wrap: wrap;
 }
 
@@ -37,5 +41,5 @@ html {
 
 .layout__second__header {
   flex-basis: 100%;
-  margin: calc(-1 * var(--bbj-space-m) 0 0 0);
+  margin: calc(-1 * var(--dwc-space-m) 0 0 0);
 }

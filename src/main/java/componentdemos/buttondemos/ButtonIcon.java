@@ -34,27 +34,27 @@ public class ButtonIcon extends App {
     notifications = new Button("""
       <html>
         Notifications
-        <bbj-icon name='bell' slot='suffix'></bbj-icon>
+        <dwc-icon name='bell' slot='suffix'></dwc-icon>
       </html>
     """);
 
     settings = new Button("""
       <html>
         Settings
-        <bbj-icon name='settings' slot='suffix'></bbj-icon>
+        <dwc-icon name='settings' slot='suffix'></dwc-icon>
       </html>
     """);
 
     search = new Button("""
       <html>
-        <bbj-icon name='search'></bbj-icon>
+        <dwc-icon name='search'></dwc-icon>
         Search
       </html>
     """);
 
     home = new Button("""
       <html>
-        <bbj-icon name='home'></bbj-icon>
+        <dwc-icon name='home'></dwc-icon>
       </html>
     """);
 
