@@ -36,6 +36,11 @@
             <artifactId>dwcj-code</artifactId>
             <version>24.00-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>org.dwcj</groupId>
+            <artifactId>dwcj-table</artifactId>
+            <version>24.00-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>
