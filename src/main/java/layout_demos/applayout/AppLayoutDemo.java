@@ -66,7 +66,7 @@ public class AppLayoutDemo extends App {
 		drawerMenu.setPlacement(TabbedPane.Placement.LEFT);
 
     // Adding tabs to drawer menu
-    drawerMenu.addTab("<bbj-icon name='dashboard'></bbj-icon>      Dashboardddddd");
+    drawerMenu.addTab("<bbj-icon name='dashboard'></bbj-icon>      Dashboard");
     drawerMenu.addTab("<bbj-icon name='shopping-cart'></bbj-icon>  Orders");
     drawerMenu.addTab("<bbj-icon name='users'></bbj-icon>          Customers");
     drawerMenu.addTab("<bbj-icon name='box'></bbj-icon>            Products");
