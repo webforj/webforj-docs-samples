@@ -61,10 +61,14 @@ public class CompositeDemo extends App {
 
       radioButton.onToggle(e -> {
         if (e.isToggled()) {
+          consoleLog("TEST");
           text.setStyle("text-decoration", "line-through");
         } else {
           text.setStyle("text-decoration", "unset");
         }
+      });
+      radioButton.onCheck( e -> {
+        consoleLog("CHECKED");
       });
     }
   }

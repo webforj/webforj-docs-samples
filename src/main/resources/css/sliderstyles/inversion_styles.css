@@ -1,22 +1,17 @@
-.BBjWindow {
-  background-color: white !important;
-}
-
 .Frame {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
   gap: 50px;
-  background: white;
   width: 100%;
   align-items: center;
   height: 100%;
 }
 
-bbj-slider {
+dwc-slider {
   width: 400px;
 }
 
-.BBjStaticText {
+dwc-static-text {
   margin-bottom: -40px;
 }

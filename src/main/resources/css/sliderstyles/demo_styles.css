@@ -1,17 +1,13 @@
-.BBjWindow {
-  background-color: white !important;
-}
 
 .Frame {
   display: flex;
   margin-top: 20px;
   gap: 50px;
-  background: white;
   width: 100%;
   justify-content: center;
   height: 100%;
 }
 
-bbj-slider {
+dwc-slider {
   width: 400px;
 }

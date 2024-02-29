@@ -25,7 +25,7 @@ public class RadioButtonGroupDemo extends App{
 
         RadioButtonGroup group = new RadioButtonGroup(sDisagree, disagree, neutral, agree, sAgree);
 
-        FlexLayout layout = FlexLayout.create(group)
+        FlexLayout layout = FlexLayout.create(group,sDisagree, disagree, neutral, agree, sAgree)
         .vertical()
         .wrap().wrap()
         .build()

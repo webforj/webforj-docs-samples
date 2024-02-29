@@ -1,17 +1,13 @@
 .Frame {
-  display: inline-grid;
+  display: flex;
+  flex-direction: column;
   padding: 10px;
   gap: 10px;
   width: 100%;
-  justify-items: center;
-  background: white;
+  align-items: center;
   height: 100%;
 }
 
-bbj-slider {
+dwc-slider {
   width: 500px;
-}
-
-.BBjWindow {
-  background-color: white !important;
 }

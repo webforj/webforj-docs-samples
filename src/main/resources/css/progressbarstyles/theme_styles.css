@@ -9,10 +9,6 @@
   height: 100%;
 }
 
-bbj-progressbar {
+dwc-progressbar {
   width: 400px;
-}
-
-.BBjWindow {
-  background-color: white !important;
 }

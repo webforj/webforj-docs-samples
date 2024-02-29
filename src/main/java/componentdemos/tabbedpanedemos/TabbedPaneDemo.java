@@ -30,14 +30,14 @@ public class TabbedPaneDemo extends App {
     app.addClassName("window");
     app.add(placements, pane);
 
-    pane.addTab("<bbj-icon name='dashboard'></bbj-icon>      Dashboard")
+    pane.addTab("<dwc-icon name='dashboard'></dwc-icon>      Dashboard")
       .setClosable(true);
-    pane.addTab("<bbj-icon name='shopping-cart'></bbj-icon>  Orders");
-    pane.addTab("<bbj-icon name='users'></bbj-icon>          Customers");
-    pane.addTab("<bbj-icon name='box'></bbj-icon>            Products");
-    pane.addTab("<bbj-icon name='files'></bbj-icon>          Documents");
+    pane.addTab("<dwc-icon name='shopping-cart'></dwc-icon>  Orders");
+    pane.addTab("<dwc-icon name='users'></dwc-icon>          Customers");
+    pane.addTab("<dwc-icon name='box'></dwc-icon>            Products");
+    pane.addTab("<dwc-icon name='files'></dwc-icon>          Documents");
 
-    pane.setComponentFor(0, new Button("Test1"));
+    // pane.setComponentFor(0, new Button("Test1"));
 
     pane.setRemoval(Removal.AUTO);
     
