@@ -12,7 +12,7 @@ public class RadioButtonActivation extends App{
   @Override
   public void run() throws DwcjException {
       Frame window = new Frame();
-      window.addClassName("Frame");
+      window.addClassName("frame");
 
       RadioButton autoActivateOne = new RadioButton("Auto Activated");
       autoActivateOne.setActivation(Activation.AUTO)

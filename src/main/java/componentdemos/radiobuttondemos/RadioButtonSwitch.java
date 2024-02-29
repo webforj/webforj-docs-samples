@@ -12,7 +12,7 @@ public class RadioButtonSwitch extends App{
   @Override
   public void run() throws DwcjException {
       Frame window = new Frame();
-      window.addClassName("Frame");
+      window.addClassName("frame");
       window.setStyle("flex-direction", "row");
       
       RadioButton normalButton = new RadioButton("Normal RadioButton")

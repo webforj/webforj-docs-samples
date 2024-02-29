@@ -64,7 +64,7 @@ public class FlexDemo extends App {
         .build();
     rowThree.setItemBasis("50%", city);
     rowThree.setItemBasis("30%", states);
-    zip.setStyle("width", "50px");
+    zip.setStyle("width", "150px");
 
     FlexLayout rowFour = FlexLayout.create(cancel, submit)
         .horizontalReverse()

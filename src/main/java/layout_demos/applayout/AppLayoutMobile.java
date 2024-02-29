@@ -28,12 +28,12 @@ public class AppLayoutMobile extends App {
 
     // Header
     Div logo = new Div();
-		logo.addClassName("bbj-logo")
+		logo.addClassName("dwc-logo")
     .add(new Img("https://i.ibb.co/1n4n1Nh/logo.png", "logo"));
     Strong title = new Strong("DWCJ Application");
 
     header.add(logo, title);
-    header.addClassName("bbj-toolbar");
+    header.addClassName("dwc-toolbar");
 
     demo.addToHeader(header);
     demo.setHeaderReveal(true);
@@ -70,11 +70,11 @@ public class AppLayoutMobile extends App {
     footerMenu.setAlignment(TabbedPane.Alignment.STRETCH);
 
     // Adding tabs to drawer menu
-    footerMenu.addTab("<bbj-icon name='dashboard'></bbj-icon>");
-    footerMenu.addTab("<bbj-icon name='shopping-cart'></bbj-icon>");
-    footerMenu.addTab("<bbj-icon name='users'></bbj-icon>");
-    footerMenu.addTab("<bbj-icon name='box'></bbj-icon>");
-    footerMenu.addTab("<bbj-icon name='files'></bbj-icon>");
+    footerMenu.addTab("<dwc-icon name='dashboard'></dwc-icon>");
+    footerMenu.addTab("<dwc-icon name='shopping-cart'></dwc-icon>");
+    footerMenu.addTab("<dwc-icon name='users'></dwc-icon>");
+    footerMenu.addTab("<dwc-icon name='box'></dwc-icon>");
+    footerMenu.addTab("<dwc-icon name='files'></dwc-icon>");
   }
 
 }

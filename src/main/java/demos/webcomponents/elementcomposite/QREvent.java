@@ -39,7 +39,7 @@ public class QREvent extends App {
 
     window.add(label, qrCode);
     qrCode.setSize(200);
-    qrCode.setColor("#0059B8");
+    qrCode.setColor("#000");
 
     /* Adding an onClick event */
     qrCode.onClick(e -> msgbox("Client X:" + e.getClientX()));

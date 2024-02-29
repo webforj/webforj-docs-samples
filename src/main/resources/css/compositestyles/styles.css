@@ -9,11 +9,11 @@
 
 .todo--display{
   min-width: 30%;
-  box-shadow: var(--bbj-shadow-l);
-  background-color: var(--bbj-surface-3);
-  padding: var(--bbj-space-m);
-  border: thin solid var(--bbj-color-default);
-  border-radius: var(--bbj-border-radius);
+  box-shadow: var(--dwc-shadow-l);
+  background-color: var(--dwc-surface-3);
+  padding: var(--dwc-space-m);
+  border: thin solid var(--dwc-color-default);
+  border-radius: var(--dwc-border-radius);
   padding-bottom: 0px;
   
   @media only screen and (max-width: 1200px) {
@@ -26,7 +26,7 @@
 }
 
 .item__todo--display{
-  border-bottom: 1px solid var(--bbj-color-default) !important;
-  background-color: var(--bbj-surface-3);
-  padding: var(--bbj-space-m) 0;
+  border-bottom: 1px solid var(--dwc-color-default) !important;
+  background-color: var(--dwc-surface-3);
+  padding: var(--dwc-space-m) 0;
 }

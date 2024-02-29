@@ -9,6 +9,7 @@ import org.dwcj.component.html.elements.H3;
 import org.dwcj.component.html.elements.Img;
 import org.dwcj.component.html.elements.Paragraph;
 import org.dwcj.component.layout.applayout.AppLayout;
+import org.dwcj.component.layout.applayout.AppLayout.DrawerPlacement;
 import org.dwcj.component.tabbedpane.TabbedPane;
 import org.dwcj.component.tabbedpane.event.TabSelectEvent;
 import org.dwcj.component.window.Frame;
@@ -32,13 +33,13 @@ public class AppLayoutDemo extends App {
     demo.setDrawerFooterVisible(true);
 
     demo.addToDrawerTitle(new Div("Menu"));
-    demo.addToDrawerHeaderActions(new Element("bbj-icon-button")
+    demo.addToDrawerHeaderActions(new Element("dwc-icon-button")
         .setAttribute("name", "pin"));
     demo.addToDrawerFooter(new Paragraph("All rights reserved"));
 
     // Header
     header.addClassName("layout__header").add(
-        new Div().setHtml("<bbj-icon-button name='menu-2' data-drawer-toggle><bbj-icon-button>"),
+        new Div().setHtml("<dwc-icon-button name='menu-2' data-drawer-toggle><dwc-icon-button>"),
         new H3("DWCJ Application"));
     demo.addToHeader(header);
 
@@ -57,22 +58,18 @@ public class AppLayoutDemo extends App {
     drawer.add(drawerMenu);
 
     // Setting drawer menu's attributes
-    // drawerMenu.setAttribute("nobody", "true");
-    // drawerMenu.setAttribute("borderless", "true");
-    // drawerMenu.setAttribute("placement", "left");
-
     drawerMenu.hideBody(true);
 		drawerMenu.setBorderless(true);
 		drawerMenu.setPlacement(TabbedPane.Placement.LEFT);
 
     // Adding tabs to drawer menu
-    drawerMenu.addTab("<bbj-icon name='dashboard'></bbj-icon>      Dashboard");
-    drawerMenu.addTab("<bbj-icon name='shopping-cart'></bbj-icon>  Orders");
-    drawerMenu.addTab("<bbj-icon name='users'></bbj-icon>          Customers");
-    drawerMenu.addTab("<bbj-icon name='box'></bbj-icon>            Products");
-    drawerMenu.addTab("<bbj-icon name='files'></bbj-icon>          Documents");
-    drawerMenu.addTab("<bbj-icon name='checklist'></bbj-icon>      Tasks");
-    drawerMenu.addTab("<bbj-icon name='chart-dots-2'></bbj-icon>   Analytics");
+    drawerMenu.addTab("<dwc-icon name='dashboard'></dwc-icon>      Dashboard");
+    drawerMenu.addTab("<dwc-icon name='shopping-cart'></dwc-icon>  Orders");
+    drawerMenu.addTab("<dwc-icon name='users'></dwc-icon>          Customers");
+    drawerMenu.addTab("<dwc-icon name='box'></dwc-icon>            Products");
+    drawerMenu.addTab("<dwc-icon name='files'></dwc-icon>          Documents");
+    drawerMenu.addTab("<dwc-icon name='checklist'></dwc-icon>      Tasks");
+    drawerMenu.addTab("<dwc-icon name='chart-dots-2'></dwc-icon>   Analytics");
 
     drawerMenu.onSelect(this::onTabChange);
 
