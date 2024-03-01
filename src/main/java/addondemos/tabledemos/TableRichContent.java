@@ -30,15 +30,15 @@ import org.dwcj.exceptions.DwcjException;
 
       .table::part(avatar-subtext) {
         font-size: 0.8em;
-        color: var(--bbj-color-gray-text-light);
+        color: var(--dwc-color-gray-text-light);
       }
 
       .table::part(badge-low) {
-        color: var(--bbj-color-success-text);
+        color: var(--dwc-color-success-text);
       }
 
       .table::part(badge-high) {
-        color: var(--bbj-color-danger-text);
+        color: var(--dwc-color-danger-text);
       }
     """)
 public class TableRichContent extends App {

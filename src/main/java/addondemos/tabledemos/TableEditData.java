@@ -22,7 +22,7 @@ public class TableEditData extends App {
     table.addColumn("Genre", MusicRecord::getMusicType);
 
     VoidElementRenderer<MusicRecord> editRenderer =
-        new VoidElementRenderer<>("bbj-icon-button", ev -> {
+        new VoidElementRenderer<>("dwc-icon-button", ev -> {
           editor.edit(ev.getItem());
         });
     editRenderer.setAttribute("name", "pencil-pin");
