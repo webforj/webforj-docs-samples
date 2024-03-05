@@ -69,6 +69,8 @@ public class DataTable extends App {
   Table<JsonObject> buildTable() {
     Table<JsonObject> table = new Table<>();
     table.setStyle("height", "400px");
+    table.setSelectionMode(Table.SelectionMode.MULTIPLE);
+    table.setHeaderCheckboxSelection(false);
 
     List<String> columnsList = Arrays.asList("athlete", "age", "country", "year", "total");
 

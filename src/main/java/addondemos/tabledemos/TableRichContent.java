@@ -7,40 +7,7 @@ import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.window.Frame;
 import org.dwcj.exceptions.DwcjException;
 
-@InlineStyleSheet(/* css */"""
-      .table {
-        width: 100vw;
-        height: 100vh;
-      }
-
-      .table::part(avatar-renderer) {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .table::part(avatar-img) {
-        border-radius: 50%;
-      }
-
-      .table::part(avatar-text) {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .table::part(avatar-subtext) {
-        font-size: 0.8em;
-        color: var(--dwc-color-gray-text-light);
-      }
-
-      .table::part(badge-low) {
-        color: var(--dwc-color-success-text);
-      }
-
-      .table::part(badge-high) {
-        color: var(--dwc-color-danger-text);
-      }
-    """)
+@InlineStyleSheet("context://css/tablestyles/richcontent/styles.css")
 public class TableRichContent extends App {
 
   @Override
