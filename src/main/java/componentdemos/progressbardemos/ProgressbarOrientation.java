@@ -1,11 +1,11 @@
 package componentdemos.progressbardemos;
 
-import org.dwcj.App;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.window.Frame;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.component.window.Frame;
+import com.webforj.exceptions.WebforjException;
 
-import org.dwcj.component.progressbar.ProgressBar;
+import com.webforj.component.progressbar.ProgressBar;
 
 @InlineStyleSheet("context://css/progressbarstyles/orientation_styles.css")
 public class ProgressbarOrientation extends App {
@@ -14,7 +14,7 @@ public class ProgressbarOrientation extends App {
   ProgressBar pb2;
 
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
     Frame window = new Frame();
     window.addClassName("Frame");
 

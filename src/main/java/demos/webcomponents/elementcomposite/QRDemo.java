@@ -1,14 +1,14 @@
 package demos.webcomponents.elementcomposite;
 
-import org.dwcj.App;
-import org.dwcj.annotation.Attribute;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.annotation.JavaScript;
-import org.dwcj.component.element.ElementComposite;
-import org.dwcj.component.element.annotation.NodeName;
-import org.dwcj.component.html.elements.Div;
-import org.dwcj.component.window.Frame;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.annotation.Attribute;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.annotation.JavaScript;
+import com.webforj.component.element.ElementComposite;
+import com.webforj.component.element.annotation.NodeName;
+import com.webforj.component.html.elements.Div;
+import com.webforj.component.window.Frame;
+import com.webforj.exceptions.WebforjException;
 
 @InlineStyleSheet(/* css */"""
   .frame{
@@ -20,7 +20,7 @@ public class QRDemo extends App {
   QRCode qrCode = new QRCode();
   
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
     Frame window = new Frame();
     window.addClassName("frame");
     Div test = new Div();

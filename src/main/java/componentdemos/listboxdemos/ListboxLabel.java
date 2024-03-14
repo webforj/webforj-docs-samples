@@ -3,17 +3,17 @@ package componentdemos.listboxdemos;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.dwcj.App;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.concern.HasHorizontalAlignment;
-import org.dwcj.component.window.Frame;
-import org.dwcj.component.list.ListBox;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.concern.HasHorizontalAlignment;
+import com.webforj.component.window.Frame;
+import com.webforj.component.list.ListBox;
+import com.webforj.exceptions.WebforjException;
 
 @InlineStyleSheet("context://css/listboxstyles/label_styles.css")
 public class ListboxLabel extends App {
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
     Frame window = new Frame();
     window.addClassName("Frame");
 

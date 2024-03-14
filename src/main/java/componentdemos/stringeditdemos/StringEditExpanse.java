@@ -1,15 +1,15 @@
 package componentdemos.stringeditdemos;
 
-import org.dwcj.App;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.window.Frame;
-import org.dwcj.exceptions.DwcjException;
-import org.dwcj.component.maskedtextfield.MaskedTextField;
+import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.component.window.Frame;
+import com.webforj.exceptions.WebforjException;
+import com.webforj.component.maskedtextfield.MaskedTextField;
 
 @InlineStyleSheet("context://css/stringeditboxstyles/string_edit_styles.css")
 public class StringEditExpanse extends App {
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
     Frame window = new Frame();
     window.addClassName("Frame")
         .setStyle("display", "flex");

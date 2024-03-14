@@ -1,12 +1,12 @@
 package componentdemos.buttondemos;
 
-import org.dwcj.App;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.button.Button;
-import org.dwcj.component.button.ButtonTheme;
-import org.dwcj.component.window.Frame;
-import org.dwcj.component.window.Panel;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.component.button.Button;
+import com.webforj.component.button.ButtonTheme;
+import com.webforj.component.window.Frame;
+import com.webforj.component.window.Panel;
+import com.webforj.exceptions.WebforjException;
 
 /**
  * Application to show the disabled functionality of a button.
@@ -14,7 +14,7 @@ import org.dwcj.exceptions.DwcjException;
 @InlineStyleSheet("context://css/buttonstyles/disable_styles.css")
 public class ButtonDisable_OLD extends App {
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
     Frame window = new Frame();
     Panel disabled = new Panel();
     final int THEME_NUM = 4;

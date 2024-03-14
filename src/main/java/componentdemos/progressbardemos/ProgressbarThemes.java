@@ -1,15 +1,15 @@
 package componentdemos.progressbardemos;
 
-import org.dwcj.App;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.window.Frame;
-import org.dwcj.exceptions.DwcjException;
-import org.dwcj.component.progressbar.ProgressBar;
+import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.component.window.Frame;
+import com.webforj.exceptions.WebforjException;
+import com.webforj.component.progressbar.ProgressBar;
 
 @InlineStyleSheet("context://css/progressbarstyles/theme_styles.css")
 public class ProgressbarThemes extends App {
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
     Frame window = new Frame();
     window.addClassName("Frame");
 

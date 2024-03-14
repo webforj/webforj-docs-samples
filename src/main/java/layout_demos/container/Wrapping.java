@@ -1,16 +1,16 @@
 package layout_demos.container;
 
-import org.dwcj.App;
-import org.dwcj.component.button.Button;
-import org.dwcj.component.button.ButtonTheme;
-import org.dwcj.component.layout.flexlayout.FlexLayout;
-import org.dwcj.component.window.Frame;
-import org.dwcj.component.window.Panel;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.component.button.Button;
+import com.webforj.component.button.ButtonTheme;
+import com.webforj.component.layout.flexlayout.FlexLayout;
+import com.webforj.component.window.Frame;
+import com.webforj.component.window.Panel;
+import com.webforj.exceptions.WebforjException;
 
 public class Wrapping extends App {
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
 
     Frame page = new Frame();
     Panel container = new Panel();

@@ -1,16 +1,16 @@
 package componentdemos.checkboxdemos;
 // package control_demos.checkboxdemos;
 
-// import org.dwcj.App;
-// import org.dwcj.component.window.Frame;
-// import org.dwcj.component.optioninput.CheckBox;
+// import com.webforj.App;
+// import com.webforj.component.window.Frame;
+// import com.webforj.component.optioninput.CheckBox;
 
-// import org.dwcj.component.checkbox.event.CheckBoxChangeEvent;
-// import org.dwcj.exceptions.DwcjException;
+// import com.webforj.component.checkbox.event.CheckBoxChangeEvent;
+// import com.webforj.exceptions.WebforjException;
 
 // public class CheckboxDemo extends App {
 // @Override
-// public void run() throws DwcjException {
+// public void run() throws WebforjException {
 
 // Frame window = new Frame();
 // window.setStyle("display", "inline-grid");

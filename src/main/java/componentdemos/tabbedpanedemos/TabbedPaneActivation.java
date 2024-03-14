@@ -1,12 +1,12 @@
 package componentdemos.tabbedpanedemos;
 
-import org.dwcj.App;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.optioninput.RadioButton;
-import org.dwcj.component.tabbedpane.TabbedPane;
-import org.dwcj.component.tabbedpane.TabbedPane.Activation;
-import org.dwcj.component.window.Frame;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.component.optioninput.RadioButton;
+import com.webforj.component.tabbedpane.TabbedPane;
+import com.webforj.component.tabbedpane.TabbedPane.Activation;
+import com.webforj.component.window.Frame;
+import com.webforj.exceptions.WebforjException;
 
 @InlineStyleSheet(/*css */"""
   .window {
@@ -22,7 +22,7 @@ public class TabbedPaneActivation extends App {
   RadioButton activation = RadioButton.Switch("Manual");
 
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
     Frame app = new Frame();
     app.addClassName("window");
     app.add(activation, pane);

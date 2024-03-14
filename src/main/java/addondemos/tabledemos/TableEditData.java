@@ -1,18 +1,18 @@
 package addondemos.tabledemos;
 
-import org.dwcj.App;
-import org.dwcj.addons.table.Column;
-import org.dwcj.addons.table.Table;
-import org.dwcj.addons.table.renderer.VoidElementRenderer;
-import org.dwcj.component.window.Frame;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.component.table.Column;
+import com.webforj.component.table.Table;
+import com.webforj.component.table.renderer.VoidElementRenderer;
+import com.webforj.component.window.Frame;
+import com.webforj.exceptions.WebforjException;
 
 public class TableEditData extends App {
   TitleEditorComponent editor = new TitleEditorComponent();
   Table<MusicRecord> table = new Table<>();
 
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
 
     table.setStyle("width", "100vw");
     table.setStyle("height", "100vh");

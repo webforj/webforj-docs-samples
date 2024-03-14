@@ -1,20 +1,20 @@
 package layout_demos.applayout;
 
-import org.dwcj.App;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.element.Element;
-import org.dwcj.component.html.elements.Div;
-import org.dwcj.component.html.elements.H1;
-import org.dwcj.component.html.elements.H3;
-import org.dwcj.component.html.elements.Img;
-import org.dwcj.component.html.elements.Paragraph;
-import org.dwcj.component.layout.applayout.AppLayout;
-import org.dwcj.component.text.Label;
-import org.dwcj.component.tabbedpane.TabbedPane;
-import org.dwcj.component.tabbedpane.event.TabSelectEvent;
-import org.dwcj.component.window.Frame;
-import org.dwcj.component.window.Panel;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.component.element.Element;
+import com.webforj.component.html.elements.Div;
+import com.webforj.component.html.elements.H1;
+import com.webforj.component.html.elements.H3;
+import com.webforj.component.html.elements.Img;
+import com.webforj.component.html.elements.Paragraph;
+import com.webforj.component.layout.applayout.AppLayout;
+import com.webforj.component.text.Label;
+import com.webforj.component.tabbedpane.TabbedPane;
+import com.webforj.component.tabbedpane.event.TabSelectEvent;
+import com.webforj.component.window.Frame;
+import com.webforj.component.window.Panel;
+import com.webforj.exceptions.WebforjException;
 
 @InlineStyleSheet("context://css/applayoutstyles/applayout_styles.css")
 public class AppLayoutMultipleHeaders extends App {
@@ -26,7 +26,7 @@ public class AppLayoutMultipleHeaders extends App {
 	Div drawer = new Div();
 
 	@Override
-	public void run() throws DwcjException {
+	public void run() throws WebforjException {
 		Frame window = new Frame();
 		window.add(demo);
 

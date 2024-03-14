@@ -1,15 +1,15 @@
 package componentdemos.fielddemos;
 
 import java.awt.Color;
-import org.dwcj.App;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.event.ModifyEvent;
-import org.dwcj.component.field.ColorField;
-import org.dwcj.component.layout.flexlayout.FlexLayout;
-import org.dwcj.component.text.Label;
-import org.dwcj.component.window.Frame;
-import org.dwcj.component.window.Panel;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.component.event.ModifyEvent;
+import com.webforj.component.field.ColorField;
+import com.webforj.component.layout.flexlayout.FlexLayout;
+import com.webforj.component.text.Label;
+import com.webforj.component.window.Frame;
+import com.webforj.component.window.Panel;
+import com.webforj.exceptions.WebforjException;
 
 @InlineStyleSheet("context://css/fieldstyles/color_field_styles.css")
 public class ColorFieldDemo extends App {
@@ -19,7 +19,7 @@ public class ColorFieldDemo extends App {
   Panel[] colors;
 
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
 
     Frame window = new Frame();
     window.addClassName("main__window");

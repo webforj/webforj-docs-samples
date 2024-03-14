@@ -1,14 +1,14 @@
 package addondemos.tabledemos;
 
-import org.dwcj.App;
-import org.dwcj.addons.table.Table;
-import org.dwcj.component.window.Frame;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.component.table.Table;
+import com.webforj.component.window.Frame;
+import com.webforj.exceptions.WebforjException;
 
 public class TableSorting extends App {
 
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
 
     Table<MusicRecord> table = new Table<>();
     table.setStyle("width", "100vw");

@@ -1,14 +1,14 @@
 package componentdemos.navigatordemos;
 
 
-import org.dwcj.App;
-import org.dwcj.addons.table.Table;
-import org.dwcj.component.layout.flexlayout.FlexAlignment;
-import org.dwcj.component.layout.flexlayout.FlexLayout;
-import org.dwcj.component.navigator.Navigator;
-import org.dwcj.component.window.Frame;
-import org.dwcj.data.repository.Repository;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.component.table.Table;
+import com.webforj.component.layout.flexlayout.FlexAlignment;
+import com.webforj.component.layout.flexlayout.FlexLayout;
+import com.webforj.component.navigator.Navigator;
+import com.webforj.component.window.Frame;
+import com.webforj.data.repository.Repository;
+import com.webforj.exceptions.WebforjException;
 
 import addondemos.tabledemos.MusicRecord;
 import addondemos.tabledemos.Service;
@@ -16,7 +16,7 @@ import addondemos.tabledemos.Service;
 public class NavigatorTable extends App {
 
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
     Repository<MusicRecord> repo = Service.getMusicRecords();
 
     Navigator nav = new Navigator(repo, Navigator.Layout.PAGES);

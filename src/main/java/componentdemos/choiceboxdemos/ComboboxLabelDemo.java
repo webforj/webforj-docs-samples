@@ -1,11 +1,11 @@
 package componentdemos.choiceboxdemos;
 
-import org.dwcj.App;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.window.Frame;
-import org.dwcj.component.html.elements.Div;
-import org.dwcj.component.list.ChoiceBox;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.component.window.Frame;
+import com.webforj.component.html.elements.Div;
+import com.webforj.component.list.ChoiceBox;
+import com.webforj.exceptions.WebforjException;
 
 @InlineStyleSheet("context://css/comboboxstyles/label_styles.css")
 public class ComboboxLabelDemo extends App {
@@ -14,7 +14,7 @@ public class ComboboxLabelDemo extends App {
 	 Div container = new Div();
 	    
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
     Frame window = new Frame();
     window.addClassName("Frame");
 

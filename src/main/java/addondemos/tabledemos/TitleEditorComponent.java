@@ -1,17 +1,17 @@
 package addondemos.tabledemos;
 
 import java.util.EventObject;
-import org.dwcj.component.Composite;
-import org.dwcj.component.button.Button;
-import org.dwcj.component.button.ButtonTheme;
-import org.dwcj.component.dialog.Dialog;
-import org.dwcj.component.event.KeypressEvent;
-import org.dwcj.component.field.TextField;
-import org.dwcj.component.html.elements.H3;
-import org.dwcj.component.layout.flexlayout.FlexLayout;
-import org.dwcj.dispatcher.EventDispatcher;
-import org.dwcj.dispatcher.EventListener;
-import org.dwcj.dispatcher.ListenerRegistration;
+import com.webforj.component.Composite;
+import com.webforj.component.button.Button;
+import com.webforj.component.button.ButtonTheme;
+import com.webforj.component.dialog.Dialog;
+import com.webforj.component.event.KeypressEvent;
+import com.webforj.component.field.TextField;
+import com.webforj.component.html.elements.H3;
+import com.webforj.component.layout.flexlayout.FlexLayout;
+import com.webforj.dispatcher.EventDispatcher;
+import com.webforj.dispatcher.EventListener;
+import com.webforj.dispatcher.ListenerRegistration;
 
 /**
  * A component that allows the user to edit a MusicRecord title.

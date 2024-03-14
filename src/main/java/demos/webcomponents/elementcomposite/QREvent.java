@@ -3,21 +3,21 @@ package demos.webcomponents.elementcomposite;
 import java.awt.Color;
 import java.util.Map;
 
-import org.dwcj.App;
-import org.dwcj.annotation.Attribute;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.annotation.JavaScript;
-import org.dwcj.component.element.ElementComposite;
-import org.dwcj.component.element.PropertyDescriptor;
-import org.dwcj.component.element.annotation.EventName;
-import org.dwcj.component.element.annotation.EventOptions;
-import org.dwcj.component.element.annotation.NodeName;
-import org.dwcj.component.event.ComponentEvent;
-import org.dwcj.component.html.elements.Div;
-import org.dwcj.component.window.Frame;
-import org.dwcj.dispatcher.EventListener;
-import org.dwcj.dispatcher.ListenerRegistration;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.annotation.Attribute;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.annotation.JavaScript;
+import com.webforj.component.element.ElementComposite;
+import com.webforj.component.element.PropertyDescriptor;
+import com.webforj.component.element.annotation.EventName;
+import com.webforj.component.element.annotation.EventOptions;
+import com.webforj.component.element.annotation.NodeName;
+import com.webforj.component.event.ComponentEvent;
+import com.webforj.component.html.elements.Div;
+import com.webforj.component.window.Frame;
+import com.webforj.dispatcher.EventListener;
+import com.webforj.dispatcher.ListenerRegistration;
+import com.webforj.exceptions.WebforjException;
 
 @InlineStyleSheet(/* css */"""
   .frame{
@@ -33,7 +33,7 @@ public class QREvent extends App {
   QRCode qrCode = new QRCode("www.dwcj.org");
 
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
     Frame window = new Frame();
     window.addClassName("frame");
 

@@ -2,17 +2,17 @@ package componentdemos.sliderdemos;
 
 import java.util.Map;
 import static java.util.Map.entry;
-import org.dwcj.App;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.text.Label;
-import org.dwcj.component.window.Frame;
-import org.dwcj.exceptions.DwcjException;
-import org.dwcj.component.slider.Slider;
+import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.component.text.Label;
+import com.webforj.component.window.Frame;
+import com.webforj.exceptions.WebforjException;
+import com.webforj.component.slider.Slider;
 
 @InlineStyleSheet("context://css/sliderstyles/label_styles.css")
 public class SliderLabelDemo extends App {
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
 
     Frame window = new Frame();
     window.addClassName("Frame");

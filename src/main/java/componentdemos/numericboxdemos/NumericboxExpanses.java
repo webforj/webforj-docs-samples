@@ -1,16 +1,16 @@
 package componentdemos.numericboxdemos;
 
-import org.dwcj.App;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.window.Frame;
-import org.dwcj.component.window.Panel;
-import org.dwcj.exceptions.DwcjException;
-import org.dwcj.component.maskednumberfield.MaskedNumberField;
+import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.component.window.Frame;
+import com.webforj.component.window.Panel;
+import com.webforj.exceptions.WebforjException;
+import com.webforj.component.maskednumberfield.MaskedNumberField;
 
 @InlineStyleSheet("context://css/numericboxstyles/expanse_styles.css")
 public class NumericboxExpanses extends App {
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
 
     Frame window = new Frame();
     Panel container = new Panel();

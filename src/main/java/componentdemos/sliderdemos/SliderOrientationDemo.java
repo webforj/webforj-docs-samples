@@ -2,17 +2,17 @@ package componentdemos.sliderdemos;
 
 import java.util.Map;
 import static java.util.Map.entry;
-import org.dwcj.App;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.window.Frame;
-import org.dwcj.exceptions.DwcjException;
-import org.dwcj.component.slider.Slider;
-import org.dwcj.component.slider.Slider.Orientation;
+import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.component.window.Frame;
+import com.webforj.exceptions.WebforjException;
+import com.webforj.component.slider.Slider;
+import com.webforj.component.slider.Slider.Orientation;
 
 @InlineStyleSheet("context://css/sliderstyles/orientation_styles.css")
 public class SliderOrientationDemo extends App {
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
     Frame window = new Frame();
     window.addClassName("Frame");
 

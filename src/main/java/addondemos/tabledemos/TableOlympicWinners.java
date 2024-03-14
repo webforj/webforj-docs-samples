@@ -6,17 +6,17 @@ import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import java.util.Arrays;
 import java.util.List;
-import org.dwcj.App;
-import org.dwcj.addons.table.Column;
-import org.dwcj.addons.table.Table;
-import org.dwcj.component.window.Frame;
-import org.dwcj.exceptions.DwcjException;
-import org.dwcj.utilities.Assets;
+import com.webforj.App;
+import com.webforj.component.table.Column;
+import com.webforj.component.table.Table;
+import com.webforj.component.window.Frame;
+import com.webforj.exceptions.WebforjException;
+import com.webforj.utilities.Assets;
 
 public class TableOlympicWinners extends App {
 
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
 
     Table<JsonObject> table = new Table<>();
     table.setStyle("width", "100vw");

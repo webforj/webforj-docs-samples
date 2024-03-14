@@ -2,13 +2,13 @@ package componentdemos.comboboxdemos;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.dwcj.App;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.window.Frame;
-import org.dwcj.component.Expanse;
-import org.dwcj.component.list.ComboBox;
-import org.dwcj.component.list.ListItem;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.component.window.Frame;
+import com.webforj.component.Expanse;
+import com.webforj.component.list.ComboBox;
+import com.webforj.component.list.ListItem;
+import com.webforj.exceptions.WebforjException;
 
 @InlineStyleSheet("context://css/textcomboboxstyles/expanse_styles.css")
 public class TextComboBoxExpanses extends App {
@@ -20,7 +20,7 @@ public class TextComboBoxExpanses extends App {
 	 ComboBox tcb5 = new ComboBox();
 			 
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
     Frame window = new Frame();
     window.addClassName("Frame");
 

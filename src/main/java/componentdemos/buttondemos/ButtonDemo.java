@@ -1,14 +1,14 @@
 package componentdemos.buttondemos;
 
-import org.dwcj.App;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.button.Button;
-import org.dwcj.component.button.ButtonTheme;
-import org.dwcj.component.field.TextField;
-import org.dwcj.component.field.TextField.Type;
-import org.dwcj.component.layout.flexlayout.FlexLayout;
-import org.dwcj.component.window.Frame;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.component.button.Button;
+import com.webforj.component.button.ButtonTheme;
+import com.webforj.component.field.TextField;
+import com.webforj.component.field.TextField.Type;
+import com.webforj.component.layout.flexlayout.FlexLayout;
+import com.webforj.component.window.Frame;
+import com.webforj.exceptions.WebforjException;
 
 /**
  * Simple demo application to display button functionality.
@@ -23,7 +23,7 @@ public class ButtonDemo extends App {
   TextField email;
 
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
 
     Frame window = new Frame();
     window.addClassName("window");

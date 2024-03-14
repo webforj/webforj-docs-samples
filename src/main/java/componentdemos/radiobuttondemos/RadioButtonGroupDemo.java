@@ -1,18 +1,18 @@
 package componentdemos.radiobuttondemos;
 
-import org.dwcj.App;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.window.Frame;
-import org.dwcj.exceptions.DwcjException;
-import org.dwcj.component.layout.flexlayout.FlexLayout;
-import org.dwcj.component.optioninput.RadioButton;
-import org.dwcj.component.optioninput.RadioButtonGroup;
+import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.component.window.Frame;
+import com.webforj.exceptions.WebforjException;
+import com.webforj.component.layout.flexlayout.FlexLayout;
+import com.webforj.component.optioninput.RadioButton;
+import com.webforj.component.optioninput.RadioButtonGroup;
 
 @InlineStyleSheet("context://css/radiobuttonstyles/radiobutton_styles.css")
 public class RadioButtonGroupDemo extends App{
 
     @Override
-    public void run() throws DwcjException {
+    public void run() throws WebforjException {
 
         Frame window = new Frame();
         window.addClassName("frame");

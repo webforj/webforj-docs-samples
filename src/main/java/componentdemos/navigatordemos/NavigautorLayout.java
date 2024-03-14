@@ -1,12 +1,12 @@
 package componentdemos.navigatordemos;
 
-import org.dwcj.App;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.layout.flexlayout.FlexLayout;
-import org.dwcj.component.list.ChoiceBox;
-import org.dwcj.component.navigator.Navigator;
-import org.dwcj.component.window.Frame;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.component.layout.flexlayout.FlexLayout;
+import com.webforj.component.list.ChoiceBox;
+import com.webforj.component.navigator.Navigator;
+import com.webforj.component.window.Frame;
+import com.webforj.exceptions.WebforjException;
 
 @InlineStyleSheet(/* css */"""
     .layout {
@@ -19,7 +19,7 @@ public class NavigautorLayout extends App {
   private FlexLayout layout = FlexLayout.create(navLayout, nav).vertical().build();
 
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
     
     layout.addClassName("layout");
     nav.getPaginator().setMax(5);
