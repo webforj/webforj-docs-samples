@@ -6,19 +6,19 @@ import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import java.util.Arrays;
 import java.util.List;
-import org.dwcj.App;
-import org.dwcj.addons.table.Column;
-import org.dwcj.addons.table.Table;
-import org.dwcj.component.field.TextField;
-import org.dwcj.component.layout.flexlayout.FlexLayout;
-import org.dwcj.component.list.ChoiceBox;
-import org.dwcj.component.navigator.Navigator;
-import org.dwcj.component.window.Frame;
-import org.dwcj.data.Paginator;
-import org.dwcj.data.repository.CollectionRepository;
-import org.dwcj.data.repository.Repository;
-import org.dwcj.exceptions.DwcjException;
-import org.dwcj.utilities.Assets;
+import com.webforj.App;
+import com.webforj.component.table.Column;
+import com.webforj.component.table.Table;
+import com.webforj.component.field.TextField;
+import com.webforj.component.layout.flexlayout.FlexLayout;
+import com.webforj.component.list.ChoiceBox;
+import com.webforj.component.navigator.Navigator;
+import com.webforj.component.window.Frame;
+import com.webforj.data.Paginator;
+import com.webforj.data.repository.CollectionRepository;
+import com.webforj.data.repository.Repository;
+import com.webforj.exceptions.WebforjException;
+import com.webforj.utilities.Assets;
 
 public class DataTable extends App {
   private String searchTerm = "";
@@ -26,7 +26,7 @@ public class DataTable extends App {
   private Paginator paginator;
 
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
     List<JsonObject> data = new Gson().fromJson(
         Assets.contentOf(Assets.resolveContextUrl("context://data/olympic-winners.json")),
         new TypeToken<List<JsonObject>>() {});

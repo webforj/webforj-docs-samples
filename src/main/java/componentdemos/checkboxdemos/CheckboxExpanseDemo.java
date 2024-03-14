@@ -1,16 +1,16 @@
 package componentdemos.checkboxdemos;
 
-import org.dwcj.App;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.window.Frame;
-import org.dwcj.component.Expanse;
-import org.dwcj.component.optioninput.CheckBox;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.component.window.Frame;
+import com.webforj.component.Expanse;
+import com.webforj.component.optioninput.CheckBox;
+import com.webforj.exceptions.WebforjException;
 
 @InlineStyleSheet("context://css/checkboxstyles/expanse_styles.css")
 public class CheckboxExpanseDemo extends App {
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
     Frame window = new Frame();
     window.addClassName("Frame");
 

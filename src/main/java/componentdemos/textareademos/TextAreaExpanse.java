@@ -1,16 +1,16 @@
 package componentdemos.textareademos;
 
-import org.dwcj.App;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.window.Frame;
-import org.dwcj.exceptions.DwcjException;
-import org.dwcj.component.window.Panel;
-import org.dwcj.component.textarea.TextArea;
+import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.component.window.Frame;
+import com.webforj.exceptions.WebforjException;
+import com.webforj.component.window.Panel;
+import com.webforj.component.textarea.TextArea;
 
 @InlineStyleSheet("context://css/textareastyles/text_area_styles.css")
 public class TextAreaExpanse extends App {
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
     Frame window = new Frame();
     window.addClassName("Frame")
         .setStyle("display", "flex");

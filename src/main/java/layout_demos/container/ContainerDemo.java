@@ -3,21 +3,21 @@ package layout_demos.container;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import org.dwcj.App;
-import org.dwcj.addons.code.Code;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.list.ChoiceBox;
-import org.dwcj.component.list.event.ListSelectEvent;
-import org.dwcj.component.spinnernumberfield.SpinnerNumberField;
-import org.dwcj.component.layout.flexlayout.FlexAlignment;
-import org.dwcj.component.layout.flexlayout.FlexContentAlignment;
-import org.dwcj.component.layout.flexlayout.FlexDirection;
-import org.dwcj.component.layout.flexlayout.FlexJustifyContent;
-import org.dwcj.component.layout.flexlayout.FlexLayout;
-import org.dwcj.component.layout.flexlayout.FlexWrap;
-import org.dwcj.component.maskednumberfield.event.MaskedNumberFieldModifyEvent;
-import org.dwcj.component.window.Frame;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.component.code.Code;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.component.list.ChoiceBox;
+import com.webforj.component.list.event.ListSelectEvent;
+import com.webforj.component.spinnernumberfield.SpinnerNumberField;
+import com.webforj.component.layout.flexlayout.FlexAlignment;
+import com.webforj.component.layout.flexlayout.FlexContentAlignment;
+import com.webforj.component.layout.flexlayout.FlexDirection;
+import com.webforj.component.layout.flexlayout.FlexJustifyContent;
+import com.webforj.component.layout.flexlayout.FlexLayout;
+import com.webforj.component.layout.flexlayout.FlexWrap;
+import com.webforj.component.maskednumberfield.event.MaskedNumberFieldModifyEvent;
+import com.webforj.component.window.Frame;
+import com.webforj.exceptions.WebforjException;
 
 import layout_demos.helper.Box;
 
@@ -35,7 +35,7 @@ public class ContainerDemo extends App {
   HashMap<String, String> codeSnippetBuilder;
 
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
 
     Frame page = new Frame();
     page.addClassName("app__frame");

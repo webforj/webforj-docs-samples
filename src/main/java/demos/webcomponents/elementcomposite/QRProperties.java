@@ -2,15 +2,15 @@ package demos.webcomponents.elementcomposite;
 
 import java.awt.Color;
 
-import org.dwcj.App;
-import org.dwcj.annotation.Attribute;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.annotation.JavaScript;
-import org.dwcj.component.element.ElementComposite;
-import org.dwcj.component.element.PropertyDescriptor;
-import org.dwcj.component.element.annotation.NodeName;
-import org.dwcj.component.window.Frame;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.annotation.Attribute;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.annotation.JavaScript;
+import com.webforj.component.element.ElementComposite;
+import com.webforj.component.element.PropertyDescriptor;
+import com.webforj.component.element.annotation.NodeName;
+import com.webforj.component.window.Frame;
+import com.webforj.exceptions.WebforjException;
 
 @InlineStyleSheet(/* css */"""
   .frame{
@@ -22,7 +22,7 @@ public class QRProperties extends App {
   QRCode qrCode = new QRCode("www.dwcj.org");
 
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
     Frame window = new Frame();
     window.addClassName("frame");
 

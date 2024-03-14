@@ -3,13 +3,13 @@ package componentdemos.choiceboxdemos;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.dwcj.App;
-import org.dwcj.component.window.Frame;
-import org.dwcj.component.window.Panel;
-import org.dwcj.component.Expanse;
-import org.dwcj.component.list.ChoiceBox;
-import org.dwcj.component.list.event.ListSelectEvent;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.component.window.Frame;
+import com.webforj.component.window.Panel;
+import com.webforj.component.Expanse;
+import com.webforj.component.list.ChoiceBox;
+import com.webforj.component.list.event.ListSelectEvent;
+import com.webforj.exceptions.WebforjException;
 
 public class ComboboxDemo extends App {
 
@@ -17,7 +17,7 @@ public class ComboboxDemo extends App {
     Panel d1;
 
     @Override
-    public void run() throws DwcjException {
+    public void run() throws WebforjException {
         Frame window = new Frame();
         window.setStyle("display", "inline-grid");
         window.setStyle("grid-template-columns", "1fr 1fr");

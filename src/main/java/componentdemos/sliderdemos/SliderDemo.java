@@ -1,17 +1,17 @@
 package componentdemos.sliderdemos;
 
-import org.dwcj.App;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.window.Frame;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.component.window.Frame;
+import com.webforj.exceptions.WebforjException;
 
-import org.dwcj.component.slider.Slider;
+import com.webforj.component.slider.Slider;
 
 @InlineStyleSheet("context://css/sliderstyles/demo_styles.css")
 public class SliderDemo extends App {
 
     @Override
-    public void run() throws DwcjException {
+    public void run() throws WebforjException {
 
         Frame window = new Frame();
         window.addClassName("Frame");

@@ -1,14 +1,14 @@
 package componentdemos.tabbedpanedemos;
 
-import org.dwcj.App;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.Expanse;
-import org.dwcj.component.Theme;
-import org.dwcj.component.layout.flexlayout.FlexLayout;
-import org.dwcj.component.list.ChoiceBox;
-import org.dwcj.component.tabbedpane.TabbedPane;
-import org.dwcj.component.window.Frame;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.component.Expanse;
+import com.webforj.component.Theme;
+import com.webforj.component.layout.flexlayout.FlexLayout;
+import com.webforj.component.list.ChoiceBox;
+import com.webforj.component.tabbedpane.TabbedPane;
+import com.webforj.component.window.Frame;
+import com.webforj.exceptions.WebforjException;
 
 @InlineStyleSheet(/*css */"""
   .window {
@@ -25,7 +25,7 @@ public class TabbedPaneExpanseTheme extends App {
   ChoiceBox expanses = new ChoiceBox("Expanses");
 
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
     Frame app = new Frame();
     app.addClassName("window");
     FlexLayout options = new FlexLayout();

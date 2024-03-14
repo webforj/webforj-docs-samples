@@ -1,12 +1,12 @@
 package componentdemos.checkboxdemos;
 
-import org.dwcj.App;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.window.Frame;
-import org.dwcj.concern.HasTextPosition.Position;
-import org.dwcj.component.layout.flexlayout.FlexLayout;
-import org.dwcj.component.optioninput.CheckBox;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.component.window.Frame;
+import com.webforj.concern.HasTextPosition.Position;
+import com.webforj.component.layout.flexlayout.FlexLayout;
+import com.webforj.component.optioninput.CheckBox;
+import com.webforj.exceptions.WebforjException;
 
 @InlineStyleSheet(/*css */"""
   .frame {
@@ -20,7 +20,7 @@ import org.dwcj.exceptions.DwcjException;
 public class CheckboxHorizontalText extends App {
   
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
     Frame window = new Frame();
     window.addClassName("frame");
 

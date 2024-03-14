@@ -1,11 +1,11 @@
 package componentdemos.buttondemos;
 
-import org.dwcj.App;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.button.Button;
-import org.dwcj.component.button.ButtonTheme;
-import org.dwcj.component.window.Frame;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.component.button.Button;
+import com.webforj.component.button.ButtonTheme;
+import com.webforj.component.window.Frame;
+import com.webforj.exceptions.WebforjException;
 
 /**
  * Simple program to demonstrate the various ButtonThemes.
@@ -13,7 +13,7 @@ import org.dwcj.exceptions.DwcjException;
 @InlineStyleSheet("context://css/buttonstyles/theme_styles.css")
 public class ButtonThemes extends App {
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
     Frame window = new Frame();
     window.addClassName("Frame");
 

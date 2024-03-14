@@ -3,9 +3,9 @@ package addondemos.tabledemos;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import java.util.List;
-import org.dwcj.data.repository.CollectionRepository;
-import org.dwcj.data.repository.Repository;
-import org.dwcj.utilities.Assets;
+import com.webforj.data.repository.CollectionRepository;
+import com.webforj.data.repository.Repository;
+import com.webforj.utilities.Assets;
 
 public final class Service {
 

@@ -1,10 +1,10 @@
 package demos.webcomponents.element;
 
-import org.dwcj.App;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.element.Element;
-import org.dwcj.component.window.Frame;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.component.element.Element;
+import com.webforj.component.window.Frame;
+import com.webforj.exceptions.WebforjException;
 
 @InlineStyleSheet(/* css */"""
   .element--input{
@@ -28,7 +28,7 @@ public class InputDemo extends App {
   Element input = new Element("input");
 
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
     Frame window = new Frame();
     window.setStyle("margin", "20px");
     window.add(input);

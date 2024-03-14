@@ -1,10 +1,10 @@
 package componentdemos.comboboxdemos;
 
-import org.dwcj.App;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.list.ComboBox;
-import org.dwcj.component.window.Frame;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.component.list.ComboBox;
+import com.webforj.component.window.Frame;
+import com.webforj.exceptions.WebforjException;
 
 @InlineStyleSheet("context://css/textcomboboxstyles/demo_styles.css")
 public class ComboBoxDemo extends App {
@@ -12,7 +12,7 @@ public class ComboBoxDemo extends App {
 	ComboBox categories = new ComboBox();
 
     @Override
-    public void run() throws DwcjException {
+    public void run() throws WebforjException {
 
         Frame window = new Frame();
         window.addClassName("frame");

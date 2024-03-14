@@ -1,11 +1,11 @@
 package componentdemos.checkboxdemos;
 
-import org.dwcj.App;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.event.ToggleEvent;
-import org.dwcj.component.optioninput.CheckBox;
-import org.dwcj.component.window.Frame;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.component.event.ToggleEvent;
+import com.webforj.component.optioninput.CheckBox;
+import com.webforj.component.window.Frame;
+import com.webforj.exceptions.WebforjException;
 
 @InlineStyleSheet("context://css/checkboxstyles/indeterminate_styles.css")
 public class CheckboxIndeterminate extends App {
@@ -15,7 +15,7 @@ public class CheckboxIndeterminate extends App {
   CheckBox child2 = new CheckBox("Child 2");
   
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
     Frame window = new Frame();
     window.addClassName("Frame");
 

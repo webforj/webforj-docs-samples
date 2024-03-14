@@ -2,14 +2,14 @@ package componentdemos.choiceboxdemos;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.dwcj.App;
-import org.dwcj.component.window.Frame;
-import org.dwcj.component.button.Button;
-import org.dwcj.component.button.ButtonTheme;
-import org.dwcj.component.list.ChoiceBox;
-import org.dwcj.component.list.ListItem;
-import org.dwcj.exceptions.DwcjException;
-import org.dwcj.annotation.InlineStyleSheet;
+import com.webforj.App;
+import com.webforj.component.window.Frame;
+import com.webforj.component.button.Button;
+import com.webforj.component.button.ButtonTheme;
+import com.webforj.component.list.ChoiceBox;
+import com.webforj.component.list.ListItem;
+import com.webforj.exceptions.WebforjException;
+import com.webforj.annotation.InlineStyleSheet;
 
 @InlineStyleSheet("context://css/comboboxstyles/theme_styles.css")
 public class ComboboxThemeDemo extends App {
@@ -17,7 +17,7 @@ public class ComboboxThemeDemo extends App {
   private static final String THEME = "theme";
 
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
     Frame window = new Frame();
     window.addClassName("Frame");
 

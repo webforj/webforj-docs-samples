@@ -1,12 +1,12 @@
 package componentdemos.listboxdemos;
 
-import org.dwcj.App;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.window.Frame;
-import org.dwcj.component.list.ListBox;
-import org.dwcj.component.list.MultipleSelectableList.SelectionMode;
-import org.dwcj.component.optioninput.RadioButton;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.component.window.Frame;
+import com.webforj.component.list.ListBox;
+import com.webforj.component.list.MultipleSelectableList.SelectionMode;
+import com.webforj.component.optioninput.RadioButton;
+import com.webforj.exceptions.WebforjException;
 
 @InlineStyleSheet(/*css*/"""
   .frame {
@@ -23,7 +23,7 @@ public class ListboxMultipleSelection extends App {
   SelectionMode selection = SelectionMode.SINGLE;
 
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
     Frame window = new Frame();
     window.addClassName("frame");
 

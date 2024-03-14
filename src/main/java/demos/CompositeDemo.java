@@ -1,18 +1,18 @@
 package demos;
 
-import org.dwcj.App;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.Composite;
-import org.dwcj.component.Expanse;
-import org.dwcj.component.event.KeypressEvent;
-import org.dwcj.component.field.TextField;
-import org.dwcj.component.html.elements.Div;
-import org.dwcj.component.html.elements.H1;
-import org.dwcj.component.layout.flexlayout.FlexAlignment;
-import org.dwcj.component.layout.flexlayout.FlexLayout;
-import org.dwcj.component.optioninput.RadioButton;
-import org.dwcj.component.window.Frame;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.component.Composite;
+import com.webforj.component.Expanse;
+import com.webforj.component.event.KeypressEvent;
+import com.webforj.component.field.TextField;
+import com.webforj.component.html.elements.Div;
+import com.webforj.component.html.elements.H1;
+import com.webforj.component.layout.flexlayout.FlexAlignment;
+import com.webforj.component.layout.flexlayout.FlexLayout;
+import com.webforj.component.optioninput.RadioButton;
+import com.webforj.component.window.Frame;
+import com.webforj.exceptions.WebforjException;
 
 @InlineStyleSheet("context://css/compositestyles/styles.css")
 public class CompositeDemo extends App {
@@ -22,7 +22,7 @@ public class CompositeDemo extends App {
   H1 title = new H1("Todos");
 
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
     Frame window = new Frame();
     window.addClassName("frame");
 

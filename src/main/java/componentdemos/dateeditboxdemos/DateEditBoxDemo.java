@@ -1,16 +1,16 @@
 package componentdemos.dateeditboxdemos;
 
-import org.dwcj.App;
-import org.dwcj.component.maskeddatefield.MaskedDateField;
-import org.dwcj.component.window.Frame;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.component.maskeddatefield.MaskedDateField;
+import com.webforj.component.window.Frame;
+import com.webforj.exceptions.WebforjException;
 
 public class DateEditBoxDemo extends App {
 	
 	MaskedDateField d1 = new MaskedDateField();
 
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
 
     Frame window = new Frame();
     window.setStyle("display", "inline-grid");

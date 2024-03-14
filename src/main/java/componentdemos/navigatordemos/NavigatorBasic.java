@@ -1,16 +1,16 @@
 package componentdemos.navigatordemos;
 
-import org.dwcj.App;
-import org.dwcj.component.navigator.Navigator;
-import org.dwcj.component.navigator.event.NavigatorChangeEvent;
-import org.dwcj.component.window.Frame;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.component.navigator.Navigator;
+import com.webforj.component.navigator.event.NavigatorChangeEvent;
+import com.webforj.component.window.Frame;
+import com.webforj.exceptions.WebforjException;
 
 public class NavigatorBasic extends App {
   private int count = 0;
 
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
     Navigator nav = new Navigator("Value: " + String.valueOf(count));
     nav.onChange(e -> {
       NavigatorChangeEvent.Direction direction = e.getDirection();

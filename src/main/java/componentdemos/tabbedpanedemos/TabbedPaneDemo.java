@@ -1,15 +1,15 @@
 package componentdemos.tabbedpanedemos;
 
-import org.dwcj.App;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.button.Button;
-import org.dwcj.component.list.ChoiceBox;
-import org.dwcj.component.tabbedpane.TabbedPane;
-import org.dwcj.component.tabbedpane.TabbedPane.Activation;
-import org.dwcj.component.tabbedpane.TabbedPane.Placement;
-import org.dwcj.component.tabbedpane.TabbedPane.Removal;
-import org.dwcj.component.window.Frame;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.component.button.Button;
+import com.webforj.component.list.ChoiceBox;
+import com.webforj.component.tabbedpane.TabbedPane;
+import com.webforj.component.tabbedpane.TabbedPane.Activation;
+import com.webforj.component.tabbedpane.TabbedPane.Placement;
+import com.webforj.component.tabbedpane.TabbedPane.Removal;
+import com.webforj.component.window.Frame;
+import com.webforj.exceptions.WebforjException;
 
 @InlineStyleSheet(/*css */"""
   .window {
@@ -25,7 +25,7 @@ public class TabbedPaneDemo extends App {
   ChoiceBox placements = new ChoiceBox("Placement");
 
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
     Frame app = new Frame();
     app.addClassName("window");
     app.add(placements, pane);

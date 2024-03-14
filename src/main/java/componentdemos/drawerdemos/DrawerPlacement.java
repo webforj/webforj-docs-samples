@@ -1,12 +1,12 @@
 package componentdemos.drawerdemos;
 
-import org.dwcj.App;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.list.ComboBox;
-import org.dwcj.component.drawer.Drawer;
-import org.dwcj.component.drawer.Drawer.Placement;
-import org.dwcj.component.window.Frame;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.component.list.ComboBox;
+import com.webforj.component.drawer.Drawer;
+import com.webforj.component.drawer.Drawer.Placement;
+import com.webforj.component.window.Frame;
+import com.webforj.exceptions.WebforjException;
 
 @InlineStyleSheet("context://css/drawerstyles/styles.css")
 public class DrawerPlacement extends App {
@@ -15,7 +15,7 @@ public class DrawerPlacement extends App {
   ComboBox placements = new ComboBox();
 
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
     Frame app = new Frame();
     app.add(drawer);
     drawer.add(placements);

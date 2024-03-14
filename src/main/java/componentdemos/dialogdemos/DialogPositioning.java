@@ -1,14 +1,14 @@
 package componentdemos.dialogdemos;
 
-import org.dwcj.App;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.button.Button;
-import org.dwcj.component.dialog.Dialog;
-import org.dwcj.component.field.NumberField;
-import org.dwcj.component.layout.flexlayout.FlexLayout;
-import org.dwcj.component.html.elements.Div;
-import org.dwcj.component.window.Frame;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.component.button.Button;
+import com.webforj.component.dialog.Dialog;
+import com.webforj.component.field.NumberField;
+import com.webforj.component.layout.flexlayout.FlexLayout;
+import com.webforj.component.html.elements.Div;
+import com.webforj.component.window.Frame;
+import com.webforj.exceptions.WebforjException;
 
 @InlineStyleSheet("context://css/dialogstyles/dialog_position_styles.css")
 public class DialogPositioning extends App {
@@ -19,7 +19,7 @@ public class DialogPositioning extends App {
   private Button setPosition = new Button("Set Dialog Position");
 
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
     Frame p = new Frame();
     xPos.setStyle("max-width", "25%");
     yPos.setStyle("max-width", "25%");

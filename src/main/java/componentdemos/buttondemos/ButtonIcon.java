@@ -1,11 +1,11 @@
 package componentdemos.buttondemos;
 
-import org.dwcj.App;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.button.Button;
-import org.dwcj.component.button.ButtonTheme;
-import org.dwcj.component.window.Frame;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.component.button.Button;
+import com.webforj.component.button.ButtonTheme;
+import com.webforj.component.window.Frame;
+import com.webforj.exceptions.WebforjException;
 
 /**
  * Demo application to display icon addition to buttons.
@@ -27,7 +27,7 @@ public class ButtonIcon extends App {
   Button home;
 
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
     Frame window = new Frame();
     window.addClassName("window");
 

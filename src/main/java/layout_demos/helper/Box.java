@@ -1,10 +1,10 @@
 package layout_demos.helper;
 
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.Composite;
-import org.dwcj.component.html.elements.Div;
-import org.dwcj.concern.HasStyle;
-import org.dwcj.concern.HasVisibility;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.component.Composite;
+import com.webforj.component.html.elements.Div;
+import com.webforj.concern.HasStyle;
+import com.webforj.concern.HasVisibility;
 
 @InlineStyleSheet("context://css/flexstyles/box_styles.css")
 public class Box extends Composite<Div> implements HasStyle, HasVisibility{

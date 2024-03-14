@@ -1,16 +1,16 @@
 package componentdemos.labeldemos;
 
-import org.dwcj.App;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.window.Frame;
-import org.dwcj.component.button.Button;
-import org.dwcj.component.text.Label;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.component.window.Frame;
+import com.webforj.component.button.Button;
+import com.webforj.component.text.Label;
+import com.webforj.exceptions.WebforjException;
 
 @InlineStyleSheet("context://css/labelstyles/wrap_styles.css")
 public class LabelLineWrap extends App {
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
     Frame window = new Frame();
     window.addClassName("Frame");
 

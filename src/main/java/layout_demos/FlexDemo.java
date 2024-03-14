@@ -1,16 +1,16 @@
 package layout_demos;
 
-import org.dwcj.App;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.button.Button;
-import org.dwcj.component.button.ButtonTheme;
-import org.dwcj.component.list.ChoiceBox;
-import org.dwcj.component.field.PasswordField;
-import org.dwcj.component.field.TextField;
-import org.dwcj.component.layout.flexlayout.FlexLayout;
-import org.dwcj.component.maskednumberfield.MaskedNumberField;
-import org.dwcj.component.window.Frame;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.component.button.Button;
+import com.webforj.component.button.ButtonTheme;
+import com.webforj.component.list.ChoiceBox;
+import com.webforj.component.field.PasswordField;
+import com.webforj.component.field.TextField;
+import com.webforj.component.layout.flexlayout.FlexLayout;
+import com.webforj.component.maskednumberfield.MaskedNumberField;
+import com.webforj.component.window.Frame;
+import com.webforj.exceptions.WebforjException;
 
 @InlineStyleSheet("context://css/flexstyles/form_styles.css")
 public class FlexDemo extends App {
@@ -27,7 +27,7 @@ public class FlexDemo extends App {
   Button cancel;
 
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
 
     Frame page = new Frame();
 

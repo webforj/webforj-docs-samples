@@ -2,12 +2,12 @@ package componentdemos.comboboxdemos;
 
 import java.util.ArrayList;
 
-import org.dwcj.App;
-import org.dwcj.annotation.InlineStyleSheet;
-import org.dwcj.component.window.Frame;
-import org.dwcj.component.list.ComboBox;
-import org.dwcj.component.list.ListItem;
-import org.dwcj.exceptions.DwcjException;
+import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.component.window.Frame;
+import com.webforj.component.list.ComboBox;
+import com.webforj.component.list.ListItem;
+import com.webforj.exceptions.WebforjException;
 
 @InlineStyleSheet(/* css */"""
   .frame{
@@ -21,7 +21,7 @@ public class ComboBoxPlaceholder extends App {
   ComboBox comboBox = new ComboBox();
 
   @Override
-  public void run() throws DwcjException {
+  public void run() throws WebforjException {
     Frame window = new Frame();
     window.addClassName("frame");
 
