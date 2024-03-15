@@ -20,6 +20,7 @@ public class SplitterAutoSave extends App {
     Splitter topSplitter = new Splitter("topSplitter", topLeft, topRight);
     topSplitter.setPositionRelative(30);
     topSplitter.setAutosave(true);
+    
 
     SplitterBox bottomLeft = new SplitterBox("Bottom Left", SplitterBox.Theme.SUCCESS);
     SplitterBox bottomRight = new SplitterBox("Bottom Right", SplitterBox.Theme.WARNING);
