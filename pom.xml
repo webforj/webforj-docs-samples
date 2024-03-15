@@ -52,7 +52,7 @@
         </dependency>
     </dependencies>
 
-    <build>
+    <!-- <build>
         <finalName>controlsamples</finalName>
         <plugins>
             <plugin>
@@ -73,5 +73,5 @@
                 </configuration>
             </plugin>
         </plugins>
-    </build>
+    </build> -->
 </project>
