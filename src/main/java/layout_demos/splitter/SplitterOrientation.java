@@ -1,11 +1,11 @@
-package componentdemos.splitter;
+package layout_demos.splitter;
 
 import com.webforj.App;
 import com.webforj.component.layout.splitter.Splitter;
 import com.webforj.component.window.Frame;
 import com.webforj.exceptions.WebforjException;
 
-public class SplitterPosition extends App {
+public class SplitterOrientation extends App {
 
   @Override
   public void run() throws WebforjException {
@@ -14,7 +14,7 @@ public class SplitterPosition extends App {
     SplitterBox master = new SplitterBox("Master", SplitterBox.Theme.INFO);
     SplitterBox detail = new SplitterBox("Detail", SplitterBox.Theme.SUCCESS);
     Splitter splitter = new Splitter(master, detail);
-    splitter.setPositionRelative(75);
+    splitter.setOrientation(Splitter.Orientation.VERTICAL);
 
     mainFrame.add(splitter);
   }

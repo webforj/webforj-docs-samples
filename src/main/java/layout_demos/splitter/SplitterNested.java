@@ -1,4 +1,4 @@
-package componentdemos.splitter;
+package layout_demos.splitter;
 
 import com.webforj.App;
 import com.webforj.component.layout.splitter.Splitter;

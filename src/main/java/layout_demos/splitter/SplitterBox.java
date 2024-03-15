@@ -1,4 +1,4 @@
-package componentdemos.splitter;
+package layout_demos.splitter;
 
 import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.Composite;
