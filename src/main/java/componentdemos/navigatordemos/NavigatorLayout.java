@@ -11,9 +11,8 @@ import com.webforj.exceptions.WebforjException;
 @InlineStyleSheet(/* css */"""
     .layout {
       max-width: 400px;
-      margin: 0 auto;
     }""")
-public class NavigautorLayout extends App {
+public class NavigatorLayout extends App {
   private Navigator nav = new Navigator(100);
   private ChoiceBox navLayout = new ChoiceBox();
   private FlexLayout layout = FlexLayout.create(navLayout, nav).vertical().build();

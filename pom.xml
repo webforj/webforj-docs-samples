@@ -50,6 +50,11 @@
             <artifactId>webforj-code</artifactId>
             <version>24.00-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.webforj</groupId>
+            <artifactId>webforj-googlecharts</artifactId>
+            <version>24.00-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>
