@@ -20,6 +20,7 @@ public class NavigatorPages extends App {
     });
 
     Frame mainFrame = new Frame();
+    mainFrame.setStyle("padding", "20px");
     mainFrame.add(text, nav);
   }
 }

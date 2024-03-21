@@ -47,6 +47,7 @@ public class NavigatorLayout extends App {
     });
     
     Frame mainFrame = new Frame();
+    mainFrame.setStyle("padding", "20px");
     mainFrame.add(layout);
   }
 }
