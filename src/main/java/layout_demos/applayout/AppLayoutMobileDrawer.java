@@ -34,7 +34,7 @@ public class AppLayoutMobileDrawer extends App {
 		Div toggle = new Div().setHtml("<dwc-icon-button name='menu-2' data-drawer-toggle><dwc-icon-button>");
     Div logo = new Div();
 		logo.addClassName("dwc-logo").add(
-			new Img("https://i.ibb.co/1n4n1Nh/logo.png", "logo")
+			new Img("https://documentation.webforj.com/img/webforj_icon.svg", "logo")
 		);
     Strong title = new Strong("DWCJ Application");
 
@@ -43,7 +43,6 @@ public class AppLayoutMobileDrawer extends App {
 
     demo.addToHeader(header);
     demo.setHeaderReveal(true);
-    // demo.setDrawerPlacement(DrawerPlacement.HIDDEN);
 
 		// Drawer
 		demo.addToDrawer(drawer);
@@ -52,14 +51,14 @@ public class AppLayoutMobileDrawer extends App {
 		// Drawer's logo container and logo
 		Div drawerLogo = new Div();
 		drawerLogo.addClassName("drawer__logo")
-			.add(new Img("https://i.ibb.co/1n4n1Nh/logo.png", "logo"));
+			.add(new Img("https://documentation.webforj.com/img/webforj_icon.svg", "logo"));
 		drawer.add(drawerLogo);
 
 		// Drawer's Menu
 		TabbedPane drawerMenu = new TabbedPane();
 		drawer.add(drawerMenu);
 
-		drawerMenu.hideBody(true);
+		drawerMenu.setBodyHidden(true);
 		drawerMenu.setBorderless(true);
 		drawerMenu.setPlacement(TabbedPane.Placement.LEFT);
 
@@ -80,14 +79,14 @@ public class AppLayoutMobileDrawer extends App {
           Div content = new Div().addClassName("card");
           content.add(
                 new H2("What is Lorem Ipsum " + i + "?"),
-                new Paragraph("Lorem Ipsum is simply dummy text of the printing and typesetting" +
-                  "industry. Lorem Ipsum has been the industry's standard dummy text" +
-                  "ever since the 1500s when an unknown printer took a galley of type" +
-                  "and scrambled it to make a type specimen book. It has survived not" +
-                  "only five centuries, but also the leap into electronic" +
-                  "typesetting, remaining essentially unchanged. It was popularized" +
-                  "in the 1960s with the release of Letraset sheets containing Lorem" +
-                  "Ipsum passages, and more recently with desktop publishing software" +
+                new Paragraph("Lorem Ipsum is simply dummy text of the printing and typesetting " +
+                  "industry. Lorem Ipsum has been the industry's standard dummy text " +
+                  "ever since the 1500s when an unknown printer took a galley of type " +
+                  "and scrambled it to make a type specimen book. It has survived not " +
+                  "only five centuries, but also the leap into electronic " +
+                  "typesetting, remaining essentially unchanged. It was popularized " +
+                  "in the 1960s with the release of Letraset sheets containing Lorem " +
+                  "Ipsum passages, and more recently with desktop publishing software " +
                   "like Aldus PageMaker including versions of Lorem Ipsum.")
           );
           demo.addToContent(content);
@@ -97,7 +96,7 @@ public class AppLayoutMobileDrawer extends App {
     demo.addToFooter(footerMenu);
     demo.setFooterReveal(true);
 
-    footerMenu.hideBody(true);
+    footerMenu.setBodyHidden(true);
     footerMenu.setBorderless(true);
     footerMenu.setPlacement(TabbedPane.Placement.BOTTOM);
     footerMenu.setAlignment(TabbedPane.Alignment.STRETCH);

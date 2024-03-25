@@ -23,8 +23,8 @@ public class AppLayoutStickyToolbar extends App {
   AppLayout demo = new AppLayout();
   Paragraph contentLabel = new Paragraph();
 
-	Div header = new Div();
-	Div drawer = new Div();
+  Div header = new Div();
+  Div drawer = new Div();
 
   @Override
   public void run() throws WebforjException {
@@ -46,28 +46,23 @@ public class AppLayoutStickyToolbar extends App {
     demo.addToHeader(header);
     demo.setHeaderReveal(true);
 
-  // Drawer
+    // Drawer
     demo.addToDrawer(drawer);
     drawer.addClassName("app-layout-drawer");
 
     // Drawer's logo container and logo
     Div drawerLogo = new Div();
-		drawerLogo.addClassName("drawer__logo")
-			.add(new Img("https://i.ibb.co/1n4n1Nh/logo.png", "logo"));
-		drawer.add(drawerLogo);
+    drawerLogo.addClassName("drawer__logo")
+        .add(new Img("https://documentation.webforj.com/img/webforj_icon.svg", "logo"));
+    drawer.add(drawerLogo);
 
     // Drawer's Menu
     TabbedPane drawerMenu = new TabbedPane();
     drawer.add(drawerMenu);
 
-    // Setting drawer menu's attributes
-    // drawerMenu.setAttribute("nobody", "true");
-    // drawerMenu.setAttribute("borderless", "true");
-    // drawerMenu.setAttribute("placement", "left");
-
-    drawerMenu.hideBody(true);
-		drawerMenu.setBorderless(true);
-		drawerMenu.setPlacement(TabbedPane.Placement.LEFT);
+    drawerMenu.setBodyHidden(true);
+    drawerMenu.setBorderless(true);
+    drawerMenu.setPlacement(TabbedPane.Placement.LEFT);
 
     // Adding tabs to drawer menu
     drawerMenu.addTab("<dwc-icon name='dashboard'></dwc-icon>      Dashboard");
@@ -78,44 +73,37 @@ public class AppLayoutStickyToolbar extends App {
     drawerMenu.addTab("<dwc-icon name='checklist'></dwc-icon>      Tasks");
     drawerMenu.addTab("<dwc-icon name='chart-dots-2'></dwc-icon>   Analytics");
 
-    drawerMenu.onSelect(this::onTabChange);
     // Content
-demo.addToContent(
+    demo.addToContent(
         new H1("Application Title"),
         this.contentLabel);
-        for (int i = 0; i < 10; i++) {
-          Div content = new Div().addClassName("card");
-          content.add(
-                new H2("What is Lorem Ipsum " + i + "?"),
-                new Paragraph("Lorem Ipsum is simply dummy text of the printing and typesetting" +
-                  "industry. Lorem Ipsum has been the industry's standard dummy text" +
-                  "ever since the 1500s when an unknown printer took a galley of type" +
-                  "and scrambled it to make a type specimen book. It has survived not" +
-                  "only five centuries, but also the leap into electronic" +
-                  "typesetting, remaining essentially unchanged. It was popularized" +
-                  "in the 1960s with the release of Letraset sheets containing Lorem" +
-                  "Ipsum passages, and more recently with desktop publishing software" +
-                  "like Aldus PageMaker including versions of Lorem Ipsum.")
-          );
-          demo.addToContent(content);
+    for (int i = 0; i < 10; i++) {
+      Div content = new Div().addClassName("card");
+      content.add(
+          new H2("What is Lorem Ipsum " + i + "?"),
+          new Paragraph("Lorem Ipsum is simply dummy text of the printing and typesetting " +
+              "industry. Lorem Ipsum has been the industry's standard dummy text " +
+              "ever since the 1500s when an unknown printer took a galley of type " +
+              "and scrambled it to make a type specimen book. It has survived not " +
+              "only five centuries, but also the leap into electronic " +
+              "typesetting, remaining essentially unchanged. It was popularized " +
+              "in the 1960s with the release of Letraset sheets containing Lorem " +
+              "Ipsum passages, and more recently with desktop publishing software " +
+              "like Aldus PageMaker including versions of Lorem Ipsum."));
+      demo.addToContent(content);
     }
 
     // Adding the additional toolbar with menu items
-		Div secondToolbar = new Div();
+    Div secondToolbar = new Div();
     secondToolbar.addClassName("layout__second__header");
     demo.addToHeader(secondToolbar);
     TabbedPane secondMenu = new TabbedPane();
-		secondToolbar.add(secondMenu);
-		secondMenu.hideBody(true);
-		secondMenu.setBorderless(true);
-        secondMenu.addTab("<dwc-icon name='report-money'></dwc-icon> Sales");
-        secondMenu.addTab("<dwc-icon name='building'></dwc-icon> Enterprise");
-        secondMenu.addTab("<dwc-icon name='credit-card'></dwc-icon> Payments");
-        secondMenu.addTab("<dwc-icon name='history'></dwc-icon> History");
-  }
-
-  private void onTabChange(TabSelectEvent ev) {
-    // String value = ev.getTitle().replaceAll("<[^>]*>", "").trim();
-    // contentLabel.setText("<html><p>Content for " + value + " goes here</p></html>");
+    secondToolbar.add(secondMenu);
+    secondMenu.hideBody(true);
+    secondMenu.setBorderless(true);
+    secondMenu.addTab("<dwc-icon name='report-money'></dwc-icon> Sales");
+    secondMenu.addTab("<dwc-icon name='building'></dwc-icon> Enterprise");
+    secondMenu.addTab("<dwc-icon name='credit-card'></dwc-icon> Payments");
+    secondMenu.addTab("<dwc-icon name='history'></dwc-icon> History");
   }
 }

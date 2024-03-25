@@ -51,7 +51,7 @@ public class AppLayoutFullNavbar extends App {
     // Drawer's logo container and logo
     Div drawerLogo = new Div();
 		drawerLogo.addClassName("drawer__logo")
-			.add(new Img("https://i.ibb.co/1n4n1Nh/logo.png\" alt=\"logo\" /></div></html>"));
+			.add(new Img("https://documentation.webforj.com/img/webforj_icon.svg"));
 		drawer.add(drawerLogo);
 
     // Drawer's Menu
@@ -59,11 +59,7 @@ public class AppLayoutFullNavbar extends App {
     drawer.add(drawerMenu);
 
     // Setting drawer menu's attributes
-    // drawerMenu.setAttribute("nobody", "true");
-    // drawerMenu.setAttribute("borderless", "true");
-    // drawerMenu.setAttribute("placement", "left");
-
-    drawerMenu.hideBody(true);
+    drawerMenu.setBodyHidden(true);
 		drawerMenu.setBorderless(true);
 		drawerMenu.setPlacement(TabbedPane.Placement.LEFT);
 
