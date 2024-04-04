@@ -8,9 +8,19 @@ import com.webforj.exceptions.WebforjException;
 
 import java.time.LocalTime;
 
-@InlineStyleSheet("context://css/fieldstyles/time_field_styles.css")
-public class TimeFieldDemo extends App {
+@InlineStyleSheet("""
+  .main__window {
+    display: flex;
+    margin: 20px;
+    gap: 100px;
+  }
 
+  .time__input {
+    flex: none;
+    width: 200px;
+  }
+  """)
+public class TimeFieldDemo extends App {
 
   @Override
   public void run() throws WebforjException {
