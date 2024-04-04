@@ -11,15 +11,15 @@ import com.webforj.exceptions.WebforjException;
 import java.time.LocalTime;
 
 @InlineStyleSheet("""
-  .window {
-    display: flex;
-    align-items: flex-end;
-    margin: 20px;
-    gap: 50px;
-    width: 100%;
-    flex-wrap: wrap;
-  }
-  """)
+    .window {
+      display: flex;
+      align-items: flex-end;
+      margin: 20px;
+      gap: 50px;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+    """)
 public class TimeFieldMinMax extends App {
   private final TimeField meeting;
   private final Button confirm;
@@ -27,7 +27,7 @@ public class TimeFieldMinMax extends App {
   public TimeFieldMinMax() {
     meeting = new TimeField(LocalTime.of(12, 30));
     confirm = new Button("Confirm");
-    confirm.setTheme(ButtonTheme.PRIMARY).setEnabled(false);
+    confirm.setTheme(ButtonTheme.PRIMARY);
   }
 
   @Override
@@ -39,6 +39,9 @@ public class TimeFieldMinMax extends App {
     LocalTime min = LocalTime.of(12, 30);
     LocalTime max = LocalTime.of(17, 15);
     String label = "Choose a meeting time between %s and %s:".formatted(min, max);
+    meeting.setMin(min)
+        .setMax(max);
+
     meeting.setLabel(label)
       .onModify(e -> {
         try {
@@ -47,7 +50,7 @@ public class TimeFieldMinMax extends App {
         } catch (IllegalArgumentException __) {
           confirm.setEnabled(false);
         }
+        consoleLog(meeting.getValue() + "");
       });
   }
-
 }
