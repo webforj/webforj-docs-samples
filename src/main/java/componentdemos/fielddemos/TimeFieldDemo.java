@@ -11,7 +11,6 @@ import java.time.LocalTime;
 @InlineStyleSheet("context://css/fieldstyles/time_field_styles.css")
 public class TimeFieldDemo extends App {
 
-
   @Override
   public void run() throws WebforjException {
     Frame window = new Frame();
