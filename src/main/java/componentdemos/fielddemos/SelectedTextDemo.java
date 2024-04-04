@@ -2,12 +2,10 @@ package componentdemos.fielddemos;
 
 import com.webforj.App;
 import com.webforj.annotation.InlineStyleSheet;
-import com.webforj.component.Theme;
 import com.webforj.component.button.Button;
 import com.webforj.component.button.ButtonTheme;
 import com.webforj.component.field.TextField;
 import com.webforj.component.html.elements.Paragraph;
-import com.webforj.component.text.Label;
 import com.webforj.component.window.Frame;
 import com.webforj.exceptions.WebforjException;
 
@@ -28,8 +26,9 @@ public class SelectedTextDemo extends App {
 
   public SelectedTextDemo() {
     input = new TextField(TextField.Type.TEXT)
-      .setValue("Try selecting 'DANGER' to change the button.");
-    confirm = new Button("Get Selection");
+      .setValue("Try selecting 'DANGER' to change the button.")
+      .setPlaceholder("Enter themes, styles or any text, then select a portion");
+    confirm = new Button("Select");
     message = new Paragraph();
     message.setVisible(false);
   }
