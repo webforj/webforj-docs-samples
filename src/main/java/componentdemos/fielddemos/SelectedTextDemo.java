@@ -4,10 +4,13 @@ import com.webforj.App;
 import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.button.Button;
 import com.webforj.component.button.ButtonTheme;
+import com.webforj.component.field.NumberField;
 import com.webforj.component.field.TextField;
 import com.webforj.component.html.elements.Paragraph;
 import com.webforj.component.window.Frame;
 import com.webforj.exceptions.WebforjException;
+
+import java.util.Optional;
 
 @InlineStyleSheet("""
   .window {
@@ -23,14 +26,22 @@ public class SelectedTextDemo extends App {
   private final TextField input;
   private final Button confirm;
   private final Paragraph message;
+  private final NumberField start;
+  private final NumberField end;
 
   public SelectedTextDemo() {
     input = new TextField(TextField.Type.TEXT)
-      .setValue("Try selecting 'DANGER' to change the button.")
+      .setValue("Try selecting DANGER to change the button.")
       .setPlaceholder("Enter themes, styles or any text, then select a portion");
     confirm = new Button("Select");
     message = new Paragraph();
     message.setVisible(false);
+    start = new NumberField()
+      .setMin(0.0)
+      .setMax((double) input.getText().length());
+    end = new NumberField()
+      .setMin(0.0)
+      .setMax((double) input.getText().length());
   }
 
   @Override
@@ -39,7 +50,15 @@ public class SelectedTextDemo extends App {
     window.addClassName("window");
     window.add(input, confirm, message);
 
+    input.onModify(e -> {
+      start.setMax((double) input.getText().length());
+      end.setMax((double) input.getText().length());
+    });
+
     confirm.addClickListener(e -> {
+      int startIndex = getIndex(start);
+      int endIndex = getIndex(end);
+      input.setSelectionRange(startIndex, endIndex);
       String selection = input.getSelectedText();
       try {
         message.setVisible(false);
@@ -50,6 +69,11 @@ public class SelectedTextDemo extends App {
         message.setVisible(true);
       }
     });
+  }
+
+  private int getIndex(NumberField index) {
+    Double value = index.getValue();
+    return value == null ? 0 : value.intValue();
   }
 
 }
