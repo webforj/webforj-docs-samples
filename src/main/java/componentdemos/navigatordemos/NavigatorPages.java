@@ -14,9 +14,9 @@ public class NavigatorPages extends App {
     Navigator nav = new Navigator(100, Navigator.Layout.PAGES);
     nav.getPaginator().setMax(5);
     nav.onChange(e -> {
-      String fromattedText =
-          String.format("Showing %d to %d of 100", e.getStartIndex(), e.getEndIndex());
-      text.setText(fromattedText);
+      String formattedText =
+          String.format("Showing %d to %d of 100", e.getStartIndex() + 1, e.getEndIndex());
+      text.setText(formattedText);
     });
 
     Frame mainFrame = new Frame();
