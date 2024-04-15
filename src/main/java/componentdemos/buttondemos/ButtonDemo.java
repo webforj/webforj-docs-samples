@@ -63,7 +63,7 @@ public class ButtonDemo extends App {
         .wrap()
         .build()
         .setSpacing("20px")
-        .addClassName("row");
+        .addClassName("row", "buttons");
 
     window.add(firstRow, secondRow, thirdRow);
   }

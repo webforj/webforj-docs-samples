@@ -15,6 +15,7 @@ import com.webforj.component.html.elements.Img;
 import com.webforj.component.html.elements.Strong;
 import com.webforj.component.layout.applayout.AppLayout;
 import com.webforj.component.layout.applayout.AppLayout.DrawerPlacement;
+import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.component.text.Label;
 import com.webforj.component.tabbedpane.TabbedPane;
 import com.webforj.component.window.Frame;
@@ -23,7 +24,7 @@ import com.webforj.exceptions.WebforjException;
 
 @InlineStyleSheet("context://css/drawerstyles/drawer_welcome.css")
 public class DrawerWelcome extends App {
-	
+
 	Drawer welcomeDrawer;
 	AppLayout demo = new AppLayout();
 
@@ -49,14 +50,14 @@ public class DrawerWelcome extends App {
 		demo.addToDrawer(drawer);
 		drawer.addClassName("app-layout-drawer");
 		demo.setDrawerPlacement(DrawerPlacement.LEFT);
-		
+
 		// Drawer's logo container and logo
 		Div drawerLogo = new Div();
 		drawerLogo.addClassName("drawer__logo")
-			.add(
-			new Img("https://i.ibb.co/1n4n1Nh/logo.png\" alt=\"logo\" /></div></html>"));
+				.add(
+						new Img("https://i.ibb.co/1n4n1Nh/logo.png\" alt=\"logo\" /></div></html>"));
 		drawer.add(drawerLogo);
-			
+
 		// Drawer's Menu
 		TabbedPane drawerMenu = new TabbedPane();
 		drawer.add(drawerMenu);
@@ -78,26 +79,27 @@ public class DrawerWelcome extends App {
 
 		welcomeDrawer = new Drawer();
 		window.add(welcomeDrawer);
+
 		welcomeDrawer
 				.setPlacement(Placement.BOTTOM)
 				.addClassName("welcome__drawer")
 				.open();
-		welcomeDrawer.add(new Img("""
+
+		FlexLayout layout = FlexLayout.create(new Img("""
 				https://thumb9.shutterstock.com/mosaic_
 				250/177370774/1312166426/stock-vector-handshake-heart-icon-stroke-outline-style
 				-line-vector-isolate-on-white-background-1312166426.jpg
-				"""));
-
-		welcomeDrawer.add(new H2("Welcome to DWCJ"));
-		welcomeDrawer.add(new Div("Lorem Ipsum is simply dummy text of the printing and typesetting industry"));
-		welcomeDrawer.add(new Button("Get Started")
-				.addClassName("welcome__drawer-content")
-				.setTheme(ButtonTheme.PRIMARY)
-				.setExpanse(Expanse.LARGE));
-
+				"""),
+				new H2("Welcome to DWCJ"),
+				new Div("Lorem Ipsum is simply dummy text of the printing and typesetting industry"),
+				new Button("Get Started"))
+				.vertical()
+				.align().center()
+				.build();
+		welcomeDrawer.add(layout);
 		// Content
 		Button openWelcome = new Button("Open Welcome Page");
-		openWelcome.onClick( e -> welcomeDrawer.open());
+		openWelcome.onClick(e -> welcomeDrawer.open());
 
 		demo.addToContent(
 				new H1("Application Title"),
