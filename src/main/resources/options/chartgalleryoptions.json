@@ -1,0 +1,304 @@
+{
+  "geo": {
+    "title": "Geo Chart",
+    "colorAxis": { "colors": ["#4285f4", "#ab48bc"] }
+  },
+  "scatter": {
+    "title": "Scatter Chart",
+    "hAxis": { "title": "Age" },
+    "vAxis": { "title": "Weight" }
+  },
+ "column": {
+    "title": "Annual Sales",
+    "hAxis": {
+      "title": "Year",
+      "minValue": 0,
+      "textStyle": {
+        "bold": true,
+        "fontSize": 12
+      }
+    },
+    "vAxis": {
+      "title": "Sales (in USD)",
+      "minValue": 0,
+      "textStyle": {
+        "bold": true,
+        "fontSize": 12
+      }
+    },
+   "colors": ["#33a852", "#fcbc02"]
+  },
+  "histogram": {
+    "title": "Distribution of Weight",
+    "legend": {
+      "position": "none"
+    },
+    "hAxis": {
+      "title": "Weight",
+      "minValue": 0,
+      "textStyle": {
+        "bold": true,
+        "fontSize": 12,
+        "color": "#4d4d4d"
+      }
+    },
+    "vAxis": {
+      "title": "Frequency",
+      "minValue": 0,
+      "textStyle": {
+        "bold": true,
+        "fontSize": 12,
+        "color": "#4d4d4d"
+      }
+    },
+    "colors": ["#4285f4"]
+  },
+  "bar": {
+    "title": "Comparison of Quarterly Revenue",
+    "bars": "horizontal",
+    "hAxis": {
+      "title": "Total Revenue",
+      "minValue": 0,
+      "format": "currency",
+      "textStyle": {
+        "bold": true,
+        "fontSize": 12,
+        "color": "#4d4d4d"
+      }
+    },
+    "vAxis": {
+      "title": "Quarter",
+      "textStyle": {
+        "bold": true,
+        "fontSize": 12,
+        "color": "#4d4d4d"
+      }
+    },
+    "colors": ["#e0440e"]
+  },
+  "combo": {
+    "title": "Revenue vs. Expenses",
+    "vAxes": {
+      "0": {"title": "Revenue", "minValue": 0},
+      "1": {"title": "Expenses"}
+    },
+    "hAxis": {
+      "title": "Month",
+      "textStyle": {
+        "bold": true,
+        "fontSize": 12,
+        "color": "#4d4d4d"
+      }
+    },
+    "seriesType": "bars",
+    "series": {
+      "0": {"type": "bars", "targetAxisIndex": 0},
+      "1": {"type": "line", "targetAxisIndex": 1, "color": "#e2431e"}
+    }
+  },
+  "area": {
+    "title": "Market Trends",
+    "hAxis": {
+      "title": "Year",
+      "textStyle": {
+        "bold": true,
+        "fontSize": 12,
+        "color": "#4d4d4d"
+      }
+    },
+    "vAxis": {
+      "title": "Value",
+      "textStyle": {
+        "bold": true,
+        "fontSize": 12,
+        "color": "#4d4d4d"
+      }
+    },
+    "isStacked": true,
+    "colors": ["#34a853", "#4285f4", "#fbbc05", "#ea4335"]
+  },
+  "stepped_area": {
+    "title": "Energy Consumption",
+    "hAxis": {
+      "title": "Year",
+      "textStyle": {
+        "bold": true,
+        "fontSize": 12,
+        "color": "#4d4d4d"
+      }
+    },
+    "vAxis": {
+      "title": "Consumption",
+      "textStyle": {
+        "bold": true,
+        "fontSize": 12,
+        "color": "#4d4d4d"
+      }
+    },
+    "isStacked": true,
+    "connectSteps": false,
+    "colors": ["#4285f4", "#db4437"]
+  },
+  "line": {
+    "title": "Annual Growth",
+    "hAxis": {
+      "title": "Year",
+      "textStyle": {
+        "bold": true,
+        "fontSize": 12,
+        "color": "#4d4d4d"
+      }
+    },
+    "vAxis": {
+      "title": "Growth Rate",
+      "textStyle": {
+        "bold": true,
+        "fontSize": 12,
+        "color": "#4d4d4d"
+      }
+    },
+    "lineWidth": 4,
+    "colors": ["#f4b400"]
+  },
+   "pie": {
+    "title": "Social Media Distribution",
+    "is3D": true,
+    "pieSliceText": "percentage",
+    "colors": ["#34a853", "#4285f4", "#fbbc05", "#ea4335"]
+  },
+  "bubble": {
+    "title": "Investment vs. Profit",
+    "hAxis": {
+      "title": "Potential Investment",
+      "textStyle": {
+        "bold": true,
+        "fontSize": 12,
+        "color": "#4d4d4d"
+      }
+    },
+    "vAxis": {
+      "title": "Potential Profit",
+      "textStyle": {
+        "bold": true,
+        "fontSize": 12,
+        "color": "#4d4d4d"
+      }
+    },
+    "bubble": {
+      "textStyle": {
+        "fontSize": 11
+      }
+    },
+    "colorAxis": {
+      "colors": ["#d4c5f9", "#495057"]
+    }
+  },
+  "org": {
+    "title": "Company Organization Structure",
+    "allowHtml": true,
+    "size": "medium",
+    "color": {
+      "fill": "#b7e1cd",
+      "selected": "#c2c2f0"
+    }
+  },
+  "treemap": {
+    "title": "Market Segmentation",
+    "minColor": "#f00",
+    "midColor": "#ddd",
+    "maxColor": "#0d0",
+    "headerHeight": 15,
+    "fontColor": "black",
+    "showScale": true
+  },
+  "table": {
+    "title": "Sales Data",
+    "showRowNumber": true,
+    "width": "100%",
+    "height": "400px",
+    "cssClassNames": {
+      "headerRow": "table-header-row",
+      "tableRow": "table-row",
+      "oddTableRow": "table-odd-row",
+      "selectedTableRow": "table-selected-row",
+      "hoverTableRow": "table-hover-row",
+      "headerCell": "table-header-cell",
+      "tableCell": "table-cell",
+      "rowNumberCell": "table-row-number"
+    }
+  },
+  "gauge": {
+    "title": "Performance Metrics",
+    "greenFrom": 75,
+    "greenTo": 100,
+    "yellowFrom":50,
+    "yellowTo": 75,
+    "redFrom": 0,
+    "redTo": 50,
+    "minorTicks": 5
+  },
+  "candlestick": {
+    "title": "Stock Market Trends",
+    "legend": "none",
+    "bar": { "groupWidth": "20%" },
+    "candlestick": {
+      "fallingColor": { "strokeWidth": 0, "fill": "#a52714" }, 
+      "risingColor": { "strokeWidth": 0, "fill": "#0f9d58" } 
+    }
+  },
+  "sankey": {
+    "title": "Flow of Resources",
+    "sankey": {
+      "link": {
+        "color": {
+          "fill": "#e6e6e6",
+          "fillOpacity": 0.3
+        }
+      }
+    }
+  },
+  "wordtree": {
+    "title": "Word Usage Tree",
+    "wordtree": {
+      "format": "implicit",
+      "word": "open"
+    }
+  },
+  "timeline": {
+    "title": "Presidential Terms",
+    "timeline": {
+      "showRowLabels": false
+    }
+  },
+  "calendar": {
+    "title": "Attendance Calendar",
+    "calendar": {
+      "cellColor": {
+        "stroke": "#fff",
+        "strokeOpacity": 0.5,
+        "strokeWidth": 1,
+        "fill": "#76a7fa"
+      },
+      "focusedCellColor": {
+        "stroke": "#fff",
+        "strokeOpacity": 0.5,
+        "strokeWidth": 1,
+        "fill": "#4285f4"
+      }
+    }
+  },
+  "gantt": {
+    "title": "Project Schedule",
+    "gantt": {
+      "labelStyle": {
+        "fontName": "Arial",
+        "fontSize": 14,
+        "color": "#757575"
+      },
+      "criticalPathEnabled": true
+    }
+  }
+}
+ 
+ 
+

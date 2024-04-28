@@ -16,7 +16,7 @@ public class ChartDemoSettingData extends App{
     
     Frame window = new Frame();
     GoogleChart chart = new GoogleChart(GoogleChart.Type.PIE);
-    chart.setStyle("width", "100%");
+    chart.setStyle("width", "600px");
 
     
     List<Object> data = new ArrayList<>();

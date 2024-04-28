@@ -1,0 +1,268 @@
+{
+  "geo": {
+    "data": [
+      ["Country", "Popularity"],
+      ["Germany", 200],
+      ["United States", 300],
+      ["Brazil", 400],
+      ["Canada", 500],
+      ["France", 600]
+    ]
+  },
+  "scatter": {
+    "data": [
+      ["Age", "Weight"],
+      [8, 12],
+      [4, 5.5],
+      [11, 14],
+      [4, 5],
+      [3, 3.5],
+      [6.5, 7]
+    ]
+  },
+  "column": {
+    "data": [
+      ["Year", "Sales", "Expenses"],
+      ["2014", 1000, 400],
+      ["2015", 1170, 460],
+      ["2016", 660, 1120],
+      ["2017", 1030, 540]
+    ]
+  },
+  "histogram": {
+    "data": [
+      ["Age"],
+      [18],
+      [20],
+      [22],
+      [24],
+      [26],
+      [28],
+      [30]
+    ]
+  },
+  "bar": {
+    "data": [
+      ["Platform", "Reach (in thousands)"],
+      ["Facebook", 1200],
+      ["Instagram", 1500],
+      ["Twitter", 800],
+      ["LinkedIn", 400],
+      ["TikTok", 900]
+    ]
+  },
+  "combo": {
+    "data": [
+      ["Month", "Revenue", "Expenses"],
+      ["January", 800, 500],
+      ["February", 900, 700],
+      ["March", 1000, 600],
+      ["April", 1100, 900]
+    ]
+  },
+  "area": {
+    "data": [
+      ["Month", "Organic", "Paid", "Referral"],
+      ["January", 200, 80, 120],
+      ["February", 300, 100, 140],
+      ["March", 180, 90, 110],
+      ["April", 260, 150, 130]
+    ]
+  },
+  "stepped_area": {
+    "data": [
+      ["Director (Year)", "Rotten Tomatoes", "IMDB"],
+      ["Alfred Hitchcock (1935)", 8.4, 7.9],
+      ["Ridley Scott (1979)", 8.5, 8.4],
+      ["Peter Jackson (2001)", 9.0, 8.8],
+      ["Christopher Nolan (2008)", 9.0, 9.0],
+      ["Martin Scorsese (1980)", 8.7, 8.8]
+    ]
+  },
+  "line": {
+    "data": [
+      ["Year", "Sales", "Expenses"],
+      ["2004", 1000, 400],
+      ["2005", 1170, 460],
+      ["2006", 660, 1120],
+      ["2007", 1030, 540]
+    ]
+  },
+  "pie": {
+    "data": [
+      ["Task", "Hours per Day"],
+      ["Work", 11],
+      ["Eat", 2],
+      ["Commute", 2],
+      ["Watch TV", 2],
+      ["Sleep", 7]
+    ]
+  },
+  "bubble": {
+    "data": [
+      ["ID", "Life Expectancy", "Fertility Rate", "Region", "Population"],
+      ["CAN", 80.66, 1.67, "North America", 33739900],
+      ["DEU", 79.84, 1.36, "Europe", 81902307],
+      ["DNK", 78.6, 1.84, "Europe", 5523095],
+      ["EGY", 72.73, 2.78, "Middle East", 79716203],
+      ["GBR", 80.05, 2, "Europe", 61801570],
+      ["IRN", 72.49, 1.7, "Middle East", 73137148],
+      ["IRQ", 68.09, 4.77, "Middle East", 31090763],
+      ["ISR", 81.55, 2.96, "Middle East", 7485600],
+      ["RUS", 68.6, 1.54, "Europe", 141850000],
+      ["USA", 78.09, 2.05, "North America", 307007000]
+    ]
+  },
+  "org": {
+    "data": [
+      ["Name", "Manager", "Tooltip"],
+      ["President", "", "The President"],
+      ["VP of Sales", "President", "VP of Sales"],
+      ["VP of Marketing", "President", "VP of Marketing"],
+      ["Sales Manager 1", "VP of Sales", "Sales Manager 1"],
+      ["Sales Manager 2", "VP of Sales", "Sales Manager 2"],
+      ["Marketing Manager 1", "VP of Marketing", "Marketing Manager 1"],
+      ["Marketing Manager 2", "VP of Marketing", "Marketing Manager 2"]
+    ]
+  },
+  "treemap": {
+    "data": [
+      ["Location", "Parent", "Market trade volume (size)", "Market increase/decrease (color)"],
+      ["Global", null, 0, 0],
+      ["America", "Global", 0, 0],
+      ["Europe", "Global", 0, 0],
+      ["Asia", "Global", 0, 0],
+      ["Australia", "Global", 0, 0],
+      ["Africa", "Global", 0, 0],
+      ["Brazil", "America", 11, 10],
+      ["USA", "America", 52, 31],
+      ["Mexico", "America", 24, 12],
+      ["Canada", "America", 16, -23],
+      ["France", "Europe", 42, -11],
+      ["Germany", "Europe", 31, -2],
+      ["Sweden", "Europe", 22, -13],
+      ["Italy", "Europe", 17, 4],
+      ["UK", "Europe", 21, -5],
+      ["China", "Asia", 36, 4],
+      ["Japan", "Asia", 20, -12],
+      ["India", "Asia", 40, 63],
+      ["Laos", "Asia", 4, 34],
+      ["Australia2", "Australia", 19, 0], 
+      ["New Zealand", "Australia", 13, -2],
+      ["Egypt", "Africa", 21, 0],
+      ["Congo", "Africa", 10, 12],
+      ["South Africa", "Africa", 30, -23]
+    ]
+  },
+  "table": {
+    "data": [
+      ["Name", "Salary", "Full Time", "Start Date"],
+      ["John Smith", 30000, true, "2019-01-10"],
+      ["Jane Doe", 50000, true, "2020-05-29"],
+      ["Emily Johnson", 45000, false, "2018-06-15"],
+      ["Michael Brown", 55000, true, "2021-03-30"]
+    ]
+  },
+  "gauge": {
+    "data": [
+      ["Label", "Value"],
+      ["Memory", 80],
+      ["CPU", 55],
+      ["Network", 68]
+    ]
+  },
+  "candlestick": {
+    "data": [
+      ["Day", "Low", "Opening", "Closing", "High"],
+      ["Mon", 20, 28, 38, 45],
+      ["Tue", 31, 38, 55, 66],
+      ["Wed", 50, 55, 60, 70],
+      ["Thu", 35, 40, 50, 55],
+      ["Fri", 20, 22, 30, 50]
+    ]
+  },
+  "sankey": {
+    "data": [
+      ["From", "To", "Weight"],
+      ["Brazil", "Portugal", 5],
+      ["Brazil", "France", 1],
+      ["Brazil", "Spain", 1],
+      ["Canada", "Portugal", 1],
+      ["Canada", "France", 5],
+      ["Canada", "England", 1]
+    ]
+  },
+  "wordtree": {
+    "data": [
+      ["Phrases"],
+      ["cats are better than dogs"],
+      ["cats eat kibble"],
+      ["cats are better than hamsters"],
+      ["cats are awesome"],
+      ["cats are people too"],
+      ["cats eat mice"],
+      ["cats meowing"],
+      ["cats in the cradle"],
+      ["cats eat mice"],
+      ["cats in the cradle lyrics"],
+      ["cats eat kibble"],
+      ["cats for adoption"],
+      ["cats are family"],
+      ["cats eat mice"],
+      ["cats are better than kittens"],
+      ["cats are evil"],
+      ["cats are weird"],
+      ["cats eat mice"]
+    ]
+  },
+  "timeline": {
+  "data": [
+    ["Term", "President", 
+      {"type": "date", "label": "Start"}, 
+      {"type": "date", "label": "End"}
+    ],
+    ["1", "George Washington", "Date(1789, 3, 30)", "Date(1797, 2, 4)"],
+    ["2", "John Adams", "Date(1797, 2, 4)", "Date(1801, 2, 4)"],
+    ["3", "Thomas Jefferson", "Date(1801, 2, 4)", "Date(1809, 2, 4)"],
+    ["4", "James Madison", "Date(1809, 2, 4)", "Date(1817, 2, 4)"],
+    ["5", "James Monroe", "Date(1817, 2, 4)", "Date(1825, 2, 4)"]
+  ]
+},
+  "calendar": {
+  "data": [
+    [{"type": "date", "label": "Date"}, {"type": "number", "label": "Attendance"}],
+    ["Date(2022, 0, 1)", 300],
+    ["Date(2022, 0, 4)", 600],
+    ["Date(2022, 0, 5)", 200],
+    ["Date(2022, 0, 7)", 300],
+    ["Date(2022, 0, 8)", 400],
+    ["Date(2022, 0, 11)", 200],
+    ["Date(2022, 0, 14)", 400],
+    ["Date(2022, 0, 18)", 300],
+    ["Date(2022, 0, 19)", 400],
+    ["Date(2022, 0, 21)", 600],
+    ["Date(2022, 0, 22)", 200],
+    ["Date(2022, 0, 26)", 600],
+    ["Date(2022, 0, 29)", 300],
+    ["Date(2022, 0, 31)", 500]
+  ]
+},
+
+"gantt": {
+  "data": [
+    ["Task ID", "Task Name", 
+      {"type": "date", "label": "Start Date"}, 
+      {"type": "date", "label": "End Date"}, 
+      {"type": "number", "label": "Duration"}, 
+      {"type": "number", "label": "Percent Complete"}, 
+      {"type": "string", "label": "Dependencies"}
+    ],
+    ["Research", "Find Topics", "Date(2022, 0, 1)", "Date(2022, 0, 3)", null, 100, null],
+    ["Write", "Draft Outline", "Date(2022, 0, 4)", "Date(2022, 0, 6)", null, 25, "Research"],
+    ["Review", "Revise Draft", "Date(2022, 0, 7)", "Date(2022, 0, 9)", null, 0, "Write"],
+    ["Finalize", "Complete Article", "Date(2022, 0, 10)", "Date(2022, 0, 12)", null, 0, "Review"]
+  ]
+}
+ 
+}
+
