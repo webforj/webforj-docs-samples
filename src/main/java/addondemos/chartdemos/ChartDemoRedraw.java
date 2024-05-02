@@ -65,20 +65,26 @@ public class ChartDemoRedraw extends App {
       for (Map.Entry<String, NumberField> entry : valueFields.entrySet()) {
           String category = entry.getKey();
           NumberField valueField = entry.getValue();
-          Double value = valueField.getValue();
+          Double value = null;
 
-          if (value == null) { 
-              allValuesValid = false;
-              break; 
+          String fieldValue = valueField.getText();
+
+          if (!fieldValue.isEmpty()) {
+              try {
+                  value = Double.parseDouble(fieldValue);
+              } catch (NumberFormatException ex) {
+                  allValuesValid = false;
+                  break;
+              }
           }
-          newData.add(List.of(category, value.intValue())); 
+
+          newData.add(List.of(category, value != null ? value.intValue() : null));
       }
 
       if (allValuesValid) {
           chart.setData(newData);
           chart.redraw();
       }
-
   });
 
     inputGroup.add(redrawButton.setTheme(ButtonTheme.PRIMARY));
