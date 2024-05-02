@@ -58,29 +58,28 @@ public class ChartDemoRedraw extends App {
     redrawButton = new Button("Redraw Chart");
     redrawButton.addClassName("redraw-button");
     redrawButton.addClickListener(e -> {
-    List<Object> newData = new ArrayList<>();
-    newData.add(List.of("Category", "Followers"));
-    boolean allValuesValid = true;
+      List<Object> newData = new ArrayList<>();
+      newData.add(List.of("Category", "Followers"));
+      boolean allValuesValid = true;
 
-    for (Map.Entry<String, NumberField> entry : valueFields.entrySet()) {
-      String category = entry.getKey();
-      NumberField valueField = entry.getValue();
-      Double value = null;
-      try {
-          value = valueField.getValue(); 
-          } catch (NumberFormatException ex) {
-             allValuesValid = false;
-             break; 
-            }
+      for (Map.Entry<String, NumberField> entry : valueFields.entrySet()) {
+          String category = entry.getKey();
+          NumberField valueField = entry.getValue();
+          Double value = valueField.getValue();
 
-            newData.add(List.of(category, value));
-        }
+          if (value == null) { 
+              allValuesValid = false;
+              break; 
+          }
+          newData.add(List.of(category, value.intValue())); 
+      }
 
-    if (allValuesValid) {
-         chart.setData(newData);
-         chart.redraw();
-        } 
-    });
+      if (allValuesValid) {
+          chart.setData(newData);
+          chart.redraw();
+      }
+
+  });
 
     inputGroup.add(redrawButton.setTheme(ButtonTheme.PRIMARY));
     window.add(chart);

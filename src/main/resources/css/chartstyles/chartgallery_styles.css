@@ -4,9 +4,21 @@
     grid-auto-rows: minmax(250px, auto); 
     padding: 20px;
     gap: 20px;
-    margin: 0 auto;
+    margin: 10px;
     height: auto;
     overflow-y: auto;
 	max-height: 100vh;
 }
 
+.chart-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+}
+
+.chartname {
+  margin-bottom: 10px; 
+  font-weight: 700;
+  font-size: 1rem;
+}
