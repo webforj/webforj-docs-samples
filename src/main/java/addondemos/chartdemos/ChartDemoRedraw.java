@@ -17,8 +17,9 @@ import com.webforj.exceptions.WebforjException;
 @InlineStyleSheet("context://css/chartstyles/redrawchart_styles.css")
 public class ChartDemoRedraw extends App {
 
-  GoogleChart chart;
-  Button redrawButton;
+  private GoogleChart chart = new GoogleChart(GoogleChart.Type.COLUMN);
+  private Button redrawButton = new Button("Redraw Chart");
+  private FlexLayout inputGroup = new FlexLayout();
 
   @Override
   public void run() throws WebforjException {
@@ -26,7 +27,6 @@ public class ChartDemoRedraw extends App {
     Frame window = new Frame();
     window.addClassName("window");
 
-    chart = new GoogleChart(GoogleChart.Type.COLUMN);
     chart.setStyle("width", "600px");
 
     Map<String, Object> options = new HashMap<>();
@@ -42,7 +42,6 @@ public class ChartDemoRedraw extends App {
       }
     chart.setData(data);
 
-    FlexLayout inputGroup = new FlexLayout();
     inputGroup.addClassName("input-group");
       
     Map<String, NumberField> valueFields = new HashMap<>();
@@ -55,7 +54,6 @@ public class ChartDemoRedraw extends App {
       valueFields.put(category, valueField);
       }
 
-    redrawButton = new Button("Redraw Chart");
     redrawButton.addClassName("redraw-button");
     redrawButton.addClickListener(e -> {
       List<Object> newData = new ArrayList<>();
