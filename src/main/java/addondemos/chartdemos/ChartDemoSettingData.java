@@ -1,6 +1,7 @@
 package addondemos.chartdemos;
 
 import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.googlecharts.GoogleChart;
 import com.webforj.component.window.Frame;
 import com.webforj.exceptions.WebforjException;
@@ -9,15 +10,24 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@InlineStyleSheet(/*css */"""
+    .window {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  """)
 public class ChartDemoSettingData extends App{
+  
+  GoogleChart chart = new GoogleChart(GoogleChart.Type.PIE);
 
   @Override
   public void run() throws WebforjException {
     
     Frame window = new Frame();
-    GoogleChart chart = new GoogleChart(GoogleChart.Type.PIE);
-    chart.setStyle("width", "600px");
-
+    window.addClassName("window");
+    
+    chart.setStyle("width", "100vh");
     
     List<Object> data = new ArrayList<>();
     data.add(List.of("Region", "Sales"));
@@ -28,7 +38,6 @@ public class ChartDemoSettingData extends App{
     data.add(List.of("Middle East", 80));
     data.add(List.of("Africa", 60));
     chart.setData(data);
-
     
     Map<String, Object> options = new HashMap<>();
     options.put("title", "Sales Distribution by Region");
