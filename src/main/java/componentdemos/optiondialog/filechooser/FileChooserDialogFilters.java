@@ -21,7 +21,7 @@ public class FileChooserDialogFilters extends App {
     filters.add(new FileChooserFilter("Image Files (*.png, *.jpg, *.jpeg)",
         "*.png;*.jpg;*.jpeg"));
 
-    FileChooserDialog dialog = new FileChooserDialog("Choose a file to download", "/Users/habof/bbx", filters);
+    FileChooserDialog dialog = new FileChooserDialog("Choose a file to download", "/usr2/bbx/demos", filters);
     dialog.setRestricted(true);
     dialog.setGridView(true);
     String file = dialog.show();
