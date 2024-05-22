@@ -10,7 +10,7 @@ public class FileChooserDialogBasic extends App {
 
   @Override
   public void run() throws WebforjException {
-    FileChooserDialog dialog = new FileChooserDialog("Choose Directory to save", "/Users/habof/bbx",
+    FileChooserDialog dialog = new FileChooserDialog("Choose Directory to save", "/usr2/bbx/demos",
         FileChooserDialog.SelectionMode.DIRECTORIES);
     dialog.setRestricted(true);
     String directory = dialog.show();
