@@ -14,7 +14,7 @@ public class InputDialogBasic extends App {
     String code = "7ANfB";
     String message = """
         <dwc-alert theme='warning'>
-        Unexpected bad things will happen if you don't read this!
+          <b style='color: inherit'>Unexpected bad things will happen if you don't read this!</b>
         </dwc-alert>
         <br/>
         This will permanently delete the repository, wiki, issues,
@@ -22,10 +22,10 @@ public class InputDialogBasic extends App {
         <br/><br/>
         To confirm, type <b>""" + code + "</b> in the box below";
 
-    InputDialog dialog = new InputDialog(message, "Delete Repository", InputDialog.MessageType.WARNING);
+    InputDialog dialog = new InputDialog(message, "Delete Repository", InputDialog.MessageType.ERROR);
     dialog.setMessageType(InputDialog.MessageType.PLAIN);
     dialog.setFirstButtonText("Delete Repository");
-    dialog.setSecondButtonTheme(ButtonTheme.GRAY);
+    dialog.setSecondButtonTheme(ButtonTheme.OUTLINED_GRAY);
     String input = dialog.show();
 
     if (input.equals(code)) {
