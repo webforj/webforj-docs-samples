@@ -83,10 +83,5 @@ public class ProgressBarOrientation extends App {
 
     Frame window = new Frame();
     window.add(layout);
-
-    ProgressBar bar = new ProgressBar();
-    bar.setMin(0);
-    bar.setMax(100);
-    bar.setValue(50);
   }
 }
