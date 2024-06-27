@@ -22,14 +22,15 @@ public class ComboboxThemeDemo extends App {
     window.addClassName("Frame");
 
     List<ListItem> data = new ArrayList<>();
-    data.add(new ListItem("Random Data1", "Random Data"));
-    data.add(new ListItem("Random Data2", "Some Data"));
+    data.add(new ListItem("Theme Name", "Theme Name"));
+    data.add(new ListItem("Random Data1", "Some Data"));
     data.add(new ListItem("Random Data3", "More Data"));
     data.add(new ListItem("Random Data4", "Test Data"));
 
     for (ButtonTheme theme : ButtonTheme.values()) {
       if (!theme.name().contains("OUTLINE")) {
         ChoiceBox themeChoiceBox = new ChoiceBox();
+        data.set(0,new ListItem("Theme Name", theme.name()));
         themeChoiceBox.insert(data)
             .selectIndex(0);
         window.add(themeChoiceBox.setTheme(theme));
@@ -39,6 +40,7 @@ public class ComboboxThemeDemo extends App {
     for (ButtonTheme theme : ButtonTheme.values()) {
       if (theme.name().contains("OUTLINE")) {
         ChoiceBox themeChoiceBox = new ChoiceBox();
+        data.set(0,new ListItem("Theme Name", theme.name()));
         themeChoiceBox.insert(data)
             .selectIndex(0);
         window.add(themeChoiceBox.setTheme(theme));
