@@ -24,8 +24,8 @@ public class ComboboxThemeDemo extends App {
     List<ListItem> data = new ArrayList<>();
     data.add(new ListItem("Theme Name", "Theme Name"));
     data.add(new ListItem("Random Data1", "Some Data"));
-    data.add(new ListItem("Random Data3", "More Data"));
-    data.add(new ListItem("Random Data4", "Test Data"));
+    data.add(new ListItem("Random Data2", "More Data"));
+    data.add(new ListItem("Random Data3", "Test Data"));
 
     for (ButtonTheme theme : ButtonTheme.values()) {
       if (!theme.name().contains("OUTLINE")) {
