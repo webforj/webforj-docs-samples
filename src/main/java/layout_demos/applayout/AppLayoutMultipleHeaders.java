@@ -20,7 +20,7 @@ import com.webforj.exceptions.WebforjException;
 public class AppLayoutMultipleHeaders extends App {
 
 	AppLayout demo = new AppLayout();
-  Paragraph contentLabel = new Paragraph();
+	Paragraph contentLabel = new Paragraph();
 
 	Div header = new Div();
 	Div drawer = new Div();
@@ -31,35 +31,35 @@ public class AppLayoutMultipleHeaders extends App {
 		window.add(demo);
 
 		demo.setDrawerHeaderVisible(true);
-    demo.setDrawerFooterVisible(true);
+		demo.setDrawerFooterVisible(true);
 
-    demo.addToDrawerTitle(new Div("Menu"));
-    demo.addToDrawerHeaderActions(new Element("dwc-icon-button")
-        .setAttribute("name", "pin"));
-    demo.addToDrawerFooter(new Paragraph("All rights reserved"));
+		demo.addToDrawerTitle(new Div("Menu"));
+		demo.addToDrawerHeaderActions(new Element("dwc-icon-button")
+				.setAttribute("name", "pin"));
+		demo.addToDrawerFooter(new Paragraph("All rights reserved"));
 
 		// Header
-    header.addClassName("layout__header").add(
-        new Div().setHtml("<dwc-icon-button name='menu-2' data-drawer-toggle><dwc-icon-button>"),
-        new H3("DWCJ Application"));
-    demo.addToHeader(header);
+		header.addClassName("layout__header").add(
+				new Div().setHtml("<dwc-icon-button name='menu-2' data-drawer-toggle><dwc-icon-button>"),
+				new H3("DWCJ Application"));
+		demo.addToHeader(header);
 
 		// Drawer
 		drawer.addClassName("app-layout-drawer");
 		demo.addToDrawer(drawer);
 
-    // Drawer's logo container and logo
-    Div drawerLogo = new Div();
+		// Drawer's logo container and logo
+		Div drawerLogo = new Div();
 		drawerLogo.addClassName("drawer__logo")
-			.add(new Img("https://i.ibb.co/1n4n1Nh/logo.png", "logo"));
+				.add(new Img("https://documentation.webforj.com/img/webforj_icon.svg", "logo"));
 		drawer.add(drawerLogo);
 
-    // Drawer's Menu
-    TabbedPane drawerMenu = new TabbedPane();
-    drawer.add(drawerMenu);
+		// Drawer's Menu
+		TabbedPane drawerMenu = new TabbedPane();
+		drawer.add(drawerMenu);
 
 		// Setting drawer menu's attributes
-    drawerMenu.hideBody(true);
+		drawerMenu.hideBody(true);
 		drawerMenu.setBorderless(true);
 		drawerMenu.setPlacement(TabbedPane.Placement.LEFT);
 
@@ -74,8 +74,7 @@ public class AppLayoutMultipleHeaders extends App {
 
 		drawerMenu.onSelect(this::onTabChange);
 		// Content
-    demo.addToContent(new H1("Application Title"), this.contentLabel);
-
+		demo.addToContent(new H1("Application Title"), this.contentLabel);
 
 		// Adding the additional toolbar with menu items
 		Div secondToolbar = new Div();
@@ -83,7 +82,7 @@ public class AppLayoutMultipleHeaders extends App {
 		demo.addToHeader(secondToolbar);
 		TabbedPane secondMenu = new TabbedPane();
 		secondToolbar.add(secondMenu);
-		secondMenu.hideBody(true);
+		secondMenu.setBodyHidden(true);
 		secondMenu.setBorderless(true);
 
 		secondMenu.addTab("<dwc-icon name='report-money'></dwc-icon> Sales");
@@ -92,8 +91,8 @@ public class AppLayoutMultipleHeaders extends App {
 		secondMenu.addTab("<dwc-icon name='history'></dwc-icon> History");
 	}
 
-  private void onTabChange(TabSelectEvent ev) {
-    String value = ev.getTab().getText().replaceAll("<[^>]*>", "").trim();
-    contentLabel.setText("Content for " + value + " goes here");
-  }
+	private void onTabChange(TabSelectEvent ev) {
+		String value = ev.getTab().getText().replaceAll("<[^>]*>", "").trim();
+		contentLabel.setText("Content for " + value + " goes here");
+	}
 }

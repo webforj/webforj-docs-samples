@@ -22,6 +22,7 @@ public class NavigatorTable extends App {
     Navigator nav = new Navigator(repo, Navigator.Layout.PAGES);
     nav.setAutoDisable(true);
     nav.getPaginator().setMax(5);
+    nav.setStyle("margin-right", "20px");
 
     Table<MusicRecord> table = new Table<>();
     table.setStyle("height", "400px");

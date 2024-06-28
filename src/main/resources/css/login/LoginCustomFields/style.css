@@ -1,0 +1,15 @@
+.login-form::part(dialog-modal) {
+  background-color: #263238;
+  background-image: url(https://github.com/webforj/webforj/assets/4313420/b15012c4-e20e-461b-b4d4-3515c82ce3d4);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.login-form dwc-field {
+  width: 100%;
+}
+
+.login-form::part(list) {
+  margin: 0;
+  padding: 0 var(--dwc-space-m);
+}

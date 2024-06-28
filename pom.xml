@@ -6,7 +6,7 @@
 
     <groupId>com.webforj.samples</groupId>
     <artifactId>ControlSamples</artifactId>
-    <version>23.06</version>
+    <version>24.02-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -40,7 +40,7 @@
         <dependency>
             <groupId>com.webforj</groupId>
             <artifactId>webforj</artifactId>
-            <version>24.00-SNAPSHOT</version>
+            <version>${project.version}</version>
             <type>pom</type>
             <!-- <scope>system</scope>
             <systemPath>C:\DWCJ_Files\engine\dwcj-engine\target\dwcj-engine-24.00-SNAPSHOT.jar</systemPath> -->
@@ -48,7 +48,12 @@
         <dependency>
             <groupId>com.webforj</groupId>
             <artifactId>webforj-code</artifactId>
-            <version>24.00-SNAPSHOT</version>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.webforj</groupId>
+            <artifactId>webforj-googlecharts</artifactId>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 
@@ -58,7 +63,7 @@
             <plugin>
                 <groupId>com.webforj</groupId>
                 <artifactId>webforj-install-maven-plugin</artifactId>
-                <version>24.00-SNAPSHOT</version>
+                <version>${project.version}</version>
                 <executions>
                     <execution>
                         <goals>
@@ -67,7 +72,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <deployurl>http://localhost:8888/webforj-install</deployurl>
+                    <deployurl>http://localhost:55008/webforj-install</deployurl>
                     <publishname>controlsamples</publishname>
                     <debug>true</debug>
                 </configuration>
