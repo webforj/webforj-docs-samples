@@ -54,7 +54,7 @@ public class ChartDemoRedraw extends App {
     }
     chart.setData(data);
 
-    // redrawButton.addClassName("redraw-button");
+    redrawButton.addClassName("redraw-button");
     redrawButton.addClickListener(e -> {
       List<Object> newData = new ArrayList<>();
       newData.add(List.of("Category", "Followers"));
