@@ -36,36 +36,33 @@ public class ChartDemoRedraw extends App {
 
     List<Object> data = new ArrayList<>();
     data.add(List.of("Category", "Following"));
-    String[] categories = {"Instagram", "Twitter", "Facebook", "LinkedIn"};
-    for (String category : categories) {
-      data.add(List.of(category, 100));
-      }
-    chart.setData(data);
 
     inputGroup.addClassName("input-group");
-      
+
+    String[] categories = {"Instagram", "Twitter", "Facebook", "LinkedIn"};
     Map<String, NumberField> valueFields = new HashMap<>();
+
     for (String category : categories) {
+      data.add(List.of(category, 100));
       NumberField valueField = new NumberField("Value for " + category);
       valueField.setPlaceholder("");
       valueField.setStep(1.0);
       valueField.addClassName("number-field");
+      valueField.setText("100");
       inputGroup.add(valueField);
       valueFields.put(category, valueField);
-      }
+    }
+    chart.setData(data);
 
-    redrawButton.addClassName("redraw-button");
+    // redrawButton.addClassName("redraw-button");
     redrawButton.addClickListener(e -> {
       List<Object> newData = new ArrayList<>();
       newData.add(List.of("Category", "Followers"));
       boolean allValuesValid = true;
-
-      for (Map.Entry<String, NumberField> entry : valueFields.entrySet()) {
-          String category = entry.getKey();
-          NumberField valueField = entry.getValue();
-          Double value = null;
-
+      for (String category : categories) {
+          NumberField valueField = valueFields.get(category);
           String fieldValue = valueField.getText();
+          Double value = null;
 
           if (!fieldValue.isEmpty()) {
               try {
