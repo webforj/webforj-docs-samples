@@ -66,8 +66,9 @@ public class ComboboxThemeDemo extends App {
 
     mainLayout.setMargin("10px");
     mainLayout.add(filledButtons, outlineButtons);
+    mainLayout.setProperty("overflow-x", "scroll");
     window.add(mainLayout);
-    
+
     }
 
   }
