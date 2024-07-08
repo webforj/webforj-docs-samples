@@ -41,7 +41,7 @@ public class ChartDemoSettingData extends App{
     
     Map<String, Object> options = new HashMap<>();
     options.put("title", "Sales Distribution by Region");
-    options.put("pieHole", 0.3); 
+    options.put("is3D", "true");
     options.put("colors", List.of("#BBDEFB", "#64B5F6", "#1E88E5", "#0D47A1", "#1565C0", "#82B1FF"));
 
     chart.setOptions(options);
