@@ -1,9 +1,5 @@
 package addondemos.chartdemos;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import com.webforj.App;
 import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.button.Button;
@@ -13,6 +9,10 @@ import com.webforj.component.googlecharts.GoogleChart;
 import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.component.window.Frame;
 import com.webforj.exceptions.WebforjException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @InlineStyleSheet("context://css/chartstyles/redrawchart_styles.css")
 public class ChartDemoRedraw extends App {
@@ -23,7 +23,7 @@ public class ChartDemoRedraw extends App {
 
   @Override
   public void run() throws WebforjException {
-    
+
     Frame window = new Frame();
     window.addClassName("window");
 
@@ -60,27 +60,27 @@ public class ChartDemoRedraw extends App {
       newData.add(List.of("Category", "Followers"));
       boolean allValuesValid = true;
       for (String category : categories) {
-          NumberField valueField = valueFields.get(category);
-          String fieldValue = valueField.getText();
-          Double value = null;
+        NumberField valueField = valueFields.get(category);
+        String fieldValue = valueField.getText();
+        Double value = null;
 
-          if (!fieldValue.isEmpty()) {
-              try {
-                  value = Double.parseDouble(fieldValue);
-              } catch (NumberFormatException ex) {
-                  allValuesValid = false;
-                  break;
-              }
+        if (!fieldValue.isEmpty()) {
+          try {
+            value = Double.parseDouble(fieldValue);
+          } catch (NumberFormatException ex) {
+            allValuesValid = false;
+            break;
           }
+        }
 
-          newData.add(List.of(category, value != null ? value.intValue() : null));
+        newData.add(List.of(category, value != null ? value.intValue() : null));
       }
 
       if (allValuesValid) {
-          chart.setData(newData);
-          chart.redraw();
+        chart.setData(newData);
+        chart.redraw();
       }
-  });
+    });
 
     inputGroup.add(redrawButton.setTheme(ButtonTheme.PRIMARY));
     window.add(chart);

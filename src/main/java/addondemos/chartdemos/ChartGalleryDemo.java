@@ -18,52 +18,56 @@ public class ChartGalleryDemo extends App {
 
   @Override
   public void run() throws WebforjException {
-      Frame window = new Frame();
-      window.addClassName("chart-gallery");
+    Frame window = new Frame();
+    window.addClassName("chart-gallery");
 
-      String dataJson = Assets.contentOf("data/chartgallery.json");
-      String optionsJson = Assets.contentOf("options/chartgalleryoptions.json");
+    String dataJson = Assets.contentOf("data/chartgallery.json");
+    String optionsJson = Assets.contentOf("options/chartgalleryoptions.json");
 
-      Gson gson = new Gson();
-      Map<String, Map<String, Object>> chartData = gson.fromJson(dataJson, new TypeToken<Map<String, Map<String, Object>>>(){}.getType());
-      Map<String, Map<String, Object>> chartOptions = gson.fromJson(optionsJson, new TypeToken<Map<String, Map<String, Object>>>(){}.getType());
+    Gson gson = new Gson();
+    Map<String, Map<String, Object>> chartData = gson.fromJson(dataJson, 
+      new TypeToken<Map<String, Map<String, Object>>>(){}.getType());
+    Map<String, Map<String, Object>> chartOptions = gson.fromJson(optionsJson, 
+      new TypeToken<Map<String, Map<String, Object>>>(){}.getType());
 
-      for (Map.Entry<String, Map<String, Object>> entry : chartData.entrySet()) {
-        String chartKey = entry.getKey();
-        GoogleChart chart = new GoogleChart(GoogleChart.Type.valueOf(chartKey.toUpperCase()));
-        Map<String, Object> data = entry.getValue();
-        Map<String, Object> options = chartOptions.get(chartKey);
+    for (Map.Entry<String, Map<String, Object>> entry : chartData.entrySet()) {
+      String chartKey = entry.getKey();
+      GoogleChart chart = new GoogleChart(GoogleChart.Type.valueOf(chartKey.toUpperCase()));
+      Map<String, Object> data = entry.getValue();
+      Map<String, Object> options = chartOptions.get(chartKey);
 
-        if (data != null && options != null) {
-            Div chartDiv = new Div();
-            chartDiv.addClassName("chart-div");
+      if (data != null && options != null) {
+        Div chartDiv = new Div();
+        chartDiv.addClassName("chart-div");
 
-            Paragraph chartName = new Paragraph();
-            String formattedTitle = formatTitle(chartKey);
-            chartName.setText(formattedTitle);
-            chartName.addClassName("chartname");
-            chartDiv.add(chartName);
+        Paragraph chartName = new Paragraph();
+        String formattedTitle = formatTitle(chartKey);
+        chartName.setText(formattedTitle);
+        chartName.addClassName("chartname");
+        chartDiv.add(chartName);
 
-            chart.setOptions(options);
-            chart.setData((List<Object>) data.get("data"));
-            chartDiv.add(chart);
+        chart.setOptions(options);
+        chart.setData((List<Object>) data.get("data"));
+        chartDiv.add(chart);
 
-            window.add(chartDiv);
-        }
+        window.add(chartDiv);
       }
-   }
+    }
+  }
 
   private String formatTitle(String title) {
-    if (title == null || title.isEmpty()) return title;
+    if (title == null || title.isEmpty()) {
+      return title;
+    }
     String[] words = title.replace("_", " ").split("\\s+");
     StringBuilder formattedTitle = new StringBuilder();
 
     for (String word : words) {
-        if (word.length() > 0) {
-            formattedTitle.append(Character.toUpperCase(word.charAt(0)))
-                          .append(word.substring(1).toLowerCase())
-                          .append(" ");
-        }
+      if (word.length() > 0) {
+        formattedTitle.append(Character.toUpperCase(word.charAt(0)))
+                      .append(word.substring(1).toLowerCase())
+                      .append(" ");
+      }
     }
     return formattedTitle.toString().trim() + " Chart";
   }

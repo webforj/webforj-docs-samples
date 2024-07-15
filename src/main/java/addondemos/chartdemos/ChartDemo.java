@@ -15,36 +15,39 @@ public class ChartDemo extends App {
   
   GoogleChart chart = new GoogleChart(GoogleChart.Type.GEO);
 
-    @Override
-  public void run() throws WebforjException {      
-      Frame window = new Frame();      
-     
-      chart.setStyle("width", "100%");
-        
-      Map<String, Object> options = new Gson().fromJson(Assets.contentOf("options/subscribers-chart.json"), new TypeToken<Map<String, Object>>(){}.getType());
-      options.put("legend", "none");
-      chart.setOptions(options);
-       
-      List<Object> data = new ArrayList<>();
+  @Override
+  public void run() throws WebforjException {
+    Frame window = new Frame();
+    chart.setStyle("width", "100%");
 
-      List<String> cols = new ArrayList<>();
-      cols.add("Country");
-      cols.add("Revenue");
-      data.add(cols);
+    Map<String, Object> options = new Gson().fromJson(
+        Assets.contentOf("options/subscribers-chart.json"),
+      new TypeToken<Map<String, Object>>() {}.getType()
+    );
+    options.put("legend", "none");
+    chart.setOptions(options);
 
-      String[] countries = new String[] { "Germany", "United States", "Brazil", "Canada", "France", "RU", "Australia", "South Africa", "China", "Egypt" };
+    List<Object> data = new ArrayList<>();
+    List<String> cols = new ArrayList<>();
+    cols.add("Country");
+    cols.add("Revenue");
+    data.add(cols);
 
-      for (String country : countries) {
-        List<Object> row = new ArrayList<>();
-        row.add(country);
-        row.add(Math.random() * 10000);
-        data.add(row);
-        }
+    String[] countries = new String[] { 
+      "Germany", "United States", "Brazil", "Canada", 
+      "France", "RU", "Australia", "South Africa", 
+      "China", "Egypt" 
+    };
 
-      chart.setData(data);
-
-      window.add(chart);
+    for (String country : countries) {
+      List<Object> row = new ArrayList<>();
+      row.add(country);
+      row.add(Math.random() * 10000);
+      data.add(row);
     }
-}
 
+    chart.setData(data);
+    window.add(chart);
+  }
+}
 
