@@ -19,12 +19,20 @@ public class ChartDemo extends App {
   public void run() throws WebforjException {
     Frame window = new Frame();
     chart.setStyle("width", "100%");
+    chart.setStyle("border-radius", "10px");
+    chart.setStyle("box-shadow", "0 4px 8px rgba(0, 0, 0, 0.1)");
 
     Map<String, Object> options = new Gson().fromJson(
         Assets.contentOf("options/subscribers-chart.json"),
       new TypeToken<Map<String, Object>>() {}.getType()
     );
-    options.put("legend", "none");
+    options.put("title", "Revenue by Country");
+    options.put("colors", List.of("#1b9e77", "#d95f02", "#7570b3"));
+    options.put("backgroundColor", "#f9f9f9");
+    options.put("chartArea", Map.of("width", "80%", "height", "70%"));
+    options.put("hAxis", Map.of("textStyle", Map.of("color", "#333")));
+    options.put("vAxis", Map.of("minValue", 0, "textStyle", Map.of("color", "#333")));
+    options.put("legend", Map.of("position", "bottom"));
     chart.setOptions(options);
 
     List<Object> data = new ArrayList<>();

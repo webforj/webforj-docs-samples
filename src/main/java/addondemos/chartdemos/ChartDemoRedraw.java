@@ -28,14 +28,21 @@ public class ChartDemoRedraw extends App {
     window.addClassName("window");
 
     chart.setStyle("width", "600px");
+    chart.setStyle("border-radius", "10px");
+    chart.setStyle("box-shadow", "0 4px 8px rgba(0, 0, 0, 0.1)");
 
     Map<String, Object> options = new HashMap<>();
     options.put("title", "Social Media Following");
     options.put("colors", List.of("#006fe6"));
+    options.put("backgroundColor", "#f9f9f9");
+    options.put("chartArea", Map.of("width", "80%", "height", "70%"));
+    options.put("hAxis", Map.of("textStyle", Map.of("color", "#333")));
+    options.put("vAxis", Map.of("minValue", 0, "textStyle", Map.of("color", "#333")));
+    options.put("legend", Map.of("position", "bottom"));
     chart.setOptions(options);
 
     List<Object> data = new ArrayList<>();
-    data.add(List.of("Category", "Following"));
+    data.add(List.of("Category", "Number of Followers in Thousands"));
 
     inputGroup.addClassName("input-group");
 
