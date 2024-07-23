@@ -1,0 +1,11 @@
+  startInterval.addClickListener(e -> {
+    interval.start();
+  });
+
+  stopInterval.addClickListener(e -> {
+    interval.stop();
+  });
+
+  restartInterval.addClickListener(e -> {
+    interval.restart();
+  });
