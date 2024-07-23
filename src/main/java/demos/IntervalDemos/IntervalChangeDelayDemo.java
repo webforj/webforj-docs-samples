@@ -1,4 +1,4 @@
-package demos;
+package demos.IntervalDemos;
 
 import com.webforj.Interval;
 import com.webforj.App;
@@ -15,38 +15,14 @@ import com.webforj.exceptions.WebforjException;
 import java.util.ArrayList;
 import java.util.ListIterator;
 
-public class IntervalDemo extends App {
+public class IntervalChangeDelayDemo extends App {
 
   @Override
   public void run() throws WebforjException {
     Frame window = new Frame();
 
-    // Creates the buttons with icons and labels//
-    Button startInterval = new Button(/*html */"""
-        <html>
-            <dwc-icon name=\"player-play\"></dwc-icon>
-            Play
-        </html>
-        """);
-    startInterval.setEnabled(false);
+    Button restartInterval = new Button("Set Delay");
 
-    Button stopInterval = new Button(/*html */"""
-        <html>
-            <dwc-icon name=\"player-pause\"></dwc-icon>
-            Pause
-        </html>
-        """);
-
-    Button restartInterval = new Button(/*html */"""
-        <html>
-            <dwc-icon name=\"settings-automation\"></dwc-icon>
-            Set Delay
-        </html>
-        """);
-
-    // Creates the NumberField to chose the Interval delay//
-    // Note: Fractional seconds are allowed to millisecond resolution for an
-    // Interval delay//
     float delay = 1f;
     double speedMin = 0.01;
 
@@ -56,8 +32,6 @@ public class IntervalDemo extends App {
     delaySpeed.setStyle("width", "120px");
     delaySpeed.setStep(speedMin);
 
-    // Creates an array of different icons to loop through on the displayButton
-    // during the Interval event//
     String baby = """
         <html>
             <dwc-icon name=\"baby-carriage\"></dwc-icon>
@@ -111,22 +85,8 @@ public class IntervalDemo extends App {
     Interval interval = new Interval(delay, listener);
     interval.start();
 
-    startInterval.addClickListener(e -> {
-      startInterval.setEnabled(false);
-      stopInterval.setEnabled(true);
-      interval.start();
-    });
-
-    stopInterval.addClickListener(e -> {
-      startInterval.setEnabled(true);
-      stopInterval.setEnabled(false);
-      interval.stop();
-    });
-
     restartInterval.addClickListener(e -> {
       if (delaySpeed.getValue() != null) {
-        startInterval.setEnabled(false);
-        stopInterval.setEnabled(true);
         float pickedSpeed = delaySpeed.getValue().floatValue();
         interval.setDelay(pickedSpeed);
         interval.restart();
@@ -136,7 +96,7 @@ public class IntervalDemo extends App {
       }
     });
 
-    FlexLayout mainLayout = new FlexLayout(startInterval, stopInterval, displayButton, delaySpeed, restartInterval)
+    FlexLayout mainLayout = new FlexLayout(displayButton, delaySpeed, restartInterval)
         .setJustifyContent(FlexJustifyContent.CENTER);
 
     mainLayout
