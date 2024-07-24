@@ -30,7 +30,7 @@ public class ColumnChart extends Div {
                 "fontSize", 12
             )
         ),
-        "colors", List.of("#008000")
+        "colors", List.of("#008000", "#4285f4")
     );
     chart.setOptions(options);
 
