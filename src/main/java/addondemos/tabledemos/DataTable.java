@@ -7,12 +7,15 @@ import com.google.gson.reflect.TypeToken;
 import java.util.Arrays;
 import java.util.List;
 import com.webforj.App;
-import com.webforj.component.table.Column;
+import com.webforj.component.table.Column.PinDirection;
 import com.webforj.component.table.Table;
+import com.webforj.component.table.Table.SelectionMode;
 import com.webforj.component.field.TextField;
+import com.webforj.component.field.TextField.Type;
 import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.component.list.ChoiceBox;
 import com.webforj.component.navigator.Navigator;
+import com.webforj.component.navigator.Navigator.Layout;
 import com.webforj.component.window.Frame;
 import com.webforj.data.Paginator;
 import com.webforj.data.repository.CollectionRepository;
@@ -48,7 +51,7 @@ public class DataTable extends App {
   }
 
   FlexLayout buildTableHeader() {
-    TextField search = new TextField(TextField.Type.SEARCH, "Search");
+    TextField search = new TextField(Type.SEARCH, "Search");
     search.setPlaceholder("Search by athlete ...");
     search.onModify(ev -> {
       this.searchTerm = ev.getText().toLowerCase();
@@ -69,7 +72,7 @@ public class DataTable extends App {
   Table<JsonObject> buildTable() {
     Table<JsonObject> table = new Table<>();
     table.setStyle("height", "400px");
-    table.setSelectionMode(Table.SelectionMode.MULTIPLE);
+    table.setSelectionMode(SelectionMode.MULTIPLE);
     table.setHeaderCheckboxSelection(false);
 
     List<String> columnsList = Arrays.asList("athlete", "age", "country", "year", "total");
@@ -86,8 +89,8 @@ public class DataTable extends App {
     }
 
     table.getColumns().forEach(column -> column.setSortable(true));
-    table.getColumnById("athlete").setPinDirection(Column.PinDirection.LEFT).setMinWidth(200f);
-    table.getColumnById("total").setPinDirection(Column.PinDirection.RIGHT);
+    table.getColumnById("athlete").setPinDirection(PinDirection.LEFT).setMinWidth(200f);
+    table.getColumnById("total").setPinDirection(PinDirection.RIGHT);
 
     table.setRepository(repository);
 
@@ -95,10 +98,10 @@ public class DataTable extends App {
   }
 
   FlexLayout buildTableFooter() {
-    Navigator pages = new Navigator(paginator, Navigator.Layout.PAGES);
+    Navigator pages = new Navigator(paginator, Layout.PAGES);
     pages.setAutoDisable(true);
 
-    Navigator preview = new Navigator(paginator, Navigator.Layout.PREVIEW);
+    Navigator preview = new Navigator(paginator, Layout.PREVIEW);
     preview.setHideMainButtons(true);
     preview.setStyle("border", "0");
     preview.setText("`Showing ${startIndex + 1} to ${endIndex + 1} of ${totalItems} entries`");

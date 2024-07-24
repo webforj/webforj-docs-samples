@@ -3,6 +3,7 @@ package addondemos.tabledemos;
 import com.webforj.App;
 import com.webforj.component.table.Table;
 import com.webforj.component.field.TextField;
+import com.webforj.component.field.TextField.Type;
 import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.component.window.Frame;
 import com.webforj.data.repository.Repository;
@@ -31,7 +32,7 @@ public class TableFiltering extends App {
   }
 
   TextField buildSearchField(Repository<MusicRecord> repository) {
-    TextField search = new TextField(TextField.Type.SEARCH, "Search");
+    TextField search = new TextField(Type.SEARCH, "Search");
     search.setPlaceholder("Search by title ...");
     search.onModify(ev -> {
       this.searchTerm = ev.getText().toLowerCase();
