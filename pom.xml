@@ -55,6 +55,11 @@
             <artifactId>webforj-googlecharts</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.webforj</groupId>
+            <artifactId>webforj-terminal</artifactId>
+            <version>24.10</version>
+        </dependency>
     </dependencies>
 
     <build>
