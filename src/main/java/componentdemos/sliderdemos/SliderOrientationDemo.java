@@ -21,24 +21,24 @@ public class SliderOrientationDemo extends App {
         entry(50, "50"),
         entry(100, "100"));
 
-    Slider sl1 = new Slider().setMaximum(100)
-        .setMinimum(0);
-    Slider sl2 = new Slider().setMaximum(100)
-        .setMinimum(0);
+    Slider sl1 = new Slider().setMax(100)
+        .setMin(0);
+    Slider sl2 = new Slider().setMax(100)
+        .setMin(0);
 
     window.add(sl1, sl2);
 
     sl1.setStyle("width", "400px")
-        .setPaintTicks(true)
+        .setTicksVisible(true)
         .setMinorTickSpacing(10)
-        .setPaintLabels(true)
+        .setLabelsVisible(true)
         .setLabels(mapMatch);
 
     sl2.setOrientation(Orientation.VERTICAL)
         .setStyle("padding-left", "40px")
-        .setPaintTicks(true)
+        .setTicksVisible(true)
         .setMinorTickSpacing(10)
-        .setPaintLabels(true)
+        .setLabelsVisible(true)
         .setLabels(mapMatch);
   }
 }

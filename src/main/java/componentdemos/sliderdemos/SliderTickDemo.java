@@ -14,18 +14,18 @@ public class SliderTickDemo extends App {
     Frame window = new Frame();
     window.addClassName("Frame");
 
-    Slider sl1 = new Slider().setMaximum(100).setMinimum(0);
-    Slider sl2 = new Slider().setMaximum(100).setMinimum(0);
+    Slider sl1 = new Slider().setMax(100).setMin(0);
+    Slider sl2 = new Slider().setMax(100).setMin(0);
 
     window.add(
         new Label("<html><b>No Tick Snapping</b></html>"), sl1,
         new Label("<html><b>Tick Snapping</b></html>"), sl2);
 
-    sl1.setPaintTicks(true)
+    sl1.setTicksVisible(true)
         .setMajorTickSpacing(50)
         .setMinorTickSpacing(10);
 
-    sl2.setPaintTicks(true)
+    sl2.setTicksVisible(true)
         .setMajorTickSpacing(50)
         .setMinorTickSpacing(10)
         .setSnapToTicks(true);
