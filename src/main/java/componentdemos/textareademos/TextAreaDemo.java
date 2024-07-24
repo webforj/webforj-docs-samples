@@ -2,8 +2,8 @@ package componentdemos.textareademos;
 
 import com.webforj.App;
 import com.webforj.annotation.InlineStyleSheet;
+import com.webforj.component.field.TextArea;
 import com.webforj.component.window.Frame;
-import com.webforj.component.textarea.TextArea;
 import com.webforj.exceptions.WebforjException;
 
 @InlineStyleSheet("context://css/textareastyles/text_area_styles.css")

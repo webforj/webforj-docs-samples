@@ -5,17 +5,17 @@ import java.util.HashMap;
 
 import com.webforj.App;
 import com.webforj.component.code.Code;
+import com.webforj.component.event.ModifyEvent;
+import com.webforj.component.field.MaskedNumberFieldSpinner;
 import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.list.ChoiceBox;
 import com.webforj.component.list.event.ListSelectEvent;
-import com.webforj.component.spinnernumberfield.SpinnerNumberField;
 import com.webforj.component.layout.flexlayout.FlexAlignment;
 import com.webforj.component.layout.flexlayout.FlexContentAlignment;
 import com.webforj.component.layout.flexlayout.FlexDirection;
 import com.webforj.component.layout.flexlayout.FlexJustifyContent;
 import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.component.layout.flexlayout.FlexWrap;
-import com.webforj.component.maskednumberfield.event.MaskedNumberFieldModifyEvent;
 import com.webforj.component.window.Frame;
 import com.webforj.exceptions.WebforjException;
 
@@ -24,7 +24,7 @@ import layout_demos.helper.Box;
 @InlineStyleSheet("context://css/flexstyles/container_styles.css")
 public class ContainerDemo extends App {
 
-  SpinnerNumberField spinner;
+  MaskedNumberFieldSpinner spinner = new MaskedNumberFieldSpinner();
 
   FlexLayout boxLayout;
   ArrayList<Box> boxes;
@@ -54,11 +54,10 @@ public class ContainerDemo extends App {
         .build()
         .addClassName("flex__options");
 
-    spinner = new SpinnerNumberField();
-    spinner.setAttribute("label" , "Number of Boxes")
-        .setProperty("min", 1)
+    spinner.setLabel("Number of Boxes")
+        .setMin((double) 1)
         .setText("1");
-    spinner.onEditModify(this::spinnerChange);
+    spinner.onModify(this::spinnerChange);
 
     boxes = new ArrayList<>();
     numBoxes = 0;
@@ -155,11 +154,11 @@ public class ContainerDemo extends App {
     codeWindow.setText(javaCode);
   }
 
-  private void spinnerChange(MaskedNumberFieldModifyEvent ev) {
-    if (Integer.valueOf(ev.getControl().getText()) > numBoxes) {
-      addBox(Integer.valueOf(ev.getControl().getText()));
-    } else if (Integer.valueOf(ev.getControl().getText()) < numBoxes) {
-      removeBox(Integer.valueOf(ev.getControl().getText()));
+  private void spinnerChange(ModifyEvent ev) {
+    if (Integer.valueOf(ev.getText()) > numBoxes) {
+      addBox(Integer.valueOf(ev.getText()));
+    } else if (Integer.valueOf(ev.getText()) < numBoxes) {
+      removeBox(Integer.valueOf(ev.getText()));
     }
   }
 

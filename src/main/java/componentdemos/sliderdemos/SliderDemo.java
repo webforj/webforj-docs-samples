@@ -16,7 +16,7 @@ public class SliderDemo extends App {
         Frame window = new Frame();
         window.addClassName("Frame");
 
-        Slider sl1 = new Slider().setMaximum(100).setMinimum(0);
+        Slider sl1 = new Slider().setMax(100).setMin(0);
         window.add(sl1);
     }
 

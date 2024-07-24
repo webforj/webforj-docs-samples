@@ -4,8 +4,8 @@ import com.webforj.App;
 import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.button.Button;
 import com.webforj.component.button.ButtonTheme;
+import com.webforj.component.field.MaskedNumberField;
 import com.webforj.component.layout.flexlayout.FlexLayout;
-import com.webforj.component.maskednumberfield.MaskedNumberField;
 import com.webforj.component.window.Frame;
 import com.webforj.exceptions.WebforjException;
 
@@ -40,7 +40,7 @@ public class Order extends App{
     orderButton.setTheme(ButtonTheme.DANGER);
 
     MaskedNumberField order = new MaskedNumberField("5")
-    .setAttribute("Label", "Order:")
+    .setLabel("Order:")
     .setStyle("width", "200px");
     Button submit = new Button("Set Order");
     submit.setStyle("height", "34px")

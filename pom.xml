@@ -6,7 +6,7 @@
 
     <groupId>com.webforj.samples</groupId>
     <artifactId>ControlSamples</artifactId>
-    <version>24.02-SNAPSHOT</version>
+    <version>24.10</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -63,7 +63,7 @@
             <plugin>
                 <groupId>com.webforj</groupId>
                 <artifactId>webforj-install-maven-plugin</artifactId>
-                <version>${project.version}</version>
+                <version>24.02</version>
                 <executions>
                     <execution>
                         <goals>
@@ -72,7 +72,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <deployurl>http://localhost:55008/webforj-install</deployurl>
+                    <deployurl>http://localhost:8888/webforj-install</deployurl>
                     <publishname>controlsamples</publishname>
                     <debug>true</debug>
                 </configuration>
