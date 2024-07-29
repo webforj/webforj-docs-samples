@@ -3,6 +3,7 @@ package addondemos.chartdemos;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.googlecharts.GoogleChart;
 import com.webforj.component.window.Frame;
 import com.webforj.exceptions.WebforjException;
@@ -11,20 +12,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+@InlineStyleSheet("context://css/chartstyles/chartdemo_styles.css")
 public class ChartDemo extends App {
-  
+
   GoogleChart chart = new GoogleChart(GoogleChart.Type.GEO);
 
   @Override
   public void run() throws WebforjException {
     Frame window = new Frame();
-    chart.setStyle("width", "100%");
-    chart.setStyle("border-radius", "10px");
-    chart.setStyle("box-shadow", "0 4px 8px rgba(0, 0, 0, 0.1)");
+    window.addClassName("chart-frame");
 
     Map<String, Object> options = new Gson().fromJson(
         Assets.contentOf("options/subscribers-chart.json"),
-      new TypeToken<Map<String, Object>>() {}.getType()
+        new TypeToken<Map<String, Object>>() {}.getType()
     );
     options.put("title", "Revenue by Country");
     options.put("colors", List.of("#1b9e77", "#d95f02", "#7570b3"));
@@ -58,4 +58,5 @@ public class ChartDemo extends App {
     window.add(chart);
   }
 }
+
 
