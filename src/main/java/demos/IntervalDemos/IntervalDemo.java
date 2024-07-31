@@ -4,6 +4,7 @@ import com.webforj.Interval;
 import com.webforj.App;
 import com.webforj.component.button.Button;
 import com.webforj.component.button.ButtonTheme;
+import com.webforj.component.layout.flexlayout.FlexAlignment;
 import com.webforj.component.layout.flexlayout.FlexJustifyContent;
 import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.component.optiondialog.ConfirmDialog;
@@ -22,27 +23,15 @@ public class IntervalDemo extends App {
     Frame window = new Frame();
 
     // Creates the buttons with icons and labels//
-    Button startInterval = new Button(/*html */"""
-        <html>
-            <dwc-icon name=\"player-play\"></dwc-icon>
-            Play
-        </html>
-        """);
+    Button startInterval = new Button();
+    startInterval.setHtml("<dwc-icon name=\"player-play\"></dwc-icon> Start");
     startInterval.setEnabled(false);
 
-    Button stopInterval = new Button(/*html */"""
-        <html>
-            <dwc-icon name=\"player-pause\"></dwc-icon>
-            Pause
-        </html>
-        """);
+    Button stopInterval = new Button();
+    stopInterval.setHtml("<dwc-icon name=\"player-pause\"></dwc-icon> Stop");
 
-    Button restartInterval = new Button(/*html */"""
-        <html>
-            <dwc-icon name=\"settings-automation\"></dwc-icon>
-            Set Delay
-        </html>
-        """);
+    Button restartInterval = new Button();
+    restartInterval.setHtml("<dwc-icon name=\"settings-automation\"></dwc-icon> Set Delay");
 
     // Creates the NumberField to chose the Interval delay//
     // Note: Fractional seconds are allowed to millisecond resolution for an
@@ -51,36 +40,17 @@ public class IntervalDemo extends App {
     double speedMin = 0.01;
 
     NumberField delaySpeed = new NumberField();
+    delaySpeed.setLabel("Delay Speed");
     delaySpeed.setMin(speedMin);
-    delaySpeed.setPlaceholder("Delay Speed");
     delaySpeed.setStyle("width", "120px");
     delaySpeed.setStep(speedMin);
 
     // Creates an array of different icons to loop through on the displayButton
     // during the Interval event//
-    String baby = """
-        <html>
-            <dwc-icon name=\"baby-carriage\"></dwc-icon>
-        </html>
-        """;
-
-    String kid = """
-        <html>
-            <dwc-icon name=\"skateboarding\"></dwc-icon>
-        </html>
-        """;
-
-    String adult = """
-        <html>
-            <dwc-icon name=\"run\"></dwc-icon>
-        </html>
-        """;
-
-    String old = """
-        <html>
-            <dwc-icon name=\"old\"></dwc-icon>
-        </html>
-        """;
+    String baby = "<dwc-icon name=\"baby-carriage\"></dwc-icon>";
+    String kid = "<dwc-icon name=\"skateboarding\"></dwc-icon>";
+    String adult = "<dwc-icon name=\"run\"></dwc-icon>";
+    String old = "<dwc-icon name=\"old\"></dwc-icon>";
 
     ArrayList<String> display = new ArrayList<>();
 
@@ -96,14 +66,14 @@ public class IntervalDemo extends App {
 
     EventListener<Interval.ElapsedEvent> listener = (e -> {
       if (displayIterator.hasNext()) {
-        displayButton.setText(displayIterator.next());
+        displayButton.setHtml(displayIterator.next());
       }
       // Loops back to the beginning of the array//
       else {
         displayIterator.previous();
         displayIterator.previous();
         displayIterator.previous();
-        displayButton.setText(display.get(0));
+        displayButton.setHtml(display.get(0));
       }
     });
 
@@ -137,10 +107,11 @@ public class IntervalDemo extends App {
     });
 
     FlexLayout mainLayout = new FlexLayout(startInterval, stopInterval, displayButton, delaySpeed, restartInterval)
-        .setJustifyContent(FlexJustifyContent.CENTER);
+        .setJustifyContent(FlexJustifyContent.CENTER)
+        .setAlignment(FlexAlignment.END);
 
     mainLayout
-        .setMargin("10px")
+        .setMargin("5px")
         .setPadding("10px");
 
     window.add(mainLayout);
