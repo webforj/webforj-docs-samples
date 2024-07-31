@@ -28,7 +28,17 @@ public class ChartDemoSettingData extends App {
     Frame window = new Frame();
     window.addClassName("window");
 
-    chart.setStyle("width", "100vh");
+    chart.setStyle("width", "100vw");
+    chart.setStyle("height", "100vh");
+
+
+    Map<String, Object> options = new HashMap<>();
+    options.put("title", "Sales Distribution by Region");
+    options.put("is3D", "true");
+    options.put(
+        "colors",
+        Arrays.asList("#BBDEFB", "#64B5F6", "#1E88E5", "#0D47A1", "#1565C0", "#82B1FF")
+    );
 
     List<Object> data = new ArrayList<>();
     data.add(Arrays.asList("Region", "Sales"));
@@ -39,14 +49,6 @@ public class ChartDemoSettingData extends App {
     data.add(Arrays.asList("Middle East", 80));
     data.add(Arrays.asList("Africa", 60));
     chart.setData(data);
-
-    Map<String, Object> options = new HashMap<>();
-    options.put("title", "Sales Distribution by Region");
-    options.put("is3D", "true");
-    options.put(
-        "colors",
-        Arrays.asList("#BBDEFB", "#64B5F6", "#1E88E5", "#0D47A1", "#1565C0", "#82B1FF")
-    );
 
     chart.setOptions(options);
     window.add(chart);

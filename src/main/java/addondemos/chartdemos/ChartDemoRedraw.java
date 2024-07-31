@@ -27,7 +27,8 @@ public class ChartDemoRedraw extends App {
     Frame window = new Frame();
     window.addClassName("window");
 
-    chart.setStyle("width", "600px");
+    chart.setStyle("width", "50vw");
+    chart.setStyle("height", "50vh");
     chart.setStyle("border-radius", "10px");
     chart.setStyle("box-shadow", "0 4px 8px rgba(0, 0, 0, 0.1)");
 
