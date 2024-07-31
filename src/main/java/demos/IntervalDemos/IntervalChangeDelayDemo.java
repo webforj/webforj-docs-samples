@@ -4,6 +4,7 @@ import com.webforj.Interval;
 import com.webforj.App;
 import com.webforj.component.button.Button;
 import com.webforj.component.button.ButtonTheme;
+import com.webforj.component.layout.flexlayout.FlexAlignment;
 import com.webforj.component.layout.flexlayout.FlexJustifyContent;
 import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.component.optiondialog.ConfirmDialog;
@@ -28,33 +29,14 @@ public class IntervalChangeDelayDemo extends App {
 
     NumberField delaySpeed = new NumberField();
     delaySpeed.setMin(speedMin);
-    delaySpeed.setPlaceholder("Delay Speed");
+    delaySpeed.setLabel("Delay Speed");
     delaySpeed.setStyle("width", "120px");
     delaySpeed.setStep(speedMin);
 
-    String baby = """
-        <html>
-            <dwc-icon name=\"baby-carriage\"></dwc-icon>
-        </html>
-        """;
-
-    String kid = """
-        <html>
-            <dwc-icon name=\"skateboarding\"></dwc-icon>
-        </html>
-        """;
-
-    String adult = """
-        <html>
-            <dwc-icon name=\"run\"></dwc-icon>
-        </html>
-        """;
-
-    String old = """
-        <html>
-            <dwc-icon name=\"old\"></dwc-icon>
-        </html>
-        """;
+    String baby = "<dwc-icon name=\"baby-carriage\"></dwc-icon>";
+    String kid = "<dwc-icon name=\"skateboarding\"></dwc-icon>";
+    String adult = "<dwc-icon name=\"run\"></dwc-icon>";
+    String old = "<dwc-icon name=\"old\"></dwc-icon>";
 
     ArrayList<String> display = new ArrayList<>();
 
@@ -70,14 +52,14 @@ public class IntervalChangeDelayDemo extends App {
 
     EventListener<Interval.ElapsedEvent> listener = (e -> {
       if (displayIterator.hasNext()) {
-        displayButton.setText(displayIterator.next());
+        displayButton.setHtml(displayIterator.next());
       }
       // Loops back to the beginning of the array//
       else {
         displayIterator.previous();
         displayIterator.previous();
         displayIterator.previous();
-        displayButton.setText(display.get(0));
+        displayButton.setHtml(display.get(0));
       }
     });
 
@@ -97,7 +79,8 @@ public class IntervalChangeDelayDemo extends App {
     });
 
     FlexLayout mainLayout = new FlexLayout(displayButton, delaySpeed, restartInterval)
-        .setJustifyContent(FlexJustifyContent.CENTER);
+        .setJustifyContent(FlexJustifyContent.CENTER)
+        .setAlignment(FlexAlignment.END);
 
     mainLayout
         .setMargin("10px")
