@@ -1,5 +1,0 @@
-  restartInterval.addClickListener(e -> {
-    float pickedSpeed = delaySpeed.getValue().floatValue();
-    interval.setDelay(pickedSpeed);
-    interval.restart();
-  });

@@ -24,14 +24,20 @@ public class IntervalDemo extends App {
 
     // Creates the buttons with icons and labels//
     Button startInterval = new Button();
-    startInterval.setHtml("<dwc-icon name=\"player-play\"></dwc-icon> Start");
+    startInterval.setHtml("<dwc-icon name=\"player-play\" expanse=\"m\"></dwc-icon> Start");
     startInterval.setEnabled(false);
+    startInterval.setMinSize("20vw","5vw");
+    startInterval.setStyle("font-size","2vw");
 
     Button stopInterval = new Button();
-    stopInterval.setHtml("<dwc-icon name=\"player-pause\"></dwc-icon> Stop");
+    stopInterval.setHtml("<dwc-icon name=\"player-pause\" expanse=\"m\"></dwc-icon> Stop");
+    stopInterval.setMinSize("20vw","5vw");
+    stopInterval.setStyle("font-size","2vw");
 
     Button restartInterval = new Button();
-    restartInterval.setHtml("<dwc-icon name=\"settings-automation\"></dwc-icon> Set Delay");
+    restartInterval.setHtml("<dwc-icon name=\"settings-automation\" expanse=\"m\"></dwc-icon> Set Delay");
+    restartInterval.setMinSize("20vw","5vw");
+    restartInterval.setStyle("font-size","2vw");
 
     // Creates the NumberField to chose the Interval delay//
     // Note: Fractional seconds are allowed to millisecond resolution for an
@@ -42,15 +48,16 @@ public class IntervalDemo extends App {
     NumberField delaySpeed = new NumberField();
     delaySpeed.setLabel("Delay Speed");
     delaySpeed.setMin(speedMin);
-    delaySpeed.setStyle("width", "120px");
     delaySpeed.setStep(speedMin);
+    delaySpeed.setMinSize("20vw","5vw");
+    delaySpeed.setStyle("font-size","2vw");
 
     // Creates an array of different icons to loop through on the displayButton
     // during the Interval event//
-    String baby = "<dwc-icon name=\"baby-carriage\"></dwc-icon>";
-    String kid = "<dwc-icon name=\"skateboarding\"></dwc-icon>";
-    String adult = "<dwc-icon name=\"run\"></dwc-icon>";
-    String old = "<dwc-icon name=\"old\"></dwc-icon>";
+    String baby = "<dwc-icon name=\"baby-carriage\" expanse=\"m\"></dwc-icon>";
+    String kid = "<dwc-icon name=\"skateboarding\" expanse=\"m\"></dwc-icon>";
+    String adult = "<dwc-icon name=\"run\"> expanse=\"m\"></dwc-icon>";
+    String old = "<dwc-icon name=\"old\" expanse=\"m\"></dwc-icon>";
 
     ArrayList<String> display = new ArrayList<>();
 
@@ -62,7 +69,9 @@ public class IntervalDemo extends App {
     ListIterator<String> displayIterator = display.listIterator(0);
 
     Button displayButton = new Button().setTheme(ButtonTheme.OUTLINED_PRIMARY);
-    displayButton.setStyle("width", "70px");
+    displayButton.setWidth("10vw");
+    displayButton.setMinSize("60px","5vw");
+    displayButton.setStyle("font-size","2vw");
 
     EventListener<Interval.ElapsedEvent> listener = (e -> {
       if (displayIterator.hasNext()) {
@@ -111,8 +120,13 @@ public class IntervalDemo extends App {
         .setAlignment(FlexAlignment.END);
 
     mainLayout
-        .setMargin("5px")
+        .setMargin("10px")
         .setPadding("10px");
+        // .setItemGrow(1,startInterval)
+        // .setItemGrow(1,stopInterval)
+        // .setItemGrow(1,displayButton)
+        // .setItemGrow(1,delaySpeed)
+        // .setItemGrow(1,restartInterval);
 
     window.add(mainLayout);
 
