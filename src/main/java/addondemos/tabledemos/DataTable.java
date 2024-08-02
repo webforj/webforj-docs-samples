@@ -44,7 +44,7 @@ public class DataTable extends App {
     paginator.setMax(5);
 
     FlexLayout layout = FlexLayout.create(buildTableHeader(), buildTable(), buildTableFooter())
-        .vertical().contentAlign().center().build().setStyle("padding", "var(--dwc-space-l)");
+        .vertical().contentAlign().center().build().setPadding("var(--dwc-space-l)");
 
     Frame mainFrame = new Frame();
     mainFrame.add(layout);
@@ -71,7 +71,7 @@ public class DataTable extends App {
 
   Table<JsonObject> buildTable() {
     Table<JsonObject> table = new Table<>();
-    table.setStyle("height", "400px");
+    table.setHeight("400px");
     table.setSelectionMode(SelectionMode.MULTIPLE);
     table.setHeaderCheckboxSelection(false);
 

@@ -42,7 +42,7 @@
 //        .setStyle("gap", "50px")
 //        .setStyle("margin", "50px")
 //        .setStyle("margin-left", "40vw")
-//        .setStyle("width", "200px");
+//        .setWidth("200px");
 
 
 //   }

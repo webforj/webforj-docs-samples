@@ -36,7 +36,7 @@ public class TabbedPaneAlignment extends App {
     for(Alignment alignment : Alignment.values()){
       alignments.add(alignment.toString());
     }
-    alignments.setStyle("width", "200px");
+    alignments.setWidth("200px");
     alignments.selectIndex(0);
 
     alignments.onSelect( e -> {

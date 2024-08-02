@@ -18,32 +18,38 @@ public class SliderThemesDemo extends App {
     Slider sl1 = new Slider().setMax(100)
         .setMin(0)
         .setValue(50)
-        .setTheme(Theme.DEFAULT);
+        .setTheme(Theme.DEFAULT)
+        .setWidth("500px");
 
     Slider sl2 = new Slider().setMax(100)
         .setMin(0)
         .setValue(50)
-        .setTheme(Theme.DANGER);
+        .setTheme(Theme.DANGER)
+        .setWidth("500px");
 
     Slider sl3 = new Slider().setMax(100)
         .setMin(0)
         .setValue(50)
-        .setTheme(Theme.GRAY);
+        .setTheme(Theme.GRAY)
+        .setWidth("500px");
 
     Slider sl4 = new Slider().setMax(100)
         .setMin(0)
         .setValue(50)
-        .setTheme(Theme.INFO);
+        .setTheme(Theme.INFO)
+        .setWidth("500px");
 
     Slider sl5 = new Slider().setMax(100)
         .setMin(0)
         .setValue(50)
-        .setTheme(Theme.SUCCESS);
+        .setTheme(Theme.SUCCESS)
+        .setWidth("500px");
 
     Slider sl6 = new Slider().setMax(100)
         .setMin(0)
         .setValue(50)
-        .setTheme(Theme.WARNING);
+        .setTheme(Theme.WARNING)
+        .setWidth("500px");
 
     window.add(
         new Label("<html><b>DEFAULT</b></html>"), sl1,

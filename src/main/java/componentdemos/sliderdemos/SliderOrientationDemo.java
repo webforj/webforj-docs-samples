@@ -28,7 +28,7 @@ public class SliderOrientationDemo extends App {
 
     window.add(sl1, sl2);
 
-    sl1.setStyle("width", "400px")
+    sl1.setWidth("400px")
         .setTicksVisible(true)
         .setMinorTickSpacing(10)
         .setLabelsVisible(true)

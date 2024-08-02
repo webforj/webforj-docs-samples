@@ -30,7 +30,7 @@ public class Positioning extends App {
         .horizontal()
         .build()
         .addClassName("button__container--single-row")
-        .setStyle("height", "200px");
+        .setHeight("200px");
 
     for (int i = 1; i <= 4; i++) {
       String hue = String.valueOf((360 / 10) * i);
