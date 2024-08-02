@@ -44,7 +44,7 @@ public class TabbedPaneDemo extends App {
     for(Placement placement : Placement.values()){
       placements.add(placement.toString());
     }
-    placements.setStyle("width", "200px");
+    placements.setWidth("200px");
     placements.selectIndex(0);
 
     placements.onSelect( e -> {

@@ -42,7 +42,7 @@ public class TabbedPaneExpanseTheme extends App {
     for(Theme theme : Theme.values()){
       themes.add(theme.toString());
     }
-    themes.setStyle("width", "200px");
+    themes.setWidth("200px");
     themes.selectIndex(1);
     themes.onSelect( e -> {
       pane.setTheme(Theme.valueOf(e.getSelectedItem().getText()));
@@ -51,7 +51,7 @@ public class TabbedPaneExpanseTheme extends App {
     for(Expanse expanse : Expanse.values()){
       expanses.add(expanse.toString());
     }
-    expanses.setStyle("width", "200px");
+    expanses.setWidth("200px");
     expanses.selectIndex(5);
     expanses.onSelect( e -> {
       pane.setExpanse(Expanse.valueOf(e.getSelectedItem().getText()));

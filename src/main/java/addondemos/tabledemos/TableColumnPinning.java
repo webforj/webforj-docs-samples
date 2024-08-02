@@ -13,8 +13,8 @@ public class TableColumnPinning extends App {
   public void run() throws WebforjException {
 
     Table<MusicRecord> table = new Table<>();
-    table.setStyle("width", "100vw");
-    table.setStyle("height", "100vh");
+    table.setWidth("100vw");
+    table.setHeight("100vw");
 
     table.addColumn("Number", MusicRecord::getNumber).setPinDirection(Column.PinDirection.LEFT);
     table.addColumn("Title", MusicRecord::getTitle);

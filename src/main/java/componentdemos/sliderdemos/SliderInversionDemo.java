@@ -33,12 +33,14 @@ public class SliderInversionDemo extends App {
     sl1.setTicksVisible(true)
         .setMinorTickSpacing(10)
         .setLabelsVisible(true)
-        .setLabels(mapMatch);
+        .setLabels(mapMatch)
+        .setWidth("400px");
 
     sl2.setTicksVisible(true)
         .setMinorTickSpacing(10)
         .setLabelsVisible(true)
         .setLabels(mapMatch)
-        .setAttribute("inverted", "true");
+        .setAttribute("inverted", "true")
+        .setWidth("400px");
   }
 }

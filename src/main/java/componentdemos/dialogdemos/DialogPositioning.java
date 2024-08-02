@@ -21,8 +21,8 @@ public class DialogPositioning extends App {
   @Override
   public void run() throws WebforjException {
     Frame p = new Frame();
-    xPos.setStyle("max-width", "25%");
-    yPos.setStyle("max-width", "25%");
+    xPos.setMaxWidth("25%");
+    yPos.setMaxWidth("25%");
     p.add(dialog);
 
     FlexLayout xLayout = FlexLayout.create(new Div("X Pixels: "), xPos)
