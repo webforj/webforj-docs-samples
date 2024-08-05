@@ -15,7 +15,6 @@ import com.webforj.exceptions.WebforjException;
     align-items: flex-end;
     margin: 20px;
     gap: 50px;
-    width: 100%;
     flex-wrap: wrap;
   }
 """)
@@ -29,6 +28,7 @@ public class ButtonDisable extends App {
     Frame window = new Frame();
     window.addClassName("window");
     window.add(email, submit);
+    window.setWidth("100%");
 
     email.setType(Type.EMAIL)
         .setLabel("Enter an email")

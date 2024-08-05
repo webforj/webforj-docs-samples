@@ -13,7 +13,7 @@ public class ProgressBarThemes extends App {
   public void run() throws WebforjException {
     Frame window = new Frame();
     FlexLayout layout = FlexLayout.create(window).vertical().build()
-        .setStyle("max-width", "320px")
+        .setMaxWidth("320px")
         .setStyle("margin", "0 auto")
         .setStyle("padding", "20px");
     window.add(layout);

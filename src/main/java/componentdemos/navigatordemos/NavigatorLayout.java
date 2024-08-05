@@ -1,17 +1,12 @@
 package componentdemos.navigatordemos;
 
 import com.webforj.App;
-import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.component.list.ChoiceBox;
 import com.webforj.component.navigator.Navigator;
 import com.webforj.component.window.Frame;
 import com.webforj.exceptions.WebforjException;
 
-@InlineStyleSheet(/* css */"""
-    .layout {
-      max-width: 400px;
-    }""")
 public class NavigatorLayout extends App {
   private Navigator nav = new Navigator(100);
   private ChoiceBox navLayout = new ChoiceBox();
@@ -20,7 +15,7 @@ public class NavigatorLayout extends App {
   @Override
   public void run() throws WebforjException {
     
-    layout.addClassName("layout");
+    layout.setMaxWidth("400px");
     nav.getPaginator().setMax(5);
     nav.addClassName("nav");
     

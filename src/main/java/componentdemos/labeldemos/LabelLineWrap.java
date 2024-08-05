@@ -21,7 +21,7 @@ public class LabelLineWrap extends App {
             "ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit "
             +
             "esse cillum dolore eu fugiat nulla pariatur.");
-    l1.setStyle("width", "50vw");
+    l1.setWidth("50vw");
     l1.setStyle("border", "1px solid black");
     l1.setWrap(true);
     Button wrap = new Button("Toggle Line Wrapping");

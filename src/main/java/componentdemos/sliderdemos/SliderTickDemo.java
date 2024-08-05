@@ -17,6 +17,9 @@ public class SliderTickDemo extends App {
     Slider sl1 = new Slider().setMax(100).setMin(0);
     Slider sl2 = new Slider().setMax(100).setMin(0);
 
+    sl1.setWidth("500px");
+    sl2.setWidth("500px");
+
     window.add(
         new Label("<html><b>No Tick Snapping</b></html>"), sl1,
         new Label("<html><b>Tick Snapping</b></html>"), sl2);

@@ -16,7 +16,7 @@ public class ProgressBarDeterminate extends App {
         .setText("Loading...");
 
     Frame window = new Frame();
-    window.setStyle("max-width", "320px")
+    window.setMaxWidth("320px")
         .setStyle("margin", "0 auto")
         .setStyle("padding", "20px");
     window.add(bar);
