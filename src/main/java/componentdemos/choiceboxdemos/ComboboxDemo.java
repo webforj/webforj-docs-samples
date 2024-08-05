@@ -23,12 +23,12 @@ public class ComboboxDemo extends App {
         window.setStyle("grid-template-columns", "1fr 1fr");
         window.setStyle("padding", "10px");
         window.setStyle("gap", "50px");
-        window.setStyle("height", "100%");
+        window.setHeight("100%");
 
         cb1 = new ChoiceBox();
         d1 = new Panel();
 
-        d1.setStyle("height", "50px").setStyle("width", "50px").setStyle("grid-column", "2").setStyle("background",
+        d1.setSize("50px", "50px").setStyle("grid-column", "2").setStyle("background",
                 "blue");
         d1.setStyle("align-self", "center").setStyle("justify-self", "center");
 
@@ -40,7 +40,7 @@ public class ComboboxDemo extends App {
         window.add(cb1, d1);
 
         cb1.setLabel("Choose a Color:").selectIndex(0).setStyle("grid-column", "1")
-                .setExpanse(Expanse.LARGE).setStyle("width", "250px");
+                .setExpanse(Expanse.LARGE).setWidth("250px");
         cb1.onSelect(this::cbSelect);
     }
 

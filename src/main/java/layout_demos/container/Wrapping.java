@@ -14,7 +14,7 @@ public class Wrapping extends App {
 
     Frame page = new Frame();
     Panel container = new Panel();
-    container.setStyle("width", "200px")
+    container.setWidth("200px")
         .setStyle("border", "1px black dotted");
     page.add(container);
 

@@ -5,10 +5,10 @@ import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.button.Button;
 import com.webforj.component.button.ButtonTheme;
 import com.webforj.component.list.ChoiceBox;
+import com.webforj.component.field.MaskedNumberField;
 import com.webforj.component.field.PasswordField;
 import com.webforj.component.field.TextField;
 import com.webforj.component.layout.flexlayout.FlexLayout;
-import com.webforj.component.maskednumberfield.MaskedNumberField;
 import com.webforj.component.window.Frame;
 import com.webforj.exceptions.WebforjException;
 
@@ -37,7 +37,7 @@ public class FlexDemo extends App {
     lastName = new TextField().setLabel("Last Name");
     address = new TextField().setLabel("Address");
     city = new TextField().setLabel("City");
-    zip = new MaskedNumberField().setAttribute("label", "Zip");
+    zip = new MaskedNumberField().setLabel("Zip");
 
     populateStates();
     submit = new Button("Submit").setTheme(ButtonTheme.PRIMARY);
@@ -64,7 +64,7 @@ public class FlexDemo extends App {
         .build();
     rowThree.setItemBasis("50%", city);
     rowThree.setItemBasis("30%", states);
-    zip.setStyle("width", "150px");
+    zip.setWidth("150px");
 
     FlexLayout rowFour = FlexLayout.create(cancel, submit)
         .horizontalReverse()

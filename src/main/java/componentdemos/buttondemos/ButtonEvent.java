@@ -33,7 +33,7 @@ public class ButtonEvent extends App {
     window.addClassName("window");
 
     Button button = new Button("Click Me!");
-    button.setStyle("width", "150px");
+    button.setWidth("150px");
 
     FlexLayout textDisplay = new FlexLayoutBuilder(text, payload)
         .vertical()

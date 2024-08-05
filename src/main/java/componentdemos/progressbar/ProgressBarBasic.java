@@ -16,7 +16,7 @@ public class ProgressBarBasic extends App {
   ProgressBar bar = new ProgressBar("Progress {{x}}% - value: {{value}}");
   FlexLayout buttonContainer = FlexLayout.create(start, pause, reset).build();
   FlexLayout layout = FlexLayout.create(buttonContainer, bar).vertical().build()
-      .setStyle("max-width", "320px")
+      .setMaxWidth("320px")
       .setStyle("margin", "0 auto")
       .setStyle("padding", "20px");
 

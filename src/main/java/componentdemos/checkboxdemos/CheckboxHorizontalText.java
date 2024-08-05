@@ -27,13 +27,13 @@ public class CheckboxHorizontalText extends App {
     FlexLayout rightAligned = FlexLayout.create()
     .vertical()
     .build()
-    .setStyle("width", "100px");
+    .setWidth("100px");
     
     FlexLayout leftAligned = FlexLayout.create()
     .vertical()
     .align().end()
     .build()
-    .setStyle("width", "100px");
+    .setWidth("100px");
 
     rightAligned.add(
       new CheckBox("Daily", true),
