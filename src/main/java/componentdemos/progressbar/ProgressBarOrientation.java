@@ -17,7 +17,7 @@ public class ProgressBarOrientation extends App {
   ProgressBar bar = new ProgressBar(15, "Reactor Heating Up: {{x}}%");
   FlexLayout buttonContainer = FlexLayout.create(start, pause, reset).vertical().build();
   FlexLayout layout = FlexLayout.create(buttonContainer, bar).horizontal().build()
-      .setStyle("max-width", "320px")
+      .setMaxWidth("320px")
       .setStyle("margin", "0 auto")
       .setStyle("padding", "20px");
 
@@ -38,8 +38,8 @@ public class ProgressBarOrientation extends App {
       }
     });
 
-    bar.setStyle("--dwc-progressbar-width", "160px")
-        .setStyle("--dwc-progressbar-height", "125px")
+    bar.setWidth("160px")
+        .setHeight("125px")
         .setTheme(Theme.SUCCESS)
         .setValue(25)
         .setOrientation(ProgressBar.Orientation.VERTICAL)

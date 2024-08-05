@@ -22,8 +22,8 @@ public class SliderMaxMinDemo extends App {
         .setMin(0)
         .setValue(50);
 
-    sl1.setStyle("width", "500px");
-    sl2.setStyle("width", "500px");
+    sl1.setWidth("500px");
+    sl2.setWidth("500px");
 
     window.add(
         new Label("<html><b>Min 0, Max 10</b></html>"), sl1,

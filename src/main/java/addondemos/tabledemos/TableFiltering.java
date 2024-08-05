@@ -24,7 +24,7 @@ public class TableFiltering extends App {
     Table<MusicRecord> table = buildTable(repository);
 
     FlexLayout layout =
-        FlexLayout.create().vertical().contentAlign().center().build().setStyle("height", "500px");
+        FlexLayout.create().vertical().contentAlign().center().build().setHeight("500px");
     layout.add(searchField, table);
 
     Frame mainFrame = new Frame();
