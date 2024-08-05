@@ -13,7 +13,8 @@ import com.webforj.component.field.NumberField;
 import com.webforj.dispatcher.EventListener;
 import com.webforj.exceptions.WebforjException;
 
-import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.ListIterator;
 
 public class IntervalDemo extends App {
@@ -24,18 +25,18 @@ public class IntervalDemo extends App {
 
     // Creates the buttons with icons and labels//
     Button startInterval = new Button();
-    startInterval.setHtml("<dwc-icon name=\"player-play\" expanse=\"m\"></dwc-icon> Start");
+    startInterval.setHtml("<dwc-icon name='player-play' expanse='m'></dwc-icon> Start");
     startInterval.setEnabled(false);
     startInterval.setMinSize("20vw","5vw");
     startInterval.setStyle("font-size","2vw");
 
     Button stopInterval = new Button();
-    stopInterval.setHtml("<dwc-icon name=\"player-pause\" expanse=\"m\"></dwc-icon> Stop");
+    stopInterval.setHtml("<dwc-icon name='player-pause' expanse='m'></dwc-icon> Stop");
     stopInterval.setMinSize("20vw","5vw");
     stopInterval.setStyle("font-size","2vw");
 
     Button restartInterval = new Button();
-    restartInterval.setHtml("<dwc-icon name=\"settings-automation\" expanse=\"m\"></dwc-icon> Set Delay");
+    restartInterval.setHtml("<dwc-icon name='settings-automation' expanse='m'></dwc-icon> Set Delay");
     restartInterval.setMinSize("20vw","5vw");
     restartInterval.setStyle("font-size","2vw");
 
@@ -50,39 +51,32 @@ public class IntervalDemo extends App {
     delaySpeed.setMin(speedMin);
     delaySpeed.setStep(speedMin);
     delaySpeed.setMinSize("20vw","5vw");
-    delaySpeed.setStyle("font-size","2vw");
+    delaySpeed.setStyle("font-size","1.75vw");
 
     // Creates an array of different icons to loop through on the displayButton
     // during the Interval event//
-    String baby = "<dwc-icon name=\"baby-carriage\" expanse=\"m\"></dwc-icon>";
-    String kid = "<dwc-icon name=\"skateboarding\" expanse=\"m\"></dwc-icon>";
-    String adult = "<dwc-icon name=\"run\"> expanse=\"m\"></dwc-icon>";
-    String old = "<dwc-icon name=\"old\" expanse=\"m\"></dwc-icon>";
-
-    ArrayList<String> display = new ArrayList<>();
-
-    display.add(baby);
-    display.add(kid);
-    display.add(adult);
-    display.add(old);
-
-    ListIterator<String> displayIterator = display.listIterator(0);
+    List<String> display = Arrays.asList(
+      "<dwc-icon name='baby-carriage' expanse='3xl'></dwc-icon>",
+      "<dwc-icon name='skateboarding' expanse='3xl'></dwc-icon>",
+      "<dwc-icon name='run' expanse='3xl'></dwc-icon>",
+      "<dwc-icon name='old' expanse='3xl'></dwc-icon>"
+    );
 
     Button displayButton = new Button().setTheme(ButtonTheme.OUTLINED_PRIMARY);
     displayButton.setWidth("10vw");
     displayButton.setMinSize("60px","5vw");
     displayButton.setStyle("font-size","2vw");
 
+    final ListIterator<String>[] displayIterator = new ListIterator[]{display.listIterator(0)};
+
     EventListener<Interval.ElapsedEvent> listener = (e -> {
-      if (displayIterator.hasNext()) {
-        displayButton.setHtml(displayIterator.next());
+      if (displayIterator[0].hasNext()) {
+        displayButton.setHtml(displayIterator[0].next());
       }
-      // Loops back to the beginning of the array//
       else {
-        displayIterator.previous();
-        displayIterator.previous();
-        displayIterator.previous();
-        displayButton.setHtml(display.get(0));
+        // Resets the iterator to the start and displays the first item
+        displayIterator[0] = display.listIterator(0);
+        displayButton.setHtml(displayIterator[0].next());
       }
     });
 
@@ -122,11 +116,6 @@ public class IntervalDemo extends App {
     mainLayout
         .setMargin("10px")
         .setPadding("10px");
-        // .setItemGrow(1,startInterval)
-        // .setItemGrow(1,stopInterval)
-        // .setItemGrow(1,displayButton)
-        // .setItemGrow(1,delaySpeed)
-        // .setItemGrow(1,restartInterval);
 
     window.add(mainLayout);
 
