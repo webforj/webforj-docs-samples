@@ -1,21 +1,22 @@
 package addondemos.chartdemos.charttypedemos;
 
 import com.webforj.component.googlecharts.GoogleChart;
-import com.webforj.component.html.elements.Div;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Arrays;
 
-public class GeoChart extends Div {
-
+public class GeoChart {
+  
   private final GoogleChart chart = new GoogleChart(GoogleChart.Type.GEO);
 
   public GeoChart() {
-    Map<String, Object> options = Map.of(
-        "title", "Geo Chart",
-        "colorAxis", Map.of("colors", List.of("#4285f4", "#ab48bc"))
-    );
+    
+    Map<String, Object> options = new HashMap<>();
+    options.put("title", "Geo Chart");
+    options.put("colorAxis", Map.of("colors", List.of("#4285f4", "#ab48bc")));
+    options.put("backgroundColor", "transparent");
     chart.setOptions(options);
 
     List<Object> data = new ArrayList<>();
@@ -26,8 +27,6 @@ public class GeoChart extends Div {
     data.add(Arrays.asList("Canada", 500));
     data.add(Arrays.asList("France", 600));
     chart.setData(data);
-
-    this.addClassName("chart-div");
   }
 
   public GoogleChart getChart() {

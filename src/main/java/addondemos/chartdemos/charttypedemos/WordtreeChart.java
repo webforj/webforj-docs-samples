@@ -1,25 +1,27 @@
 package addondemos.chartdemos.charttypedemos;
 
 import com.webforj.component.googlecharts.GoogleChart;
-import com.webforj.component.html.elements.Div;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.HashMap;
 
-public class WordtreeChart extends Div {
-  GoogleChart chart = new GoogleChart(GoogleChart.Type.WORDTREE);
+public class WordtreeChart {
+  
+  private static final String CATSEATMICE = "cats eat mice";
+
+  private final GoogleChart chart = new GoogleChart(GoogleChart.Type.WORDTREE);
 
   public WordtreeChart() {
-    chart = new GoogleChart(GoogleChart.Type.WORDTREE);
-
-    Map<String, Object> options = Map.of(
-        "title", "Word Usage Tree",
-        "wordtree", Map.of(
-            "format", "implicit",
-            "word", "open"
-        )
-    );
+    
+    Map<String, Object> options = new HashMap<>();
+    options.put("title", "Word Usage Tree");
+    options.put("backgroundColor", "transparent");
+    options.put("wordtree", Map.of(
+        "format", "implicit",
+        "word", "open"
+    ));
     chart.setOptions(options);
 
     List<Object> data = new ArrayList<>();
@@ -29,22 +31,20 @@ public class WordtreeChart extends Div {
     data.add(Arrays.asList("cats are better than hamsters"));
     data.add(Arrays.asList("cats are awesome"));
     data.add(Arrays.asList("cats are people too"));
-    data.add(Arrays.asList("cats eat mice"));
+    data.add(Arrays.asList(CATSEATMICE));
     data.add(Arrays.asList("cats meowing"));
     data.add(Arrays.asList("cats in the cradle"));
-    data.add(Arrays.asList("cats eat mice"));
+    data.add(Arrays.asList(CATSEATMICE));
     data.add(Arrays.asList("cats in the cradle lyrics"));
     data.add(Arrays.asList("cats eat kibble"));
     data.add(Arrays.asList("cats for adoption"));
     data.add(Arrays.asList("cats are family"));
-    data.add(Arrays.asList("cats eat mice"));
+    data.add(Arrays.asList(CATSEATMICE));
     data.add(Arrays.asList("cats are better than kittens"));
     data.add(Arrays.asList("cats are evil"));
     data.add(Arrays.asList("cats are weird"));
-    data.add(Arrays.asList("cats eat mice"));
+    data.add(Arrays.asList(CATSEATMICE));
     chart.setData(data);
-
-    this.addClassName("chart-div");
   }
 
   public GoogleChart getChart() {

@@ -1,27 +1,25 @@
 package addondemos.chartdemos.charttypedemos;
 
 import com.webforj.component.googlecharts.GoogleChart;
-import com.webforj.component.html.elements.Div;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Arrays;
 
-public class ScatterChart extends Div {
-  
-  GoogleChart chart = new GoogleChart(GoogleChart.Type.SCATTER);
+public class ScatterChart {
+
+  private static final String TITLE = "title";
+
+  private final GoogleChart chart = new GoogleChart(GoogleChart.Type.SCATTER);
 
   public ScatterChart() {
-    Map<String, Object> options = Map.of(
-        "title", "Scatter Chart",
-        "hAxis", Map.of(
-            "title", "Age"
-        ),
-        "vAxis", Map.of(
-            "title", "Weight"
-        ),
-        "colors", Arrays.asList("#FFA500")
-    );
+    Map<String, Object> options = new HashMap<>();
+    options.put(TITLE, "Scatter Chart");
+    options.put("hAxis", Map.of(TITLE, "Age"));
+    options.put("vAxis", Map.of(TITLE, "Weight"));
+    options.put("colors", List.of("#FFA500"));
+    options.put("backgroundColor", "transparent");
     chart.setOptions(options);
 
     List<Object> data = new ArrayList<>();
@@ -33,8 +31,6 @@ public class ScatterChart extends Div {
     data.add(Arrays.asList(3, 3.5));
     data.add(Arrays.asList(6.5, 7));
     chart.setData(data);
-    
-    this.addClassName("chart-div");
   }
 
   public GoogleChart getChart() {

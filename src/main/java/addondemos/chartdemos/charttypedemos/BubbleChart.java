@@ -1,38 +1,43 @@
 package addondemos.chartdemos.charttypedemos;
 
 import com.webforj.component.googlecharts.GoogleChart;
-import com.webforj.component.html.elements.Div;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class BubbleChart extends Div {
+public class BubbleChart {
 
-  GoogleChart chart = new GoogleChart(GoogleChart.Type.BUBBLE);
+  private static final String TITLE = "title";
+  private static final String TEXT_STYLE = "textStyle";
+  private static final String FONT_SIZE = "fontSize";
+
+  private final GoogleChart chart = new GoogleChart(GoogleChart.Type.BUBBLE);
 
   public BubbleChart() {
-    Map<String, Object> options = Map.of(
-        "title", "Investment vs. Profit",
-        "hAxis", Map.of(
-            "title", "Potential Investment",
-            "textStyle", Map.of(
-                "bold", true,
-                "fontSize", 12,
-                "color", "#4d4d4d"
-            )
-        ),
-        "vAxis", Map.of(
-            "title", "Potential Profit",
-            "textStyle", Map.of(
-                "bold", true,
-                "fontSize", 12,
-                "color", "#4d4d4d"
-            )
-        ),
-        "bubble", Map.of("textStyle", Map.of("fontSize", 11)),
-        "colorAxis", Map.of("colors", List.of("#d4c5f9", "#495057"))
-    );
+
+    Map<String, Object> options = new HashMap<>();
+    options.put(TITLE, "Investment vs. Profit");
+    options.put("hAxis", Map.of(
+        TITLE, "Potential Investment",
+        TEXT_STYLE, Map.of(
+            "bold", true,
+            FONT_SIZE, 12,
+            "color", "#4d4d4d"
+        )
+    ));
+    options.put("vAxis", Map.of(
+        TITLE, "Potential Profit",
+        TEXT_STYLE, Map.of(
+            "bold", true,
+            FONT_SIZE, 12,
+            "color", "#4d4d4d"
+        )
+    ));
+    options.put("bubble", Map.of(TEXT_STYLE, Map.of(FONT_SIZE, 11)));
+    options.put("colorAxis", Map.of("colors", Arrays.asList("#d4c5f9", "#495057")));
+    options.put("backgroundColor", "transparent");
     chart.setOptions(options);
 
     List<Object> data = new ArrayList<>();
@@ -42,11 +47,11 @@ public class BubbleChart extends Div {
     data.add(Arrays.asList("3", 78, 184, 50));
     data.add(Arrays.asList("4", 72, 278, 230));
     chart.setData(data);
-
-    this.addClassName("chart-div");
   }
 
   public GoogleChart getChart() {
     return chart;
   }
 }
+
+

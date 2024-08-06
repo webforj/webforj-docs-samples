@@ -1,23 +1,23 @@
 package addondemos.chartdemos.charttypedemos;
 
 import com.webforj.component.googlecharts.GoogleChart;
-import com.webforj.component.html.elements.Div;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.HashMap;
 
-public class TimelineChart extends Div {
+public class TimelineChart {
 
-  GoogleChart chart = new GoogleChart(GoogleChart.Type.TIMELINE);
+  private final GoogleChart chart = new GoogleChart(GoogleChart.Type.TIMELINE);
 
   public TimelineChart() {
-    Map<String, Object> options = Map.of(
-        "title", "Presidential Terms",
-        "timeline", Map.of(
-            "showRowLabels", false
-        )
-    );
+    Map<String, Object> options = new HashMap<>();
+    options.put("title", "Presidential Terms");
+    options.put("timeline", Map.of(
+        "showRowLabels", false
+    ));
+    options.put("backgroundColor", "transparent");
     chart.setOptions(options);
 
     List<Object> data = new ArrayList<>();
@@ -31,8 +31,6 @@ public class TimelineChart extends Div {
     data.add(Arrays.asList("4", "James Madison", "Date(1809, 2, 4)", "Date(1817, 2, 4)"));
     data.add(Arrays.asList("5", "James Monroe", "Date(1817, 2, 4)", "Date(1825, 2, 4)"));
     chart.setData(data);
-
-    this.addClassName("chart-div");
   }
 
   public GoogleChart getChart() {

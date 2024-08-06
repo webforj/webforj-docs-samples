@@ -1,33 +1,23 @@
 package addondemos.chartdemos.charttypedemos;
 
 import com.webforj.component.googlecharts.GoogleChart;
-import com.webforj.component.html.elements.Div;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.HashMap;
 
-public class TableChart extends Div {
-  
-  GoogleChart chart = new GoogleChart(GoogleChart.Type.TABLE);
+public class TableChart {
+
+  private final GoogleChart chart = new GoogleChart(GoogleChart.Type.TABLE);
 
   public TableChart() {
-    Map<String, Object> options = Map.of(
-        "title", "Sales Data",
-        "showRowNumber", true,
-        "width", "100%",
-        "height", "400px",
-        "cssClassNames", Map.of(
-            "headerRow", "table-header-row",
-            "tableRow", "table-row",
-            "oddTableRow", "table-odd-row",
-            "selectedTableRow", "table-selected-row",
-            "hoverTableRow", "table-hover-row",
-            "headerCell", "table-header-cell",
-            "tableCell", "table-cell",
-            "rowNumberCell", "table-row-number"
-        )
-    );
+    Map<String, Object> options = new HashMap<>();
+    options.put("title", "Sales Data");
+    options.put("showRowNumber", true);
+    options.put("width", "100%");
+    options.put("height", "400px");
+    options.put("backgroundColor", "transparent");
     chart.setOptions(options);
 
     List<Object> data = new ArrayList<>();
@@ -37,8 +27,6 @@ public class TableChart extends Div {
     data.add(Arrays.asList("Emily Johnson", 45000, false, "2018-06-15"));
     data.add(Arrays.asList("Michael Brown", 55000, true, "2021-03-30"));
     chart.setData(data);
-
-    this.addClassName("chart-div");
   }
 
   public GoogleChart getChart() {

@@ -1,34 +1,35 @@
 package addondemos.chartdemos.charttypedemos;
 
 import com.webforj.component.googlecharts.GoogleChart;
-import com.webforj.component.html.elements.Div;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class CalendarChart extends Div {
+public class CalendarChart {
 
-  GoogleChart chart = new GoogleChart(GoogleChart.Type.CALENDAR);
+  private final GoogleChart chart = new GoogleChart(GoogleChart.Type.CALENDAR);
 
   public CalendarChart() {
-    Map<String, Object> options = Map.of(
-        "title", "Attendance Calendar",
-        "calendar", Map.of(
-            "cellColor", Map.of(
-                "stroke", "#fff",
-                "strokeOpacity", 0.5,
-                "strokeWidth", 1,
-                "fill", "#76a7fa"
-            ),
-            "focusedCellColor", Map.of(
-                "stroke", "#fff",
-                "strokeOpacity", 0.5,
-                "strokeWidth", 1,
-                "fill", "#4285f4"
-            )
+
+    Map<String, Object> options = new HashMap<>();
+    options.put("title", "Attendance Calendar");
+    options.put("calendar", Map.of(
+        "cellColor", Map.of(
+            "stroke", "#fff",
+            "strokeOpacity", 0.5,
+            "strokeWidth", 1,
+            "fill", "#76a7fa"
+        ),
+        "backgroundColor", "transparent",
+        "focusedCellColor", Map.of(
+            "stroke", "#fff",
+            "strokeOpacity", 0.5,
+            "strokeWidth", 1,
+            "fill", "#4285f4"
         )
-    );
+    ));
     chart.setOptions(options);
 
     List<Object> data = new ArrayList<>();
@@ -51,11 +52,10 @@ public class CalendarChart extends Div {
     data.add(Arrays.asList("Date(2022, 0, 29)", 300));
     data.add(Arrays.asList("Date(2022, 0, 31)", 500));
     chart.setData(data);
-
-    this.addClassName("chart-div");
   }
 
   public GoogleChart getChart() {
     return chart;
   }
 }
+

@@ -1,27 +1,30 @@
 package addondemos.chartdemos.charttypedemos;
 
 import com.webforj.component.googlecharts.GoogleChart;
-import com.webforj.component.html.elements.Div;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Arrays;
 
-public class GaugeChart extends Div {
-  
-  GoogleChart chart = new GoogleChart(GoogleChart.Type.GAUGE);
+public class GaugeChart {
+
+  private static final String TITLE = "title";
+
+  private final GoogleChart chart = new GoogleChart(GoogleChart.Type.GAUGE);
 
   public GaugeChart() {
-    Map<String, Object> options = Map.of(
-        "title", "Performance Metrics",
-        "greenFrom", 75,
-        "greenTo", 100,
-        "yellowFrom", 50,
-        "yellowTo", 75,
-        "redFrom", 0,
-        "redTo", 50,
-        "minorTicks", 5
-    );
+    
+    Map<String, Object> options = new HashMap<>();
+    options.put(TITLE, "Performance Metrics");
+    options.put("greenFrom", 75);
+    options.put("greenTo", 100);
+    options.put("yellowFrom", 50);
+    options.put("yellowTo", 75);
+    options.put("redFrom", 0);
+    options.put("redTo", 50);
+    options.put("minorTicks", 5);
+    options.put("backgroundColor", "transparent");
     chart.setOptions(options);
 
     List<Object> data = new ArrayList<>();
@@ -30,8 +33,6 @@ public class GaugeChart extends Div {
     data.add(Arrays.asList("CPU", 55));
     data.add(Arrays.asList("Network", 68));
     chart.setData(data);
-    
-    this.addClassName("chart-div");
   }
 
   public GoogleChart getChart() {
