@@ -3,25 +3,28 @@ package addondemos.chartdemos.charttypedemos;
 import com.webforj.component.googlecharts.GoogleChart;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class LineChart {
 
-  GoogleChart chart = new GoogleChart(GoogleChart.Type.LINE);
+  private static final String TITLE = "title";
+
+  private final GoogleChart chart = new GoogleChart(GoogleChart.Type.LINE);
 
   public LineChart() {
-    Map<String, Object> options = Map.of(
-        "title", "Annual Growth",
-        "hAxis", Map.of(
-            "title", "Year",
-            "textStyle", Map.of(
-                "bold", true,
-                "fontSize", 12,
-                "color", "#4d4d4d"
-            )
+    Map<String, Object> options = new HashMap<>();
+    options.put(TITLE, "Annual Growth");
+    options.put("backgroundColor", "transparent");
+    options.put("hAxis", Map.of(
+        TITLE, "Year",
+       "textStyle", Map.of(
+            "bold", true,
+            "fontSize", 12,
+            "color", "#4d4d4d"
         )
-    );
+    ));
     chart.setOptions(options);
 
     List<Object> data = new ArrayList<>();

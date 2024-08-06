@@ -6,6 +6,7 @@ import com.webforj.component.button.Button;
 import com.webforj.component.button.ButtonTheme;
 import com.webforj.component.field.NumberField;
 import com.webforj.component.googlecharts.GoogleChart;
+import com.webforj.component.html.elements.Div;
 import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.component.window.Frame;
 import com.webforj.exceptions.WebforjException;
@@ -17,6 +18,10 @@ import java.util.Map;
 @InlineStyleSheet("context://css/chartstyles/redrawchart_styles.css")
 public class ChartDemoRedraw extends App {
 
+  private static final String COLOR = "color";
+  private static final String TEXT_STYLE = "textStyle";
+  private static final String TITLE = "title";
+
   private GoogleChart chart = new GoogleChart(GoogleChart.Type.COLUMN);
   private Button redrawButton = new Button("Redraw Chart");
   private FlexLayout inputGroup = new FlexLayout();
@@ -27,18 +32,17 @@ public class ChartDemoRedraw extends App {
     Frame window = new Frame();
     window.addClassName("window");
 
-    chart.setStyle("width", "50vw");
-    chart.setStyle("height", "50vh");
-    chart.setStyle("border-radius", "10px");
-    chart.setStyle("box-shadow", "0 4px 8px rgba(0, 0, 0, 0.1)");
+    Div chartContainer = new Div();
+    chartContainer.addClassName("chart-container");
+    chartContainer.add(chart);
 
     Map<String, Object> options = new HashMap<>();
-    options.put("title", "Social Media Following");
+    options.put(TITLE, "Social Media Following");
     options.put("colors", List.of("#006fe6"));
-    options.put("backgroundColor", "#f9f9f9");
+    options.put("backgroundColor", "transparent");
     options.put("chartArea", Map.of("width", "80%", "height", "70%"));
-    options.put("hAxis", Map.of("textStyle", Map.of("color", "#333")));
-    options.put("vAxis", Map.of("minValue", 0, "textStyle", Map.of("color", "#333")));
+    options.put("hAxis", Map.of(TEXT_STYLE, Map.of(COLOR, "#333")));
+    options.put("vAxis", Map.of("minValue", 0, TEXT_STYLE, Map.of(COLOR, "#333")));
     options.put("legend", Map.of("position", "bottom"));
     chart.setOptions(options);
 
@@ -91,7 +95,9 @@ public class ChartDemoRedraw extends App {
     });
 
     inputGroup.add(redrawButton.setTheme(ButtonTheme.PRIMARY));
-    window.add(chart);
+    window.add(chartContainer);  
     window.add(inputGroup);
   }
 }
+
+
