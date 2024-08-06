@@ -1,0 +1,41 @@
+.window {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px;
+}
+
+.number-field {
+  flex: 1 1 150px;
+}
+
+.redraw-button {
+  flex: 1 1 150px;
+}
+
+@media (max-width: 768px) {
+  .input-group {
+    flex-direction: column;
+  }
+
+  .number-field, .redraw-button {
+    width: 100%;
+  }
+}
