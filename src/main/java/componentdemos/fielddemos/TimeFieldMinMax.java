@@ -50,7 +50,7 @@ public class TimeFieldMinMax extends App {
         } catch (IllegalArgumentException __) {
           confirm.setEnabled(false);
         }
-        consoleLog(meeting.getValue() + "");
+        console().log(meeting.getValue() + "");
       });
   }
 }
