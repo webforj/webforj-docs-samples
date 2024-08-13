@@ -17,12 +17,12 @@ public class SliderLabelDemo extends App {
     Frame window = new Frame();
     window.addClassName("Frame");
 
-    Slider sl1 = new Slider().setMaximum(100)
-        .setMinimum(0);
-    Slider sl2 = new Slider().setMaximum(100)
-        .setMinimum(0);
-    Slider sl3 = new Slider().setMaximum(100)
-        .setMinimum(0);
+    Slider sl1 = new Slider().setMax(100)
+        .setMin(0);
+    Slider sl2 = new Slider().setMax(100)
+        .setMin(0);
+    Slider sl3 = new Slider().setMax(100)
+        .setMin(0);
 
     Map<Integer, String> mapMatch = Map.ofEntries(
         entry(0, "0"),
@@ -59,21 +59,21 @@ public class SliderLabelDemo extends App {
             .setStyle("margin", "5px 0 0 10px"),
         sl3);
 
-    sl1.setPaintLabels(true)
+    sl1.setLabelsVisible(true)
         .setLabels(mapMatch)
         .setSnapToTicks(true);
 
-    sl2.setPaintTicks(true)
+    sl2.setTicksVisible(true)
         .setMajorTickSpacing(50)
         .setMinorTickSpacing(10)
-        .setPaintLabels(true)
+        .setLabelsVisible(true)
         .setLabels(mapMatch)
         .setSnapToTicks(true);
 
-    sl3.setPaintTicks(true)
+    sl3.setTicksVisible(true)
         .setMajorTickSpacing(50)
         .setMinorTickSpacing(10)
-        .setPaintLabels(true)
+        .setLabelsVisible(true)
         .setLabels(mapNoMatch)
         .setSnapToTicks(true);
   }

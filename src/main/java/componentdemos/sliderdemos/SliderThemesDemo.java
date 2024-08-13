@@ -5,6 +5,7 @@ import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.text.Label;
 import com.webforj.component.window.Frame;
 import com.webforj.exceptions.WebforjException;
+import com.webforj.component.Theme;
 import com.webforj.component.slider.Slider;
 
 @InlineStyleSheet("context://css/sliderstyles/theme_styles.css")
@@ -14,35 +15,35 @@ public class SliderThemesDemo extends App {
     Frame window = new Frame();
     window.addClassName("Frame");
 
-    Slider sl1 = new Slider().setMaximum(100)
-        .setMinimum(0)
+    Slider sl1 = new Slider().setMax(100)
+        .setMin(0)
         .setValue(50)
-        .setTheme(Slider.Theme.DEFAULT);
+        .setTheme(Theme.DEFAULT);
 
-    Slider sl2 = new Slider().setMaximum(100)
-        .setMinimum(0)
+    Slider sl2 = new Slider().setMax(100)
+        .setMin(0)
         .setValue(50)
-        .setTheme(Slider.Theme.DANGER);
+        .setTheme(Theme.DANGER);
 
-    Slider sl3 = new Slider().setMaximum(100)
-        .setMinimum(0)
+    Slider sl3 = new Slider().setMax(100)
+        .setMin(0)
         .setValue(50)
-        .setTheme(Slider.Theme.GRAY);
+        .setTheme(Theme.GRAY);
 
-    Slider sl4 = new Slider().setMaximum(100)
-        .setMinimum(0)
+    Slider sl4 = new Slider().setMax(100)
+        .setMin(0)
         .setValue(50)
-        .setTheme(Slider.Theme.INFO);
+        .setTheme(Theme.INFO);
 
-    Slider sl5 = new Slider().setMaximum(100)
-        .setMinimum(0)
+    Slider sl5 = new Slider().setMax(100)
+        .setMin(0)
         .setValue(50)
-        .setTheme(Slider.Theme.SUCCESS);
+        .setTheme(Theme.SUCCESS);
 
-    Slider sl6 = new Slider().setMaximum(100)
-        .setMinimum(0)
+    Slider sl6 = new Slider().setMax(100)
+        .setMin(0)
         .setValue(50)
-        .setTheme(Slider.Theme.WARNING);
+        .setTheme(Theme.WARNING);
 
     window.add(
         new Label("<html><b>DEFAULT</b></html>"), sl1,
