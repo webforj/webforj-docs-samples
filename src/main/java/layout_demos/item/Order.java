@@ -41,9 +41,9 @@ public class Order extends App{
 
     MaskedNumberField order = new MaskedNumberField("5")
     .setLabel("Order:")
-    .setStyle("width", "200px");
+    .setWidth("200px");
     Button submit = new Button("Set Order");
-    submit.setStyle("height", "34px")
+    submit.setHeight("34px")
       .onClick( e -> {
       boxLayout.setItemOrder(Integer.parseInt(order.getText()), orderButton);
       orderButton.setText("Order: " + order.getText());

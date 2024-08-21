@@ -25,7 +25,7 @@ public class NavigatorTable extends App {
     nav.setStyle("margin-right", "20px");
 
     Table<MusicRecord> table = new Table<>();
-    table.setStyle("height", "400px");
+    table.setHeight("400px");
 
     table.addColumn("Number", MusicRecord::getNumber);
     table.addColumn("Title", MusicRecord::getTitle);
