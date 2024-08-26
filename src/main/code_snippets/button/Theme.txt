@@ -1,11 +1,11 @@
 for (ButtonTheme theme : ButtonTheme.values()) {
   if(!theme.name().contains("OUTLINE")){
-    window.add(new Button(theme.name()).setTheme(theme));
+    window.add(new Button(theme.name(),theme));
   }
 }
     
 for (ButtonTheme theme : ButtonTheme.values()) {
   if(theme.name().contains("OUTLINE")){
-    window.add(new Button(theme.name()).setTheme(theme));
+    window.add(new Button(theme.name(),theme));
   }
 }
