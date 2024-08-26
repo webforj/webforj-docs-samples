@@ -31,34 +31,18 @@ public class ButtonIcon extends App {
     window.addClassName("window");
     window.setWidth("100%");
 
-    notifications = new Button("""
-      <html>
-        Notifications
-        <dwc-icon name='bell' slot='suffix'></dwc-icon>
-      </html>
-    """);
+    notifications = new Button();
+    notifications.setHtml("Notifications <dwc-icon name='bell'></dwc-icon>");
 
-    settings = new Button("""
-      <html>
-        Settings
-        <dwc-icon name='settings' slot='suffix'></dwc-icon>
-      </html>
-    """);
+    settings = new Button();
+    settings.setHtml("Settings <dwc-icon name='settings'></dwc-icon>");
 
-    search = new Button("""
-      <html>
-        <dwc-icon name='search'></dwc-icon>
-        Search
-      </html>
-    """);
+    search = new Button();
+    search.setHtml("<dwc-icon name='search'></dwc-icon></dwc-icon> Search");
 
-    home = new Button("""
-      <html>
-        <dwc-icon name='home'></dwc-icon>
-      </html>
-    """);
+    home = new Button("home",ButtonTheme.PRIMARY);
+    home.setHtml("<dwc-icon name='home'></dwc-icon>");
 
-    home.setTheme(ButtonTheme.PRIMARY);
     window.add(notifications, settings, search, home);
   }
 }

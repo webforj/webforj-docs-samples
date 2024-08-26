@@ -21,7 +21,7 @@ import com.webforj.exceptions.WebforjException;
 public class ButtonDisable extends App {
 
   TextField email = new TextField();
-  Button submit = new Button("Submit");
+  Button submit = new Button("Submit", ButtonTheme.PRIMARY);
 
   @Override
   public void run() throws WebforjException {
@@ -41,7 +41,6 @@ public class ButtonDisable extends App {
           }
         });
 
-    submit.setTheme(ButtonTheme.PRIMARY)
-        .setEnabled(false);
+    submit.setEnabled(false);
   }
 }
