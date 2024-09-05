@@ -28,7 +28,7 @@ public class IconDemo extends App {
     Frame mainFrame = new Frame();
     header.setJustifyContent(FlexJustifyContent.BETWEEN)
         .setAlignment(FlexAlignment.CENTER);
-    header.setStyle("padding", "5px 1.5em")
+    header.setStyle("padding", "1.5em")
         .setStyle("box-shadow", "4px -5px 8px 10px lightgray");
     mainFrame.add(header);
 
