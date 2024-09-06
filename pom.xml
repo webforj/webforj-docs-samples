@@ -6,7 +6,7 @@
 
     <groupId>com.webforj.samples</groupId>
     <artifactId>ControlSamples</artifactId>
-    <version>24.10</version>
+    <version>24.11</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -58,7 +58,7 @@
         <dependency>
             <groupId>com.webforj</groupId>
             <artifactId>webforj-terminal</artifactId>
-            <version>24.10</version>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 
