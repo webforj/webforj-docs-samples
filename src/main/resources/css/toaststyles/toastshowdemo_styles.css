@@ -1,0 +1,23 @@
+.window {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  gap: 20px;
+  align-items: center;
+  height: 100dvh;
+}
+
+.row {
+  width: 50%;
+
+  @media only screen and (max-width: 1200px) {
+    width: 70%;
+  }
+}
+
+.button {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
