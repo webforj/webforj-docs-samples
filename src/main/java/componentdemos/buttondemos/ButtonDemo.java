@@ -28,17 +28,15 @@ public class ButtonDemo extends App {
     Frame window = new Frame();
     window.addClassName("window");
 
-    clear = new Button("Clear", e -> {
+    clear = new Button("Clear", ButtonTheme.DEFAULT, e -> {
       firstName.setText("");
       lastName.setText("");
       email.setText("");
     });
-    clear.setTheme(ButtonTheme.DEFAULT);
 
-    submit = new Button("Submit", e -> {
+    submit = new Button("Submit", ButtonTheme.PRIMARY, e -> {
       App.msgbox("Welcome to the application " + firstName.getText() + " " + lastName.getText() + "!");
     });
-    submit.setTheme(ButtonTheme.PRIMARY);
 
     firstName = new TextField(Type.TEXT, "First Name", "Jason");
     lastName = new TextField(Type.TEXT, "Last Name", "Turner");

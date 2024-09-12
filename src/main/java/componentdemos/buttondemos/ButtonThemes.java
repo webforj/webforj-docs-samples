@@ -19,15 +19,15 @@ public class ButtonThemes extends App {
 
     for (ButtonTheme theme : ButtonTheme.values()) {
       if (!theme.name().contains("OUTLINE")) {
-        Button themeButton = new Button(theme.name());
-        window.add(themeButton.setTheme(theme));
+        Button themeButton = new Button(theme.name(), theme);
+        window.add(themeButton);
       }
     }
 
     for (ButtonTheme theme : ButtonTheme.values()) {
       if (theme.name().contains("OUTLINE")) {
-        Button themeButton = new Button(theme.name());
-        window.add(themeButton.setTheme(theme));
+        Button themeButton = new Button(theme.name(), theme);
+        window.add(themeButton);
       }
     }
   }

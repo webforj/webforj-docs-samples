@@ -26,8 +26,7 @@ public class TimeFieldMinMax extends App {
 
   public TimeFieldMinMax() {
     meeting = new TimeField(LocalTime.of(12, 30));
-    confirm = new Button("Confirm");
-    confirm.setTheme(ButtonTheme.PRIMARY);
+    confirm = new Button("Confirm", ButtonTheme.PRIMARY);
   }
 
   @Override
