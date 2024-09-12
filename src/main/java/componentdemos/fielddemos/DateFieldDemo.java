@@ -13,7 +13,7 @@ import com.webforj.exceptions.WebforjException;
     .main__window{
         display: flex;
         margin: 20px;
-        gap: 100px;
+        gap: var(--dwc-space-l);
     }
 
     .date__input{
