@@ -19,11 +19,8 @@ public class ColumnsLayoutAlignment extends App {
   TextArea bio = new TextArea("Bio");
   CheckBox terms = new CheckBox("I agree to the terms and conditions");
   Button submit = new Button("Submit", ButtonTheme.PRIMARY);
-  // @formatter:off
   ColumnsLayout columnsLayout = new ColumnsLayout(
-      firstName, lastName, email, dateOfBirth, bio, terms, submit
-  );
-  // @formatter:on
+      firstName, lastName, email, dateOfBirth, bio, terms, submit);
 
   @Override
   public void run() throws WebforjException {
@@ -32,11 +29,13 @@ public class ColumnsLayoutAlignment extends App {
 
     columnsLayout.setColumn(submit, 2);
     columnsLayout.setHorizontalAlignment(submit, ColumnsLayout.Alignment.END);
+    columnsLayout.setStyle("padding", "var(--dwc-space-xl)");
 
     Frame frame = new Frame();
     frame.setMaxWidth("60em");
-    frame.setStyle("margin", "0px auto");
-    frame.setStyle("padding", "20px");
+    frame.setStyle("margin", "0 auto");
+    frame.setStyle("overflow", "auto");
+    frame.setStyle("height", "100dvh");
     frame.add(columnsLayout);
   }
 }

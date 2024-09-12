@@ -20,17 +20,22 @@ public class ColumnsLayoutDemo extends App {
   /*
    * The layout will position the components in 2 columns by default.
    */
-  ColumnsLayout columnsLayout =
-      new ColumnsLayout(firstName, lastName, email, password, confirmPassword, submit);
+  ColumnsLayout columnsLayout = new ColumnsLayout(firstName, lastName, email, password, confirmPassword, submit);
 
   @Override
   public void run() throws WebforjException {
     columnsLayout.setSpan(email, 2);
     columnsLayout.setSpan(submit, 2);
+    columnsLayout.setStyle("padding", "var(--dwc-space-xl)");
+    
+
+    submit.setStyle("margin-top", "var(--dwc-space-l)");
 
     Frame frame = new Frame();
     frame.setMaxWidth("600px");
-    frame.setStyle("margin", "20px auto");
+    frame.setStyle("margin", "0 auto");
+    frame.setStyle("overflow", "auto");
+    frame.setStyle("height", "100dvh");
     frame.add(columnsLayout);
   }
 }

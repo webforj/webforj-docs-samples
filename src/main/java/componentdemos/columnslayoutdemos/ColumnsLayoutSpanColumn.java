@@ -21,22 +21,23 @@ public class ColumnsLayoutSpanColumn extends App {
    */
   ColumnsLayout columnsLayout = new ColumnsLayout(
       List.of(
-        new ColumnsLayout.Breakpoint("default", 0 , 1),
-        new ColumnsLayout.Breakpoint("small", "20em", 1),
-        new ColumnsLayout.Breakpoint("medium", "40em", 2),
-        new ColumnsLayout.Breakpoint("large", "60em", 3)
-      ),
-      firstName, lastName, email, password, confirmPassword
-  );
+          new ColumnsLayout.Breakpoint("default", 0, 1),
+          new ColumnsLayout.Breakpoint("small", "20em", 1),
+          new ColumnsLayout.Breakpoint("medium", "40em", 2),
+          new ColumnsLayout.Breakpoint("large", "60em", 3)),
+      firstName, lastName, email, password, confirmPassword);
 
   @Override
   public void run() throws WebforjException {
     columnsLayout.setSpan(email, "medium", 2);
     columnsLayout.setColumn(confirmPassword, "medium", 1);
-    
+    columnsLayout.setStyle("padding", "var(--dwc-space-xl)");
+
     Frame frame = new Frame();
     frame.setMaxWidth("60em");
-    frame.setStyle("margin", "20px auto");
+    frame.setStyle("margin", "0 auto");
+    frame.setStyle("overflow", "auto");
+    frame.setStyle("height", "100dvh");
     frame.add(columnsLayout);
   }
 }

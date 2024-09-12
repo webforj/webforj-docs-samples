@@ -24,15 +24,13 @@ public class ColumnsLayoutForm extends App {
   TextField zip = new TextField("Zip");
   Button submit = new Button("Submit", ButtonTheme.PRIMARY);
   Button cancel = new Button("Cancel", ButtonTheme.OUTLINED_PRIMARY);
-  ColumnsLayout columnsLayout =
-      new ColumnsLayout(
-        firstName, lastName,
-        email,
-        password, passwordConfirm,
-        address,
-        states, zip,
-        cancel, submit
-      );
+  ColumnsLayout columnsLayout = new ColumnsLayout(
+      firstName, lastName,
+      email,
+      password, passwordConfirm,
+      address,
+      states, zip,
+      cancel, submit);
 
   @Override
   public void run() throws WebforjException {
@@ -40,13 +38,16 @@ public class ColumnsLayoutForm extends App {
 
     columnsLayout.setSpan(email, 2);
     columnsLayout.setSpan(address, 2);
+    columnsLayout.setStyle("padding", "var(--dwc-space-xl)");
 
-    
+    submit.setStyle("margin-top", "var(--dwc-space-l)");
+    cancel.setStyle("margin-top", "var(--dwc-space-l)");
 
     Frame frame = new Frame();
     frame.setMaxWidth("600px");
     frame.setStyle("margin", "0 auto");
-    frame.setStyle("padding", "20px");
+    frame.setStyle("overflow", "auto");
+    frame.setStyle("height", "100dvh");
     frame.add(columnsLayout);
   }
 
