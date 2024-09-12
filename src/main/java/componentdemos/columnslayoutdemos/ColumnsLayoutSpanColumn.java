@@ -30,7 +30,6 @@ public class ColumnsLayoutSpanColumn extends App {
   @Override
   public void run() throws WebforjException {
     columnsLayout.setSpan(email, "medium", 2);
-    columnsLayout.setColumn(confirmPassword, "medium", 1);
     columnsLayout.setStyle("padding", "var(--dwc-space-xl)");
 
     Frame frame = new Frame();
