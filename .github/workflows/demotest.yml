@@ -1,0 +1,55 @@
+name: Java CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout current repository
+      uses: actions/checkout@v2
+
+    - name: Set up JDK 21
+      uses: actions/setup-java@v2
+      with:
+        java-version: '21'
+        distribution: 'temurin' 
+
+    - name: Enable Maven remote install
+      run:  /usr/local/bbx/bbj -tIO DWCJ/cli.bbj - enable_remote_install
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+      with:
+        install: true
+
+    - name: Create Docker builder
+      run: docker buildx create --use
+
+    - name: Pull Docker Image
+      run: docker pull webforj/sandbox:latest
+
+    - name: Run Docker Container in non-privileged mode
+      run: docker run -p 8888:8888 webforj/sandbox:latest
+
+    - name: Install maven
+      run: mvn install -e -DskipTests
+
+    - name: Checkout DemoTester repository
+      uses: actions/checkout@v2
+      with:
+        repository: lschuetz736/DemoTester
+        path: demotester
+
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
+
+    - name: Compile and run java program
+      run: cd demotester && mvn compile -e exec:java -D exec.mainClass="org.tester.DemoTester" -D exec.args="compareScreenshots 1000"
+
+    - name: Upload output file
+      uses: actions/upload-artifact@v2
+      with:
+        name: output-file
+        path: demotester/data.txt
