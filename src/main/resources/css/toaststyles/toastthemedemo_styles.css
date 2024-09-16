@@ -1,0 +1,22 @@
+.window {
+  display: flex;
+  margin: 20px;
+ }
+
+.closebutton {
+  --dwc-button-hover-color: var(--dwc-button-color); 
+  --dwc-button-hover-background: var(--dwc-button-background); 
+  --dwc-button-hover-border-color: var(--dwc-button-border-color);
+  --dwc-button-background: #ffb700; 
+  --dwc-button-color: #000000;      
+  --dwc-button-border-color: #ffb700;
+  --dwc-button-hover-color: var(--dwc-button-color); 
+  --dwc-button-hover-background: var(--dwc-button-background); 
+  --dwc-button-hover-border-color: var(--dwc-button-border-color);
+}
+
+.custom-theme {
+  --dwc-toast-background: #ffb700;
+  --dwc-toast-color: #000000;
+  --dwc-toast-border-color: #ffa500;
+}
