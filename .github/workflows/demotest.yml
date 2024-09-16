@@ -55,7 +55,7 @@ jobs:
       run: cd demotester && mvn compile -e exec:java -D exec.mainClass="org.tester.DemoTester" -D exec.args="compareScreenshots .. default default"
 
     - name: Upload output file
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: output-file
         path: demotester/data.txt
