@@ -30,8 +30,14 @@ jobs:
     - name: Pull Docker Image
       run: docker pull webforj/sandbox:latest
 
-    - name: Run Docker Container in non-privileged mode
-      run: docker run -p 8888:8888 webforj/sandbox:latest
+    - name: Build Docker Image 
+      run: docker build -t webforj/sandbox:latest . 
+
+    - name: Run Docker Container 
+      run: docker run -d -p 8888:8888 webforj/sandbox:latest
+
+    - name: Install Maven inside Docker container
+      run: docker exec my-container mvn install -e -DskipTests
 
     - name: Install maven
       run: mvn install -e -DskipTests
@@ -39,7 +45,7 @@ jobs:
     - name: Checkout DemoTester repository
       uses: actions/checkout@v2
       with:
-        repository: lschuetz736/DemoTester
+        repository: lschuetz736/demotester2
         path: demotester
 
     - name: Install Playwright Browsers
