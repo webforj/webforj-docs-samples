@@ -4,7 +4,6 @@ import com.webforj.App;
 import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.Theme;
 import com.webforj.component.button.Button;
-import com.webforj.component.button.ButtonTheme;
 import com.webforj.component.toast.Toast;
 import com.webforj.component.toast.Toast.Placement;
 import com.webforj.component.window.Frame;
@@ -18,24 +17,29 @@ public class ToastThemeDemo extends App {
     Frame frame = new Frame();
     frame.addClassName("window");
 
-    showCustomToast();
-
-    Button actionButton = new Button("Show Toast", e -> {
-      showCustomToast();  
-    });
-
-    frame.add(actionButton);
+    showCookiesConsentToast(); 
   }
 
-  private void showCustomToast() {
-    Toast customToast = new Toast("This is a toast with a custom theme!", 10000, Theme.DEFAULT, Placement.CENTER);
-    customToast.addClassName("custom-theme");
+  private void showCookiesConsentToast() {
+    Toast cookiesToast = new Toast("<strong>Cookies Notice:</strong> We use cookies to "
+        + "improve your experience. "
+        + "By continuing to use our site, you accept our privacy policy.", 
+        0, Theme.DEFAULT, Placement.BOTTOM);
 
-    Button closeButton = new Button("<html><dwc-icon name=\"x\" style='width: 16px; height: 16px;'></dwc-icon></html>", closeEvent -> customToast.close());
-    closeButton.setTheme(ButtonTheme.DEFAULT); 
+    Button closeButton = new Button("<html><dwc-icon name=\"x\" "
+        + "style='width: 16px; height: 16px;'></dwc-icon></html>", e -> {
+      cookiesToast.close();
+      showCookiesConsentToast();
+    });
     closeButton.addClassName("closebutton");
 
-    customToast.add(closeButton);
-    customToast.open();  
+    Button acceptButton = new Button("View");
+    acceptButton.addClassName("viewbutton");
+
+    cookiesToast.add(acceptButton, closeButton);
+    cookiesToast.addClassName("custom-theme");
+    cookiesToast.open();  
   }
 }
+
+
