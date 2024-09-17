@@ -31,7 +31,7 @@ jobs:
       run: docker run -d -p 8888:8888 --name my-container webforj/sandbox:latest
 
     - name: Install Maven locally
-      run: docker exec my-container sudo apt-get install maven
+      run: sudo apt-get install maven
 
     - name: Add Maven to PATH
       run: docker exec my-container export PATH="/usr/bin/mvn:$PATH"
