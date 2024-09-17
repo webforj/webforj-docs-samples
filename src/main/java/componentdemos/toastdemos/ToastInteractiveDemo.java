@@ -39,7 +39,7 @@ public class ToastInteractiveDemo extends App {
 
     Button closeButton = new Button(CLOSE_BUTTON_HTML, closeEvent -> {
       welcomeToast.close();
-      reopenToast(welcomeToast);
+      showWelcomeToast();
     });
     closeButton.setTheme(ButtonTheme.PRIMARY);
     closeButton.addClassName(CLOSE_BUTTON_CLASS);
@@ -52,18 +52,12 @@ public class ToastInteractiveDemo extends App {
     Toast failedToast = new Toast("Action failed.", -1, Theme.DANGER, Placement.CENTER);
     failedToast.addClassName(TOAST_CONTAINER_CLASS);
 
-    Button retryButton = new Button("Retry", retryEvent -> {
-      failedToast.close();
-
-      Toast retryToast = new Toast("Resubmitting, please wait...", -1, Placement.CENTER);
-      retryToast.add(new Spinner());
-      retryToast.open();
-    });
+    Button retryButton = new Button("Retry");
     retryButton.addClassName("retrybutton");  
 
     Button closeButton = new Button(CLOSE_BUTTON_HTML, closeEvent -> {
       failedToast.close();
-      reopenToast(failedToast); 
+      showFailedToast();
     });
     closeButton.setTheme(ButtonTheme.DANGER);
     closeButton.addClassName(CLOSE_BUTTON_CLASS);
@@ -82,22 +76,13 @@ public class ToastInteractiveDemo extends App {
 
     Button closeButton = new Button(CLOSE_BUTTON_HTML, closeEvent -> {
       successToast.close();
-      reopenToast(successToast);  
+      showSuccessToast();
     });
     closeButton.setTheme(ButtonTheme.SUCCESS);
     closeButton.addClassName(CLOSE_BUTTON_CLASS);
 
     successToast.add(closeButton);
     successToast.open();
-  }
-
-  private void reopenToast(Toast toast) {
-    new java.util.Timer().schedule(new java.util.TimerTask() {
-      @Override
-      public void run() {
-        toast.open();
-      }
-    }, 1000);
   }
 }
 

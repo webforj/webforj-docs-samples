@@ -6,12 +6,18 @@
   --dwc-button-hover-color: var(--dwc-button-color); 
   --dwc-button-hover-background: var(--dwc-button-background); 
   --dwc-button-hover-border-color: var(--dwc-button-border-color);
+  --dwc-button-active-color: var(--dwc-button-color);
+  --dwc-button-active-background: var(--dwc-button-background);
+  --dwc-button-active-border-color: var(--dwc-button-border-color);
 }
 .retrybutton {
+  --dwc-button-color: white;
   --dwc-button-background: var(--dwc-toast-background);
-  --dwc-button-color: var(--dwc-toast-color);
   --dwc-button-hover-background: var(--dwc-toast-background); 
   --dwc-button-hover-color: var(--dwc-toast-color);
+  --dwc-button-active-color: var(--dwc-toast-color);
+  --dwc-button-active-background: var(--dwc-toast-toast);
+  --dwc-button-active-border-color: var(--dwc-toast-color);
 }
 .toast-container {
   width: 100%;
