@@ -30,6 +30,10 @@ jobs:
     - name: Run Docker Container 
       run: docker run -d -p 8888:8888 --name my-container webforj/sandbox:latest
     
+
+    - name: Install Maven locally
+      run: sudo apt-get install maven
+
     - name: Install Maven inside Docker container
       run: docker exec my-container mvn install -e -DskipTests
 
