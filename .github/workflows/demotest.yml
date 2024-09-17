@@ -40,6 +40,9 @@ jobs:
       run: npx playwright install --with-deps
 
     - name: Compile and run java program
+      run: cd demotester && mvn compile -e exec:java -D exec.mainClass="src.java.tester.DemoTester" -D exec.args="takeScreenshots .. default default"
+
+    - name: Compile and run java program
       run: cd demotester && mvn compile -e exec:java -D exec.mainClass="src.java.tester.DemoTester" -D exec.args="compareScreenshots .. default default"
 
     - name: Upload output file
