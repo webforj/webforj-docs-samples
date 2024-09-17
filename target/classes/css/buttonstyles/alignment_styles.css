@@ -1,0 +1,13 @@
+
+
+dwc-button {
+  width: 160px;
+  height: 75px !important;
+}
+
+.Frame {
+  display: flex;
+  margin-top: 20px;
+  gap: 50px;
+  justify-content: center;
+}

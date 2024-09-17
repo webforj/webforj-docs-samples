@@ -28,7 +28,7 @@ jobs:
       run: docker build -t webforj/sandbox:latest . 
     
     - name: Run Docker Container 
-      run: docker run -d -p 8888:8888 webforj/sandbox:latest
+      run: docker run -d -p 8888:8888 --name my-container webforj/sandbox:latest
     
     - name: Install Maven inside Docker container
       run: docker exec my-container mvn install -e -DskipTests

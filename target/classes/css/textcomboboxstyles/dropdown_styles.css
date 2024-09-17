@@ -1,0 +1,9 @@
+.frame {
+  display: flex;
+  margin: 20px 0 0 20px;
+  width: 200px;
+}
+
+[data-dropdown-for="demo-dropdown-type"]::part(control){
+  background-color: rebeccapurple;
+}

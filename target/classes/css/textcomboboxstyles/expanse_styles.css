@@ -1,0 +1,9 @@
+.Frame {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+  height: 100%;
+}

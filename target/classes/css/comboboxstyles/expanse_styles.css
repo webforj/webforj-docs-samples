@@ -1,0 +1,12 @@
+.Frame {
+  display: flex;
+  margin-top: 20px;
+  width: 100%;
+  justify-content: center;
+}
+
+.container {
+  display: grid;
+  gap: 30px;
+  padding-bottom: 20px;
+}

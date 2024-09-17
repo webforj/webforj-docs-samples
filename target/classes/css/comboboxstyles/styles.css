@@ -1,0 +1,20 @@
+.frame {
+  display: flex;
+  flex-direction: row;
+  margin: 20px 0 0 20px;
+  gap: 20px;
+  align-items: flex-end;
+}
+
+.frame > dwc-field{
+  flex: 0 1;
+}
+
+.text{
+  font-size: large;
+  font-weight: bold;
+}
+
+dwc-list-button{
+  width: 150px;
+}

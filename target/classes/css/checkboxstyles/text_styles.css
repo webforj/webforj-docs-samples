@@ -1,0 +1,8 @@
+.Frame {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin: 10px;
+}
+
