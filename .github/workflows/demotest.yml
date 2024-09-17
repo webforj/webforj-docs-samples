@@ -33,12 +33,6 @@ jobs:
     - name: Install Maven inside Docker container
       run: docker exec my-container mvn install -e -DskipTests
 
-    - name: Build Docker
-      run: docker buildx create --use
-        
-    - name: Install maven
-      run: mvn install -e -DskipTests
-
     - name: Checkout DemoTester repository
       uses: actions/checkout@v2
       with:
