@@ -16,10 +16,10 @@ import java.util.List;
 @InlineStyleSheet(/*css */"""
     .window {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
       margin: 20px;
-      gap: 50px;
+      gap: var(--dwc-space-m);
     }
     """)
 public class ToastPlacementDemo extends App {
@@ -29,7 +29,7 @@ public class ToastPlacementDemo extends App {
     Frame frame = new Frame();
     frame.addClassName("window");
 
-    final ChoiceBox placementChoiceBox = new ChoiceBox("Select Toast Placement");
+    final ChoiceBox placementChoiceBox = new ChoiceBox();
 
     List<ListItem> placementOptions = new ArrayList<>();
     placementOptions.add(new ListItem("TOP"));
@@ -71,7 +71,7 @@ public class ToastPlacementDemo extends App {
           selectedPlacement = Placement.TOP;
           break;
       }
-
+     
       Toast.show("This is a toast notification", selectedPlacement);
     });
     showToastButton.setTheme(ButtonTheme.PRIMARY);
