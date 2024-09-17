@@ -11,21 +11,13 @@ import com.webforj.component.toast.Toast.Placement;
 import com.webforj.component.window.Frame;
 import com.webforj.exceptions.WebforjException;
 
-@InlineStyleSheet(/*css */"""
-    .window {
-      display: flex;
-      margin: 20px;
-    }
-    .closebutton {
-      --dwc-button-hover-color: var(--dwc-button-color); 
-      --dwc-button-hover-background: var(--dwc-button-background); 
-      --dwc-button-hover-border-color: var(--dwc-button-border-color);
-    }
-    """)
+@InlineStyleSheet("context://css/toaststyles/toastinteractivedemo_styles.css")
 public class ToastInteractiveDemo extends App {
 
-  private static final String CLOSE_BUTTON_HTML = "<html><dwc-icon name=\"x\" style='width: 16px; height: 16px;'></dwc-icon></html>";
+  private static final String CLOSE_BUTTON_HTML = "<html><dwc-icon name=\"x\" "
+      + "style='width: 16px; height: 16px;'></dwc-icon></html>";
   private static final String CLOSE_BUTTON_CLASS = "closebutton";
+  private static final String TOAST_CONTAINER_CLASS = "toast-container";
 
   @Override
   public void run() throws WebforjException {
@@ -35,24 +27,20 @@ public class ToastInteractiveDemo extends App {
     showWelcomeToast();
     showSuccessToast();
     showFailedToast();
-
-    Button actionButton = new Button("Show Toasts", e -> {
-      showWelcomeToast();
-      showSuccessToast();
-      showFailedToast();
-    });
-
-    frame.add(actionButton);
   }
 
   private void showWelcomeToast() {
     Toast welcomeToast = new Toast();
-    welcomeToast.setHtml("Welcome to our app! Learn more <a href='#' style='color: white;' >here</a>.");
-    welcomeToast.setDuration(10000);
+    welcomeToast.setHtml("Welcome to our app! Learn more <a href='#' style='color: white;'>here</a>.");
+    welcomeToast.setDuration(-1); 
     welcomeToast.setTheme(Theme.PRIMARY);
     welcomeToast.setPlacement(Placement.CENTER);
+    welcomeToast.addClassName(TOAST_CONTAINER_CLASS);
 
-    Button closeButton = new Button(CLOSE_BUTTON_HTML, closeEvent -> welcomeToast.close());
+    Button closeButton = new Button(CLOSE_BUTTON_HTML, closeEvent -> {
+      welcomeToast.close();
+      reopenToast(welcomeToast);
+    });
     closeButton.setTheme(ButtonTheme.PRIMARY);
     closeButton.addClassName(CLOSE_BUTTON_CLASS);
 
@@ -61,17 +49,22 @@ public class ToastInteractiveDemo extends App {
   }
 
   private void showFailedToast() {
-    Toast failedToast = new Toast("Action failed.", 10000, Theme.DANGER, Placement.CENTER);
+    Toast failedToast = new Toast("Action failed.", -1, Theme.DANGER, Placement.CENTER);
+    failedToast.addClassName(TOAST_CONTAINER_CLASS);
 
     Button retryButton = new Button("Retry", retryEvent -> {
       failedToast.close();
 
-      Toast retryToast = new Toast("Resubmitting, please wait...", 3000, Placement.CENTER);
+      Toast retryToast = new Toast("Resubmitting, please wait...", -1, Placement.CENTER);
       retryToast.add(new Spinner());
       retryToast.open();
     });
+    retryButton.addClassName("retrybutton");  
 
-    Button closeButton = new Button(CLOSE_BUTTON_HTML, closeEvent -> failedToast.close());
+    Button closeButton = new Button(CLOSE_BUTTON_HTML, closeEvent -> {
+      failedToast.close();
+      reopenToast(failedToast); 
+    });
     closeButton.setTheme(ButtonTheme.DANGER);
     closeButton.addClassName(CLOSE_BUTTON_CLASS);
 
@@ -82,15 +75,29 @@ public class ToastInteractiveDemo extends App {
   private void showSuccessToast() {
     Toast successToast = new Toast();
     successToast.setHtml("Operation completed successfully! <a href='#' style='color: white;'>View Details</a>");
-    successToast.setDuration(10000);
+    successToast.setDuration(-1);  
     successToast.setTheme(Theme.SUCCESS);
     successToast.setPlacement(Placement.CENTER);
+    successToast.addClassName(TOAST_CONTAINER_CLASS);
 
-    Button closeButton = new Button(CLOSE_BUTTON_HTML, closeEvent -> successToast.close());
+    Button closeButton = new Button(CLOSE_BUTTON_HTML, closeEvent -> {
+      successToast.close();
+      reopenToast(successToast);  
+    });
     closeButton.setTheme(ButtonTheme.SUCCESS);
     closeButton.addClassName(CLOSE_BUTTON_CLASS);
 
     successToast.add(closeButton);
     successToast.open();
   }
+
+  private void reopenToast(Toast toast) {
+    new java.util.Timer().schedule(new java.util.TimerTask() {
+      @Override
+      public void run() {
+        toast.open();
+      }
+    }, 1000);
+  }
 }
+

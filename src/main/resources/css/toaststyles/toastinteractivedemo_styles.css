@@ -1,0 +1,18 @@
+.window {
+  display: flex;
+  margin: 20px;
+}
+.closebutton {
+  --dwc-button-hover-color: var(--dwc-button-color); 
+  --dwc-button-hover-background: var(--dwc-button-background); 
+  --dwc-button-hover-border-color: var(--dwc-button-border-color);
+}
+.retrybutton {
+  --dwc-button-background: var(--dwc-toast-background);
+  --dwc-button-color: var(--dwc-toast-color);
+  --dwc-button-hover-background: var(--dwc-toast-background); 
+  --dwc-button-hover-color: var(--dwc-toast-color);
+}
+.toast-container {
+  width: 100%;
+}
