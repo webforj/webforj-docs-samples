@@ -5,7 +5,10 @@ import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.Theme;
 import com.webforj.component.button.Button;
 import com.webforj.component.button.ButtonTheme;
-import com.webforj.component.spinner.Spinner;
+import com.webforj.component.html.elements.Anchor;
+import com.webforj.component.html.elements.Paragraph;
+import com.webforj.component.icons.Icon;
+import com.webforj.component.icons.TablerIcon;
 import com.webforj.component.toast.Toast;
 import com.webforj.component.toast.Toast.Placement;
 import com.webforj.component.window.Frame;
@@ -13,11 +16,6 @@ import com.webforj.exceptions.WebforjException;
 
 @InlineStyleSheet("context://css/toaststyles/toastinteractivedemo_styles.css")
 public class ToastInteractiveDemo extends App {
-
-  private static final String CLOSE_BUTTON_HTML = "<html><dwc-icon name=\"x\" "
-      + "style='width: 16px; height: 16px;'></dwc-icon></html>";
-  private static final String CLOSE_BUTTON_CLASS = "closebutton";
-  private static final String TOAST_CONTAINER_CLASS = "toast-container";
 
   @Override
   public void run() throws WebforjException {
@@ -31,36 +29,33 @@ public class ToastInteractiveDemo extends App {
 
   private void showWelcomeToast() {
     Toast welcomeToast = new Toast();
-    welcomeToast.setHtml("Welcome to our app! Learn more <a href='#' style='color: white;'>here</a>.");
+    welcomeToast.add(new Paragraph("Welcome to our app!"), new Anchor("#", "Learn more here"));
     welcomeToast.setDuration(-1); 
     welcomeToast.setTheme(Theme.PRIMARY);
     welcomeToast.setPlacement(Placement.CENTER);
-    welcomeToast.addClassName(TOAST_CONTAINER_CLASS);
 
-    Button closeButton = new Button(CLOSE_BUTTON_HTML, closeEvent -> {
+    Icon closeButton = TablerIcon.create("x");
+    closeButton.addClickListener(closeEvent -> {
       welcomeToast.close();
       showWelcomeToast();
     });
-    closeButton.setTheme(ButtonTheme.PRIMARY);
-    closeButton.addClassName(CLOSE_BUTTON_CLASS);
-
     welcomeToast.add(closeButton);
     welcomeToast.open();
   }
 
   private void showFailedToast() {
-    Toast failedToast = new Toast("Action failed.", -1, Theme.DANGER, Placement.CENTER);
-    failedToast.addClassName(TOAST_CONTAINER_CLASS);
+    Toast failedToast = new Toast("Unable to save most recent changes.", -1, Theme.DANGER, Placement.CENTER);
 
     Button retryButton = new Button("Retry");
-    retryButton.addClassName("retrybutton");  
+    retryButton.setTheme(ButtonTheme.DANGER);  
 
-    Button closeButton = new Button(CLOSE_BUTTON_HTML, closeEvent -> {
+    Icon closeButton = TablerIcon.create("x");
+    closeButton.addClickListener(closeEvent -> {
       failedToast.close();
       showFailedToast();
     });
-    closeButton.setTheme(ButtonTheme.DANGER);
-    closeButton.addClassName(CLOSE_BUTTON_CLASS);
+    closeButton.setStyle("color", "white");
+    
 
     failedToast.add(retryButton, closeButton);
     failedToast.open();
@@ -68,18 +63,17 @@ public class ToastInteractiveDemo extends App {
 
   private void showSuccessToast() {
     Toast successToast = new Toast();
-    successToast.setHtml("Operation completed successfully! <a href='#' style='color: white;'>View Details</a>");
+    successToast.add(new Paragraph("Operation completed successfully!"), new Anchor("#", "View Details"));
     successToast.setDuration(-1);  
     successToast.setTheme(Theme.SUCCESS);
     successToast.setPlacement(Placement.CENTER);
-    successToast.addClassName(TOAST_CONTAINER_CLASS);
 
-    Button closeButton = new Button(CLOSE_BUTTON_HTML, closeEvent -> {
+    Icon closeButton = TablerIcon.create("x");
+    closeButton.addClickListener(closeEvent -> {
       successToast.close();
       showSuccessToast();
     });
-    closeButton.setTheme(ButtonTheme.SUCCESS);
-    closeButton.addClassName(CLOSE_BUTTON_CLASS);
+    closeButton.setStyle("color", "black");
 
     successToast.add(closeButton);
     successToast.open();
