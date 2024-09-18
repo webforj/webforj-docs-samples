@@ -18,7 +18,8 @@ import java.util.List;
       display: flex;
       flex-direction: row;
       align-items: center;
-      margin: 20px;
+      justify-content: center;
+      margin: 150px 20px;
       gap: var(--dwc-space-m);
     }
     """)
@@ -41,7 +42,8 @@ public class ToastPlacementDemo extends App {
     placementOptions.add(new ListItem("BOTTOM_RIGHT"));
 
     placementChoiceBox.insert(placementOptions);
-    placementChoiceBox.selectIndex(0); 
+    placementChoiceBox.selectIndex(4); 
+    placementChoiceBox.setMinWidth(160);
 
     Button showToastButton = new Button("Show Toast", e -> {
       String selectedValue = placementChoiceBox.getText();
