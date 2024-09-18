@@ -32,8 +32,8 @@ public class Order extends App{
     .addClassName("button__container--single-row");
     
     for(int i = 1; i <= 5; i++){
-      Button newButton = new Button("Order: " + i);
-      boxLayout.add(newButton.setTheme(ButtonTheme.PRIMARY));
+      Button newButton = new Button("Order: " + i, ButtonTheme.PRIMARY);
+      boxLayout.add(newButton);
       boxLayout.setItemOrder(i, newButton);
       orderButton = newButton;
     }

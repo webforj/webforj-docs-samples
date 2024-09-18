@@ -3,36 +3,36 @@ package componentdemos.columnslayoutdemos;
 import com.webforj.App;
 import com.webforj.component.button.Button;
 import com.webforj.component.button.ButtonTheme;
-import com.webforj.component.field.PasswordField;
+import com.webforj.component.field.DateField;
+import com.webforj.component.field.TextArea;
 import com.webforj.component.field.TextField;
 import com.webforj.component.layout.columnslayout.ColumnsLayout;
+import com.webforj.component.optioninput.CheckBox;
 import com.webforj.component.window.Frame;
 import com.webforj.exceptions.WebforjException;
 
-public class ColumnsLayoutDemo extends App {
+public class ColumnsLayoutAlignment extends App {
   TextField firstName = new TextField("First Name");
   TextField lastName = new TextField("Last Name");
   TextField email = new TextField("Email");
-  PasswordField password = new PasswordField("Password");
-  PasswordField confirmPassword = new PasswordField("Confirm Password");
+  DateField dateOfBirth = new DateField("Date of Birth");
+  TextArea bio = new TextArea("Bio");
+  CheckBox terms = new CheckBox("I agree to the terms and conditions");
   Button submit = new Button("Submit", ButtonTheme.PRIMARY);
-
-  /*
-   * The layout will position the components in 2 columns by default.
-   */
-  ColumnsLayout columnsLayout = new ColumnsLayout(firstName, lastName, email, password, confirmPassword, submit);
+  ColumnsLayout columnsLayout = new ColumnsLayout(
+      firstName, lastName, email, dateOfBirth, bio, terms, submit);
 
   @Override
   public void run() throws WebforjException {
-    columnsLayout.setSpan(email, 2);
-    columnsLayout.setSpan(submit, 2);
-    columnsLayout.setStyle("padding", "var(--dwc-space-xl)");
-    
+    columnsLayout.setSpan(bio, 2);
+    columnsLayout.setSpan(terms, 2);
 
-    submit.setStyle("margin-top", "var(--dwc-space-l)");
+    columnsLayout.setColumn(submit, 2);
+    columnsLayout.setHorizontalAlignment(submit, ColumnsLayout.Alignment.END);
+    columnsLayout.setStyle("padding", "var(--dwc-space-xl)");
 
     Frame frame = new Frame();
-    frame.setMaxWidth("600px");
+    frame.setMaxWidth("60em");
     frame.setStyle("margin", "0 auto");
     frame.setStyle("overflow", "auto");
     frame.setStyle("height", "100dvh");

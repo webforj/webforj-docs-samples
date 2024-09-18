@@ -30,8 +30,7 @@ public class TitleEditorComponent extends Composite<Dialog> {
     dialog.setMaxWidth("400px");
     dialog.onOpen(ev -> titleField.focus());
 
-    Button saveButton = new Button("Save", ev -> save());
-    saveButton.setTheme(ButtonTheme.PRIMARY);
+    Button saveButton = new Button("Save", ButtonTheme.PRIMARY, ev -> save());
 
     Button cancelButton = new Button("Cancel", ev -> dialog.close());
     footer.add(saveButton, cancelButton);

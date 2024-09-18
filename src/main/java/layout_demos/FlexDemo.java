@@ -40,8 +40,8 @@ public class FlexDemo extends App {
     zip = new MaskedNumberField().setLabel("Zip");
 
     populateStates();
-    submit = new Button("Submit").setTheme(ButtonTheme.PRIMARY);
-    cancel = new Button("Cancel").setTheme(ButtonTheme.DEFAULT);
+    submit = new Button("Submit", ButtonTheme.PRIMARY);
+    cancel = new Button("Cancel", ButtonTheme.DEFAULT);
 
     FlexLayout mainLayout = FlexLayout.create()
         .vertical()

@@ -32,8 +32,8 @@ public class SelfAlign extends App{
     .addClassName("button__container");
     
     for(int i = 1; i <= 5; i++){
-      Button newButton = new Button("Button " + i);
-      boxLayout.add(newButton.setTheme(ButtonTheme.PRIMARY));
+      Button newButton = new Button("Button " + i, ButtonTheme.PRIMARY);
+      boxLayout.add(newButton);
       boxLayout.setItemOrder(i, newButton);
       alignButton = newButton;
     }

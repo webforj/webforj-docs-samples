@@ -58,7 +58,7 @@
         <dependency>
             <groupId>com.webforj</groupId>
             <artifactId>webforj-terminal</artifactId>
-            <version>24.10</version>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 
