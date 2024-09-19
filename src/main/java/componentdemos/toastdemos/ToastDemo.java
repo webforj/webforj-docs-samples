@@ -12,16 +12,22 @@ import com.webforj.exceptions.WebforjException;
 
 public class ToastDemo extends App {
 
-  Toast t = new Toast("", -1, Theme.GRAY);
-
   @Override
   public void run() throws WebforjException {
     Frame frame = new Frame();
-    frame.add(t);
+    showToast();
+  }
+  
+  private void showToast() {
+    Toast t = new Toast("", -1, Theme.GRAY);
     t.add(
         new Spinner(),
         new Paragraph("System update failed. Restoring to the previous state."),
-        new Button("Stop", ButtonTheme.DANGER, e -> t.close()));
+        new Button("Stop", ButtonTheme.DANGER, e -> {
+          t.close();
+          showToast();
+        })
+     );
     t.open();
   }
 }
