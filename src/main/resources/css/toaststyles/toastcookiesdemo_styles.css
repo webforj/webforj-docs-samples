@@ -1,0 +1,45 @@
+.window {
+  display: flex;
+  margin: 20px;
+ }
+ 
+ .custom-theme {
+  --dwc-toast-background: #2e3337;
+  --dwc-toast-color: #ffffff;
+  --dwc-toast-border-color: #2e3337;
+}
+
+dwc-toast::part(buttons) {
+  display: flex;
+  flex-direction: column;
+  gap: var(--dwc-space-m);
+}
+
+.acceptbutton, .necessarybutton {
+	flex: 1;
+  --dwc-button-background: #0195ff;
+  --dwc-button-border-color: #0195ff;
+  --dwc-button-color: #ffffff;
+  
+  --dwc-button-hover-background: #0195ff;
+  --dwc-button-hover-border-color: #0195ff;
+  --dwc-button-hover-color: #ffffff;
+
+  --dwc-button-focus-border-color: #44AFFB;
+  --dwc-button-focus-ring: none;
+
+  --dwc-button-active-background: #44AFFB;
+  --dwc-button-active-color: #ffffff;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  gap: var(--dwc-space-s);
+  width: 100%;
+}
+
+.customizebutton {
+  width: 100%;
+  display: block; 
+}
