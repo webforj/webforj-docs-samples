@@ -3,14 +3,6 @@
   margin: 20px;
 }
 
-.custom-theme {
-  --dwc-toast-background: linear-gradient(to right, hsl(258, 100%, 50%), hsl(33, 100%, 50%));
-  --dwc-toast-color: white;
-  --dwc-toast-button-color: white;
-  --dwc-toast-button-hover-background: hsl(33, 100%, 50%);
-  --dwc-toast-button-hover-color: white;
-}
-
 .button-container {
   display: flex;
   flex-direction: row;

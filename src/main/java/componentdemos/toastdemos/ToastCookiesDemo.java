@@ -28,9 +28,8 @@ public class ToastCookiesDemo extends App {
   private void showCookiesConsentToast() {
     Toast cookiesToast = new Toast();
     cookiesToast.setDuration(-1);
-    cookiesToast.setTheme(Theme.DEFAULT);
+    cookiesToast.setTheme(Theme.GRAY);
     cookiesToast.setPlacement(Placement.CENTER); 
-    cookiesToast.addClassName("custom-theme");
     
     Icon cookieIcon = TablerIcon.create("cookie");
     cookieIcon.setStyle("width", "100px");
