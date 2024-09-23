@@ -4,11 +4,11 @@ import com.webforj.App;
 import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.Theme;
 import com.webforj.component.button.Button;
-import com.webforj.component.icons.Icon;
-import com.webforj.component.icons.TablerIcon;
 import com.webforj.component.html.elements.Anchor;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.html.elements.Paragraph;
+import com.webforj.component.icons.Icon;
+import com.webforj.component.icons.TablerIcon;
 import com.webforj.component.toast.Toast;
 import com.webforj.component.toast.Toast.Placement;
 import com.webforj.component.window.Frame;
@@ -27,14 +27,14 @@ public class ToastCookiesDemo extends App {
 
   private void showCookiesConsentToast() {
     Toast cookiesToast = new Toast();
-    cookiesToast.setDuration(-1); 
-    cookiesToast.setTheme(Theme.PRIMARY);
+    cookiesToast.setDuration(-1);
+    cookiesToast.setTheme(Theme.DEFAULT);
     cookiesToast.setPlacement(Placement.CENTER); 
+    cookiesToast.addClassName("custom-theme");
     
     Icon cookieIcon = TablerIcon.create("cookie");
     cookieIcon.setStyle("width", "100px");
-    cookieIcon.setStyle("height", "100px");  
-    cookieIcon.setStyle("color", "#0195ff");   
+    cookieIcon.setStyle("height", "100px");
     cookiesToast.add(cookieIcon);
     
     Paragraph toastText = new Paragraph("We use cookies to improve your experience. "
@@ -47,13 +47,13 @@ public class ToastCookiesDemo extends App {
       showCookiesConsentToast();
     });
     acceptButton.addClassName("acceptbutton");
-
+    
     Button necessaryButton = new Button("Necessary cookies only", e -> {
       cookiesToast.close();
       showCookiesConsentToast();
     });
     necessaryButton.addClassName("necessarybutton");
-    
+
     Button customizeButton = new Button("Customize Settings", e -> {
       cookiesToast.close();
       showCookiesConsentToast();
@@ -61,14 +61,14 @@ public class ToastCookiesDemo extends App {
     customizeButton.addClassName("customizebutton");
     
     Div buttonContainer = new Div();
-    buttonContainer.addClassName("button-container");
     buttonContainer.add(acceptButton, necessaryButton);
+    buttonContainer.addClassName("button-container");
 
     cookiesToast.add(buttonContainer, customizeButton);
-    cookiesToast.addClassName("custom-theme");
-    cookiesToast.open();  
+    cookiesToast.open();
   }
 }
+
 
 
 
