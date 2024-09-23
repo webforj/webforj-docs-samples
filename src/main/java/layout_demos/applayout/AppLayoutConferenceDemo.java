@@ -83,7 +83,7 @@ public class AppLayoutConferenceDemo extends App {
         for (int i = 0; i < 5; i++) {
           Div content = new Div().addClassName("card");
           content.add(
-                new H2("What is webforJ " + i + "?"),
+                new H2("What is webforJ?"),
                 new Paragraph("""
                     webforJ is a powerful Java UI framework designed for building business-critical web applications entirely in Java. It provides a comprehensive API, design system, and a rich library of UI components, allowing developers to create modern, secure, and high-performance web applications without needing to rely on additional web development languages or frameworks.
                     """)
