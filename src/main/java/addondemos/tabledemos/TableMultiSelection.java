@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import com.webforj.App;
 import com.webforj.component.table.Table;
+import com.webforj.component.optiondialog.MessageDialog;
 import com.webforj.component.window.Frame;
 import com.webforj.exceptions.WebforjException;
 
@@ -25,18 +26,21 @@ public class TableMultiSelection extends App {
     table.setRepository(Service.getMusicRecords());
     table.setSelectionMode(Table.SelectionMode.MULTIPLE);
 
+    MessageDialog dialog = new MessageDialog("","Record Selection");
+
     table.onItemSelectionChange(ev -> {
       List<MusicRecord> records = ev.getSelectedItems();
       String msg = "There are no records selected";
 
       if (records.size() > 0) {
-        msg = "<html> You have selected the following records"
+        msg = "You have selected the following records"
             + records.stream().map(MusicRecord::getTitle).map(title -> "<li>" + title + "</li>")
-                .collect(Collectors.joining("", "<ul>", "</ul>"))
-            + "</html>";
+                .collect(Collectors.joining("", "<ul>", "</ul>"));
       }
+      
+      dialog.setMessage(msg);
+      dialog.show();
 
-      msgbox(msg, 0, "Record Selection");
     });
 
     Frame mainFrame = new Frame();

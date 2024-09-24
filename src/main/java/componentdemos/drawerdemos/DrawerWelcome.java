@@ -55,7 +55,7 @@ public class DrawerWelcome extends App {
 		Div drawerLogo = new Div();
 		drawerLogo.addClassName("drawer__logo")
 				.add(
-						new Img("https://i.ibb.co/1n4n1Nh/logo.png\" alt=\"logo\" /></div></html>"));
+						new Img("https://i.ibb.co/1n4n1Nh/logo.png\" alt=\"logo\""));
 		drawer.add(drawerLogo);
 
 		// Drawer's Menu

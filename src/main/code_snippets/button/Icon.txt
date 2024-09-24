@@ -1,26 +1,15 @@
-Button notifications = new Button("""
-  <html>
-    Notifications
-    <dwc-icon name='bell' slot='suffix'></dwc-icon>
-  </html>
-""");
+notificationsIcon = TablerIcon.create("bell");
+notifications = new Button("Notifications");
+notifications.setSuffixComponent(notificationsIcon);
 
-Button settings = new Button("""
-  <html>
-    Settings
-    <dwc-icon name='settings' slot='suffix'></dwc-icon>
-  </html>
-""");
+settingsIcon = TablerIcon.create("settings");
+settings = new Button("Settings");
+settings.setIcon(settingsIcon);
 
-Button search = new Button("""
-  <html>
-    <dwc-icon name='search'></dwc-icon>
-    Search
-  </html>
-""");
+searchIcon = TablerIcon.create("search");
+search = new Button("Search");
+search.setPrefixComponent(searchIcon);
 
-Button home = new Button("""
-  <html>
-    <dwc-icon name='home'></dwc-icon>
-  </html>
-""");
+homeIcon = TablerIcon.create("home");
+home = new Button(homeIcon);
+home.setTheme(ButtonTheme.PRIMARY);

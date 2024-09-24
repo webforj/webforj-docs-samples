@@ -14,8 +14,9 @@ public class LabelDemo extends App {
     window.addClassName("Frame");
 
     Label l1 = new Label("This is a Label component, which renders as static text on a webpage");
-    Label l2 = new Label("Below is an example of an HTML ordered list rendered  using a Label: ");
-    Label l3 = new Label("<html><ol><li>My First Item</li><li>My Second Item</li><li>My Third Item</li></ol><html>");
+    Label l2 = new Label("Below is an example of an HTML ordered list rendered using a Label: ");
+    Label l3 = new Label();
+    l3.setHtml("<ol><li>My First Item</li><li>My Second Item</li><li>My Third Item</li></ol>");
 
     window.add(l1, l2, l3);
   }

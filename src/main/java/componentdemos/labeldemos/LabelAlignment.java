@@ -14,29 +14,32 @@ public class LabelAlignment extends App {
     Frame window = new Frame();
     window.addClassName("Frame");
 
-    Label l1 = new Label(
-        "<html><b>LEFT-ALIGNED TEXT</b><br></br> Lorem ipsum dolor sit amet, consectetur adipiscing elit," +
+    Label l1 = new Label();
+		l1.setHtml(
+				"<b>LEFT-ALIGNED TEXT</b><br></br> Lorem ipsum dolor sit amet, consectetur adipiscing elit," +
             "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
             +
             "ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit "
             +
-            "esse cillum dolore eu fugiat nulla pariatur. </html>");
+            "esse cillum dolore eu fugiat nulla pariatur.");
 
-    Label l2 = new Label(
-        "<html><b>CENTER-ALIGNED TEXT</b><br></br> Lorem ipsum dolor sit amet, consectetur adipiscing elit," +
+    Label l2 = new Label();
+		l2.setHtml(
+        "<b>CENTER-ALIGNED TEXT</b><br></br> Lorem ipsum dolor sit amet, consectetur adipiscing elit," +
             "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
             +
             "ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit "
             +
-            "esse cillum dolore eu fugiat nulla pariatur. </html>");
+            "esse cillum dolore eu fugiat nulla pariatur.");
 
-    Label l3 = new Label(
-        "<html><b>RIGHT-ALIGNED TEXT</b><br></br> Lorem ipsum dolor sit amet, consectetur adipiscing elit," +
+    Label l3 = new Label();
+		l3.setHtml(
+        "<b>RIGHT-ALIGNED TEXT</b><br></br> Lorem ipsum dolor sit amet, consectetur adipiscing elit," +
             "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
             +
             "ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit "
             +
-            "esse cillum dolore eu fugiat nulla pariatur. </html>");
+            "esse cillum dolore eu fugiat nulla pariatur.");
 
     window.add(l1, l2, l3);
 
