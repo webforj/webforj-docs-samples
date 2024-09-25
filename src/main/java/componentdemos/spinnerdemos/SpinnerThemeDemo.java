@@ -29,9 +29,11 @@ public class SpinnerThemeDemo extends App {
     Spinner primarySpinner = new Spinner(Theme.PRIMARY, SpinnerExpanse.MEDIUM);
     Spinner successSpinner = new Spinner(Theme.SUCCESS, SpinnerExpanse.MEDIUM);
     Spinner dangerSpinner = new Spinner(Theme.DANGER, SpinnerExpanse.MEDIUM);
-    Spinner graySpinner = new Spinner(Theme.GRAY, SpinnerExpanse.MEDIUM);
     Spinner warningSpinner = new Spinner(Theme.WARNING, SpinnerExpanse.MEDIUM);
+    Spinner graySpinner = new Spinner(Theme.GRAY, SpinnerExpanse.MEDIUM);
+    Spinner infoSpinner = new Spinner(Theme.INFO, SpinnerExpanse.MEDIUM);
+    
 
-    frame.add(defaultSpinner, primarySpinner, successSpinner, dangerSpinner, graySpinner, warningSpinner);
+    frame.add(defaultSpinner, primarySpinner, successSpinner, dangerSpinner, warningSpinner, graySpinner, infoSpinner);
   }
 }
