@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.webforj.samples</groupId>
-    <artifactId>ControlSamples</artifactId>
-    <version>24.11</version>
+    <artifactId>controlsamples</artifactId>
+    <version>24.12-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -23,7 +23,7 @@
     </repository>
   </repositories>
 
-  <pluginRepositories>
+  <!-- <pluginRepositories>
     <pluginRepository>
         <id>ossrh-snapshots</id>
         <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
@@ -34,21 +34,20 @@
             <enabled>false</enabled>
         </releases>
     </pluginRepository>
-</pluginRepositories>
+</pluginRepositories> -->
 
     <dependencies>
         <dependency>
             <groupId>com.webforj</groupId>
             <artifactId>webforj</artifactId>
             <version>${project.version}</version>
-            <type>pom</type>
-            <!-- <scope>system</scope>
-            <systemPath>C:\DWCJ_Files\engine\dwcj-engine\target\dwcj-engine-24.00-SNAPSHOT.jar</systemPath> -->
+            <scope>system</scope>
+            <systemPath>C:\__webforJ\webforj\webforj\target\webforj-24.12-SNAPSHOT-jar-with-dependencies.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.webforj</groupId>
             <artifactId>webforj-code</artifactId>
-            <version>${project.version}</version>
+            <version>24.11</version>
         </dependency>
         <dependency>
             <groupId>com.webforj</groupId>
@@ -63,12 +62,12 @@
     </dependencies>
 
     <build>
-        <finalName>controlsamples</finalName>
+        <!-- <finalName>controlsamples</finalName> -->
         <plugins>
             <plugin>
                 <groupId>com.webforj</groupId>
                 <artifactId>webforj-install-maven-plugin</artifactId>
-                <version>24.02</version>
+                <version>24.12-SNAPSHOT</version>
                 <executions>
                     <execution>
                         <goals>
@@ -79,6 +78,7 @@
                 <configuration>
                     <deployurl>http://localhost:8888/webforj-install</deployurl>
                     <publishname>controlsamples</publishname>
+                    <classname>com.webforj.samples.Application</classname>
                     <debug>true</debug>
                 </configuration>
             </plugin>
