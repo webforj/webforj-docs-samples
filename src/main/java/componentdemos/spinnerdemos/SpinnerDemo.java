@@ -23,9 +23,9 @@ public class SpinnerDemo extends App {
     Frame frame = new Frame();
     frame.addClassName("window");
 
-    Spinner processingSpinner = new Spinner(Theme.PRIMARY, SpinnerExpanse.MEDIUM);
+    Spinner spinner = new Spinner(Theme.PRIMARY, SpinnerExpanse.MEDIUM);
 
-    frame.add(processingSpinner);
+    frame.add(spinner);
   }
 }
 
