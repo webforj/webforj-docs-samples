@@ -1,4 +1,4 @@
-package addondemos.tabledemos;
+package com.webforj.samples.views.table;
 
 import java.util.EventObject;
 import com.webforj.component.Composite;

@@ -1,4 +1,4 @@
-package addondemos.tabledemos;
+package com.webforj.samples.views.table;
 
 public class MusicRecord {
   private String number;

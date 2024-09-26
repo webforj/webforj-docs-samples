@@ -67,7 +67,7 @@
             <plugin>
                 <groupId>com.webforj</groupId>
                 <artifactId>webforj-install-maven-plugin</artifactId>
-                <version>24.12-SNAPSHOT</version>
+                <version>24.11</version>
                 <executions>
                     <execution>
                         <goals>

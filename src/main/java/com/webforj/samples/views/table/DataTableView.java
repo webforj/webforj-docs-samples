@@ -1,4 +1,4 @@
-package addondemos.tabledemos;
+package com.webforj.samples.views.table;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
@@ -6,30 +6,33 @@ import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import java.util.Arrays;
 import java.util.List;
-import com.webforj.App;
+
 import com.webforj.component.table.Column.PinDirection;
 import com.webforj.component.table.Table;
 import com.webforj.component.table.Table.SelectionMode;
+import com.webforj.component.Composite;
 import com.webforj.component.field.TextField;
 import com.webforj.component.field.TextField.Type;
+import com.webforj.component.html.elements.Div;
 import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.component.list.ChoiceBox;
 import com.webforj.component.navigator.Navigator;
 import com.webforj.component.navigator.Navigator.Layout;
-import com.webforj.component.window.Frame;
 import com.webforj.data.Paginator;
 import com.webforj.data.repository.CollectionRepository;
 import com.webforj.data.repository.Repository;
-import com.webforj.exceptions.WebforjException;
 import com.webforj.utilities.Assets;
+import com.webforj.router.annotation.FrameTitle;
+import com.webforj.router.annotation.Route;
 
-public class DataTable extends App {
+@Route
+@FrameTitle("Data Table")
+public class DataTableView extends Composite<Div> {
   private String searchTerm = "";
   private Repository<JsonObject> repository;
   private Paginator paginator;
 
-  @Override
-  public void run() throws WebforjException {
+  public DataTableView() {
     List<JsonObject> data = new Gson().fromJson(
         Assets.contentOf(Assets.resolveContextUrl("context://data/olympic-winners.json")),
         new TypeToken<List<JsonObject>>() {});
@@ -46,8 +49,7 @@ public class DataTable extends App {
     FlexLayout layout = FlexLayout.create(buildTableHeader(), buildTable(), buildTableFooter())
         .vertical().contentAlign().center().build().setPadding("var(--dwc-space-l)");
 
-    Frame mainFrame = new Frame();
-    mainFrame.add(layout);
+    getBoundComponent().add(layout);
   }
 
   FlexLayout buildTableHeader() {

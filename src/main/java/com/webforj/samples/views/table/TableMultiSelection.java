@@ -1,4 +1,4 @@
-package addondemos.tabledemos;
+package com.webforj.samples.views.table;
 
 import java.util.List;
 import java.util.stream.Collectors;

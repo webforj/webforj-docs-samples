@@ -9,9 +9,8 @@ import com.webforj.component.navigator.Navigator;
 import com.webforj.component.window.Frame;
 import com.webforj.data.repository.Repository;
 import com.webforj.exceptions.WebforjException;
-
-import addondemos.tabledemos.MusicRecord;
-import addondemos.tabledemos.Service;
+import com.webforj.samples.views.table.MusicRecord;
+import com.webforj.samples.views.table.Service;
 
 public class NavigatorTable extends App {
 

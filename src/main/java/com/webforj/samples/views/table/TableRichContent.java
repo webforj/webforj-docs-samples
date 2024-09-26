@@ -1,4 +1,4 @@
-package addondemos.tabledemos;
+package com.webforj.samples.views.table;
 
 import com.webforj.App;
 import com.webforj.component.table.Table;

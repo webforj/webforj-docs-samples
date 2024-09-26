@@ -1,4 +1,4 @@
-package addondemos.tabledemos;
+package com.webforj.samples.views.table;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
