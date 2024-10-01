@@ -16,9 +16,12 @@ import com.webforj.component.element.annotation.EventOptions;
 import com.webforj.component.element.annotation.NodeName;
 import com.webforj.component.event.ComponentEvent;
 import com.webforj.component.html.elements.Div;
+import com.webforj.component.layout.flexlayout.FlexDirection;
 import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.dispatcher.EventListener;
 import com.webforj.dispatcher.ListenerRegistration;
+import com.webforj.router.annotation.FrameTitle;
+import com.webforj.router.annotation.Route;
 
 @InlineStyleSheet(/* css */"""
   .frame{
@@ -26,6 +29,8 @@ import com.webforj.dispatcher.ListenerRegistration;
     margin: 20px
   }
   """)
+@Route
+@FrameTitle("QR Events")
 public class QREventView extends Composite<FlexLayout> {
   
   Div label = new Div("Click Me!");
@@ -33,6 +38,7 @@ public class QREventView extends Composite<FlexLayout> {
 
   public QREventView() {
     getBoundComponent().addClassName("frame");
+    getBoundComponent().setDirection(FlexDirection.COLUMN);
 
     getBoundComponent().add(label, qrCode);
     qrCode.setSize(200);

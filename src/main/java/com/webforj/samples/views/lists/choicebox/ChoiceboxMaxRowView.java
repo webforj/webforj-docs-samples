@@ -1,4 +1,4 @@
-package com.webforj.samples.views.choicebox;
+package com.webforj.samples.views.lists.choicebox;
 
 import java.util.ArrayList;
 
