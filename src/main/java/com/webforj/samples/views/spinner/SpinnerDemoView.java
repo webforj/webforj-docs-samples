@@ -10,7 +10,6 @@ import com.webforj.component.spinner.Spinner;
 import com.webforj.component.spinner.SpinnerExpanse;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
-import com.webforj.component.icons.DwcIcon;
 import com.webforj.component.icons.Icon;
 import com.webforj.component.icons.TablerIcon;
 
@@ -19,14 +18,12 @@ import com.webforj.component.icons.TablerIcon;
 public class SpinnerDemoView extends Composite<Div> {
 
   Spinner spinner = new Spinner(Theme.PRIMARY, SpinnerExpanse.SMALL);
-
   H3 title = new H3("Complete your job application:");
   Icon position = TablerIcon.create("checks");
   Icon location = TablerIcon.create("checks");
   Paragraph resume = new Paragraph("Uploading your resume");
 
   public SpinnerDemoView() {
-
     getBoundComponent().setStyle("margin-left", "20px");
     position.setStyle("color", "green");
     location.setStyle("color", "green");
@@ -38,6 +35,6 @@ public class SpinnerDemoView extends Composite<Div> {
     FlexLayout items =  FlexLayout.create(title, positionLayout, locationLayout, spinnerLayout)
     .vertical()
     .build();
-    getBoundComponent().add(items);    
+    getBoundComponent().add(items);
   }
 }

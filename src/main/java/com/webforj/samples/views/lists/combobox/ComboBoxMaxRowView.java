@@ -1,4 +1,4 @@
-package com.webforj.samples.views.combobox;
+package com.webforj.samples.views.lists.combobox;
 
 import java.util.ArrayList;
 
