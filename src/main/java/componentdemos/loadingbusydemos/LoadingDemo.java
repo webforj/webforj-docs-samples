@@ -3,10 +3,14 @@ package componentdemos.loadingbusydemos;
 import com.webforj.App;
 import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.Theme;
+import com.webforj.component.button.Button;
+import com.webforj.component.button.ButtonTheme;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.html.elements.Paragraph;
-import com.webforj.component.window.Frame;
+import com.webforj.component.icons.Icon;
+import com.webforj.component.icons.TablerIcon;
 import com.webforj.component.loading.Loading;
+import com.webforj.component.window.Frame;
 import com.webforj.exceptions.WebforjException;
 
 @InlineStyleSheet("context://css/loadingbusystyles/loadingdemo_styles.css")
@@ -14,32 +18,41 @@ public class LoadingDemo extends App {
 
   @Override
   public void run() throws WebforjException {
-    Frame frame = new Frame();
+    Frame window = new Frame();
+    window.addClassName("window");
 
-    Div card = new Div();
-    card.addClassName("card");
+    Div card1 = new Div();
+    card1.addClassName("card");
 
-    Paragraph content = new Paragraph("""
-      The Loading component is designed to provide visual feedback during operations
-      that take time, such as data fetching or complex processing. It overlays the parent
-      component and can be scoped to specific areas of the application. This allows
-      for a better user experience by indicating that the app is working without blocking
-      the entire interface. You can customize the spinner, message, and even the
-      backdrop of the Loading component to fit your application's design. This particular
-      implementation shows how a loading indicator can be integrated within a card element,
-      showcasing its flexibility in layout and functionality.
-    """);
-    content.addClassName("card-content");
+    Icon guideIcon = TablerIcon.create("book");
+    guideIcon.setStyle("width", "100px");
+    guideIcon.setStyle("height", "100px");
+    guideIcon.addClassName("card-content");
+    
+    Button buyButton1 = new Button("Buy");
+    buyButton1.setTheme(ButtonTheme.PRIMARY);
+    
+    Div card2 = new Div();
+    card2.addClassName("card");
+
+    Icon videoIcon = TablerIcon.create("brand-youtube");
+    videoIcon.setStyle("width", "100px");
+    videoIcon.setStyle("height", "100px");
+    videoIcon.addClassName("card-content");
+    
+    Button buyButton2 = new Button("Buy");
+    buyButton2.setTheme(ButtonTheme.PRIMARY);
 
     Loading loading = new Loading("Loading... Please wait.");
     loading.getSpinner().setTheme(Theme.PRIMARY);
     loading.addClassName("loading-overlay");
 
-    card.add(new Paragraph("Loading"), content, loading);
+    card1.add(new Paragraph("User Guide"), guideIcon, buyButton1);
+    card2.add(new Paragraph("Video Lessons"), videoIcon, buyButton2, loading);
     
     loading.open();
     
-    frame.add(card);
+    window.add(card1, card2);
   }
 }
 
