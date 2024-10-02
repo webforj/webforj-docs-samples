@@ -13,6 +13,10 @@ import com.webforj.component.loading.Loading;
 import com.webforj.component.window.Frame;
 import com.webforj.exceptions.WebforjException;
 
+/**
+ * Demo to show Loading basics.
+ */
+
 @InlineStyleSheet("context://css/loadingbusystyles/loadingdemo_styles.css")
 public class LoadingDemo extends App {
 

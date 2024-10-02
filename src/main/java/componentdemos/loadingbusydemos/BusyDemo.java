@@ -14,6 +14,11 @@ import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.component.window.Frame;
 import com.webforj.exceptions.WebforjException;
 
+
+/**
+ * Demo to show BusyIndicator basics.
+ */
+
 @InlineStyleSheet(/*css */"""
     .window {
       margin: 20px;
@@ -21,36 +26,36 @@ import com.webforj.exceptions.WebforjException;
     """)
 public class BusyDemo extends App {
 
-    @Override
-    public void run() throws WebforjException {
-        Frame window = new Frame();
-        window.addClassName("window");
+  @Override
+  public void run() throws WebforjException {
+    Frame window = new Frame();
+    window.addClassName("window");
 
-        FlexLayout formLayout = new FlexLayout();
-        formLayout.setJustifyContent(FlexJustifyContent.CENTER); 
-        formLayout.setAlignment(FlexAlignment.CENTER);  
-        formLayout.setDirection(FlexDirection.COLUMN);
+    FlexLayout formLayout = new FlexLayout();
+    formLayout.setJustifyContent(FlexJustifyContent.CENTER); 
+    formLayout.setAlignment(FlexAlignment.CENTER);  
+    formLayout.setDirection(FlexDirection.COLUMN);
 
-        TextField nameField = new TextField("Name");
-        TextField emailField = new TextField("Email");
+    TextField nameField = new TextField("Name");
+    TextField emailField = new TextField("Email");
 
-        Button submitButton = new Button("Submit", e -> showBusyIndicator());
-        submitButton.setTheme(ButtonTheme.PRIMARY);
+    Button submitButton = new Button("Submit", e -> showBusyIndicator());
+    submitButton.setTheme(ButtonTheme.PRIMARY);
 
-        formLayout.add(nameField, emailField, submitButton);
+    formLayout.add(nameField, emailField, submitButton);
 
-        window.add(formLayout);
+    window.add(formLayout);
 
-        showBusyIndicator();
-    }
+    showBusyIndicator();
+  }
 
-    private void showBusyIndicator() {
-        BusyIndicator busyIndicator = getBusyIndicator();
+  private void showBusyIndicator() {
+    BusyIndicator busyIndicator = getBusyIndicator();
         
-        busyIndicator.setText("Submitting form... Please wait.")
+    busyIndicator.setText("Submitting form... Please wait.")
                      .setBackdropVisible(true);
-        busyIndicator.getSpinner().setTheme(Theme.PRIMARY); 
+    busyIndicator.getSpinner().setTheme(Theme.PRIMARY); 
 
-        busyIndicator.open();
-    }
+    busyIndicator.open();
+  }
 }
