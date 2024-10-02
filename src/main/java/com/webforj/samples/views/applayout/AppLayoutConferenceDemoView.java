@@ -18,7 +18,7 @@ import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
 @InlineStyleSheet("context://css/applayoutstyles/applayout_mobile.css")
-@Route
+@Route("AppLayoutConferenceDemo")
 @FrameTitle("AppLayout Conference Demo")
 public class AppLayoutConferenceDemoView extends Composite<Div> {
 
