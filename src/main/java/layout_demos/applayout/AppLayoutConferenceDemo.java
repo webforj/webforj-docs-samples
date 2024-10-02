@@ -1,5 +1,8 @@
 package layout_demos.applayout;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import com.webforj.App;
 import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.element.Element;
@@ -26,6 +29,7 @@ public class AppLayoutConferenceDemo extends App {
 	Div drawer = new Div();
 
   H1 appTitle = new H1("Application Title");
+  ArrayList<String> titles = new ArrayList<>(Arrays.asList("Contacts", "Tasks", "Inbox", "Security", "Projects"));
 
   TabbedPane drawerMenu = new TabbedPane();
   TabbedPane footerMenu = new TabbedPane();
@@ -74,7 +78,6 @@ public class AppLayoutConferenceDemo extends App {
 		drawerMenu.addTab("<dwc-icon name='users'></dwc-icon>          Customers");
 		drawerMenu.addTab("<dwc-icon name='box'></dwc-icon>            Products");
 		drawerMenu.addTab("<dwc-icon name='files'></dwc-icon>          Documents");
-    drawerMenu.addSelectListener(this::changeTitle);
 
     // Content
     demo.addToContent(
@@ -100,22 +103,16 @@ public class AppLayoutConferenceDemo extends App {
     footerMenu.setAlignment(Alignment.STRETCH);
 
     // Adding tabs to drawer menu
-    footerMenu.addTab("<dwc-icon name='dashboard'></dwc-icon>");
-    footerMenu.addTab("<dwc-icon name='shopping-cart'></dwc-icon>");
-    footerMenu.addTab("<dwc-icon name='users'></dwc-icon>");
-    footerMenu.addTab("<dwc-icon name='box'></dwc-icon>");
-    footerMenu.addTab("<dwc-icon name='files'></dwc-icon>");
+    footerMenu.addTab("<dwc-icon name='address-book'></dwc-icon>");
+    footerMenu.addTab("<dwc-icon name='clipboard'></dwc-icon>");
+    footerMenu.addTab("<dwc-icon name='mail'></dwc-icon>");
+    footerMenu.addTab("<dwc-icon name='lock'></dwc-icon>");
+    footerMenu.addTab("<dwc-icon name='briefcase-2'></dwc-icon>");
     footerMenu.addSelectListener(this::changeTitle);
   }
 
   private void changeTitle(TabSelectEvent e){
-    if(e.getComponent().getComponentId() == footerMenu.getComponentId()){
-      drawerMenu.select(e.getTabIndex());
-    } else{
-      footerMenu.select(e.getTabIndex());
-    }
-    String value = drawerMenu.getSelected().getText().replaceAll("<[^>]*>", "").trim();
-    appTitle.setText(value + " Page");
+    appTitle.setText(titles.get(e.getTabIndex()));
   }
 
 }
