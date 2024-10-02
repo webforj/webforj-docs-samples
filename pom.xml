@@ -23,7 +23,7 @@
     </repository>
   </repositories>
 
-  <!-- <pluginRepositories>
+  <pluginRepositories>
     <pluginRepository>
         <id>ossrh-snapshots</id>
         <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
@@ -34,15 +34,14 @@
             <enabled>false</enabled>
         </releases>
     </pluginRepository>
-</pluginRepositories> -->
+</pluginRepositories>
 
     <dependencies>
         <dependency>
             <groupId>com.webforj</groupId>
             <artifactId>webforj</artifactId>
             <version>${project.version}</version>
-            <scope>system</scope>
-            <systemPath>C:\__webforJ\webforj\webforj\target\webforj-24.12-SNAPSHOT-jar-with-dependencies.jar</systemPath>
+            <type>pom</type>
         </dependency>
         <dependency>
             <groupId>com.webforj</groupId>
