@@ -33,6 +33,7 @@ public class AppLayoutConferenceDemoView extends Composite<Div> {
   ArrayList<String> titles = new ArrayList<>(Arrays.asList("Contacts", "Tasks", "Inbox", "Security", "Projects"));
 
   H1 appTitle = new H1("Application Title");
+  ArrayList<String> titles = new ArrayList<>(Arrays.asList("Contacts", "Tasks", "Inbox", "Security", "Projects"));
 
   TabbedPane drawerMenu = new TabbedPane();
   TabbedPane footerMenu = new TabbedPane();
@@ -109,10 +110,16 @@ public class AppLayoutConferenceDemoView extends Composite<Div> {
     footerMenu.addTab("<dwc-icon name='mail'></dwc-icon>");
     footerMenu.addTab("<dwc-icon name='lock'></dwc-icon>");
     footerMenu.addTab("<dwc-icon name='briefcase-2'></dwc-icon>");
+    footerMenu.addTab("<dwc-icon name='address-book'></dwc-icon>");
+    footerMenu.addTab("<dwc-icon name='clipboard'></dwc-icon>");
+    footerMenu.addTab("<dwc-icon name='mail'></dwc-icon>");
+    footerMenu.addTab("<dwc-icon name='lock'></dwc-icon>");
+    footerMenu.addTab("<dwc-icon name='briefcase-2'></dwc-icon>");
     footerMenu.addSelectListener(this::changeTitle);
   }
 
   private void changeTitle(TabSelectEvent e){
+    appTitle.setText(titles.get(e.getTabIndex()));
     appTitle.setText(titles.get(e.getTabIndex()));
   }
 
