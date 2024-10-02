@@ -61,7 +61,7 @@
     </dependencies>
 
     <build>
-        <!-- <finalName>controlsamples</finalName> -->
+        <finalName>controlsamples</finalName>
         <plugins>
             <plugin>
                 <groupId>com.webforj</groupId>
