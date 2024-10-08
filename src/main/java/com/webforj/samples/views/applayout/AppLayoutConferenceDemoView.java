@@ -33,8 +33,6 @@ public class AppLayoutConferenceDemoView extends Composite<Div> {
   ArrayList<String> titles = new ArrayList<>(Arrays.asList("Contacts", "Tasks", "Inbox", "Security", "Projects"));
 
   H1 appTitle = new H1("Application Title");
-  ArrayList<String> titles = new ArrayList<>(Arrays.asList("Contacts", "Tasks", "Inbox", "Security", "Projects"));
-
   TabbedPane drawerMenu = new TabbedPane();
   TabbedPane footerMenu = new TabbedPane();
 
