@@ -3,13 +3,12 @@ package com.webforj.samples.views.googlecharts;
 import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.Composite;
 import com.webforj.component.googlecharts.GoogleChart;
+import com.webforj.component.html.elements.Anchor;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.html.elements.Paragraph;
-import com.webforj.component.html.elements.Anchor;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 import com.webforj.samples.views.googlecharts.types.*;
-
 import java.util.Arrays;
 import java.util.List;
 
