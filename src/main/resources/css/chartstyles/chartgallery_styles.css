@@ -23,7 +23,7 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   background-color: var(--dwc-surface-3);
   flex: 1 1 300px;
-  max-width: 375px;
+  width: 375px;
   height: 250px;
 }
 

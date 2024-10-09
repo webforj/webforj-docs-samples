@@ -3,12 +3,12 @@ package com.webforj.samples.views.googlecharts;
 import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.Composite;
 import com.webforj.component.googlecharts.GoogleChart;
+import com.webforj.component.html.elements.Anchor;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.html.elements.Paragraph;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 import com.webforj.samples.views.googlecharts.types.*;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -16,6 +16,8 @@ import java.util.List;
 @Route
 @FrameTitle("Chart Gallery")
 public class ChartGalleryView extends Composite<Div> {
+
+  private static final String GITHUB_BASE_URL = "https://github.com/webforj/webforj-docs-samples/blob/219-chart-links/src/main/java/com/webforj/samples/views/googlecharts/types/";
 
   public ChartGalleryView() {
     getBoundComponent().addClassName("chart-gallery");
@@ -34,7 +36,13 @@ public class ChartGalleryView extends Composite<Div> {
         chartDiv.add(chartName);
 
         chartDiv.add(chart);
-        getBoundComponent().add(chartDiv);
+
+        Anchor chartLink = new Anchor();
+        chartLink.setHref(GITHUB_BASE_URL + formattedTitle.replace(" ", "") + ".java");
+        chartLink.setTarget("_blank");
+        chartLink.add(chartDiv);
+
+        getBoundComponent().add(chartLink);
       }
     }
   }
