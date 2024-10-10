@@ -17,7 +17,7 @@ import java.util.List;
 @FrameTitle("Chart Gallery")
 public class ChartGalleryView extends Composite<Div> {
 
-  private static final String GITHUB_BASE_URL = "https://github.com/webforj/webforj-docs-samples/blob/219-chart-links/src/main/java/com/webforj/samples/views/googlecharts/types/";
+  private static final String GITHUB_BASE_URL = "https://github.com/webforj/webforj-docs-samples/blob/main/src/main/java/com/webforj/samples/views/googlecharts/types/";
 
   public ChartGalleryView() {
     getBoundComponent().addClassName("chart-gallery");
@@ -48,8 +48,8 @@ public class ChartGalleryView extends Composite<Div> {
   }
 
   private List<String> getChartKeys() {
-    return Arrays.asList("pie", "column", "bar", "line", "geo", "scatter", "histogram", "combo", 
-                         "area", "stepped_area", "bubble", "org", "treemap", "table", "gauge", 
+    return Arrays.asList("pie", "column", "bar", "line", "geo", "scatter", "histogram", "combo",
+                         "area", "stepped_area", "bubble", "org", "treemap", "table", "gauge",
                          "candlestick", "sankey", "wordtree", "timeline", "calendar", "gantt");
   }
 
