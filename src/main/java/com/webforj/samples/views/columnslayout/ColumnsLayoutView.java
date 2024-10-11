@@ -5,14 +5,13 @@ import com.webforj.component.button.Button;
 import com.webforj.component.button.ButtonTheme;
 import com.webforj.component.field.PasswordField;
 import com.webforj.component.field.TextField;
-import com.webforj.component.html.elements.Div;
 import com.webforj.component.layout.columnslayout.ColumnsLayout;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
 @Route
 @FrameTitle("Columns Layout")
-public class ColumnsLayoutView extends Composite<Div> {
+public class ColumnsLayoutView extends Composite<ColumnsLayout> {
   TextField firstName = new TextField("First Name");
   TextField lastName = new TextField("Last Name");
   TextField email = new TextField("Email");

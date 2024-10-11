@@ -1,6 +1,5 @@
 package com.webforj.samples.views.applayout;
 
-import com.webforj.App;
 import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.Composite;
 import com.webforj.component.html.elements.Div;
@@ -12,27 +11,25 @@ import com.webforj.component.html.elements.Strong;
 import com.webforj.component.layout.applayout.AppLayout;
 import com.webforj.component.layout.applayout.AppLayout.DrawerPlacement;
 import com.webforj.component.tabbedpane.TabbedPane;
-import com.webforj.component.window.Frame;
-import com.webforj.exceptions.WebforjException;
+import com.webforj.component.tabbedpane.TabbedPane.Placement;
+import com.webforj.component.tabbedpane.TabbedPane.Alignment;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
-@InlineStyleSheet("context://css/applayoutstyles/applayout_mobile.css")
+@InlineStyleSheet("context://css/applayout/applayoutMobile.css")
 @Route
 @FrameTitle("AppLayout Mobile")
-public class AppLayoutMobileView extends Composite<Div> {
+public class AppLayoutMobileView extends Composite<AppLayout> {
 
-  AppLayout demo = new AppLayout();
+  AppLayout demo = getBoundComponent();
   Div contentLabel = new Div();
   Div header = new Div();
 
   public AppLayoutMobileView() {
-    getBoundComponent().add(demo);
-
     // Header
     Div logo = new Div();
-		logo.addClassName("dwc-logo")
-    .add(new Img("https://documentation.webforj.com/img/webforj_icon.svg", "logo"));
+    logo.addClassName("dwc-logo")
+        .add(new Img("https://documentation.webforj.com/img/webforj_icon.svg", "logo"));
     Strong title = new Strong("DWCJ Application");
 
     header.add(logo, title);
@@ -46,21 +43,20 @@ public class AppLayoutMobileView extends Composite<Div> {
     demo.addToContent(
         new H1("Application Title"),
         this.contentLabel);
-        for (int i = 0; i < 5; i++) {
-          Div content = new Div().addClassName("card");
-          content.add(
-                new H2("What is Lorem Ipsum " + i + "?"),
-                new Paragraph("Lorem Ipsum is simply dummy text of the printing and typesetting " +
-                  "industry. Lorem Ipsum has been the industry's standard dummy text " +
-                  "ever since the 1500s when an unknown printer took a galley of type " +
-                  "and scrambled it to make a type specimen book. It has survived not " +
-                  "only five centuries, but also the leap into electronic " +
-                  "typesetting, remaining essentially unchanged. It was popularized " +
-                  "in the 1960s with the release of Letraset sheets containing Lorem " +
-                  "Ipsum passages, and more recently with desktop publishing software " +
-                  "like Aldus PageMaker including versions of Lorem Ipsum.")
-          );
-          demo.addToContent(content);
+    for (int i = 0; i < 5; i++) {
+      Div content = new Div().addClassName("card");
+      content.add(
+          new H2("What is Lorem Ipsum " + i + "?"),
+          new Paragraph("Lorem Ipsum is simply dummy text of the printing and typesetting " +
+              "industry. Lorem Ipsum has been the industry's standard dummy text " +
+              "ever since the 1500s when an unknown printer took a galley of type " +
+              "and scrambled it to make a type specimen book. It has survived not " +
+              "only five centuries, but also the leap into electronic " +
+              "typesetting, remaining essentially unchanged. It was popularized " +
+              "in the 1960s with the release of Letraset sheets containing Lorem " +
+              "Ipsum passages, and more recently with desktop publishing software " +
+              "like Aldus PageMaker including versions of Lorem Ipsum."));
+      demo.addToContent(content);
     }
 
     TabbedPane footerMenu = new TabbedPane();
@@ -69,8 +65,8 @@ public class AppLayoutMobileView extends Composite<Div> {
 
     footerMenu.setBodyHidden(true);
     footerMenu.setBorderless(true);
-    footerMenu.setPlacement(TabbedPane.Placement.BOTTOM);
-    footerMenu.setAlignment(TabbedPane.Alignment.STRETCH);
+    footerMenu.setPlacement(Placement.BOTTOM);
+    footerMenu.setAlignment(Alignment.STRETCH);
 
     // Adding tabs to drawer menu
     footerMenu.addTab("<dwc-icon name='dashboard'></dwc-icon>");

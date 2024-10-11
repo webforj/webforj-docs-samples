@@ -5,7 +5,6 @@ import com.webforj.component.button.Button;
 import com.webforj.component.button.ButtonTheme;
 import com.webforj.component.field.PasswordField;
 import com.webforj.component.field.TextField;
-import com.webforj.component.html.elements.Div;
 import com.webforj.component.layout.columnslayout.ColumnsLayout;
 import com.webforj.component.list.ChoiceBox;
 import com.webforj.component.list.ListItem;
@@ -16,7 +15,7 @@ import java.util.ArrayList;
 
 @Route
 @FrameTitle("Columns Layout Form")
-public class ColumnsLayoutFormView extends Composite<Div> {
+public class ColumnsLayoutFormView extends Composite<ColumnsLayout> {
   TextField firstName = new TextField("First Name");
   TextField lastName = new TextField("Last Name");
   TextField email = new TextField("Email");
@@ -53,7 +52,7 @@ public class ColumnsLayoutFormView extends Composite<Div> {
   }
 
   private void populateStates() {
-    ArrayList<ListItem> states = new ArrayList<>();
+    ArrayList<ListItem> listStates = new ArrayList<>();
     states.add(new ListItem("AL", "Alabama"));
     states.add(new ListItem("AK", "Alaska"));
     states.add(new ListItem("AZ", "Arizona"));
@@ -105,6 +104,6 @@ public class ColumnsLayoutFormView extends Composite<Div> {
     states.add(new ListItem("WI", "Wisconsin"));
     states.add(new ListItem("WY", "Wyoming"));
 
-    this.states.insert(states);
+    this.states.insert(listStates);
   }
 }

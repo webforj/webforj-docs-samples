@@ -4,18 +4,18 @@ import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.Composite;
 import com.webforj.component.button.Button;
 import com.webforj.component.button.ButtonTheme;
-import com.webforj.component.html.elements.Div;
+import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
 /**
  * Simple program to demonstrate the various ButtonThemes.
  */
-@InlineStyleSheet("context://css/buttonstyles/theme_styles.css")
+@InlineStyleSheet("context://css/button/buttonThemes.css")
 @Route
 @FrameTitle("Button Themes")
-public class ButtonThemesView extends Composite<Div> {
-  
+public class ButtonThemesView extends Composite<FlexLayout> {
+
   public ButtonThemesView() {
     getBoundComponent().addClassName("Frame");
 

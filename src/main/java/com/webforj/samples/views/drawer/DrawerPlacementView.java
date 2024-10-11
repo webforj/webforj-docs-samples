@@ -5,14 +5,14 @@ import com.webforj.component.list.ComboBox;
 import com.webforj.component.Composite;
 import com.webforj.component.drawer.Drawer;
 import com.webforj.component.drawer.Drawer.Placement;
-import com.webforj.component.html.elements.Div;
+import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
 @InlineStyleSheet("context://css/drawerstyles/styles.css")
 @Route
 @FrameTitle("Drawer Placement")
-public class DrawerPlacementView extends Composite<Div> {
+public class DrawerPlacementView extends Composite<FlexLayout> {
 
   Drawer drawer = new Drawer();
   ComboBox placements = new ComboBox();

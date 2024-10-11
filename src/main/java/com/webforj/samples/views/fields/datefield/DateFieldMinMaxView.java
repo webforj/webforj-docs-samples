@@ -8,7 +8,7 @@ import com.webforj.component.html.elements.Div;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
-@InlineStyleSheet("context://css/fieldstyles/date_field_styles.css")
+@InlineStyleSheet("context://css/fields/datefield/dateFieldDemo.css")
 @Route
 @FrameTitle("Date Field Min/Max")
 public class DateFieldMinMaxView extends Composite<Div> {

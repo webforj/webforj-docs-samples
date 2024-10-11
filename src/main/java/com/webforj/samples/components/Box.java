@@ -6,7 +6,7 @@ import com.webforj.component.html.elements.Div;
 import com.webforj.concern.HasStyle;
 import com.webforj.concern.HasVisibility;
 
-@InlineStyleSheet("context://css/flexstyles/box_styles.css")
+@InlineStyleSheet("context://css/flexlayout/box.css")
 public class Box extends Composite<Div> implements HasStyle, HasVisibility{
 
   int num;

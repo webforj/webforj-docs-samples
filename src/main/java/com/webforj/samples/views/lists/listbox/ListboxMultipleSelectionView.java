@@ -1,32 +1,23 @@
 package com.webforj.samples.views.lists.listbox;
 
-import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.Composite;
-import com.webforj.component.html.elements.Div;
+import com.webforj.component.layout.flexlayout.FlexDirection;
+import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.component.list.ListBox;
 import com.webforj.component.list.MultipleSelectableList.SelectionMode;
 import com.webforj.component.optioninput.RadioButton;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
-@InlineStyleSheet(/*css*/"""
-  .frame {
-    display: flex;
-    flex-direction: column;
-    width: 200px;
-    margin: 20px 0 0 20px;
-    gap: 20px;
-  }  
-""")
 @Route
 @FrameTitle("Listbox Multiple Selection")
-public class ListboxMultipleSelectionView extends Composite<Div> {
+public class ListboxMultipleSelectionView extends Composite<FlexLayout> {
 
   ListBox listBox;
   SelectionMode selection = SelectionMode.SINGLE;
 
   public ListboxMultipleSelectionView() {
-    getBoundComponent().addClassName("frame");
+    getBoundComponent().setDirection(FlexDirection.COLUMN).setWidth(200).setMargin("20px 0 0 20px").setSpacing("20px");
 
     listBox = new ListBox();
     getBoundComponent().add(listBox);

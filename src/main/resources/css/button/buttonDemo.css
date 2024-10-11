@@ -1,0 +1,30 @@
+
+.row {
+  width: 50%;
+
+  @media only screen and (max-width: 1200px) {
+    width: 70%;
+  }
+}
+
+dwc-field {
+  flex: 1;
+}
+
+@media screen and (max-width: 534px) {
+  .buttons {
+    justify-content: center !important;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    gap: unset !important;
+
+    dwc-button {
+      width: 50%;
+    }
+    
+    dwc-button::part(control) {
+      border-radius: 0px;
+    }
+  }
+}

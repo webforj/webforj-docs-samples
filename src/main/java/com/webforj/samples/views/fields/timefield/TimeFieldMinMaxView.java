@@ -12,16 +12,7 @@ import com.webforj.router.annotation.Route;
 
 import java.time.LocalTime;
 
-@InlineStyleSheet(/*css */"""
-    .window {
-      display: flex;
-      align-items: flex-end;
-      margin: 20px;
-      gap: 50px;
-      width: 100%;
-      flex-wrap: wrap;
-    }
-    """)
+@InlineStyleSheet("context://css/fields/timefield/timeFieldMinMaxView.css")
 @Route
 @FrameTitle("Time Field Min/Max")
 public class TimeFieldMinMaxView extends Composite<Div> {
@@ -40,14 +31,14 @@ public class TimeFieldMinMaxView extends Composite<Div> {
         .setMax(max);
 
     meeting.setLabel(label)
-      .onModify(e -> {
-        try {
-          meeting.setText(e.getText());
-          confirm.setEnabled(true);
-        } catch (IllegalArgumentException __) {
-          confirm.setEnabled(false);
-        }
-        App.console().log(meeting.getValue() + "");
-      });
+        .onModify(e -> {
+          try {
+            meeting.setText(e.getText());
+            confirm.setEnabled(true);
+          } catch (IllegalArgumentException ex) {
+            confirm.setEnabled(false);
+          }
+          App.console().log(meeting.getValue() + "");
+        });
   }
 }

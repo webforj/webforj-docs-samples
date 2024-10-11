@@ -33,7 +33,7 @@ public class TableMultiSelectionView extends Composite<Div> {
       List<MusicRecord> records = ev.getSelectedItems();
       String msg = "There are no records selected";
 
-      if (records.size() > 0) {
+      if (!records.isEmpty()) {
         msg = "<html> You have selected the following records"
             + records.stream().map(MusicRecord::getTitle).map(title -> "<li>" + title + "</li>")
                 .collect(Collectors.joining("", "<ul>", "</ul>"))

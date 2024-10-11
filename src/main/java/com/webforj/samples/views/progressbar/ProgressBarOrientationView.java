@@ -7,6 +7,7 @@ import com.webforj.component.button.Button;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.component.progressbar.ProgressBar;
+import com.webforj.component.progressbar.ProgressBar.Orientation;
 import com.webforj.dispatcher.EventListener;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
@@ -44,7 +45,7 @@ public class ProgressBarOrientationView extends Composite<Div> {
         .setStyle("--dwc-progressbar-height", "125px")
         .setTheme(Theme.SUCCESS)
         .setValue(25)
-        .setOrientation(ProgressBar.Orientation.VERTICAL)
+        .setOrientation(Orientation.VERTICAL)
         .setStriped(true)
         .setAnimated(true)
         .onValueChange(e -> {

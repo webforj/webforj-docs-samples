@@ -9,7 +9,7 @@ import com.webforj.component.Theme;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.slider.Slider;
 
-@InlineStyleSheet("context://css/sliderstyles/theme_styles.css")
+@InlineStyleSheet("context://css/slider/theme_styles.css")
 @Route
 @FrameTitle("Slider Themes")
 public class SliderThemesDemoView extends Composite<Div> {

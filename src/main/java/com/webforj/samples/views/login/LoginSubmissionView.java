@@ -1,6 +1,6 @@
 package com.webforj.samples.views.login;
 
-import com.webforj.App;
+import com.webforj.Page;
 import com.webforj.component.Composite;
 import com.webforj.component.button.Button;
 import com.webforj.component.html.elements.Div;
@@ -26,7 +26,7 @@ public class LoginSubmissionView extends Composite<Div> {
       if (username.equals("admin") &&
           password.equals("admin")) {
         login.close();
-        getBoundComponent().add(new Button("Logout", e -> App.getPage().reload()));
+        getBoundComponent().add(new Button("Logout", e -> Page.getCurrent().reload()));
       } else {
         login.setError(true);
         login.setEnabled(true);

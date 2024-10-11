@@ -8,7 +8,7 @@ import com.webforj.component.Composite;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.slider.Slider;
 
-@InlineStyleSheet("context://css/sliderstyles/minmax_styles.css")
+@InlineStyleSheet("context://css/slider/minmax_styles.css")
 @Route
 @FrameTitle("Slider Min/Max")
 public class SliderMaxMinDemoView extends Composite<Div> {

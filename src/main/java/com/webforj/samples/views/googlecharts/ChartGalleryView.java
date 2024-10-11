@@ -12,7 +12,7 @@ import com.webforj.samples.views.googlecharts.types.*;
 import java.util.Arrays;
 import java.util.List;
 
-@InlineStyleSheet("context://css/chartstyles/chartgallery_styles.css")
+@InlineStyleSheet("context://css/googlecharts/chartGallery.css")
 @Route
 @FrameTitle("Chart Gallery")
 public class ChartGalleryView extends Composite<Div> {

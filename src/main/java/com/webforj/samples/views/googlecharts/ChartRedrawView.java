@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@InlineStyleSheet("context://css/chartstyles/redrawchart_styles.css")
+@InlineStyleSheet("context://css/googlecharts/chartRedraw.css")
 @Route
 @FrameTitle("Chart Redraw")
 public class ChartRedrawView extends Composite<Div> {
@@ -51,7 +51,7 @@ public class ChartRedrawView extends Composite<Div> {
 
     inputGroup.addClassName("input-group");
 
-    String[] categories = {"Instagram", "Twitter", "Facebook", "LinkedIn"};
+    String[] categories = { "Instagram", "Twitter", "Facebook", "LinkedIn" };
     Map<String, NumberField> valueFields = new HashMap<>();
 
     for (String category : categories) {
@@ -95,9 +95,7 @@ public class ChartRedrawView extends Composite<Div> {
     });
 
     inputGroup.add(redrawButton.setTheme(ButtonTheme.PRIMARY));
-    getBoundComponent().add(chartContainer);  
+    getBoundComponent().add(chartContainer);
     getBoundComponent().add(inputGroup);
   }
 }
-
-
