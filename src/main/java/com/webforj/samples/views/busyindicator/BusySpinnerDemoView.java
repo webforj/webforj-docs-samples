@@ -1,4 +1,4 @@
-package com.webforj.samples.views.loadingbusy;
+package com.webforj.samples.views.busyindicator;
 
 import com.webforj.App;
 import com.webforj.BusyIndicator;
@@ -7,7 +7,6 @@ import com.webforj.component.Composite;
 import com.webforj.component.Theme;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.spinner.SpinnerExpanse;
-import com.webforj.dispatcher.EventListener;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
@@ -19,17 +18,15 @@ import com.webforj.router.annotation.Route;
 @FrameTitle("Busy Spinners")
 public class BusySpinnerDemoView extends Composite<Div> {
 
-  int state = 1;
-  
-  BusyIndicator indicator = App.getBusyIndicator();
+  private int state = 1;  
+  private BusyIndicator indicator = App.getBusyIndicator();
+  private Interval interval;
   
   public BusySpinnerDemoView() {
     
     indicator.setText("Displaying spinner with all themes...");
 
-    Interval interval = new Interval(3f, new EventListener<Interval.ElapsedEvent>() {
-          @Override
-            public void onEvent(Interval.ElapsedEvent event) {
+    interval = new Interval(3f, event -> {
             switch (state) {
               case 1:
                 indicator.getSpinner().setTheme(Theme.DEFAULT).setExpanse(SpinnerExpanse.SMALL);
@@ -73,7 +70,6 @@ public class BusySpinnerDemoView extends Composite<Div> {
                 indicator.setText("Demo complete!");
             }
             state++;
-          }
         });
 
     indicator.open();

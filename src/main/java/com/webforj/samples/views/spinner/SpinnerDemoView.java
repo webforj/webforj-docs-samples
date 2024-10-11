@@ -17,7 +17,7 @@ import com.webforj.component.icons.TablerIcon;
 @FrameTitle("Spinner Basics")
 public class SpinnerDemoView extends Composite<Div> {
 
-  Spinner spinner = new Spinner(Theme.PRIMARY, SpinnerExpanse.SMALL);
+  Spinner spinner = new Spinner(Theme.PRIMARY, SpinnerExpanse.XXXSMALL);
   H3 title = new H3("Complete your job application:");
   Icon position = TablerIcon.create("checks");
   Icon location = TablerIcon.create("checks");
@@ -34,7 +34,10 @@ public class SpinnerDemoView extends Composite<Div> {
 
     FlexLayout items =  FlexLayout.create(title, positionLayout, locationLayout, spinnerLayout)
     .vertical()
+    .justify().center()
+    .align().center()
     .build();
+    
     getBoundComponent().add(items);
   }
 }

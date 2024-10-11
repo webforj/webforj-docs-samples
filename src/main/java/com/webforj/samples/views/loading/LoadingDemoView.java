@@ -1,4 +1,4 @@
-package com.webforj.samples.views.loadingbusy;
+package com.webforj.samples.views.loading;
 
 import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.Composite;
@@ -7,8 +7,8 @@ import com.webforj.component.button.Button;
 import com.webforj.component.button.ButtonTheme;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.html.elements.Paragraph;
+import com.webforj.component.icons.FeatherIcon;
 import com.webforj.component.icons.Icon;
-import com.webforj.component.icons.TablerIcon;
 import com.webforj.component.loading.Loading;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
@@ -19,33 +19,31 @@ import com.webforj.router.annotation.Route;
 
 @Route
 @FrameTitle("Loading Basics")
-@InlineStyleSheet("context://css/loadingbusystyles/loadingdemo_styles.css")
+@InlineStyleSheet("context://css/loadingstyles/loadingdemo_styles.css")
 public class LoadingDemoView extends Composite<Div> {
   
-  Div card1 = new Div();
-  Div card2 = new Div();
-  Icon guideIcon = TablerIcon.create("book");
-  Icon videoIcon = TablerIcon.create("brand-youtube");
-  Button buyButton1 = new Button("Buy");
-  Button buyButton2 = new Button("Buy");
-  Loading loading = new Loading("Loading... Please wait.");
+  private Div container;
+  private Div card1 = new Div();
+  private Div card2 = new Div();
+  private Icon guideIcon = FeatherIcon.BOOK.create();
+  private Icon videoIcon = FeatherIcon.YOUTUBE.create();
+  private Button buyButton1 = new Button("Buy");
+  private Button buyButton2 = new Button("Buy");
+  private Loading loading = new Loading("Loading... Please wait.");
   
   public LoadingDemoView() {
-    getBoundComponent().addClassName("window");
+    container = getBoundComponent();
+    container.addClassName("window");
 
     card1.addClassName("card");
-
-    guideIcon.setStyle("width", "100px");
-    guideIcon.setStyle("height", "100px");
-    guideIcon.addClassName("card-content");
+    
+    guideIcon.addClassName("icon");
     
     buyButton1.setTheme(ButtonTheme.PRIMARY);
     
     card2.addClassName("card");
 
-    videoIcon.setStyle("width", "100px");
-    videoIcon.setStyle("height", "100px");
-    videoIcon.addClassName("card-content");
+    videoIcon.addClassName("icon");
     
     buyButton2.setTheme(ButtonTheme.PRIMARY);
 
@@ -57,7 +55,7 @@ public class LoadingDemoView extends Composite<Div> {
     
     loading.open();
     
-    getBoundComponent().add(card1, card2);
+    container.add(card1, card2);
   }
 }
 
