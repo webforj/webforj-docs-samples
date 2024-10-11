@@ -1,0 +1,10 @@
+.main__window {
+  display: flex;
+  margin: 20px;
+  gap: var(--dwc-space-l);
+}
+
+.date__input {
+  flex: none;
+  width: 200px;
+}

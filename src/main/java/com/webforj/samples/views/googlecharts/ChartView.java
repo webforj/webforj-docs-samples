@@ -12,10 +12,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@InlineStyleSheet("context://css/chartstyles/chartdemo_styles.css")
+@InlineStyleSheet("context://css/googlecharts/chart.css")
 @Route
 @FrameTitle("Google Charts")
-public class ChartView extends Composite<Div>{
+public class ChartView extends Composite<Div> {
 
   private static final String COLOR = "color";
   private static final String TEXT_STYLE = "textStyle";
@@ -39,10 +39,8 @@ public class ChartView extends Composite<Div>{
         "alignment", "center",
         TEXT_STYLE, Map.of(
             "fontSize", 16,
-            COLOR, "#333"
-        ),
-        "maxLines", 3
-    ));
+            COLOR, "#333"),
+        "maxLines", 3));
     chart.setOptions(options);
 
     List<Object> data = new ArrayList<>();
@@ -52,9 +50,9 @@ public class ChartView extends Composite<Div>{
     data.add(cols);
 
     String[] countries = new String[] {
-      "Germany", "United States", "Brazil", "Canada",
-      "France", "RU", "Australia", "South Africa",
-      "China", "Egypt"
+        "Germany", "United States", "Brazil", "Canada",
+        "France", "RU", "Australia", "South Africa",
+        "China", "Egypt"
     };
 
     for (String country : countries) {
@@ -68,5 +66,3 @@ public class ChartView extends Composite<Div>{
     getBoundComponent().add(chart);
   }
 }
-
-

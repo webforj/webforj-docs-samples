@@ -23,10 +23,8 @@ public class TableEditDataView extends Composite<Div> {
     table.addColumn("Artist", MusicRecord::getArtist);
     table.addColumn("Genre", MusicRecord::getMusicType);
 
-    VoidElementRenderer<MusicRecord> editRenderer =
-        new VoidElementRenderer<>("dwc-icon-button", ev -> {
-          editor.edit(ev.getItem());
-        });
+    VoidElementRenderer<MusicRecord> editRenderer = new VoidElementRenderer<>("dwc-icon-button",
+        ev -> editor.edit(ev.getItem()));
     editRenderer.setAttribute("name", "pencil-pin");
 
     table.addColumn(editRenderer).setAlignment(Column.Alignment.CENTER)
@@ -35,9 +33,7 @@ public class TableEditDataView extends Composite<Div> {
     table.setRepository(Service.getMusicRecords());
     table.setRowHeight(42);
 
-    editor.onSave(ev -> {
-      table.getRepository().commit(ev.getItem());
-    });
+    editor.onSave(ev -> table.getRepository().commit(ev.getItem()));
 
     getBoundComponent().add(table, editor);
   }

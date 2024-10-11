@@ -14,7 +14,7 @@ import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
 @Route
-@InlineStyleSheet("context://css/compositestyles/styles.css")
+@InlineStyleSheet("context://css/compositeDemo.css")
 @FrameTitle("Composite Demo")
 public class CompositeDemoView extends Composite<Div> {
 

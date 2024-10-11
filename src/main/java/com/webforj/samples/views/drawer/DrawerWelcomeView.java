@@ -23,10 +23,10 @@ import com.webforj.exceptions.WebforjException;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
-@InlineStyleSheet("context://css/drawerstyles/drawer_welcome.css")
+@InlineStyleSheet("context://css/drawer/drawerWelcome.css")
 @Route
 @FrameTitle("Drawer Welcome App")
-public class DrawerWelcomeView extends Composite<Div> {
+public class DrawerWelcomeView extends Composite<FlexLayout> {
 
 	Drawer welcomeDrawer;
 	AppLayout demo = new AppLayout();
@@ -63,7 +63,7 @@ public class DrawerWelcomeView extends Composite<Div> {
 		TabbedPane drawerMenu = new TabbedPane();
 		drawer.add(drawerMenu);
 
-		drawerMenu.hideBody(true);
+	
 		drawerMenu.setBorderless(true);
 		drawerMenu.setPlacement(TabbedPane.Placement.LEFT);
 

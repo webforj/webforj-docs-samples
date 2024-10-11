@@ -5,6 +5,7 @@ import com.webforj.component.Composite;
 import com.webforj.component.button.Button;
 import com.webforj.component.dialog.Dialog;
 import com.webforj.component.html.elements.Div;
+import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
@@ -18,8 +19,8 @@ import com.webforj.router.annotation.Route;
 """)
 @Route
 @FrameTitle("Dialog Backdrop Blur")
-@InlineStyleSheet("context://css/dialogstyles/dialog_styles.css")
-public class DialogBackdropBlurView extends Composite<Div> {
+@InlineStyleSheet("context://css/dialog/dialog.css")
+public class DialogBackdropBlurView extends Composite<FlexLayout> {
 
   private Dialog dialog = new Dialog();
   private Button backgroundBlur = new Button("Toggle Background Blur");

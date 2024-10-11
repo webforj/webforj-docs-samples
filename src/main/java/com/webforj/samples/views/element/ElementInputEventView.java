@@ -10,41 +10,11 @@ import com.webforj.component.html.elements.Div;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
-@InlineStyleSheet(/* css */"""
-  .frame{
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
-  }
-
-  .element--label{
-    display: block;
-    font:
-      1.5em 'Fira Sans',
-      sans-serif;
-    padding-bottom: 10px;
-  }
-
-  .element--input{
-    display: block;
-    margin: 0;
-    padding: 1em 1.5em;
-    width: 50%;
-    font-size: 1.75em;
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    border-radius: 0.4rem;
-    transition: box-shadow 300ms;
-  }
-
-  .element--input:focus {
-    outline: none;
-    box-shadow: 0.2rem 0.8rem 1.6rem rgba(0, 0, 0, 0.12);
-  }
-""")
+@InlineStyleSheet("context://css/element/elementInputEvent.css")
 @Route
 @FrameTitle("Input Event")
 public class ElementInputEventView extends Composite<Div> {
-  
+
   Div label = new Div("Enter Text and Press Enter");
   Element input = new Element("input");
 
@@ -52,7 +22,7 @@ public class ElementInputEventView extends Composite<Div> {
     getBoundComponent().setStyle("margin", "20px");
     getBoundComponent().addClassName("frame");
     getBoundComponent().add(label, input);
-    
+
     label.addClassName("element--label");
     input.addClassName("element--input");
 
@@ -61,8 +31,6 @@ public class ElementInputEventView extends Composite<Div> {
     options.setFilter("event.key == 'Enter'");
     options.setCode("event.preventDefault();");
 
-    input.addEventListener("keypress", e -> {
-      showMessageDialog(e.getEventMap().get("theValue") + "");
-    }, options);
+    input.addEventListener("keypress", e -> showMessageDialog(e.getEventMap().get("theValue") + ""), options);
   }
 }

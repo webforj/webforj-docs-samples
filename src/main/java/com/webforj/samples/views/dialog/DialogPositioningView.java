@@ -6,12 +6,13 @@ import com.webforj.component.button.ButtonTheme;
 import com.webforj.component.dialog.Dialog;
 import com.webforj.component.field.NumberField;
 import com.webforj.component.html.elements.Div;
+import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
 @Route
 @FrameTitle("Dialog Positioning")
-public class DialogPositioningView extends Composite<Div> {
+public class DialogPositioningView extends Composite<FlexLayout> {
 
   private NumberField xPos = new NumberField("X Pixels:");
   private NumberField yPos = new NumberField("Y Pixels:");

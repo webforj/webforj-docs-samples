@@ -6,13 +6,10 @@ import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import java.util.Arrays;
 import java.util.List;
-import com.webforj.App;
 import com.webforj.component.Composite;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.table.Column;
 import com.webforj.component.table.Table;
-import com.webforj.component.window.Frame;
-import com.webforj.exceptions.WebforjException;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 import com.webforj.utilities.Assets;
@@ -48,7 +45,8 @@ public class TableOlympicWinnersView extends Composite<Div> {
 
     List<JsonObject> data = new Gson().fromJson(
         Assets.contentOf(Assets.resolveContextUrl("context://data/olympic-winners.json")),
-        new TypeToken<List<JsonObject>>() {});
+        new TypeToken<List<JsonObject>>() {
+        });
 
     table.setItems(data);
 

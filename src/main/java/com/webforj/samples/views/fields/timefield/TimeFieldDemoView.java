@@ -9,18 +9,7 @@ import com.webforj.router.annotation.Route;
 
 import java.time.LocalTime;
 
-@InlineStyleSheet(/*css */"""
-  .main__window {
-    display: flex;
-    margin: 20px;
-    gap: 100px;
-  }
-
-  .time__input {
-    flex: none;
-    width: 200px;
-  }
-  """)
+@InlineStyleSheet("context://css/fields/datefield/dateFieldDemo.css")
 @Route
 @FrameTitle("Time Field Demo")
 public class TimeFieldDemoView extends Composite<Div> {
@@ -29,7 +18,7 @@ public class TimeFieldDemoView extends Composite<Div> {
     getBoundComponent().addClassName("main__window");
 
     TimeField reminder = new TimeField("Set Reminder:", LocalTime.now());
-    reminder.addClassName("time__input");
+    reminder.addClassName("date__input");
 
     getBoundComponent().add(reminder);
   }

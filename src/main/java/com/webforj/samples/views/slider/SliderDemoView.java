@@ -11,7 +11,7 @@ import com.webforj.component.Theme;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.slider.Slider;
 
-@InlineStyleSheet("context://css/sliderstyles/demo_styles.css")
+@InlineStyleSheet("context://css/slider/sliderDemo.css")
 @Route
 @FrameTitle("Slider Demo")
 public class SliderDemoView extends Composite<Div> {
@@ -31,10 +31,8 @@ public class SliderDemoView extends Composite<Div> {
     slider.setFilled(true);
     slider.setTheme(Theme.WARNING);
     slider.setSize(600, 150);
-    slider.onValueChange((x) -> {
-      App.console().log("Value changed to: " + x.getValue());
-    });
-    
+    slider.onValueChange(x -> App.console().log("Value changed to: " + x.getValue()));
+
     getBoundComponent().add(slider);
     getBoundComponent().setStyle("display", "flex");
     getBoundComponent().setStyle("justify-content", "center");

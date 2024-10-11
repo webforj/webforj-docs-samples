@@ -3,8 +3,6 @@ package com.webforj.samples.views.optiondialog.filechooser;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.webforj.App;
-import com.webforj.exceptions.WebforjException;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 import com.webforj.component.Composite;

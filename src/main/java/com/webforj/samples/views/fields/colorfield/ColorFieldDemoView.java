@@ -12,7 +12,7 @@ import com.webforj.component.window.Panel;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
-@InlineStyleSheet("context://css/fieldstyles/color_field_styles.css")
+@InlineStyleSheet("context://css/fieldstyles/colorFieldDemo.css")
 @Route
 @FrameTitle("Color Field Demo")
 public class ColorFieldDemoView extends Composite<Div> {

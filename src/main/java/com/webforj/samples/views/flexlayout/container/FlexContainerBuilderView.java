@@ -22,7 +22,7 @@ import com.webforj.samples.components.Box;
 import com.webforj.samples.components.CodeDisplay;
 
 
-@InlineStyleSheet("context://css/flexstyles/container_styles.css")
+@InlineStyleSheet("context://css/flexlayout/container/flexContainerBuilder.css")
 @Route
 @FrameTitle("Container Builder")
 public class FlexContainerBuilderView extends Composite<Div> {
@@ -36,6 +36,8 @@ public class FlexContainerBuilderView extends Composite<Div> {
   String javaCode;
   CodeDisplay codeWindow = new CodeDisplay();
   HashMap<String, String> codeSnippetBuilder;
+
+  public static final String REGEX = "^(.+?)-";
 
   public FlexContainerBuilderView() {
     getBoundComponent().addClassName("app__frame");
@@ -88,8 +90,8 @@ public class FlexContainerBuilderView extends Composite<Div> {
     justifications.setLabel("Justification Options");
     for (FlexJustifyContent justify : FlexJustifyContent.values()) {
       String label = justify.getValue()
-          .replaceAll("^(.+?)-", "");
-      justifications.add(".justify()." + justify.toString().toLowerCase().replaceAll("^(.+?)-", "") + "()",
+          .replaceAll(REGEX, "");
+      justifications.add(".justify()." + justify.toString().toLowerCase().replaceAll(REGEX, "") + "()",
           label.substring(0, 1).toUpperCase() + label.substring(1));
     }
     justifications.selectIndex(0);
@@ -98,8 +100,8 @@ public class FlexContainerBuilderView extends Composite<Div> {
     alignments.onSelect(this::selectAlignment);
     alignments.setLabel("Alignment Options");
     for (FlexAlignment justify : FlexAlignment.values()) {
-      String label = justify.getValue().replaceAll("^(.+?)-", "");
-      alignments.add(".align()." + justify.toString().toLowerCase().replaceAll("^(.+?)-", "") + "()",
+      String label = justify.getValue().replaceAll(REGEX, "");
+      alignments.add(".align()." + justify.toString().toLowerCase().replaceAll(REGEX, "") + "()",
           label.substring(0, 1).toUpperCase() + label.substring(1));
     }
     alignments.selectIndex(0);
@@ -108,8 +110,8 @@ public class FlexContainerBuilderView extends Composite<Div> {
     contentAlignments.onSelect(this::selectAlignContent);
     contentAlignments.setLabel("Content-Alignment Options");
     for (FlexContentAlignment justify : FlexContentAlignment.values()) {
-      String label = justify.getValue().replaceAll("^(.+?)-", "");
-      contentAlignments.add(".contentAlign()." + justify.toString().toLowerCase().replaceAll("^(.+?)-", "") + "()",
+      String label = justify.getValue().replaceAll(REGEX, "");
+      contentAlignments.add(".contentAlign()." + justify.toString().toLowerCase().replaceAll(REGEX, "") + "()",
           label.substring(0, 1).toUpperCase() + label.substring(1));
     }
     contentAlignments.selectIndex(0);
@@ -118,8 +120,8 @@ public class FlexContainerBuilderView extends Composite<Div> {
     wraps.onSelect(this::selectWrap);
     wraps.setLabel("Wrap Options");
     for (FlexWrap justify : FlexWrap.values()) {
-      String label = justify.getValue().replaceAll("^(.+?)-", "");
-      wraps.add(".wrap()." + justify.toString().toLowerCase().replaceAll("^(.+?)-", "") + "()",
+      String label = justify.getValue().replaceAll(REGEX, "");
+      wraps.add(".wrap()." + justify.toString().toLowerCase().replaceAll(REGEX, "") + "()",
           label.substring(0, 1).toUpperCase() + label.substring(1));
     }
     wraps.selectIndex(0);

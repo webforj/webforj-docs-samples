@@ -11,7 +11,7 @@ import com.webforj.router.annotation.Route;
 /**
  * Simple program to demonstrate the various Button expanse values.
  */
-@InlineStyleSheet("context://css/buttonstyles/expanse_styles.css")
+@InlineStyleSheet("context://css/button/buttonExpanses.css")
 @Route
 @FrameTitle("Button Expanses")
 public class ButtonExpansesView extends Composite<Div> {

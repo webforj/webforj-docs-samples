@@ -8,7 +8,7 @@ import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
-@InlineStyleSheet("context://css/tablestyles/richcontent/styles.css")
+@InlineStyleSheet("context://css/table/tableRichtContent.css")
 @Route
 @FrameTitle("Table Rich Content")
 public class TableRichContentView extends Composite<Div> {

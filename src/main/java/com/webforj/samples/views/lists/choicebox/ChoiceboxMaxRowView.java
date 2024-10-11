@@ -2,40 +2,29 @@ package com.webforj.samples.views.lists.choicebox;
 
 import java.util.ArrayList;
 
-import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.Composite;
 import com.webforj.component.button.Button;
 import com.webforj.component.field.NumberField;
-import com.webforj.component.html.elements.Div;
+import com.webforj.component.layout.flexlayout.FlexDirection;
+import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.component.list.ChoiceBox;
 import com.webforj.component.list.ListItem;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
-@InlineStyleSheet(/* css */"""
-.frame {
-  display: flex;
-  flex-direction: column;
-  margin: 20px 0 0 20px;
-  gap: 20px;
-  width: 200px;
-}
-""")
 @Route
 @FrameTitle("Choicebox Max Rows")
-public class ChoiceboxMaxRowView extends Composite<Div> {
-  
+public class ChoiceboxMaxRowView extends Composite<FlexLayout> {
+
   ChoiceBox demoBox = new ChoiceBox("States");
   NumberField numberField = new NumberField("Number of Rows");
   Button select = new Button("Apply");
-  
+
   public ChoiceboxMaxRowView() {
-    getBoundComponent().addClassName("frame");
+    getBoundComponent().setDirection(FlexDirection.COLUMN).setMargin("20px 0 0 20px").setSpacing("20px").setWidth(200);
     getBoundComponent().add(demoBox, numberField, select);
 
-    select.onClick(e -> {
-      demoBox.setMaxRowCount(Integer.valueOf(numberField.getText()));
-    });
+    select.onClick(e -> demoBox.setMaxRowCount(Integer.valueOf(numberField.getText())));
 
     ArrayList<ListItem> states = new ArrayList<>();
     states.add(new ListItem("AL", "Alabama"));
@@ -88,7 +77,7 @@ public class ChoiceboxMaxRowView extends Composite<Div> {
     states.add(new ListItem("WV", "West Virginia"));
     states.add(new ListItem("WI", "Wisconsin"));
     states.add(new ListItem("WY", "Wyoming"));
-    
+
     demoBox.insert(states);
     demoBox.selectIndex(0);
   }

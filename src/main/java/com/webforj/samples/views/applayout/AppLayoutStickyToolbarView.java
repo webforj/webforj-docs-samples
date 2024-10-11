@@ -1,6 +1,5 @@
 package com.webforj.samples.views.applayout;
 
-import com.webforj.App;
 import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.Composite;
 import com.webforj.component.element.Element;
@@ -11,28 +10,23 @@ import com.webforj.component.html.elements.H3;
 import com.webforj.component.html.elements.Img;
 import com.webforj.component.html.elements.Paragraph;
 import com.webforj.component.layout.applayout.AppLayout;
-import com.webforj.component.text.Label;
 import com.webforj.component.tabbedpane.TabbedPane;
-import com.webforj.component.tabbedpane.event.TabSelectEvent;
-import com.webforj.component.window.Frame;
-import com.webforj.component.window.Panel;
-import com.webforj.exceptions.WebforjException;
+import com.webforj.component.tabbedpane.TabbedPane.Placement;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
-@InlineStyleSheet("context://css/applayoutstyles/applayout_sticky_styles.css")
+@InlineStyleSheet("context://css/applayout/applayout")
 @Route
 @FrameTitle("AppLayout Sticky Toolbar")
-public class AppLayoutStickyToolbarView extends Composite<Div> {
+public class AppLayoutStickyToolbarView extends Composite<AppLayout> {
 
-  AppLayout demo = new AppLayout();
+  AppLayout demo = getBoundComponent();
   Paragraph contentLabel = new Paragraph();
 
   Div header = new Div();
   Div drawer = new Div();
 
   public AppLayoutStickyToolbarView() {
-    getBoundComponent().add(demo);
 
     demo.setDrawerHeaderVisible(true);
     demo.setDrawerFooterVisible(true);
@@ -65,7 +59,7 @@ public class AppLayoutStickyToolbarView extends Composite<Div> {
 
     drawerMenu.setBodyHidden(true);
     drawerMenu.setBorderless(true);
-    drawerMenu.setPlacement(TabbedPane.Placement.LEFT);
+    drawerMenu.setPlacement(Placement.LEFT);
 
     // Adding tabs to drawer menu
     drawerMenu.addTab("<dwc-icon name='dashboard'></dwc-icon>      Dashboard");
@@ -102,7 +96,6 @@ public class AppLayoutStickyToolbarView extends Composite<Div> {
     demo.addToHeader(secondToolbar);
     TabbedPane secondMenu = new TabbedPane();
     secondToolbar.add(secondMenu);
-    secondMenu.hideBody(true);
     secondMenu.setBorderless(true);
     secondMenu.addTab("<dwc-icon name='report-money'></dwc-icon> Sales");
     secondMenu.addTab("<dwc-icon name='building'></dwc-icon> Enterprise");
