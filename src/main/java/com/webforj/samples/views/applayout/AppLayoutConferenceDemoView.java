@@ -121,3 +121,4 @@ public class AppLayoutConferenceDemoView extends Composite<AppLayout> {
   }
 
 }
+
