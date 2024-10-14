@@ -8,7 +8,7 @@ import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
-@InlineStyleSheet("context://css/dialog/dialog.csss")
+@InlineStyleSheet("context://css/dialog/dialog.css")
 @Route
 @FrameTitle("Dialog Dragging")
 public class DialogDraggableView extends Composite<FlexLayout> {

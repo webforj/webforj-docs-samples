@@ -15,7 +15,7 @@ import com.webforj.component.tabbedpane.event.TabSelectEvent;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
-@InlineStyleSheet("context://css/applayout/applayout")
+@InlineStyleSheet("context://css/applayout/applayout.css")
 @Route
 @FrameTitle("AppLayout")
 public class AppLayoutView extends Composite<AppLayout> {

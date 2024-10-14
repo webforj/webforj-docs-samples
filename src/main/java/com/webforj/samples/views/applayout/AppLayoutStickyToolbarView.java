@@ -15,7 +15,7 @@ import com.webforj.component.tabbedpane.TabbedPane.Placement;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
-@InlineStyleSheet("context://css/applayout/applayout")
+@InlineStyleSheet("context://css/applayout/applayout.css")
 @Route
 @FrameTitle("AppLayout Sticky Toolbar")
 public class AppLayoutStickyToolbarView extends Composite<AppLayout> {

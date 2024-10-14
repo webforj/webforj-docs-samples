@@ -1,6 +1,7 @@
 package com.webforj.samples.views.columnslayout;
 
 import com.webforj.component.Composite;
+import com.webforj.component.html.elements.Div;
 import com.webforj.component.layout.columnslayout.ColumnsLayout;
 import com.webforj.component.layout.columnslayout.ColumnsLayout.Breakpoint;
 import com.webforj.component.optioninput.RadioButton;
@@ -12,7 +13,7 @@ import java.util.List;
 
 @Route
 @FrameTitle("Columns Layout Form")
-public class ColumnsLayoutChangeColumnsView extends Composite<ColumnsLayout> {
+public class ColumnsLayoutChangeColumnsView extends Composite<Div> {
    RadioButton agree = new RadioButton("Agree");
     RadioButton neutral = new RadioButton("Neutral");
     RadioButton disagree = new RadioButton("Disagree");

@@ -1,13 +1,14 @@
 package com.webforj.samples.views.checkbox;
 
+import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.Composite;
 import com.webforj.component.event.ToggleEvent;
-import com.webforj.component.layout.flexlayout.FlexDirection;
 import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.component.optioninput.CheckBox;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
+@InlineStyleSheet("context://css/checkbox/checkboxIndeterminate.css")
 @Route
 @FrameTitle("Checkbox Indeterminate")
 public class CheckboxIndeterminateView extends Composite<FlexLayout> {
@@ -17,17 +18,15 @@ public class CheckboxIndeterminateView extends Composite<FlexLayout> {
   CheckBox child2 = new CheckBox("Child 2");
 
   public CheckboxIndeterminateView() {
-    getBoundComponent().setDirection(FlexDirection.COLUMN).setSpacing("var(--dwcj-space-m)").setMargin("10px");
+    getBoundComponent().addClassName("Frame");
 
     indeterminate.setIndeterminate(true);
     indeterminate.addToggleListener(this::indeterminateToggle);
 
-    child1.setChecked(false)
-        .setStyle("margin-left", "30px !important")
+    child1.setChecked(false).addClassName("child-box")
         .addToggleListener(this::onCheck);
 
-    child2.setChecked(true)
-        .setStyle("margin-left", "30px !important")
+    child2.setChecked(true).addClassName("child-box")
         .addToggleListener(this::onCheck);
 
     getBoundComponent().add(indeterminate, child1, child2);

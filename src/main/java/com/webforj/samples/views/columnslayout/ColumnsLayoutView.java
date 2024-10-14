@@ -5,13 +5,14 @@ import com.webforj.component.button.Button;
 import com.webforj.component.button.ButtonTheme;
 import com.webforj.component.field.PasswordField;
 import com.webforj.component.field.TextField;
+import com.webforj.component.html.elements.Div;
 import com.webforj.component.layout.columnslayout.ColumnsLayout;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
 @Route
 @FrameTitle("Columns Layout")
-public class ColumnsLayoutView extends Composite<ColumnsLayout> {
+public class ColumnsLayoutView extends Composite<Div> {
   TextField firstName = new TextField("First Name");
   TextField lastName = new TextField("Last Name");
   TextField email = new TextField("Email");
@@ -28,7 +29,6 @@ public class ColumnsLayoutView extends Composite<ColumnsLayout> {
     columnsLayout.setSpan(email, 2);
     columnsLayout.setSpan(submit, 2);
     columnsLayout.setStyle("padding", "var(--dwc-space-xl)");
-    
 
     submit.setStyle("margin-top", "var(--dwc-space-l)");
 

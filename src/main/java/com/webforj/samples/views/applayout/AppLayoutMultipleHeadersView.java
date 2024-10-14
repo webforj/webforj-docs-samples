@@ -15,9 +15,9 @@ import com.webforj.component.tabbedpane.event.TabSelectEvent;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
-@InlineStyleSheet("context://css/applayout/applayout")
+@InlineStyleSheet("context://css/applayout/applayout.css")
 @Route
-@FrameTitle("AppLayou Multiple Headers")
+@FrameTitle("AppLayout Multiple Headers")
 public class AppLayoutMultipleHeadersView extends Composite<AppLayout> {
 
 	AppLayout demo = getBoundComponent();
@@ -57,6 +57,7 @@ public class AppLayoutMultipleHeadersView extends Composite<AppLayout> {
 		drawer.add(drawerMenu);
 
 		// Setting drawer menu's attributes
+		drawerMenu.setBodyHidden(true);
 		drawerMenu.setBorderless(true);
 		drawerMenu.setPlacement(Placement.LEFT);
 

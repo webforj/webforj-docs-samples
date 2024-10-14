@@ -3,6 +3,7 @@ package com.webforj.samples.views.columnslayout;
 import com.webforj.component.Composite;
 import com.webforj.component.field.PasswordField;
 import com.webforj.component.field.TextField;
+import com.webforj.component.html.elements.Div;
 import com.webforj.component.layout.columnslayout.ColumnsLayout;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
@@ -11,7 +12,7 @@ import java.util.List;
 
 @Route
 @FrameTitle("Columns Layout Breakpoints")
-public class ColumnsLayoutBreakpointsView extends Composite<ColumnsLayout> {
+public class ColumnsLayoutBreakpointsView extends Composite<Div> {
   TextField firstName = new TextField("First Name");
   TextField lastName = new TextField("Last Name");
   TextField email = new TextField("Email");

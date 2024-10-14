@@ -4,7 +4,7 @@ import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.Composite;
 import com.webforj.component.button.Button;
 import com.webforj.component.button.ButtonTheme;
-import com.webforj.component.layout.flexlayout.FlexLayout;
+import com.webforj.component.html.elements.Div;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
@@ -14,8 +14,8 @@ import com.webforj.router.annotation.Route;
 @InlineStyleSheet("context://css/button/buttonThemes.css")
 @Route
 @FrameTitle("Button Themes")
-public class ButtonThemesView extends Composite<FlexLayout> {
-
+public class ButtonThemesView extends Composite<Div> {
+  
   public ButtonThemesView() {
     getBoundComponent().addClassName("Frame");
 

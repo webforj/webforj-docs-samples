@@ -18,7 +18,8 @@ public class ButtonEventView extends Composite<FlexLayout> {
   Div payload = new Div("Event Payload: null");
 
   public ButtonEventView() {
-    getBoundComponent().setDirection(FlexDirection.ROW).setSpacing("--var-dwc-space-l").setPadding("--var-dwc-space-l");
+    getBoundComponent().setDirection(FlexDirection.ROW).setSpacing("var(--dwc-space-l)")
+        .setPadding("var(--dwc-space-l)");
 
     Button button = new Button("Click Me!");
     button.setWidth("150px");

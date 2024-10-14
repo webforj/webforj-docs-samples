@@ -18,7 +18,8 @@ public class ButtonDisableView extends Composite<FlexLayout> {
   Button submit = new Button("Submit", ButtonTheme.PRIMARY);
 
   public ButtonDisableView() {
-    self.setAlignment(FlexAlignment.END).setMargin("--dwc-space-l").setSpacing("--dwc-space-l").setStyle("flex-wrap",
+    self.setAlignment(FlexAlignment.END).setMargin("var(--dwc-space-l)").setSpacing("var(--dwc-space-xl)").setStyle(
+        "flex-wrap",
         "wrap");
     self.add(email, submit);
     self.setWidth("100%");

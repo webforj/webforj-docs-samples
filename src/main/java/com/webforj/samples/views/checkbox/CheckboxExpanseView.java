@@ -1,6 +1,6 @@
 package com.webforj.samples.views.checkbox;
 
-import com.webforj.annotation.StyleSheet;
+import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.Composite;
 import com.webforj.component.Expanse;
 import com.webforj.component.layout.flexlayout.FlexLayout;
@@ -8,7 +8,7 @@ import com.webforj.component.optioninput.CheckBox;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
-@StyleSheet("context://css/checkbox/checkboxExpanse.css")
+@InlineStyleSheet("context://css/checkbox/checkboxExpanse.css")
 @Route
 @FrameTitle("Checkbox Expanses")
 public class CheckboxExpanseView extends Composite<FlexLayout> {
