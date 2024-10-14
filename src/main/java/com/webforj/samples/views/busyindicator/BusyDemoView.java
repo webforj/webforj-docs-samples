@@ -19,27 +19,29 @@ import com.webforj.router.annotation.Route;
 @FrameTitle("Busy Basics")
 public class BusyDemoView extends Composite<FlexLayout> {
 
-  private FlexLayout container;
-  private TextField nameField = new TextField("Name");
-  private TextField emailField = new TextField("Email");
-  private Button submitButton =
-      new Button("Submit", e -> showBusyIndicator());
-  private BusyIndicator busyIndicator = App.getBusyIndicator();
+  TextField nameField;
+  TextField emailField;
+  Button submitButton;
+  BusyIndicator busyIndicator;
 
   public BusyDemoView() {
-
-    container = getBoundComponent();
-    nameField.setWidth("350px");
-    emailField.setWidth("350px");
-    submitButton.setTheme(ButtonTheme.PRIMARY);
+    getBoundComponent().setJustifyContent(FlexJustifyContent.CENTER)
+        .setMargin("var(--dwc-space-l)");
+    
+    nameField = new TextField("Name").setWidth("500px");
+    
+    emailField = new TextField("Email").setWidth("500px");
+    
+    submitButton = new Button("Submit", e -> showBusyIndicator())
+        .setTheme(ButtonTheme.PRIMARY);
+    
+    busyIndicator = App.getBusyIndicator();
 
     FlexLayout form = FlexLayout.create(nameField, emailField, submitButton)
         .vertical()
         .build();
-
-    container.add(form);
-    container.setJustifyContent(FlexJustifyContent.CENTER);
-    container.setStyle("margin", "var(--dwc-space-l)");
+   
+    getBoundComponent().add(form);
 
     showBusyIndicator();
   }

@@ -1,51 +1,45 @@
 package com.webforj.samples.views.spinner;
 
-import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.Composite;
 import com.webforj.component.Theme;
 import com.webforj.component.button.Button;
 import com.webforj.component.button.ButtonTheme;
-import com.webforj.component.html.elements.Div;
+import com.webforj.component.layout.flexlayout.FlexAlignment;
+import com.webforj.component.layout.flexlayout.FlexDirection;
+import com.webforj.component.layout.flexlayout.FlexJustifyContent;
+import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.component.spinner.Spinner;
 import com.webforj.component.spinner.SpinnerExpanse;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
-@InlineStyleSheet(/*css */"""
-    .window {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: var(--dwc-space-m);
-      margin: 20px;
-    }
-    .button-container {
-      display: flex;
-      gap: var(--dwc-space-s);
-    }
-    """)
-
 @Route
 @FrameTitle("Spinner Speeds")
-public class SpinnerSpeedDemoView extends Composite<Div> {
+public class SpinnerSpeedDemoView extends Composite<FlexLayout> {
   
-  Spinner spinner = new Spinner(Theme.PRIMARY, SpinnerExpanse.MEDIUM);
-
-  Button slowButton = new Button("Slow", e -> setSpinnerSpeed(spinner, 1000));
-  Button mediumButton = new Button("Medium", e -> setSpinnerSpeed(spinner, 500));
-  Button fastButton = new Button("Fast", e -> setSpinnerSpeed(spinner, 200));
+  Spinner spinner;
+  Button slowButton;
+  Button mediumButton;
+  Button fastButton;
   
-  Button pauseResumeButton = new Button("Pause", e ->  spinner.setPaused(true));
+  Button pauseResumeButton;
 
   public SpinnerSpeedDemoView() {
-    getBoundComponent().addClassName("window");
+    getBoundComponent().setDirection(FlexDirection.COLUMN).setAlignment(FlexAlignment.CENTER)
+    .setJustifyContent(FlexJustifyContent.CENTER).setSpacing("var(--dwc-space-m)")
+    .setMargin("var(--dwc-space-l)");
+    
+    spinner = new Spinner(Theme.PRIMARY, SpinnerExpanse.MEDIUM);
+    slowButton = new Button("Slow", e -> setSpinnerSpeed(spinner, 1000));
+    mediumButton = new Button("Medium", e -> setSpinnerSpeed(spinner, 500));
+    fastButton = new Button("Fast", e -> setSpinnerSpeed(spinner, 200));
+    pauseResumeButton = new Button("Pause", e ->  spinner.setPaused(true))
+        .setTheme(ButtonTheme.PRIMARY);
+    
+    FlexLayout buttons = new FlexLayout(slowButton, mediumButton, fastButton, pauseResumeButton);
+    buttons.setMargin("var(--dwc-space-s)");
 
-    pauseResumeButton.setTheme(ButtonTheme.PRIMARY);
-
-    getBoundComponent().add(spinner, new Div(slowButton, mediumButton, fastButton, 
-        pauseResumeButton)
-                       .addClassName("button-container"));
+    getBoundComponent().add(spinner, buttons);
   }
 
   private void setSpinnerSpeed(Spinner spinner, int speed) {

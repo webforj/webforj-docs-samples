@@ -18,13 +18,13 @@ import com.webforj.router.annotation.Route;
 @FrameTitle("Busy Spinners")
 public class BusySpinnerDemoView extends Composite<Div> {
 
-  private int state = 1;  
-  private BusyIndicator indicator = App.getBusyIndicator();
-  private Interval interval;
+  int state = 1;  
+  BusyIndicator indicator;
+  Interval interval;
   
   public BusySpinnerDemoView() {
     
-    indicator.setText("Displaying spinner with all themes...");
+    indicator  = App.getBusyIndicator().setText("Displaying spinner with all themes...");
 
     interval = new Interval(3f, event -> {
             switch (state) {

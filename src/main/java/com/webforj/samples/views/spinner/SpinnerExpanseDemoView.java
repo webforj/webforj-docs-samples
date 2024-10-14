@@ -1,35 +1,32 @@
 package com.webforj.samples.views.spinner;
 
-import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.Composite;
 import com.webforj.component.Theme;
-import com.webforj.component.html.elements.Div;
+import com.webforj.component.layout.flexlayout.FlexAlignment;
+import com.webforj.component.layout.flexlayout.FlexDirection;
+import com.webforj.component.layout.flexlayout.FlexJustifyContent;
+import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.component.spinner.Spinner;
 import com.webforj.component.spinner.SpinnerExpanse;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
-@InlineStyleSheet(/*css */"""
-    .window {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      gap: var(--dwc-space-m);
-      margin: 20px;
-    }
-    """)
-
 @Route
 @FrameTitle("Spinner Expanses")
-public class SpinnerExpanseDemoView extends Composite<Div> {
+public class SpinnerExpanseDemoView extends Composite<FlexLayout> {
   
-  Spinner smallSpinner = new Spinner(Theme.PRIMARY, SpinnerExpanse.SMALL);
-  Spinner mediumSpinner = new Spinner(Theme.PRIMARY, SpinnerExpanse.MEDIUM);
-  Spinner largeSpinner = new Spinner(Theme.PRIMARY, SpinnerExpanse.LARGE);
+  Spinner smallSpinner;
+  Spinner mediumSpinner;
+  Spinner largeSpinner;
 
   public SpinnerExpanseDemoView() {
-    getBoundComponent().addClassName("window");
+    smallSpinner = new Spinner(Theme.PRIMARY, SpinnerExpanse.SMALL);
+    mediumSpinner = new Spinner(Theme.PRIMARY, SpinnerExpanse.MEDIUM);
+    largeSpinner = new Spinner(Theme.PRIMARY, SpinnerExpanse.LARGE);
+    
+    getBoundComponent().setDirection(FlexDirection.ROW).setAlignment(FlexAlignment.CENTER)
+        .setJustifyContent(FlexJustifyContent.CENTER).setSpacing("var(--dwc-space-m)")
+        .setMargin("var(--dwc-space-l)");
     getBoundComponent().add(smallSpinner, mediumSpinner, largeSpinner);
   }
 }
