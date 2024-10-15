@@ -8,7 +8,7 @@ import com.webforj.component.Composite;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.slider.Slider;
 
-@InlineStyleSheet("context://css/slider/tick_styles.css")
+@InlineStyleSheet("context://css/slider/sliderTickDemo.css")
 @Route
 @FrameTitle("Slider Ticks")
 public class SliderTickDemoView extends Composite<Div> {

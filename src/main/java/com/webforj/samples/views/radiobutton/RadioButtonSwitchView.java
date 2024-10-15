@@ -13,7 +13,7 @@ import com.webforj.router.annotation.Route;
 public class RadioButtonSwitchView extends Composite<FlexLayout> {
 
   public RadioButtonSwitchView() {
-    getBoundComponent().setDirection(FlexDirection.COLUMN).setSpacing("1em").setMargin("20px");
+    getBoundComponent().setDirection(FlexDirection.ROW).setSpacing("1em").setMargin("20px");
 
     RadioButton normalButton = new RadioButton("Normal RadioButton")
         .setExpanse(Expanse.XLARGE);
