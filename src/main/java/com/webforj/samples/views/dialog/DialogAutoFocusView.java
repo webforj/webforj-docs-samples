@@ -5,16 +5,17 @@ import com.webforj.component.Composite;
 import com.webforj.component.dialog.Dialog;
 import com.webforj.component.field.TextField;
 import com.webforj.component.html.elements.Div;
+import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
-@InlineStyleSheet("context://css/dialogstyles/dialog_styles.css")
+@InlineStyleSheet("context://css/dialog/dialog.css")
 @Route
 @FrameTitle("DIalog Auto-Focus")
-public class DialogAutoFocusView extends Composite<Div> {
-  
+public class DialogAutoFocusView extends Composite<FlexLayout> {
+
   private Dialog dialog = new Dialog();
-  
+
   public DialogAutoFocusView() {
     getBoundComponent().add(dialog);
 

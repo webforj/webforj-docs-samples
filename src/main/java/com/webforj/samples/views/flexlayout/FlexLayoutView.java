@@ -1,6 +1,5 @@
 package com.webforj.samples.views.flexlayout;
 
-import com.webforj.App;
 import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.Composite;
 import com.webforj.component.button.Button;
@@ -11,12 +10,10 @@ import com.webforj.component.field.PasswordField;
 import com.webforj.component.field.TextField;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.layout.flexlayout.FlexLayout;
-import com.webforj.component.window.Frame;
-import com.webforj.exceptions.WebforjException;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
-@InlineStyleSheet("context://css/flexstyles/form_styles.css")
+@InlineStyleSheet("context://css/flexlayout/flexLayout.css")
 @Route
 @FrameTitle("Flex Layout")
 public class FlexLayoutView extends Composite<Div> {

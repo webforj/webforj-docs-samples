@@ -10,7 +10,7 @@ import com.webforj.component.Composite;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.slider.Slider;
 
-@InlineStyleSheet("context://css/sliderstyles/inversion_styles.css")
+@InlineStyleSheet("context://css/slider/sliderInversionDemo.css")
 @Route
 @FrameTitle("Slider Inversion")
 public class SliderInversionDemoView extends Composite<Div> {

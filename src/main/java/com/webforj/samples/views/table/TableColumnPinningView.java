@@ -2,14 +2,12 @@ package com.webforj.samples.views.table;
 
 import static com.webforj.component.optiondialog.OptionDialog.showMessageDialog;
 
-import com.webforj.App;
+
 import com.webforj.component.Composite;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.table.Column;
 import com.webforj.component.table.Table;
 import com.webforj.component.table.renderer.ButtonRenderer;
-import com.webforj.component.window.Frame;
-import com.webforj.exceptions.WebforjException;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 

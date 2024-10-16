@@ -14,16 +14,16 @@ import java.util.List;
 @Route
 @FrameTitle("Columns Layout Form")
 public class ColumnsLayoutChangeColumnsView extends Composite<Div> {
-   RadioButton agree = new RadioButton("Agree");
-    RadioButton neutral = new RadioButton("Neutral");
-    RadioButton disagree = new RadioButton("Disagree");
+  RadioButton agree = new RadioButton("Agree");
+  RadioButton neutral = new RadioButton("Neutral");
+  RadioButton disagree = new RadioButton("Disagree");
 
   public ColumnsLayoutChangeColumnsView() {
     RadioButtonGroup group = new RadioButtonGroup(agree, neutral, disagree);
 
     List<Breakpoint> breaks = List.of(
-      new Breakpoint("one", 0, 1),
-      new Breakpoint("three", 500, 3));
+        new Breakpoint("one", 0, 1),
+        new Breakpoint("three", 500, 3));
 
     ColumnsLayout layout = new ColumnsLayout(breaks, group, agree, neutral, disagree);
 

@@ -10,7 +10,7 @@ import com.webforj.component.Composite;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.slider.Slider;
 
-@InlineStyleSheet("context://css/sliderstyles/label_styles.css")
+@InlineStyleSheet("context://css/slider/sliderLabelDemo.css")
 @Route
 @FrameTitle("Slider Label")
 public class SliderLabelDemoView extends Composite<Div> {

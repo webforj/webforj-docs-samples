@@ -7,28 +7,7 @@ import com.webforj.component.html.elements.Div;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
-@InlineStyleSheet(/* css */"""
-  details {
-    border: 1px solid #aaa;
-    border-radius: 4px;
-    padding: 0.5em 0.5em 0;
-  }
-  
-  summary {
-    font-weight: bold;
-    margin: -0.5em -0.5em 0;
-    padding: 0.5em;
-  }
-  
-  details[open] {
-    padding: 0.5em;
-  }
-  
-  details[open] summary {
-    border-bottom: 1px solid #aaa;
-    margin-bottom: 0.5em;
-  }
-""")
+@InlineStyleSheet("context://css/element/elementDetailsConstructor.css")
 @Route
 @FrameTitle("Details Constructor")
 public class ElementDetailsConstructorView extends Composite<Div> {

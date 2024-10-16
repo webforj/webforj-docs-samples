@@ -19,7 +19,7 @@ import java.util.List;
 public class TerminalDemoView extends Composite<Div> {
 
   private String commandBuffer = "";
-  private List<String> commandHistory = new ArrayList<String>();
+  private List<String> commandHistory = new ArrayList<>();
   private int historyIndex = -1;
 
   public TerminalDemoView() {
@@ -71,8 +71,7 @@ public class TerminalDemoView extends Composite<Div> {
         }
 
         String promptText = String.join(" ", args).substring(6);
-        String answer =
-            showInputDialog(promptText, "Terminal Prompt", InputDialog.MessageType.QUESTION);
+        String answer = showInputDialog(promptText, "Terminal Prompt", InputDialog.MessageType.QUESTION);
         term.writeln("\u001b[32mUser responded: " + answer + "\u001b[0m");
         break;
       case "msg":

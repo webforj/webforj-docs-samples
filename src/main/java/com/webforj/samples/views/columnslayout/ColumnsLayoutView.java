@@ -29,7 +29,6 @@ public class ColumnsLayoutView extends Composite<Div> {
     columnsLayout.setSpan(email, 2);
     columnsLayout.setSpan(submit, 2);
     columnsLayout.setStyle("padding", "var(--dwc-space-xl)");
-    
 
     submit.setStyle("margin-top", "var(--dwc-space-l)");
 

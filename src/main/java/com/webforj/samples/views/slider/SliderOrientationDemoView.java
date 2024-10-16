@@ -10,7 +10,7 @@ import com.webforj.component.html.elements.Div;
 import com.webforj.component.slider.Slider;
 import com.webforj.component.slider.Slider.Orientation;
 
-@InlineStyleSheet("context://css/sliderstyles/orientation_styles.css")
+@InlineStyleSheet("context://css/slider/sliderOrientationDemo.css")
 @Route
 @FrameTitle("Slider Orientation")
 public class SliderOrientationDemoView extends Composite<Div> {

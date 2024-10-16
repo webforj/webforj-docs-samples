@@ -11,7 +11,7 @@ import com.webforj.router.annotation.Route;
 /**
  * Simple program to demonstrate the various ButtonThemes.
  */
-@InlineStyleSheet("context://css/buttonstyles/theme_styles.css")
+@InlineStyleSheet("context://css/button/buttonThemes.css")
 @Route
 @FrameTitle("Button Themes")
 public class ButtonThemesView extends Composite<Div> {

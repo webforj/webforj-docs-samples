@@ -2,32 +2,21 @@ package com.webforj.samples.views.lists.combobox;
 
 import java.util.ArrayList;
 
-import com.webforj.App;
-import com.webforj.annotation.InlineStyleSheet;
-import com.webforj.component.window.Frame;
 import com.webforj.component.Composite;
-import com.webforj.component.html.elements.Div;
+import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.component.list.ComboBox;
 import com.webforj.component.list.ListItem;
-import com.webforj.exceptions.WebforjException;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
-@InlineStyleSheet(/* css */"""
-  .frame{
-    display: flex;
-    margin: 20px 0 0 20px;
-    gap: 20px;
-  }
-""")
 @Route
 @FrameTitle("ComboBox Placeholders")
-public class ComboBoxPlaceholderView extends Composite<Div> {
+public class ComboBoxPlaceholderView extends Composite<FlexLayout> {
 
   ComboBox comboBox = new ComboBox();
 
   public ComboBoxPlaceholderView() {
-    getBoundComponent().addClassName("frame");
+    getBoundComponent().setMargin("20px 0 0 20px").setSpacing("20px");
 
     ArrayList<ListItem> categories = new ArrayList<>();
     categories.add(new ListItem("Electronics", "Electronics"));

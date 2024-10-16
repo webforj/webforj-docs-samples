@@ -8,7 +8,8 @@ import com.webforj.component.button.Button;
 import com.webforj.component.button.ButtonTheme;
 import com.webforj.component.field.TextField;
 import com.webforj.component.field.TextField.Type;
-import com.webforj.component.html.elements.Div;
+import com.webforj.component.layout.flexlayout.FlexAlignment;
+import com.webforj.component.layout.flexlayout.FlexDirection;
 import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
@@ -16,10 +17,10 @@ import com.webforj.router.annotation.Route;
 /**
  * Simple demo application to display button functionality.
  */
-@InlineStyleSheet("context://css/buttonstyles/demo_styles.css")
+@InlineStyleSheet("context://css/button/buttonDemo.css")
 @Route
 @FrameTitle("Button Demo")
-public class ButtonDemoView extends Composite<Div> {
+public class ButtonDemoView extends Composite<FlexLayout> {
 
   Button clear;
   Button submit;
@@ -28,17 +29,17 @@ public class ButtonDemoView extends Composite<Div> {
   TextField email;
 
   public ButtonDemoView() {
-    getBoundComponent().addClassName("window");
 
+    getBoundComponent().setDirection(FlexDirection.COLUMN).setSpacing("var(--dwc-space-l)")
+        .setAlignment(FlexAlignment.CENTER).setMargin("var(--dwc-space-l)").setHeight("100dvh");
     clear = new Button("Clear", ButtonTheme.DEFAULT, e -> {
       firstName.setText("");
       lastName.setText("");
       email.setText("");
     });
 
-    submit = new Button("Submit", ButtonTheme.PRIMARY, e -> {
-      showMessageDialog("Welcome to the application " + firstName.getText() + " " + lastName.getText() + "!");
-    });
+    submit = new Button("Submit", ButtonTheme.PRIMARY,
+        e -> showMessageDialog("Welcome to the application " + firstName.getText() + " " + lastName.getText() + "!"));
 
     firstName = new TextField(Type.TEXT, "First Name", "Jason");
     lastName = new TextField(Type.TEXT, "Last Name", "Turner");

@@ -7,12 +7,11 @@ import com.webforj.component.Composite;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.layout.flexlayout.FlexJustifyContent;
 import com.webforj.component.layout.flexlayout.FlexLayout;
-import com.webforj.component.window.Frame;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 import com.webforj.samples.components.Box;
 
-@InlineStyleSheet("context://css/flexstyles/container_styles.css")
+@InlineStyleSheet("context://css/flexlayout/container/flexContainerBuilder.css")
 @Route
 @FrameTitle("Flex Justification")
 public class FlexJustificationView extends Composite<Div> {

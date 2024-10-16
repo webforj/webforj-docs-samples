@@ -53,7 +53,7 @@ public class ColumnsLayoutFormView extends Composite<Div> {
   }
 
   private void populateStates() {
-    ArrayList<ListItem> states = new ArrayList<>();
+    ArrayList<ListItem> listStates = new ArrayList<>();
     states.add(new ListItem("AL", "Alabama"));
     states.add(new ListItem("AK", "Alaska"));
     states.add(new ListItem("AZ", "Arizona"));
@@ -105,6 +105,6 @@ public class ColumnsLayoutFormView extends Composite<Div> {
     states.add(new ListItem("WI", "Wisconsin"));
     states.add(new ListItem("WY", "Wyoming"));
 
-    this.states.insert(states);
+    this.states.insert(listStates);
   }
 }

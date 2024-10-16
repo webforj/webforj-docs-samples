@@ -2,12 +2,9 @@ package com.webforj.samples.views.table;
 
 import static com.webforj.component.optiondialog.OptionDialog.showMessageDialog;
 
-import com.webforj.App;
 import com.webforj.component.Composite;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.table.Table;
-import com.webforj.component.window.Frame;
-import com.webforj.exceptions.WebforjException;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
@@ -30,10 +27,9 @@ public class TableSingleSelectionView extends Composite<Div> {
     table.setRepository(Service.getMusicRecords());
     table.setSelectionMode(Table.SelectionMode.SINGLE);
 
-    table.onItemSelect((ev) -> {
-      showMessageDialog("You have selected " + ev.getItem().getTitle() + " by " + ev.getItem().getArtist()+ 0 +
-          "Record Selection");
-    });
+    table.onItemSelect(ev -> showMessageDialog(
+        "You have selected " + ev.getItem().getTitle() + " by " + ev.getItem().getArtist() + 0 +
+            "Record Selection"));
 
     getBoundComponent().add(table);
   }
