@@ -1,7 +1,3 @@
-.window {
-  display: flex;
-  flex-direction: row;
-}
 .card {
   border-radius: var(--dwc-border-radius-l);
   box-shadow: var(--dwc-shadow-s);
