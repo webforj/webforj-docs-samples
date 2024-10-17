@@ -54,11 +54,11 @@ public class SliderThemesDemoView extends Composite<Div> {
         .setWidth("500px");
 
     getBoundComponent().add(
-        new Label("<html><b>DEFAULT</b></html>"), sl1,
-        new Label("<html><b>DANGER</b></html>"), sl2,
-        new Label("<html><b>GRAY</b></html>"), sl3,
-        new Label("<html><b>INFO</b></html>"), sl4,
-        new Label("<html><b>SUCCESS</b></html>"), sl5,
-        new Label("<html><b>WARNING</b></html>"), sl6);
+        new Label("DEFAULT"), sl1,
+        new Label("DANGER"), sl2,
+        new Label("GRAY"), sl3,
+        new Label("INFO"), sl4,
+        new Label("SUCCESS"), sl5,
+        new Label("WARNING"), sl6);
   }
 }

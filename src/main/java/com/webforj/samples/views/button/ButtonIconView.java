@@ -4,6 +4,8 @@ import com.webforj.component.Composite;
 import com.webforj.component.button.Button;
 import com.webforj.component.button.ButtonTheme;
 import com.webforj.component.layout.flexlayout.FlexLayout;
+import com.webforj.component.icons.TablerIcon;
+import com.webforj.component.icons.Icon;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
@@ -18,22 +20,30 @@ public class ButtonIconView extends Composite<FlexLayout> {
   Button settings;
   Button search;
   Button home;
+  Icon notificationsIcon;
+  Icon settingsIcon;
+  Icon searchIcon;
+  Icon homeIcon;
 
   public ButtonIconView() {
     self.setSpacing("var(--dwc-space-l)").setMargin("var(--dwc-space-l)").setStyle("flex-wrap", "wrap")
         .setWidth("100%");
 
-    notifications = new Button();
-    notifications.setHtml("Notifications <dwc-icon name='bell'></dwc-icon>");
+    notificationsIcon = TablerIcon.create("bell");
+    notifications = new Button("Notifications");
+    notifications.setSuffixComponent(notificationsIcon);
 
-    settings = new Button();
-    settings.setHtml("Settings <dwc-icon name='settings'></dwc-icon>");
+    settingsIcon = TablerIcon.create("settings");
+    settings = new Button("Settings");
+    settings.setIcon(settingsIcon);
 
-    search = new Button();
-    search.setHtml("<dwc-icon name='search'></dwc-icon></dwc-icon> Search");
+    searchIcon = TablerIcon.create("search");
+    search = new Button("Search");
+    search.setPrefixComponent(searchIcon);
 
-    home = new Button("home", ButtonTheme.PRIMARY);
-    home.setHtml("<dwc-icon name='home'></dwc-icon>");
+    homeIcon = TablerIcon.create("home");
+    home = new Button(homeIcon);
+    home.setTheme(ButtonTheme.PRIMARY);
 
     self.add(notifications, settings, search, home);
   }

@@ -23,8 +23,8 @@ public class SliderTickDemoView extends Composite<Div> {
     sl2.setWidth("500px");
 
     getBoundComponent().add(
-        new Label("<html><b>No Tick Snapping</b></html>"), sl1,
-        new Label("<html><b>Tick Snapping</b></html>"), sl2);
+        new Label("No Tick Snapping"), sl1,
+        new Label("Tick Snapping"), sl2);
 
     sl1.setTicksVisible(true)
         .setMajorTickSpacing(50)

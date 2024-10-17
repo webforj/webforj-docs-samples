@@ -27,7 +27,7 @@ public class SliderMaxMinDemoView extends Composite<Div> {
     sl2.setWidth("500px");
 
     getBoundComponent().add(
-        new Label("<html><b>Min 0, Max 10</b></html>"), sl1,
-        new Label("<html><b>Min 0, Max 100</b></html>"), sl2);
+        new Label("Min 0, Max 10"), sl1,
+        new Label("Min 0, Max 100"), sl2);
   }
 }

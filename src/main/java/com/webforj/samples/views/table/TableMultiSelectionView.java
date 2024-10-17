@@ -34,10 +34,9 @@ public class TableMultiSelectionView extends Composite<Div> {
       String msg = "There are no records selected";
 
       if (!records.isEmpty()) {
-        msg = "<html> You have selected the following records"
+        msg = "You have selected the following records"
             + records.stream().map(MusicRecord::getTitle).map(title -> "<li>" + title + "</li>")
-                .collect(Collectors.joining("", "<ul>", "</ul>"))
-            + "</html>";
+                .collect(Collectors.joining("", "<ul>", "</ul>"));
       }
 
       showMessageDialog(msg + 0 + "Record Selection");
