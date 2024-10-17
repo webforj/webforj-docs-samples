@@ -1,0 +1,16 @@
+.window {
+  display: flex;
+  margin: 20px;
+}
+
+a{
+  color: white;
+}
+
+a:hover{
+  color: white;
+}
+
+dwc-icon:hover{
+  cursor: pointer;
+}
