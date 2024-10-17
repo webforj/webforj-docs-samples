@@ -1,0 +1,21 @@
+.button-container {
+  display: flex;
+  flex-direction: row;
+  gap: var(--dwc-space-s);
+  width: 100%;
+}
+
+.necessarybutton, .acceptbutton {
+  flex: 1;
+}
+
+.customizebutton {
+  width: 100%;
+  display: block; 
+}
+
+dwc-toast::part(buttons) {
+  display: flex;
+  flex-direction: column;
+  gap: var(--dwc-space-m);
+}
