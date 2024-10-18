@@ -3,7 +3,10 @@ package com.webforj.samples.views.tabbedpane;
 import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.Composite;
 import com.webforj.component.html.elements.Div;
+import com.webforj.component.icons.Icon;
+import com.webforj.component.icons.TablerIcon;
 import com.webforj.component.optioninput.RadioButton;
+import com.webforj.component.tabbedpane.Tab;
 import com.webforj.component.tabbedpane.TabbedPane;
 import com.webforj.component.tabbedpane.TabbedPane.Activation;
 import com.webforj.router.annotation.FrameTitle;
@@ -28,11 +31,17 @@ public class TabbedPaneActivationView extends Composite<Div> {
     getBoundComponent().addClassName("window");
     getBoundComponent().add(activation, pane);
 
-    pane.addTab("<dwc-icon name='dashboard'></dwc-icon>      Dashboard");
-    pane.addTab("<dwc-icon name='shopping-cart'></dwc-icon>  Orders");
-    pane.addTab("<dwc-icon name='users'></dwc-icon>          Customers");
-    pane.addTab("<dwc-icon name='box'></dwc-icon>            Products");
-    pane.addTab("<dwc-icon name='files'></dwc-icon>          Documents");
+    Icon dashboardIcon = TablerIcon.create("dashboard");
+    Icon ordersIcon = TablerIcon.create("shopping-cart");
+    Icon customersIcon = TablerIcon.create("users");
+    Icon productsIcon = TablerIcon.create("box");
+    Icon documentsIcon = TablerIcon.create("files");
+
+    pane.addTab(new Tab("Dashboard", dashboardIcon));
+    pane.addTab(new Tab("Orders", ordersIcon));
+    pane.addTab(new Tab("Customers", customersIcon));
+		pane.addTab(new Tab("Products", productsIcon));
+    pane.addTab(new Tab("Documents", documentsIcon));
     
     activation.onCheck( e -> {
       activation.setText("Automatic");

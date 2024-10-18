@@ -8,8 +8,10 @@ import com.webforj.component.html.elements.H2;
 import com.webforj.component.html.elements.Img;
 import com.webforj.component.html.elements.Paragraph;
 import com.webforj.component.html.elements.Strong;
+import com.webforj.component.icons.TablerIcon;
 import com.webforj.component.layout.applayout.AppLayout;
 import com.webforj.component.layout.applayout.AppLayout.DrawerPlacement;
+import com.webforj.component.tabbedpane.Tab;
 import com.webforj.component.tabbedpane.TabbedPane;
 import com.webforj.component.tabbedpane.TabbedPane.Placement;
 import com.webforj.component.tabbedpane.TabbedPane.Alignment;
@@ -69,11 +71,11 @@ public class AppLayoutMobileView extends Composite<AppLayout> {
     footerMenu.setAlignment(Alignment.STRETCH);
 
     // Adding tabs to drawer menu
-    footerMenu.addTab("<dwc-icon name='dashboard'></dwc-icon>");
-    footerMenu.addTab("<dwc-icon name='shopping-cart'></dwc-icon>");
-    footerMenu.addTab("<dwc-icon name='users'></dwc-icon>");
-    footerMenu.addTab("<dwc-icon name='box'></dwc-icon>");
-    footerMenu.addTab("<dwc-icon name='files'></dwc-icon>");
+    footerMenu.addTab(new Tab("", TablerIcon.create("dashboard")));
+    footerMenu.addTab(new Tab("", TablerIcon.create("shopping-cart")));
+    footerMenu.addTab(new Tab("", TablerIcon.create("users")));
+    footerMenu.addTab(new Tab("", TablerIcon.create("box")));
+    footerMenu.addTab(new Tab("", TablerIcon.create("files")));
   }
 
 }

@@ -8,8 +8,12 @@ import com.webforj.component.html.elements.H1;
 import com.webforj.component.html.elements.H3;
 import com.webforj.component.html.elements.Img;
 import com.webforj.component.html.elements.Paragraph;
+import com.webforj.component.icons.Icon;
+import com.webforj.component.icons.TablerIcon;
+import com.webforj.component.layout.applayout.AppDrawerToggle;
 import com.webforj.component.layout.applayout.AppLayout;
 import com.webforj.component.tabbedpane.TabbedPane.Placement;
+import com.webforj.component.tabbedpane.Tab;
 import com.webforj.component.tabbedpane.TabbedPane;
 import com.webforj.component.tabbedpane.event.TabSelectEvent;
 import com.webforj.router.annotation.FrameTitle;
@@ -36,7 +40,7 @@ public class AppLayoutFullNavbarView extends Composite<AppLayout> {
 
     // Header
     header.addClassName("layout__header").add(
-        new Div().setHtml("<dwc-icon-button name='menu-2' data-drawer-toggle><dwc-icon-button>"),
+        new AppDrawerToggle(),
         new H3("DWCJ Application"));
     demo.addToHeader(header);
     demo.setHeaderOffscreen(false);
@@ -61,13 +65,22 @@ public class AppLayoutFullNavbarView extends Composite<AppLayout> {
     drawerMenu.setPlacement(Placement.LEFT);
 
     // Adding tabs to drawer menu
-    drawerMenu.addTab("<dwc-icon name='dashboard'></dwc-icon>      Dashboard");
-    drawerMenu.addTab("<dwc-icon name='shopping-cart'></dwc-icon>  Orders");
-    drawerMenu.addTab("<dwc-icon name='users'></dwc-icon>          Customers");
-    drawerMenu.addTab("<dwc-icon name='box'></dwc-icon>            Products");
-    drawerMenu.addTab("<dwc-icon name='files'></dwc-icon>          Documents");
-    drawerMenu.addTab("<dwc-icon name='checklist'></dwc-icon>      Tasks");
-    drawerMenu.addTab("<dwc-icon name='chart-dots-2'></dwc-icon>   Analytics");
+    Icon dashboardIcon = TablerIcon.create("dashboard");
+    Icon ordersIcon = TablerIcon.create("shopping-cart");
+    Icon customersIcon = TablerIcon.create("users");
+    Icon productsIcon = TablerIcon.create("box");
+    Icon documentsIcon = TablerIcon.create("files");
+    Icon tasksIcon = TablerIcon.create("checklist");
+    Icon analyticsIcon = TablerIcon.create("chart-dots-2");
+
+    drawerMenu.addTab(new Tab("Dashboard", dashboardIcon));
+    drawerMenu.addTab(new Tab("Orders", ordersIcon));
+    drawerMenu.addTab(new Tab("Customers", customersIcon));
+		drawerMenu.addTab(new Tab("Products", productsIcon));
+    drawerMenu.addTab(new Tab("Documents", documentsIcon));
+    drawerMenu.addTab(new Tab("Tasks", tasksIcon));
+    drawerMenu.addTab(new Tab("Analytics", analyticsIcon));
+
 
     drawerMenu.onSelect(this::onTabChange);
 

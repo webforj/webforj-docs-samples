@@ -13,8 +13,12 @@ import com.webforj.component.html.elements.H2;
 import com.webforj.component.html.elements.Img;
 import com.webforj.component.html.elements.Paragraph;
 import com.webforj.component.html.elements.Strong;
+import com.webforj.component.layout.applayout.AppDrawerToggle;
 import com.webforj.component.layout.applayout.AppLayout;
+import com.webforj.component.icons.Icon;
+import com.webforj.component.icons.TablerIcon;
 import com.webforj.component.tabbedpane.TabbedPane;
+import com.webforj.component.tabbedpane.Tab;
 import com.webforj.component.tabbedpane.TabbedPane.Placement;
 import com.webforj.component.tabbedpane.event.TabSelectEvent;
 import com.webforj.component.tabbedpane.TabbedPane.Alignment;
@@ -43,7 +47,7 @@ public class AppLayoutConferenceDemoView extends Composite<AppLayout> {
         .setAttribute("name", "pin"));
 
     // Header
-    Div toggle = new Div().setHtml("<dwc-icon-button name='menu-2' data-drawer-toggle><dwc-icon-button>");
+    AppDrawerToggle toggle = new AppDrawerToggle();
     Div logo = new Div();
     logo.addClassName("dwc-logo").add(
         new Img("https://documentation.webforj.com/img/webforj_icon.svg", "logo"));
@@ -73,16 +77,18 @@ public class AppLayoutConferenceDemoView extends Composite<AppLayout> {
     drawerMenu.setPlacement(Placement.LEFT);
 
     // Adding tabs to drawer menu
-    footerMenu.addTab("<dwc-icon name='address-book'></dwc-icon>");
-    footerMenu.addTab("<dwc-icon name='clipboard'></dwc-icon>");
-    footerMenu.addTab("<dwc-icon name='mail'></dwc-icon>");
-    footerMenu.addTab("<dwc-icon name='lock'></dwc-icon>");
-    footerMenu.addTab("<dwc-icon name='briefcase-2'></dwc-icon>");
-    drawerMenu.addTab("<dwc-icon name='dashboard'></dwc-icon>      Dashboard");
-    drawerMenu.addTab("<dwc-icon name='shopping-cart'></dwc-icon>  Orders");
-    drawerMenu.addTab("<dwc-icon name='users'></dwc-icon>          Customers");
-    drawerMenu.addTab("<dwc-icon name='box'></dwc-icon>            Products");
-    drawerMenu.addTab("<dwc-icon name='files'></dwc-icon>          Documents");
+
+    Icon dashboardIcon = TablerIcon.create("dashboard");
+    Icon ordersIcon = TablerIcon.create("shopping-cart");
+    Icon customersIcon = TablerIcon.create("users");
+    Icon productsIcon = TablerIcon.create("box");
+    Icon documentsIcon = TablerIcon.create("files");
+
+    drawerMenu.addTab(new Tab("Dashboard", dashboardIcon));
+    drawerMenu.addTab(new Tab("Orders", ordersIcon));
+    drawerMenu.addTab(new Tab("Customers", customersIcon));
+		drawerMenu.addTab(new Tab("Products", productsIcon));
+    drawerMenu.addTab(new Tab("Documents", documentsIcon));
 
     // Content
     demo.addToContent(
@@ -108,11 +114,11 @@ public class AppLayoutConferenceDemoView extends Composite<AppLayout> {
     footerMenu.setAlignment(Alignment.STRETCH);
 
     // Adding tabs to drawer menu
-    footerMenu.addTab("<dwc-icon name='address-book'></dwc-icon>");
-    footerMenu.addTab("<dwc-icon name='clipboard'></dwc-icon>");
-    footerMenu.addTab("<dwc-icon name='mail'></dwc-icon>");
-    footerMenu.addTab("<dwc-icon name='lock'></dwc-icon>");
-    footerMenu.addTab("<dwc-icon name='briefcase-2'></dwc-icon>");
+    footerMenu.addTab(new Tab("", TablerIcon.create("address-book")));
+    footerMenu.addTab(new Tab("", TablerIcon.create("clipboard")));
+    footerMenu.addTab(new Tab("", TablerIcon.create("mail")));
+    footerMenu.addTab(new Tab("", TablerIcon.create("lock")));
+    footerMenu.addTab(new Tab("", TablerIcon.create("briefcase-2")));
     footerMenu.addSelectListener(this::changeTitle);
   }
 

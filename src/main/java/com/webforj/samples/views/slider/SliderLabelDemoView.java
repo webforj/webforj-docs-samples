@@ -47,15 +47,15 @@ public class SliderLabelDemoView extends Composite<Div> {
         entry(85, "85"));
 
     getBoundComponent().add(
-        new Label("<html><b>Labels applied with ticks disabled</b></html>")
+        new Label("Labels applied with ticks disabled")
             .setStyle("grid-column", "1")
             .setStyle("margin", "5px 0 0 10px"),
         sl1,
-        new Label("<html><b>Labels applied to tick values</b></html>")
+        new Label("Labels applied to tick values")
             .setStyle("grid-column", "1")
             .setStyle("margin", "5px 0 0 10px"),
         sl2,
-        new Label("<html><b>Labels applied to non-tick values</b></html>")
+        new Label("Labels applied to non-tick values")
             .setStyle("grid-column", "1")
             .setStyle("margin", "5px 0 0 10px"),
         sl3);

@@ -5,6 +5,8 @@ import com.webforj.component.Composite;
 import com.webforj.component.Theme;
 import com.webforj.component.button.Button;
 import com.webforj.component.html.elements.Div;
+import com.webforj.component.icons.Icon;
+import com.webforj.component.icons.TablerIcon;
 import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.component.progressbar.ProgressBar;
 import com.webforj.component.progressbar.ProgressBar.Orientation;
@@ -15,9 +17,14 @@ import com.webforj.router.annotation.Route;
 @Route
 @FrameTitle("Progress Bar Orientation")
 public class ProgressBarOrientationView extends Composite<Div> {
-  Button start = new Button("<html><dwc-icon name='player-play'></dwc-icon></<html> Start");
-  Button pause = new Button("<html><dwc-icon name='player-pause'></dwc-icon></<html> Pause");
-  Button reset = new Button("<html><dwc-icon name='refresh'></dwc-icon></<html> Reset");
+  Button start = new Button("Start"); 
+	Button pause = new Button("Pause");
+	Button reset = new Button("Reset");
+  
+	Icon startIcon = TablerIcon.create("player-play");
+	Icon pauseIcon = TablerIcon.create("player-pause");
+	Icon resetIcon = TablerIcon.create("refresh");
+
   ProgressBar bar = new ProgressBar(15, "Reactor Heating Up: {{x}}%");
   FlexLayout buttonContainer = FlexLayout.create(start, pause, reset).vertical().build();
   FlexLayout layout = FlexLayout.create(buttonContainer, bar).horizontal().build()
@@ -26,6 +33,11 @@ public class ProgressBarOrientationView extends Composite<Div> {
       .setStyle("padding", "20px");
 
   public ProgressBarOrientationView() {
+    
+    start.setPrefixComponent(startIcon);
+		pause.setPrefixComponent(pauseIcon);
+		reset.setPrefixComponent(resetIcon);
+
     Interval interval = new Interval(0.1f, new EventListener<Interval.ElapsedEvent>() {
       @Override
       public void onEvent(Interval.ElapsedEvent event) {
