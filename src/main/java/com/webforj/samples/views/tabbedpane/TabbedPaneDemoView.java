@@ -3,7 +3,10 @@ package com.webforj.samples.views.tabbedpane;
 import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.Composite;
 import com.webforj.component.html.elements.Div;
+import com.webforj.component.icons.Icon;
+import com.webforj.component.icons.TablerIcon;
 import com.webforj.component.list.ChoiceBox;
+import com.webforj.component.tabbedpane.Tab;
 import com.webforj.component.tabbedpane.TabbedPane;
 import com.webforj.component.tabbedpane.TabbedPane.Placement;
 import com.webforj.component.tabbedpane.TabbedPane.Removal;
@@ -29,12 +32,18 @@ public class TabbedPaneDemoView extends Composite<Div> {
     getBoundComponent().addClassName("window");
     getBoundComponent().add(placements, pane);
 
-    pane.addTab("<dwc-icon name='dashboard'></dwc-icon>      Dashboard")
+    Icon dashboardIcon = TablerIcon.create("dashboard");
+    Icon ordersIcon = TablerIcon.create("shopping-cart");
+    Icon customersIcon = TablerIcon.create("users");
+    Icon productsIcon = TablerIcon.create("box");
+    Icon documentsIcon = TablerIcon.create("files");
+
+    pane.addTab(new Tab("Dashboard", dashboardIcon))
       .setClosable(true);
-    pane.addTab("<dwc-icon name='shopping-cart'></dwc-icon>  Orders");
-    pane.addTab("<dwc-icon name='users'></dwc-icon>          Customers");
-    pane.addTab("<dwc-icon name='box'></dwc-icon>            Products");
-    pane.addTab("<dwc-icon name='files'></dwc-icon>          Documents");
+    pane.addTab(new Tab("Orders", ordersIcon));
+    pane.addTab(new Tab("Customers", customersIcon));
+		pane.addTab(new Tab("Products", productsIcon));
+    pane.addTab(new Tab("Documents", documentsIcon));
 
     pane.setRemoval(Removal.AUTO);
     

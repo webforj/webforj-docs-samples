@@ -47,3 +47,7 @@ html {
   border-radius: var(--dwc-border-radius-m);
   background-color: var(--dwc-surface-3);
 }
+
+dwc-tab::part(prefix) {
+  --dwc-icon-size: var(--dwc-size-xs);
+}

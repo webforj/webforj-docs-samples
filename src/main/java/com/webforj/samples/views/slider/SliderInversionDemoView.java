@@ -28,8 +28,8 @@ public class SliderInversionDemoView extends Composite<Div> {
     Slider sl2 = new Slider().setMax(100)
         .setMin(0);
 
-    getBoundComponent().add(new Label("<html><b>Original:</b></html>"), sl1,
-        new Label("<html><b>Inverted:</b></html>"), sl2);
+    getBoundComponent().add(new Label("Original:"), sl1,
+        new Label("Inverted:"), sl2);
 
     sl1.setTicksVisible(true)
         .setMinorTickSpacing(10)

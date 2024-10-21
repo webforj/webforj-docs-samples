@@ -40,7 +40,7 @@ public class TableMultiSelectionView extends Composite<Div> {
             + "</html>";
       }
 
-      showMessageDialog(msg + 0 + "Record Selection");
+      showMessageDialog(msg, "Record Selection");
     });
 
     getBoundComponent().add(table);
