@@ -2,7 +2,7 @@ package com.webforj.samples.views.button;
 
 import com.webforj.component.Composite;
 import com.webforj.component.button.Button;
-import com.webforj.component.button.ButtonTheme;
+import com.webforj.component.html.elements.Img;
 import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.component.icons.TablerIcon;
 import com.webforj.component.icons.Icon;
@@ -17,13 +17,12 @@ import com.webforj.router.annotation.Route;
 public class ButtonIconView extends Composite<FlexLayout> {
   FlexLayout self = getBoundComponent();
   Button notifications;
-  Button settings;
-  Button search;
-  Button home;
+  Button link;
+  Button imgButton;
   Icon notificationsIcon;
   Icon settingsIcon;
-  Icon searchIcon;
-  Icon homeIcon;
+  Icon linkIcon;
+  Img imgIcon;
 
   public ButtonIconView() {
     self.setSpacing("var(--dwc-space-l)").setMargin("var(--dwc-space-l)").setStyle("flex-wrap", "wrap")
@@ -31,20 +30,15 @@ public class ButtonIconView extends Composite<FlexLayout> {
 
     notificationsIcon = TablerIcon.create("bell");
     notifications = new Button("Notifications");
-    notifications.setSuffixComponent(notificationsIcon);
+    notifications.setPrefixComponent(notificationsIcon);
 
-    settingsIcon = TablerIcon.create("settings");
-    settings = new Button("Settings");
-    settings.setIcon(settingsIcon);
+    linkIcon = TablerIcon.create("external-link");
+    link = new Button("Search");
+    link.setSuffixComponent(linkIcon);
 
-    searchIcon = TablerIcon.create("search");
-    search = new Button("Search");
-    search.setPrefixComponent(searchIcon);
+    imgIcon = new Img("https://documentation.webforj.com/img/webforj.svg");
+    imgButton = new Button(imgIcon);
 
-    homeIcon = TablerIcon.create("home");
-    home = new Button(homeIcon);
-    home.setTheme(ButtonTheme.PRIMARY);
-
-    self.add(notifications, settings, search, home);
+    self.add(notifications, link, imgButton);
   }
 }

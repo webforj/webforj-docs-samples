@@ -29,7 +29,7 @@ body {
   padding: 0 var(--dwc-space-m);
   background-color: var(--dwc-color-primary);
   height: 54.21875px;
-  
+
   strong{
     color: var(--dwc-color-on-primary-text) !important;
   }
@@ -77,4 +77,8 @@ body {
   dwc-tab span {
     display: none;
   }
+}
+
+dwc-tab::part(prefix) {
+  --dwc-icon-size: var(--dwc-size-xs);
 }
