@@ -31,7 +31,6 @@ public class ComboBoxCustomValueView extends Composite<FlexLayout> {
     categories.add(new ListItem("Pet Supplies", "Pet Supplies"));
     categories.add(new ListItem("Toys and Games", "Toys and Games"));
 
-    customValue.setDropdownType("demo-dropdown-type");
     customValue.insert(categories);
     customValue.setAllowCustomValue(false);
 
