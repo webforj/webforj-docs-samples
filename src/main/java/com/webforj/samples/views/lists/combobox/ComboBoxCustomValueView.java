@@ -15,7 +15,7 @@ import com.webforj.router.annotation.Route;
 @FrameTitle("ComboBox Custom Value")
 public class ComboBoxCustomValueView extends Composite<FlexLayout> {
 
-  ComboBox customValue = new ComboBox();
+  ComboBox customValue = new ComboBox("Department");
   RadioButton toggle = RadioButton.Switch("Toggle Custom Value");
 
   public ComboBoxCustomValueView() {
@@ -31,7 +31,6 @@ public class ComboBoxCustomValueView extends Composite<FlexLayout> {
     categories.add(new ListItem("Pet Supplies", "Pet Supplies"));
     categories.add(new ListItem("Toys and Games", "Toys and Games"));
 
-    customValue.setDropdownType("demo-dropdown-type");
     customValue.insert(categories);
     customValue.setAllowCustomValue(false);
 
