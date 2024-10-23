@@ -1,0 +1,11 @@
+Button basisButton = new Button("Set basis", e -> {
+  if (numberField.getValue() != null) {
+    for (int i = 0; i <= buttons.size() - 1; i++) {
+      if (buttons.get(i).getTheme() == ButtonTheme.PRIMARY) {
+        boxLayout.setItemBasis(numberField.getValue().toString() + "px", buttons.get(i));
+      } else {
+        boxLayout.setItemBasis("auto", buttons.get(i));
+      }
+    }
+  }
+});
