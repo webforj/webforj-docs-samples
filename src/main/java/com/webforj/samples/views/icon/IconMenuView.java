@@ -1,4 +1,4 @@
-package componentdemos.icondemos;
+package com.webforj.samples.views.icon;
 
 import com.webforj.component.icons.Icon;
 import com.webforj.component.icons.TablerIcon;
@@ -6,15 +6,20 @@ import com.webforj.component.icons.TablerIcon;
 import com.webforj.App;
 import com.webforj.component.window.Frame;
 import com.webforj.exceptions.WebforjException;
+import com.webforj.router.annotation.FrameTitle;
+import com.webforj.router.annotation.Route;
 import com.webforj.component.tabbedpane.TabbedPane;
 import com.webforj.component.tabbedpane.Tab;
+import com.webforj.component.Composite;
 import com.webforj.component.Theme;
+import com.webforj.component.html.elements.Div;
 import com.webforj.component.tabbedpane.TabbedPane.Alignment;
 
-public class IconMenu extends App {
-  @Override
-  public void run() throws WebforjException {
-    Frame main = new Frame();
+@Route
+@FrameTitle("Icon Menu")
+public class IconMenuView extends Composite<Div> {
+
+  public IconMenuView() {
 
     Icon dashboardIcon = TablerIcon.create("dashboard");
     Icon ordersIcon = TablerIcon.create("shopping-cart");
@@ -39,6 +44,6 @@ public class IconMenu extends App {
 
     pane.setStyle("margin", "20px");
 
-    main.add(pane);
+    getBoundComponent().add(pane);
   }
 }

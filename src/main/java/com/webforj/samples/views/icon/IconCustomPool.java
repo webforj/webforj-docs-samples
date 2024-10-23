@@ -1,4 +1,4 @@
-package componentdemos.icondemos;
+package com.webforj.samples.views.icon;
 
 import com.webforj.component.icons.Icon;
 import com.webforj.component.icons.IconPoolBuilder;
