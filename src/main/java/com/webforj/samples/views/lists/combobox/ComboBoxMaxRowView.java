@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.webforj.component.Composite;
 import com.webforj.component.button.Button;
+import com.webforj.component.button.ButtonTheme;
 import com.webforj.component.field.NumberField;
 import com.webforj.component.layout.flexlayout.FlexDirection;
 import com.webforj.component.layout.flexlayout.FlexLayout;
@@ -18,7 +19,7 @@ public class ComboBoxMaxRowView extends Composite<FlexLayout> {
 
   ComboBox demoBox = new ComboBox("States");
   NumberField numberField = new NumberField("Number of Rows");
-  Button select = new Button("Apply");
+  Button select = new Button("Apply", ButtonTheme.PRIMARY);
 
   public ComboBoxMaxRowView() {
     getBoundComponent().setDirection(FlexDirection.COLUMN).setMargin("20px 0 0 20px").setSpacing("20px").setWidth(200);
