@@ -18,12 +18,12 @@ import java.util.List;
 
 @Route
 @FrameTitle("Toast Placements")
-public class ToastPlacementDemoView extends Composite<FlexLayout> {
+public class ToastPlacementView extends Composite<FlexLayout> {
 
   ChoiceBox placementChoiceBox;
   Button showToastButton;
   
-  public ToastPlacementDemoView() {
+  public ToastPlacementView() {
     getBoundComponent().setDirection(FlexDirection.ROW).setAlignment(FlexAlignment.CENTER)
         .setJustifyContent(FlexJustifyContent.CENTER).setMargin("150px 20px")
         .setSpacing("var(--dwc-space-m)");
@@ -31,47 +31,20 @@ public class ToastPlacementDemoView extends Composite<FlexLayout> {
     placementChoiceBox = new ChoiceBox();
 
     List<ListItem> placementOptions = new ArrayList<>();
-    placementOptions.add(new ListItem("TOP"));
-    placementOptions.add(new ListItem("TOP_LEFT"));
-    placementOptions.add(new ListItem("TOP_RIGHT"));
-    placementOptions.add(new ListItem("CENTER"));
-    placementOptions.add(new ListItem("BOTTOM"));
-    placementOptions.add(new ListItem("BOTTOM_LEFT"));
-    placementOptions.add(new ListItem("BOTTOM_RIGHT"));
+    placementOptions.add(new ListItem(Placement.TOP, "TOP"));
+    placementOptions.add(new ListItem(Placement.TOP_LEFT, "TOP_LEFT"));
+    placementOptions.add(new ListItem(Placement.TOP_RIGHT, "TOP_RIGHT"));
+    placementOptions.add(new ListItem(Placement.CENTER, "CENTER"));
+    placementOptions.add(new ListItem(Placement.BOTTOM, "BOTTOM"));
+    placementOptions.add(new ListItem(Placement.BOTTOM_LEFT, "BOTTOM_LEFT"));
+    placementOptions.add(new ListItem(Placement.BOTTOM_RIGHT, "BOTTOM_RIGHT"));
 
     placementChoiceBox.insert(placementOptions);
-    placementChoiceBox.selectIndex(4); 
+    placementChoiceBox.selectIndex(4);
     placementChoiceBox.setMinWidth(160);
 
     showToastButton = new Button("Show Toast", ButtonTheme.PRIMARY, e -> {
-      String selectedValue = placementChoiceBox.getText();
-
-      Placement selectedPlacement;
-      switch (selectedValue) {
-        case "TOP_LEFT":
-          selectedPlacement = Placement.TOP_LEFT;
-          break;
-        case "TOP_RIGHT":
-          selectedPlacement = Placement.TOP_RIGHT;
-          break;
-        case "CENTER":
-          selectedPlacement = Placement.CENTER;
-          break;
-        case "BOTTOM":
-          selectedPlacement = Placement.BOTTOM;
-          break;
-        case "BOTTOM_LEFT":
-          selectedPlacement = Placement.BOTTOM_LEFT;
-          break;
-        case "BOTTOM_RIGHT":
-          selectedPlacement = Placement.BOTTOM_RIGHT;
-          break;
-        case "TOP":
-        default:
-          selectedPlacement = Placement.TOP;
-          break;
-      }
-     
+      Placement selectedPlacement = Placement.valueOf(placementChoiceBox.getText());
       Toast.show("This is a toast notification", selectedPlacement);
     });
     

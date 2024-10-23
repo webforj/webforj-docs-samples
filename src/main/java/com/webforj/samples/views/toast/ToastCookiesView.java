@@ -4,11 +4,13 @@ import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.Composite;
 import com.webforj.component.Theme;
 import com.webforj.component.button.Button;
+import com.webforj.component.button.ButtonTheme;
 import com.webforj.component.html.elements.Anchor;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.html.elements.Paragraph;
 import com.webforj.component.icons.Icon;
 import com.webforj.component.icons.TablerIcon;
+import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.component.toast.Toast;
 import com.webforj.component.toast.Toast.Placement;
 import com.webforj.router.annotation.FrameTitle;
@@ -16,19 +18,18 @@ import com.webforj.router.annotation.Route;
 
 @Route
 @FrameTitle("Toast Cookies")
-@InlineStyleSheet("context://css/toaststyles/toastcookiesdemo.css")
-public class ToastCookiesDemoView extends Composite<Div> {
+@InlineStyleSheet("context://css/toast/toastcookies.css")
+public class ToastCookiesView extends Composite<Div> {
   
   Toast cookiesToast;
   Icon cookieIcon;
   Paragraph toastText;
   Button acceptButton;
   Button necessaryButton;
-  Button customizeButton;
-  Div buttonContainer;
+  FlexLayout buttons;
 
-  public ToastCookiesDemoView() {
-    cookiesToast = new Toast().setDuration(-1).setTheme(Theme.GRAY)
+  public ToastCookiesView() {
+    cookiesToast = new Toast().setDuration(-1).setTheme(Theme.DEFAULT)
         .setPlacement(Placement.CENTER); 
     
     cookieIcon = TablerIcon.create("cookie");
@@ -41,20 +42,18 @@ public class ToastCookiesDemoView extends Composite<Div> {
     toastText.add(new Anchor("#", "Cookie Policy"));
     cookiesToast.add(toastText);
 
-    acceptButton = new Button("Accept all cookies");
+    acceptButton = new Button("Accept all cookies").setTheme(ButtonTheme.PRIMARY);
     acceptButton.addClassName("acceptbutton");
     
-    necessaryButton = new Button("Necessary cookies only");
+    necessaryButton = new Button("Necessary cookies only").setTheme(ButtonTheme.OUTLINED_PRIMARY);
     necessaryButton.addClassName("necessarybutton");
-
-    customizeButton = new Button("Customize Settings");
-    customizeButton.addClassName("customizebutton");
     
-    buttonContainer = new Div();
-    buttonContainer.add(acceptButton, necessaryButton);
-    buttonContainer.addClassName("button-container");
-
-    cookiesToast.add(buttonContainer, customizeButton);
+    buttons = FlexLayout.create(acceptButton, necessaryButton)
+        .horizontal()
+        .build();
+    buttons.setSpacing("var(--dwc-space-l)").setWidth("100%");
+    
+    cookiesToast.add(buttons);
     cookiesToast.open();
   }
 }

@@ -4,8 +4,3 @@
   --dwc-toast-border-color: hsl(0, 0%, 73%);
 }
 
-.laterButton, .updateButton {
-  --dwc-button-background: transparent;
-  --dwc-button-color: white;
-  --dwc-button-hover-background: transparent;
-}
