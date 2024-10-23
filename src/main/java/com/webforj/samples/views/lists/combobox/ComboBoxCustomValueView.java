@@ -15,7 +15,7 @@ import com.webforj.router.annotation.Route;
 @FrameTitle("ComboBox Custom Value")
 public class ComboBoxCustomValueView extends Composite<FlexLayout> {
 
-  ComboBox customValue = new ComboBox();
+  ComboBox customValue = new ComboBox("Department");
   RadioButton toggle = RadioButton.Switch("Toggle Custom Value");
 
   public ComboBoxCustomValueView() {
