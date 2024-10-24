@@ -13,12 +13,11 @@ import com.webforj.router.annotation.Route;
 
 @Route
 @FrameTitle("Toast Basics")
-public class ToastDemoView extends Composite<Div> {
+public class ToastView extends Composite<Div> {
 
   Toast t = new Toast("", -1, Theme.GRAY);
 
-  public ToastDemoView() {
-    getBoundComponent().add(t);
+  public ToastView() {
     t.add(
         new Spinner(),
         new Paragraph("System update failed. Restoring to the previous state."),
