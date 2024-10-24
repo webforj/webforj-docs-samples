@@ -20,8 +20,8 @@ import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
 @Route
-@FrameTitle("Item Cards for Products, Lessons, and Guides")
-@InlineStyleSheet("context://css/icon/iconitemcard.css")
+@FrameTitle("Icon Item Cards")
+@InlineStyleSheet("context://css/icon/iconItemCard.css")
 public class IconItemCardView extends Composite<FlexLayout> {
 
     public IconItemCardView() {
