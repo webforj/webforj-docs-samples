@@ -20,23 +20,27 @@ import com.webforj.router.annotation.Route;
 @FrameTitle("Toast Cookies")
 @InlineStyleSheet("context://css/toast/toastCookies.css")
 public class ToastCookiesView extends Composite<Div> {
-  
-  Toast cookiesToast;
-  Icon cookieIcon;
-  Paragraph toastText;
-  Button acceptButton;
-  Button necessaryButton;
-  FlexLayout buttons;
+
+  private Toast cookiesToast;
+  private Icon cookieIcon;
+  private Paragraph toastText;
+  private Button acceptButton;
+  private Button necessaryButton;
+  private FlexLayout buttons;
 
   public ToastCookiesView() {
+    createAndOpenToast();
+  }
+
+  private void createAndOpenToast() {
     cookiesToast = new Toast().setDuration(-1).setTheme(Theme.DEFAULT)
-        .setPlacement(Placement.CENTER); 
-    
+        .setPlacement(Placement.CENTER);
+
     cookieIcon = TablerIcon.create("cookie");
     cookieIcon.setStyle("width", "100px");
     cookieIcon.setStyle("height", "100px");
     cookiesToast.add(cookieIcon);
-    
+
     toastText = new Paragraph("We use cookies to improve your experience. "
         + "By clicking 'Accept all cookies', you agree to our ");
     toastText.add(new Anchor("#", "Cookie Policy"));
@@ -44,20 +48,24 @@ public class ToastCookiesView extends Composite<Div> {
 
     acceptButton = new Button("Accept all cookies").setTheme(ButtonTheme.PRIMARY);
     acceptButton.addClassName("acceptbutton");
-    
+    acceptButton.addClickListener(event -> {
+      cookiesToast.close();
+      createAndOpenToast();
+    });
+
     necessaryButton = new Button("Necessary cookies only").setTheme(ButtonTheme.OUTLINED_PRIMARY);
     necessaryButton.addClassName("necessarybutton");
-    
+    necessaryButton.addClickListener(event -> {
+      cookiesToast.close();
+      createAndOpenToast();
+    });
+
     buttons = FlexLayout.create(acceptButton, necessaryButton)
         .horizontal()
         .build();
     buttons.setSpacing("var(--dwc-space-l)").setWidth("100%");
-    
+
     cookiesToast.add(buttons);
     cookiesToast.open();
   }
 }
-
-
-
-
