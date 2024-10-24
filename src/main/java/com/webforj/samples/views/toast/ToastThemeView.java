@@ -11,7 +11,7 @@ import com.webforj.router.annotation.Route;
 
 @Route
 @FrameTitle("Toast Themes")
-@InlineStyleSheet("context://css/toast/toasttheme.css")
+@InlineStyleSheet("context://css/toast/toastTheme.css")
 public class ToastThemeView extends Composite<FlexLayout> {
   
   Toast updateToast;

@@ -18,7 +18,7 @@ import com.webforj.router.annotation.Route;
 
 @Route
 @FrameTitle("Toast Cookies")
-@InlineStyleSheet("context://css/toast/toastcookies.css")
+@InlineStyleSheet("context://css/toast/toastCookies.css")
 public class ToastCookiesView extends Composite<Div> {
   
   Toast cookiesToast;
