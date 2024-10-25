@@ -3,6 +3,8 @@ package com.webforj.samples.views.flexlayout;
 import com.webforj.component.Composite;
 import com.webforj.component.button.Button;
 import com.webforj.component.button.ButtonTheme;
+import com.webforj.component.button.DwcButton;
+import com.webforj.component.button.event.ButtonClickEvent;
 import com.webforj.component.field.NumberField;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.layout.flexlayout.FlexLayout;
@@ -17,12 +19,19 @@ import java.util.List;
 @FrameTitle("Flex Basis")
 public class FlexBasisView extends Composite<Div> {
 
+  FlexLayout mainLayout;
   FlexLayout boxLayout;
+  FlexLayout optionLayout;
   List<Button> buttons;
+  NumberField numberField;
+  Button basisButton;
+  Button reset;
+
+  int selected = 0;
 
   public FlexBasisView() {
 
-    FlexLayout mainLayout = FlexLayout.create()
+    this.mainLayout = FlexLayout.create()
         .horizontal()
         .build();
     mainLayout.setPadding("20px");
@@ -31,49 +40,28 @@ public class FlexBasisView extends Composite<Div> {
         .horizontal()
         .wrap().wrap()
         .build()
-        .setPadding("20px");
-    boxLayout.setStyle("border", "1px solid var(--dwc-color-default)");
+        .setPadding("20px")
+        .setStyle("border", "1px solid var(--dwc-color-default)");
 
     buttons = new ArrayList<>();
 
     for (int i = 1; i <= 5; i++) {
-      Button newButton = new Button("Box " + i, ButtonTheme.OUTLINED_PRIMARY);
+      Button newButton = new Button("Box " + i, ButtonTheme.OUTLINED_PRIMARY, e -> toggleBasisEvent(e));
       buttons.add(newButton);
       boxLayout.add(buttons.get(i - 1));
-
-      newButton.onClick(e -> {
-        if (e.getComponent().getTheme() == ButtonTheme.OUTLINED_PRIMARY) {
-          e.getComponent().setTheme(ButtonTheme.PRIMARY);
-        } else {
-          e.getComponent().setTheme(ButtonTheme.OUTLINED_PRIMARY);
-        }
-      });
     }
 
-    NumberField numberField = new NumberField()
-        .setLabel("Basis:")
-        .setMin(75.0);
+    this.numberField = new NumberField("Basis")
+        .setMin(75.0)
+        .setTooltipText("Set the flex basis width (in pixels)")
+        .setRequired(true);
 
-    Button basisButton = new Button("Set basis", e -> {
-      if (numberField.getValue() != null) {
-        for (int i = 0; i <= buttons.size() - 1; i++) {
-          if (buttons.get(i).getTheme() == ButtonTheme.PRIMARY) {
-            boxLayout.setItemBasis(numberField.getValue().toString() + "px", buttons.get(i));
-          } else {
-            boxLayout.setItemBasis("auto", buttons.get(i));
-          }
-        }
-      }
-    });
+    this.basisButton = new Button("Set basis", e -> basisButtonEvent())
+        .setTooltipText("Select a box item first");
 
-    Button reset = new Button("Reset", ButtonTheme.OUTLINED_GRAY, e -> {
-      for (int i = 0; i <= buttons.size() - 1; i++) {
-        buttons.get(i).setTheme(ButtonTheme.OUTLINED_PRIMARY);
-        boxLayout.setItemBasis("auto", buttons.get(i));
-      }
-    });
+    this.reset = new Button("Reset", ButtonTheme.OUTLINED_GRAY, e -> resetEvent());
 
-    FlexLayout optionLayout = FlexLayout.create(numberField, basisButton, reset)
+    this.optionLayout = FlexLayout.create(numberField, basisButton, reset)
         .vertical()
         .build();
 
@@ -81,4 +69,37 @@ public class FlexBasisView extends Composite<Div> {
     mainLayout.add(optionLayout, boxLayout);
     mainLayout.setItemBasis("100%", boxLayout);
   }
+
+  private void resetEvent() {
+    basisButton.setTooltipText("Select a box item first");
+    selected = 0;
+    for (int i = 0; i <= buttons.size() - 1; i++) {
+      buttons.get(i).setTheme(ButtonTheme.OUTLINED_PRIMARY);
+      boxLayout.setItemBasis("auto", buttons.get(i));
+    }
+  }
+
+  private void toggleBasisEvent(ButtonClickEvent e) {
+    DwcButton<?> eventButton = e.getComponent();
+    if (eventButton.getTheme() == ButtonTheme.OUTLINED_PRIMARY) {
+      eventButton.setTheme(ButtonTheme.PRIMARY);
+      basisButton.setTooltipText("Set the basis for " + ++selected + " box item(s)");
+    } else {
+      eventButton.setTheme(ButtonTheme.OUTLINED_PRIMARY);
+      basisButton.setTooltipText("Set the basis for " + --selected + " box item(s)");
+    }
+  }
+
+  private void basisButtonEvent() {
+    if (numberField.getValue() != null) {
+      for (int i = 0; i <= buttons.size() - 1; i++) {
+        if (buttons.get(i).getTheme() == ButtonTheme.PRIMARY) {
+          boxLayout.setItemBasis(numberField.getValue().toString() + "px", buttons.get(i));
+        } else {
+          boxLayout.setItemBasis("auto", buttons.get(i));
+        }
+      }
+    }
+  }
+
 }
