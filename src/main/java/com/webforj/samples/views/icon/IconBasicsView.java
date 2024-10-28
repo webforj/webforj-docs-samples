@@ -12,18 +12,17 @@ import com.webforj.router.annotation.Route;
 @FrameTitle("Icon Basics")
 public class IconBasicsView extends Composite<FlexLayout> {
 
-    public IconBasicsView() {
-        getBoundComponent().setDirection(FlexDirection.ROW).setMargin("var(--dwc-space-l)")
-                           .setSpacing("var(--dwc-space-m)");
+  public IconBasicsView() {
+    getBoundComponent().setDirection(FlexDirection.ROW).setMargin("var(--dwc-space-l)")
+    .setSpacing("var(--dwc-space-m)");
 
-        Icon message = TablerIcon.create("message");
+    Icon message = TablerIcon.create("message");
         
-        Icon trash = TablerIcon.create("trash");
+    Icon trash = TablerIcon.create("trash");
         
-        Icon edit = TablerIcon.create("edit");
+    Icon edit = TablerIcon.create("edit");
 
-
-        getBoundComponent().add(message, trash, edit);
-    }
+    getBoundComponent().add(message, trash, edit);
+  }
 }
 
