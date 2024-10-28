@@ -46,7 +46,7 @@ public class FlexBasisView extends Composite<Div> {
     buttons = new ArrayList<>();
 
     for (int i = 1; i <= 5; i++) {
-      Button newButton = new Button("Box " + i, ButtonTheme.OUTLINED_PRIMARY, e -> toggleBasisEvent(e));
+      Button newButton = new Button("Box " + i, ButtonTheme.OUTLINED_PRIMARY, this::onButtonSelect);
       buttons.add(newButton);
       boxLayout.add(buttons.get(i - 1));
     }
@@ -56,10 +56,10 @@ public class FlexBasisView extends Composite<Div> {
         .setTooltipText("Set the flex basis width (in pixels)")
         .setRequired(true);
 
-    this.basisButton = new Button("Set basis", e -> basisButtonEvent())
+    this.basisButton = new Button("Set basis", this::onSetBasis)
         .setTooltipText("Select a box item first");
 
-    this.reset = new Button("Reset", ButtonTheme.OUTLINED_GRAY, e -> resetEvent());
+    this.reset = new Button("Reset", ButtonTheme.OUTLINED_GRAY, this::onReset);
 
     this.optionLayout = FlexLayout.create(numberField, basisButton, reset)
         .vertical()
@@ -70,16 +70,7 @@ public class FlexBasisView extends Composite<Div> {
     mainLayout.setItemBasis("100%", boxLayout);
   }
 
-  private void resetEvent() {
-    basisButton.setTooltipText("Select a box item first");
-    selected = 0;
-    for (int i = 0; i <= buttons.size() - 1; i++) {
-      buttons.get(i).setTheme(ButtonTheme.OUTLINED_PRIMARY);
-      boxLayout.setItemBasis("auto", buttons.get(i));
-    }
-  }
-
-  private void toggleBasisEvent(ButtonClickEvent e) {
+  private void onButtonSelect(ButtonClickEvent e) {
     DwcButton<?> eventButton = e.getComponent();
     if (eventButton.getTheme() == ButtonTheme.OUTLINED_PRIMARY) {
       eventButton.setTheme(ButtonTheme.PRIMARY);
@@ -90,7 +81,7 @@ public class FlexBasisView extends Composite<Div> {
     }
   }
 
-  private void basisButtonEvent() {
+  private void onSetBasis(ButtonClickEvent e) {
     if (numberField.getValue() != null) {
       for (int i = 0; i <= buttons.size() - 1; i++) {
         if (buttons.get(i).getTheme() == ButtonTheme.PRIMARY) {
@@ -102,4 +93,12 @@ public class FlexBasisView extends Composite<Div> {
     }
   }
 
+  private void onReset(ButtonClickEvent e) {
+    basisButton.setTooltipText("Select a box item first");
+    selected = 0;
+    for (int i = 0; i <= buttons.size() - 1; i++) {
+      buttons.get(i).setTheme(ButtonTheme.OUTLINED_PRIMARY);
+      boxLayout.setItemBasis("auto", buttons.get(i));
+    }
+  }
 }
