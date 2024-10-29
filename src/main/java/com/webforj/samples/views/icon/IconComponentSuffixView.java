@@ -11,26 +11,27 @@ import com.webforj.component.layout.flexlayout.FlexDirection;
 import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
+
 @Route
 @FrameTitle("Icon Action Buttons")
-public class IconActionButtonsView extends Composite<FlexLayout> {
+public class IconComponentSuffixView extends Composite<FlexLayout> {
   
-  public IconActionButtonsView() {
+  public IconComponentSuffixView() {
     getBoundComponent().setDirection(FlexDirection.ROW).setMargin("var(--dwc-space-l)")
     .setSpacing("var(--dwc-space-l)");
     
-    Icon save = FontAwesomeIcon.create("save");
-    Button saveButton = new Button("Save").setPrefixComponent(save)
-    .setTheme(ButtonTheme.PRIMARY);
-        
-    Icon trash = TablerIcon.create("trash");
-    Button deleteButton = new Button("Delete").setPrefixComponent(trash)
+    Icon like = FontAwesomeIcon.create("heart");
+    Button likeButton = new Button("Favorite").setSuffixComponent(like)
     .setTheme(ButtonTheme.DANGER);
         
-    Icon edit = FeatherIcon.EDIT.create();
-    Button editButton = new Button("Edit").setPrefixComponent(edit)
+    Icon download = TablerIcon.create("download");
+    Button downloadButton = new Button("Download").setSuffixComponent(download)
+    .setTheme(ButtonTheme.SUCCESS);
+        
+    Icon link = FeatherIcon.LINK.create();
+    Button linkButton = new Button("Share").setSuffixComponent(link)
     .setTheme(ButtonTheme.DEFAULT);
     
-    getBoundComponent().add(saveButton, deleteButton, editButton);
+    getBoundComponent().add(likeButton, downloadButton, linkButton);
   }
 }
