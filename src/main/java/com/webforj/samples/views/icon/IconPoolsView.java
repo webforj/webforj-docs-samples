@@ -14,9 +14,9 @@ import com.webforj.router.annotation.Route;
 
 @Route
 @FrameTitle("Icon Action Buttons")
-public class IconComponentPrefixView extends Composite<FlexLayout> {
+public class IconPoolsView extends Composite<FlexLayout> {
   
-  public IconComponentPrefixView() {
+  public IconPoolsView() {
     getBoundComponent().setDirection(FlexDirection.ROW).setMargin("var(--dwc-space-l)")
     .setSpacing("var(--dwc-space-l)");
     
