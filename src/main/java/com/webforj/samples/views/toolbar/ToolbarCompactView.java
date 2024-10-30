@@ -19,7 +19,7 @@ import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.component.layout.toolbar.Toolbar;
 
 @Route
-@FrameTitle("AppLayout Full Navbar")
+@FrameTitle("Toolbar Compact")
 public class ToolbarCompactView extends Composite<AppLayout> {
 
   AppLayout appLayout = getBoundComponent();
@@ -65,14 +65,14 @@ public class ToolbarCompactView extends Composite<AppLayout> {
       interval.restart();
     });
 
-    FlexLayout boxLayout = FlexLayout.create(analyzeButton)
+    FlexLayout flexLayout = FlexLayout.create(analyzeButton)
         .justify().center()
         .build();
 
     appLayout.setDrawerHeaderVisible(true)
         .addToDrawerTitle(new Img("https://documentation.webforj.com/img/webforj_icon.svg"))
         .addToHeader(mainToolbar, progressToolbar)
-        .addToContent(boxLayout)
+        .addToContent(flexLayout)
         .setDrawerOpened(false);
 
   }

@@ -1,0 +1,6 @@
+.card {
+  padding: var(--dwc-space-m);
+  border: thin solid var(--dwc-color-default);
+  border-radius: var(--dwc-border-radius-m);
+  background-color: var(--dwc-surface-3);
+}
