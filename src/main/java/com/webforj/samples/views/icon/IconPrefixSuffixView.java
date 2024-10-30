@@ -20,7 +20,7 @@ public class IconPrefixSuffixView extends Composite<FlexLayout> {
     
     Icon arrow = TablerIcon.create("arrow-narrow-right");
     Button nextButton = new Button("Next").setSuffixComponent(arrow)
-    .setTheme(ButtonTheme.SUCCESS);
+    .setTheme(ButtonTheme.PRIMARY);
     
     Icon filter = TablerIcon.create("filter");
     Button filterButton = new Button("Filter").setPrefixComponent(filter)
