@@ -12,7 +12,6 @@ import com.webforj.component.Expanse;
 import com.webforj.component.button.Button;
 import com.webforj.component.progressbar.ProgressBar;
 import com.webforj.component.toast.Toast;
-import com.webforj.component.toast.Toast.Placement;
 import com.webforj.component.layout.applayout.AppDrawerToggle;
 import com.webforj.component.layout.applayout.AppLayout;
 import com.webforj.component.layout.flexlayout.FlexLayout;
@@ -25,7 +24,7 @@ public class ToolbarCompactView extends Composite<AppLayout> {
   AppLayout appLayout = getBoundComponent();
   Button analyzeButton = new Button("Analyze data");
   ProgressBar bar = new ProgressBar();
-  Toast toast = new Toast("No data to analyze!", 4000, Theme.WARNING, Placement.TOP_RIGHT);
+  Toast toast = new Toast("No data to analyze!", Theme.WARNING);
   Toolbar mainToolbar = new Toolbar();
   Toolbar progressToolbar = new Toolbar();
   int delayStart = -2;

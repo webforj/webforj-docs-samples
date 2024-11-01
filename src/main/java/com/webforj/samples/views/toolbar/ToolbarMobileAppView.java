@@ -8,7 +8,6 @@ import com.webforj.component.html.elements.H1;
 import com.webforj.component.html.elements.H2;
 import com.webforj.component.html.elements.Paragraph;
 import com.webforj.component.Composite;
-import com.webforj.component.Theme;
 import com.webforj.component.button.Button;
 import com.webforj.component.icons.IconButton;
 import com.webforj.component.icons.TablerIcon;
@@ -30,7 +29,6 @@ public class ToolbarMobileAppView extends Composite<AppLayout> {
   public ToolbarMobileAppView() {
 
     headerToolbar.add(new H1("webforJ App"));
-    headerToolbar.setTheme(Theme.INFO);
 
     FlexLayout flexLayout = FlexLayout.create(new H1("Aplication Title"))
         .vertical()
@@ -65,7 +63,6 @@ public class ToolbarMobileAppView extends Composite<AppLayout> {
         .build();
 
     footerToolbar.addToContent(iconLayout);
-    footerToolbar.setTheme(Theme.INFO);
 
     appLayout.setDrawerHeaderVisible(true)
         .addToHeader(headerToolbar)
