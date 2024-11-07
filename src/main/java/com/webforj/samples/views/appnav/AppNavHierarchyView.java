@@ -3,6 +3,7 @@ package com.webforj.samples.views.appnav;
 import com.webforj.component.Composite;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.icons.FeatherIcon;
+import com.webforj.component.icons.FontAwesomeIcon;
 import com.webforj.component.layout.appnav.AppNav;
 import com.webforj.component.layout.appnav.AppNavItem;
 import com.webforj.router.annotation.FrameTitle;
@@ -17,25 +18,25 @@ public class AppNavHierarchyView extends Composite<Div> {
     AppNav appNav = new AppNav();
     appNav.setAutoOpen(true); 
 
-    AppNavItem dashboardItem = new AppNavItem("Dashboard", "/dashboard");
+    AppNavItem dashboardItem = new AppNavItem("Dashboard", "/appnavhierarchy");
     dashboardItem.setPrefixComponent(FeatherIcon.ACTIVITY.create());
 
-    AppNavItem ordersItem = new AppNavItem("Orders", "/orders");
+    AppNavItem ordersItem = new AppNavItem("Orders");
     ordersItem.setPrefixComponent(FeatherIcon.SHOPPING_CART.create());
 
-    AppNavItem newOrdersItem = new AppNavItem("New Orders", "/orders/new");
-    AppNavItem pendingOrdersItem = new AppNavItem("Pending Orders", "/orders/pending");
-    AppNavItem completedOrdersItem = new AppNavItem("Completed Orders", "/orders/completed");
+    AppNavItem newOrdersItem = new AppNavItem("New Orders", "/appnavhierarchy");
+    AppNavItem pendingOrdersItem = new AppNavItem("Pending Orders", "/appnavhierarchy");
+    AppNavItem completedOrdersItem = new AppNavItem("Completed Orders", "/appnavhierarchy");
 
     ordersItem.addItem(newOrdersItem);
     ordersItem.addItem(pendingOrdersItem);
     ordersItem.addItem(completedOrdersItem);
 
-    AppNavItem settingsItem = new AppNavItem("Settings", "/settings");
+    AppNavItem settingsItem = new AppNavItem("Settings");
     settingsItem.setPrefixComponent(FeatherIcon.SETTINGS.create());
 
-    AppNavItem accountSettingsItem = new AppNavItem("Account Settings", "/settings/account");
-    AppNavItem preferencesItem = new AppNavItem("Preferences", "/settings/preferences");
+    AppNavItem accountSettingsItem = new AppNavItem("Account Settings", "/appnavhierarchy");
+    AppNavItem preferencesItem = new AppNavItem("Preferences", "/appnavhierarchy");
 
     settingsItem.addItem(accountSettingsItem);
     settingsItem.addItem(preferencesItem);
