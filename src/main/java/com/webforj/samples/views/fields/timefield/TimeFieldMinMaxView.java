@@ -6,7 +6,9 @@ import com.webforj.component.Composite;
 import com.webforj.component.button.Button;
 import com.webforj.component.button.ButtonTheme;
 import com.webforj.component.field.TimeField;
-import com.webforj.component.html.elements.Div;
+import com.webforj.component.layout.flexlayout.FlexAlignment;
+import com.webforj.component.layout.flexlayout.FlexLayout;
+import com.webforj.component.layout.flexlayout.FlexWrap;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
@@ -15,14 +17,19 @@ import java.time.LocalTime;
 @InlineStyleSheet("context://css/fields/timefield/timeFieldMinMaxView.css")
 @Route
 @FrameTitle("Time Field Min/Max")
-public class TimeFieldMinMaxView extends Composite<Div> {
+public class TimeFieldMinMaxView extends Composite<FlexLayout> {
 
-  private final TimeField meeting = new TimeField(LocalTime.of(12, 30));
-  private final Button confirm = new Button("Confirm", ButtonTheme.PRIMARY);
+  TimeField meeting = new TimeField(LocalTime.of(12, 30));
+  Button confirm = new Button("Confirm", ButtonTheme.PRIMARY);
 
   public TimeFieldMinMaxView() {
-    getBoundComponent().addClassName("window");
+    getBoundComponent().setWrap(FlexWrap.WRAP)
+        .setSpacing("var(--dwc-space-l")
+        .setMargin("var(--dwc-space-m)");
+    
     getBoundComponent().add(meeting, confirm);
+    
+    getBoundComponent().setItemAlignment(FlexAlignment.END, confirm);
 
     LocalTime min = LocalTime.of(12, 30);
     LocalTime max = LocalTime.of(17, 15);

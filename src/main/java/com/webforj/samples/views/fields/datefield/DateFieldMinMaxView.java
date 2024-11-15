@@ -1,29 +1,29 @@
 package com.webforj.samples.views.fields.datefield;
 
 import java.time.LocalDate;
-import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.Composite;
 import com.webforj.component.field.DateField;
-import com.webforj.component.html.elements.Div;
+import com.webforj.component.layout.flexlayout.FlexDirection;
+import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
-@InlineStyleSheet("context://css/fields/datefield/dateFieldDemo.css")
 @Route
 @FrameTitle("Date Field Min/Max")
-public class DateFieldMinMaxView extends Composite<Div> {
+public class DateFieldMinMaxView extends Composite<FlexLayout> {
 
   public DateFieldMinMaxView() {
-    getBoundComponent().addClassName("main__window");
+    getBoundComponent().setDirection(FlexDirection.ROW).setSpacing("var(--dwc-space-l")
+    .setMargin("var(--dwc-space-m)");
 
     DateField departure = new DateField(LocalDate.now());
     departure.setLabel("Departure Date:")
-        .setMin(LocalDate.now())
-        .addClassName("date__input");
+        .setWidth("200px")
+        .setMin(LocalDate.now());
 
     DateField returnField = new DateField(LocalDate.now().plusDays(1));
     returnField.setLabel("Return Date:")
-        .addClassName("date__input");
+        .setWidth("200px");
 
     getBoundComponent().add(departure, returnField);
 
