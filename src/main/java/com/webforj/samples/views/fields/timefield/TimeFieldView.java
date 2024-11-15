@@ -10,11 +10,11 @@ import java.time.LocalTime;
 
 @Route
 @FrameTitle("Time Field Demo")
-public class TimeFieldDemoView extends Composite<FlexLayout> {
+public class TimeFieldView extends Composite<FlexLayout> {
 
   TimeField reminder = new TimeField("Set Reminder:", LocalTime.now());
   
-  public TimeFieldDemoView() {
+  public TimeFieldView() {
     getBoundComponent().setMargin("var(--dwc-space-m)");
 
     reminder.addClassName("date__input");
