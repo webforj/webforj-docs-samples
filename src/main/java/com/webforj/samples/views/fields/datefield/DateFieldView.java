@@ -1,33 +1,32 @@
 package com.webforj.samples.views.fields.datefield;
 
 import java.time.LocalDate;
-import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.Composite;
 import com.webforj.component.field.DateField;
-import com.webforj.component.html.elements.Div;
+import com.webforj.component.layout.flexlayout.FlexDirection;
+import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.data.event.ValueChangeEvent;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
-@InlineStyleSheet("context://css/fields/datefield/dateFieldDemo.css")
-
 @Route
 @FrameTitle("Date Field Demo")
-public class DateFieldDemoView extends Composite<Div> {
+public class DateFieldView extends Composite<FlexLayout> {
 
-  private DateField returnField = new DateField(LocalDate.now());
-  private DateField departure = new DateField(LocalDate.now());
+  DateField returnField = new DateField(LocalDate.now());
+  DateField departure = new DateField(LocalDate.now());
 
-  public DateFieldDemoView() {
-    getBoundComponent().addClassName("main__window");
+  public DateFieldView() {
+    getBoundComponent().setDirection(FlexDirection.ROW).setSpacing("var(--dwc-space-l")
+    .setMargin("var(--dwc-space-m)");
 
     departure.setLabel("Departure Date:")
-        .addClassName("date__input")
+        .setWidth("200px")
         .setMin(LocalDate.now())
         .addValueChangeListener(this::setMinReturn);
 
     returnField.setLabel("Return Date:")
-        .addClassName("date__input")
+        .setWidth("200px")
         .setMin(LocalDate.now());
 
     getBoundComponent().add(departure, returnField);
@@ -35,7 +34,7 @@ public class DateFieldDemoView extends Composite<Div> {
 
   private void setMinReturn(ValueChangeEvent e) {
     LocalDate departureDate = (LocalDate) e.getValue();
-    LocalDate arrivalDate = (LocalDate) returnField.getValue();
+    LocalDate arrivalDate = returnField.getValue();
 
     if (departureDate.isAfter(arrivalDate)) {
       returnField.setValue(departureDate);
