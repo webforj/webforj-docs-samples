@@ -2,13 +2,13 @@ package com.webforj.samples.views.applayout;
 
 import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.Composite;
-import com.webforj.component.element.Element;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.html.elements.H1;
 import com.webforj.component.html.elements.H3;
 import com.webforj.component.html.elements.Img;
 import com.webforj.component.html.elements.Paragraph;
 import com.webforj.component.icons.Icon;
+import com.webforj.component.icons.IconButton;
 import com.webforj.component.icons.TablerIcon;
 import com.webforj.component.layout.applayout.AppDrawerToggle;
 import com.webforj.component.layout.applayout.AppLayout;
@@ -23,32 +23,31 @@ import com.webforj.router.annotation.Route;
 @Route
 @FrameTitle("AppLayout")
 public class AppLayoutView extends Composite<AppLayout> {
-
-  AppLayout demo = getBoundComponent();
+  
   Paragraph contentLabel = new Paragraph();
 
   Div header = new Div();
   Div drawer = new Div();
+  
+  IconButton pin = new IconButton(TablerIcon.create("pin"));
 
   public AppLayoutView() {
 
-    demo.setDrawerHeaderVisible(true);
-    demo.setDrawerFooterVisible(true);
+    getBoundComponent().setDrawerHeaderVisible(true);
+    getBoundComponent().setDrawerFooterVisible(true);
 
-    demo.addToDrawerTitle(new Div("Menu"));
-    demo.addToDrawerHeaderActions(new Element("dwc-icon-button")
-        .setAttribute("name", "pin"));
-    demo.addToDrawerFooter(new Paragraph("All rights reserved"));
+    getBoundComponent().addToDrawerTitle(new Div("Menu"));
+    getBoundComponent().addToDrawerHeaderActions(pin);
+    getBoundComponent().addToDrawerFooter(new Paragraph("All rights reserved"));
 
     // Header
     header.addClassName("layout__header").add(
         new AppDrawerToggle(),
-        new H3("DWCJ Application"));
-    demo.addToHeader(header);
+        new H3("DWCJ Application").addClassName("layout__header--title"));
+    getBoundComponent().addToHeader(header);
 
     // Drawer
-    demo.addToDrawer(drawer);
-    drawer.addClassName("app-layout-drawer");
+    getBoundComponent().addToDrawer(drawer);
 
     // Drawer's logo container and logo
     Div drawerLogo = new Div();
@@ -77,7 +76,7 @@ public class AppLayoutView extends Composite<AppLayout> {
     drawerMenu.addTab(new Tab("Dashboard", dashboardIcon));
     drawerMenu.addTab(new Tab("Orders", ordersIcon));
     drawerMenu.addTab(new Tab("Customers", customersIcon));
-		drawerMenu.addTab(new Tab("Products", productsIcon));
+    drawerMenu.addTab(new Tab("Products", productsIcon));
     drawerMenu.addTab(new Tab("Documents", documentsIcon));
     drawerMenu.addTab(new Tab("Tasks", tasksIcon));
     drawerMenu.addTab(new Tab("Analytics", analyticsIcon));
@@ -85,7 +84,7 @@ public class AppLayoutView extends Composite<AppLayout> {
     drawerMenu.onSelect(this::onTabChange);
 
     // Content
-    demo.addToContent(new H1("Application Title"), this.contentLabel);
+    getBoundComponent().addToContent(new H1("Application Title"), this.contentLabel);
   }
 
   private void onTabChange(TabSelectEvent ev) {
