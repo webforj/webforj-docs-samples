@@ -15,22 +15,33 @@ import com.webforj.router.annotation.Route;
 @Route
 @FrameTitle("Button Themes")
 public class ButtonThemesView extends Composite<Div> {
-  
+
   public ButtonThemesView() {
     getBoundComponent().addClassName("Frame");
 
+    Div regularRow = new Div()
+        .addClassName("ButtonRow");
+
+    Div outlinedRow = new Div()
+        .addClassName("ButtonRow"); 
+
     for (ButtonTheme theme : ButtonTheme.values()) {
       if (!theme.name().contains("OUTLINE")) {
-        Button themeButton = new Button(theme.name(), theme);
-        getBoundComponent().add(themeButton);
+        Button themeButton = new Button(theme.name(), theme)
+            .setWidth("200px");
+        regularRow.add(themeButton);
       }
     }
 
     for (ButtonTheme theme : ButtonTheme.values()) {
-      if (theme.name().contains("OUTLINE")) {
-        Button themeButton = new Button(theme.name(), theme);
-        getBoundComponent().add(themeButton);
+      if (!theme.name().contains("OUTLINE")) {
+        Button outlineButton = new Button("OUTLINED_" + theme.name(),
+                ButtonTheme.valueOf("OUTLINED_" + theme.name()))
+            .setWidth("200px");
+        outlinedRow.add(outlineButton);
       }
     }
+
+    getBoundComponent().add(regularRow,outlinedRow);
   }
 }

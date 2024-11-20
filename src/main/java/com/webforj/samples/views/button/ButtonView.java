@@ -2,7 +2,6 @@ package com.webforj.samples.views.button;
 
 import static com.webforj.component.optiondialog.OptionDialog.showMessageDialog;
 
-import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.Composite;
 import com.webforj.component.button.Button;
 import com.webforj.component.button.ButtonTheme;
@@ -17,10 +16,9 @@ import com.webforj.router.annotation.Route;
 /**
  * Simple demo application to display button functionality.
  */
-@InlineStyleSheet("context://css/button/buttonDemo.css")
 @Route
 @FrameTitle("Button Demo")
-public class ButtonDemoView extends Composite<FlexLayout> {
+public class ButtonView extends Composite<FlexLayout> {
 
   Button clear;
   Button submit;
@@ -28,10 +26,10 @@ public class ButtonDemoView extends Composite<FlexLayout> {
   TextField lastName;
   TextField email;
 
-  public ButtonDemoView() {
+  public ButtonView() {
 
     getBoundComponent().setDirection(FlexDirection.COLUMN).setSpacing("var(--dwc-space-l)")
-        .setAlignment(FlexAlignment.CENTER).setMargin("var(--dwc-space-l)").setHeight("100dvh");
+        .setAlignment(FlexAlignment.CENTER).setMargin("var(--dwc-space-l)");
     clear = new Button("Clear", ButtonTheme.DEFAULT, e -> {
       firstName.setText("");
       lastName.setText("");
@@ -41,15 +39,18 @@ public class ButtonDemoView extends Composite<FlexLayout> {
     submit = new Button("Submit", ButtonTheme.PRIMARY,
         e -> showMessageDialog("Welcome to the application " + firstName.getText() + " " + lastName.getText() + "!"));
 
-    firstName = new TextField(Type.TEXT, "First Name", "Jason");
-    lastName = new TextField(Type.TEXT, "Last Name", "Turner");
-    email = new TextField(Type.EMAIL, "E-mail:", "turner.jason@email.com");
+    firstName = new TextField(Type.TEXT, "First Name", "Jason").setWidth("25%");
+    firstName.setStyle("flex", "1");
+    lastName = new TextField(Type.TEXT, "Last Name", "Turner").setWidth("25%");
+    lastName.setStyle("flex", "1");
+    email = new TextField(Type.EMAIL, "E-mail:", "turner.jason@email.com").setWidth("100%");
 
     FlexLayout firstRow = FlexLayout.create(firstName, lastName)
         .justify().center()
         .wrap()
         .build()
         .setSpacing("20px")
+        .setWidth("50%")
         .addClassName("row");
 
     FlexLayout secondRow = FlexLayout.create(email)
@@ -57,6 +58,7 @@ public class ButtonDemoView extends Composite<FlexLayout> {
         .wrap()
         .build()
         .setSpacing("20px")
+        .setWidth("50%")
         .addClassName("row");
 
     FlexLayout thirdRow = FlexLayout.create(submit, clear)
@@ -64,6 +66,7 @@ public class ButtonDemoView extends Composite<FlexLayout> {
         .wrap()
         .build()
         .setSpacing("20px")
+        .setWidth("50%")
         .addClassName("row", "buttons");
 
     getBoundComponent().add(firstRow, secondRow, thirdRow);
