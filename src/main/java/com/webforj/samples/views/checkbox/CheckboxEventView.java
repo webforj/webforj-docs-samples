@@ -10,12 +10,11 @@ import com.webforj.router.annotation.Route;
 @Route
 @FrameTitle("Checkbox Event")
 public class CheckboxEventView extends Composite<FlexLayout> {
-  FlexLayout self = getBoundComponent();
   CheckBox checkbox = new CheckBox("Please check to accept the Terms and Conditions");
 
   public CheckboxEventView() {
-    self.setDirection(FlexDirection.ROW).setSpacing("var(--dwc-space-l)").setMargin("var(--dwc-space-s)");
-    self.add(checkbox);
+    getBoundComponent().setDirection(FlexDirection.ROW).setSpacing("var(--dwc-space-l)").setMargin("var(--dwc-space-s)");
+    getBoundComponent().add(checkbox);
 
     checkbox.onCheck(e -> checkbox.setText("You have accepted the Terms and Conditions"));
     checkbox.onUncheck(e -> checkbox.setText("Please check to accept the Terms and Conditions"));
