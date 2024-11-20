@@ -1,12 +1,9 @@
 package com.webforj.samples.views.button;
 
 import java.util.ArrayList;
-import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.Composite;
 import com.webforj.component.Expanse;
 import com.webforj.component.button.Button;
-import com.webforj.component.html.elements.Div;
-import com.webforj.component.layout.flexlayout.FlexDirection;
 import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.component.list.ChoiceBox;
 import com.webforj.component.list.ListItem;
