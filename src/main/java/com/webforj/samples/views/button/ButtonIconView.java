@@ -37,6 +37,7 @@ public class ButtonIconView extends Composite<FlexLayout> {
     link.setSuffixComponent(linkIcon);
 
     imgIcon = new Img("https://documentation.webforj.com/img/webforj.svg");
+    imgIcon.setSize("100px", "30px");
     imgButton = new Button(imgIcon);
 
     self.add(notifications, link, imgButton);
