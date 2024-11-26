@@ -68,8 +68,7 @@ public class DrawerWelcomeView extends Composite<FlexLayout> {
     productsItem.setPrefixComponent(TablerIcon.create("box"));
     AppNavItem documentsItem = new AppNavItem("Documents", "/drawerwelcome");
     documentsItem.setPrefixComponent(TablerIcon.create("files"));
-
-        
+    
     appNav.addItem(dashboardItem);
     appNav.addItem(ordersItem);
     appNav.addItem(customersItem);
@@ -85,7 +84,7 @@ public class DrawerWelcomeView extends Composite<FlexLayout> {
       .open();
 
     FlexLayout layout = FlexLayout.create(new Img("https://documentation.webforj.com/img/webforj_icon.svg")
-      .setSize("125px", "125px").setStyle("margin-top", "var(--dwc-space-m)"),
+      .setSize("100px", "100px").setStyle("margin-top", "var(--dwc-space-m)"),
       new H2("Welcome to webforJ"),
       new Button("Get Started"))
       .vertical()
@@ -94,7 +93,7 @@ public class DrawerWelcomeView extends Composite<FlexLayout> {
     welcomeDrawer.add(layout);
 
     // Content
-    Button openWelcome = new Button("Open Welcome Page");
+    Button openWelcome = new Button("Open Welcome Drawer");
     openWelcome.onClick(e -> welcomeDrawer.open());
 
     demo.addToContent(new H1("Application Title"), openWelcome);
