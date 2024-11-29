@@ -1,7 +1,6 @@
 package com.webforj.samples.views.fields.timefield;
 
 import com.webforj.App;
-import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.Composite;
 import com.webforj.component.button.Button;
 import com.webforj.component.button.ButtonTheme;
@@ -14,7 +13,6 @@ import com.webforj.router.annotation.Route;
 
 import java.time.LocalTime;
 
-@InlineStyleSheet("context://css/fields/timefield/timeFieldMinMaxView.css")
 @Route
 @FrameTitle("Time Field Min/Max")
 public class TimeFieldMinMaxView extends Composite<FlexLayout> {
@@ -38,14 +36,15 @@ public class TimeFieldMinMaxView extends Composite<FlexLayout> {
         .setMax(max);
 
     meeting.setLabel(label)
-        .onModify(e -> {
-          try {
-            meeting.setText(e.getText());
-            confirm.setEnabled(true);
-          } catch (IllegalArgumentException ex) {
-            confirm.setEnabled(false);
-          }
-          App.console().log(meeting.getValue() + "");
-        });
+    .onModify(e -> {
+      try {
+        LocalTime parsedTime = LocalTime.parse(e.getText());
+        meeting.setValue(parsedTime);
+        confirm.setEnabled(true);
+      } catch (Exception ex) {
+        confirm.setEnabled(false);
+        App.console().log("Invalid time input: " + e.getText());
+      }
+    });
   }
 }
