@@ -12,13 +12,12 @@ import com.webforj.component.toast.Toast;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 import java.time.LocalTime;
-import java.time.format.DateTimeParseException;
 
 @Route
 @FrameTitle("Time Field Min/Max")
 public class TimeFieldMinMaxView extends Composite<FlexLayout> {
 
-  private TimeField meeting = new TimeField(LocalTime.of(12, 30));
+  private TimeField meeting = new TimeField();
   private Button confirm = new Button("Confirm", ButtonTheme.PRIMARY);
 
   public TimeFieldMinMaxView() {
@@ -26,30 +25,28 @@ public class TimeFieldMinMaxView extends Composite<FlexLayout> {
         .setWrap(FlexWrap.WRAP)
         .setSpacing("var(--dwc-space-l)")
         .setMargin("var(--dwc-space-m)");
-
+    
     meeting.setWidth("250px");
     confirm.setWidth("150px");
 
     getBoundComponent().add(meeting, confirm);
     getBoundComponent().setItemAlignment(FlexAlignment.END, confirm);
 
-    meeting.setLabel("Enter a meeting time:");
+    meeting.setLabel("Choose a meeting time:");
+    confirm.setEnabled(false);
 
-    meeting.onModify(event -> {
-      String input = event.getText();
-      try {
-        if (input != null && !input.isEmpty()) {
-          LocalTime.parse(input);
-          confirm.setEnabled(true);
-        } else {
-          confirm.setEnabled(false);
-        }
-      } catch (DateTimeParseException ex) {
-        confirm.setEnabled(false);
-      }
+    meeting.onValueChange(event -> {
+      LocalTime selectedTime = event.getValue();
+      confirm.setEnabled(selectedTime != null);
     });
 
-    confirm.onClick(e -> showToast("Meeting time confirmed!"));
+    confirm.onClick(e -> {
+      if (meeting.getValue() != null) {
+        showToast("Meeting time confirmed!");
+      } else {
+        showToast("Invalid time selected!");
+      }
+    });
   }
 
   private void showToast(String message) {
