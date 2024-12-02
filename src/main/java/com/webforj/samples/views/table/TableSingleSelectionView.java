@@ -16,7 +16,7 @@ public class TableSingleSelectionView extends Composite<Div> {
 
     Table<MusicRecord> table = new Table<>();
     table.setWidth("100vw");
-    table.setHeight("100vw");
+    table.setHeight("100vh");
 
     table.addColumn("Number", MusicRecord::getNumber);
     table.addColumn("Title", MusicRecord::getTitle);

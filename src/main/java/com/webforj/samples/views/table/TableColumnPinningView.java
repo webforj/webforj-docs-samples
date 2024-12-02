@@ -19,7 +19,7 @@ public class TableColumnPinningView extends Composite<Div> {
 
     Table<MusicRecord> table = new Table<>();
     table.setWidth("100vw");
-    table.setHeight("100vw");
+    table.setHeight("100vh");
 
     table.addColumn("Number", MusicRecord::getNumber).setPinDirection(Column.PinDirection.LEFT);
     table.addColumn("Title", MusicRecord::getTitle);

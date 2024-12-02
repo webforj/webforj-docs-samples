@@ -22,7 +22,7 @@ public class TableOlympicWinnersView extends Composite<Div> {
 
     Table<JsonObject> table = new Table<>();
     table.setWidth("100vw");
-    table.setHeight("100vw");
+    table.setHeight("100vh");
 
     List<String> columnsList = Arrays.asList("athlete", "age", "country", "year", "sport", "gold",
         "silver", "bronze", "total");
