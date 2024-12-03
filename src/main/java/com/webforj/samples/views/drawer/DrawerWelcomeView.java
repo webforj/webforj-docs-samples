@@ -2,21 +2,23 @@ package com.webforj.samples.views.drawer;
 
 import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.Composite;
+import com.webforj.component.button.Button;
+import com.webforj.component.button.ButtonTheme;
+import com.webforj.component.drawer.Drawer;
+import com.webforj.component.drawer.Drawer.Placement;
+import com.webforj.component.html.elements.Div;
+import com.webforj.component.html.elements.H1;
+import com.webforj.component.html.elements.H2;
+import com.webforj.component.html.elements.H3;
+import com.webforj.component.html.elements.Img;
+import com.webforj.component.html.elements.Paragraph;
 import com.webforj.component.icons.TablerIcon;
 import com.webforj.component.layout.applayout.AppDrawerToggle;
 import com.webforj.component.layout.applayout.AppLayout;
 import com.webforj.component.layout.applayout.AppLayout.DrawerPlacement;
 import com.webforj.component.layout.appnav.AppNav;
 import com.webforj.component.layout.appnav.AppNavItem;
-import com.webforj.component.html.elements.Div;
-import com.webforj.component.html.elements.H1;
-import com.webforj.component.html.elements.H2;
-import com.webforj.component.html.elements.Img;
-import com.webforj.component.html.elements.Strong;
 import com.webforj.component.layout.flexlayout.FlexLayout;
-import com.webforj.component.button.Button;
-import com.webforj.component.drawer.Drawer;
-import com.webforj.component.drawer.Drawer.Placement;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
@@ -29,33 +31,32 @@ public class DrawerWelcomeView extends Composite<FlexLayout> {
   AppLayout demo = new AppLayout();
 
   Div header = new Div();
-  Div drawer = new Div();
+  Div navigation = new Div();
 
   public DrawerWelcomeView() {
     getBoundComponent().add(demo);
 
     // Header
-    Strong title = new Strong("DWCJ Application");
+    H3 title = new H3("WebforJ Application");
     header.add(new AppDrawerToggle(), title);
     header.addClassName("dwc__toolbar-drawer");
 
     demo.addToHeader(header);
     demo.setHeaderReveal(true);
 
-    demo.addToDrawer(drawer);
-    drawer.addClassName("app-layout-drawer");
+    demo.addToDrawer(navigation);
     demo.setDrawerPlacement(DrawerPlacement.LEFT);
 
     // Drawer's logo container and logo
     Div drawerLogo = new Div();
-    drawerLogo.addClassName("drawer__logo")
-      .add(new Img("https://documentation.webforj.com/img/webforj_icon.svg"));
-    drawer.add(drawerLogo);
+    drawerLogo.addClassName("navigation__logo")
+        .add(new Img("https://documentation.webforj.com/img/webforj_icon.svg"));
+    navigation.add(drawerLogo);
 
     // Drawer's Menu with AppNav
     AppNav appNav = new AppNav();
     appNav.setAutoOpen(true);
-    drawer.add(appNav);
+    navigation.add(appNav);
 
     // Adding navigation items
     AppNavItem dashboardItem = new AppNavItem("Dashboard", "/drawerwelcome");
@@ -81,21 +82,27 @@ public class DrawerWelcomeView extends Composite<FlexLayout> {
 
     welcomeDrawer.setPlacement(Placement.BOTTOM)
       .addClassName("welcome__drawer")
-      .open();
+        .open();
 
+    Button getStarted = new Button("Get Started").setTheme(ButtonTheme.PRIMARY);
+    getStarted.onClick(e -> welcomeDrawer.close());
+    
     FlexLayout layout = FlexLayout.create(new Img("https://documentation.webforj.com/img/webforj_icon.svg")
-      .setSize("100px", "100px").setStyle("margin-top", "var(--dwc-space-m)"),
+        .setSize("150px", "150px"),
       new H2("Welcome to webforJ"),
-      new Button("Get Started"))
-      .vertical()
-      .align().center()
-      .build();
+      new Paragraph("Lorem Ipsum is simply dummy text of the printing and typesetting industry."),
+        getStarted)
+        .vertical()
+        .align().center()
+        .justify().center()
+        .build();
+    
     welcomeDrawer.add(layout);
-
+    
     // Content
     Button openWelcome = new Button("Open Welcome Drawer");
     openWelcome.onClick(e -> welcomeDrawer.open());
 
     demo.addToContent(new H1("Application Title"), openWelcome);
-    }
+  }
 }

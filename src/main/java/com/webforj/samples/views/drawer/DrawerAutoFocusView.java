@@ -1,45 +1,56 @@
 package com.webforj.samples.views.drawer;
 
-import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.Composite;
+import com.webforj.component.button.Button;
+import com.webforj.component.button.ButtonTheme;
 import com.webforj.component.drawer.Drawer;
 import com.webforj.component.html.elements.Div;
-import com.webforj.component.html.elements.H2;
-import com.webforj.component.optioninput.CheckBox;
-import com.webforj.component.button.Button;
 import com.webforj.component.layout.flexlayout.FlexLayout;
+import com.webforj.component.optioninput.CheckBox;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
-@InlineStyleSheet("context://css/drawer/drawerAutoFocus.css")
 @Route
-@FrameTitle("Drawer Auto-Focus")
+@FrameTitle("Drawer Demo")
 public class DrawerAutoFocusView extends Composite<FlexLayout> {
 
+  Drawer drawer = new Drawer();
+
   public DrawerAutoFocusView() {
-    getBoundComponent().setSpacing("20px").setMargin("20px");
-
-    Drawer drawer = new Drawer();
-    drawer.addClassName("drawer");
-    drawer.setAutofocus(true); 
-
-    Button openDrawerButton = new Button("Open Preferences");
-    openDrawerButton.onClick(e -> drawer.open());
-    getBoundComponent().add(openDrawerButton);
-
-    Div drawerHeader = new Div(new H2("Notification Preferences"));
-    drawer.add(drawerHeader);
+    getBoundComponent()
+        .setMargin("20px");
+    
+    drawer.setAutofocus(true); //Setting AutoFocus
 
     CheckBox emailNotifications = new CheckBox("Email Notifications");
     CheckBox smsNotifications = new CheckBox("SMS Notifications");
     CheckBox pushNotifications = new CheckBox("Push Notifications");
-        
-    Div drawerContent = new Div(emailNotifications, smsNotifications, pushNotifications)
-        .addClassName("drawer-content");
-        
+
+    Div checkBoxContainer = new Div();
+    checkBoxContainer.add(emailNotifications, smsNotifications, pushNotifications);
+    checkBoxContainer.setStyle("display", "flex")
+        .setStyle("flex-direction", "column")
+        .setStyle("gap", "10px");
+
+    Button saveButton = new Button("Save Preferences")
+        .setTheme(ButtonTheme.PRIMARY)
+        .setWidth("100%");
+
+    Div drawerContent = new Div();
+    drawerContent.setStyle("display", "flex")
+        .setStyle("flex-direction", "column")
+        .setStyle("justify-content", "space-between")
+        .setStyle("height", "100%");
+
+    drawerContent.add(checkBoxContainer, saveButton);
     drawer.add(drawerContent);
 
-    getBoundComponent().add(drawer);
-    
-    }
+    Button openDrawerButton = new Button("Open Preferences");
+    openDrawerButton.onClick(e -> drawer.open());
+
+    getBoundComponent().add(openDrawerButton, drawer);
+
+    drawer.setLabel("Notification Preferences");
+    drawer.open();
+}
 }
