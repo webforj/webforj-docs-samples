@@ -14,7 +14,7 @@ public class TableSortingView extends Composite<Div> {
 
     Table<MusicRecord> table = new Table<>();
     table.setWidth("100vw");
-    table.setHeight("100vw");
+    table.setHeight("100vh");
 
     table.addColumn("Title", MusicRecord::getTitle);
     table.addColumn("Artist", MusicRecord::getArtist);

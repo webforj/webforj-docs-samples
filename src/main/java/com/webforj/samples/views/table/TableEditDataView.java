@@ -17,7 +17,7 @@ public class TableEditDataView extends Composite<Div> {
   public TableEditDataView() {
 
     table.setWidth("100vw");
-    table.setHeight("100vw");
+    table.setHeight("100vh");
     table.addColumn("Number", MusicRecord::getNumber).setPinDirection(Column.PinDirection.LEFT);
     table.addColumn("Title", MusicRecord::getTitle);
     table.addColumn("Artist", MusicRecord::getArtist);
