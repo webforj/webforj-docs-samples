@@ -1,45 +1,4 @@
-.task-manager-container {
-  margin: 20px;
-}
-
-.drawer {
-  overflow-y: auto;
-  padding: 10px;
-  height: 100%;
-}
-
-.task-container {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  overflow-y: auto;
-  max-height: 60vh;
-}
-
-.new-task-field {
-  width: 100%;
-}
-
-.add-task-button,
-.clear-tasks-button {
-  width: 100%;
-}
-
-.footer-container {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 10px 0;
-}
-
-.drawer-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  padding: 10px;
-}
-
-.open-drawer-button {
-  margin-top: 20px 0;
+dwc-checkbox.task-completed::part(label) {
+  text-decoration: line-through;
+  color: gray;
 }

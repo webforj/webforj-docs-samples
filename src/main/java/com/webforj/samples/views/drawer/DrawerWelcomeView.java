@@ -27,14 +27,14 @@ import com.webforj.router.annotation.Route;
 @FrameTitle("Drawer Welcome App")
 public class DrawerWelcomeView extends Composite<FlexLayout> {
 
+  FlexLayout drawerLayout = getBoundComponent();
   Drawer welcomeDrawer;
   AppLayout demo = new AppLayout();
-
   Div header = new Div();
   Div navigation = new Div();
 
   public DrawerWelcomeView() {
-    getBoundComponent().add(demo);
+    drawerLayout.add(demo);
 
     // Header
     H3 title = new H3("WebforJ Application");
@@ -78,7 +78,7 @@ public class DrawerWelcomeView extends Composite<FlexLayout> {
 
     // Welcome Drawer
     welcomeDrawer = new Drawer();
-    getBoundComponent().add(welcomeDrawer);
+    drawerLayout.add(welcomeDrawer);
 
     welcomeDrawer.setPlacement(Placement.BOTTOM)
       .addClassName("welcome__drawer")

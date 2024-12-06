@@ -14,11 +14,11 @@ import com.webforj.router.annotation.Route;
 @FrameTitle("Drawer Placement")
 public class DrawerPlacementView extends Composite<FlexLayout> {
 
+  FlexLayout drawerLayout = getBoundComponent();
   Drawer drawer = new Drawer();
 
   public DrawerPlacementView() {
-    getBoundComponent()
-        .setDirection(FlexDirection.COLUMN)
+    drawerLayout.setDirection(FlexDirection.COLUMN)
         .setSpacing("20px")
         .setMargin("20px");
 
@@ -59,7 +59,6 @@ public class DrawerPlacementView extends Composite<FlexLayout> {
     });
 
     drawer.add(groupLayout);
-
-    getBoundComponent().add(drawer);
+    drawerLayout.add(drawer);
   }
 }
