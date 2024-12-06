@@ -6,7 +6,7 @@
 
     <groupId>com.webforj.samples</groupId>
     <artifactId>controlsamples</artifactId>
-    <version>24.12-SNAPSHOT</version>
+    <version>24.20</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -42,11 +42,6 @@
             <artifactId>webforj</artifactId>
             <version>${project.version}</version>
             <type>pom</type>
-        </dependency>
-        <dependency>
-            <groupId>com.webforj</groupId>
-            <artifactId>webforj-code</artifactId>
-            <version>24.11</version>
         </dependency>
         <dependency>
             <groupId>com.webforj</groupId>
