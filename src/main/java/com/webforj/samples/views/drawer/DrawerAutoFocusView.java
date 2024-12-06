@@ -15,11 +15,11 @@ import com.webforj.router.annotation.Route;
 @FrameTitle("Drawer AutoFocus")
 public class DrawerAutoFocusView extends Composite<FlexLayout> {
 
-  FlexLayout drawerLayout = getBoundComponent();
+  FlexLayout layout = getBoundComponent();
   Drawer drawer = new Drawer();
 
   public DrawerAutoFocusView() {
-    drawerLayout.setMargin("var(--dwc-space-m)");
+    layout.setMargin("var(--dwc-space-m)");
 
     drawer.setAutofocus(true);
 
@@ -45,7 +45,7 @@ public class DrawerAutoFocusView extends Composite<FlexLayout> {
     Button openDrawerButton = new Button("Open Preferences");
     openDrawerButton.onClick(e -> drawer.open());
 
-    drawerLayout.add(openDrawerButton, drawer);
+    layout.add(openDrawerButton, drawer);
 
     drawer.setLabel("Notification Preferences");
     drawer.open();
