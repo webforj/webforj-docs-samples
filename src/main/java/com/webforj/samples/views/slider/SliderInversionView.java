@@ -2,21 +2,25 @@ package com.webforj.samples.views.slider;
 
 import java.util.Map;
 import static java.util.Map.entry;
-import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.text.Label;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 import com.webforj.component.Composite;
-import com.webforj.component.html.elements.Div;
+import com.webforj.component.layout.flexlayout.FlexAlignment;
+import com.webforj.component.layout.flexlayout.FlexDirection;
+import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.component.slider.Slider;
 
-@InlineStyleSheet("context://css/slider/sliderInversionDemo.css")
 @Route
 @FrameTitle("Slider Inversion")
-public class SliderInversionDemoView extends Composite<Div> {
+public class SliderInversionView extends Composite<FlexLayout> {
+  
+  FlexLayout layout = getBoundComponent();
 
-  public SliderInversionDemoView() {
-    getBoundComponent().addClassName("Frame");
+  public SliderInversionView() {
+    getBoundComponent().setDirection(FlexDirection.COLUMN)
+      .setAlignment(FlexAlignment.CENTER)
+      .setMargin("var(--dwc-space-l)");
 
     Map<Integer, String> mapMatch = Map.ofEntries(
         entry(0, "0"),
