@@ -12,12 +12,17 @@ import com.webforj.component.icons.Icon;
 import com.webforj.component.icons.TablerIcon;
 import com.webforj.component.layout.applayout.AppDrawerToggle;
 import com.webforj.component.layout.applayout.AppLayout;
-import com.webforj.component.tabbedpane.TabbedPane.Placement;
-import com.webforj.component.tabbedpane.Tab;
-import com.webforj.component.tabbedpane.TabbedPane;
-import com.webforj.component.tabbedpane.event.TabSelectEvent;
+import com.webforj.component.layout.appnav.AppNav;
+import com.webforj.component.layout.appnav.AppNavItem;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
+import com.webforj.samples.views.applayout.applayoutfullnavbar.AnalyticsView;
+import com.webforj.samples.views.applayout.applayoutfullnavbar.CustomersView;
+import com.webforj.samples.views.applayout.applayoutfullnavbar.DashboardView;
+import com.webforj.samples.views.applayout.applayoutfullnavbar.DocumentsView;
+import com.webforj.samples.views.applayout.applayoutfullnavbar.OrdersView;
+import com.webforj.samples.views.applayout.applayoutfullnavbar.ProductsView;
+import com.webforj.samples.views.applayout.applayoutfullnavbar.TasksView;
 
 @InlineStyleSheet("context://css/applayout/applayout.css")
 @Route
@@ -56,13 +61,8 @@ public class AppLayoutFullNavbarView extends Composite<AppLayout> {
     drawer.add(drawerLogo);
 
     // Drawer's Menu
-    TabbedPane drawerMenu = new TabbedPane();
+    AppNav drawerMenu = new AppNav();
     drawer.add(drawerMenu);
-
-    // Setting drawer menu's attributes
-    drawerMenu.setBodyHidden(true);
-    drawerMenu.setBorderless(true);
-    drawerMenu.setPlacement(Placement.LEFT);
 
     // Adding tabs to drawer menu
     Icon dashboardIcon = TablerIcon.create("dashboard");
@@ -73,23 +73,16 @@ public class AppLayoutFullNavbarView extends Composite<AppLayout> {
     Icon tasksIcon = TablerIcon.create("checklist");
     Icon analyticsIcon = TablerIcon.create("chart-dots-2");
 
-    drawerMenu.addTab(new Tab("Dashboard", dashboardIcon));
-    drawerMenu.addTab(new Tab("Orders", ordersIcon));
-    drawerMenu.addTab(new Tab("Customers", customersIcon));
-		drawerMenu.addTab(new Tab("Products", productsIcon));
-    drawerMenu.addTab(new Tab("Documents", documentsIcon));
-    drawerMenu.addTab(new Tab("Tasks", tasksIcon));
-    drawerMenu.addTab(new Tab("Analytics", analyticsIcon));
-
-
-    drawerMenu.onSelect(this::onTabChange);
+    drawerMenu.addItem(new AppNavItem("Dashboard",DashboardView.class, dashboardIcon));
+    drawerMenu.addItem(new AppNavItem("Orders",OrdersView.class, ordersIcon));
+    drawerMenu.addItem(new AppNavItem("Customers",CustomersView.class, customersIcon));
+		drawerMenu.addItem(new AppNavItem("Products",ProductsView.class, productsIcon));
+    drawerMenu.addItem(new AppNavItem("Documents",DocumentsView.class, documentsIcon));
+    drawerMenu.addItem(new AppNavItem("Tasks",TasksView.class, tasksIcon));
+    drawerMenu.addItem(new AppNavItem("Analytics",AnalyticsView.class, analyticsIcon));
 
     // Content
     demo.addToContent(new H1("Application Title"), this.contentLabel);
   }
 
-  private void onTabChange(TabSelectEvent ev) {
-    String value = ev.getTab().getText().replaceAll("<[^>]*>", "").trim();
-    contentLabel.setText("Content for " + value + " goes here");
-  }
 }

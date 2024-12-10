@@ -1,5 +1,8 @@
 {
     "java.configuration.updateBuildConfiguration": "automatic",
     "java.checkstyle.version": "10.12.1",
-    "java.checkstyle.configuration": "${workspaceFolder}\\target\\checkstyle-checker.xml"
+    "java.checkstyle.configuration": "${workspaceFolder}\\target\\checkstyle-checker.xml",
+    "rebel.xml.generation.invariant.token": {
+        "": "PGFwcGxpY2F0aW9uIGdlbmVyYXRlZC1ieT0idnNjb2RlIj48Y2xhc3NwYXRoPjxkaXIgbmFtZT0iQzovVXNlcnMvRUhhbmR0a2UvRG9jdW1lbnRzL2dpdC93ZWJmb3JqL2RvY3Mtc2FtcGxlcy90YXJnZXQvY2xhc3NlcyI+PC9kaXI+PC9jbGFzc3BhdGg+PC9hcHBsaWNhdGlvbj4="
+    }
 }

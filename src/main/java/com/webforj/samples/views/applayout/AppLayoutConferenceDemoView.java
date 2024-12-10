@@ -9,12 +9,12 @@ import com.webforj.component.Composite;
 import com.webforj.component.element.Element;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.html.elements.H1;
-import com.webforj.component.html.elements.H2;
 import com.webforj.component.html.elements.Img;
-import com.webforj.component.html.elements.Paragraph;
 import com.webforj.component.html.elements.Strong;
 import com.webforj.component.layout.applayout.AppDrawerToggle;
 import com.webforj.component.layout.applayout.AppLayout;
+import com.webforj.component.layout.appnav.AppNav;
+import com.webforj.component.layout.appnav.AppNavItem;
 import com.webforj.component.icons.Icon;
 import com.webforj.component.icons.TablerIcon;
 import com.webforj.component.tabbedpane.TabbedPane;
@@ -24,6 +24,7 @@ import com.webforj.component.tabbedpane.event.TabSelectEvent;
 import com.webforj.component.tabbedpane.TabbedPane.Alignment;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
+import com.webforj.samples.views.applayout.applayoutconferencedemo.DemoView;
 
 @InlineStyleSheet("context://css/applayout/applayoutMobile.css")
 @Route
@@ -39,7 +40,7 @@ public class AppLayoutConferenceDemoView extends Composite<AppLayout> {
 
   H1 appTitle = new H1("Application Title");
 
-  TabbedPane drawerMenu = new TabbedPane();
+  AppNav drawerMenu = new AppNav();
   TabbedPane footerMenu = new TabbedPane();
 
   public AppLayoutConferenceDemoView() {
@@ -70,11 +71,7 @@ public class AppLayoutConferenceDemoView extends Composite<AppLayout> {
     drawer.add(drawerLogo);
 
     // Drawer's Menu
-    drawer.add(drawerMenu);
-
-    drawerMenu.setBodyHidden(true);
-    drawerMenu.setBorderless(true);
-    drawerMenu.setPlacement(Placement.LEFT);
+    demo.addToDrawer(drawerMenu);
 
     // Adding tabs to drawer menu
 
@@ -84,26 +81,16 @@ public class AppLayoutConferenceDemoView extends Composite<AppLayout> {
     Icon productsIcon = TablerIcon.create("box");
     Icon documentsIcon = TablerIcon.create("files");
 
-    drawerMenu.addTab(new Tab("Dashboard", dashboardIcon));
-    drawerMenu.addTab(new Tab("Orders", ordersIcon));
-    drawerMenu.addTab(new Tab("Customers", customersIcon));
-		drawerMenu.addTab(new Tab("Products", productsIcon));
-    drawerMenu.addTab(new Tab("Documents", documentsIcon));
+    drawerMenu.addItem(new AppNavItem("Dashboard", DemoView.class, dashboardIcon));
+    drawerMenu.addItem(new AppNavItem("Orders", DemoView.class, ordersIcon));
+    drawerMenu.addItem(new AppNavItem("Customers", DemoView.class, customersIcon));
+    drawerMenu.addItem(new AppNavItem("Products", DemoView.class, productsIcon));
+    drawerMenu.addItem(new AppNavItem("Documents", DemoView.class, documentsIcon));
 
     // Content
     demo.addToContent(
         appTitle,
         this.contentLabel);
-    for (int i = 0; i < 5; i++) {
-      Div content = new Div().addClassName("card");
-      content.add(
-          new H2("What is webforJ?"),
-          new Paragraph(
-              """
-                  webforJ is a powerful Java UI framework designed for building business-critical web applications entirely in Java. It provides a comprehensive API, design system, and a rich library of UI components, allowing developers to create modern, secure, and high-performance web applications without needing to rely on additional web development languages or frameworks.
-                  """));
-      demo.addToContent(content);
-    }
 
     demo.addToFooter(footerMenu);
     demo.setFooterReveal(true);
@@ -127,4 +114,3 @@ public class AppLayoutConferenceDemoView extends Composite<AppLayout> {
   }
 
 }
-
