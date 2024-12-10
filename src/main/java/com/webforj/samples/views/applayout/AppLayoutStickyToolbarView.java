@@ -14,6 +14,7 @@ import com.webforj.component.layout.applayout.AppDrawerToggle;
 import com.webforj.component.layout.applayout.AppLayout;
 import com.webforj.component.layout.appnav.AppNav;
 import com.webforj.component.layout.appnav.AppNavItem;
+import com.webforj.component.layout.toolbar.Toolbar;
 import com.webforj.component.tabbedpane.Tab;
 import com.webforj.component.tabbedpane.TabbedPane;
 import com.webforj.router.annotation.FrameTitle;
@@ -28,7 +29,7 @@ public class AppLayoutStickyToolbarView extends Composite<AppLayout> {
   AppLayout demo = getBoundComponent();
   Paragraph contentLabel = new Paragraph();
 
-  Div header = new Div();
+  Toolbar header = new Toolbar();
   Div drawer = new Div();
 
   public AppLayoutStickyToolbarView() {
@@ -42,9 +43,9 @@ public class AppLayoutStickyToolbarView extends Composite<AppLayout> {
     demo.addToDrawerFooter(new Paragraph("All rights reserved"));
 
     // Header
-    header.addClassName("layout__header").add(
-        new AppDrawerToggle(),
-        new H3("DWCJ Application"));
+    header.addClassName("layout__header").addToStart(
+        new AppDrawerToggle()).addToTitle(
+            new H3("DWCJ Application"));
     demo.addToHeader(header);
     demo.setHeaderReveal(true);
 

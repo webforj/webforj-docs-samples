@@ -15,6 +15,7 @@ import com.webforj.component.layout.applayout.AppDrawerToggle;
 import com.webforj.component.layout.applayout.AppLayout;
 import com.webforj.component.layout.appnav.AppNav;
 import com.webforj.component.layout.appnav.AppNavItem;
+import com.webforj.component.layout.toolbar.Toolbar;
 import com.webforj.component.icons.Icon;
 import com.webforj.component.icons.TablerIcon;
 import com.webforj.component.tabbedpane.TabbedPane;
@@ -33,7 +34,7 @@ public class AppLayoutConferenceDemoView extends Composite<AppLayout> {
 
   AppLayout demo = getBoundComponent();
   Div contentLabel = new Div();
-  Div header = new Div();
+  Toolbar header = new Toolbar();
   Div drawer = new Div();
 
   ArrayList<String> titles = new ArrayList<>(Arrays.asList("Contacts", "Tasks", "Inbox", "Security", "Projects"));
@@ -53,8 +54,8 @@ public class AppLayoutConferenceDemoView extends Composite<AppLayout> {
     logo.addClassName("dwc-logo").add(
         new Img("https://documentation.webforj.com/img/webforj_icon.svg", "logo"));
     Strong title = new Strong("webforJ Application");
-
-    header.add(toggle, logo, title);
+    header.addToStart(toggle);
+    header.addToTitle(logo,title);
     header.addClassName("drawer__dwc-toolbar");
 
     demo.addToHeader(header);

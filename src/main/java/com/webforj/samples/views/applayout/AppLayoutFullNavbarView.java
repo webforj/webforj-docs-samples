@@ -14,6 +14,7 @@ import com.webforj.component.layout.applayout.AppDrawerToggle;
 import com.webforj.component.layout.applayout.AppLayout;
 import com.webforj.component.layout.appnav.AppNav;
 import com.webforj.component.layout.appnav.AppNavItem;
+import com.webforj.component.layout.toolbar.Toolbar;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 import com.webforj.samples.views.applayout.applayoutfullnavbar.AnalyticsView;
@@ -32,7 +33,7 @@ public class AppLayoutFullNavbarView extends Composite<AppLayout> {
   AppLayout demo = getBoundComponent();
   Paragraph contentLabel = new Paragraph();
 
-  Div header = new Div();
+  Toolbar header = new Toolbar();
   Div drawer = new Div();
 
   public AppLayoutFullNavbarView() {
@@ -44,8 +45,8 @@ public class AppLayoutFullNavbarView extends Composite<AppLayout> {
     demo.addToDrawerFooter(new Paragraph("All rights reserved"));
 
     // Header
-    header.addClassName("layout__header").add(
-        new AppDrawerToggle(),
+    header.addClassName("layout__header").addToStart(
+        new AppDrawerToggle()).addToTitle(
         new H3("DWCJ Application"));
     demo.addToHeader(header);
     demo.setHeaderOffscreen(false);

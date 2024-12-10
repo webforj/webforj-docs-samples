@@ -13,6 +13,7 @@ import com.webforj.component.layout.applayout.AppDrawerToggle;
 import com.webforj.component.layout.applayout.AppLayout;
 import com.webforj.component.layout.appnav.AppNav;
 import com.webforj.component.layout.appnav.AppNavItem;
+import com.webforj.component.layout.toolbar.Toolbar;
 import com.webforj.component.tabbedpane.Tab;
 import com.webforj.component.tabbedpane.TabbedPane;
 import com.webforj.component.tabbedpane.TabbedPane.Placement;
@@ -28,7 +29,7 @@ public class AppLayoutMobileDrawerView extends Composite<AppLayout> {
 
   AppLayout demo = getBoundComponent();
   Div contentLabel = new Div();
-  Div header = new Div();
+  Toolbar header = new Toolbar();
   Div drawer = new Div();
 
   public AppLayoutMobileDrawerView() {
@@ -41,7 +42,7 @@ public class AppLayoutMobileDrawerView extends Composite<AppLayout> {
         new Img("https://documentation.webforj.com/img/webforj_icon.svg", "logo"));
     Strong title = new Strong("DWCJ Application");
 
-    header.add(toggle, logo, title);
+    header.addToStart(toggle).addToTitle(logo, title);
     header.addClassName("drawer__dwc-toolbar");
 
     demo.addToHeader(header);
