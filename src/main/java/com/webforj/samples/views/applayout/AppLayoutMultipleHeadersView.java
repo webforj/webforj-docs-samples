@@ -52,6 +52,7 @@ public class AppLayoutMultipleHeadersView extends Composite<AppLayout> {
 		header.addClassName("layout__header").addToStart(
 				new AppDrawerToggle()).addToTitle(
 						new H3("DWCJ Application"));
+		
 		demo.addToHeader(header);
 
 		// Drawer
@@ -90,11 +91,12 @@ public class AppLayoutMultipleHeadersView extends Composite<AppLayout> {
 
 		// Adding the additional toolbar with menu items
 		Toolbar secondToolbar = new Toolbar();
+		secondToolbar.setCompact(true);
 		secondToolbar.addClassName("layout__second__header");
 		demo.addToHeader(secondToolbar);
 		demo.setHeaderFixed(true);
 		TabbedPane secondMenu = new TabbedPane();
-		secondToolbar.add(secondMenu);
+		secondToolbar.addToStart(secondMenu);
 		secondMenu.setBodyHidden(true);
 		secondMenu.setBorderless(true);
 
