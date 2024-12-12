@@ -39,9 +39,9 @@ public class AppLayoutStickyToolbarView extends Composite<AppLayout> {
     header.addClassName("layout__header").addToStart(
         new AppDrawerToggle()).addToTitle(
             new H3("Application"));
-    header.setCompact(true);
     demo.addToHeader(header);
     demo.setHeaderReveal(true);
+    
 
     // Drawer
     demo.addToDrawer(drawer);
