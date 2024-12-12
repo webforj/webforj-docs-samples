@@ -40,8 +40,7 @@ public class AppLayoutStickyToolbarView extends Composite<AppLayout> {
         new AppDrawerToggle()).addToTitle(
             new H3("Application"));
     demo.addToHeader(header);
-    demo.setHeaderReveal(true);
-    
+    demo.setHeaderFixed(true);
 
     // Drawer
     demo.addToDrawer(drawer);
