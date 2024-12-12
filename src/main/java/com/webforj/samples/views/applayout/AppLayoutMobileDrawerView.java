@@ -2,7 +2,6 @@ package com.webforj.samples.views.applayout;
 
 import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.Composite;
-import com.webforj.component.element.Element;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.html.elements.H1;
 import com.webforj.component.html.elements.Img;
@@ -33,14 +32,12 @@ public class AppLayoutMobileDrawerView extends Composite<AppLayout> {
   Div drawer = new Div();
 
   public AppLayoutMobileDrawerView() {
-    demo.addToDrawerHeaderActions(new Element("dwc-icon-button")
-        .setAttribute("name", "pin"));
     // Header
     AppDrawerToggle toggle = new AppDrawerToggle();
     Div logo = new Div();
     logo.addClassName("dwc-logo").add(
         new Img("https://documentation.webforj.com/img/webforj_icon.svg", "logo"));
-    Strong title = new Strong("DWCJ Application");
+    Strong title = new Strong("Application");
 
     header.addToStart(toggle).addToTitle(logo, title);
     header.addClassName("drawer__dwc-toolbar");
@@ -71,13 +68,13 @@ public class AppLayoutMobileDrawerView extends Composite<AppLayout> {
     Icon tasksIcon = TablerIcon.create("checklist");
     Icon analyticsIcon = TablerIcon.create("chart-dots-2");
 
-    drawerMenu.addItem(new AppNavItem("Dashboard",DemoView.class, dashboardIcon));
-    drawerMenu.addItem(new AppNavItem("Orders",DemoView.class, ordersIcon));
-    drawerMenu.addItem(new AppNavItem("Customers",DemoView.class, customersIcon));
-		drawerMenu.addItem(new AppNavItem("Products",DemoView.class, productsIcon));
-    drawerMenu.addItem(new AppNavItem("Documents",DemoView.class, documentsIcon));
-    drawerMenu.addItem(new AppNavItem("Tasks",DemoView.class, tasksIcon));
-    drawerMenu.addItem(new AppNavItem("Analytics",DemoView.class, analyticsIcon));
+    drawerMenu.addItem(new AppNavItem("Dashboard", DemoView.class, dashboardIcon));
+    drawerMenu.addItem(new AppNavItem("Orders", DemoView.class, ordersIcon));
+    drawerMenu.addItem(new AppNavItem("Customers", DemoView.class, customersIcon));
+    drawerMenu.addItem(new AppNavItem("Products", DemoView.class, productsIcon));
+    drawerMenu.addItem(new AppNavItem("Documents", DemoView.class, documentsIcon));
+    drawerMenu.addItem(new AppNavItem("Tasks", DemoView.class, tasksIcon));
+    drawerMenu.addItem(new AppNavItem("Analytics", DemoView.class, analyticsIcon));
 
     // Content
     demo.addToContent(

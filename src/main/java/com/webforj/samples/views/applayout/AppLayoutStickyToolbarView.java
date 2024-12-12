@@ -2,7 +2,6 @@ package com.webforj.samples.views.applayout;
 
 import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.Composite;
-import com.webforj.component.element.Element;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.html.elements.H1;
 import com.webforj.component.html.elements.H3;
@@ -34,18 +33,13 @@ public class AppLayoutStickyToolbarView extends Composite<AppLayout> {
 
   public AppLayoutStickyToolbarView() {
 
-    demo.setDrawerHeaderVisible(true);
-    demo.setDrawerFooterVisible(true);
-
     demo.addToDrawerTitle(new Div("Menu"));
-    demo.addToDrawerHeaderActions(new Element("dwc-icon-button")
-        .setAttribute("name", "pin"));
-    demo.addToDrawerFooter(new Paragraph("All rights reserved"));
 
     // Header
     header.addClassName("layout__header").addToStart(
         new AppDrawerToggle()).addToTitle(
-            new H3("DWCJ Application"));
+            new H3("Application"));
+    header.setCompact(true);
     demo.addToHeader(header);
     demo.setHeaderReveal(true);
 

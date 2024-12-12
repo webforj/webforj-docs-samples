@@ -32,18 +32,12 @@ public class AppLayoutView extends Composite<AppLayout> {
 
   public AppLayoutView() {
 
-    demo.setDrawerHeaderVisible(true);
-    demo.setDrawerFooterVisible(true);
-
     demo.addToDrawerTitle(new Div("Menu"));
-    demo.addToDrawerHeaderActions(new Element("dwc-icon-button")
-        .setAttribute("name", "pin"));
-    demo.addToDrawerFooter(new Paragraph("All rights reserved"));
 
     // Header
     header.addClassName("layout__header").addToStart(
         new AppDrawerToggle()).addToTitle(
-            new H3("DWCJ Application"));
+            new H3("Application"));
     demo.addToHeader(header);
 
     // Drawer

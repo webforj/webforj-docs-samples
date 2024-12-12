@@ -53,9 +53,9 @@ public class AppLayoutConferenceDemoView extends Composite<AppLayout> {
     Div logo = new Div();
     logo.addClassName("dwc-logo").add(
         new Img("https://documentation.webforj.com/img/webforj_icon.svg", "logo"));
-    Strong title = new Strong("webforJ Application");
+    Strong title = new Strong("Application");
     header.addToStart(toggle);
-    header.addToTitle(logo,title);
+    header.addToTitle(logo, title);
     header.addClassName("drawer__dwc-toolbar");
 
     demo.addToHeader(header);

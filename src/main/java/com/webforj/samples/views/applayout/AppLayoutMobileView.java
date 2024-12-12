@@ -33,7 +33,7 @@ public class AppLayoutMobileView extends Composite<AppLayout> {
     Div logo = new Div();
     logo.addClassName("dwc-logo")
         .add(new Img("https://documentation.webforj.com/img/webforj_icon.svg", "logo"));
-    Strong title = new Strong("DWCJ Application");
+    Strong title = new Strong("Application");
 
     header.addToStart(logo).addToTitle(title);
     header.addClassName("dwc-toolbar");
