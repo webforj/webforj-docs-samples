@@ -18,8 +18,8 @@ public class ComboBoxDropdownTypeView extends Composite<Div> {
     getBoundComponent().addClassName("frame");
     getBoundComponent().add(comboBox);
 
-    String[] categories = {"Electronics", "Health and Beauty", "Fashion", "Kitchen", "Furniture",
-        "Pet Supplies", "Toys and Games"};
+    String[] categories = { "Electronics", "Health and Beauty", "Fashion", "Kitchen", "Furniture",
+        "Pet Supplies", "Toys and Games" };
 
     comboBox.setDropdownType("demo-dropdown-type");
     comboBox.insert(categories)

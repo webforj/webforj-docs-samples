@@ -19,8 +19,8 @@ public class ComboBoxCustomValueView extends Composite<FlexLayout> {
     getBoundComponent().setDirection(FlexDirection.COLUMN).setMargin("20px 0 0 20px").setSpacing("20px").setWidth(200);
     getBoundComponent().add(customValue, toggle);
 
-    String[] categories = {"Electronics", "Health and Beauty", "Fashion", "Kitchen", "Furniture",
-        "Pet Supplies", "Toys and Games"};
+    String[] categories = { "Electronics", "Health and Beauty", "Fashion", "Kitchen", "Furniture",
+        "Pet Supplies", "Toys and Games" };
 
     customValue.insert(categories);
     customValue.setAllowCustomValue(false);

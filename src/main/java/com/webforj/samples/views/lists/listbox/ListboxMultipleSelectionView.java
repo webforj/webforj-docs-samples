@@ -22,10 +22,9 @@ public class ListboxMultipleSelectionView extends Composite<FlexLayout> {
     listBox = new ListBox();
     getBoundComponent().add(listBox);
 
-    listBox.add("Random Data1", "Marketing and Sales");
-    listBox.add("Random Data2", "IT Support");
-    listBox.add("Random Data3", "Management and Admin");
-    listBox.add("Random Data4", "Finance and HR");
+    String[] departments = { "Marketing and Sales", "IT Support", "Management and Admin", "Finance and HR" };
+    listBox.insert(departments);
+
     listBox.setLabel("Select Department(s)");
 
     RadioButton toggle = RadioButton.Switch("Multiple Selection");
