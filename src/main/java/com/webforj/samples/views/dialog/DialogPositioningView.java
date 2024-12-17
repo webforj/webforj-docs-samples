@@ -28,13 +28,14 @@ public class DialogPositioningView extends Composite<FlexLayout> {
     setPosition.setMinHeight("60px");
 
     setPosition.onClick(e -> {
-      if (xPos.getValue() != null && xPos.getValue() >= 0) {
-        dialog.setPosx(xPos.getValue().toString() + "px");
-      }
-      if (yPos.getValue() != null && yPos.getValue() >= 0) {
-        dialog.setPosy(yPos.getValue().toString() + "px");
-      }
-    });
+      Double xValue = xPos.getValue();
+      Double yValue = yPos.getValue();
+  
+      if (xValue != null && yValue != null && xValue >= 0 && yValue >= 0) {
+          dialog.setPosx(xValue + "px");
+          dialog.setPosy(yValue + "px");
+      } 
+  });
 
     dialog.addToHeader(new Div("Positioning"));
     dialog.addToContent(xPos, yPos);
