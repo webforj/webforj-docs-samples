@@ -9,24 +9,25 @@ import com.webforj.component.html.elements.Img;
 import com.webforj.component.html.elements.Paragraph;
 import com.webforj.component.icons.Icon;
 import com.webforj.component.icons.TablerIcon;
-import com.webforj.component.layout.applayout.AppDrawerToggle;
-import com.webforj.component.layout.applayout.AppLayout;
 import com.webforj.component.layout.appnav.AppNav;
 import com.webforj.component.layout.appnav.AppNavItem;
+import com.webforj.component.layout.applayout.AppDrawerToggle;
+import com.webforj.component.layout.applayout.AppLayout;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
 
 @InlineStyleSheet("context://css/applayout/applayout.css")
 @Route
-@FrameTitle("Hierarchical AppNav Demo")
-public class AppNavHierarchyView extends Composite<AppLayout> {
+@FrameTitle("AppNav Basics")
+public class AppNavView extends Composite<AppLayout> {
+
   AppLayout demo = getBoundComponent();
   Paragraph contentLabel = new Paragraph();
 
   Div header = new Div();
   Div drawer = new Div();
 
-  public AppNavHierarchyView() {
+  public AppNavView() {
     demo.setDrawerHeaderVisible(true);
     demo.setDrawerFooterVisible(true);
     demo.setDrawerOpened(true);
@@ -57,6 +58,7 @@ public class AppNavHierarchyView extends Composite<AppLayout> {
 
     // Drawer's Menu
     AppNav drawerMenu = new AppNav();
+    drawerMenu.setAutoOpen(true);
     drawer.add(drawerMenu);
 
     // Adding tabs to drawer menu
@@ -67,38 +69,24 @@ public class AppNavHierarchyView extends Composite<AppLayout> {
     Icon documentsIcon = TablerIcon.create("files");
     Icon tasksIcon = TablerIcon.create("checklist");
     Icon analyticsIcon = TablerIcon.create("chart-dots-2");
-    Icon settingsIcon = TablerIcon.create("settings");
 
     AppNavItem dashboardItem = new AppNavItem("Dashboard", "/appnav").setPrefixComponent(dashboardIcon);
-    AppNavItem ordersItem = new AppNavItem("Orders").setPrefixComponent(ordersIcon);
-    AppNavItem newOrdersItem = new AppNavItem("New Orders", "/appnavhierarchy");
-    AppNavItem inProgressOrdersItem = new AppNavItem("Orders in Progress", "/appnavhierarchy");
+    AppNavItem ordersItem = new AppNavItem("Orders", "/appnav").setPrefixComponent(ordersIcon);
     AppNavItem customersItem = new AppNavItem("Customers", "/appnav").setPrefixComponent(customersIcon);
     AppNavItem productsItem = new AppNavItem("Products", "/appnav").setPrefixComponent(productsIcon);
     AppNavItem documentsItem = new AppNavItem("Documents", "/appnav").setPrefixComponent(documentsIcon);
     AppNavItem tasksItem = new AppNavItem("Tasks", "/appnav").setPrefixComponent(tasksIcon);
-    AppNavItem analyticsItem = new AppNavItem("Analytics", "/appnav").setPrefixComponent(analyticsIcon);  
-    AppNavItem settingsItem = new AppNavItem("Settings").setPrefixComponent(settingsIcon);
-    AppNavItem accountSettingsItem = new AppNavItem("Account Settings", "/appnavhierarchy");
-    AppNavItem preferencesItem = new AppNavItem("Preferences", "/appnavhierarchy");
-    
-    ordersItem.addItem(newOrdersItem);
-    ordersItem.addItem(inProgressOrdersItem);
-    
-    settingsItem.addItem(accountSettingsItem);
-    settingsItem.addItem(preferencesItem);
+    AppNavItem analyticsItem = new AppNavItem("Analytics", "/appnav").setPrefixComponent(analyticsIcon);
     
     drawerMenu.addItem(dashboardItem);
     drawerMenu.addItem(ordersItem);
     drawerMenu.addItem(customersItem);
-    drawerMenu.addItem(productsItem);
+	drawerMenu.addItem(productsItem);
     drawerMenu.addItem(documentsItem);
     drawerMenu.addItem(tasksItem);
     drawerMenu.addItem(analyticsItem);
-    drawerMenu.addItem(settingsItem);
-
+    
     // Content
     demo.addToContent(new H1("Application Title"), this.contentLabel);
   }
 }
-  
