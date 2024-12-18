@@ -9,12 +9,14 @@
 
 .todo--display{
   min-width: 30%;
+  max-height: 400px;
   box-shadow: var(--dwc-shadow-l);
   background-color: var(--dwc-surface-3);
   padding: var(--dwc-space-m);
   border: thin solid var(--dwc-color-default);
   border-radius: var(--dwc-border-radius);
   padding-bottom: 0px;
+  overflow-y: auto;
   
   @media only screen and (max-width: 1200px) {
     min-width: 50%;
