@@ -47,21 +47,13 @@ public class SliderTickView extends Composite<FlexLayout> {
                    .setWidth("300px");
 
     majorTickInput.onValueChange(event -> {
-      try {
         int majorSpacing = Integer.parseInt(event.getValue());
         slider.setMajorTickSpacing(majorSpacing);
-      } catch (NumberFormatException e) {
-        System.out.println("Invalid input for major tick spacing.");
-      }
     });
 
     minorTickInput.onValueChange(event -> {
-      try {
         int minorSpacing = Integer.parseInt(event.getValue());
         slider.setMinorTickSpacing(minorSpacing);
-      } catch (NumberFormatException e) {
-        System.out.println("Invalid input for minor tick spacing.");
-      }
     });
 
     Button toggleTicksButton = new Button("Toggle Tick Visibility").setWidth("200px")
