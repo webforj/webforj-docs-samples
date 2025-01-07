@@ -44,6 +44,7 @@ public class SliderTempView extends Composite<FlexLayout> {
             entry(90, "90°F")
         ))
         .setLabelsVisible(true)
+        .setTooltipVisibleOnSlideOnly(true)
         .setWidth("300px");
 
     IconButton snowflakeButton = new IconButton(TablerIcon.create("snowflake"));

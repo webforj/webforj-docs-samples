@@ -1,7 +1,5 @@
 package com.webforj.samples.views.slider;
 
-import java.util.Map;
-import static java.util.Map.entry;
 import com.webforj.component.Composite;
 import com.webforj.component.Theme;
 import com.webforj.component.button.Button;
@@ -15,6 +13,8 @@ import com.webforj.component.toast.Toast;
 import com.webforj.component.toast.Toast.Placement;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
+import java.util.Map;
+import static java.util.Map.entry;
 
 @Route
 @FrameTitle("Donation Slider Demo")
