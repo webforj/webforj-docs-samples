@@ -33,12 +33,10 @@ public class ChartRedrawView extends Composite<Div> {
     public ChartRedrawView() {
         getBoundComponent().addClassName("window");
 
-        // Chart container
         Div chartContainer = new Div();
         chartContainer.addClassName("chart-container");
         chartContainer.add(chart);
 
-        // Chart options
         Map<String, Object> options = new HashMap<>();
         options.put(TITLE, "Social Media Following");
         options.put("colors", List.of("#006fe6"));
@@ -49,13 +47,11 @@ public class ChartRedrawView extends Composite<Div> {
         options.put("legend", Map.of("position", "bottom"));
         chart.setOptions(options);
 
-        // Chart data
         List<Object> data = new ArrayList<>();
         data.add(Arrays.asList(new Object[] { "Category", "Number of Followers in Thousands" }));
 
         inputGroup.addClassName("input-group");
 
-        // Categories and input fields
         String[] categories = { "Instagram", "Twitter", "Facebook", "LinkedIn" };
         Map<String, NumberField> valueFields = new HashMap<>();
 
@@ -71,7 +67,6 @@ public class ChartRedrawView extends Composite<Div> {
         }
         chart.setData(data);
 
-        // Redraw button
         redrawButton.addClassName("redraw-button");
         redrawButton.addClickListener(e -> {
             List<Object> newData = new ArrayList<>();
