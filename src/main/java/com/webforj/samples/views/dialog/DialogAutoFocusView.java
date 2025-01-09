@@ -11,7 +11,7 @@ import com.webforj.router.annotation.Route;
 
 @InlineStyleSheet("context://css/dialog/dialog.css")
 @Route
-@FrameTitle("DIalog Auto-Focus")
+@FrameTitle("Dialog Auto-Focus")
 public class DialogAutoFocusView extends Composite<FlexLayout> {
 
   private Dialog dialog = new Dialog();
