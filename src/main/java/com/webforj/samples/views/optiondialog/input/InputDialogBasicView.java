@@ -29,14 +29,22 @@ public class InputDialogBasicView extends Composite<Div> {
     dialog.setMessageType(InputDialog.MessageType.PLAIN);
     dialog.setFirstButtonText("Delete Repository");
     dialog.setSecondButtonTheme(ButtonTheme.OUTLINED_GRAY);
-    String input = dialog.show();
+    String input = "";
+    while (input != code) {
+      input = dialog.show();
 
-    if (input.equals(code)) {
-      OptionDialog.showMessageDialog("Repository was deleted successfully", "Repository Deleted",
-          MessageDialog.MessageType.INFO);
-    } else {
-      OptionDialog.showMessageDialog("Failed to delete the repository. Code entered is incorrect",
-          "Repository Deletion Failed", MessageDialog.MessageType.ERROR);
+      if (input == null) {
+        OptionDialog.showMessageDialog("Aborted repository deletion.",
+        "Repository Deletion Aborted", MessageDialog.MessageType.ERROR);
+      } else {
+        if (input.equals(code)) {
+          OptionDialog.showMessageDialog("Repository was deleted successfully", "Repository Deleted",
+              MessageDialog.MessageType.INFO);
+        } else {
+          OptionDialog.showMessageDialog("Failed to delete the repository. Code entered is incorrect",
+              "Repository Deletion Failed", MessageDialog.MessageType.ERROR);
+        }
+      }
     }
-  }
+    } 
 }
