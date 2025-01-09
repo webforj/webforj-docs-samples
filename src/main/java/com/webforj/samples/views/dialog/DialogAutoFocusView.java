@@ -18,11 +18,10 @@ public class DialogAutoFocusView extends Composite<FlexLayout> {
 
   public DialogAutoFocusView() {
     getBoundComponent().add(dialog);
-
-    dialog.addToContent(new Div("Auto Focus"));
+    dialog.addToHeader(new Div("Auto Focus"));
     dialog.addToContent(new TextField().setLabel("This Box is Auto Focused"));
 
     dialog.open();
-    dialog.setAutofocus(true);
+    dialog.setAutofocus(false);
   }
 }
