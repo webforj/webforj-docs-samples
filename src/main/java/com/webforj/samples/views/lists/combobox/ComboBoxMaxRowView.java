@@ -24,8 +24,13 @@ public class ComboBoxMaxRowView extends Composite<FlexLayout> {
   public ComboBoxMaxRowView() {
     getBoundComponent().setDirection(FlexDirection.COLUMN).setMargin("20px 0 0 20px").setSpacing("20px").setWidth(200);
     getBoundComponent().add(demoBox, numberField, select);
-
-    select.onClick(e -> demoBox.setMaxRowCount(Integer.valueOf(numberField.getText())));
+    numberField.setInvalidMessage("Number of rows cannot be empty.");
+    select.onClick(e -> {
+      if (!numberField.getText().isBlank())
+        demoBox.setMaxRowCount(Integer.valueOf(numberField.getText()));
+      else
+        numberField.setInvalid(true);
+    });
 
     ArrayList<ListItem> states = new ArrayList<>();
 
