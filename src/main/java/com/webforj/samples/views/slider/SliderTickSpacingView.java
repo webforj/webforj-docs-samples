@@ -23,8 +23,10 @@ public class SliderTickSpacingView extends Composite<FlexLayout> {
   TextField minorTickInput = new TextField("Minor Tick Spacing");
   Button applyTickSpacingButton = new Button("Apply Tick Spacing").setTheme(ButtonTheme.PRIMARY);
   Button toggleSnapToTicksButton = new Button("Enable Snap to Ticks").setTheme(ButtonTheme.PRIMARY);
+  Button toggleTicksVisibilityButton = new Button("Hide Ticks").setTheme(ButtonTheme.PRIMARY);
 
   private boolean isSnapToTicksEnabled = false;
+  private boolean areTicksVisible = true;
 
   public SliderTickSpacingView() {
     FlexLayout layout = getBoundComponent();
@@ -51,6 +53,7 @@ public class SliderTickSpacingView extends Composite<FlexLayout> {
 
     applyTickSpacingButton.onClick(event -> applyTickSpacing());
     toggleSnapToTicksButton.onClick(event -> toggleSnapToTicks());
+    toggleTicksVisibilityButton.onClick(event -> toggleTicksVisibility());
 
     FlexLayout buttonLayout = new FlexLayout()
         .setDirection(FlexDirection.ROW)
@@ -59,7 +62,7 @@ public class SliderTickSpacingView extends Composite<FlexLayout> {
         .setJustifyContent(FlexJustifyContent.CENTER)
         .setAlignment(FlexAlignment.CENTER);
 
-    buttonLayout.add(applyTickSpacingButton, toggleSnapToTicksButton);
+    buttonLayout.add(applyTickSpacingButton, toggleSnapToTicksButton, toggleTicksVisibilityButton);
 
     layout.add(slider, majorTickInput, minorTickInput, buttonLayout);
   }
@@ -88,5 +91,12 @@ public class SliderTickSpacingView extends Composite<FlexLayout> {
     slider.setSnapToTicks(isSnapToTicksEnabled);
     toggleSnapToTicksButton.setText(isSnapToTicksEnabled 
         ? "Disable Snap to Ticks" : "Enable Snap to Ticks");
+  }
+
+  private void toggleTicksVisibility() {
+    areTicksVisible = !areTicksVisible;
+    slider.setTicksVisible(areTicksVisible);
+    toggleTicksVisibilityButton.setText(areTicksVisible 
+        ? "Hide Ticks" : "Show Ticks");
   }
 }
