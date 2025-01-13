@@ -7,7 +7,6 @@ import com.webforj.component.Composite;
 import com.webforj.component.event.ModifyEvent;
 import com.webforj.component.field.MaskedNumberFieldSpinner;
 import com.webforj.component.html.elements.Div;
-import com.webforj.App;
 import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.list.ChoiceBox;
 import com.webforj.component.list.event.ListSelectEvent;
