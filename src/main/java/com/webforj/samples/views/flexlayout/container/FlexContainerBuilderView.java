@@ -21,7 +21,6 @@ import com.webforj.router.annotation.Route;
 import com.webforj.samples.components.Box;
 import com.webforj.samples.components.CodeDisplay;
 
-
 @InlineStyleSheet("context://css/flexlayout/container/flexContainerBuilder.css")
 @Route
 @FrameTitle("Container Builder")
@@ -128,10 +127,9 @@ public class FlexContainerBuilderView extends Composite<Div> {
 
     flexContainerOptions.add(directions, justifications, alignments, contentAlignments, wraps);
 
-    
     getBoundComponent().add(codeWindow);
     codeWindow.setLanguage("java")
-      .addClassName("code__block");
+        .addClassName("code__block");
 
     createStrings();
     updateCode();
@@ -157,10 +155,12 @@ public class FlexContainerBuilderView extends Composite<Div> {
   }
 
   private void spinnerChange(ModifyEvent ev) {
-    if (Integer.valueOf(ev.getText()) > numBoxes) {
-      addBox(Integer.valueOf(ev.getText()));
-    } else if (Integer.valueOf(ev.getText()) < numBoxes) {
-      removeBox(Integer.valueOf(ev.getText()));
+    if (!spinner.isInvalid() && Integer.valueOf(ev.getText()) > 0) {
+      if (Integer.valueOf(ev.getText()) > numBoxes) {
+        addBox(Integer.valueOf(ev.getText()));
+      } else if (Integer.valueOf(ev.getText()) < numBoxes) {
+        removeBox(Integer.valueOf(ev.getText()));
+      }
     }
   }
 
