@@ -11,15 +11,14 @@ import com.webforj.router.annotation.Route;
 
 @InlineStyleSheet("context://css/dialog/dialog.css")
 @Route
-@FrameTitle("DIalog Auto-Focus")
+@FrameTitle("Dialog Auto-Focus")
 public class DialogAutoFocusView extends Composite<FlexLayout> {
 
   private Dialog dialog = new Dialog();
 
   public DialogAutoFocusView() {
     getBoundComponent().add(dialog);
-
-    dialog.addToContent(new Div("Auto Focus"));
+    dialog.addToHeader(new Div("Auto Focus"));
     dialog.addToContent(new TextField().setLabel("This Box is Auto Focused"));
 
     dialog.open();
