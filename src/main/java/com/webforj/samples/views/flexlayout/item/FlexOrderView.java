@@ -44,6 +44,7 @@ public class FlexOrderView extends Composite<Div> {
         .setWidth("200px");
     Button submit = new Button("Set Order");
     order.setInvalidMessage("Order can not be empty.");
+    order.setNegateable(false);
     submit.setHeight("34px")
         .onClick(e -> {
           if (order.getText().isEmpty()) {
