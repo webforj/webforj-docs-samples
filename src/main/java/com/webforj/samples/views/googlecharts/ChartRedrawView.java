@@ -10,9 +10,7 @@ import com.webforj.component.html.elements.Div;
 import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.router.annotation.FrameTitle;
 import com.webforj.router.annotation.Route;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,82 +20,95 @@ import java.util.Map;
 @FrameTitle("Chart Redraw")
 public class ChartRedrawView extends Composite<Div> {
 
-    private static final String COLOR = "color";
-    private static final String TEXT_STYLE = "textStyle";
-    private static final String TITLE = "title";
+  private static final String COLOR = "color";
+  private static final String TEXT_STYLE = "textStyle";
+  private static final String TITLE = "title";
 
-    private GoogleChart chart = new GoogleChart(GoogleChart.Type.COLUMN);
-    private Button redrawButton = new Button("Redraw Chart");
-    private FlexLayout inputGroup = new FlexLayout();
+  private final GoogleChart chart = new GoogleChart(GoogleChart.Type.COLUMN);
+  private final Button redrawButton = new Button("Redraw Chart");
+  private final FlexLayout inputGroup = new FlexLayout();
 
-    public ChartRedrawView() {
-        getBoundComponent().addClassName("window");
+  public ChartRedrawView() {
+    getBoundComponent().addClassName("window");
 
-        Div chartContainer = new Div();
-        chartContainer.addClassName("chart-container");
-        chartContainer.add(chart);
+    Div chartContainer = new Div();
+    chartContainer.addClassName("chart-container");
+    chartContainer.add(chart);
 
-        Map<String, Object> options = new HashMap<>();
-        options.put(TITLE, "Social Media Following");
-        options.put("colors", List.of("#006fe6"));
-        options.put("backgroundColor", "transparent");
-        options.put("chartArea", Map.of("width", "80%", "height", "70%"));
-        options.put("hAxis", Map.of(TEXT_STYLE, Map.of(COLOR, "#333")));
-        options.put("vAxis", Map.of("minValue", 0, TEXT_STYLE, Map.of(COLOR, "#333")));
-        options.put("legend", Map.of("position", "bottom"));
-        chart.setOptions(options);
+    Map<String, Object> options = new HashMap<>();
+    options.put(TITLE, "Social Media Following");
+    options.put("colors", List.of("#006fe6"));
+    options.put("backgroundColor", "transparent");
+    options.put("chartArea", Map.of("width", "80%", "height", "70%"));
+    options.put("hAxis", Map.of(TEXT_STYLE, Map.of(COLOR, "#333")));
+    options.put("vAxis", Map.of("minValue", 0, TEXT_STYLE, Map.of(COLOR, "#333")));
+    options.put("legend", Map.of("position", "bottom"));
+    chart.setOptions(options);
 
-        List<Object> data = new ArrayList<>();
-        data.add(Arrays.asList(new Object[] { "Category", "Number of Followers in Thousands" }));
+    List<Object> data = new ArrayList<>();
+    List<String> columns = List.of("Category", "Number of Followers in Thousands");
+    data.add(columns);
 
-        inputGroup.addClassName("input-group");
+    String[] categories = {"Instagram", "Twitter", "Facebook", "LinkedIn"};
+    Map<String, NumberField> valueFields = new HashMap<>();
 
-        String[] categories = { "Instagram", "Twitter", "Facebook", "LinkedIn" };
-        Map<String, NumberField> valueFields = new HashMap<>();
+    for (String category : categories) {
+      List<Object> row = new ArrayList<>();
+      row.add(category);
+      row.add(100); 
+      data.add(row);
 
-        for (String category : categories) {
-            data.add(Arrays.asList(new Object[] { category, 100 }));
-            NumberField valueField = new NumberField("Value for " + category);
-            valueField.setPlaceholder("");
-            valueField.setStep(1.0);
-            valueField.addClassName("number-field");
-            valueField.setText("100");
-            inputGroup.add(valueField);
-            valueFields.put(category, valueField);
-        }
-        chart.setData(data);
-
-        redrawButton.addClassName("redraw-button");
-        redrawButton.addClickListener(e -> {
-            List<Object> newData = new ArrayList<>();
-            newData.add(Arrays.asList(new Object[] { "Category", "Followers" }));
-            boolean allValuesValid = true;
-
-            for (String category : categories) {
-                NumberField valueField = valueFields.get(category);
-                String fieldValue = valueField.getText();
-                Double value = null;
-
-                if (!fieldValue.isEmpty()) {
-                    try {
-                        value = Double.parseDouble(fieldValue);
-                    } catch (NumberFormatException ex) {
-                        allValuesValid = false;
-                        break;
-                    }
-                }
-
-                newData.add(Arrays.asList(new Object[] { category, value != null ? value.intValue() : null }));
-            }
-
-            if (allValuesValid) {
-                chart.setData(newData);
-                chart.redraw();
-            }
-        });
-
-        inputGroup.add(redrawButton.setTheme(ButtonTheme.PRIMARY));
-        getBoundComponent().add(chartContainer);
-        getBoundComponent().add(inputGroup);
+      NumberField valueField = new NumberField("Value for " + category);
+      valueField.setPlaceholder("");
+      valueField.setStep(1.0);
+      valueField.addClassName("number-field");
+      valueField.setText("100");
+      inputGroup.add(valueField);
+      valueFields.put(category, valueField);
     }
+
+    chart.setData(data);
+
+    Div buttonContainer = new Div();
+    buttonContainer.addClassName("redraw-button-container");
+    buttonContainer.add(redrawButton.setTheme(ButtonTheme.PRIMARY));
+
+    redrawButton.addClassName("redraw-button");
+    redrawButton.addClickListener(e -> {
+      List<Object> newData = new ArrayList<>();
+      newData.add(columns); 
+      boolean allValuesValid = true;
+
+      for (String category : categories) {
+        NumberField valueField = valueFields.get(category);
+        String fieldValue = valueField.getText();
+        Double value = null;
+
+        if (!fieldValue.isEmpty()) {
+          try {
+            value = Double.parseDouble(fieldValue);
+          } catch (NumberFormatException ex) {
+            allValuesValid = false;
+            break;
+          }
+        }
+
+        List<Object> row = new ArrayList<>();
+        row.add(category);
+        row.add(value != null ? value.intValue() : null);
+        newData.add(row);
+      }
+
+      if (allValuesValid) {
+        chart.setData(newData);
+        chart.redraw();
+      }
+    });
+
+    getBoundComponent().addClassName("window");
+    getBoundComponent().add(chartContainer);
+    getBoundComponent().add(inputGroup);
+    getBoundComponent().add(buttonContainer); 
+  }
+
 }
