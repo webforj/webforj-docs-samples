@@ -2,6 +2,7 @@ package com.webforj.samples.views.applayout;
 
 import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.Composite;
+import com.webforj.component.drawer.Drawer;
 import com.webforj.component.element.Element;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.html.elements.H1;
@@ -28,7 +29,7 @@ public class AppLayoutFullNavbarView extends Composite<AppLayout> {
   Paragraph contentLabel = new Paragraph();
 
   Div header = new Div();
-  Div drawer = new Div();
+  Drawer drawer = new Drawer();
 
   public AppLayoutFullNavbarView() {
     demo.setDrawerHeaderVisible(true);
