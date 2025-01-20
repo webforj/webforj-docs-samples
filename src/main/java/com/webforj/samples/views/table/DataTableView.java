@@ -54,7 +54,7 @@ public class DataTableView extends Composite<Div> {
 
   FlexLayout buildTableHeader() {
     TextField search = new TextField(Type.SEARCH, "Search");
-    search.setPlaceholder("Search by athlete ...");
+    search.setPlaceholder("Search by athlete...");
     search.onModify(ev -> {
       this.searchTerm = ev.getText().toLowerCase();
       paginator.setCurrent(1);

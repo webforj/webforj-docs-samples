@@ -34,7 +34,7 @@ public class TableFilteringView extends Composite<Div> {
 
   TextField buildSearchField(Repository<MusicRecord> repository) {
     TextField search = new TextField(Type.SEARCH, "Search");
-    search.setPlaceholder("Search by title ...");
+    search.setPlaceholder("Search by title...");
     search.onModify(ev -> {
       this.searchTerm = ev.getText().toLowerCase();
       repository.commit();
