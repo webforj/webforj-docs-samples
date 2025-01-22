@@ -12,17 +12,25 @@ import com.webforj.component.optiondialog.MessageDialog;
 @Route
 @FrameTitle("File Upload Basics")
 public class FileUploadDialogBasicView extends Composite<Div> {
+  private FileUploadDialog dialog;
 
   public FileUploadDialogBasicView() {
-    FileUploadDialog dialog = new FileUploadDialog("Upload a file");
+    dialog = new FileUploadDialog("Upload a file");
     dialog.setFileSystemAccess(false);
+
+    show();
+  }
+
+  private void show() {
     UploadedFile file = dialog.show();
     if (file != null) {
       // Do something with the uploaded file
       file.delete();
-      OptionDialog.showMessageDialog("File uploaded successfully", "File Uploaded", MessageDialog.MessageType.INFO);
+      OptionDialog.showMessageDialog("File uploaded successfully", "File Uploaded");
     } else {
       OptionDialog.showMessageDialog("No file selected", "File Selection Failed", MessageDialog.MessageType.ERROR);
     }
+
+    show();
   }
 }

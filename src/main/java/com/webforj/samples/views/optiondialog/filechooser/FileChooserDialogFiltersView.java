@@ -15,6 +15,7 @@ import com.webforj.component.optiondialog.MessageDialog;
 @Route
 @FrameTitle("File Chooser Filters")
 public class FileChooserDialogFiltersView extends Composite<Div> {
+  private FileChooserDialog dialog;
 
   public FileChooserDialogFiltersView() {
     List<FileChooserFilter> filters = new ArrayList<>();
@@ -24,15 +25,22 @@ public class FileChooserDialogFiltersView extends Composite<Div> {
     filters.add(new FileChooserFilter("Image Files (*.png, *.jpg, *.jpeg)",
         "*.png;*.jpg;*.jpeg"));
 
-    FileChooserDialog dialog = new FileChooserDialog("Choose a file to download", "/usr2/bbx/demos", filters);
+    dialog = new FileChooserDialog("Choose a file to download", "/usr2/bbx/demos", filters);
     dialog.setRestricted(true);
     dialog.setGridView(true);
+
+    show();
+  }
+
+  private void show() {
     String file = dialog.show();
 
     if (file != null) {
-      OptionDialog.showMessageDialog("File selected: " + file, "File Selected", MessageDialog.MessageType.INFO);
+      OptionDialog.showMessageDialog("File selected: " + file, "File Selected");
     } else {
       OptionDialog.showMessageDialog("No file selected", "File Selection Failed", MessageDialog.MessageType.ERROR);
     }
+
+    show();
   }
 }

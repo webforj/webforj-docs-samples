@@ -6,7 +6,7 @@
 
     <groupId>com.webforj.samples</groupId>
     <artifactId>controlsamples</artifactId>
-    <version>24.20</version>
+    <version>24.21-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
