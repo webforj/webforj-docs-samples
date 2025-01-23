@@ -11,14 +11,21 @@ import com.webforj.component.optiondialog.ConfirmDialog;
 @Route
 @FrameTitle("Confirm Dialog Constructor")
 public class ConfirmDialogConstructorView extends Composite<Div> {
+  private ConfirmDialog dialog;
 
   public ConfirmDialogConstructorView() {
-    ConfirmDialog dialog = new ConfirmDialog(
+    dialog = new ConfirmDialog(
         "Are you sure you want to delete this file? This action cannot be reverted.", "Deletion",
         ConfirmDialog.OptionType.OK_CANCEL, ConfirmDialog.MessageType.QUESTION);
     dialog.setTheme(Theme.DANGER);
     dialog.setButtonTheme(ConfirmDialog.Button.FIRST, ButtonTheme.DANGER);
     dialog.setButtonTheme(ConfirmDialog.Button.SECOND, ButtonTheme.OUTLINED_GRAY);
+
+    show();
+  }
+
+  private void show() {
     dialog.show();
+    show();
   }
 }
