@@ -11,18 +11,25 @@ import com.webforj.component.optiondialog.MessageDialog;
 @Route
 @FrameTitle("File Chooser Basics")
 public class FileChooserDialogBasicView extends Composite<Div> {
+  private FileChooserDialog dialog;
 
   public FileChooserDialogBasicView() {
-    FileChooserDialog dialog = new FileChooserDialog("Choose Directory to save", "/usr2/bbx/demos",
+    dialog = new FileChooserDialog("Choose Directory to save", "/usr2/bbx/demos",
         FileChooserDialog.SelectionMode.DIRECTORIES);
     dialog.setRestricted(true);
+
+    show();
+  }
+
+  private void show() {
     String directory = dialog.show();
     if (directory != null) {
-      OptionDialog.showMessageDialog("Directory selected: " + directory, "Directory Selected",
-          MessageDialog.MessageType.INFO);
+      OptionDialog.showMessageDialog("Directory selected: " + directory, "Directory Selected");
     } else {
       OptionDialog.showMessageDialog("No directory selected", "Directory Selection Failed",
           MessageDialog.MessageType.ERROR);
     }
+
+    show();
   }
 }
