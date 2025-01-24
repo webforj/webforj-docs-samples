@@ -48,6 +48,8 @@ public class FlexJustificationView extends Composite<Div> {
           label.substring(0, 1).toUpperCase() + label.substring(1));
     }
     justifications.selectIndex(0);
+    justifications.setStyle("margin", "20px")
+                  .setStyle("width", "150px");
     getBoundComponent().add(mainLayout);
     mainLayout.add(justifications, boxLayout);
   }
