@@ -1,0 +1,4 @@
+dwc-checkbox.task-completed::part(label) {
+  text-decoration: line-through;
+  color: gray;
+}
